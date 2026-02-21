@@ -5,87 +5,82 @@ sidebar_position: 2
 
 # Persons
 
-A Person record represents an individual in your congregation. Person records can be grouped into [Families](Families), belong to [Groups](Groups), have [Properties](Properties) assigned, and can be made [Users](Users) of the application.
+A Person record represents an individual in your congregation. Person records can be grouped into [Families](/user-guide/families), belong to [Groups](/user-guide/groups), have [Properties](/user-guide/properties) assigned, and can be made [Users](/administration/users) of the application.
 
 > **Tip:** Every person should belong to a family, even if they are a "family of one."
 
-## How do I find a specific Person?
+## How do I find a specific person?
 
-On left menu, find the search box just above the _"Dashboard"_ heading. Enter a search string in this box, as you begin to type results will begin showing all of matches.
+In the left menu, find the search box just above the _"Dashboard"_ heading. Enter a search string — results will begin appearing as you type, showing all matches by first or last name.
 
-The system will return all Person records containing that search string in the first or last name.
+Clicking on a person's name opens their Person View, which lists all information about that person, including assigned properties, assigned groups, and notes.
 
-Clicking on the Person's name will reveal the Person View which lists all information about that Person, including any Assigned Properties, Assigned Groups, and Notes.
+This is a wildcard search: the system looks for that sequence of characters anywhere in the first or last name. For example, searching for "ian" will return records for "Ian," "Brian," and anyone else whose name contains those letters in that order.
 
-This is a wild-card search, meaning the system is looking for that sequence of characters, no matter where in the first or last name they may appear. For example, searching for "Ian" will return all People records with the first name of "Ian" or Brian" (or anything else containing the characters "ian" in that order).
+## Why is some information on the Person View shown in red text?
 
-## Why is some of the information on the Person View in red text?
+Red text indicates information inherited from the associated Family record. People assigned to the same family share common information — such as address, phone number, and email address. This information only needs to be entered once on the Family record; all members of that family will inherit it unless the individual Person record has its own value.
 
-This is information inherited from an associated Family record. People can grouped into Families. People assigned to the same Family will likely share much of the same information -- the same Address, the same Phone, the same Email, etc. In these cases, this information only needs to be entered for the Family and all People assigned to that Family will "inherit" that information, unless the Person record in question has its own information.
+For example, the Smith family has four members: John, Mary, Billy, and Sally. None of the four Person records have an address, but the Smith Family record does. When Sally's Person View is displayed, the system shows the family address in red to indicate it is inherited. If Sally moves to a college dorm and her dorm address is added to her Person record, that address will appear in black, indicating it is specific to her.
 
-For example, the Smith family has four members: John, Mary, Billy, and Sally. None of the four Person records have an address, phone, or email address listed, but this information is present in the Smith Family record. When Sally Smith's Person View is displayed, the system displays the address from the Family record. It uses red text to indicate that this information has been inherited. Say that Sally goes to college, and an address for her dorm room is entered in her Person record. Since she now has her own address, that address will display in black text on her Person View.
+This makes it easy to update shared information in one place. For a family of ten, you only need to change the address once on the Family record instead of updating ten separate Person records.
 
-This makes it easy to change common information for all members of a Family. For a Family of 10 Person records, changing 10 addresses every time they move invites an error to creep in somewhere. By inheriting the Family information, the address needs to be changed in only one place.
+## How do I add a new person?
 
-## How do I add a new Person?
+There are two ways to add a new person:
 
-There are two ways to add a new Person:
+From the left menu, click _"Add a New Person"_, complete the form, and press _"Save"_ or _"Save and Add"_. The _"Save and Add"_ option saves the record and opens a blank form for the next entry, which is useful for entering multiple people at once.
 
-From the left menu, click on _"Add a New Person"_
-Complete the form Press _"Save"_ or _"Save and Add"_. The latter will add the person and return you to an empty form to add another person, which is handy for large amounts of data entry.
-
-However, to enter a new Family and several Person records at once which you plan to assign to that Family, use the Family Editor.
+To add a new family and several people at the same time, use the Family Editor instead.
 
 ## What is a Classification?
 
-This defines the Person's role within the church. Common [Classifications](Classifications) are Member, Guest, Regular Attender, Non-Attender, etc.
+A classification defines a person's role within the church. Common [Classifications](/user-guide/classifications) include Member, Guest, Regular Attender, and Non-Attender.
 
 ## How do I enter a person's age?
 
-You don't. ChurchCRM automatically calculates age based on the birth date given.
+You don't. ChurchCRM automatically calculates age from the birth date. At minimum, a birth year must be entered. If the exact year is unknown, you can enter an estimate and update it later.
 
-Age will be calculated as best it can with the information given. At minimum a Birth Year must be entered. Even if you don't know a person's birth year, you can always estimate until that information is available.
+## How do I delete a person?
 
-## How do I delete a Person?
+Leaving inactive records in the database is often preferable for historical record-keeping, but if deletion is necessary:
 
-Leaving old people in the database doesn't hurt anything and may help with historical record keeping. But if you have to...
-
-1. Filter for the desired person, and bring up their Person View.
-2. Select _"Delete this Record"_
-   > If this link doesn't appear, then you don't have permissions to delete records
-3. Confirm the deletion
+1. Find the person and open their Person View.
+2. Select _"Delete this Record"_.
+   > If this link does not appear, you do not have permission to delete records.
+3. Confirm the deletion.
 
 ## What are Custom Person Fields?
 
-Custom Person Fields is a powerful feature that allows you to add any fields that you need to use that do not come built-in with ChurchCRM. This feature allows you to, for example, add a Mentor to a person, or add an additional date (such as confirmation). The possibilities are endless.
+Custom Person Fields let you add information to person records beyond what ChurchCRM tracks by default. Examples include a mentor relationship, a confirmation date, a T-shirt size, or an emergency contact. See [Custom Fields](/user-guide/custom-fields) for instructions.
 
 Common custom fields include:
 - **Nickname / Preferred Name** - Track what members like to be called
-- **Baptism or Confirmation Date** - Record important spiritual milestones  
+- **Baptism or Confirmation Date** - Record important spiritual milestones
 - **T-Shirt Size** - Useful for event planning
 - **Emergency Contact** - Important for youth ministry and events
 - **Spiritual Gifts** - Track members' gifts for ministry placement
 
 ## How do I use Custom Person Fields?
 
-See the [Custom Fields](Custom-Fields) help topic for step-by-step instructions on creating and managing custom fields, including a detailed guide for adding a **Nickname** field.
+See the [Custom Fields](/user-guide/custom-fields) help topic for step-by-step instructions on creating and managing custom fields, including a detailed guide for adding a Nickname field.
 
-## How do I put a Person in the Cart?
+## How do I put a person in the Cart?
 
-See the [Cart](Cart) help topic.
+See the [Cart](/user-guide/cart) help topic.
 
-## How do I assign a Person to a Group?
+## How do I assign a person to a group?
 
-See the [Groups](Groups) help topic.
+See the [Groups](/user-guide/groups) help topic.
 
-## How do I assign a Property to a Person?
+## How do I assign a property to a person?
 
-See the [Properties](Properties) help topic.
+See the [Properties](/user-guide/properties) help topic.
 
-## How do I add a Note to a Person?
+## How do I add a note to a person?
 
-See the [Notes](Notes) help topic.
+See the [Notes](/user-guide/notes) help topic.
 
-## How do I track Finances of a Person?
+## How do I track finances for a person?
 
-See the [Finances](Finances) help topic.
+See the [Finances](/user-guide/finances) help topic.

@@ -37,6 +37,7 @@ Expert in Docusaurus 3.x documentation framework — the modern static site gene
 
 - **Deployment**: GitHub Pages via `.github/workflows/deploy.yml` — push to `main`, live in ~90 seconds. Do not modify the workflow.
 - **Sidebars**: Three fixed sidebars (`gettingStartedSidebar`, `userGuideSidebar`, `adminSidebar`). Always update `sidebars.ts` when adding pages.
+- **Deployment**: Site is live at https://docs.churchcrm.io — push to `main` and the GitHub Action deploys to `gh-pages` branch automatically.
 - **Styling**: Do not edit `src/css/custom.css` unless specifically asked.
 - **Images**: All screenshots go in `static/img/<section>/`. No images in `docs/`.
 - **Front matter**: `title` and `sidebar_position` are required on every page.

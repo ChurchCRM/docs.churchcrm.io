@@ -5,198 +5,89 @@ sidebar_position: 16
 
 # Reporting Issues
 
-**For comprehensive guidance, see: [Bug Reporting & Diagnostics Guide](Bug-Reporting-and-Diagnostics)**
+For comprehensive guidance, see the [Bug Reporting & Diagnostics Guide](/administration/bug-reporting-and-diagnostics).
 
 ---
 
-## 🚨 Best Way: Use ChurchCRM's Built-in Issue Reporter
+## Best Method: Use the Built-in Issue Reporter
 
-**For the fastest and most accurate support, report bugs directly from your ChurchCRM installation:**
+The fastest and most accurate way to report a bug is directly from your ChurchCRM installation.
 
 ### Step-by-Step Instructions
 
-1. **Log into your ChurchCRM instance**
-2. **Navigate to Support**
-   - Look for the "Support" menu or help icon (usually in the top navigation)
-3. **Select "Report an Issue"**
-   - This opens the built-in issue reporting tool
-4. **Fill out the form**
-   - Describe what happened
-   - Include steps to reproduce
-   - Add any relevant screenshots
-5. **Submit**
-   - The system automatically captures your technical environment
-   - Your report is sent to the development team
+1. Log in to your ChurchCRM instance.
+2. Navigate to **Support** in the top navigation menu.
+3. Select **Report an Issue** to open the built-in reporting tool.
+4. Fill out the form:
+   - Describe what happened.
+   - Include steps to reproduce the issue.
+   - Attach any relevant screenshots.
+5. Submit the form. The system automatically captures your technical environment and sends the report to the development team.
 
 ### What Gets Captured Automatically
 
-When you use the in-app reporter, we automatically collect:
+When you use the in-app reporter, the following information is collected automatically:
 
-- ✅ **ChurchCRM Version** - Exact version and build info
-- ✅ **Server Environment** - PHP version, database type, server OS
-- ✅ **Browser Information** - User agent, capabilities, screen size
-- ✅ **User Context** - Your role, permissions, current page
-- ✅ **System Configuration** - Relevant settings and modules enabled
-- ✅ **Error Logs** - Recent errors related to your session
+- ChurchCRM version (exact version and build)
+- Server environment (PHP version, database type, server OS)
+- Browser information (user agent, screen size)
+- User context (role, permissions, current page)
+- System configuration (relevant settings and enabled modules)
+- Recent error logs related to your session
 
-This information is crucial for debugging and helps us resolve issues much faster!
-
-## 📋 Alternative: GitHub Issues
-
-**Only use GitHub issues if you cannot access ChurchCRM:**
-
-### When to Use GitHub Instead
-
-- 🚫 **Cannot log in** - Login/authentication issues
-- 🚫 **Installation problems** - Before ChurchCRM is set up
-- 🚫 **Server completely down** - Cannot access the application
-- 📖 **Documentation issues** - Problems with guides or wiki
-- 💻 **Development setup** - Issues with local development environment
-
-### GitHub Issue Templates
-
-We have several templates to choose from:
-
-1. **[Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md)** - For software defects
-2. **[Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md)** - For new functionality
-3. **[Question](https://github.com/ChurchCRM/CRM/issues/new?template=question.md)** - For support questions
-
-## 💬 Other Support Options
-
-### Community Discussion
-- **[GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions)** - Ask questions, share ideas
-- **General questions** about setup, configuration, or usage
-- **Community solutions** and best practices
-
-### Documentation
-- **[ChurchCRM Wiki](https://github.com/ChurchCRM/CRM/wiki)** - Comprehensive guides
-- **Installation instructions**
-- **Configuration tutorials**
-- **Troubleshooting guides**
-
-## 🔍 Before Reporting
-
-### Quick Checks
-
-1. **Search existing issues** - Someone might have already reported it
-2. **Check the documentation** - The solution might already exist
-3. **Try in a different browser** - Rule out browser-specific issues
-4. **Clear browser cache** - Old cached files can cause problems
-
-### Information to Include
-
-If you must use GitHub issues, please include:
-
-- **Clear description** of what happened
-- **Steps to reproduce** the issue
-- **Expected vs actual behavior**
-- **Screenshots or error messages**
-- **ChurchCRM version** (found in About/System Info)
-- **Browser and device** you're using
-
-## 🚀 Quick Access
-
-| I want to... | Best Option |
-|---------------|-------------|
-| Report a bug | 🚨 [In-app Support → Report Issue](#step-by-step-instructions) |
-| Request a feature | 💡 [GitHub Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) |
-| Ask a question | 💬 [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) |
-| Report login issue | 🐛 [GitHub Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) |
-| Find documentation | 📚 [ChurchCRM Wiki](https://github.com/ChurchCRM/CRM/wiki) |
+This information is essential for diagnosis and significantly speeds up issue resolution.
 
 ---
 
-**Thank you for helping make ChurchCRM better! Your reports help us improve the software for everyone.** 🙏
+## Alternative: GitHub Issues
 
-1. **Log into your ChurchCRM instance**
-2. **Navigate to Support**
-   - Look for the "Support" menu or help icon (usually in the top navigation)
-3. **Select "Report an Issue"**
-   - This opens the built-in issue reporting tool
-4. **Fill out the form**
-   - Describe what happened
-   - Include steps to reproduce
-   - Add any relevant screenshots
-5. **Submit**
-   - The system automatically captures your technical environment
-   - Your report is sent to the development team
-
-### What Gets Captured Automatically
-
-When you use the in-app reporter, we automatically collect:
-
-- ✅ **ChurchCRM Version** - Exact version and build info
-- ✅ **Server Environment** - PHP version, database type, server OS
-- ✅ **Browser Information** - User agent, capabilities, screen size
-- ✅ **User Context** - Your role, permissions, current page
-- ✅ **System Configuration** - Relevant settings and modules enabled
-- ✅ **Error Logs** - Recent errors related to your session
-
-This information is crucial for debugging and helps us resolve issues much faster!
-
-## 📋 Alternative: GitHub Issues
-
-**Only use GitHub issues if you cannot access ChurchCRM:**
+Use GitHub issues only if you cannot access ChurchCRM directly.
 
 ### When to Use GitHub Instead
 
-- 🚫 **Cannot log in** - Login/authentication issues
-- 🚫 **Installation problems** - Before ChurchCRM is set up
-- 🚫 **Server completely down** - Cannot access the application
-- 📖 **Documentation issues** - Problems with guides or wiki
-- 💻 **Development setup** - Issues with local development environment
+- You cannot log in (authentication issues)
+- ChurchCRM is not yet installed
+- The server is completely unreachable
+- You are reporting a documentation problem
+- You are reporting a development environment issue
 
 ### GitHub Issue Templates
 
-We have several templates to choose from:
-
-1. **[Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md)** - For software defects
-2. **[Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md)** - For new functionality
-3. **[Question](https://github.com/ChurchCRM/CRM/issues/new?template=question.md)** - For support questions
-
-## 💬 Other Support Options
-
-### Community Discussion
-- **[GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions)** - Ask questions, share ideas
-- **General questions** about setup, configuration, or usage
-- **Community solutions** and best practices
-
-### Documentation
-- **[ChurchCRM Wiki](https://github.com/ChurchCRM/CRM/wiki)** - Comprehensive guides
-- **Installation instructions**
-- **Configuration tutorials**
-- **Troubleshooting guides**
-
-## 🔍 Before Reporting
-
-### Quick Checks
-
-1. **Search existing issues** - Someone might have already reported it
-2. **Check the documentation** - The solution might already exist
-3. **Try in a different browser** - Rule out browser-specific issues
-4. **Clear browser cache** - Old cached files can cause problems
-
-### Information to Include
-
-If you must use GitHub issues, please include:
-
-- **Clear description** of what happened
-- **Steps to reproduce** the issue
-- **Expected vs actual behavior**
-- **Screenshots or error messages**
-- **ChurchCRM version** (found in About/System Info)
-- **Browser and device** you're using
-
-## 🚀 Quick Access
-
-| I want to... | Best Option |
-|---------------|-------------|
-| Report a bug | 🚨 [In-app Support → Report Issue](#step-by-step-instructions) |
-| Request a feature | 💡 [GitHub Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) |
-| Ask a question | 💬 [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) |
-| Report login issue | 🐛 [GitHub Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) |
-| Find documentation | 📚 [ChurchCRM Wiki](https://github.com/ChurchCRM/CRM/wiki) |
+- [Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) — For software defects
+- [Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) — For new functionality
+- [Question](https://github.com/ChurchCRM/CRM/issues/new?template=question.md) — For support questions
 
 ---
 
-**Thank you for helping make ChurchCRM better! Your reports help us improve the software for everyone.** 🙏
+## Community Support
+
+- [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) — Ask questions, share ideas, and find community solutions
+
+---
+
+## Before Reporting
+
+1. Search existing issues — your problem may have already been reported.
+2. Check the documentation — the answer may already be available.
+3. Try in a different browser — to rule out browser-specific issues.
+4. Clear your browser cache — stale cached files can cause unexpected behavior.
+
+### Information to Include When Reporting via GitHub
+
+- A clear description of what happened
+- Steps to reproduce the issue
+- Expected versus actual behavior
+- Screenshots or error messages
+- ChurchCRM version (found in **About** or **System Info**)
+- Browser and device
+
+---
+
+## Quick Reference
+
+| Goal | Best Option |
+|------|-------------|
+| Report a bug | [In-app Support → Report Issue](#step-by-step-instructions) |
+| Request a feature | [GitHub Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) |
+| Ask a question | [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) |
+| Report a login issue | [GitHub Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) |

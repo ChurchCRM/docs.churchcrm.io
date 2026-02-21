@@ -33,8 +33,7 @@ ChurchCRM requires **PHP 8.2 or higher** as the absolute minimum. This requireme
 
 **Installation:**
 - **Shared Hosting (cPanel):** Select PHP 8.2 or higher from your hosting control panel
-- **Self-Hosted Linux:** Follow the steps at [Install Self Hosted Linux](Install---Self-Hosted-Linux) or [Self-Hosted on RockyLinux](Self‐Hosted-on-RockyLinux)
-- **Local Development:** Use [Docker Development Environment](Docker) or [GitHub Codespaces](Development)
+- **Self-Hosted Linux:** Follow the steps at [Self-Hosted on Linux](/installation/self-hosted-linux) or [Rocky Linux](/installation/rocky-linux)
 
 **Tested Versions:**
 The application is tested and verified to work with the following PHP versions:
@@ -208,9 +207,7 @@ System should support UTF-8 locales for proper text handling
 - **Recommended:** 60+ seconds for data imports
 - Large reports may need higher values
 
-**Configuration:** `max_execution_time` in php.ini
-
-See [PHP Max Execution Time](PHP-Max-Execution-Time) for detailed tuning guidance.
+**Configuration:** `max_execution_time` in `php.ini`
 
 ### Hosting Environment Considerations
 

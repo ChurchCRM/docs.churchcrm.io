@@ -5,26 +5,24 @@ sidebar_position: 1
 
 # Administration
 
-The administration menu is accessible by clicking the "Admin" left-nav menu (see screenshot).
+The Administration section covers everything needed to manage a ChurchCRM installation. Access these settings through the **Admin** menu in the left navigation.
 
 ![Admin Menu](/img/Setup/admin-left-nav-1.png)
 
-## How do I add new Users?
+## In This Section
 
-See the [Users](Users) help topic.
-
-## How do I edit Users?
-
-See the [Users](Users) help topic.
-
-## What is the default password assigned to new Users?
-
-See the [Users](Users) help topic.
-
-## How do I configure automatic database backups?
-
-See the [Backup / Restore](Backup-Restore) page.
-
-## Upgrade & Maintenance
-
-- For manual upgrade and maintenance procedures (admin-only), see: [How to Manually Upgrade ChurchCRM](How-to-Manually-Upgrade-ChurchCRM.md)
+- [User Management](/administration/users) — Add, edit, and configure user accounts and permissions
+- [Security](/administration/security) — HTTPS requirements, role-based access control, and granular permissions
+- [Secret Keys](/administration/secret-keys) — Configure the encryption key required for two-factor authentication
+- [Localization](/administration/localization) — Set the application language
+- [Backup & Restore](/administration/backup-restore) — Configure automatic and manual database backups
+- [Upgrade Guide](/administration/upgrade) — Upgrade ChurchCRM to the latest version
+- [Rollback](/administration/rollback) — Restore a previous version or database backup
+- [File System Permissions](/administration/file-system-permissions) — Set correct permissions for your web server
+- [Reset Password](/administration/reset-password) — Recover access when the admin password is lost
+- [Troubleshooting](/administration/troubleshooting) — Diagnose and resolve common problems
+- [FAQs](/administration/faqs) — Frequently asked questions
+- [500 Error](/administration/error) — Resolve internal server errors
+- [Logging & Diagnostics](/administration/logging-and-diagnostics) — Access and interpret application logs
+- [Bug Reporting & Diagnostics](/administration/bug-reporting-and-diagnostics) — Report issues with useful diagnostic information
+- [Reporting Issues](/administration/reporting-issues) — How to report bugs and request support

@@ -1,6 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+// @ts-ignore — no types shipped with this plugin
+const localSearch = require('@easyops-cn/docusaurus-search-local');
 
 const config: Config = {
   title: 'ChurchCRM Docs',
@@ -22,6 +24,19 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  plugins: [
+    [
+      localSearch,
+      {
+        hashed: true,
+        language: ['en'],
+        docsRouteBasePath: '/',
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
 
   presets: [
     [

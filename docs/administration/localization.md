@@ -3,33 +3,10 @@ title: Localization
 sidebar_position: 5
 ---
 
-# Localization Overview
+# Localization
 
-ChurchCRM supports 45+ languages. Start here to find the right guide for your needs:
+ChurchCRM supports more than 45 languages. The application language is configured in **Admin** → **General Settings** → **Localization**.
 
----
+Select the appropriate language from the dropdown and save the settings. The interface will switch to the selected language immediately.
 
-## �️ For System Administrators
-- [Server Locale Requirements](Server-Locale-Requirements):
-  - **Critical**: Server must have locales installed for translations to work
-  - How to check and install system locales (Debian, Ubuntu, Rocky Linux, RHEL)
-  - Troubleshooting translation issues
-  - Docker and shared hosting considerations
-
-## 👥 For Translators & Contributors
-- [Localization Guide for Translators & Contributors](Localization-For-Translators):
-  - How to join the POEditor project
-  - How to translate, review, and contribute
-  - Using AI for translation batches
-  - Best practices for high-quality translations
-
-## 🛠️ For Developers
-- [Localization Guide for Developers](Localization-For-Developers):
-  - Technical setup and integration
-  - Locale management scripts
-  - Adding new locales
-  - Troubleshooting and advanced configuration
-
----
-
-For the full workflow and technical background, see the [Localization Management](Localization-Management) wiki page.
+> **Note:** Translations are community-contributed and may be incomplete for some languages. If you encounter untranslated strings, the text will fall back to English.

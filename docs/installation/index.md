@@ -5,40 +5,31 @@ sidebar_position: 1
 
 # Installation
 
-## 👉 Official Installation Guide
+## Where to Start
 
-**[Start Here: Installation Guide](https://churchcrm.io/install.html)** - Complete step-by-step instructions on the official website
+The official ChurchCRM website provides a complete, step-by-step installation guide covering the most common hosting scenarios:
 
-The website guide includes three production installation methods:
-- **Softaculous** - One-click installation (easiest)
-- **cPanel Manual** - Using cPanel tools  
-- **Direct Download** - Any LAMP hosting
+**[Official Installation Guide](https://churchcrm.io/install.html)** — Covers Softaculous (one-click), cPanel manual, and direct download methods.
+
+A video walkthrough is also available: [Installation Tutorial](https://www.youtube.com/watch?v=SMjZpo3aO5Q)
 
 ## System Requirements
 
-For complete system requirements including PHP extensions, database versions, and file permissions, see:
-- **[ChurchCRM System Requirements](ChurchCRM-Application-Platform-Prerequisites)**
+Before installing, confirm your server meets the minimum requirements:
 
-## Production Installation Guides
+- **[System Requirements](/installation/system-requirements)** — PHP version, required extensions, database version, and file permissions
 
-For specific production hosting environments with LAMP stack:
+## Installation Guides
 
-* **[Self Hosting on Linux](Self-Hosting-on-Linux)** - Rocky Linux 8 and Linux VPS guides (recommended)
-* **[Installing ChurchCRM in cPanel shared hosting](Installing-ChurchCRM-in-cPanel-shared-hosting)** - Detailed cPanel hosting guide
-* **[Installing on Azure](Installing-LAMP-and-ChurchCRM-on-Azure)** - Microsoft Azure cloud setup (Ubuntu/LAMP)
+Detailed guides for specific hosting environments:
 
-## Local Development & Testing
+- **[Self-Hosted on Linux](/installation/self-hosted-linux)** — Linux VPS setup; includes links to Rocky Linux and Ubuntu guides
+- **[cPanel Shared Hosting](/installation/cpanel-shared-hosting)** — Shared hosting using cPanel tools
+- **[Azure](/installation/azure)** — Microsoft Azure cloud setup with Ubuntu and Apache
 
-For development and testing environments (NOT production):
+## After Installation
 
-* **[Docker Development Environment](Docker)** - Container-based development setup (recommended, works on Windows/Mac/Linux)
-* **[Development Setup Guide](Development)** - GitHub Codespaces and VS Code Dev Containers
+Once the application is running:
 
-* Test the system before importing real data: [Importing Demo Data via Admin Pages](Importing-Demo-Data.md).
-
-> **Note:** For local testing on Windows/Mac, use Docker Desktop. XAMPP and WAMP are not officially supported.
-
-## Additional Resources
-
-* **[FAQs](FAQs)** - Frequently asked questions
-* **[Video Tutorial](https://www.youtube.com/watch?v=SMjZpo3aO5Q)** - Installation walkthrough
+- **[First Run Configuration](/getting-started/first-run)** — Configure your church details and initial settings
+- **[FAQs](/administration/faqs)** — Frequently asked questions
