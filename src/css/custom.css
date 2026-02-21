@@ -1,0 +1,44 @@
+/**
+ * ChurchCRM Docs — Custom Theme
+ * Overrides Docusaurus defaults with ChurchCRM brand colors.
+ */
+
+:root {
+  --ifm-color-primary: #2e6da4;
+  --ifm-color-primary-dark: #2962a0;
+  --ifm-color-primary-darker: #245a96;
+  --ifm-color-primary-darkest: #1a4a7c;
+  --ifm-color-primary-light: #3478b0;
+  --ifm-color-primary-lighter: #3a80b8;
+  --ifm-color-primary-lightest: #4e93c8;
+
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(46, 109, 164, 0.1);
+  --ifm-navbar-height: 56px;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #6aaddb;
+  --ifm-color-primary-dark: #55a2d6;
+  --ifm-color-primary-darker: #4a9dd3;
+  --ifm-color-primary-darkest: #2e8dc8;
+  --ifm-color-primary-light: #7fb8e0;
+  --ifm-color-primary-lighter: #8abde2;
+  --ifm-color-primary-lightest: #a9d0eb;
+
+  --docusaurus-highlighted-code-line-bg: rgba(106, 173, 219, 0.15);
+}
+
+.hero--primary {
+  background: linear-gradient(135deg, #1a4a7c 0%, #2e6da4 60%, #3a80b8 100%);
+}
+
+.markdown {
+  font-size: 15.5px;
+  line-height: 1.75;
+}
+
+code {
+  font-size: 87%;
+  border-radius: 4px;
+}
