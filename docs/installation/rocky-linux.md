@@ -86,15 +86,15 @@ sudo systmctl enable --now httpd
 
 ### Running from a Downloaded Release Artifact
 
-(e.g. a zip file such as: [https://github.com/ChurchCRM/CRM/releases/download/5.7.0/ChurchCRM-5.7.0.zip](https://github.com/ChurchCRM/CRM/releases/download/5.7.0/ChurchCRM-5.7.0.zip))
+Download the latest release from [GitHub Releases](https://github.com/ChurchCRM/CRM/releases/latest) (e.g. `ChurchCRM-6.0.0.zip` or newer).
 
 * This zip file contains a churchcrm top-level dir and will need to be unzipped in an appropriate area within your web server's Document root.
 * For this example we will put it in `/var/www/html` and expect to access that churchcrm subdirectory at: [https://YourSiteName/churchcrm](https://YourSiteName/churchcrm)
-* Run the following commands
+* Run the following commands (replace `ChurchCRM-X.Y.Z.zip` with the actual file you downloaded):
 
 ```sh
 sudo mkdir /var/www/html/churchcrm
-sudo unzip -d /var/www/html ChurchCRM-5.7.0.zip
+sudo unzip -d /var/www/html ChurchCRM-X.Y.Z.zip
 sudo chown -R apache:apache /var/www/html/churchcrm
 ```
 

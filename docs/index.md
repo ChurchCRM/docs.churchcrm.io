@@ -7,9 +7,13 @@ sidebar_position: 1
 
 ChurchCRM is a free, open-source, web-based church management system that helps congregations manage people, groups, events, and finances. This documentation covers installation, administration, and day-to-day use.
 
+:::tip Primary documentation
+If you're reading this on the **GitHub Wiki**, you've reached the right place — **docs.churchcrm.io** is now the primary documentation site. All user and administrator manuals live here.
+:::
+
 ---
 
-## Installing ChurchCRM
+## I'm installing ChurchCRM
 
 For administrators setting up ChurchCRM for the first time.
 
@@ -22,7 +26,7 @@ For administrators setting up ChurchCRM for the first time.
 
 ---
 
-## Using ChurchCRM
+## I'm a staff user
 
 For church staff and end users working with the application day-to-day.
 
@@ -35,7 +39,7 @@ For church staff and end users working with the application day-to-day.
 
 ---
 
-## Administration
+## I'm the admin
 
 For ongoing system management and maintenance.
 
@@ -46,6 +50,22 @@ For ongoing system management and maintenance.
 - [Users](/administration/users) — Manage user accounts and permissions
 - [Troubleshooting](/administration/troubleshooting) — Common issues and solutions
 - [FAQs](/administration/faqs) — Frequently asked questions
+
+---
+
+## Quick Reference
+
+| I need to… | Go to |
+|------------|-------|
+| Install ChurchCRM | [Installation](/installation) |
+| Add a person | [Persons](/user-guide/persons) |
+| Add a family | [Families](/user-guide/families) |
+| Create a group | [Groups](/user-guide/groups) |
+| Record attendance | [Events](/user-guide/events) |
+| Manage donations | [Finances](/user-guide/finances) |
+| Upgrade ChurchCRM | [Upgrade](/administration/upgrade) |
+| Back up my data | [Backup & Restore](/administration/backup-restore) |
+| Fix a problem | [Troubleshooting](/administration/troubleshooting) |
 
 ---
 

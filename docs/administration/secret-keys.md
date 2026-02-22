@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Secret Keys in Config.php
 
-Beginning with the 4.x releases, ChurchCRM supports 2 Factor Authentication (2FA) using Timed One-Time Passwords (TOTP).
+ChurchCRM supports 2 Factor Authentication (2FA) using Timed One-Time Passwords (TOTP).
 
 These TOTP codes are generated using an app like Google Authenticator / Microsoft Authenticator, or similar.
 

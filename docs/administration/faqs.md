@@ -21,7 +21,7 @@ As the default password suggests, **you should change this as immediately after 
 
 ## I get a message about "Secret Keys missing from Config.php"
 
-Two factor authentication (2FA) was added in 4.x and requires a manual change to the `Config.php` file to clear this message. The system will still operate normally if you ignore it, but you won't be able to implement 2FA without making the required changes. See the [Secret Keys in Config.php documentation](https://github.com/ChurchCRM/CRM/wiki/Secret-Keys-in-Config.php) for more details.
+Two factor authentication (2FA) requires a manual change to the `Config.php` file to clear this message. The system will still operate normally if you ignore it, but you won't be able to implement 2FA without making the required changes. See [Secret Keys](/administration/secret-keys) for more details.
 
 ## How do I set up map features?
 

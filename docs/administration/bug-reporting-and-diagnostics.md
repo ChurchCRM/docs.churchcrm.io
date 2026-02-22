@@ -59,7 +59,7 @@ If you need to report via GitHub or can't access the in-app tool, gather this in
 ### Your Setup
 
 ```
-- ChurchCRM Version: [e.g., 5.4.3]
+- ChurchCRM Version: [e.g., 6.0.0]
 - Installation Type: [Shared Hosting / Self-Hosted Linux / Docker / Other]
 - Hosting Provider: [e.g., Bluehost, AWS, etc. - if applicable]
 
@@ -164,7 +164,7 @@ Copy and fill in:
 [What should have happened instead]
 
 ## Environment
-- ChurchCRM Version: [e.g., 5.4.3]
+- ChurchCRM Version: [e.g., 6.0.0]
 - Installation: [Shared Hosting / Self-Hosted / Docker]
 - Hosting Provider: [if applicable]
 - PHP Version: [e.g., 8.2]

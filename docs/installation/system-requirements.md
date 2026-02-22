@@ -7,21 +7,26 @@ sidebar_position: 2
 
 This is the **single source of truth** for all ChurchCRM system requirements. All installation and deployment documentation should reference this page.
 
+:::tip Primary documentation
+If you're reading this on the **GitHub Wiki**, the primary documentation is at **docs.churchcrm.io**. All user and administrator manuals live there.
+:::
+
 ChurchCRM has specific platform prerequisites, and a built-in mechanism to ensure that all prerequisites are met. If there are any unmet prerequisites, a message will be displayed during setup and a notification will be displayed during runtime.
 
 Prerequisites are validated at every page load, so if the hosting environment is changed to an incomplete / unsupported model, a notification will appear.
 
 Validation occurs in the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/3872c9a5aee37741a58e3c6f766328ecc91d8434/src/ChurchCRM/Service/AppIntegrityService.php#L153).
 
-## Quick Reference
+## Authoritative Requirements Table
 
-| Component | Requirement | Notes |
-|-----------|-------------|-------|
-| **PHP** | 8.2 or higher | Required for all core functionality |
-| **Web Server** | Apache 2.4+ with mod_rewrite | nginx may work but not officially supported |
-| **Database** | MySQL 8.0.11+ or MariaDB 10.5+ | Required for modern schema features |
-| **Memory** | 256MB+ PHP memory limit | 512MB+ recommended for larger congregations |
-| **Storage** | 500MB+ available space | Depends on attachments and data size |
+| Component | Minimum Version | Recommended | Notes |
+|-----------|-----------------|-------------|-------|
+| **PHP** | 8.2 | 8.3 or 8.4 | Required for all core functionality |
+| **Apache** | 2.4 with mod_rewrite | 2.4+ | nginx may work but is not officially supported |
+| **MySQL** | 8.0.11 | 8.0+ | Or MariaDB 10.5+ |
+| **MariaDB** | 10.5 | 10.6+ | Alternative to MySQL |
+| **PHP memory_limit** | 256MB | 512MB+ | 1GB+ for larger congregations |
+| **Storage** | 500MB | 1GB+ | Depends on attachments and data size |
 
 ## Detailed Prerequisites
 
