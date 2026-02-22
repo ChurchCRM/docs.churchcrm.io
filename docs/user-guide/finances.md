@@ -7,7 +7,29 @@ sidebar_position: 15
 
 ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gifts.
 
-> **Note:** Only users with Finance permissions can access financial features. See [Users](Users) for permission details.
+> **Note:** Only users with Finance permissions can access financial features. See [Users](/administration/users) for permission details.
+
+---
+
+## Step-by-step: Managing Donations
+
+### Recording a Donation (Cash/Check)
+
+1. Open the [Family](/user-guide/families) record for the donor.
+2. Scroll to the bottom and click **Add a new payment**.
+3. Enter **Date**, **Amount**, **Fund**, and **Method** (Cash, Check, etc.).
+4. Click **Save**.
+
+### Creating a Deposit Slip
+
+1. Go to **Finance** → **Deposit** → **New Deposit Slip**.
+2. Enter each donation for the batch.
+3. Click **Generate PDF** to print a bank deposit form.
+4. When ready for the bank, click **Close deposit slip**.
+
+See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
+
+---
 
 ## Key Concepts
 

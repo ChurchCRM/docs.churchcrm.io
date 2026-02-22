@@ -19,6 +19,17 @@ Once an event is created, you can:
 
 ---
 
+## Step-by-step: Recording Attendance
+
+1. **Create an event type** (if needed): **Events** → **List Event Types** → **Add Event Type**.
+2. **Create an event**: **Events** → **Add Church Event** — choose type, date, time, and save.
+3. **Add people to the Cart**: Search or browse people, click **Add to Cart**.
+4. **Record attendance**: **Cart** → **Empty Cart to Event** → select the event → **Add Cart to Event**.
+
+Attendance is saved automatically. Use **Data/Reports** → **Event Attendance Reports** to view attendance history.
+
+---
+
 ## Creating an Event Type
 
 Event types behave like templates which define the parameters for events you will create in the future. Event types allow you to set details such as the recurrence frequency and the default start time an event can have.

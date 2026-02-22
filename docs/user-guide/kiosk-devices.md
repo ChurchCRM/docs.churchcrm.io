@@ -408,6 +408,4 @@ These endpoints are used by the kiosk devices themselves:
 
 ## Related Documentation
 
-- [Event Management](Events.md)
-- [Attendance Tracking](Attendance.md)
-- [Sunday School Setup](SundaySchool.md)
+- [Events](/user-guide/events)

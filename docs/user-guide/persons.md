@@ -9,6 +9,22 @@ A Person record represents an individual in your congregation. Person records ca
 
 > **Tip:** Every person should belong to a family, even if they are a "family of one."
 
+---
+
+## Step-by-step: Adding a Person
+
+1. From the left menu, click **People** → **Add New Person**.
+2. Enter **First Name** and **Last Name**.
+3. Select or create a **Family** (required).
+4. Enter **Classification** (Member, Guest, etc.).
+5. Add address, phone, email (or leave blank to inherit from family).
+6. Add birth date (year required; age is calculated automatically).
+7. Click **Save** or **Save and Add** to add another person.
+
+> **Tip:** To add several people at once, use the [Family Editor](/user-guide/families) — you can add up to 10 family members in one form.
+
+---
+
 ## How do I find a specific person?
 
 In the left menu, find the search box just above the _"Dashboard"_ heading. Enter a search string — results will begin appearing as you type, showing all matches by first or last name.

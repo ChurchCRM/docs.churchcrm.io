@@ -28,6 +28,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'getting-started/first-run',
+        'getting-started/first-week',
         'getting-started/features-overview',
       ],
     },
@@ -98,8 +99,17 @@ const sidebars: SidebarsConfig = {
         'administration/users',
         'administration/security',
         'administration/secret-keys',
+        'administration/email-setup',
         'administration/localization',
         'administration/reset-password',
+      ],
+    },
+    {
+      type: 'category',
+      label: '⚙️ Configuration',
+      items: [
+        'administration/google-maps-setup',
+        'administration/server-locale',
       ],
     },
     {

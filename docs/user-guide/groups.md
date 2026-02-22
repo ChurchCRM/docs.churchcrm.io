@@ -5,14 +5,34 @@ sidebar_position: 10
 
 # Groups
 
-A Group is a collection of [People](Persons) who occupy Roles within the Group. Groups can represent organizational, educational, and social constructs within your church.
+A Group is a collection of [People](/user-guide/persons) who occupy Roles within the Group. Groups can represent organizational, educational, and social constructs within your church.
 
 **Example:** A Group called "Friday Night Bible Study" might have Roles like Leader, Assistant Leader, and Member. If 16 people are assigned to this group, 13 may be Members, 2 may be Assistant Leaders, and 1 may be the Leader.
+
+---
+
+## Step-by-step: Creating a Group
+
+1. From the top menu, click **Groups** → **Add New Group**.
+2. Enter **Group Name** (e.g., "3rd Grade Sunday School").
+3. Enter **Description** (optional).
+4. Choose **Group Type** (e.g., Sunday School, Small Group, Committee).
+5. A default "Member" role is created — add more roles if needed (Leader, Teacher, etc.).
+6. Click **Save**.
+
+### Adding People to a Group
+
+1. Search for people or go to **People** → **View All Persons**.
+2. Add desired people to your [Cart](/user-guide/cart).
+3. Go to **Cart** → **Empty Cart to Group**.
+4. Select the group and click **Add to Group**.
+
+---
 
 ## Common Uses for Groups
 - Bible study classes
 - Ministry teams
-- [Sunday School](Sunday-School) classes
+- [Sunday School](/user-guide/sunday-school) classes
 - Volunteer teams
 - Committees
 - Small groups
@@ -105,7 +125,7 @@ Group-Specific Properties is a powerful feature that allows you to add any field
 
 ### How do I use Group-Specific Properties?
 
-See the [Custom Fields](https://github.com/ChurchCRM/CRM/wiki/Custom-Fields) help topic.
+See the [Custom Fields](/user-guide/custom-fields) help topic.
 
 ### How do I add People to a Group?
 
@@ -137,8 +157,8 @@ All People will be added to the Group in that group's Default Role.
 
 Adding group members to the cart is an easy way to add a group of individuals to the cart. Right now, the cart can be used to add individuals to a group. However, in future releases, the cart will be able to make group mailing lists and other features.
 
-For more information, see the [Cart](Cart) help topic.
+For more information, see the [Cart](/user-guide/cart) help topic.
 
 ### How do I assign a Property to a Group?
 
-See the [Properties](Properties) help topic.
+See the [Properties](/user-guide/properties) help topic.

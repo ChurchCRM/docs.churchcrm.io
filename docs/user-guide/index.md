@@ -19,7 +19,7 @@ New to ChurchCRM? Here's how to get started:
 4. **Set up classifications** → [Classifications](/user-guide/classifications)
 5. **Start tracking donations** → [Finances](/user-guide/finances)
 
-> **Tip:** Use the [Search](/user-guide/search) feature (press `?`) to quickly find any person, family, or group.
+> **Tip:** Follow [Your First Week with ChurchCRM](/getting-started/first-week) for a day-by-day setup guide. Use the [Search](/user-guide/search) feature (press `?`) to quickly find any person, family, or group.
 
 ---
 

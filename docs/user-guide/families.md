@@ -8,10 +8,26 @@ sidebar_position: 3
 A Family is a group of Person records. Person records are grouped into Families for three reasons:
 
 * To represent the social constructs of the Family within the church
-* To share information common to all members of the family -- things like address, phone number, email address, etc.
-* To support the church financially as a single unit ("pledge unit").
+* To share information common to all members of the family — address, phone, email, etc.
+* To support the church financially as a single unit ("pledge unit")
 
 Every Person should belong to a family.
+
+---
+
+## Step-by-step: Adding a Family
+
+1. From the top menu, select **People** → **Add New Family**.
+2. Enter the **Family Name**.
+3. Enter the shared **Address**, **City**, **State**, **ZIP**, **Country**.
+4. Enter **Home Phone** and **Family Email**.
+5. Add family members (up to 10): enter first name for each; last name only if different from family.
+6. Set **Classification** for each person (Member, Guest, etc.).
+7. Click **Save**.
+
+> **Tip:** Family members share address, phone, and email. Enter them once on the family record — individual persons inherit them unless you override on the person record.
+
+---
 
 ## How do I add a new Family?
 

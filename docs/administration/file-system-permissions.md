@@ -13,7 +13,7 @@ The development team here at ChurchCRM do our best to make the installation proc
 
 ***
 
-### [Just show me the solution](https://github.com/ChurchCRM/CRM/wiki/File-System-Permissions#the-tldr-version)
+### [Just show me the solution](#the-tldr-version)
 
 **You:** *Yeh, yeh, yeh...just show me the magic sauce!*
 
@@ -35,7 +35,7 @@ This document endeavours to outline the process of:
 
 # 1. Web Server Runtime User/Group
 
-**NOTE: If you are using a shared hosting provider, skip section 1 and 2! [Go straight to part 3](https://github.com/ChurchCRM/CRM/wiki/File-System-Permissions#3-setting-correct-permissions).**
+**NOTE: If you are using a shared hosting provider, skip section 1 and 2! [Go straight to part 3](#3-setting-correct-permissions).**
 
 All processes on a modern operating systems run as a particular user. This allows administrators to limit the access a process has based on the user and associated groups the process runs as. This is particularly important for exposed services like web servers.
 
@@ -65,7 +65,7 @@ The usage is pretty simple `groups username` which will output a line `username 
 
 # 2. Setting the Correct Ownership and Group
 
-**NOTE: If you are using a shared hosting provider, skip section 1 and 2! [Go straight to part 3](https://github.com/ChurchCRM/CRM/wiki/File-System-Permissions#3-setting-correct-permissions).**
+**NOTE: If you are using a shared hosting provider, skip section 1 and 2! [Go straight to part 3](#3-setting-correct-permissions).**
 
 Using the details from 1.1 and 1.2, we now have the information we need to set up the file system for ChurchCRM.
 
