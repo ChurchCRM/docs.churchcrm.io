@@ -36,6 +36,12 @@ const config: Config = {
         explicitSearchResultPath: true,
       },
     ],
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-4F7K8Z3T5J',
+      },
+    ],
   ],
 
   presets: [
