@@ -3,375 +3,337 @@ title: Kiosk Devices
 sidebar_position: 14
 ---
 
-# Kiosk Manager Guide
+# Kiosk Manager — Complete Guide
 
-The Kiosk Manager allows you to set up self-service kiosk devices for event check-in, attendance tracking, and other church activities. This guide covers how to register, configure, and manage kiosk devices.
+ChurchCRM's **Kiosk Manager** lets you run self-service check-in on tablets or kiosks for events, Sunday School, and other activities. This guide covers setup, daily use, notifications, and troubleshooting.
 
-## Overview
+---
 
-Kiosks are dedicated devices (tablets, computers, or touch screens) that can be placed in your church lobby or classrooms to allow members to check in to events, Sunday school classes, or other activities without requiring staff assistance.
+## Table of contents
 
-<img width="863" height="1188" alt="image" src="https://github.com/user-attachments/assets/456d1ca9-4784-4e41-b436-37c91a9d97d5" />
+- [At a glance](#at-a-glance)
+- [Quick start (4 steps)](#quick-start-4-steps)
+- [How it works](#how-it-works)
+- [Features overview](#features-overview)
+- [Prerequisites](#prerequisites)
+- [Registering and assigning a kiosk](#registering-and-assigning-a-kiosk)
+- [Sunday School check-in view](#sunday-school-check-in-view)
+- [Parent alerts (notifications)](#parent-alerts-notifications)
+- [Managing kiosks](#managing-kiosks)
+- [Device setup and best practices](#device-setup-and-best-practices)
+- [Troubleshooting](#troubleshooting)
+- [API reference](#api-reference)
+- [Related docs](#related-documentation)
 
+---
 
-### Key Features
+## At a glance
 
-- **Two-column tablet-optimized layout** - "Waiting to Check In" and "Checked In" sections
-- **Student age display** - Shows each student's age when birth year is available
-- **Birthday recognition** - Highlights students with upcoming, recent, or today's birthdays
-- **Parent Alert** - Teachers can send notifications to parents via email, SMS, or projector
-- **Checkout All** - Bulk checkout all students at end of class
-- **Photo support** - Displays student photos or gender-based icons
+| What | Details |
+|------|---------|
+| **URL (device)** | `https://your-churchcrm-url/kiosk/` |
+| **URL (admin)** | **Admin** → **Kiosk Manager** or `https://your-churchcrm-url/kiosk/admin` |
+| **Registration window** | 30 seconds (enable in Kiosk Manager) |
+| **Who can manage** | Administrators only |
+| **Assignment** | One event per kiosk; event must have a **group** linked |
+| **Heartbeat** | Device polls server periodically for commands (reload, identify) |
+
+---
+
+## Quick start (4 steps)
+
+1. **Create an event with a group**  
+   **Events** → **Add Church Event** → set **Group** to the class/roster. Save.  
+   (Only **future** events appear for kiosk assignment.)
+
+2. **Enable registration**  
+   **Admin** → **Kiosk Manager** → turn **Enable New Kiosk Registration** **On**. You have 30 seconds.
+
+3. **Register the device**  
+   On the tablet/kiosk, open a browser and go to `https://your-churchcrm-url/kiosk/`. The device registers and shows "Awaiting Acceptance."
+
+4. **Accept and assign**  
+   In Kiosk Manager, find the new kiosk, click **Accept**, then in **Assignment** choose your event. The kiosk will show the check-in screen for that event’s group.
+
+---
+
+## How it works
+
+1. **Registration** — A device visits the kiosk URL while registration is enabled and gets a unique **Kiosk Name** and a cookie. No login is required on the device.
+2. **Acceptance** — An admin accepts the device in Kiosk Manager so it can receive an assignment.
+3. **Assignment** — The admin assigns the kiosk to one **event**. The event must have a **group**; the kiosk shows that group’s members for check-in.
+4. **Check-in** — On the kiosk, teachers (or volunteers) tap to check in/out students. Attendance is stored for the event.
+5. **Parent alerts** — For checked-in students, teachers can trigger a notification (email, SMS, or OpenLP) to parents.
+
+---
+
+## Features overview
+
+| Feature | Description |
+|--------|-------------|
+| **Two-column layout** | "Waiting to Check In" (left) and "Checked In" (right); tablet-optimized. |
+| **Student cards** | Photo (or gender icon), name, age, check-in button; optional birthday icon. |
+| **Birthday recognition** | Highlights today’s birthdays, upcoming (14 days), and recent (14 days). |
+| **Parent Alert** | One-tap notification to parents (email, SMS, and/or OpenLP) for pickup/alert. |
+| **Checkout All** | One tap to check out everyone in the class. |
+| **No login on device** | Kiosk uses a cookie; no ChurchCRM user login on the tablet. |
+| **Reload / Identify** | Admin can force reload or show an ID message on the kiosk screen. |
+| **Heartbeat** | Device polls the server so it can receive reload/identify commands. |
+
+---
 
 ## Prerequisites
 
-Before setting up kiosks, ensure you have:
+Before setting up kiosks:
 
-1. **Administrator access** to ChurchCRM
-2. **At least one future event** created in the system (kiosks can only be assigned to events with future start dates)
-3. **A Group linked to the event** (the group members become the check-in roster)
+1. **Administrator access** to ChurchCRM.
+2. **At least one future event** (start date ≥ today).
+3. **A group linked to that event** — the kiosk roster is the event’s group. Without a group, the kiosk shows "No class members found."
 
-### Creating an Event for Kiosk Check-in
+### Creating an event for kiosk check-in
 
-To use a kiosk, you first need an event with a linked group:
+1. **Events** → **Add Church Event** (or **List Event Types** first if you need a type).
+2. Set **Title**, **Start/End date and time** (must be in the future for assignment).
+3. In **Group**, select the group that is the class roster (e.g. "3rd Grade Sunday School").
+4. Save.
 
-1. Navigate to **Events** → **Add Event** in ChurchCRM
-2. Create an event (e.g., "Sunday Service" or "Sunday School")
-3. Set the **Start Date/Time** to a future date
-4. **Select a Group** in the Group dropdown - this links the event to the group's membership
-5. Save the event
+:::important Group is required
+The kiosk displays **group members** as the check-in list. If the event has no group, the kiosk cannot show anyone to check in.
+:::
 
-> **Important:** The **Group selection is required** for Sunday School kiosks. The kiosk displays members from the linked group as the check-in roster. Without a group, the kiosk will show "No class members found."
+:::note Future events only
+Only events with a **future** start date appear in the Kiosk Manager assignment dropdown. Past events are hidden.
+:::
 
-> **Note:** Only events with start dates **in the future** will appear in the kiosk assignment dropdown. Past events are automatically filtered out.
+---
 
-## Accessing the Kiosk Manager
+## Registering and assigning a kiosk
 
-1. Log in to ChurchCRM as an **administrator**
-2. Navigate to **Admin** → **Kiosk Manager**
-3. Or go directly to: `https://your-churchcrm-url/kiosk/admin`
+### Step 1: Enable registration
 
-> **Note:** Only administrators can access the Kiosk Manager. Standard users will be denied access.
+1. Go to **Admin** → **Kiosk Manager**.
+2. Turn **Enable New Kiosk Registration** **On**.
+3. A **30-second** countdown starts. New devices must open the kiosk URL in this window to register.
 
-## Registering a New Kiosk
+### Step 2: Open the kiosk URL on the device
 
-### Step 1: Enable Kiosk Registration
+On the tablet or kiosk:
 
-Before a new device can register as a kiosk, you must temporarily enable registration:
+1. Open a browser (Chrome, Firefox, Safari).
+2. Go to: `https://your-churchcrm-url/kiosk/`.
+3. The device registers and gets a unique name (e.g. `ipheec`).
+4. The screen shows **"Awaiting Acceptance"** and instructions for the admin.
 
-1. Go to **Admin** → **Kiosk Manager**
-2. Toggle the **Enable New Kiosk Registration** switch to **Active**
-3. You have **30 seconds** to register new devices while this is active
-4. The toggle shows a countdown and automatically turns off after 30 seconds
+### Step 3: Accept the kiosk
 
+1. In **Kiosk Manager**, find the new row (match **Kiosk Name** to the device).
+2. Click **Accept** (green checkmark).
+3. The kiosk screen updates and the **Assignment** dropdown becomes available.
 
-### Step 2: Open the Kiosk URL on Your Device
+### Step 4: Assign to an event
 
-On the device you want to use as a kiosk:
+1. In the **Assignment** column, open the dropdown.
+2. Choose the event (and group) for this kiosk.
+3. The kiosk loads that event’s group and shows the check-in interface.
 
-1. Open a web browser (Chrome, Firefox, Safari, etc.)
-2. Navigate to: `https://your-churchcrm-url/kiosk/`
-3. The device will automatically register and receive a unique name (e.g., "ipheec")
+If the dropdown is empty, create a **future** event with a **group** and refresh Kiosk Manager.
 
-> **Important:** Make sure the registration window is still active (within 30 seconds) when you access the kiosk URL.
+---
 
-### What the Kiosk Device Shows
-
-When a newly registered kiosk loads, it will display:
-
-- **"Awaiting Acceptance"** status with a yellow hourglass icon
-- The **Kiosk Name** assigned to this device
-- **Step-by-step instructions** on how to accept the kiosk from the admin panel
-
-The kiosk will automatically update once accepted by an administrator.
-
-### Step 3: Accept the Kiosk
-
-Once registered, the kiosk will appear in your Kiosk Manager with a status of **Not Accepted**:
-
-1. Return to the **Kiosk Manager** page
-2. Find the newly registered kiosk in the table (use the Kiosk Name shown on the device)
-3. Click the **Accept** button (green checkmark icon) to activate it
-
-
-### Step 4: Assign the Kiosk to an Event
-
-After accepting, you can assign the kiosk to a specific event:
-
-1. In the **Assignment** column, a dropdown will appear
-2. Select an event from the dropdown (only future events are listed)
-3. The kiosk will now be configured for that event's check-in
-
-> **No events in the dropdown?** You need to create a future event first. See the [Prerequisites](#prerequisites) section above.
-
-Once assigned, the kiosk device will display:
-- The **event name** and **start/end times**
-- A list of **group members** who can check in (from the linked group)
-- **Two columns**: "Waiting to Check In" and "Checked In"
-- **Check-in buttons** for each person
-- **Student ages** (when birth year is available)
-- **Birthday banner** highlighting students with upcoming or recent birthdays
-
-## Sunday School Check-in View
-
-The kiosk displays a tablet-optimized interface designed for teachers:
+## Sunday School check-in view
 
 ### Layout
 
-- **Header**: Event name, group name, check-in/waiting counts, and "Checkout All" button
-- **Birthday Banner**: (Optional) Shows students with birthdays within 14 days
-- **Two Columns**:
-  - **Left**: Students waiting to check in (yellow header)
-  - **Right**: Students already checked in (green header)
+- **Header** — Event title, group name, start/end time, counts (Here / Expected), **Checkout All** button.
+- **Birthday banner** — Optional; shows students with birthdays in the next or past 14 days.
+- **Left column** — "Waiting to Check In" (yellow); tap to check in.
+- **Right column** — "Checked In" (green); tap **Parent Alert** or use **Checkout All**.
 
-### Student Cards
+### Student cards
 
-Each student card shows:
-- **Photo** (if uploaded) or **gender icon** (male/female silhouette)
-- **Name** with optional birthday cake icon 🎂
-- **Age** (when birth year is set)
-- **Check-in button** (green arrow icon)
-- **Parent Alert button** (bell icon) - only for checked-in students
+Each person has:
 
-### Birthday Recognition
+- **Photo** (if set) or **gender icon**.
+- **Name**; optional birthday cake icon.
+- **Age** (if birth year is set).
+- **Check-in** (green arrow) when waiting; **Parent Alert** (bell) when checked in.
 
-Students with birthdays are highlighted:
-- **Today**: Gold pulsing card with "Today!" badge
-- **Upcoming**: Green card showing "Turning [age]" (within next 14 days)
-- **Recent**: Gray card (within past 14 days)
+### Birthday states
 
-### Parent Alert Button 🔔
+| State | Appearance |
+|-------|------------|
+| **Today** | Gold card, "Today!" badge. |
+| **Upcoming** | Green card, "Turning [age]" (next 14 days). |
+| **Recent** | Gray card (past 14 days). |
 
-The bell button allows teachers to quickly notify parents that they need to come pick up their child. This is useful for:
-- Illness or bathroom accidents
-- Behavior issues requiring parent attention
-- Early pickup requests
-- End of class notification
+### Checkout All
 
-**When clicked:**
-1. Button shows a spinning loader while sending
-2. Notifications are sent via configured channels (email, SMS, projector)
-3. Success/failure toast notification appears
-4. Parents receive: *"A notification was triggered by the classroom teacher"*
+- In the header, **Checkout All** moves every checked-in person back to "Waiting to Check In" and updates attendance with checkout time.
+- Use it at the end of class.
 
-**Note:** The alert button only appears:
-- For students who are **checked in** (not for waiting students)
-- When **at least one notification method is configured** (email, SMS, or OpenLP)
+---
 
-### Checkout All Button
+## Parent alerts (notifications)
 
-The "Checkout All" button in the header allows teachers to check out all students at once when class ends:
-1. Click the button in the header
-2. All checked-in students are moved back to "Waiting" status
-3. Attendance records are updated with checkout times
+The **Parent Alert** button (bell) sends a message to parents that the teacher has requested attention (e.g. pickup, illness, behavior).
 
-## Managing Kiosks
+### Requirements
 
-### Kiosk Table Columns
+- The student must be **checked in** (button only shows for checked-in students).
+- At least one notification method must be configured: **Email**, **SMS (Nexmo/Vonage)**, or **OpenLP**.
 
-| Column | Description |
-|--------|-------------|
-| **Id** | Unique identifier for the kiosk |
-| **Kiosk Name** | Auto-generated name (can be used to identify the device) |
-| **Assignment** | The event or function assigned to this kiosk |
-| **Last Heartbeat** | When the kiosk last communicated with the server |
-| **Accepted** | Whether the kiosk has been accepted for use |
-| **Actions** | Available operations for the kiosk |
+### What parents receive
 
-### Action Buttons
+- **Email/SMS**: Message that a notification was triggered by the classroom teacher.
+- **OpenLP**: Alert can be shown on a projector/screen if OpenLP is configured.
 
-| Button | Icon | Description |
-|--------|------|-------------|
-| **Reload** | 🔄 | Force the kiosk to reload its page |
-| **Identify** | 👁️ | Display an identification message on the kiosk screen |
-| **Accept** | ✓ | Accept a newly registered kiosk (only shown for unaccepted kiosks) |
-| **Delete** | 🗑️ | Remove the kiosk from the system |
+### Configuring notification methods
 
-### Reloading a Kiosk
+| Method | Where | What to set |
+|--------|--------|-------------|
+| **Email** | **Admin** → **Edit General Settings** → **Email Settings** | SMTP host, port, user, password. See [Email Setup](/administration/email-setup). |
+| **SMS** | **Admin** → **System Settings** → **Integration** | Nexmo API Key, API Secret, From Number. |
+| **OpenLP** | **Admin** → **System Settings** → **Integration** | OpenLP URL, username, password (if used). |
 
-If you make configuration changes or need to refresh a kiosk:
+When a teacher taps Parent Alert, all configured channels are used at once.
 
-1. Click the **Reload** button for that kiosk
-2. The kiosk will refresh on its next heartbeat (within 30 seconds)
+---
 
-### Identifying a Kiosk
+## Managing kiosks
 
-If you have multiple kiosks and need to identify which physical device corresponds to which entry:
+### Kiosk Manager table
 
-1. Click the **Identify** button
-2. The kiosk will display an identification message on screen
-3. This helps you match entries in the table to physical devices
+| Column | Meaning |
+|--------|--------|
+| **Id** | Internal kiosk ID. |
+| **Kiosk Name** | Auto-generated name (e.g. `ipheec`); use it to match device to row. |
+| **Assignment** | Current event (and group). Change via dropdown. |
+| **Last Heartbeat** | Last time the device contacted the server. |
+| **Accepted** | Whether the kiosk has been accepted. |
+| **Actions** | Reload, Identify, Accept, Delete. |
 
-### Deleting a Kiosk
+### Actions
 
-To remove a kiosk from the system:
+| Action | Use |
+|--------|-----|
+| **Reload** | Force the kiosk to refresh (e.g. after changing assignment). Takes effect on next heartbeat. |
+| **Identify** | Show an on-screen message on that kiosk so you can match it to the row. |
+| **Accept** | Allow a newly registered kiosk (only for unaccepted devices). |
+| **Delete** | Remove the kiosk. The device must be re-registered to use again. |
 
-1. Click the **Delete** button (trash icon)
-2. Confirm the deletion in the popup dialog
-3. The kiosk and its assignments will be permanently removed
+---
 
-> **Warning:** Deleting a kiosk cannot be undone. The device will need to be re-registered if you want to use it again.
+## Device setup and best practices
 
-## Kiosk Device Setup Tips
+### Recommended browser settings
 
-### Recommended Browser Settings
+- **Full screen** (e.g. F11).
+- **Kiosk URL as homepage** so the device opens the right page.
+- **Disable browser notifications** to avoid popups.
+- **Auto-start browser** on boot if the device is dedicated to the kiosk.
 
-For the best kiosk experience, configure the device's browser:
-
-1. **Enable Full Screen Mode** (F11 on most browsers)
-2. **Disable browser notifications**
-3. **Set the kiosk URL as the homepage**
-4. **Enable auto-start** for the browser on device boot
-
-### Chrome Kiosk Mode
-
-For Chrome, you can launch in kiosk mode:
+### Chrome kiosk mode (optional)
 
 ```bash
 chrome --kiosk https://your-churchcrm-url/kiosk/
 ```
 
-### Security Considerations
+### Device and placement
 
-- Place kiosk devices in supervised areas
-- Consider using a locked kiosk enclosure for tablets
-- Use a dedicated user account on the device with limited permissions
-- Disable access to browser settings if possible
+- **Tablet in landscape** gives the best two-column layout.
+- Place the device where teachers can reach it without leaving the room.
+- Use a **stand or wall mount** so the screen is stable and visible.
+- For **shared tablets**, consider a short timeout or lock so the browser doesn’t get closed.
 
-## Notification Configuration (Parent Alerts)
+### Network and power
 
-For the Parent Alert feature to work, you must configure at least one notification method:
+- Use **stable Wi‑Fi** (same network as the ChurchCRM server).
+- **Power** the device so it doesn’t sleep during service (or disable sleep when the browser is open).
 
-### Email Notifications
+### Security
 
-1. Go to **Admin** → **System Settings** → **Email Setup**
-2. Configure your SMTP settings:
-   - **SMTP Host** (required)
-   - **SMTP User/Password** (if authentication is required)
-3. Test by sending a test email from the system
+- Put kiosks in **supervised** areas.
+- Use a **dedicated device account** with limited OS permissions.
+- **Lock down** the browser (e.g. no address bar, no settings) if possible.
+- For expensive hardware, consider a **locked enclosure**.
 
-### SMS Notifications (Nexmo/Vonage)
-
-1. Sign up for a [Nexmo/Vonage](https://www.vonage.com/) account
-2. Go to **Admin** → **System Settings** → **Integration**
-3. Configure:
-   - **Nexmo API Key**
-   - **Nexmo API Secret**
-   - **Nexmo From Number** (your purchased Nexmo number)
-
-### Projector Notifications (OpenLP)
-
-1. Install and configure [OpenLP](https://openlp.org/) presentation software
-2. Enable the OpenLP API in OpenLP settings
-3. Go to **Admin** → **System Settings** → **Integration**
-4. Configure:
-   - **OpenLP URL** (e.g., `http://192.168.1.100:4316`)
-   - **OpenLP Username** (if authentication enabled)
-   - **OpenLP Password** (if authentication enabled)
-
-When a parent alert is triggered, notifications are sent via all configured methods simultaneously.
+---
 
 ## Troubleshooting
 
-### Kiosk Shows "This kiosk has not been accepted"
+### "This kiosk has not been accepted"
 
-1. Go to **Kiosk Manager**
-2. Find the kiosk in the list
-3. Click **Accept** to activate it
+- In **Kiosk Manager**, find the kiosk and click **Accept**.
 
-### Kiosk Won't Register
+### Kiosk won’t register
 
-1. Ensure the **Enable New Kiosk Registration** toggle is active
-2. You have 30 seconds to complete registration
-3. Clear the browser cookies on the device and try again
-4. Check that the device can reach your ChurchCRM server
+- Ensure **Enable New Kiosk Registration** is **On** and you’re within the 30-second window.
+- Open the kiosk URL **on the device** during that window.
+- Clear **cookies** for the site on the device and try again.
+- Confirm the device can reach `https://your-churchcrm-url`.
 
-### Kiosk Shows "401 Unauthorized"
+### "401 Unauthorized" on the device
 
-This means the registration window has closed:
+- Registration has expired. Turn **Enable New Kiosk Registration** **On** again and reload the kiosk page quickly.
 
-1. Return to **Kiosk Manager**
-2. Enable registration again
-3. Quickly refresh the kiosk page
+### No events in the Assignment dropdown
 
-### Events Not Showing in Assignment Dropdown
+- Create an event with a **future** start date and a **group**.
+- Refresh Kiosk Manager; new events should appear.
 
-Only **future events** appear in the assignment dropdown:
+### "No class members found" on the kiosk
 
-1. Make sure you have created events in ChurchCRM (**Events** → **Add Event**)
-2. Verify the events have **start dates in the future** (today or later)
-3. Refresh the Kiosk Manager page to reload the event list
-4. If you just created an event, it should appear immediately after refresh
+- Edit the **event** and set **Group** to the correct class/roster.
+- Ensure the group has **members**.
+- Reload the kiosk (Reload button in Kiosk Manager).
 
-### Kiosk Shows "No class members found"
+### Student ages not showing
 
-The kiosk displays members from the **linked group**:
+- Edit the **person** and set **Birth Year** (required for age). Month/day are optional.
 
-1. Edit the event assigned to the kiosk
-2. Ensure a **Group is selected** in the event's Group dropdown
-3. Verify the group has **active members**
-4. Members must be in the group with the correct role to appear
+### Parent Alert button not visible
 
-### Student Ages Not Showing
+- Student must be **checked in** (not just in "Waiting to Check In").
+- At least one of **Email**, **SMS**, or **OpenLP** must be configured under **Admin** → **System Settings** → **Integration**.
 
-Ages are only displayed when birth year is set:
+### Kiosk not responding to Reload/Identify
 
-1. Edit the person's profile
-2. Ensure **Birth Year** is filled in (not just month/day)
-3. If the person has "Hide Age" enabled in their profile, age will still show on kiosk for staff convenience
+- Check **Last Heartbeat**. If it’s old or "Never", the device may be off or offline.
+- Confirm Wi‑Fi and that the kiosk tab is open and not sleeping.
+- Manually refresh the browser on the device.
 
-### Parent Alert Button Not Visible
+---
 
-The alert button only appears when:
+## API reference
 
-1. The student is **checked in** (button hidden for waiting students)
-2. **At least one notification method is configured** (email, SMS, or OpenLP)
+For integrations and automation. All admin endpoints require an authenticated **administrator**.
 
-Check your notification settings in **Admin** → **System Settings** → **Integration**
-
-### Kiosk Not Responding to Commands
-
-Check the **Last Heartbeat** column:
-
-1. If it shows a recent time, the kiosk is connected
-2. If it shows "Never" or an old time, the kiosk may be offline
-3. Verify the device has network connectivity
-4. Try refreshing the browser on the kiosk device manually
-
-## API Reference
-
-For developers integrating with the kiosk system:
-
-### Admin API Endpoints
-
-All admin endpoints require administrator authentication.
+### Admin API
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/kiosk/api/devices` | List all registered kiosks |
-| POST | `/kiosk/api/allowRegistration` | Enable 30-second registration window |
-| POST | `/kiosk/api/devices/{id}/reload` | Send reload command to kiosk |
-| POST | `/kiosk/api/devices/{id}/identify` | Send identify command to kiosk |
-| POST | `/kiosk/api/devices/{id}/accept` | Accept a registered kiosk |
-| POST | `/kiosk/api/devices/{id}/assignment` | Set kiosk event assignment |
-| DELETE | `/kiosk/api/devices/{id}` | Delete a kiosk |
+| GET | `/kiosk/api/devices` | List all kiosk devices. |
+| POST | `/kiosk/api/allowRegistration` | Open the 30-second registration window. |
+| POST | `/kiosk/api/devices/{id}/reload` | Send reload command. |
+| POST | `/kiosk/api/devices/{id}/identify` | Send identify command. |
+| POST | `/kiosk/api/devices/{id}/accept` | Accept the kiosk. |
+| POST | `/kiosk/api/devices/{id}/assignment` | Set assignment (body: `assignmentType`, `eventId`). |
+| DELETE | `/kiosk/api/devices/{id}` | Delete the kiosk. |
 
-### Device API Endpoints
-
-These endpoints are used by the kiosk devices themselves:
+### Device API (used by the kiosk browser)
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/kiosk/device/` | Kiosk device main page |
-| GET | `/kiosk/device/heartbeat` | Device heartbeat (returns commands) |
-| GET | `/kiosk/device/activeClassMembers` | Get list of group members with check-in status |
-| GET | `/kiosk/device/activeClassMember/{id}/photo` | Get member's photo |
-| POST | `/kiosk/device/checkin` | Check in a person to the event |
-| POST | `/kiosk/device/checkout` | Check out a person from the event |
-| POST | `/kiosk/device/checkoutAll` | Check out all checked-in people |
-| POST | `/kiosk/device/triggerNotification` | Send parent alert notification |
+| GET | `/kiosk/device/` | Main kiosk page. |
+| GET | `/kiosk/device/heartbeat` | Heartbeat; returns pending commands. |
+| GET | `/kiosk/device/activeClassMembers` | List of group members and check-in status. |
+| GET | `/kiosk/device/activeClassMember/{id}/photo` | Member photo. |
+| POST | `/kiosk/device/checkin` | Check in (body: `PersonId`). |
+| POST | `/kiosk/device/checkout` | Check out (body: `PersonId`). |
+| POST | `/kiosk/device/checkoutAll` | Check out all. |
+| POST | `/kiosk/device/triggerNotification` | Parent alert (body: `PersonId`). |
 
-### Response Format: activeClassMembers
+### Example: activeClassMembers response
 
 ```json
 {
@@ -398,14 +360,16 @@ These endpoints are used by the kiosk devices themselves:
 }
 ```
 
-**Field descriptions:**
-- `status`: 0 = not checked in, 1 = checked in
-- `age`: Calculated from birth year (null if birth year not set)
-- `birthdayUpcoming`: Birthday within next 14 days
-- `birthdayRecent`: Birthday within past 14 days
-- `birthdayToday`: Birthday is today
-- `notificationsEnabled`: True if email, SMS, or OpenLP is configured
+- **status**: `0` = not checked in, `1` = checked in.
+- **age**: From birth year; can be null.
+- **birthdayUpcoming** / **birthdayRecent** / **birthdayToday**: Used for birthday UI.
+- **notificationsEnabled**: Whether any parent-alert channel is configured.
 
-## Related Documentation
+---
 
-- [Events](/user-guide/events)
+## Related documentation
+
+- [Events](/user-guide/events) — Creating events and taking attendance
+- [Groups](/user-guide/groups) — Creating groups and adding members
+- [Email Setup](/administration/email-setup) — SMTP for parent alert email
+- [Your First Week](/getting-started/first-week) — Day 6 covers email and reports
