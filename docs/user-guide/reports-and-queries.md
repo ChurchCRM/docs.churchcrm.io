@@ -18,6 +18,8 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 
 > **Tip:** Many query results can be added to the [Cart](Cart) for further processing.
 
+![TODO-SCREENSHOT: Reports Menu page showing the list of available report categories and individual reports](/img/placeholder.png)
+
 ---
 
 ## Built-in Reports

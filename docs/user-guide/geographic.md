@@ -55,9 +55,13 @@ In order for this map to appear, you must have a correctly configured Google Map
 
 Additionally, only families which have been successfully resolved using the configured geocoder in your ChurchCRM installation.
 
+![TODO-SCREENSHOT: Family Map view showing an interactive map with push-pins for each family location, filterable by classification](/img/placeholder.png)
+
 ## How do I find Families that live close to each other?
 
 Select _"Family Geographic Utilities"_ from the _"People"_ menu, then select a Family from the list. Press _"Show Neighbors"_ and this page will update with the nearest neighbor families listed at the bottom. The Maximum number of neighbors and Maximum distance fields are used to limit the number of neighbor families displayed.
+
+![TODO-SCREENSHOT: Family Geographic Utilities page showing the family selector, Show Neighbors button, and neighbor results list](/img/placeholder.png)
 
 ## Are other types of maps available?
 

@@ -25,6 +25,8 @@ Every Person should belong to a family.
 6. Set **Classification** for each person (Member, Guest, etc.).
 7. Click **Save**.
 
+![TODO-SCREENSHOT: Add New Family form showing family details, address fields, and family member rows](/img/placeholder.png)
+
 > **Tip:** Family members share address, phone, and email. Enter them once on the family record — individual persons inherit them unless you override on the person record.
 
 ---
@@ -42,6 +44,8 @@ There are two ways to view a family:
 
 1. Enter a name to look for in the search field at the top of the page, click the button beside _"Family"_ and press enter.
 2. Click on _"View All Families"_ (under _"People"_).
+
+![TODO-SCREENSHOT: Family View showing family details, members list, assigned properties, and action links](/img/placeholder.png)
 
 ## How do I change the available Family Roles?
 

@@ -19,9 +19,13 @@ The Fundraiser feature helps you manage [events](Events) where members buy and s
 
 Select _"Fundraiser → Create New Fundraiser"_. Enter a date, title and description and press _"Save"_.
 
+![TODO-SCREENSHOT: Create New Fundraiser form showing date, title, and description fields](/img/placeholder.png)
+
 ## How are donated items entered into the fundraiser?
 
 Once the fundraiser has been saved more buttons appear across the top. Press _"Add Donated Item"_ to enter a new item.
+
+![TODO-SCREENSHOT: Fundraiser item list with Add Donated Item button and list of items showing donor, title, estimated price, and buyer columns](/img/placeholder.png)
 
 The fields are:
 

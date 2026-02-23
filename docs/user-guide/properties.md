@@ -13,6 +13,8 @@ Additionally, Properties can have values which contain information related to th
 
 On the Person, Family, or Group View, you'll find a section called "Assigned Properties" in which will be listed all the Properties assigned to that Person, Family or Group along with the Property Values, if supported by that Property.
 
+![TODO-SCREENSHOT: Person View showing the Assigned Properties section with property names, values, and Edit/Remove links](/img/placeholder.png)
+
 ## How do I assign a Property to a Person/Family/Group?
 
 1. For a person or family, filter for the desired person and bring up the Person/Family View for that record. For a group, click on _"List Groups"_ under _"Groups"_ in the drop-down menu and select the desired group.

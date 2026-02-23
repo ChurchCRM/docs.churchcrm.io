@@ -13,6 +13,8 @@ The search bar is located in the **top-left corner** of the application. Simply 
 
 > **Keyboard Shortcut:** Press `?` anywhere in the app to open the search box.
 
+![TODO-SCREENSHOT: Search bar with dropdown results showing People, Families, and Groups matches](/img/placeholder.png)
+
 ---
 
 ## What You Can Search

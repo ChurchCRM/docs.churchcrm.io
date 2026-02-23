@@ -33,6 +33,8 @@ For outbound email (notifications, alerts), configure **Admin** → **Edit Gener
    - **Default "To" Email** — Address for system requests (e.g., `webmaster@yourchurch.org`)
 5. Click **Save**.
 
+![TODO-SCREENSHOT: Email Settings tab in Admin General Settings showing SMTP configuration fields](/img/placeholder.png)
+
 ---
 
 ## Common SMTP Providers

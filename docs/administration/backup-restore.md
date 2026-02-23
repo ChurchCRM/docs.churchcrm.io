@@ -7,6 +7,8 @@ sidebar_position: 8
 
 In "General Settings | System Settings", modify the following values:
 
+![TODO-SCREENSHOT: System Settings backup configuration section showing external backup fields](/img/placeholder.png)
+
 * **sEnableExternalBackupTarget**
   If you enable the external backup target, the system will allow you to do automatic and manual backups to a remote location specified below.
 

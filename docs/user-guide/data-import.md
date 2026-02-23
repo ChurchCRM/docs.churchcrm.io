@@ -18,6 +18,8 @@ ChurchCRM can import member data from CSV (comma-separated value) files, making 
 3. Map your CSV columns to ChurchCRM fields
 4. Review and import
 
+![TODO-SCREENSHOT: CSV Import screen showing the file upload area and column mapping interface](/img/placeholder.png)
+
 ---
 
 ## Supported Fields

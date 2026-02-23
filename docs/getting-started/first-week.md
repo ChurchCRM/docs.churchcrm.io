@@ -28,6 +28,8 @@ Start with a few families to learn the workflow:
 3. Add family members (up to 10) in the form — use the first name field for each; last name only if different from the family.
 4. Click **Save**.
 
+![TODO-SCREENSHOT: Add New Family form showing name, address, and family member fields](/img/placeholder.png)
+
 Repeat for 3–5 families. See [Families](/user-guide/families) for more detail.
 
 ---
@@ -41,6 +43,8 @@ Classifications define roles (Member, Guest, Regular Attender, etc.):
 1. Go to **People** → **Classifications**.
 2. Review the default classifications and add or rename as needed for your church.
 3. Assign classifications to the people you added yesterday.
+
+![TODO-SCREENSHOT: Classification Manager showing the list of classifications with edit options](/img/placeholder.png)
 
 ### Add More People
 
@@ -63,6 +67,8 @@ Groups help you organize people — Bible studies, ministry teams, committees:
 3. Choose a group type (e.g., Sunday School, Small Group).
 4. Add roles if needed (Leader, Member, etc.).
 5. Click **Save**.
+
+![TODO-SCREENSHOT: Add New Group form showing group name, type, and roles](/img/placeholder.png)
 
 ### Add Members to Groups
 
@@ -91,6 +97,8 @@ See [Groups](/user-guide/groups) for full details.
 2. Choose the event type, set date/time, and save.
 3. To take attendance: add people to the Cart, then **Empty Cart to Event**.
 4. Select the event and add them.
+
+![TODO-SCREENSHOT: Add Church Event form showing event type, date, time, and group fields](/img/placeholder.png)
 
 See [Events](/user-guide/events) for step-by-step attendance workflows.
 

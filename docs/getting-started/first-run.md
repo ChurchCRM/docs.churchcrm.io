@@ -20,6 +20,8 @@ In the top navigation, open the **Admin** menu and choose **Edit General Setting
 
 ##### Email Settings
 
+![TODO-SCREENSHOT: Email Settings tab in Edit General Settings showing SMTP fields](/img/placeholder.png)
+
 * Set **Default "To" Email Address** to the address you want to receive system requests (e.g., `webmaster@domain.com`).
 * Set **SMTP Host** to your email relay server.
 * Set **SMTP Username** and **SMTP Password** to the credentials for your email account.
@@ -33,6 +35,8 @@ In the top navigation, open the **Admin** menu and choose **Edit General Setting
 ### Report Settings
 
 In the top navigation, open the **Admin** menu, choose **Edit General Settings**, then select the **Report Settings** tab. The settings in this section control how various reports — such as giving statements — are generated.
+
+![TODO-SCREENSHOT: Report Settings tab showing church information and signature fields](/img/placeholder.png)
 
 ##### Church Information
 

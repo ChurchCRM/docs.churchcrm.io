@@ -13,6 +13,8 @@ Users can be added by:
 2. A list of all non-users will appear and you can select the individual you wish to make a user.
 3. Select the rights and then click _"Save"_.
 
+![TODO-SCREENSHOT: Add New User screen showing the list of non-users to select from](/img/placeholder.png)
+
 ## What are the different rights available?
 
 The Rights are as follows:
@@ -30,6 +32,8 @@ The Rights are as follows:
 ## How do I edit Users?
 
 Users can be edited by clicking on _"Edit Users"_ in the Admin ⚙ menu. A list of users will appear and you can select which individual you wish to edit.
+
+![TODO-SCREENSHOT: Edit Users list showing all users with Reset, Edit, and Delete actions](/img/placeholder.png)
 
 - _"Reset"_ will reset the password for the next logon.
 - _"Edit"_ allows the rights and style to be edited.

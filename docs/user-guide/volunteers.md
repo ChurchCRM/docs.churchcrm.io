@@ -22,12 +22,16 @@ The Volunteers feature helps you track member talents and willingness to serve i
 2. Add the volunteer opportunities relevant to your church
 3. For each opportunity, you can specify a description
 
+![TODO-SCREENSHOT: Volunteer Opportunity Editor showing the list of volunteer opportunities with add/edit fields](/img/placeholder.png)
+
 ## Assigning Volunteers to Opportunities
 
 1. Open a [Person's](Persons) record
 2. Look for the "Volunteer Opportunities" section
 3. Check the opportunities they're willing to help with
 4. Save the changes
+
+![TODO-SCREENSHOT: Person record showing the Volunteer Opportunities section with checkboxes for each opportunity](/img/placeholder.png)
 
 ## Finding Volunteers
 

@@ -34,6 +34,8 @@ Notes are miscellaneous memos that can be attached to [Person](Persons) or [Fami
 4. Check **Private** if only you should see this note
 5. Click **Save**
 
+![TODO-SCREENSHOT: Add Note form showing the text entry field and Private checkbox, within the Notes section of a Person record](/img/placeholder.png)
+
 ---
 
 ## Editing a Note

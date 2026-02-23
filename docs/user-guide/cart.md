@@ -17,6 +17,8 @@ On the top menu, second row, right side, a real-time counter will tell you how m
 
 To see the actual records in your Cart, click on the cart icon in the upper right corner. This will display a context menu for quick cart actions. You may also choose to "View Cart" to show all people currently in the cart.
 
+![TODO-SCREENSHOT: Cart view showing the list of people in the cart with their names, family, and Remove links at bottom with action buttons](/img/placeholder.png)
+
 ## How do I add a Person to the Cart?
 
 There several ways to do this:
