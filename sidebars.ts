@@ -30,6 +30,7 @@ const sidebars: SidebarsConfig = {
         'getting-started/first-run',
         'getting-started/first-week',
         'getting-started/features-overview',
+        'getting-started/video-tutorials',
       ],
     },
   ],
