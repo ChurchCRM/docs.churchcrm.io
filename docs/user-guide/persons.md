@@ -21,6 +21,8 @@ A Person record represents an individual in your congregation. Person records ca
 6. Add birth date (year required; age is calculated automatically).
 7. Click **Save** or **Save and Add** to add another person.
 
+![TODO-SCREENSHOT: Add New Person form showing name, family, classification, and contact fields](/img/placeholder.png)
+
 > **Tip:** To add several people at once, use the [Family Editor](/user-guide/families) — you can add up to 10 family members in one form.
 
 ---
@@ -30,6 +32,8 @@ A Person record represents an individual in your congregation. Person records ca
 In the left menu, find the search box just above the _"Dashboard"_ heading. Enter a search string — results will begin appearing as you type, showing all matches by first or last name.
 
 Clicking on a person's name opens their Person View, which lists all information about that person, including assigned properties, assigned groups, and notes.
+
+![TODO-SCREENSHOT: Person View showing personal details, inherited family information (in red), assigned properties, groups, and notes sections](/img/placeholder.png)
 
 This is a wildcard search: the system looks for that sequence of characters anywhere in the first or last name. For example, searching for "ian" will return records for "Ian," "Brian," and anyone else whose name contains those letters in that order.
 

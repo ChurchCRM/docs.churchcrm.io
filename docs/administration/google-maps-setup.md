@@ -53,6 +53,8 @@ If you only enable Geocoding API, address lookups work but maps won't display. I
    - **sGoogleMapsRenderKey** — For map rendering
 5. Click **Save**
 
+![TODO-SCREENSHOT: System Settings Map Settings section showing the Google Maps API key fields](/img/placeholder.png)
+
 :::tip Same key for both
 You can use the same API key for both fields if both APIs are enabled on that key.
 :::

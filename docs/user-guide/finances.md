@@ -20,12 +20,16 @@ ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gif
 3. Enter **Date**, **Amount**, **Fund**, and **Method** (Cash, Check, etc.).
 4. Click **Save**.
 
+![TODO-SCREENSHOT: Payment entry form on the Family View showing date, amount, fund, and payment method fields](/img/placeholder.png)
+
 ### Creating a Deposit Slip
 
 1. Go to **Finance** → **Deposit** → **New Deposit Slip**.
 2. Enter each donation for the batch.
 3. Click **Generate PDF** to print a bank deposit form.
 4. When ready for the bank, click **Close deposit slip**.
+
+![TODO-SCREENSHOT: New Deposit Slip screen showing batch entry table and Generate PDF button](/img/placeholder.png)
 
 See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 

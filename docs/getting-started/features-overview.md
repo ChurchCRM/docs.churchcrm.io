@@ -3,6 +3,8 @@ title: Features Overview
 sidebar_position: 2
 ---
 
+![TODO-SCREENSHOT: ChurchCRM dashboard overview showing the main navigation and home page](/img/placeholder.png)
+
 ## Core Features
 
 * Congregation Management

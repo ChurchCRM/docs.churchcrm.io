@@ -20,6 +20,8 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 5. A default "Member" role is created — add more roles if needed (Leader, Teacher, etc.).
 6. Click **Save**.
 
+![TODO-SCREENSHOT: Add New Group form showing group name, type, and roles editor](/img/placeholder.png)
+
 ### Adding People to a Group
 
 1. Search for people or go to **People** → **View All Persons**.
@@ -60,6 +62,8 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 5. Type the new title in the input box, and press _"Save"_.
 
 6. The new information should appear.
+
+![TODO-SCREENSHOT: Group list view showing all groups with their type, member count, and action buttons](/img/placeholder.png)
 
 ## How do I add a new Role to a Group?
 

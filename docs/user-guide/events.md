@@ -63,6 +63,8 @@ To create an event:
 2. Select an event type.
 3. Make your entries and choose *Save Changes*.
 
+![TODO-SCREENSHOT: Add Church Event form showing event type selection, title, date range, and description fields](/img/placeholder.png)
+
 ## Taking Attendance for an Event
 
 Throughout the course of an event, you can take attendance to track the participation across various people classifications, such as members, regular attenders, visitors, and so on.
@@ -101,6 +103,8 @@ To generate a report:
 
 During any event, you can monitor the checking in and checking out of children to comply with your church child protection policy.
 In this scenario, you use the `PersonID` number associated with an individual to identify them in the system. This `PersonID` number is recognizable in the URL of the individual’s record in the system.
+
+![TODO-SCREENSHOT: Check-in and Check-out screen showing event selection and PersonID entry fields for child and parent/guardian](/img/placeholder.png)
 
 To check a child into an event:
 

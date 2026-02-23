@@ -22,6 +22,8 @@ This method opens emails in your default email program (Outlook, Gmail, etc.):
 3. Scroll to the bottom and click **Email Cart**
 4. Your email client will open with all recipients in the BCC field
 
+![TODO-SCREENSHOT: Cart List Items page showing the Email Cart button at the bottom of the people list](/img/placeholder.png)
+
 > **Tip:** This method is best for small groups and personal messages.
 
 ---

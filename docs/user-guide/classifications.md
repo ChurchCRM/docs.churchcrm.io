@@ -32,6 +32,8 @@ Classifications help you categorize people in your congregation for record-keepi
 
 > **Important:** Click "Save Changes" before using any buttons, or your edits will be lost!
 
+![TODO-SCREENSHOT: Classification Manager showing the list of classifications with up/down arrows, edit fields, and delete buttons](/img/placeholder.png)
+
 ---
 
 ## Using Classifications

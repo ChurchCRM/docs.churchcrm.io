@@ -14,6 +14,8 @@ Sunday School classes in ChurchCRM are managed as [Groups](Groups) with a specia
 3. Set **Type of Group** to **Sunday School Class**
 4. Click **Save Changes**
 
+![TODO-SCREENSHOT: Add New Group form with Type of Group set to Sunday School Class](/img/placeholder.png)
+
 ### Setting Up Roles
 
 By default, groups have a "Member" role. For Sunday School, you'll want:
@@ -48,6 +50,8 @@ Each Sunday School class has a dedicated dashboard showing:
 - Class roster with student and teacher lists
 - Attendance statistics
 - Quick actions for common tasks
+
+![TODO-SCREENSHOT: Sunday School class dashboard showing roster, attendance summary, and quick action buttons](/img/placeholder.png)
 
 ## Communicating with Parents
 

@@ -115,6 +115,8 @@ Only events with a **future** start date appear in the Kiosk Manager assignment 
 2. Turn **Enable New Kiosk Registration** **On**.
 3. A **30-second** countdown starts. New devices must open the kiosk URL in this window to register.
 
+![TODO-SCREENSHOT: Kiosk Manager admin page showing the Enable New Kiosk Registration toggle and list of registered devices](/img/placeholder.png)
+
 ### Step 2: Open the kiosk URL on the device
 
 On the tablet or kiosk:
@@ -148,6 +150,8 @@ If the dropdown is empty, create a **future** event with a **group** and refresh
 - **Birthday banner** — Optional; shows students with birthdays in the next or past 14 days.
 - **Left column** — "Waiting to Check In" (yellow); tap to check in.
 - **Right column** — "Checked In" (green); tap **Parent Alert** or use **Checkout All**.
+
+![TODO-SCREENSHOT: Kiosk check-in view showing two-column layout with Waiting to Check In (left/yellow) and Checked In (right/green) student cards](/img/placeholder.png)
 
 ### Student cards
 
