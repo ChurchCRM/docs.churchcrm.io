@@ -7,19 +7,43 @@ sidebar_position: 7
 
 ## Automatic Upgrade
 
+ChurchCRM includes a built-in upgrade wizard that handles downloading, applying, and migrating your installation in a guided, step-by-step process.
+
+### Checking for Updates
+
 1. Log in to ChurchCRM with an admin account.
-2. Review the Open Tasks notification in the top-right corner of the menu.
-   ![Task Menu Icon](/img/Setup/admin-task-menu-1.png)
-3. If a new version is available, it will be listed there.
-4. Follow the on-screen steps to back up, download, and install the release.
-5. Return to the main page and click the **Upgrade Database** button.
-6. Log in to your upgraded system.
+2. If a new version is available, a **download icon** (🡇) will appear in the top-right navbar.
+3. Click the icon and select **New Release** to open the upgrade page, or navigate to **Admin → System → Upgrade** directly.
+4. On the upgrade page, click **Refresh from GitHub** to check for the latest release.
+
+### Running the Upgrade Wizard
+
+The wizard guides you through four steps:
+
+**Step 1 — Warnings (Pre-Upgrade Checks)**
+
+Any modified or missing system files are listed here. If you have customized any application files and want to preserve those changes, back them up manually before proceeding. The upgrade will overwrite them with official versions.
+
+**Step 2 — Database Backup**
+
+Click **Create Backup** to download a full backup of your database before applying the update. It is strongly recommended not to skip this step. Keep the backup file until you have verified the new version is working correctly.
+
+**Step 3 — Download & Apply**
+
+The wizard downloads the latest release from GitHub and applies it to your installation. Database migrations run automatically after the new files are in place.
+
+**Step 4 — Complete**
+
+The upgrade is finished. The system will automatically log you out and redirect you to the login page. Log back in to begin using the upgraded version.
+
+### File Integrity Check
+
+The upgrade page also shows a **File Integrity Check** comparing your installed files against the official release. If files are missing or have been modified, you can use the **Force Re-install** button to re-download and restore the current version without upgrading to a newer release.
 
 ## Manual Upgrade
 
 1. Download the latest release from [https://github.com/ChurchCRM/CRM/releases/latest](https://github.com/ChurchCRM/CRM/releases/latest).
-2. Place the zip file in the same directory as the `/churchcrm` folder.
-3. Unzip the files, overwriting the existing installation.
-4. Update [file permissions](/administration/file-system-permissions).
-5. Return to the main page and click the **Upgrade Database** button.
-6. Log in to your upgraded system.
+2. Extract the zip file, overwriting the files in your existing `/churchcrm` installation directory.
+3. Update [file permissions](/administration/file-system-permissions).
+4. Open your ChurchCRM URL in a browser. The database will be migrated automatically on the next page load.
+5. Log in to your upgraded system.
