@@ -55,6 +55,14 @@ For ongoing system management and maintenance.
 
 ---
 
+## Video Tutorials
+
+Short screen-capture walkthroughs for common tasks:
+
+- [Video Tutorials](/getting-started/video-tutorials) — Recommended recordings covering installation, attendance, finances, kiosk setup, and more
+
+---
+
 ## Quick Reference
 
 | I need to… | Go to |
