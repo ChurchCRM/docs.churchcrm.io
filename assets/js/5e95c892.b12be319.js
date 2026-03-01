@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkdocs_churchcrm_io=globalThis.webpackChunkdocs_churchcrm_io||[]).push([[9647],{7121(c,r,s){s.r(r),s.d(r,{default:()=>l});s(96540);var e=s(34164),h=s(17559),u=s(45500),a=s(22831),o=s(7690),i=s(74848);function l(c){return(0,i.jsx)(u.e3,{className:(0,e.A)(h.G.wrapper.docsPages),children:(0,i.jsx)(o.A,{children:(0,a.v)(c.route.routes)})})}}}]);
