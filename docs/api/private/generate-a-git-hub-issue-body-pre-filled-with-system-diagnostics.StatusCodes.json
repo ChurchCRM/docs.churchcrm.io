@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Pre-formatted issue body string for GitHub","content":{"application/json":{"schema":{"properties":{"issueBody":{"type":"string"}},"type":"object"}}}}}}

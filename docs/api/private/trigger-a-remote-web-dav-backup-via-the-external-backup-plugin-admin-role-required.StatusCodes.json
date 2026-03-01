@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Remote backup result","content":{"application/json":{"schema":{"properties":{"copyStatus":{"type":"object"}},"type":"object"}}}},"400":{"description":"Plugin not enabled or not configured"},"403":{"description":"Admin role required"},"500":{"description":"Remote backup failed"}}}

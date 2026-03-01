@@ -1,0 +1,1 @@
+{"title":"Body","body":{"description":"CSP violation report object (browser-generated)","required":true,"content":{"application/json":{"schema":{"type":"object"},"example":{"csp-report":{"document-uri":"https://example.com","violated-directive":"script-src"}}}}}}

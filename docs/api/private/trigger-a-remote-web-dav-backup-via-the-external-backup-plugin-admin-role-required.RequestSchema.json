@@ -1,0 +1,1 @@
+{"title":"Body","body":{"content":{"application/json":{"schema":{"properties":{"BackupType":{"description":"Backup type (defaults to full backup)","type":"integer"}},"type":"object"}}}}}

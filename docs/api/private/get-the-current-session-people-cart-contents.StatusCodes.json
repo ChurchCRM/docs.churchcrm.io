@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Array of person IDs currently in the cart","content":{"application/json":{"schema":{"properties":{"PeopleCart":{"type":"array","items":{"type":"integer"}}},"type":"object"}}}}}}

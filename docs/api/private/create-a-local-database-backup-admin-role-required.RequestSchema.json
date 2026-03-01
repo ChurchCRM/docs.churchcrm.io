@@ -1,0 +1,1 @@
+{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"BackupType":{"description":"Backup type identifier","type":"string"}},"type":"object"}}}}}

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Echo response","content":{"application/json":{"schema":{"properties":{"message":{"type":"string","example":"echo"}},"type":"object"}}}}}}

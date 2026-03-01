@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Verification URL","content":{"application/json":{"schema":{"properties":{"url":{"type":"string","format":"uri"}},"type":"object"}}}}}}

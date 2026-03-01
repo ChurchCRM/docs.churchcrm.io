@@ -1,0 +1,1 @@
+{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"Persons":{"description":"Array of person IDs to add","type":"array","items":{"type":"integer"}},"Family":{"description":"Family ID to add all members from","type":"integer"},"Group":{"description":"Group ID to add all members from","type":"integer"}},"type":"object"}}}}}

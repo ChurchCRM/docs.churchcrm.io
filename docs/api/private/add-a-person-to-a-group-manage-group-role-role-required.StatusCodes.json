@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Updated membership records for the person in the group"},"403":{"description":"ManageGroupRole role required"}}}

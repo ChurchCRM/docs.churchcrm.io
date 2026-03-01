@@ -1,0 +1,1 @@
+{"parameters":[{"name":"groupId","in":"query","description":"When omitted or null: all active geocoded families. When 0: persons in the session cart. When > 0: members of that group.","required":false,"schema":{"type":"integer"}}]}

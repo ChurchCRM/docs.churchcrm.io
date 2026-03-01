@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Event updated","content":{"application/json":{"schema":{"properties":{"success":{"type":"boolean","example":true}},"type":"object"}}}},"401":{"description":"Unauthorized"},"403":{"description":"AddEvents role required"},"404":{"description":"Event not found"}}}

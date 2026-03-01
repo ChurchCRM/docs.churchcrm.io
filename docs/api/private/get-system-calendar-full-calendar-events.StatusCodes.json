@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"FullCalendar-compatible event array"},"401":{"description":"Unauthorized"},"404":{"description":"Calendar or events not found"}}}

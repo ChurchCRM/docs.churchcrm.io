@@ -1,0 +1,1 @@
+{"parameters":[{"name":"typeId","in":"query","description":"Person type ID to filter custom fields by","required":true,"schema":{"type":"integer"}}]}

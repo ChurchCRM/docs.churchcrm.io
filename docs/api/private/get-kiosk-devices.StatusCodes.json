@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Kiosk device list","content":{"application/json":{"schema":{"properties":{"KioskDevices":{"type":"array","items":{"properties":{"Id":{"type":"integer"},"Name":{"type":"string"},"Accepted":{"type":"boolean"}},"type":"object"}}},"type":"object"}}}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden — Admin role required"}}}

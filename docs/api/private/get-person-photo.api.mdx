@@ -1,0 +1,69 @@
+---
+id: get-person-photo
+title: "Get a person's uploaded photo"
+description: "Returns the binary photo image. Returns 404 if no photo has been uploaded (use avatar endpoint for fallback)."
+sidebar_label: "Get a person's uploaded photo"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vc1u2zgQfhWCl20BR3ILAwv4tEZRFMFutkbSHhaBD2N6ZLGhSJakjHgFX/cB9hH7JDtDybYSp91bc3AkzQ+/+WbmYycTbKOc38slOm9QriZyg1EF7ZN2Vs7lLaY22ChSjWKtLYS98LVLTugGtliIo302nQldCesGcw1RrBGtaL1xsMGNeNVGFLCDBEGg3XinbRKVC6ICY9agHl4XciKdxwB89vWGTt9iWmKIzi45KZk9BGgw0TcC3UlLL+Tmsw9FTKRm0B5STc8Bv7Y6ICVKocWJjKrGBuS8k2nvOY4Q4BYDueIjNFz/fPb2cFhxaPTORozs/XY65X9PiVmeWaB45SiVTeyWP5VfPG757eLMmIK2Wwqh0hugCNnTKg/0N5Gz6ZvLsz5baFPtgv6bislOs0unP92Z674HTG6qdRQ9P5LzR1Rt0Gmf6Vt4/TvuF5SbXldcN3Fbu4H5TDebZNknKLsj0YfSDw2JGHbHbrTBkHOdko/zsuxqF9OhBK/l86G6Q1NdsZmgvqvboOp3tzdC25jAKqZzB0HD2vT0s2NfbgWtYcb2rg1X/cmFcs1F/r/IPkrcewrOkweGiR6jJbDGKTDsUKocpkLzIvI/2E9scIfG+YY7zqwdSb3jZvegx9Seeg/540XSxfJaPOBeuHUCbYmTKrhGLIOrtEHx7Z9/BXtQJFF0LmsiqL07DWL58e6TKH27NlqVtGSBqtnSHkyO6/F4RQdfPeST837USFMS8jxoW7mMUCcef3lmbRk0LSvy2ZeIqS4qXivgFt6+JwAMkQfulKAQC2NOmx7FsI0CrDgW7CFGiuciWF9OOEUPsBAfMyOC+30K+gE5UW8wZwLvDYMjtP9HUyFuwO5fwBk9Kl1pJYKjg2jyGx0jJWRd2zu7EWuIZIUzFWQsBi0AlUd2aMCJE7I+XZLTtBWat4mkQpssTJX77YmNWkW4kSRplPfm+tNFRhJQG4kvhYUL23IIiiX7UhJe1r6HvxbT4g1/8jT2DdhR3g+YBAyq8Ut8JivPh6E7i99Pvy2GvUr4mEpvaFS4nsxHN2jX/XA5kPN8dE30ldDq9uJyL7uO2omfgzkc+PPXFgNr5OqsRVniNjryMykk4Yj4Aype3Q63z2vxPaBHVbD7LHmm5Td65E0dXWqHFfkOK8sYevNCKfRpFDi6d54o+Yf3PCRwoUS9HgwPnPdFOGPt6A/mX9bPF927rtc4YvHo35u+GzEUdvRmZlYk0P8Bnn70Qg==
+sidebar_class_name: "get api-method"
+info_path: api/private/churchcrm-private-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a person's uploaded photo"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/person/{personId}/photo"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Returns the binary photo image. Returns 404 if no photo has been uploaded (use avatar endpoint for fallback).
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  {...require("./get-person-photo.ParamsDetails.json")}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  {...require("./get-person-photo.RequestSchema.json")}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  {...require("./get-person-photo.StatusCodes.json")}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Avatar info","content":{"application/json":{"schema":{"properties":{"hasPhoto":{"type":"boolean"},"initials":{"type":"string","example":"JS"},"gravatarUrl":{"type":"string","nullable":true}},"type":"object"}}}},"401":{"description":"Unauthorized"}}}

@@ -1,0 +1,1 @@
+{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"required":["groupName"],"properties":{"groupName":{"type":"string"},"description":{"type":"string"},"isSundaySchool":{"type":"boolean"},"groupType":{"type":"integer"}},"type":"object"}}}}}

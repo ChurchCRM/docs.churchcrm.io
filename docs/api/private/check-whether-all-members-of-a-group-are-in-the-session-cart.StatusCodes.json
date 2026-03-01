@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Cart status for the group","content":{"application/json":{"schema":{"properties":{"isInCart":{"type":"boolean"}},"type":"object"}}}}}}

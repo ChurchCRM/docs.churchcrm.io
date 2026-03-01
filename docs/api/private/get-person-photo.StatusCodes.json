@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Photo image","content":{"image/jpeg":{"schema":{"type":"string","format":"binary"}}}},"401":{"description":"Unauthorized"},"404":{"description":"No uploaded photo for this person"}}}

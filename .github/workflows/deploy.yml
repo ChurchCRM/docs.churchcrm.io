@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Also trigger when the CRM repo updates its OpenAPI specs
+  repository_dispatch:
+    types: [openapi-updated]
 
 permissions:
   contents: write
@@ -26,6 +29,21 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Download latest OpenAPI specs from CRM repo
+        run: |
+          mkdir -p openapi
+          curl -fsSL \
+            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/public-api.yaml" \
+            -o openapi/public-api.yaml
+          curl -fsSL \
+            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/private-api.yaml" \
+            -o openapi/private-api.yaml
+          echo "Downloaded specs:"
+          wc -l openapi/*.yaml
+
+      - name: Generate API docs from specs
+        run: npm run regen
 
       - name: Build site
         run: npm run build

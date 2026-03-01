@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Verification email sent successfully"},"500":{"description":"Error sending email"}}}

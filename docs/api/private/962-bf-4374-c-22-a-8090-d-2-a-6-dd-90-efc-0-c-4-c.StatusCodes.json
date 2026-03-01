@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Array of id/value pairs for matching custom fields","content":{"application/json":{"schema":{"type":"array","items":{"properties":{"id":{"type":"integer"},"value":{"type":"string"}},"type":"object"}}}}},"403":{"description":"Admin role required"}}}

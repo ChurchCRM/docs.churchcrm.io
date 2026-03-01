@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Array of event objects","content":{"application/json":{"schema":{"type":"array","items":{"properties":{"Id":{"type":"integer"},"Title":{"type":"string"},"Start":{"type":"string","format":"date-time"},"End":{"type":"string","format":"date-time"}},"type":"object"}}}}},"404":{"description":"Invalid or expired access token"}}}

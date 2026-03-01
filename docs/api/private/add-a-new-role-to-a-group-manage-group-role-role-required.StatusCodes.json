@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"New role created"},"403":{"description":"ManageGroupRole role required"},"500":{"description":"Failed to add role"}}}

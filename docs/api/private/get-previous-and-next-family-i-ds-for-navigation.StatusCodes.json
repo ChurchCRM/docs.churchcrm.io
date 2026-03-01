@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Navigation IDs","content":{"application/json":{"schema":{"properties":{"PreFamilyId":{"type":"integer"},"NextFamilyId":{"type":"integer"}},"type":"object"}}}}}}

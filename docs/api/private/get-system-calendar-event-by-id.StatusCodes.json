@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Event object"},"401":{"description":"Unauthorized"},"404":{"description":"Calendar or event not found"}}}

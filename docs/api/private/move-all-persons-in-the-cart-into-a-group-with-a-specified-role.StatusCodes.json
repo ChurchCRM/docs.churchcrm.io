@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Cart persons added to the group"},"400":{"description":"Invalid or missing groupID/groupRoleID"}}}

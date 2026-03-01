@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Payment deleted successfully"},"403":{"description":"Finance role required"}}}

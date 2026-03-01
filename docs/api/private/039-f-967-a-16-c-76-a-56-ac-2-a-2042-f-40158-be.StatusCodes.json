@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Array of translatable term strings","content":{"application/json":{"schema":{"properties":{"terms":{"type":"array","items":{"type":"string"}}},"type":"object"}}}},"403":{"description":"Admin role required"}}}

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"List of family IDs where every member is in the cart","content":{"application/json":{"schema":{"properties":{"familiesInCart":{"type":"array","items":{"type":"integer"}}},"type":"object"}}}}}}

@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Created pledge or payment record","content":{"application/json":{"schema":{"properties":{"payment":{"type":"object"}},"type":"object"}}}},"403":{"description":"Finance role required"}}}

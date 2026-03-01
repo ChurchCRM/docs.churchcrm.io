@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Families without any email address","content":{"application/json":{"schema":{"properties":{"count":{"type":"integer"},"families":{"type":"array","items":{"type":"object"}}},"type":"object"}}}}}}

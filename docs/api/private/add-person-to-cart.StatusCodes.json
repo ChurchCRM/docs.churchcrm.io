@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Added to cart","content":{"application/json":{"schema":{"properties":{"success":{"type":"boolean","example":true}},"type":"object"}}}},"401":{"description":"Unauthorized"}}}

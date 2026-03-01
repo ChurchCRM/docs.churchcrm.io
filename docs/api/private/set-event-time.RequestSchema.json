@@ -1,0 +1,1 @@
+{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"required":["startTime","endTime"],"properties":{"startTime":{"type":"string","format":"date-time","example":"2026-04-05T09:00:00"},"endTime":{"type":"string","format":"date-time","example":"2026-04-05T11:00:00"}},"type":"object"}}}}}

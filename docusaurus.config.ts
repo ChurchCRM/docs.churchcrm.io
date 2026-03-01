@@ -42,6 +42,37 @@ const config: Config = {
         trackingID: 'G-4F7K8Z3T5J',
       },
     ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'churchcrm-api',
+        docsPluginId: 'classic',
+        config: {
+          publicApi: {
+            specPath: 'openapi/public-api.yaml',
+            outputDir: 'docs/api/public',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+            downloadUrl:
+              'https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/public-api.yaml',
+            showSchemas: true,
+          },
+          privateApi: {
+            specPath: 'openapi/private-api.yaml',
+            outputDir: 'docs/api/private',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+            downloadUrl:
+              'https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/private-api.yaml',
+            showSchemas: true,
+          },
+        },
+      },
+    ],
   ],
 
   presets: [
@@ -54,6 +85,7 @@ const config: Config = {
           editUrl: 'https://github.com/ChurchCRM/docs.churchcrm.io/edit/main/',
           showLastUpdateTime: false,
           showLastUpdateAuthor: false,
+          docItemComponent: '@theme/ApiItem',
         },
         blog: false,
         theme: {
@@ -62,6 +94,8 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+
+  themes: ['docusaurus-theme-openapi-docs'],
 
   themeConfig: {
     image: 'img/churchcrm-social.png',
@@ -96,6 +130,12 @@ const config: Config = {
           label: 'Administration',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'apiSidebar',
+          position: 'left',
+          label: 'API Reference',
+        },
+        {
           href: 'https://churchcrm.io',
           label: 'Website',
           position: 'right',
@@ -125,6 +165,13 @@ const config: Config = {
           ],
         },
         {
+          title: 'API Reference',
+          items: [
+            { label: 'Public API', to: '/api/public' },
+            { label: 'Private API', to: '/api/private' },
+          ],
+        },
+        {
           title: 'Community',
           items: [
             { label: 'GitHub Discussions', href: 'https://github.com/ChurchCRM/CRM/discussions' },
@@ -148,6 +195,12 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['bash', 'php', 'sql', 'nginx', 'apacheconf'],
     },
+    languageTabs: [
+      { highlight: 'bash', language: 'curl', logoClass: 'bash' },
+      { highlight: 'javascript', language: 'nodejs', logoClass: 'nodejs' },
+      { highlight: 'php', language: 'php', logoClass: 'php' },
+      { highlight: 'python', language: 'python', logoClass: 'python' },
+    ],
     // Uncomment once approved at docsearch.algolia.com/apply/
     // algolia: {
     //   appId: 'YOUR_APP_ID',

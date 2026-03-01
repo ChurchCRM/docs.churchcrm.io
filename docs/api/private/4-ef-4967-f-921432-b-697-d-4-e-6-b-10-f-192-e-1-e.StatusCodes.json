@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"QR code data URI for TOTP enrollment","content":{"application/json":{"schema":{"properties":{"TwoFAQRCodeDataUri":{"type":"string"}},"type":"object"}}}}}}

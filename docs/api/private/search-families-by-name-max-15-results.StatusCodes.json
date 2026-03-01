@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Matching families","content":{"application/json":{"schema":{"properties":{"Families":{"type":"array","items":{"type":"object"}}},"type":"object"}}}}}}

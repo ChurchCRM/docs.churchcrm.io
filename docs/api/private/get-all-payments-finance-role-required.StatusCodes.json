@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Array of payment records","content":{"application/json":{"schema":{"properties":{"payments":{"type":"array","items":{"type":"object"}}},"type":"object"}}}},"403":{"description":"Finance role required"}}}

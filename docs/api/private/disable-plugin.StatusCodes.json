@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Plugin disabled"},"400":{"description":"Plugin cannot be disabled (other plugins depend on it)"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden — Admin role required"},"500":{"description":"Error disabling plugin"}}}

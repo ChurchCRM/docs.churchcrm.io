@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Photo deletion result","content":{"application/json":{"schema":{"properties":{"success":{"type":"boolean"}},"type":"object"}}}},"403":{"description":"EditRecords role required"}}}

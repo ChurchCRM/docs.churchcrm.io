@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Families that submitted self-verification notes","content":{"application/json":{"schema":{"properties":{"families":{"type":"array","items":{"type":"object"}}},"type":"object"}}}}}}

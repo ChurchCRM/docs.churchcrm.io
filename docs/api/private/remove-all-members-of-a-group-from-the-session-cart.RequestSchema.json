@@ -1,0 +1,1 @@
+{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"required":["Group"],"properties":{"Group":{"description":"Group ID whose members should be removed from the cart","type":"integer"}},"type":"object"}}}}}

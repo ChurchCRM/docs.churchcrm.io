@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Calendar deleted","content":{"application/json":{"schema":{"properties":{"success":{"type":"boolean","example":true}},"type":"object"}}}},"400":{"description":"Missing or invalid calendar ID"},"401":{"description":"Unauthorized"}}}

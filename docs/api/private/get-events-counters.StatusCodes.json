@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Counter object","content":{"application/json":{"schema":{"properties":{"birthdays":{"type":"integer","example":2},"anniversaries":{"type":"integer","example":1},"events":{"type":"integer","example":3}},"type":"object"}}}},"401":{"description":"Unauthorized"}}}

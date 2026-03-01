@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"10 latest families by date entered","content":{"application/json":{"schema":{"properties":{"families":{"type":"array","items":{"properties":{"FamilyId":{"type":"integer"},"Name":{"type":"string"},"Created":{"type":"string","format":"date-time"}},"type":"object"}}},"type":"object"}}}}}}

@@ -1,0 +1,1 @@
+{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"Title":{"type":"string"},"Desc":{"type":"string","nullable":true},"Start":{"type":"string","format":"date-time"},"End":{"type":"string","format":"date-time"},"Text":{"type":"string","nullable":true},"PinnedCalendars":{"type":"array","items":{"type":"integer"}}},"type":"object"}}}}}

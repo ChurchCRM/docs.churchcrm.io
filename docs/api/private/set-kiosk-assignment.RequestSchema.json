@@ -1,0 +1,1 @@
+{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"assignmentType":{"description":"Assignment type ID","type":"integer"},"eventId":{"description":"Event ID to assign (null to unassign)","type":"integer","nullable":true}},"type":"object"}}}}}

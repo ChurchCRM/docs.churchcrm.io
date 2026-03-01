@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"FullCalendar-compatible event array","content":{"application/json":{"schema":{"type":"array","items":{"properties":{"id":{"type":"integer"},"title":{"type":"string"},"start":{"type":"string","format":"date-time"},"end":{"type":"string","format":"date-time"}},"type":"object"}}}}},"404":{"description":"Invalid or expired access token"}}}

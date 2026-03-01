@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Cart updated","content":{"application/json":{"schema":{"properties":{"status":{"type":"string"},"message":{"type":"string"}},"type":"object"}}}},"400":{"description":"Invalid request data"}}}

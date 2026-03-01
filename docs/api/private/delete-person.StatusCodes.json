@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Person deleted","content":{"application/json":{"schema":{"properties":{"success":{"type":"boolean","example":true}},"type":"object"}}}},"401":{"description":"Unauthorized"},"403":{"description":"DeleteRecords role required, or cannot delete yourself"},"404":{"description":"Person not found"}}}

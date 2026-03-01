@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Deposit object"},"403":{"description":"Finance role required"}}}

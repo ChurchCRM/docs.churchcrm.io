@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"Payment items associated with the deposit"},"403":{"description":"Finance role required"}}}
