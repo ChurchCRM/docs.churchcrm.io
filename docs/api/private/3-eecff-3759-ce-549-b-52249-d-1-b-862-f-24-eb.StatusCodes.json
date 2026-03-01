@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Array of new recovery codes","content":{"application/json":{"schema":{"properties":{"TwoFARecoveryCodes":{"type":"array","items":{"type":"string"}}},"type":"object"}}}}}}

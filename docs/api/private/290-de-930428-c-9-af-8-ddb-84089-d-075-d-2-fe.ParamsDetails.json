@@ -1,1 +1,0 @@
-{"parameters":[{"name":"familyId","in":"path","required":true,"schema":{"type":"integer"}},{"name":"propertyId","in":"path","required":true,"schema":{"type":"integer"}}]}

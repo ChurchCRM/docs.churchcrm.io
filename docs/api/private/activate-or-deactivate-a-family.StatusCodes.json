@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Family activation status updated","content":{"application/json":{"schema":{"properties":{"success":{"type":"boolean"}},"type":"object"}}}},"400":{"description":"Invalid status value"}}}

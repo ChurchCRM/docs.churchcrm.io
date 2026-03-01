@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Array of deposits within the last 90 days"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"}}}

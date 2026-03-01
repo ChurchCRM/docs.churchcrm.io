@@ -1,1 +1,0 @@
-{"parameters":[{"name":"CalendarAccessToken","in":"path","required":true,"schema":{"type":"string","example":"abc123token"}}]}

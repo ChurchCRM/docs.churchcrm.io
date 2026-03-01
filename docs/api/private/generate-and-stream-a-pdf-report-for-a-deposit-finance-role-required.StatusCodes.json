@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"PDF generated successfully"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"},"404":{"description":"Deposit not found or has no payments"}}}

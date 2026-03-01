@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"OFX content for the deposit"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"},"404":{"description":"Deposit not found"}}}

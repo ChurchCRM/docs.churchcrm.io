@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Login successful","content":{"application/json":{"schema":{"properties":{"apiKey":{"type":"string","example":"abc123xyz"}},"type":"object"}}}},"401":{"description":"Invalid username or password"},"404":{"description":"User not found"}}}

@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"groupName":{"type":"string"},"groupType":{"type":"integer"},"description":{"type":"string"}},"type":"object"}}}}}

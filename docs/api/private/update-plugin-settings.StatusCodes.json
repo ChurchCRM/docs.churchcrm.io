@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Settings updated"},"400":{"description":"No settings provided or plugin not found"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden — Admin role required"},"404":{"description":"Plugin not found"}}}

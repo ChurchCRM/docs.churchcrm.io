@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"required":["PersonID"],"properties":{"PersonID":{"type":"integer"},"RoleID":{"description":"Defaults to group default role if omitted","type":"integer"}},"type":"object"}}}}}

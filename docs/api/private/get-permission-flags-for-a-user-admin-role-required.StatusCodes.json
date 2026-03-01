@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"User permission data","content":{"application/json":{"schema":{"properties":{"user":{"type":"string"},"userId":{"type":"integer"},"addEvent":{"type":"boolean"}},"type":"object"}}}},"403":{"description":"Admin role required"}}}

@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"includeFinancial":{"type":"boolean","default":false},"includeEvents":{"type":"boolean","default":false},"includeSundaySchool":{"type":"boolean","default":false},"force":{"description":"Skip the fresh-install guard","type":"boolean","default":false}},"type":"object"}}}}}

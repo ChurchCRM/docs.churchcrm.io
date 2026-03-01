@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Orphaned file list","content":{"application/json":{"schema":{"properties":{"count":{"type":"integer"},"files":{"type":"array","items":{"type":"string"}}},"type":"object"}}}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden — Admin role required"}}}

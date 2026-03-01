@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"iCalendar file","content":{"text/calendar":{"schema":{"type":"string","format":"binary"}}}},"404":{"description":"Invalid or expired access token"}}}

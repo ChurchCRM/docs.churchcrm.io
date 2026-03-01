@@ -1,1 +1,0 @@
-{"parameters":[{"name":"id","in":"path","required":true,"schema":{"type":"integer"}},{"name":"start","in":"query","required":false,"schema":{"type":"string","format":"date"}},{"name":"end","in":"query","required":false,"schema":{"type":"string","format":"date"}}]}

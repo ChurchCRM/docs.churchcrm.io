@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"System URL paths","content":{"application/json":{"schema":{"properties":{"RootPath":{"type":"string"},"ImagesRoot":{"type":"string"},"DocumentRoot":{"type":"string"},"SupportURL":{"type":"string"}},"type":"object"}}}},"401":{"description":"Unauthorized"},"403":{"description":"Admin role required"}}}

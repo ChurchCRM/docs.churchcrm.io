@@ -1,1 +1,0 @@
-{"parameters":[{"name":"query","in":"path","description":"Search term to match against all supported entity types","required":true,"schema":{"type":"string"}}]}

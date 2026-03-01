@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"New API key","content":{"application/json":{"schema":{"properties":{"apiKey":{"type":"string"}},"type":"object"}}}}}}

@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"required":["depositType"],"properties":{"depositType":{"type":"string","enum":["Bank","CreditCard","BankDraft"]},"depositComment":{"type":"string"},"depositDate":{"type":"string","format":"date"}},"type":"object"}}}}}

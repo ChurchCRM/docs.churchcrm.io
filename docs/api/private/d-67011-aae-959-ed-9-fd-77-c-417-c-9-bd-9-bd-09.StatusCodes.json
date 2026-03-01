@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Array of UI notification objects","content":{"application/json":{"schema":{"properties":{"notifications":{"type":"array","items":{"properties":{"title":{"type":"string"},"icon":{"type":"string"},"type":{"type":"string"},"message":{"type":"string"},"link":{"type":"string"}},"type":"object"}}},"type":"object"}}}}}}

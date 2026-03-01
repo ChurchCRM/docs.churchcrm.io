@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Families with upcoming/recent anniversaries (±7 days)","content":{"application/json":{"schema":{"properties":{"families":{"type":"array","items":{"properties":{"FamilyId":{"type":"integer"},"Name":{"type":"string"},"WeddingDate":{"type":"string"}},"type":"object"}}},"type":"object"}}}}}}

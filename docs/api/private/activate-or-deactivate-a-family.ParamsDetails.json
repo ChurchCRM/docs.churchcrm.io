@@ -1,1 +1,0 @@
-{"parameters":[{"name":"familyId","in":"path","required":true,"schema":{"type":"integer"}},{"name":"status","in":"path","required":true,"schema":{"type":"string","enum":["true","false"]}}]}

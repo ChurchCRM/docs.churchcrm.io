@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"imgBase64":{"description":"Base64-encoded image data","type":"string"}},"type":"object"}}}}}

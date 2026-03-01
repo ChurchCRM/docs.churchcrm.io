@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"CSV file attachment with pledge/payment data"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"}}}

@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"required":["Name","ForegroundColor","BackgroundColor"],"properties":{"Name":{"type":"string","example":"Youth Group"},"ForegroundColor":{"type":"string","example":"#ffffff"},"BackgroundColor":{"type":"string","example":"#3788d8"}},"type":"object"}}}}}

@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Plugin list","content":{"application/json":{"schema":{"properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object"}}},"type":"object"}}}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden — Admin role required"},"500":{"description":"Error listing plugins"}}}

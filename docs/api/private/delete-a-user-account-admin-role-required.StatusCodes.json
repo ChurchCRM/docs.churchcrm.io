@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"User deleted","content":{"application/json":{"schema":{"properties":{"user":{"description":"Deleted username","type":"string"}},"type":"object"}}}},"403":{"description":"Admin role required"}}}

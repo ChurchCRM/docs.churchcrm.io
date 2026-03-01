@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"required":["groupID","groupRoleID"],"properties":{"groupID":{"type":"integer"},"groupRoleID":{"type":"integer"}},"type":"object"}}}}}

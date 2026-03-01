@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Backup file download stream"},"400":{"description":"Download failed"},"403":{"description":"Admin role required"}}}

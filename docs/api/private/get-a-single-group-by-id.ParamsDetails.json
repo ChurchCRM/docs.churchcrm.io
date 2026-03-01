@@ -1,1 +1,0 @@
-{"parameters":[{"name":"groupID","in":"path","required":true,"schema":{"type":"integer"}}]}

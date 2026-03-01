@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Event object","content":{"application/json":{"schema":{"properties":{"Id":{"type":"integer"},"Title":{"type":"string"},"Start":{"type":"string","format":"date-time"},"End":{"type":"string","format":"date-time"}},"type":"object"}}}},"401":{"description":"Unauthorized"},"404":{"description":"Event not found"}}}

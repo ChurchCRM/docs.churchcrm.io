@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"fullPath":{"description":"Full path to the upgrade file","type":"string"},"sha1":{"description":"SHA1 hash for verification","type":"string"}},"type":"object"}}}}}

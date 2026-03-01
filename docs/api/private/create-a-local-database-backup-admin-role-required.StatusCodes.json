@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Backup job result with file info"},"400":{"description":"Backup failed"},"403":{"description":"Admin role required"}}}

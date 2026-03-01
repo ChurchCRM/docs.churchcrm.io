@@ -1,1 +1,0 @@
-{"parameters":[{"name":"personId","in":"path","required":true,"schema":{"type":"integer","example":42}},{"name":"roleId","in":"path","description":"Role ID from GET /persons/roles","required":true,"schema":{"type":"integer","example":1}}]}

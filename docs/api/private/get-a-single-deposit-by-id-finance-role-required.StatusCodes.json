@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Deposit object"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"}}}

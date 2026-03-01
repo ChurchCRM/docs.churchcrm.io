@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Whether the enrollment code is valid","content":{"application/json":{"schema":{"properties":{"IsEnrollmentCodeValid":{"type":"boolean"}},"type":"object"}}}}}}

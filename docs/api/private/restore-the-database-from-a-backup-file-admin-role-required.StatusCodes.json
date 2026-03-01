@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Restore job result"},"403":{"description":"Admin role required"},"500":{"description":"Database restore failed"}}}

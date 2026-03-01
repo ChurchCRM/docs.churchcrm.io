@@ -1,1 +1,0 @@
-{"title":"Body","body":{"required":true,"content":{"application/json":{"schema":{"properties":{"settings":{"description":"Key-value map of settings to update","type":"object"}},"type":"object"}}}}}

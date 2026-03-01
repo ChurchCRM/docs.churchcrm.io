@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"List of self-registered persons","content":{"application/json":{"schema":{"properties":{"people":{"type":"array","items":{"type":"object"}}},"type":"object"}}}},"401":{"description":"Unauthorized"}}}

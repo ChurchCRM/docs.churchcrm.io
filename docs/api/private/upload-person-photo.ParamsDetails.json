@@ -1,1 +1,0 @@
-{"parameters":[{"name":"personId","in":"path","required":true,"schema":{"type":"integer","example":42}}]}

@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Group members enriched with family address fields","content":{"application/json":{"schema":{"properties":{"Person2group2roleP2g2rs":{"type":"array","items":{"type":"object"}}},"type":"object"}}}}}}

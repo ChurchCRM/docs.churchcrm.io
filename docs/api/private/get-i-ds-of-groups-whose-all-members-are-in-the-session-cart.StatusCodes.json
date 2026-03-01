@@ -1,1 +1,0 @@
-{"responses":{"200":{"description":"Group IDs where every member is in the cart","content":{"application/json":{"schema":{"properties":{"groupsInCart":{"type":"array","items":{"type":"integer"}}},"type":"object"}}}}}}
