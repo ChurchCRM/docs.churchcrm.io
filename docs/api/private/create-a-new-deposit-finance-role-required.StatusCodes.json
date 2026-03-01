@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"Newly created deposit object"},"400":{"description":"Invalid or missing deposit type"},"403":{"description":"Finance role required"}}}
+{"responses":{"200":{"description":"Newly created deposit object"},"400":{"description":"Invalid or missing deposit type"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"}}}

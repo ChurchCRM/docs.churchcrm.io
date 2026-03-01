@@ -13,14 +13,34 @@ info:
 servers:
   -
     url: 'https://{host}/api'
-    description: 'Self-hosted ChurchCRM instance'
+    description: 'Self-hosted ChurchCRM API (/api)'
+    variables:
+      host:
+        default: your-server.com
+        description: 'Your ChurchCRM server hostname'
+  -
+    url: 'https://{host}/admin'
+    description: 'Self-hosted ChurchCRM Admin (/admin)'
+    variables:
+      host:
+        default: your-server.com
+        description: 'Your ChurchCRM server hostname'
+  -
+    url: 'https://{host}'
+    description: 'Self-hosted ChurchCRM root (for /kiosk and /plugins)'
     variables:
       host:
         default: your-server.com
         description: 'Your ChurchCRM server hostname'
   -
     url: 'http://localhost/churchcrm/api'
-    description: 'Local development'
+    description: 'Local API development (/api)'
+  -
+    url: 'http://localhost/churchcrm/admin'
+    description: 'Local Admin development (/admin)'
+  -
+    url: 'http://localhost/churchcrm'
+    description: 'Local root development (for /kiosk and /plugins)'
 paths:
   /api/database/people/export/chmeetings:
     get:
@@ -1252,6 +1272,8 @@ paths:
       responses:
         '200':
           description: 'JSON array of all deposits'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1283,6 +1305,8 @@ paths:
           description: 'Newly created deposit object'
         '400':
           description: 'Invalid or missing deposit type'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1296,6 +1320,8 @@ paths:
       responses:
         '200':
           description: 'Array of deposits within the last 90 days'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1316,6 +1342,8 @@ paths:
       responses:
         '200':
           description: 'Deposit object'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1352,6 +1380,8 @@ paths:
       responses:
         '200':
           description: 'Updated deposit object'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1371,6 +1401,8 @@ paths:
       responses:
         '200':
           description: 'Deposit deleted successfully'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1393,6 +1425,8 @@ paths:
           description: 'OFX content for the deposit'
         '404':
           description: 'Deposit not found'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1415,6 +1449,8 @@ paths:
           description: 'PDF generated successfully'
         '404':
           description: 'Deposit not found or has no payments'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1435,6 +1471,8 @@ paths:
       responses:
         '200':
           description: 'CSV file attachment with pledge/payment data'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1455,6 +1493,8 @@ paths:
       responses:
         '200':
           description: 'Pledge items associated with the deposit'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1475,6 +1515,8 @@ paths:
       responses:
         '200':
           description: 'Payment items associated with the deposit'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1494,6 +1536,8 @@ paths:
                 properties:
                   payments: { type: array, items: { type: object } }
                 type: object
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1518,6 +1562,8 @@ paths:
                 properties:
                   payment: { type: object }
                 type: object
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1545,6 +1591,8 @@ paths:
                 properties:
                   data: { type: array, items: { properties: { FormattedFY: { type: string }, Amount: { type: number }, PledgeOrPayment: { type: string }, Date: { type: string, format: date }, Fund: { type: string } }, type: object } }
                 type: object
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -1565,6 +1613,8 @@ paths:
       responses:
         '200':
           description: 'Payment deleted successfully'
+        '401':
+          description: Unauthorized
         '403':
           description: 'Finance role required'
       security:
@@ -3418,6 +3468,8 @@ paths:
                   DocumentRoot: { type: string }
                   SupportURL: { type: string }
                 type: object
+        '401':
+          description: Unauthorized
         '403':
           description: 'Admin role required'
       security:
@@ -3474,6 +3526,8 @@ paths:
                 properties:
                   terms: { type: array, items: { type: string } }
                 type: object
+        '401':
+          description: Unauthorized
         '403':
           description: 'Admin role required'
       security:

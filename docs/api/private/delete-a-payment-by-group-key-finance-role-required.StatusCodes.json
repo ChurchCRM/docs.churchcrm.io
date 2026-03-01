@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"Payment deleted successfully"},"403":{"description":"Finance role required"}}}
+{"responses":{"200":{"description":"Payment deleted successfully"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"}}}

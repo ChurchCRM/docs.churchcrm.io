@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"JSON array of all deposits"},"403":{"description":"Finance role required"}}}
+{"responses":{"200":{"description":"JSON array of all deposits"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"}}}

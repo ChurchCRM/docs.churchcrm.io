@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"Pledge items associated with the deposit"},"403":{"description":"Finance role required"}}}
+{"responses":{"200":{"description":"Pledge items associated with the deposit"},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"}}}

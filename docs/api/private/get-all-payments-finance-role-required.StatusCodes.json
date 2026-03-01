@@ -1,1 +1,1 @@
-{"responses":{"200":{"description":"Array of payment records","content":{"application/json":{"schema":{"properties":{"payments":{"type":"array","items":{"type":"object"}}},"type":"object"}}}},"403":{"description":"Finance role required"}}}
+{"responses":{"200":{"description":"Array of payment records","content":{"application/json":{"schema":{"properties":{"payments":{"type":"array","items":{"type":"object"}}},"type":"object"}}}},"401":{"description":"Unauthorized"},"403":{"description":"Finance role required"}}}
