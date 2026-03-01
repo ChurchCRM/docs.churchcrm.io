@@ -9,15 +9,14 @@ sidebar_position: 12
 
 ## Installation
 
-### How do I log into a fresh install??
+### How do I log into a fresh install?
 
-The installation and setup process creates an admin user which can then use to create other users etc:
+The installation and setup process creates an admin user that you can use to create other users:
 
-Username: `admin`
+- **Username:** `admin`
+- **Password:** `changeme`
 
-Password: `changeme`
-
-As the default password suggests, **you should change this as immediately after installation**.
+Change this password immediately after your first login.
 
 ## I get a message about "Secret Keys missing from Config.php"
 
@@ -29,7 +28,7 @@ ChurchCRM currently supports two different mapping service providers which canno
 * Google Maps API
 * Microsoft Bing Maps
 
-Both require configuration external to ChurchCRM before attempting to use the mapping features in our application. Please review the [geographic features documentation](https://github.com/ChurchCRM/CRM/wiki/Geographic) for more information.
+Both require configuration external to ChurchCRM before using the mapping features. See [Geographic](/user-guide/geographic) and [Google Maps Setup](/administration/google-maps-setup) for details.
 
 ## I get "Too Many Redirects" or errors while making API calls
 
@@ -41,15 +40,15 @@ see [https://github.com/ChurchCRM/CRM/blob/master/cloud9/001-cloud9.conf](https:
 
 ## Internal Server Error 500
 
-We have an [entire page dedicated to resolving 500 errors](https://github.com/ChurchCRM/CRM/wiki/500-Error), but we see in many cases the root cause being incorrect file permissions on the web server. Make sure you set the permissions as per our [documentation on setting up permissions correctly](https://github.com/ChurchCRM/CRM/wiki/File-System-Permissions) for details.
+See the [500 Error](/administration/500-error) guide. In many cases the cause is incorrect file permissions. Set permissions as described in [File System Permissions](/administration/file-system-permissions).
 
 ## Error reporting in PHP
 
-Update the copy of [Include\Config.php](https://github.com/ChurchCRM/CRM/blob/master/src/Include/Config.php.example) file change line 56
+To see more detailed errors during troubleshooting, edit your `Include/Config.php` (or the `.example` from the [ChurchCRM source](https://github.com/ChurchCRM/CRM/blob/master/src/Include/Config.php.example)) and change:
 
 `error_reporting(E_ERROR);` to `error_reporting(E_ALL);`
 
-also, see a listing of all [PHP error reporting]( http://php.net/manual/en/errorfunc.constants.php) that can be used
+See the [PHP error reporting constants](https://www.php.net/manual/en/errorfunc.constants.php) for other options.
 
 ## Debug
 
@@ -57,17 +56,9 @@ Explore various methods for debugging the ChurchCRM application, including turni
 
 Enable the logs in the System Settings, the default value is INFO but you may want to change that. The logs are created in the `/logs` dir. Please note that logs are not cleaned by the system and it is up to the admin to clean files.
 
-## What if my host doesn't have register_globals turned OFF?
+## How do I set up my logo or letterhead?
 
-There is a simple workaround if your server does not have register_globals
-turned off. Create a file called ".htaccess" with a simple text editor and
-insert the following line into that new file:
-	php_flag register_globals off
-Save this file and upload this file into the main ChurchCRM directory.
-
-## How do I setup my Logo or Letter Head?
-
-Many of the reports and documents you can generate from Church CRM allow the inclusion of a logo or letter head. By default, this will be the following files in the `/Images` directory:
+Many reports and documents can include a logo or letterhead. By default, ChurchCRM looks for these files in the `Images/` directory:
 ```
 church_letterhead.jpg
 church_letterhead.png
@@ -80,8 +71,8 @@ It may be tempting to simply upload your own artwork and rename the files as abo
    eg. using SSH secure copy:
 
    ```scp my_fancy_letterhead.jpg user@hostingprovider:ChurchCRM/Images```
-4. Log into your Church CRM with admin privileges.
-5. Go to Admin -> Edit General Settings -> Report Settings
-6. Change the value of `sDirLetterHead` to `../Images/<your_file_name>` and hit "Save Settings".
+4. Log in to ChurchCRM with an admin account.
+5. Go to **Admin** → **Edit General Settings** → **Report Settings**.
+6. Set **sDirLetterHead** to `../Images/<your_file_name>` and click **Save Settings**.
 
-   *Where ``<your_file_name>`` is the name of the image you uploaded in step #3*
+   Replace `<your_file_name>` with the image you uploaded in step 3.

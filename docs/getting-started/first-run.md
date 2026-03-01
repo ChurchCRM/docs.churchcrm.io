@@ -60,14 +60,12 @@ In the top navigation, select the **Tasks** icon (see screenshot below), then ch
 
 If you use the database backup utility, make sure the `churchcrm/SQL` directory is not accessible to the public. The temporary files created during backup could otherwise be downloaded by anyone with the right timing. Consult your web server's documentation for how to restrict access to that directory.
 
-## System Locale
+## System locale
 
-If ChurchCRM is not displaying your chosen language correctly, the server may need the corresponding locale installed.
+If ChurchCRM does not display your chosen language correctly, the server may need the corresponding locale installed. See [Server Locale Requirements](/administration/server-locale) for how to install locales on Debian/Ubuntu and Rocky Linux/RHEL.
 
-1. On the server, run: `sudo locale-gen es_ES` (replace `es_ES` with your locale code).
+Then in ChurchCRM:
 
-   The server must have the correct locale installed, as ChurchCRM uses system libraries (`gettext`) for translations. See [HowTo: Change Locale in Linux](http://www.shellhacks.com/en/HowTo-Change-Locale-Language-and-Character-Set-in-Linux) for guidance.
-
-2. In ChurchCRM, open the **Admin** menu and choose **Edit General Settings**.
-3. Select the **Localization** tab.
-4. Change **Language** to one of the available languages in the dropdown.
+1. Open **Admin** → **Edit General Settings**.
+2. Select the **Localization** tab.
+3. Set **Language** to the desired language and save.

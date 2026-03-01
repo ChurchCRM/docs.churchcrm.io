@@ -17,7 +17,7 @@ Every Person should belong to a family.
 
 ## Step-by-step: Adding a Family
 
-1. From the top menu, select **People** → **Add New Family**.
+1. Go to **People** → **Add New Family**.
 2. Enter the **Family Name**.
 3. Enter the shared **Address**, **City**, **State**, **ZIP**, **Country**.
 4. Enter **Home Phone** and **Family Email**.
@@ -31,7 +31,7 @@ Every Person should belong to a family.
 
 ## How do I add a new Family?
 
-1. From the top menu, select _"Add New Family"_ (under _"People"_).
+1. Go to **People** → **Add New Family**.
 2. Complete the form. Note that you can insert up to ten family members from directly from this form.
 3. Complete the individual lines for each person, but only enter the last name if it differs from the last name of the Family record. All people entered in this manner will create a new Person record which will be assigned to the designated Family record.
 4. Press _Save_ when the form is complete.

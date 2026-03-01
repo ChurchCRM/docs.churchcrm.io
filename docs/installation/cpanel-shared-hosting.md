@@ -3,32 +3,32 @@ title: cPanel Shared Hosting
 sidebar_position: 5
 ---
 
-Installing ChurchCRM in Cpanel/shared hosting
-1. login to your website Cpanel
-2. if you want to install ChurchCRM in a subdomain e.g. `http://churchcrm.mywebsite.org`, you should create the subdomain "churchcrm" using cpanel's "Subdomains"
-3. if you want to install ChurchCRM in a subdirectory e.g. `http://mywebsite.org/churchcrm`, create the subdirectory "churchcrm" in your webroot using cpanel filemanager (usually:  `/home.../myusername/public_html/churchcrm`)
-4. You can also install in your webroot e.g `http://myChurchCRM.org` (usually:  `/home.../myusername/public_html/`) [NOTE:- if using the root directory, when extracting the zip file or uploading, all files in the folder "churchcrm" should go into your webroot]
-5. Go to cpanel's "MySQL databases" to create a new database e.g myusername_myChurchCRM
-6. Asign/Add a user  to the newly created database ("Add a User to a Database") or
-7. Create a new user and set password for the created database e.g myusername_ChurchCRMAdmin ("MySQL Users, Add a New User") grant all priviledges to the user.
-8. Download ChurchCRM latest release [https://github.com/ChurchCRM/CRM/releases/latest](https://github.com/ChurchCRM/CRM/releases/latest)
-9. Upload ChurchCRM application files to yor website.
-**Use the following steps for an FTP upload** or follow "_Using Cpanel's Filemanager_" below:
-10. Extract the downloaded ChurchCRM zip file to a directory on your computer (The downloaded zip file contains a single directory called "churchcrm")
-11. Use an FTP client (e.g. filezilla) to upload all the files in the directory "churchcrm" to your prefered website directory (steps 2,3,& 4 above)
-12. change all ChurchCRM files to mode 644 (rw-r--r--) and directories to mode 755 (rwxr-xr-x). See "[File System Permissions](https://github.com/ChurchCRM/CRM/wiki/File-System-Permissions)" for more detail.
-13. **Using Cpanel's Filemanager**
-14. In Cpanel's Filemanager, upload and extract all the files in the ChurchCRM zip file you downloaded in step 8 to your preferred installation directory (steps 2,3,& 4 above) (be aware that the zip file contains a single directory "churchcrm" you need to get all the files in that directory to your prefered directory)
-15. Check permissions on all files are mode 644 (rw-r--r--) and directories are mode 755 (rwxr-xr-x). See "[File System Permissions](https://github.com/ChurchCRM/CRM/wiki/File-System-Permissions)" for more detail. Depending on your hosting provider, there may be nothing needed for this.
-16. You should be able to access ChurchCRM at "`http//mywebsite.org/churchcrm` (for a subdirectory and subdomain install) or "`http//churchcrm.mywebsite.org`" (for a subdomain install), or  `http//mywebsite.org` (for web root install)
-17. The setup page will help you configure the app for first-time use.
+# Installing ChurchCRM on cPanel / Shared Hosting
 
-The database script would have set up an initial user called "**Admin**" with a password of "**changeme**". You will be prompted to change this password upon login. Once you have created other user accounts, you may delete or rename this default account. Just make sure that you always have a user with administrative privileges.
+1. Log in to your hosting **cPanel**.
+2. **Subdomain:** To use e.g. `http://churchcrm.mywebsite.org`, create the subdomain "churchcrm" in cPanel → **Subdomains**.
+3. **Subdirectory:** To use e.g. `http://mywebsite.org/churchcrm`, create the folder "churchcrm" in your web root (often `public_html/churchcrm`) using **File Manager**.
+4. **Web root:** To use e.g. `http://myChurchCRM.org`, install in web root (`public_html/`). When extracting the zip, place the *contents* of the "churchcrm" folder into web root.
+5. In cPanel → **MySQL Databases**, create a new database (e.g. `myusername_churchcrm`).
+6. **Add a user to the database** (or create a new MySQL user) and grant **All Privileges** to that database.
+7. Download the latest release from [GitHub Releases](https://github.com/ChurchCRM/CRM/releases/latest).
+8. Upload the ChurchCRM files to your site.
 
-***NOTE***
+**FTP upload:**
+9. Extract the zip on your computer (it contains a single folder "churchcrm").
+10. Use an FTP client (e.g. FileZilla) to upload the *contents* of the "churchcrm" folder to your chosen directory (subdomain, subdirectory, or web root).
+11. Set file permissions: files 644, directories 755. See [File System Permissions](/administration/file-system-permissions).
 
-If the setup process fails, please feel free to reach out for help and review our documentation on how to gather logs and other diagnostic information [here](https://github.com/ChurchCRM/CRM/wiki/Logging-and-Diagnostics)
+**Or using cPanel File Manager:**
+9. In **File Manager**, upload the ChurchCRM zip, then extract it. Move the contents of the "churchcrm" folder into your target directory.
+10. Set permissions: files 644, directories 755. See [File System Permissions](/administration/file-system-permissions). Some hosts set these automatically.
 
-## Test the System Before Importing Real Data
+Open your site in a browser (e.g. `https://mywebsite.org/churchcrm` or `https://churchcrm.mywebsite.org`). The setup wizard will guide you through first-time configuration.
 
-- Test the system by importing demo data: [Importing Demo Data via Admin Pages](Importing-Demo-Data.md)
+After setup, log in as **admin** with password **changeme** and change the password when prompted. Keep at least one user with administrative privileges.
+
+If setup fails, see [Logging & Diagnostics](/administration/logging-and-diagnostics) for how to gather logs and [Troubleshooting](/administration/troubleshooting) for common fixes. You can also ask for help on [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions).
+
+## Test before importing real data
+
+Use the built-in demo data import from **Admin** (if available) or import a small CSV to verify the system. See [Data Import](/user-guide/data-import).

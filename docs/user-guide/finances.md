@@ -113,7 +113,7 @@ Payments are very similar to pledges. There are two ways in which payments can b
 
   The layout for most QuickBooks deposit tickets should nearly identical; however, differences in printers and deposit ticket providers may require you to adjust the position of various elements of the report.
 
-  1. Click on the "Admin" left-nav menu, and choose "Edit General Settings"
+  1. Go to **Admin** → **Edit General Settings**
 
       ![Admin (gear) menu](/img/Setup/admin-gen-settings-1.png)
 
@@ -123,6 +123,6 @@ Payments are very similar to pledges. There are two ways in which payments can b
 
 ## How do I Add a new Deposit Fund?
 
-1. Click on the "Fundraiser" left-nav menu, and choose "Edit Fundraiser".
+1. Go to **Fundraiser** → **Edit Fundraiser**.
     ![Fundraiser Admin](/img/Finances/fund-raiser-admin-1.png)
 2. Use the on-screen editor to add / remove donation funds.

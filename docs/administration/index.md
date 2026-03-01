@@ -22,7 +22,7 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 - [Reset Password](/administration/reset-password) — Recover access when the admin password is lost
 - [Troubleshooting](/administration/troubleshooting) — Diagnose and resolve common problems
 - [FAQs](/administration/faqs) — Frequently asked questions
-- [500 Error](/administration/error) — Resolve internal server errors
+- [500 Error](/administration/500-error) — Resolve internal server errors
 - [Logging & Diagnostics](/administration/logging-and-diagnostics) — Access and interpret application logs
 - [Bug Reporting & Diagnostics](/administration/bug-reporting-and-diagnostics) — Report issues with useful diagnostic information
 - [Reporting Issues](/administration/reporting-issues) — How to report bugs and request support

@@ -7,9 +7,9 @@ sidebar_position: 14
 
 ## 1. Background
 
-We receive a lot of support requests either in our [Gitter chat](https://gitter.im/ChurchCRM/CRM) or via [GitHub Issues](https://github.com/ChurchCRM/CRM/issues). However, we can only offer generic assistance unless we are provided with some details specific to *your* setup. There are literally hundreds of different ways to host ChurchCRM from dedicated hardware, virtual machines, shared hosting or containerized setups. How we support you and what we might suggest is heavily dependent on how you have deployed ChurchCRM.
+We receive support requests via [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) and [GitHub Issues](https://github.com/ChurchCRM/CRM/issues). However, we can only offer generic assistance unless we are provided with some details specific to *your* setup. There are literally hundreds of different ways to host ChurchCRM from dedicated hardware, virtual machines, shared hosting or containerized setups. How we support you and what we might suggest is heavily dependent on how you have deployed ChurchCRM.
 
-This wiki page endeavors to explain the information we need, and how to get it, to support you.
+This page describes what information we need, and how to get it, when you ask for support.
 
 ## 2. Your setup
 
@@ -26,13 +26,13 @@ In all setups as much of the following information as possible:
   * **Windows** - Docker Desktop
   * **Linux** - distribution/version/etc
   * **MacOS** - version/MAMP/Homebrew
-* Webserver:
-  * **Apache** - we currently only support Apache web server, but knowing how you have deployed as a dedicated `vhost` or under a subdirectory etc.
-  * **PHP** - version, configuration and installed extensions. Adding [PHP `info`](https://www.php.net/manual/en/function.phpinfo.php) page can be useful.
+* Web server:
+  * **Apache** (or **nginx** if used) — how it is deployed (vhost, subdirectory, etc.).
+  * **PHP** — version, configuration, and installed extensions. A [PHP `phpinfo()`](https://www.php.net/manual/en/function.phpinfo.php) page can help.
 * MySQL/MariaDB:
   * Version and configuration. Is it co-hosted on the same machine as the webserver or is it on a different machine?
 * File System Permissions:
-  * Please [verify your file permissions](File-System-Permissions). Incorrect permissions cause a LOT of support requests and are easy to fix.
+  * Please [verify your file permissions](/administration/file-system-permissions). Incorrect permissions cause many support requests and are easy to fix.
 
 ## 3. Logs
 
@@ -168,6 +168,6 @@ In `Include/Config.php`, set `$debugBootstrapper = true;`. If the variable is no
 
 This will cause the bootstrapper to write verbose logs as it sets up the environment.
 
-The resulting debug log entries will be written to the log file for the current date (ending in `-app.log` see [section 3.1](Logging-and-Diagnostics#31-churchcrm-logs)).
+The resulting debug log entries are written to the current date's app log (e.g. `yyyy-mm-dd-app.log`). See [ChurchCRM Logs](#31-churchcrm-logs) above.
 
 To revert this debug behavior, set `$debugBootstrapper = false;`

@@ -13,7 +13,7 @@ A Person record represents an individual in your congregation. Person records ca
 
 ## Step-by-step: Adding a Person
 
-1. From the left menu, click **People** → **Add New Person**.
+1. Go to **People** → **Add New Person**.
 2. Enter **First Name** and **Last Name**.
 3. Select or create a **Family** (required).
 4. Enter **Classification** (Member, Guest, etc.).
@@ -27,7 +27,7 @@ A Person record represents an individual in your congregation. Person records ca
 
 ## How do I find a specific person?
 
-In the left menu, find the search box just above the _"Dashboard"_ heading. Enter a search string — results will begin appearing as you type, showing all matches by first or last name.
+In the left navigation, find the search box just above **Dashboard**. Enter a search string — results appear as you type, matching first or last name.
 
 Clicking on a person's name opens their Person View, which lists all information about that person, including assigned properties, assigned groups, and notes.
 
@@ -45,7 +45,7 @@ This makes it easy to update shared information in one place. For a family of te
 
 There are two ways to add a new person:
 
-From the left menu, click _"Add a New Person"_, complete the form, and press _"Save"_ or _"Save and Add"_. The _"Save and Add"_ option saves the record and opens a blank form for the next entry, which is useful for entering multiple people at once.
+Go to **People** → **Add New Person**, complete the form, then click **Save** or **Save and Add**. **Save and Add** saves the record and opens a blank form for the next person.
 
 To add a new family and several people at the same time, use the Family Editor instead.
 

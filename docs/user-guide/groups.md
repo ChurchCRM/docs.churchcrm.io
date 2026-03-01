@@ -13,7 +13,7 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 
 ## Step-by-step: Creating a Group
 
-1. From the top menu, click **Groups** → **Add New Group**.
+1. Go to **Groups** → **Add New Group**.
 2. Enter **Group Name** (e.g., "3rd Grade Sunday School").
 3. Enter **Description** (optional).
 4. Choose **Group Type** (e.g., Sunday School, Small Group, Committee).
@@ -39,7 +39,7 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 
 ## How do I add a new Group?
 
-1. From the top menu, click on _"Add a New Group"_ (under _"Groups"_).
+1. Go to **Groups** → **Add New Group**.
 
 2. Complete the form.
 
@@ -49,7 +49,7 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 
 ## How do I change the Name/Description/Type of a Group?
 
-1. From the top menu, select _"List Groups"_ (under _"Groups"_).
+1. Go to **Groups** → **List Groups**.
 
 2. Click on the desired Group.
 
@@ -63,7 +63,7 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 
 ## How do I add a new Role to a Group?
 
-1. From the top menu, select _"List Groups"_ (under _"Groups"_).
+1. Go to **Groups** → **List Groups**.
 
 2. Click on the desired Group.
 
@@ -77,7 +77,7 @@ The new Role should appear in the list.
 
 ## How do I change a Role in a Group?
 
-1. From the top menu, select _"List Groups"_ (under _"Groups"_).
+1. Go to **Groups** → **List Groups**.
 
 2. Click on the desired Group.
 
@@ -99,7 +99,7 @@ Default Roles allow you to quickly add new Members to a group. If you have 200 P
 
 ## How do I change the Default Role for a Group?
 
-1. From the top menu, select _"List Groups"_ (under _"Groups"_).
+1. Go to **Groups** → **List Groups**.
 
 2. Click on the desired Group.
 
@@ -117,7 +117,7 @@ When a new group is created, you are given the option to set the group type.
 
 ### How do I change the available Group Types?
 
-From the top menu, click on _"Edit Group Types"_ (under _"Groups"_).
+Go to **Groups** → **Edit Group Types**.
 
 ### What are Group-Specific Properties?
 
@@ -131,7 +131,7 @@ See the [Custom Fields](/user-guide/custom-fields) help topic.
 
 1. Add the desired people to your Cart.
 
-2. When you have the desired people in the Cart, from the top menu, select _"Empty Cart to Group"_ (under _"Cart"_).
+2. With people in the Cart, go to **Cart** → **Empty Cart to Group**.
 
 3. On the resulting screen, select the desired Group, then press _"Add to Group:"_.
 
@@ -141,7 +141,7 @@ All People will be added to the Group in that group's Default Role.
 
 ### How do I change the role of a Person in a Group?
 
-1. From the left menu, select _"List Groups"_.
+1. Go to **Groups** → **List Groups**.
 
 2. Click on the desired Group.
 

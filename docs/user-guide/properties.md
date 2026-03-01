@@ -33,7 +33,7 @@ On the Person, Family, or Group View, you'll find a section called "Assigned Pro
 
 ## How do a I add a brand-new Property that I can assign to a Person record?
 
-1. From the top menu, select _"People Properties"_ (under _"Properties"_).
+1. Go to **Properties** → **People Properties**.
 2. On the resulting screen, select _"Add a New Person Property"_.
 3. Complete the form. If you would like the Property to support a Value, enter a prompt (ex. - "Enter the hospital name and room number.").
 
@@ -41,7 +41,7 @@ Leaving the Prompt field blank will disallow the storing of a Value with the Pro
 
 ## How do a I add a brand-new Property that I can assign to a Family record?
 
-1. From the top menu, select _"Family Properties"_ (under _"Properties"_).
+1. Go to **Properties** → **Family Properties**.
 2. On the resulting screen, select _"Add a New Family Property"_.
 3. Complete the form. If you would like the Property to support a Value, enter a prompt (ex. - "Enter the hospital name and room number.").
 
@@ -49,7 +49,7 @@ Leaving the Prompt field blank will disallow the storing of a Value with the Pro
 
 ## How do a I add a brand-new Property that I can assign to a Group record?
 
-1. From the top menu, select _"Group Properties"_ (under _"Properties"_).
+1. Go to **Properties** → **Group Properties**.
 2. On the resulting screen, select _"Add a New Group Property"_.
 3. Complete the form. If you would like the Property to support a Value, enter a prompt (ex. - "Enter the hospital name and room number.").
 
@@ -61,6 +61,6 @@ This is just a method of organizing Properties into groups. A Property must be a
 
 ## How do I add a new Property Type?
 
-1. From the top menu, select _"Property Types"_ (under _"Properties"_).
+1. Go to **Properties** → **Property Types**.
 2. On the resulting screen, select _"Add a New Property Type"_.
 3. Complete the form and press _"Save"_.

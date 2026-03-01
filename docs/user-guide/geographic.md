@@ -3,62 +3,43 @@ title: Geographic Features
 sidebar_position: 20
 ---
 
+# Geographic Features
 
-ChurchCRM provides various geographic capabilities including:
-*  Converting street addresses to Latitude/Longitude coordinates (Geocoding)
-*  Rendering in-browser maps to display locations of People / Families
-*  Identifing families in close proximity to eachother
+ChurchCRM provides:
 
-## Address Lookup - Geocoding
+- **Geocoding** — Convert street addresses to latitude/longitude
+- **In-browser maps** — Show locations of people and families
+- **Proximity** — Find families that live close to each other
 
-ChurchCRM stores the latitude and longitude with each family in order to render push-pins on maps and to caluclate proximity between families.
+For setup, see [Google Maps Setup](/administration/google-maps-setup) or use Bing Maps as described there.
 
-Converting a given street address into coordinates requires ChurchCRM to be configured with a Geo coding services. We curretly support the Google Maps Geocoding API, and Bing Maps Geocoding API.
+---
 
-### Google Maps Geocoding API
-In order to use the Google Maps Geocoding API, you _must_ configure an API key in the Google Cloud Admin panel. At the time of this writing (July 2021), creating and using Maps API keys for Geocoding is free below a threshold **but** still requires billing enabled on the Google Cloud Compute project.
+## Geocoding
 
-Documentation for creating the API keys is available here: https://cloud.google.com/docs/authentication?hl=en
+ChurchCRM stores latitude and longitude with each family for map push-pins and proximity. You must configure a geocoding service (Google Maps or Bing Maps) in **Admin** → **System Settings** → **Map Settings**. See [Google Maps Setup](/administration/google-maps-setup) for API keys and restrictions.
 
-While creating a Google Maps Geocoding API key, please ensure to configure the API restrictions appropriately:
-*  Application Restrictions
-   *  IP Addresses - supply the IP Address of your ChurchCRM server
-*  API Restrictions
-   * Geocoding API
+:::tip API key restrictions
+Configure application and API restrictions in Google Cloud Console to avoid unexpected charges. Use HTTP referrers for browser maps and follow the current [Google Maps Platform documentation](https://developers.google.com/maps/documentation).
+:::
 
-*_Improper API key restriction configuration could result in unexpected charges to your Google Cloud account_*
+---
 
-Google has specifically stopped supporting referrer-based restrictions (link?) and if you have enabled them in hte past, you will start to see errors like this in the ChurchCRM application log:
-```
-[2021-07-13T10:52:57.986155+10:00] defaultLogger.WARNING: issue creating geoCoder API access denied.
-    Request: https://maps.googleapis.com/maps/api/geocode/json?address=URL-encoded-street-address&language=en&key=YOUR_API_KEY -
-    Message: API keys with referer restrictions cannot be used with this API. [] {
-        "url":"/FamilyEditor.php?FamilyID=xx","remote_ip":"111.222.333.444","correlation_id":"60ece3e9f0c36" }
-```
+## In-app maps
 
-### Bing Maps Geocoding API
-* To be determined*
+From the **People** area, use **Family Map** (or **Family Geographic Utilities**) to view family locations by classification. The map requires a correctly configured Google Maps API key (both Geocoding API and Maps JavaScript API). Only families that have been successfully geocoded will appear.
 
-## In-App Maps
-From the People Dashboard, a "Family Map" button is available.
+---
 
-This allows you to visualize the locations of all families by classification.
+## Finding families that live close together
 
-In order for this map to appear, you must have a correctly configured Google Maps API key:
-*  Application Restrictions
-   *  HTTP Referrers - supply the fully qualified domain name portion of the URL from which your ChurchCRM users will access the application.
+1. Go to **People** → **Family Geographic Utilities**.
+2. Select a family from the list.
+3. Click **Show Neighbors**.
+4. Use **Maximum number of neighbors** and **Maximum distance** to limit results.
 
-*  API Restrictions
-   * Maps Javascript API
+---
 
-*_Improper API key restriction configuration could result in unexpected charges to your Google Cloud account_*
+## Export for other map tools
 
-Additionally, only families which have been successfully resolved using the configured geocoder in your ChurchCRM installation.
-
-## How do I find Families that live close to each other?
-
-Select _"Family Geographic Utilities"_ from the _"People"_ menu, then select a Family from the list. Press _"Show Neighbors"_ and this page will update with the nearest neighbor families listed at the bottom. The Maximum number of neighbors and Maximum distance fields are used to limit the number of neighbor families displayed.
-
-## Are other types of maps available?
-
-The _"Family Geographic Utilities"_ page can also make annotation files for the GPS Visualizer web site or the Delorme Street Atlas USA map program. To make an annotation file select the desired format and press _"Make Data File"_.
+The Family Geographic Utilities page can generate annotation files for external tools (e.g. GPS Visualizer, mapping software). Choose the desired format and click **Make Data File**.

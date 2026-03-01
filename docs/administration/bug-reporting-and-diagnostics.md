@@ -38,7 +38,7 @@ Thank you for helping improve ChurchCRM! This guide will help you report bugs ef
 **This is the fastest way to get help:**
 
 1. Log into your ChurchCRM instance
-2. Click **Support** → **Report an Issue** (top menu)
+2. In the menu, go to **Support** → **Report an Issue**
 3. Describe your problem
 4. **System info is automatically captured** ✓
 5. Logs are automatically included ✓

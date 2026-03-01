@@ -28,7 +28,7 @@ You can now log into the ChurchCRM web interface with whatever password you used
 
 ### Option 2. Reset the `admin` user to installation default
 
-The following SQL is a simplified version of the task done during installation to set the [default password](https://github.com/ChurchCRM/CRM/wiki/FAQs#how-do-i-log-into-a-fresh-install) for the `admin` user. As above, it needs to be executed in phpMyAdmin/`mysql` against the ChurchCRM database. This process resets the `admin` user login behavior to the same as a new installation without changing *anything else* in the database.
+The following SQL resets the `admin` user to the installation default (username `admin`, password `changeme`). See [FAQs](/administration/faqs#how-do-i-log-into-a-fresh-install) for default login details. As above, it needs to be executed in phpMyAdmin/`mysql` against the ChurchCRM database. This process resets the `admin` user login behavior to the same as a new installation without changing *anything else* in the database.
 
 ```SQL
 UPDATE `user_usr` SET
@@ -39,4 +39,4 @@ WHERE usr_per_ID = 1
   AND usr_UserName = 'Admin';
 ```
 
-You can now log into the ChurchCRM web interface as `admin` with the [default password](https://github.com/ChurchCRM/CRM/wiki/FAQs#how-do-i-log-into-a-fresh-install) and **will be prompted to change** the password on login.
+You can then log in as `admin` with password `changeme`; you will be prompted to change it on first login.
