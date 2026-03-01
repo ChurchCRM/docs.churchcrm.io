@@ -136,13 +136,13 @@ const config: Config = {
           label: 'API Reference',
         },
         {
-          href: 'https://churchcrm.io',
-          label: 'Website',
+          href: 'https://demo.churchcrm.io',
+          label: 'Demo',
           position: 'right',
         },
         {
-          href: 'https://demo.churchcrm.io',
-          label: 'Live Demo',
+          href: 'https://churchcrm.io/connect.html',
+          label: 'Connect',
           position: 'right',
         },
         {
@@ -182,7 +182,8 @@ const config: Config = {
           title: 'ChurchCRM',
           items: [
             { label: 'Website', href: 'https://churchcrm.io' },
-            { label: 'Live Demo', href: 'https://demo.churchcrm.io' },
+            { label: 'Demo', href: 'https://demo.churchcrm.io' },
+            { label: 'Connect', href: 'https://churchcrm.io/connect.html' },
             { label: 'GitHub', href: 'https://github.com/ChurchCRM/CRM' },
             { label: 'Releases', href: 'https://github.com/ChurchCRM/CRM/releases' },
           ],

@@ -12,35 +12,53 @@ info:
   version: 7.0.1
 servers:
   -
-    url: 'https://{host}/api'
+    url: '{scheme}://{host}/api'
     description: 'Self-hosted ChurchCRM API (/api)'
     variables:
+      scheme:
+        enum:
+          - https
+          - http
+        default: https
+        description: 'Protocol (https for production, http for local)'
       host:
         default: your-server.com
         description: 'Your ChurchCRM server hostname'
   -
-    url: 'https://{host}/admin'
+    url: '{scheme}://{host}/admin'
     description: 'Self-hosted ChurchCRM Admin (/admin)'
     variables:
+      scheme:
+        enum:
+          - https
+          - http
+        default: https
+        description: 'Protocol (https for production, http for local)'
       host:
         default: your-server.com
         description: 'Your ChurchCRM server hostname'
   -
-    url: 'https://{host}'
+    url: '{scheme}://{host}'
     description: 'Self-hosted ChurchCRM root (for /kiosk and /plugins)'
     variables:
+      scheme:
+        enum:
+          - https
+          - http
+        default: https
+        description: 'Protocol (https for production, http for local)'
       host:
         default: your-server.com
         description: 'Your ChurchCRM server hostname'
   -
     url: 'http://localhost/churchcrm/api'
-    description: 'Local API development (/api)'
+    description: 'Local development — API (/api)'
   -
     url: 'http://localhost/churchcrm/admin'
-    description: 'Local Admin development (/admin)'
+    description: 'Local development — Admin (/admin)'
   -
     url: 'http://localhost/churchcrm'
-    description: 'Local root development (for /kiosk and /plugins)'
+    description: 'Local development — root (for /kiosk and /plugins)'
 paths:
   /api/database/people/export/chmeetings:
     get:
