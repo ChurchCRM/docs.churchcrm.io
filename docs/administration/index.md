@@ -26,3 +26,5 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 - [Logging & Diagnostics](/administration/logging-and-diagnostics) — Access and interpret application logs
 - [Bug Reporting & Diagnostics](/administration/bug-reporting-and-diagnostics) — Report issues with useful diagnostic information
 - [Reporting Issues](/administration/reporting-issues) — How to report bugs and request support
+- [Docker Development Environment](/administration/Docker) — Development containers, npm scripts, and troubleshooting
+
