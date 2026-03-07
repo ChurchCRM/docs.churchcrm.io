@@ -18,10 +18,6 @@ The installation and setup process creates an admin user that you can use to cre
 
 Change this password immediately after your first login.
 
-## I get a message about "Secret Keys missing from Config.php"
-
-Two factor authentication (2FA) requires a manual change to the `Config.php` file to clear this message. The system will still operate normally if you ignore it, but you won't be able to implement 2FA without making the required changes. See [Secret Keys](/administration/secret-keys) for more details.
-
 ## How do I set up map features?
 
 ChurchCRM currently supports two different mapping service providers which cannot be used together; you need to choose one or the other. We currently support:

@@ -1,42 +1,38 @@
 ---
-title: Secret Keys in Config.php
+title: Two-Factor Authentication (2FA)
 sidebar_position: 4
 ---
 
-# Secret Keys in Config.php
+# Two-Factor Authentication (2FA)
 
-ChurchCRM supports 2 Factor Authentication (2FA) using Timed One-Time Passwords (TOTP).
+ChurchCRM supports Two-Factor Authentication (2FA) using Timed One-Time Passwords (TOTP), compatible with apps like Google Authenticator, Microsoft Authenticator, and Authy.
 
-These TOTP codes are generated using an app like Google Authenticator / Microsoft Authenticator, or similar.
+## How it works
 
-In order for an authenticator app to generate valid codes for use with ChurchCRM, the app must be enrolled in your specific instance of ChurchCRM (using a QC code) to obtain a "secret value" used for generating the TOTP codes.
+Each user's TOTP secret is randomly generated during enrollment and stored encrypted in the ChurchCRM database. An encryption key is automatically generated and managed by the system — no manual configuration is required.
 
-The secret value used for TOTP code generation is randomly generated and is unique for each user in your database, and it is stored in an encrypted form within your ChurchCRM database. This value must be retrieved by the application every time a user wishes to validate a TOTP code, so the secret cannot be stored in a hashed form.
+## User enrollment
 
-The encryption key used to store this this random, per-user TOTP generation secret is generated using the value you supply here for `$TwoFASecretKey` in your installation's `/path/to/ChurchCRM/Include/Config.php.`
+Any user can self-enroll in 2FA at any time:
 
-This `TwoFASecretKey` is stored separately from the database in order to protect the TOTP generation secrets from compromise in the event a malicious actor acquires a dump of only your ChurchCRM database (but not your application configuration files).
+1. Log in to ChurchCRM
+2. Click your name in the top-right navigation bar
+3. Select **Manage Two-Factor Authentication**
+4. Scan the QR code with your authenticator app
+5. Enter the 6-digit code to confirm enrollment
 
-Having both a database dump, *and* this `Config.php` file, TOTP secrets may be necessarily recovered.
+Once enrolled, you will be prompted for a TOTP code on every login.
 
-For example:
+## Admin controls
 
-```php
-$sSERVERNAME = 'localhost';
-$dbPort = '3306';
-$sUSER = 'churchcrm';
-$sPASSWORD = 'churchcrm';
-$sDATABASE = 'churchcrm';
-$TwoFASecretKey = 'YourSuperSecretRandomStringGoesHere_BetweenTheSingleQuotes';
-```
+Administrators can require all users to enroll in 2FA before accessing the system.
 
-**Do NOT use the secret in the configuration above!!**
+Go to **Admin** → **System Settings** → **Security** and enable **Require 2FA for all users**.
 
-Some good sources of random strings (*30-60 characters should be plenty*):
+When this setting is on:
+- Users who have not enrolled are allowed to log in but are redirected to the enrollment page on every request until they complete setup.
+- Users cannot access any other part of the system until enrollment is complete.
 
-* Most password management systems have a password generation tool (*1Password, LastPass, Dashlane, etc*)
-* [https://passwordsgenerator.net](https://passwordsgenerator.net)
-* command line tool `pwgen` - e.g., `pwgen -nsB1 30 5` will generate 5 different 30-character secrets to choose from. Pick one that looks appealing.
-* `/dev/urandom` can be used for one-shot string generation too. eg, `head /dev/urandom | LC_CTYPE=C tr -dc "[:alnum:]" | head -c 30 ; echo ''` will generate a single 30-character string. Note, the "odd" invocation of `tr` is to work around nuances in MacOS/BSD-based operating systems.
+## Recovery codes
 
-Once you update your `Config.php` with your random string, the error should go away and you can now use 2FA with ChurchCRM.
+During enrollment, recovery codes are generated. These one-time-use codes allow a user to log in if they lose access to their authenticator app. Users should store these codes securely.

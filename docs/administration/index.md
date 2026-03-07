@@ -13,7 +13,7 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 
 - [User Management](/administration/users) — Add, edit, and configure user accounts and permissions
 - [Security](/administration/security) — HTTPS requirements, role-based access control, and granular permissions
-- [Secret Keys](/administration/secret-keys) — Configure the encryption key required for two-factor authentication
+- [Two-Factor Authentication](/administration/secret-keys) — Enable and manage 2FA for users
 - [Localization](/administration/localization) — Set the application language
 - [Backup & Restore](/administration/backup-restore) — Configure automatic and manual database backups
 - [Upgrade Guide](/administration/upgrade) — Upgrade ChurchCRM to the latest version
