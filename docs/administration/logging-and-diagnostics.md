@@ -91,6 +91,17 @@ See [Docker Development Environment](Docker) for details on viewing container lo
 
 **Tip:** When reporting an issue, if your ChurchCRM logs don't show the problem, an Apache error log is often very helpful for diagnosis.
 
+## Verify Server Locale via Admin Debug Page
+
+If you suspect translations are not appearing because the server is missing locales, use the built-in Debug page to confirm what the server supports:
+
+1. Log in as an administrator.
+2. Go to **Admin** → **System** → **Debug** (`/admin/system/debug`).
+3. Open the **Locale Support** card — it shows a summary and a table of ChurchCRM-supported locales with a **System** column indicating whether each locale is installed on the server (`Yes`/`No`).
+4. If your desired locale shows **No**, install the OS locale (see "Install Locales" guidance in Server Locale Requirements) and restart the webserver/PHP-FPM, then reload the Debug page.
+
+The Debug page also surfaces timezone and PHP configuration information that can help with localization troubleshooting.
+
 ## 4. Sharing Logs With Developers
 
 Logs can contain sensitive information or information you want to hide (IP addresses, usernames, hostnames, domains, etc). If you choose to redact your logs please make it obvious what information you have replaced and please be consistent. For instance here is a raw log, and a redacted log (*although they have been formatted for clarity*):
