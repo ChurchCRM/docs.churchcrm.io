@@ -42,4 +42,4 @@ npm run deploy   # or npm run build
 6. Commit & publish:
 - Commit `locale/terms/messages.po` (and generated frontend JSON if your workflow requires it) and open a PR, or sync via POEditor integration.
 
-For a complete developer-oriented guide (commands, POEditor API examples, and troubleshooting), see the Localization management guide: https://github.com/ChurchCRM/CRM/blob/master/wiki/Localization-Management.md
+For a complete developer-oriented guide (commands, POEditor API examples, and troubleshooting), see the Localization management guide: https://github.com/ChurchCRM/CRM/wiki/Localization
