@@ -27,11 +27,12 @@ Once enrolled, you will be prompted for a TOTP code on every login.
 
 Administrators can require all users to enroll in 2FA before accessing the system.
 
-Go to **Admin** → **System Settings** → **Security** and enable **Require 2FA for all users**.
+Go to **Admin** → **System Settings** → **Security** and enable **Require all users to use 2FA**.
 
-When this setting is on:
-- Users who have not enrolled are allowed to log in but are redirected to the enrollment page on every request until they complete setup.
+When this setting is enabled:
+- Users who have not enrolled in 2FA are allowed to log in but are redirected to the enrollment page on every request until they complete setup.
 - Users cannot access any other part of the system until enrollment is complete.
+- Administrators can disable 2FA for a specific user from the **Users** management page if needed (e.g., account recovery).
 
 ## Recovery codes
 
