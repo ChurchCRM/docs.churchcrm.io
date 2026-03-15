@@ -3,69 +3,58 @@ title: First Run Configuration
 sidebar_position: 1
 ---
 
-## Configuring ChurchCRM
+## First-Run Setup Flow
 
-### General Settings
+After the setup wizard completes and you log in for the first time, ChurchCRM walks you through two mandatory steps before you can access the application.
 
-In the top navigation, open the **Admin** menu and choose **Edit General Settings**.
+### Step 1: Change Your Password
 
-![Edit General Settings](/img/Setup/admin-gen-settings-1.png)
+The default admin account uses the temporary password `changeme`. On first login you are immediately redirected to the **Change Password** page. Choose a strong password — you cannot skip this step.
 
-* You may want to change the **Default Password** to something specific to your organization. This is the password assigned to all new accounts until the user logs in and sets their own.
-* Under the **Localization** tab, set **Language** to change the display language of the system.
-* Under the **Church Information** tab, set **Church City** to the location of your church.
-* Under the **Member Setup** tab, set **Default City** to the default city for your organization's members.
-* Under the **Member Setup** tab, set **Default State**. This must be a two-letter abbreviation.
-* Under the **Member Setup** tab, set **Default Country**. This is required for some translations.
+### Step 2: Church Information
 
-##### Email Settings
+After your password is set, you are automatically redirected to **Admin → Church Information**. The system enforces this: until a church name is saved, every page you visit redirects back here.
 
-* Set **Default "To" Email Address** to the address you want to receive system requests (e.g., `webmaster@domain.com`).
-* Set **SMTP Host** to your email relay server.
-* Set **SMTP Username** and **SMTP Password** to the credentials for your email account.
+The following fields are required before you can proceed:
 
-##### Other Settings
+- **Church Name**
+- **Phone Number**
+- **Email Address**
+- **Street Address**, **City**, **State/Province**, **Zip Code**, **Country**
 
-* Set **Church Latitude** and **Church Longitude** to your church's geographic coordinates. You can look these up at [latlong.net](http://www.latlong.net/).
-* Set **Custom Header** to add a custom header to ChurchCRM pages. For example, entering `<H2>My Church</H2>` will display "My Church" in large, bold letters at the top of each page.
-* Set **Mailchimp API Key** if you use Mailchimp for bulk email. Create a free account at [mailchimp.com/signup](http://mailchimp.com/signup) and generate an API key in your account settings.
+Fill in all required fields, then click **Save**. You will be taken to the dashboard and can use the full application normally.
 
-### Report Settings
+:::tip Location tab
+Switch to the **Location** tab to enter your address. The map is populated automatically from the address on every save — no coordinates needed.
+:::
 
-In the top navigation, open the **Admin** menu, choose **Edit General Settings**, then select the **Report Settings** tab. The settings in this section control how various reports — such as giving statements — are generated.
+## Completing Your Configuration
 
-##### Church Information
+Once the mandatory setup is done, a few additional settings are worth configuring right away.
 
-Fill in your church's name, address, city, state, zip code, phone number, email address, and local area code.
+### Language and Time Zone
 
-##### Signature Information
+On the same **Church Information** page, set **Language** and **Time Zone** to control date formats, phone formats, and scheduled event times.
 
-These names appear on your financial reports as signatories.
+### Member Defaults
 
-* **Tax Signer** — Signs year-end tax statements.
-* **Reminder Signer** — Signs pledge reminder letters.
-* **Confirmation Signer** — Signs pledge confirmation letters.
+Open **Admin** → **Edit General Settings** → **Member Setup** tab.
 
-##### Letter Head Graphic
+- **Default City** — pre-fills the city field for new member records.
+- **Default State** — pre-fills the state (two-letter abbreviation).
+- **Default Country** — required for some locale-specific formatting.
 
-Set **Directory Letter Head** to control whether a letterhead graphic appears on printed directories.
+### Email Settings
 
-### Register Your Copy
+Open **Admin** → **Edit General Settings** → **Email** tab.
 
-In the top navigation, select the **Tasks** icon (see screenshot below), then choose **Update Registration**. This information is used to notify you of system updates.
-
-![Task Menu Icon](/img/Setup/admin-task-menu-1.png)
+- **Default "To" Email Address** — address that receives system requests (e.g. `webmaster@domain.com`).
+- **SMTP Host**, **SMTP Username**, **SMTP Password** — credentials for your outbound email relay.
 
 ### Security Considerations
 
-If you use the database backup utility, make sure the `churchcrm/SQL` directory is not accessible to the public. The temporary files created during backup could otherwise be downloaded by anyone with the right timing. Consult your web server's documentation for how to restrict access to that directory.
+If you use the database backup utility, make sure the `churchcrm/SQL` directory is not publicly accessible. Consult your web server's documentation for how to restrict directory access.
 
-## System locale
+## System Locale
 
 If ChurchCRM does not display your chosen language correctly, the server may need the corresponding locale installed. See [Server Locale Requirements](/administration/server-locale) for how to install locales on Debian/Ubuntu and Rocky Linux/RHEL.
-
-Then in ChurchCRM:
-
-1. Open **Admin** → **Edit General Settings**.
-2. Select the **Localization** tab.
-3. Set **Language** to the desired language and save.
