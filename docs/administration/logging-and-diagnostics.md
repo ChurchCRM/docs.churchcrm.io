@@ -143,7 +143,7 @@ Logs can contain sensitive information or information you want to hide (IP addre
 #### DO
 
 * If you redact your logs, please be consistent with what you replace. Replacing different details with same "redacted" comment renders your logs useless.
-* Wrap logs in triple back-ticks *(on their own line)*, in both [GitHub Issues](https://github.com/ChurchCRM/CRM/issues) and [Gitter chats](https://gitter.im/ChurchCRM/CRM), e.g.:
+* Wrap logs in triple back-ticks *(on their own line)*, in both [GitHub Issues](https://github.com/ChurchCRM/CRM/issues) and [Discord](https://discord.gg/tuWyFzj3Nj), e.g.:
 
   ````text
   ```
