@@ -6,7 +6,7 @@ const localSearch = require('@easyops-cn/docusaurus-search-local');
 
 const config: Config = {
   title: 'ChurchCRM Docs',
-  tagline: 'Free & Open-Source Church Management Software',
+  tagline: 'Our ministry: open-source, community-built, freely given.',
   favicon: 'img/favicon.ico',
 
   url: 'https://docs.churchcrm.io',

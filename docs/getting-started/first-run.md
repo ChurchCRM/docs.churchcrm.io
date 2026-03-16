@@ -13,28 +13,50 @@ The default admin account uses the temporary password `changeme`. On first login
 
 ### Step 2: Church Information
 
-After your password is set, you are automatically redirected to **Admin → Church Information**. The system enforces this: until a church name is saved, every page you visit redirects back here.
+After your password is set, you are automatically redirected to **Admin → Church Information**. The system enforces this: until a church name is saved, every page you visit redirects back here. Fill in the required fields and click **Save Church Information** to proceed.
 
-The following fields are required before you can proceed:
+---
 
-- **Church Name**
-- **Phone Number**
-- **Email Address**
-- **Street Address**, **City**, **State/Province**, **Zip Code**, **Country**
+## Church Information Page
 
-Fill in all required fields, then click **Save**. You will be taken to the dashboard and can use the full application normally.
+The Church Information page is organized into three tabs.
 
-:::tip Location tab
-Switch to the **Location** tab to enter your address. The map is populated automatically from the address on every save — no coordinates needed.
-:::
+### Basic Information tab
+
+This tab covers your church's identity and contact details.
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| **Church Name** | ✅ Yes | Appears on all reports, directories, and communications |
+| **Website** | No | Full URL, e.g. `https://yourchurch.org` |
+| **Phone Number** | ✅ Yes | Main contact number |
+| **Email Address** | ✅ Yes | Main contact email |
+| **Language** | No | Controls date formats, phone formats, and UI language |
+| **Time Zone** | No | Used for scheduling events and reporting times |
+
+### Location & Map tab
+
+This tab covers your church's physical address.
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| **Street Address** | ✅ Yes | |
+| **City** | ✅ Yes | |
+| **State / Province** | ✅ Yes | Populated dynamically based on selected country |
+| **Zip / Postal Code** | ✅ Yes | |
+| **Country** | ✅ Yes | |
+
+After saving an address, a **Leaflet map** appears showing your geocoded location. Coordinates are detected automatically — no manual entry required. The map updates on every save.
+
+### Display Preview tab
+
+This tab shows a live preview of how your church information will appear on reports and printed directories. It updates as you fill in the other tabs. Use it to confirm the address block looks correct before saving.
+
+---
 
 ## Completing Your Configuration
 
 Once the mandatory setup is done, a few additional settings are worth configuring right away.
-
-### Language and Time Zone
-
-On the same **Church Information** page, set **Language** and **Time Zone** to control date formats, phone formats, and scheduled event times.
 
 ### Member Defaults
 
@@ -54,6 +76,8 @@ Open **Admin** → **Edit General Settings** → **Email** tab.
 ### Security Considerations
 
 If you use the database backup utility, make sure the `churchcrm/SQL` directory is not publicly accessible. Consult your web server's documentation for how to restrict directory access.
+
+---
 
 ## System Locale
 
