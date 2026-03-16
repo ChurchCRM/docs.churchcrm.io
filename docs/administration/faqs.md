@@ -18,14 +18,6 @@ The installation and setup process creates an admin user that you can use to cre
 
 Change this password immediately after your first login.
 
-## How do I set up map features?
-
-ChurchCRM currently supports two different mapping service providers which cannot be used together; you need to choose one or the other. We currently support:
-* Google Maps API
-* Microsoft Bing Maps
-
-Both require configuration external to ChurchCRM before using the mapping features. See [Geographic](/user-guide/geographic) and [Google Maps Setup](/administration/google-maps-setup) for details.
-
 ## I get "Too Many Redirects" or errors while making API calls
 
 Please check whether mod_rewrite is working on your server. In addition, read the comment thread at [#3153](https://github.com/ChurchCRM/CRM/issues/3153) for more steps on how to diagnose mod_rewrite.
