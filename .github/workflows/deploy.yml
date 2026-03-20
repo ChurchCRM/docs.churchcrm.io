@@ -1,5 +1,10 @@
 name: Deploy to GitHub Pages
 
+# Opt into Node.js 24 for JavaScript actions to avoid Node 20 deprecation warnings
+# See: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 on:
   push:
     branches: [main]
@@ -21,14 +26,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -53,7 +58,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./build
 
@@ -65,7 +70,8 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      # `environment.url` cannot safely reference step outputs (evaluated before steps run).
+      # The `actions/deploy-pages` step will set the Pages deployment URL; omit job-level url.
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
