@@ -22,10 +22,12 @@ const sidebars: SidebarsConfig = {
       items: [
         'installation/index',
         'installation/system-requirements',
+        'installation/softaculous',
         'installation/rocky-linux',
         'installation/ubuntu',
         'installation/cpanel-shared-hosting',
         'installation/azure',
+        'installation/vps-cloud',
         'installation/ssl-https',
       ],
     },
@@ -164,7 +166,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'administration/troubleshooting',
         'administration/faqs',
-        'administration/error',
         'administration/logging-and-diagnostics',
         'administration/bug-reporting-and-diagnostics',
         'administration/reporting-issues',

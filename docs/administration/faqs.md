@@ -28,7 +28,7 @@ see [https://github.com/ChurchCRM/CRM/blob/master/cloud9/001-cloud9.conf](https:
 
 ## Internal Server Error 500
 
-See the [500 Error](/administration/500-error) guide. In many cases the cause is incorrect file permissions. Set permissions as described in [File System Permissions](/administration/file-system-permissions).
+In most cases the cause is incorrect file permissions. See the [Troubleshooting — 500 Internal Server Error](/administration/troubleshooting#500-internal-server-error) section and [File System Permissions](/administration/file-system-permissions).
 
 ## Error reporting in PHP
 

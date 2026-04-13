@@ -3,57 +3,117 @@ title: Upgrade Guide
 sidebar_position: 7
 ---
 
-# Upgrade
+# Upgrade Guide
 
-## Automatic Upgrade
+ChurchCRM supports two upgrade paths: an **in-app wizard** (recommended) and a **manual file replacement**. Both automatically apply any pending database migrations on the next page load — no SQL scripts to run by hand.
 
-ChurchCRM includes a built-in upgrade wizard that handles downloading, applying, and migrating your installation in a guided, step-by-step process.
+:::warning Back up before every upgrade
+Always take a database backup before upgrading. If something goes wrong, a backup is the only way to roll back cleanly. See [Backup & Restore](/administration/backup-restore).
+:::
 
-### Checking for Updates
+---
 
-1. Log in to ChurchCRM with an admin account.
-2. If a new version is available, a **download icon** (🡇) will appear in the top-right navbar.
-3. Click the icon and select **New Release** to open the upgrade page, or navigate to **Admin → System → Upgrade** directly.
-4. On the upgrade page, click **Refresh from GitHub** to check for the latest release.
+## Option 1 — In-App Upgrade Wizard (recommended)
 
-### Running the Upgrade Wizard
+### Step 1: Check for a new version
 
-The wizard guides you through four steps:
+1. Log in as an administrator.
+2. If a new version is available, a **download icon** appears in the top-right navbar.
+3. Click it and select **New Release**, or go directly to **Admin → System → Upgrade**.
+4. Click **Refresh from GitHub** to fetch the latest release info.
 
-**Step 1 — Warnings (Pre-Upgrade Checks)**
+### Step 2: Back up
 
-Any modified or missing system files are listed here. If you have customized any application files and want to preserve those changes, back them up manually before proceeding. The upgrade will overwrite them with official versions.
+Click **Create Backup** on the wizard's backup step. Download and keep the file until you have verified the new version is working.
 
-**Step 2 — Database Backup**
-
-Click **Create Backup** to download a full backup of your database before applying the update. It is strongly recommended not to skip this step. Keep the backup file until you have verified the new version is working correctly.
-
-**Step 3 — Download & Apply**
+### Step 3: Download & apply
 
 The wizard downloads the latest release from GitHub and applies it to your installation. Database migrations run automatically after the new files are in place.
 
-**Step 4 — Complete**
+### Step 4: Done
 
-The upgrade is finished. The system will automatically log you out and redirect you to the login page. Log back in to begin using the upgraded version.
+The system logs you out and redirects to the login page. Log back in — you are on the new version.
 
 ### File Integrity Check
 
-The upgrade page also shows a **File Integrity Check** comparing your installed files against the official release. If files are missing or have been modified, you can use the **Force Re-install** button to re-download and restore the current version without upgrading to a newer release.
+The upgrade page also shows a **File Integrity Check** comparing your installed files against the official release. Use **Force Re-install** to re-download and restore the current version without upgrading (useful if a file was accidentally modified).
 
-## Manual Upgrade
+---
 
-1. Download the latest release from [https://github.com/ChurchCRM/CRM/releases/latest](https://github.com/ChurchCRM/CRM/releases/latest).
-2. Extract the zip file, overwriting the files in your existing `/churchcrm` installation directory.
-3. Update [file permissions](/administration/file-system-permissions).
-4. Open your ChurchCRM URL in a browser. The database is migrated automatically on the next page load — no manual SQL steps are required.
-5. Log in to your upgraded system.
+## Option 2 — Manual Upgrade
 
-### Automatic database migration on boot
+Use this if the in-app wizard fails, or if your server doesn't have outbound HTTP access.
 
-As of ChurchCRM 7.1, database migrations run **automatically on the first request after a new version's files are in place**. You no longer see a "Database Needs Upgrade" page during a normal upgrade — the system detects the version mismatch, applies the pending migrations, and continues to the requested page.
+### Step 1: Download the latest release
 
-The manual database-upgrade page is still shown in one specific situation: if the installed application code is **older** than the schema (for example, you rolled files back without restoring the database). In that case the system stops and asks for manual intervention, because downgrading a schema is not safe to do automatically.
+Download the zip from [https://github.com/ChurchCRM/CRM/releases/latest](https://github.com/ChurchCRM/CRM/releases/latest).
 
-:::tip Before upgrading a production site
-Even though migrations are automatic, always take a fresh backup first — either from the built-in **Admin → Backup** page or via the upgrade wizard's built-in backup step.
+### Step 2: Back up everything
+
+Before touching any files:
+
+**Database backup** (via phpMyAdmin or command line):
+```bash
+mysqldump -u [username] -p [database_name] > churchcrm_backup_$(date +%Y%m%d).sql
+```
+
+**Config file backup:**
+```bash
+cp Include/Config.php Include/Config.php.bak
+```
+
+Optionally, snapshot the entire installation directory for a complete rollback option.
+
+### Step 3: Replace the application files
+
+Extract the zip and copy the new files over your existing installation:
+
+```bash
+unzip ChurchCRM-X.Y.Z.zip -d /tmp/churchcrm-new
+cp -r /tmp/churchcrm-new/churchcrm/* /var/www/html/churchcrm/
+```
+
+On cPanel / shared hosting: upload via FTP or File Manager, extract, and overwrite the existing files.
+
+### Step 4: Restore Config.php
+
+If the upgrade overwrote your database connection file, restore it:
+
+```bash
+cp Include/Config.php.bak Include/Config.php
+```
+
+### Step 5: Run the database migration
+
+Open ChurchCRM in your browser. The system automatically detects the version mismatch and applies pending database migrations on the next page load. No manual SQL steps needed.
+
+:::note Downgrade detection
+If your application files are **older** than the database schema (i.e., you accidentally rolled files back), the system stops and shows a warning rather than auto-migrating. Restore the correct version files to proceed.
 :::
+
+### Step 6: Verify
+
+- Check the version number at the bottom of any page
+- Browse People, Groups, and Finances to confirm data is intact
+- Hard-refresh your browser (Ctrl+Shift+R / Cmd+Shift+R) to clear cached CSS and JS
+
+---
+
+## Troubleshooting upgrades
+
+| Symptom | Likely cause | Fix |
+|---------|-------------|-----|
+| White screen / 500 error after upgrade | PHP version too old, or missing extension | Check the [System Requirements](/installation/system-requirements); review PHP error log |
+| "Database Needs Upgrade" page won't go away | Config.php pointing to the wrong database | Verify `Include/Config.php` credentials |
+| Old UI still showing after upgrade | Browser cached CSS/JS | Hard-refresh: Ctrl+Shift+R / Cmd+Shift+R |
+| Permission errors on file write | Web server user lost write access after file copy | Run `chown -R www-data:www-data churchcrm` (Ubuntu) or `chown -R apache:apache churchcrm` (Rocky Linux) |
+| In-app wizard says "no new version" | GitHub API rate-limited or server has no outbound HTTPS | Use manual upgrade; check server firewall |
+| Rollback needed | Upgrade failed mid-way | Restore database from backup, restore files from backup — see [Rollback](/administration/rollback) |
+
+---
+
+## After upgrading
+
+- Review **Admin → Get Started** for any new configuration options added in this version
+- Check the [changelog](https://github.com/ChurchCRM/CRM/releases) for feature notes
+- The docs site version of this page reflects the current release — if something looks different, check [What's new in 7.1](/getting-started/features-overview#whats-new-in-71)

@@ -44,6 +44,29 @@ If ChurchCRM logs don't show the issue:
 
 **See [Logging and Diagnostics](Logging-and-Diagnostics) guide for detailed log information.**
 
+---
+
+## Common errors
+
+### 500 Internal Server Error
+
+A 500 error immediately after install is almost always a **file permissions** problem. Your web server user needs to read the files, but PHP scripts must not be world-writable or have the execute bit set.
+
+| Platform | Fix |
+|----------|-----|
+| **Shared hosting (cPanel)** | In cPanel File Manager: select all files → Permissions → set files to `644`, directories to `755`. Do **not** use `755` on files — PHP scripts with the execute bit cause 500s on many shared hosts. |
+| **Ubuntu / Debian** | `sudo chown -R www-data:www-data /var/www/html/churchcrm` |
+| **Rocky Linux / RHEL** | `sudo chown -R apache:apache /var/www/html/churchcrm` |
+
+If permissions look correct, check logs (Step 1 above). Other causes:
+- A missing PHP extension — see [System Requirements](/installation/system-requirements)
+- `mod_rewrite` not enabled — see the install guide for your platform
+- PHP below the minimum — requires PHP 8.2 or higher
+
+See [File System Permissions](/administration/file-system-permissions) for full details.
+
+---
+
 ## Step 2: Still Having Issues?
 
 **Get help from the community on GitHub Discussions:**
