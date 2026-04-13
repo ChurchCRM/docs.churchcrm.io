@@ -19,6 +19,23 @@ Once an event is created, you can:
 
 ---
 
+## Events Dashboard
+
+The **Events** top-level menu opens a dedicated **Events Dashboard** (redesigned in ChurchCRM 7.1) that gives you an at-a-glance view of everything event-related:
+
+- **Summary stats** — upcoming events, total events this month/quarter, and attendance totals
+- **Upcoming events list** — the next scheduled events with one-click access to edit or take attendance
+- **Event types** — quick access to add/edit event types
+- **Quick actions** — add a new event, add an event type, or jump to attendance reports
+
+From the dashboard you can click any event to open its detail page, record attendance, or start child check-in/check-out. The dashboard replaces the older flat "list of events" page and is the recommended starting point for all event workflows.
+
+:::tip Calendar vs. Events Dashboard
+The **Calendar** (in the top navigation) shows events in a month/week view with an offcanvas editor — great for scheduling. The **Events Dashboard** is focused on attendance, metrics, and event management. Both read from the same underlying event data.
+:::
+
+---
+
 ## Step-by-step: Recording Attendance
 
 1. **Create an event type** (if needed): **Events** → **List Event Types** → **Add Event Type**.

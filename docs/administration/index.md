@@ -16,6 +16,7 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 - [Two-Factor Authentication](/administration/secret-keys) — Enable and manage 2FA for users
 - [Localization](/administration/localization) — Set the application language
 - [Backup & Restore](/administration/backup-restore) — Configure automatic and manual database backups
+- [Maps & Geocoding](/administration/maps-and-geocoding) — OpenStreetMap / Nominatim (no API key required)
 - [Upgrade Guide](/administration/upgrade) — Upgrade ChurchCRM to the latest version
 - [Rollback](/administration/rollback) — Restore a previous version or database backup
 - [File System Permissions](/administration/file-system-permissions) — Set correct permissions for your web server

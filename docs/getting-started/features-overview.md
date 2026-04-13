@@ -3,6 +3,22 @@ title: Features Overview
 sidebar_position: 2
 ---
 
+## What's new in 7.1
+
+ChurchCRM 7.1 is a major UI and UX refresh. Highlights:
+
+* **Modern UI** — the entire application shell has been migrated from AdminLTE / Bootstrap 4 to **Tabler / Bootstrap 5**, with a responsive sidebar, mobile-friendly floating menu, and optional dark mode.
+* **Maps without an API key** — interactive maps and address geocoding now use OpenStreetMap + Nominatim out of the box. No Google Cloud account or API key required. See [Maps & Geocoding](/administration/maps-and-geocoding).
+* **Guided first-run setup** — a new onboarding wizard walks administrators through setting a strong password, entering church information, and completing a setup checklist.
+* **Automatic database migrations** — upgrades run pending migrations automatically on the next page load. The legacy "database needs upgrade" page only appears on a genuine code-older-than-schema situation.
+* **Redesigned dashboards** — new stats-based dashboards for Events, Groups, People, and Finance.
+* **Modern CSV import** — drag-and-drop upload, auto-mapping of CSV columns to ChurchCRM fields, and per-row Classification and Family Role columns.
+* **Consolidated user settings** — a single tabbed **User Settings** page now holds profile, password, 2FA, theme, localization, and API tokens.
+* **Calendar offcanvas editor**, **native browser printing**, **unified communication system**, and many smaller admin UX cleanups.
+* **FrankenPHP Docker image** and **DDEV** for local development.
+
+---
+
 ## Core Features
 
 * Congregation Management
@@ -19,7 +35,7 @@ sidebar_position: 2
 * [Events](/user-guide/events) - Create one-time or recurring church events, track attendance, and manage child check-in and check-out.
 * [Groups](/user-guide/groups) - Organize members into ministry teams, committees, Bible studies, or any other grouping your church uses.
 * Sunday School - Manage Sunday School classes as specialized groups with a dedicated class dashboard, roster, and attendance tracking.
-* Calendar - View all scheduled events on a shared church calendar.
+* Calendar - View all scheduled events on a shared church calendar, with an offcanvas event editor for quick scheduling.
 * [Fundraiser](/user-guide/fundraiser) - Manage auctions, bake sales, and other fundraising events where members buy and sell items.
 * [Reports & Queries](/user-guide/reports-and-queries) - Generate printable directories, mailing labels, birthday lists, financial statements, and custom database queries.
 * [Volunteers](/user-guide/volunteers) - Track which members are willing to serve in specific roles and find volunteers when needs arise.

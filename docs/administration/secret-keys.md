@@ -16,12 +16,17 @@ Each user's TOTP secret is randomly generated during enrollment and stored encry
 Any user can self-enroll in 2FA at any time:
 
 1. Log in to ChurchCRM
-2. Click your name in the top-right navigation bar
-3. Select **Manage Two-Factor Authentication**
+2. Click your name in the top-right navigation bar and choose **User Settings**
+3. Open the **Two-Factor Authentication** tab
 4. Scan the QR code with your authenticator app
 5. Enter the 6-digit code to confirm enrollment
+6. **Save the recovery codes** that appear — they are the only way to regain access if you lose your device
 
 Once enrolled, you will be prompted for a TOTP code on every login.
+
+:::tip Consolidated in User Settings
+As of ChurchCRM 7.1, 2FA enrollment, recovery codes, and disabling 2FA all live on the same **User Settings** page as password, theme, and API token management. The older standalone "Manage Two-Factor Authentication" page has been removed. See [User Management](/administration/users) for the full list of User Settings tabs.
+:::
 
 ## Admin controls
 

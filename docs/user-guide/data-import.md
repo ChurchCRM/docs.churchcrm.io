@@ -9,14 +9,23 @@ ChurchCRM can import member data from CSV (comma-separated value) files, making 
 
 > **Important:** Test your import first! It's easier to fix issues in your CSV file than in ChurchCRM.
 
+:::tip Other ways to import
+ChurchCRM 7.1 also introduces a new **Admin → Export** landing page that groups all export formats (CSV, ChMeetings, database backup) together. The matching **Admin → Import** landing page links to CSV Import, ChMeetings import, and database restore.
+:::
+
 ---
 
 ## Getting Started
 
 1. Navigate to **Admin → CSV Import**
-2. Upload your CSV file
-3. Map your CSV columns to ChurchCRM fields
-4. Review and import
+2. **Drag a CSV file onto the upload area** — or click to browse. The file is uploaded and parsed immediately.
+3. The import wizard **auto-maps** your CSV columns to ChurchCRM fields based on header names. Review the suggested mapping and adjust any columns that don't line up.
+4. Choose classification, family generation, and any other options.
+5. Click **Import** — rows are inserted using the Propel ORM (the same path the app uses elsewhere), so validation and constraints match normal data entry.
+
+:::tip Need a starting point?
+The CSV Import page includes a **Download template CSV** button that gives you a properly-formatted file with every supported column header.
+:::
 
 ---
 
@@ -26,16 +35,18 @@ ChurchCRM can import member data from CSV (comma-separated value) files, making 
 - Title, First Name, Middle Name, Last Name, Suffix
 - Gender
 - Birth Date, Membership Date, Wedding Date
+- **Classification** — assign Member / Guest / Regular Attender / etc. on a per-row basis (new in 7.1)
+- **Family Role** — Head, Spouse, Child, etc. (new in 7.1)
 
-### Contact Information  
+### Contact Information
 - Address1, Address2, City, State, Zip, Country
 - Home Phone, Work Phone, Mobile Phone
 - Email, Work/Other Email
 
 ### Church-Specific
 - Donation Envelope number
-- [Custom Person Fields](Custom-Fields)
-- [Custom Family Fields](Custom-Fields)
+- [Custom Person Fields](/user-guide/custom-fields)
+- [Custom Family Fields](/user-guide/custom-fields)
 
 ### Date Formats
 
@@ -78,16 +89,17 @@ To enable automatic family generation:
 
 ## Setting Classifications During Import
 
-To assign [classifications](Classifications) efficiently:
+You have two options:
 
-1. **Separate your data** into multiple files by classification type
-2. **Import each file separately**, selecting the appropriate classification
-3. Example workflow:
-   - Import `members.csv` with classification "Member"
-   - Import `visitors.csv` with classification "Guest"
-   - Import `regular-attenders.csv` with classification "Regular Attender"
+**Option A — per-row classification column (new in 7.1).** Include a `Classification` column in your CSV, with values like `Member`, `Guest`, or `Regular Attender`. Each row is classified individually — ideal when a single export from your old system contains a mix of classifications.
 
-This is much faster than manually classifying each person after import.
+**Option B — per-file classification (all versions).** If your CSV has no classification column, you can still pick a default on the import screen and it will be applied to every imported row. A common workflow:
+
+- Import `members.csv` with default classification "Member"
+- Import `visitors.csv` with default classification "Guest"
+- Import `regular-attenders.csv` with default classification "Regular Attender"
+
+Mixing the two is fine: the per-row column, when present, wins over the default.
 
 ---
 

@@ -22,7 +22,7 @@ Validation occurs in the [`getApplicationPrerequisites()` function](https://gith
 | Component | Minimum Version | Recommended | Notes |
 |-----------|-----------------|-------------|-------|
 | **PHP** | 8.2 | 8.3 or 8.4 | Required for all core functionality |
-| **Apache** | 2.4 with mod_rewrite | 2.4+ | nginx may work but is not officially supported |
+| **Web server** | Apache 2.4 with mod_rewrite | Apache 2.4+ or FrankenPHP | FrankenPHP is officially supported via the `churchcrm-frankenphp` Docker image; nginx may work but requires per-subdirectory routing configuration |
 | **MySQL** | 8.0.11 | 8.0+ | Or MariaDB 10.5+ |
 | **MariaDB** | 10.5 | 10.6+ | Alternative to MySQL |
 | **PHP memory_limit** | 256MB | 512MB+ | 1GB+ for larger congregations |

@@ -51,7 +51,7 @@ For ongoing system management and maintenance.
 - [Backup & Restore](/administration/backup-restore) — Protect your data
 - [Users](/administration/users) — Manage user accounts and permissions
 - [Email Setup](/administration/email-setup) — Configure SMTP for notifications
-- [Google Maps Setup](/administration/google-maps-setup) — Geocoding and map display
+- [Maps & Geocoding](/administration/maps-and-geocoding) — OpenStreetMap / Nominatim (no API key required)
 - [Troubleshooting](/administration/troubleshooting) — Common issues and solutions
 - [FAQs](/administration/faqs) — Frequently asked questions
 

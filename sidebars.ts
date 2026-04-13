@@ -144,7 +144,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '⚙️ Configuration',
       items: [
-        'administration/google-maps-setup',
+        'administration/maps-and-geocoding',
         'administration/server-locale',
       ],
     },

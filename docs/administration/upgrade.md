@@ -45,5 +45,15 @@ The upgrade page also shows a **File Integrity Check** comparing your installed 
 1. Download the latest release from [https://github.com/ChurchCRM/CRM/releases/latest](https://github.com/ChurchCRM/CRM/releases/latest).
 2. Extract the zip file, overwriting the files in your existing `/churchcrm` installation directory.
 3. Update [file permissions](/administration/file-system-permissions).
-4. Open your ChurchCRM URL in a browser. The database will be migrated automatically on the next page load.
+4. Open your ChurchCRM URL in a browser. The database is migrated automatically on the next page load — no manual SQL steps are required.
 5. Log in to your upgraded system.
+
+### Automatic database migration on boot
+
+As of ChurchCRM 7.1, database migrations run **automatically on the first request after a new version's files are in place**. You no longer see a "Database Needs Upgrade" page during a normal upgrade — the system detects the version mismatch, applies the pending migrations, and continues to the requested page.
+
+The manual database-upgrade page is still shown in one specific situation: if the installed application code is **older** than the schema (for example, you rolled files back without restoring the database). In that case the system stops and asks for manual intervention, because downgrading a schema is not safe to do automatically.
+
+:::tip Before upgrading a production site
+Even though migrations are automatic, always take a fresh backup first — either from the built-in **Admin → Backup** page or via the upgrade wizard's built-in backup step.
+:::

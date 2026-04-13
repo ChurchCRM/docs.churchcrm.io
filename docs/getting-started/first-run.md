@@ -54,6 +54,12 @@ This tab shows a live preview of how your church information will appear on repo
 
 ---
 
+## Get Started checklist
+
+After the mandatory church-information step, ChurchCRM takes you to a **Get Started** page (also reachable any time from **Admin → Get Started**). This is a setup checklist that walks you through the remaining configuration tasks — email settings, user accounts, classifications, and import of existing data — and ticks each item off as you complete it. You can come back to it whenever you want; it's safe to ignore if you prefer to configure things directly.
+
+---
+
 ## Completing Your Configuration
 
 Once the mandatory setup is done, a few additional settings are worth configuring right away.

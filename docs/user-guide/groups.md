@@ -11,6 +11,20 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 
 ---
 
+## Groups Dashboard
+
+As of ChurchCRM 7.1 the **Groups** menu opens a redesigned dashboard (part of the Tabler UI migration) with:
+
+- **Group list** with filter/search and live counts
+- **Group types** quick access
+- **Reports** — membership, attendance, and directory exports in one place
+- **Group Map** — view groups with members plotted on the map
+- **Group Settings** panel — for type and role configuration
+
+Click any group to open the **Group View** page, which has been rebuilt as a modern MVC page with an offcanvas editor, inline role changes, and a dedicated tab for Sunday School classes.
+
+---
+
 ## Step-by-step: Creating a Group
 
 1. Go to **Groups** → **Add New Group**.
