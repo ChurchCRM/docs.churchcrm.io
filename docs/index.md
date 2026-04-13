@@ -21,7 +21,8 @@ For administrators setting up ChurchCRM for the first time.
 
 - [Installation Overview](/installation) — Choose your hosting method and get started
 - [System Requirements](/installation/system-requirements) — PHP, database, and server prerequisites
-- [Self-Hosted on Rocky Linux](/installation/rocky-linux) — Linux VPS install guide
+- [Self-Hosted on Rocky Linux](/installation/rocky-linux) — RHEL/Rocky Linux install guide
+- [Self-Hosted on Ubuntu / Debian](/installation/ubuntu) — Ubuntu 22.04/24.04 LTS install guide
 - [cPanel Shared Hosting](/installation/cpanel-shared-hosting) — Shared hosting setup
 - [Azure](/installation/azure) — Microsoft Azure cloud setup
 - [SSL / HTTPS](/installation/ssl-https) — Secure your installation

@@ -23,6 +23,7 @@ const sidebars: SidebarsConfig = {
         'installation/index',
         'installation/system-requirements',
         'installation/rocky-linux',
+        'installation/ubuntu',
         'installation/cpanel-shared-hosting',
         'installation/azure',
         'installation/ssl-https',

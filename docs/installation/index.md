@@ -23,7 +23,8 @@ Before installing, confirm your server meets the minimum requirements:
 
 Detailed guides for specific hosting environments:
 
-- **[Self-Hosted on Rocky Linux](/installation/rocky-linux)** — Linux VPS setup with Apache, MariaDB, and PHP-FPM
+- **[Self-Hosted on Rocky Linux](/installation/rocky-linux)** — RHEL/Rocky Linux with Apache, MariaDB, and PHP-FPM
+- **[Self-Hosted on Ubuntu / Debian](/installation/ubuntu)** — Ubuntu 22.04/24.04 LTS and compatible Debian systems
 - **[cPanel Shared Hosting](/installation/cpanel-shared-hosting)** — Shared hosting using cPanel tools
 - **[Azure](/installation/azure)** — Microsoft Azure cloud setup with Ubuntu and Apache
 - **Docker (Apache)** — `ghcr.io/churchcrm/churchcrm` — classic PHP-FPM + Apache image

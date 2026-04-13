@@ -3,106 +3,134 @@ title: Self-Hosted on Rocky Linux
 sidebar_position: 4
 ---
 
-# Self‐Hosted on RockyLinux
+# Self-Hosted on Rocky Linux
 
-The purpose of this page is to provide the requirements and steps needed to install/run ChurchCRM on a self-hosted Linux machine running RockyLinux (currently v8.9).
+Step-by-step installation of ChurchCRM on Rocky Linux (tested on 8.x and 9.x). For Ubuntu/Debian, see [Self-Hosted on Ubuntu](/installation/ubuntu).
 
-## Prerequisites
+---
 
-* mariadb-server
-* httpd (apache web server)
-* php8
-* npm (if running from git clone)
-
-## Suggested install commands
+## 1. Install system packages
 
 ```sh
-sudo dnf install httpd mariadb mariadb-server
+sudo dnf install httpd mariadb mariadb-server unzip
+sudo systemctl enable --now mariadb
+sudo systemctl enable --now httpd
 ```
 
-## PHP Installation
+## 2. Install PHP 8.4
 
-It may be possible to run with the stock RockyLinux php packages, but it seems to be easier to use modular packages from the remi repository, and instructions for this are provided below:
-
-> To enable the needed remi repository, see: [Adding Extra RockyLinux Repositories](Adding-Extra-RockyLinux-Repositories)
+Rocky Linux's default PHP is too old. Use the Remi repository:
 
 ```sh
+# Enable EPEL and Remi repos
+sudo dnf install epel-release
+sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-$(rpm -E %rhel).rpm
+
+# Switch to PHP 8.4
 sudo dnf module reset php
-sudo dnf module enable php:remi-8.2
-sudo dnf install php php-cli php-fpm php-mysqlnd php-zip php-curl php-gd
-sudo dnf module enable composer:remi:2
-sudo dnf install composer
+sudo dnf module enable php:remi-8.4
+sudo dnf install php php-cli php-fpm php-mysqlnd php-zip php-curl php-gd \
+     php-bcmath php-intl php-mbstring php-xml
 ```
 
-## Configure MariaDB
+:::tip PHP extensions
+All extensions in that last `dnf install` line are required. The app validates them at every page load and will display a warning if any are missing.
+:::
 
-* Edit `/etc/my.cnf.d/mariadb-server.cnf` if desired to change db file location
-* Start mariadb:  `sudo systemctl start mariadb`
-* Secure the setup, and set a root password:  `sudo mysql_secure_installation`
-* Create the churchcrm database: `mysqladmin -u root -p create churchcrm`
-* Then create the churchcrm user and set a password for that user `mysql -u root -p`:
+## 3. Configure MariaDB
 
-  ```sql
-  CREATE USER 'churchcrm'@'localhost' IDENTIFIED BY 'YourDBPasswordHere';
-  GRANT ALL PRIVILEGES ON churchcrm.* TO 'churchcrm'@'localhost';
-  FLUSH PRIVILEGES;
-  ```
+```sh
+sudo mysql_secure_installation
+```
 
-## Configure Apache httpd
+Then create the database and user:
 
-* Assuming that churchcrm may not be the only service on the web server, you should make a custom VirtualHost for churchcrm.
-* An example is given here, which should be placed in `/etc/httpd/conf.d` directory, named `churchcrm.conf`:
+```sh
+mysqladmin -u root -p create churchcrm
+mysql -u root -p
+```
 
-```apache_conf
-<VirtualHost *:8081>
+```sql
+CREATE USER 'churchcrm'@'localhost' IDENTIFIED BY 'YourDBPasswordHere';
+GRANT ALL PRIVILEGES ON churchcrm.* TO 'churchcrm'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+## 4. Configure Apache
+
+Create `/etc/httpd/conf.d/churchcrm.conf`:
+
+```apacheconf
+<VirtualHost *:80>
+  ServerName your-server-hostname
   DocumentRoot /var/www/html
-  <LocationMatch "/fpm-status">
-      ProxyPass unix:/run/php-fpm/www.sock|fcgi://localhost
-  </LocationMatch>
-  <Directory /var/www/html>
-      AllowOverride All
+
+  <Directory /var/www/html/churchcrm>
+    AllowOverride All
+    Require all granted
   </Directory>
 </VirtualHost>
 ```
 
-* The AllowOverride All is needed to ensure `.htaccess` rewrite requests are honored
-* You need to make sure that the `httpd` and `php-fpm` are enabled and running:
+`AllowOverride All` is required so that ChurchCRM's `.htaccess` routing rules take effect.
+
+Make sure both services are running:
 
 ```sh
 sudo systemctl enable --now php-fpm
-sudo systmctl enable --now httpd
+sudo systemctl enable --now httpd
 ```
 
-## Different Run-time Options
+## 5. Install ChurchCRM
 
-### Running from source (i.e. development, running from a git repository)
-
-* Note these steps are *not* necessary if running from a released zip file, as the results of this steps are already included in the zip.
-* Once the OS packages are installed, the following steps are used from a clean `git pull` on master
-  * `composer install`  (from src dir)
-  * `composer --dev install` (from src dir, to install needed dev tools)
-  * `npm install`
-  * `npm run deploy`
-
-### Running from a Downloaded Release Artifact
-
-Download the latest release from [GitHub Releases](https://github.com/ChurchCRM/CRM/releases/latest) (e.g. `ChurchCRM-6.0.0.zip` or newer).
-
-* This zip file contains a churchcrm top-level dir and will need to be unzipped in an appropriate area within your web server's Document root.
-* For this example we will put it in `/var/www/html` and expect to access that churchcrm subdirectory at: [https://YourSiteName/churchcrm](https://YourSiteName/churchcrm)
-* Run the following commands (replace `ChurchCRM-X.Y.Z.zip` with the actual file you downloaded):
+Download the latest release:
 
 ```sh
-sudo mkdir /var/www/html/churchcrm
-sudo unzip -d /var/www/html ChurchCRM-X.Y.Z.zip
-sudo chown -R apache:apache /var/www/html/churchcrm
+cd /var/www/html
+sudo wget https://github.com/ChurchCRM/CRM/releases/latest/download/ChurchCRM-latest.zip
+sudo unzip ChurchCRM-latest.zip
+sudo chown -R apache:apache churchcrm
 ```
 
-## Initial Setup
+:::tip File permissions
+See [File System Permissions](/administration/file-system-permissions) if the app shows permission warnings after install.
+:::
 
-Once the above steps have been completed, and you have:
+## 6. Open in your browser
 
-1. A running database with a churchcrm account, and a known password
-2. A working apache web server with mod_rewrite enabled
+Navigate to `http://your-server/churchcrm`. The first-run setup wizard will appear. See [First Run Configuration](/getting-started/first-run) for what to expect.
 
-You should then be able to go to: [https://YourSiteName/churchcrm](https://YourSiteName/churchcrm) and you should be directed to a setup page that lets you begin configuration of the application.
+---
+
+## Performance tuning
+
+For large data operations (imports, backups) the default PHP execution time may not be enough:
+
+```sh
+# /etc/php.ini
+max_execution_time = 300
+```
+
+Restart Apache after changing `php.ini`: `sudo systemctl restart httpd`
+
+---
+
+## Firewall
+
+If you have `firewalld` enabled, open HTTP (and HTTPS if you've set up SSL):
+
+```sh
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+```
+
+---
+
+## See Also
+
+- [Ubuntu Installation](/installation/ubuntu) — Debian/Ubuntu-based systems
+- [SSL / HTTPS](/installation/ssl-https) — Strongly recommended before going live
+- [System Requirements](/installation/system-requirements) — Full PHP and DB requirements
+- [First Run Configuration](/getting-started/first-run) — Initial setup after install
