@@ -38,7 +38,7 @@ ChurchCRM requires **PHP 8.2 or higher** as the absolute minimum. This requireme
 
 **Installation:**
 - **Shared Hosting (cPanel):** Select PHP 8.2 or higher from your hosting control panel
-- **Self-Hosted Linux:** Follow the steps at [Self-Hosted on Linux](/installation/self-hosted-linux) or [Rocky Linux](/installation/rocky-linux)
+- **Self-Hosted Linux:** Follow the steps at [Self-Hosted on Rocky Linux](/installation/rocky-linux)
 
 **Tested Versions:**
 The application is tested and verified to work with the following PHP versions:

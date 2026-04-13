@@ -22,7 +22,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'installation/index',
         'installation/system-requirements',
-        'installation/self-hosted-linux',
         'installation/rocky-linux',
         'installation/cpanel-shared-hosting',
         'installation/azure',
