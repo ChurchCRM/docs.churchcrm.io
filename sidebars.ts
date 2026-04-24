@@ -171,6 +171,16 @@ const sidebars: SidebarsConfig = {
         'administration/reporting-issues',
       ],
     },
+    {
+      type: 'category',
+      label: '🔌 Plugins',
+      items: [
+        'administration/plugins/index',
+        'administration/plugins/installing-community-plugins',
+        'administration/plugins/plugin-security-and-compliance',
+        'administration/plugins/plugin-localization',
+      ],
+    },
   ],
 
 };
