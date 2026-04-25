@@ -30,8 +30,8 @@ Plugins can:
 
 - Add new admin pages and menu items.
 - Register routes under `/plugins/{id}/...`.
-- Subscribe to people, family, event, group, financial, email, and
-  system hooks.
+- Subscribe to system hooks: person created/updated, family created/updated,
+  menu building, calendar registration, and cron jobs.
 - Inject HTML/JS/CSS into core pages.
 - Store their own settings (sandboxed to `plugin.{id}.*` keys).
 - Ship their own translations (see [Plugin Localization](./plugin-localization)).
