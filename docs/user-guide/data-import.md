@@ -10,7 +10,7 @@ ChurchCRM can import member data from CSV (comma-separated value) files, making 
 > **Important:** Test your import first! It's easier to fix issues in your CSV file than in ChurchCRM.
 
 :::tip Other ways to import
-ChurchCRM 7.1 also introduces a new **Admin → Export** landing page that groups all export formats (CSV, ChMeetings, database backup) together. The matching **Admin → Import** landing page links to CSV Import, ChMeetings import, and database restore.
+Use the **Admin → Export** landing page to access all export formats (CSV, ChMeetings, database backup). The **Admin → Import** landing page links to CSV Import, ChMeetings import, and database restore.
 :::
 
 ---
@@ -35,8 +35,8 @@ The CSV Import page includes a **Download template CSV** button that gives you a
 - Title, First Name, Middle Name, Last Name, Suffix
 - Gender
 - Birth Date, Membership Date, Wedding Date
-- **Classification** — assign Member / Guest / Regular Attender / etc. on a per-row basis (new in 7.1)
-- **Family Role** — Head, Spouse, Child, etc. (new in 7.1)
+- **Classification** — assign Member / Guest / Regular Attender / etc. on a per-row basis
+- **Family Role** — Head, Spouse, Child, etc.
 
 ### Contact Information
 - Address1, Address2, City, State, Zip, Country
@@ -59,15 +59,26 @@ The separator (dash, slash, etc.) doesn't matter.
 
 ---
 
+## Custom Properties Import
+
+The CSV importer supports **custom person properties**. If you have custom fields defined in ChurchCRM, include them as columns in your CSV using the field's internal name — the auto-mapper will suggest the correct mapping from the column header.
+
+---
+
 ## Tips for Successful Imports
 
-1. **Clean your data first** - It's easier to fix issues in Excel/Sheets than in ChurchCRM
-2. **Use the "Clear Data" option** - When testing, use this to start fresh between attempts
-3. **Don't rush** - Take time to properly map fields before importing
+1. **Clean your data first** — It's easier to fix issues in Excel/Sheets than in ChurchCRM
+2. **Use the template CSV** — Click **Download template CSV** on the import page to get a pre-formatted file with every supported column header
+3. **Use the "Clear Data" option** — When testing, use this to start fresh between attempts
+4. **Don't rush** — Review the auto-mapped columns carefully before confirming
 
 After importing, you can make corrections in ChurchCRM:
 - Move someone to a different family by editing their Person record
 - Assign family roles (head, spouse, child) to help with address labels
+
+:::tip Need to export data too?
+See [Export & Data](/user-guide/export) for CSV export, ChMeetings export, and database backup.
+:::
 
 ---
 
@@ -91,9 +102,9 @@ To enable automatic family generation:
 
 You have two options:
 
-**Option A — per-row classification column (new in 7.1).** Include a `Classification` column in your CSV, with values like `Member`, `Guest`, or `Regular Attender`. Each row is classified individually — ideal when a single export from your old system contains a mix of classifications.
+**Option A — per-row classification column.** Include a `Classification` column in your CSV, with values like `Member`, `Guest`, or `Regular Attender`. Each row is classified individually — ideal when a single export from your old system contains a mix of classifications.
 
-**Option B — per-file classification (all versions).** If your CSV has no classification column, you can still pick a default on the import screen and it will be applied to every imported row. A common workflow:
+**Option B — per-file classification.** If your CSV has no classification column, you can still pick a default on the import screen and it will be applied to every imported row. A common workflow:
 
 - Import `members.csv` with default classification "Member"
 - Import `visitors.csv` with default classification "Guest"

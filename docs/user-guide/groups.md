@@ -13,7 +13,7 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 
 ## Groups Dashboard
 
-As of ChurchCRM 7.1 the **Groups** menu opens a redesigned dashboard (part of the Tabler UI migration) with:
+The **Groups** menu opens a dashboard with:
 
 - **Group list** with filter/search and live counts
 - **Group types** quick access
@@ -22,6 +22,12 @@ As of ChurchCRM 7.1 the **Groups** menu opens a redesigned dashboard (part of th
 - **Group Settings** panel — for type and role configuration
 
 Click any group to open the **Group View** page, which has been rebuilt as a modern MVC page with an offcanvas editor, inline role changes, and a dedicated tab for Sunday School classes.
+
+### Key Features
+
+- **Map This Group** — plots all group members on a Leaflet map directly from the Group View page, useful for geographic outreach planning.
+- **Kiosk check-in for all groups** — any group can be assigned to a kiosk station, not just Sunday School. Link a group to an event, then assign that event to a kiosk device.
+- **Event roster with member photos** — group event rosters show member photos on each row with improved badge contrast.
 
 ---
 

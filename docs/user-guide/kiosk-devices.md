@@ -5,7 +5,11 @@ sidebar_position: 14
 
 # Kiosk Manager — Complete Guide
 
-ChurchCRM's **Kiosk Manager** lets you run self-service check-in on tablets or kiosks for events, Sunday School, and other activities. This guide covers setup, daily use, notifications, and troubleshooting.
+ChurchCRM's **Kiosk Manager** lets you run self-service check-in on tablets or kiosks for **any event with a linked group** — Sunday School, small groups, youth groups, Bible studies, and more. This guide covers setup, daily use, notifications, and troubleshooting.
+
+:::tip All group types supported
+Kiosk check-in is no longer limited to Sunday School classes. Any group can be used as a kiosk roster. The kiosk polls the server at an optimized rate for responsive reload and identify commands.
+:::
 
 ---
 
@@ -35,8 +39,9 @@ ChurchCRM's **Kiosk Manager** lets you run self-service check-in on tablets or k
 | **URL (admin)** | **Admin** → **Kiosk Manager** or `https://your-churchcrm-url/kiosk/admin` |
 | **Registration window** | 30 seconds (enable in Kiosk Manager) |
 | **Who can manage** | Administrators only |
-| **Assignment** | One event per kiosk; event must have a **group** linked |
-| **Heartbeat** | Device polls server periodically for commands (reload, identify) |
+| **Assignment** | One event per kiosk; event must have a **group** linked (any group type) |
+| **Heartbeat** | Device polls server at an optimized rate for faster reload/identify response |
+| **Supported groups** | All group types — Sunday School, small groups, youth groups, Bible studies, etc. |
 
 ---
 

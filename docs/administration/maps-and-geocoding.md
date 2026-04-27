@@ -33,6 +33,12 @@ If you are upgrading from an older release, no action is required. Your existing
 
 ---
 
+## Personal address priority
+
+When a person has their own address on record (overriding the family address), ChurchCRM uses the **personal address** for geocoding instead of the family address. Members who live at a different location from their household are mapped to the right place automatically.
+
+---
+
 ## Setting your church location
 
 The church location centers the main map view and the Church Information preview.

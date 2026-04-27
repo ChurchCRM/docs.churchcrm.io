@@ -112,6 +112,14 @@ If your application files are **older** than the database schema (i.e., you acci
 
 ---
 
+## Auto-Upgrade on Boot
+
+Pending database migrations run **automatically on the next page load** after new files are deployed — whether via the in-app wizard or a manual file copy. You no longer need to visit a separate migration page.
+
+A **smart version check** prevents old application code from running against a newer database schema. If the app files are older than the database, ChurchCRM stops and shows a clear warning rather than attempting a potentially destructive migration.
+
+---
+
 ## After upgrading
 
 - Review **Admin → Get Started** for any new configuration options added in this version

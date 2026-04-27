@@ -22,6 +22,10 @@ There are two kinds of plugins:
 
 All plugin management happens at **Admin → Plugins**.
 
+:::tip Community Plugin Registry
+The **Admin → Plugins** page connects to the approved community plugin registry. Browse available community plugins, read the risk summary, and install with one click — no manual file uploads required.
+:::
+
 ---
 
 ## What plugins can do

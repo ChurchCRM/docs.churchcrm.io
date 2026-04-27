@@ -33,6 +33,25 @@ Clicking on a person's name opens their Person View, which lists all information
 
 This is a wildcard search: the system looks for that sequence of characters anywhere in the first or last name. For example, searching for "ian" will return records for "Ian," "Brian," and anyone else whose name contains those letters in that order.
 
+## Timeline Filters
+
+The **Person View** includes a **Timeline** tab that shows notes, attendance records, and activity in chronological order. Use the filter controls to narrow the timeline by:
+
+- **Type** — Notes only, Attendance only, or All
+- **Date range** — Show entries from a specific period
+
+This makes it easier to review pastoral care history or attendance patterns for a specific member without scrolling through unrelated entries.
+
+---
+
+## Photo Management
+
+When a person record is deleted, any associated profile photo is automatically cleaned up from the server.
+
+Photo uploads are processed through the **Uppy** uploader — drag-and-drop a file directly onto the photo area on the Person Editor page.
+
+---
+
 ## Why is some information on the Person View shown in red text?
 
 Red text indicates information inherited from the associated Family record. People assigned to the same family share common information — such as address, phone number, and email address. This information only needs to be entered once on the Family record; all members of that family will inherit it unless the individual Person record has its own value.

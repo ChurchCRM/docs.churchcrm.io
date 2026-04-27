@@ -91,6 +91,7 @@ const sidebars: SidebarsConfig = {
         'user-guide/reports-and-queries',
         'user-guide/geographic',
         'user-guide/data-import',
+        'user-guide/export',
       ],
     },
   ],
@@ -140,12 +141,15 @@ const sidebars: SidebarsConfig = {
         'administration/email-setup',
         'administration/localization',
         'administration/reset-password',
+        'administration/notifications',
+        'administration/api-tokens',
       ],
     },
     {
       type: 'category',
       label: '⚙️ Configuration',
       items: [
+        'administration/system-settings',
         'administration/maps-and-geocoding',
         'administration/server-locale',
       ],

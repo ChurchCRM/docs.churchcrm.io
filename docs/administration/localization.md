@@ -5,11 +5,25 @@ sidebar_position: 5
 
 # Localization
 
-ChurchCRM supports more than 45 languages. The application language is configured in **Admin** → **General Settings** → **Localization**.
+ChurchCRM supports **46 languages**. The application language is configured in **Admin** → **General Settings** → **Localization**.
 
 Select the appropriate language from the dropdown and save the settings. The interface will switch to the selected language immediately.
 
 > **Note:** Translations are community-contributed and may be incomplete for some languages. If you encounter untranslated strings, the text will fall back to English.
+
+## Features
+
+### Browser language auto-detection
+
+When an unauthenticated user visits ChurchCRM (e.g., the login page), the application detects the browser's preferred language and displays the UI in that language automatically — if a translation exists. No configuration is required. Once a user logs in, their saved locale preference takes effect.
+
+### Regional locale grouping
+
+The language chooser now groups locales by **world region** (Americas, Europe, Asia, Africa, etc.) and shows each language's native name alongside the English label. This makes it much easier to find the right locale in a long list.
+
+### Per-user locale override
+
+Each user can set their own preferred language in **My Settings → Localization**, overriding the system-wide default. This allows multilingual teams to work in their own language on the same installation.
 
 ## How to translate ChurchCRM (brief)
 

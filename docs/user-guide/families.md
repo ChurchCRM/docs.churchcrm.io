@@ -43,6 +43,24 @@ There are two ways to view a family:
 1. Enter a name to look for in the search field at the top of the page, click the button beside _"Family"_ and press enter.
 2. Click on _"View All Families"_ (under _"People"_).
 
+## Unified Member & Family Profiles
+
+Person and Family profiles have been consolidated. Notes that previously appeared on both the person and family timeline are deduplicated — each note shows exactly once in the correct context. Property management is faster and more consistent across both record types.
+
+---
+
+## Timeline Filters
+
+Family View includes a **Timeline** tab with type and date filters, making it easy to review family history, pastoral notes, and attendance in one place.
+
+---
+
+## Photo Cleanup
+
+Profile images are automatically deleted from the server when a family or person record is removed, preventing orphaned files from accumulating.
+
+---
+
 ## How do I change the available Family Roles?
 
 * If you have permission, you should find a link called _"Family Roles Manager"_ (under _"People"_).

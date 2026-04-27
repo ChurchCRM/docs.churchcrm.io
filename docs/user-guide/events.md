@@ -21,7 +21,7 @@ Once an event is created, you can:
 
 ## Events Dashboard
 
-The **Events** top-level menu opens a dedicated **Events Dashboard** (redesigned in ChurchCRM 7.1) that gives you an at-a-glance view of everything event-related:
+The **Events** top-level menu opens a dedicated **Events Dashboard** that gives you an at-a-glance view of everything event-related:
 
 - **Summary stats** — upcoming events, total events this month/quarter, and attendance totals
 - **Upcoming events list** — the next scheduled events with one-click access to edit or take attendance
@@ -114,9 +114,26 @@ To generate a report:
 2. Choose an event type from the *Event Attendance Reports* area.
 3. Choose a person type corresponding to the event for which you wish to generate a report.
 
+## Unified Event Editor
+
+The **event editor is consistent across all entry points** — Calendar offcanvas, Events Dashboard, and full event detail page all show the same form. All times are saved in the local wall-clock time of the church, eliminating daylight-saving edge cases.
+
+---
+
+## Timeline Filters & Breadcrumbs
+
+Event roster pages show **member photos** on each attendee row, with improved badge contrast. **Breadcrumb navigation** (`Events → [Event Name] → Attendance`) lets you jump back up the hierarchy without the browser back button.
+
+---
+
 ## Checking Children In and Out of an Event
 
 During any event, you can monitor the checking in and checking out of children to comply with your church child protection policy.
+
+:::tip Use Kiosk Check-in for hands-free operation
+For continuous self-service check-in at a station, see [Kiosk Devices](/user-guide/kiosk-devices). The kiosk now works with **any group type** — not just Sunday School.
+:::
+
 In this scenario, you use the `PersonID` number associated with an individual to identify them in the system. This `PersonID` number is recognizable in the URL of the individual’s record in the system.
 
 To check a child into an event:
