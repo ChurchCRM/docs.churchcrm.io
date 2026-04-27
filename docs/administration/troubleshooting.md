@@ -84,3 +84,76 @@ If you've identified a bug, check GitHub issues:
 **When you open an issue on GitHub:**
 - An auto-comment will appear with diagnostic collection tips
 - Follow the guidance in that comment to help us help you faster
+
+---
+
+## User Language Preference Not Switching
+
+### Symptom
+You change your language preference in **My Settings → Localization** or **Admin → General Settings**, but the interface remains in the original language (often the system default). The preference appears to save, but translations don't switch.
+
+### Prerequisites
+- **First, verify system locales are installed** — See [Server Locale Requirements](/administration/server-locale). If you haven't installed the required system locale on your server, translations will not work. This is the most common cause.
+
+### Root Cause (LAMP Environments Only)
+After verifying locales are installed, if the language still doesn't switch, the issue is in the PHP gettext initialization. This is a **known limitation in PHP/gettext on LAMP stacks**:
+
+1. **System-level constraint:** PHP's `gettext` extension is tightly coupled to the operating system's locale library. Once a locale catalog is loaded in a PHP process, it can be difficult to reload it without restarting the process.
+
+2. **Process reuse:** PHP running under Apache (mod_php) or traditional LAMP setups may reuse PHP processes for multiple requests. If a previous request loaded `gettext` in locale A, switching to locale B on the next request may not fully reload the translation catalog.
+
+3. **Supported environment:** ChurchCRM's localization is fully tested and supported on **LAMP stacks** (Linux + Apache + MySQL + PHP with mod_php). Other environments (Docker, Kubernetes, FPM, serverless) may have different behavior due to process lifecycle differences.
+
+### Diagnostic Steps
+
+1. **Confirm system locales are installed:**
+   ```bash
+   locale -a | grep <your_language>
+   # Example: locale -a | grep fr_FR
+   ```
+   If the locale is not listed, see [Server Locale Requirements](/administration/server-locale) to install it.
+
+2. **Verify the language preference is saved:**
+   - Go to **Admin** → **System** → **Debug** and check the **Locale Support** card
+   - Confirm the system shows your chosen locale (not the server default)
+
+3. **Check webserver logs for errors:**
+   - See Step 1 above for log locations
+   - Look for `gettext`, `locale`, or `setlocale` errors
+
+### Workarounds
+
+#### For Self-Hosted / VPS (Recommended)
+**Restart Apache** to clear PHP process state:
+```bash
+sudo systemctl restart apache2   # Debian/Ubuntu
+# or
+sudo systemctl restart httpd     # Rocky/RHEL/CentOS
+```
+
+This forces Apache to spawn fresh PHP processes that will properly reload translation catalogs.
+
+#### For Shared Hosting
+- Restart is not available on shared hosting
+- Contact your hosting provider to request a PHP process restart or environment reset
+- Some providers allow you to restart via cPanel → "Restart Services"
+
+#### For Docker / Alternative Environments
+If you're running ChurchCRM in Docker or another non-traditional setup, localization support is not fully tested:
+- Consider using `docker-compose up --force-recreate` or restarting the container to clear PHP state
+- Alternatively, use a LAMP stack on a VPS for full localization support
+
+### Reporting the Issue
+If restarting does not resolve the problem:
+1. Confirm system locales are installed and visible in `locale -a`
+2. Restart your webserver (see above)
+3. Still not working? Post on [GitHub Discussions — Troubleshooting](https://github.com/ChurchCRM/CRM/discussions/categories/troubleshooting) with:
+   - Your hosting environment (shared hosting, VPS, Docker, etc.)
+   - Output of `locale -a | grep <your_language>`
+   - Your webserver type and PHP version (`php -v`)
+
+---
+
+## Related Documentation
+- [Localization](/administration/localization) — Language configuration overview
+- [Server Locale Requirements](/administration/server-locale) — Installing system locales
