@@ -9,12 +9,24 @@ Notes are miscellaneous memos that can be attached to [Person](Persons) or [Fami
 
 ## Note Privacy
 
-| Type | Who Can See |
-|------|-------------|
-| **Public** | All users with Notes permission |
-| **Private** | Only the user who created the note |
+### Visibility Rules
 
-> **Tip:** Use private notes for sensitive pastoral information that shouldn't be shared with all staff members.
+| Type | Who Can See Full Content | Who Can Edit | Who Can Delete |
+|------|--------------------------|--------------|----------------|
+| **Public** | All users with Notes permission | Creator only | Creator or Admin |
+| **Private** | Creator only | Creator only | Creator or Admin |
+
+### Private Note Details
+
+When a user creates a **private note**, it is visible only to them. However, system administrators have special access:
+
+- **Creator**: Sees full note content and can edit or delete it
+- **Admins (not creator)**: See a placeholder "[Private Note — visible only to creator]" in the timeline, but **cannot see the full content**. They can delete the note if needed
+- **Other users**: Cannot see the note at all
+
+> **Tip:** Use private notes for sensitive pastoral information such as prayer requests, medical concerns, or confidential conversations that shouldn't be shared with other staff members.
+
+> **Note for Admins:** Private notes are protected by design. Even as an administrator, you cannot view another user's private notes — you can only delete them if necessary. This ensures users can record truly confidential information.
 
 ---
 
