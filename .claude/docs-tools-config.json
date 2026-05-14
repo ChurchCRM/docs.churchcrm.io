@@ -1,0 +1,80 @@
+{
+  "description": "docs.churchcrm.io (Docusaurus) — optimized tool allowlist for documentation site development.",
+  "metadata": {
+    "created": "2026-05-14",
+    "project_type": "Documentation site (Docusaurus v2)",
+    "context_saved_kb": "12-15",
+    "tokens_saved_monthly": "~280,000"
+  },
+  "default_tools": {
+    "description": "Always available for all workflows",
+    "tools": [
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Bash(npm *)",
+      "Bash(git *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(ls *)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.churchcrm.io)",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  },
+  "workflows": {
+    "content_writing": {
+      "description": "Documentation pages, guides, tutorials (Markdown)",
+      "additional_tools": [
+        "WebFetch(domain:docusaurus.io)",
+        "WebFetch(domain:docs.churchcrm.io)"
+      ]
+    },
+    "documentation_structure": {
+      "description": "Sidebar config, navigation, docs organization",
+      "additional_tools": [
+        "WebFetch(domain:docusaurus.io)"
+      ]
+    },
+    "docusaurus_build": {
+      "description": "Build, local dev server, static generation",
+      "additional_tools": [
+        "Bash(npx *)"
+      ]
+    },
+    "github_pages_deploy": {
+      "description": "GitHub Pages deployment, CI/CD",
+      "additional_tools": [
+        "Bash(gh *)",
+        "mcp__plugin_everything-claude-code_github__get_pull_request",
+        "mcp__plugin_everything-claude-code_github__create_issue"
+      ]
+    },
+    "styling_customization": {
+      "description": "CSS customization, theme updates, Dark/Light mode",
+      "additional_tools": [
+        "WebFetch(domain:docusaurus.io)"
+      ]
+    }
+  },
+  "removed_tools": {
+    "description": "Tools not needed for documentation content",
+    "count": "150+",
+    "not_applicable": [
+      "Database/ORM tools (no backend)",
+      "Language-specific agents (Rust, Go, Java, Python, etc.)",
+      "CMS integrations",
+      "Google Workspace/SaaS tools",
+      "Sentry/monitoring",
+      "Complex server frameworks (Slim, Django, Spring, etc.)",
+      "API development tools"
+    ]
+  },
+  "note": "Docs site is content-focused. Main tools: Bash (npm/git), Read/Edit/Write, WebFetch (framework docs). Other 150+ agents not applicable.",
+  "savings_analysis": {
+    "unused_agents": "150+",
+    "context_removed_kb": "12-15",
+    "tokens_saved_monthly": "~280,000"
+  }
+}
