@@ -43,10 +43,10 @@ jobs:
         run: |
           mkdir -p openapi
           curl -fsSL \
-            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/public-api.yaml" \
+            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/docs/openapi/generated/public-api.yaml" \
             -o openapi/public-api.yaml
           curl -fsSL \
-            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/private-api.yaml" \
+            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/docs/openapi/generated/private-api.yaml" \
             -o openapi/private-api.yaml
           echo "Downloaded specs:"
           wc -l openapi/*.yaml
