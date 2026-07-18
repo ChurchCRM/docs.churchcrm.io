@@ -59,6 +59,10 @@ Tabs available on the User Settings page:
 | **API Access** | Create and revoke personal API tokens |
 | **Advanced** | Link to legacy per-user settings (power users only) |
 
+:::note Changed in 7.4.3
+The **"Create Directory"** and **"Export CSV"** checkboxes have been removed from the individual user settings page. These permissions are now managed exclusively at the **permission group level** (Admin → Permission Groups). See [Security → Granular Permissions](/administration/security#granular-permissions-permission-group-level) for details.
+:::
+
 ### Two-Factor Authentication
 
 If 2FA is enabled site-wide in System Settings, each user enrolls from the **Two-Factor Authentication** tab of their own User Settings page:

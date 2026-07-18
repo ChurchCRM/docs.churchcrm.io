@@ -5,11 +5,15 @@ sidebar_position: 5
 
 # Localization
 
-ChurchCRM supports **46 languages**. The application language is configured in **Admin** → **General Settings** → **Localization**.
+ChurchCRM supports **42 languages**. The application language is configured in **Admin** → **General Settings** → **Localization**.
 
 Select the appropriate language from the dropdown and save the settings. The interface will switch to the selected language immediately.
 
 > **Note:** Translations are community-contributed and may be incomplete for some languages. If you encounter untranslated strings, the text will fall back to English.
+
+:::note Updated in 7.4.3
+All 42 supported languages were reviewed and updated in ChurchCRM 7.4.3 to cover new menu options and alert messages added in this release. If you use a non-English locale, update to 7.4.3 to get the latest translations for your language.
+:::
 
 ## Features
 
