@@ -44,18 +44,39 @@ ChurchCRM uses roles to control access to sensitive data. The available roles ar
 
 *Edit Self allows a user to update their own person record only.
 
-## Granular Permissions
+## Granular Permissions (Permission Group Level)
 
-In addition to the roles above, the following permissions are controlled on a per-user basis:
+The following permissions are controlled at the **permission group level** (Admin → Permission Groups), not on a per-user basis:
 
 - Email via mailto links
 - Mailto delimiter
-- Create directory
+- Create Directory
 - Export CSV
 - US address verification
 - Add event
 
+:::note Changed in 7.4.3
+Prior to 7.4.3, "Create Directory" and "Export CSV" appeared as checkboxes on each individual user's settings page. As of 7.4.3 these settings are **permission-group level only** and no longer appear in individual user settings. If you previously configured these per-user, you will need to set them at the permission group level instead (Admin → Permission Groups).
+:::
+
+## Media Privacy
+
+### Member Photo Folder Protection (Added in 7.4.3)
+
+As of ChurchCRM 7.4.3, the member and family photo directories are protected from unauthenticated access. Web requests to photo folder paths that do not have a valid logged-in ChurchCRM session are blocked (HTTP 403).
+
+This applies to:
+- Member/person photo uploads
+- Family photo uploads
+
+**What this means in practice:**
+- Member photos can no longer be accessed by guessing or scraping directory URLs without being logged in.
+- Any external integrations or kiosk displays that embedded direct photo URLs (without a valid ChurchCRM session) will need to be updated to authenticate first.
+- The ChurchCRM directory listing feature is unaffected — it continues to display photos to logged-in users normally.
+
 ## Security Improvements in 7.x
+
+**7.4.3** — Member and family photo folders are now protected: unauthenticated requests are blocked (HTTP 403). "Create Directory" and "Export CSV" permissions moved from per-user settings to permission groups only.
 
 **7.2.2** — CSRF tokens added to all remaining delete pages (CVE: GHSA-3xq9-c86x-cwpp).
 
