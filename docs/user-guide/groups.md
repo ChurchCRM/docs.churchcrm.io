@@ -44,8 +44,32 @@ Click any group to open the **Group View** page, which has been rebuilt as a mod
 
 1. Search for people or go to **People** → **View All Persons**.
 2. Add desired people to your [Cart](/user-guide/cart).
-3. Go to **Cart** → **Empty Cart to Group**.
-4. Select the group and click **Add to Group**.
+3. Go to **Groups** → **Cart to Group** (or navigate to `/groups/cart-to-group`).
+4. Select the target group and optionally a role, then click **Add to Group**.
+
+---
+
+## Cart to Group
+
+The **Cart to Group** page (`/groups/cart-to-group`) lets you bulk-assign all members currently in the Cart to a Group.
+
+:::note New in 7.5.0
+The Cart to Group feature is now available at `/groups/cart-to-group`. The legacy `CartToGroup.php` URL redirects to this new page.
+:::
+
+### How to use Cart to Group
+
+1. Add the desired people to your [Cart](/user-guide/cart).
+2. Navigate to **Groups** → **Cart to Group**.
+3. Select the target **Group** from the dropdown.
+4. Optionally select a **Role** for the new members (defaults to the group's Default Role if left blank).
+5. Click **Add to Group** to assign all cart members.
+
+All members of the cart will be added to the specified Group _if_ they do not already exist in that Group. Existing members will not be duplicated.
+
+### Create Group + Add Cart
+
+Use the **Create Group + ADD Cart** button to create a brand-new group and assign all current cart members to it in a single step. This is useful when you want to quickly form a new group from a set of search results or report output without first creating the group manually.
 
 ---
 
@@ -151,13 +175,13 @@ See the [Custom Fields](/user-guide/custom-fields) help topic.
 
 1. Add the desired people to your Cart.
 
-2. With people in the Cart, go to **Cart** → **Empty Cart to Group**.
+2. With people in the Cart, go to **Groups** → **Cart to Group** (or navigate to `/groups/cart-to-group`).
 
-3. On the resulting screen, select the desired Group, then press _"Add to Group:"_.
+3. On the resulting screen, select the desired Group, then press _"Add to Group"_.
 
 All members of the cart will be added to the specified Group _if_ they do not already exist in that Group. If a Person in the cart already exists in the specified Group, that Person will not be added again.
 
-All People will be added to the Group in that group's Default Role.
+All People will be added to the Group in that group's Default Role, unless you select a specific Role.
 
 ### How do I change the role of a Person in a Group?
 
