@@ -15,10 +15,6 @@ The Fundraiser feature helps you manage events — auctions, raffles, galas, bak
 
 > **Tip:** This feature works best when most buyers and sellers are already in your ChurchCRM database.
 
-:::note Updated in 7.5.0
-The Fundraiser module received a major UX overhaul in 7.5.0: new landing dashboard, archive section, read-only view page, five new data fields, type-gated reports, and Fundraisers system calendar. See details throughout this page.
-:::
-
 ---
 
 ## Dashboard
@@ -47,24 +43,24 @@ Select **Fundraiser → Create New Fundraiser**. Fill in the fields and press **
 |-------|-------------|
 | **Title** | Name of the fundraiser |
 | **Date** | Start date |
-| **End Date** | *(New in 7.5.0)* When the event closes; used by the archive split |
+| **End Date** | When the event closes; used by the archive split |
 | **Description** | Details shown in catalog and printed materials |
-| **Type** | *(New in 7.5.0)* Auction, Silent Auction, Live Auction, Raffle, Gala, or Mixed |
-| **Status** | *(New in 7.5.0)* Planning, Active, or Closed |
-| **Goal Amount** | *(New in 7.5.0)* Fundraising target; displayed as a progress bar on the dashboard |
-| **Associated Fund** | *(New in 7.5.0)* Links the fundraiser to a Finance fund for reporting |
+| **Type** | Auction, Silent Auction, Live Auction, Raffle, Gala, or Mixed |
+| **Status** | Planning, Active, or Closed |
+| **Goal Amount** | Fundraising target; displayed as a progress bar on the dashboard |
+| **Associated Fund** | Links the fundraiser to a Finance fund for reporting |
 
 ---
 
 ## View page
 
-Each fundraiser has a **read-only view page** at `/fundraiser/view/{id}` (new in 7.5.0) showing:
+Each fundraiser has a **read-only view page** at `/fundraiser/view/{id}` showing:
 - Details card (all fields)
 - Goal progress bar
 - Donated items table
 - At-a-Glance and Financials sidebar cards
 
-From the view page you can **Add Item** (previously only reachable from the edit page). A **View** link on the editor page takes you to the view page for workflow parity.
+From the view page you can also **Add Item** directly. A **View** link on the editor page takes you to the view page.
 
 ---
 
@@ -142,4 +138,4 @@ After all donations and purchases are entered, select **Fundraiser → Add Donor
 
 ## System Calendar
 
-Fundraisers appear on the main **Calendar** page as of 7.5.0. Toggle the **Fundraisers** layer in the calendar to show or hide them. Each fundraiser appears on its start date (and end date if set).
+Fundraisers appear on the main **Calendar** page. Toggle the **Fundraisers** layer in the calendar to show or hide them. Each fundraiser appears on its start date (and end date if set).

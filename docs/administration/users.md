@@ -31,10 +31,6 @@ sidebar_position: 2
     - **Edit** — opens the user editor at `/admin/system/users/{personId}/edit`, where you can change rights and profile details.
     - **Delete** — removes the individual's user rights (their person record remains).
 
-:::note Updated in 7.5.0
-The legacy `UserEditor.php` page has been replaced by the new MVC routes `/admin/system/users/new` and `/admin/system/users/{personId}/edit`. Any bookmarks or integrations pointing to `UserEditor.php` should be updated. No redirect shims are in place.
-:::
-
 ## What is the default password assigned to new Users?
 
 New users receive an email containing their username and initial password. The first time they log in, they are required to change it.
