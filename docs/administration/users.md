@@ -7,8 +7,8 @@ sidebar_position: 2
 
 ## How do I add new Users?
 
-1. Open the **Admin** menu and click **Add New User**.
-2. A list of all non-users appears. Select the person you want to promote to a user.
+1. Open the **Admin** menu and click **Add New User**, or navigate directly to `/admin/system/users/new`.
+2. A list of all non-users appears. Select the person you want to promote to a user. You can also pre-select a person by appending `?personId=N` to the URL.
 3. Set the user's rights and click **Save**.
 
 ## What are the different rights available?
@@ -25,11 +25,15 @@ sidebar_position: 2
 
 ## How do I edit Users?
 
-1. Open the **Admin** menu and click **Edit Users**.
+1. Open the **Admin** menu and click **Edit Users**, or navigate to `/admin/system/users`.
 2. Pick the user you want to edit.
     - **Reset** — resets the user's password; they must choose a new one at next login.
-    - **Edit** — opens the user's settings page, where you can change rights and profile details.
+    - **Edit** — opens the user editor at `/admin/system/users/{personId}/edit`, where you can change rights and profile details.
     - **Delete** — removes the individual's user rights (their person record remains).
+
+:::note Updated in 7.5.0
+The legacy `UserEditor.php` page has been replaced by the new MVC routes `/admin/system/users/new` and `/admin/system/users/{personId}/edit`. Any bookmarks or integrations pointing to `UserEditor.php` should be updated. No redirect shims are in place.
+:::
 
 ## What is the default password assigned to new Users?
 
