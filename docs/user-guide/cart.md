@@ -39,10 +39,24 @@ There several ways to do this:
 If the report is Cart-enabled, at the bottom of the results you will find a button labeled _"Add Results to Cart."_ Clicking this button will add all the results of that report to the cart.
 To add all people assigned to a Group:
 
-Go to **Cart** → **Empty Cart to Group**.
-Click on the desired Group or Create a New Group - Don't worry, if you make a new group, you can empty the cart to it as well.
+Go to **Groups** → **Cart to Group** (or navigate to `/groups/cart-to-group`).
+Click on the desired Group or use the **Create Group + ADD Cart** button to create a new group and add all cart members to it in one step.
 
-If you choose to make a new group, on the New Group page, there is a box for "Empty Cart to this Group?". It should already be checked, so ChurchCRM will automatically add the cart members to the new group.
+## Add to Family
+
+The **Add to Family** workflow lets you bulk-assign all Cart members to an existing Family record.
+
+:::note New in 7.5.0
+The Add to Family route is now at `/people/cart/to-family`. The legacy `CartToFamily.php` URL redirects to this new route. The cart is now emptied automatically on the server side when the operation succeeds — you no longer need to navigate to `?Action=EmptyCart` after adding members to a family.
+:::
+
+### How to use Add to Family
+
+1. Add the desired people to your [Cart](/user-guide/cart).
+2. Navigate to **People** → **Cart** → **Add to Family** (or go to `/people/cart/to-family`).
+3. Select the target Family from the dropdown.
+4. Click **Add to Family**.
+5. The cart members are added to the family and the cart is cleared automatically upon success.
 
 ## How do I remove a person from the Cart?
 

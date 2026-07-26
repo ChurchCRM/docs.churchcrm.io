@@ -101,14 +101,8 @@ Requires the **OpenLP** plugin.
 
 ## Locale & Language Settings
 
-| Setting | Description |
-|---------|-------------|
-| Application language | Default UI language for all users (overridable per user in User Settings) |
-| Date/time format | Server-side format string for dates |
-| Week starts on | Sunday or Monday — affects calendar display |
-
-:::tip Browser language auto-detection
-When a visitor first loads ChurchCRM (login page), the browser's preferred language is detected and the UI is shown in that language if a translation exists. No configuration is required — this is automatic.
+:::info Moved in 7.4.1
+Language, timezone, date/time formats, and phone number formats have moved to a dedicated **[Localization & Formats](./localization.md)** page at `Admin → Localization & Formats`. They are no longer configured here.
 :::
 
 ---

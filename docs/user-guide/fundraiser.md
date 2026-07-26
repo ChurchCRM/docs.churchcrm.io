@@ -5,65 +5,137 @@ sidebar_position: 17
 
 # Fundraiser
 
-The Fundraiser feature helps you manage [events](Events) where members buy and sell items or services to benefit the church.
+The Fundraiser feature helps you manage events — auctions, raffles, galas, bake sales — where members buy and sell items or services to benefit the church.
 
-**Common uses:**
-- Goods and services auctions
-- Silent auctions
-- Bake sales with pre-orders
-- Craft fairs
+**Supported types:**
+- Auction / Silent Auction / Live Auction
+- Raffle
+- Gala
+- Mixed
 
 > **Tip:** This feature works best when most buyers and sellers are already in your ChurchCRM database.
 
+---
+
+## Dashboard
+
+The Fundraiser landing page shows all active fundraisers in an enriched table with stat widgets and filters.
+
+**Stat widgets** at the top show counts of active, planning, and closed fundraisers.
+
+**Filters:** narrow by Type, Status, or date range using the filter bar above the table.
+
+**Table columns:** Title, Type, Date range, Status, Items, Raised, Goal (with % progress bar), Buyers.
+
+### Archive section
+
+Fundraisers marked **Closed**, or whose End Date has passed, move to a collapsible **Archive** card at the bottom of the page. The archive card is hidden when a Status filter is applied, since the active/archive split doesn't apply to a filtered view.
+
+---
+
 ## How is a fundraiser created?
 
-Select _"Fundraiser → Create New Fundraiser"_. Enter a date, title and description and press _"Save"_.
+Select **Fundraiser → Create New Fundraiser**. Fill in the fields and press **Save**.
 
-## How are donated items entered into the fundraiser?
+### Fundraiser fields
 
-Once the fundraiser has been saved more buttons appear across the top. Press _"Add Donated Item"_ to enter a new item.
+| Field | Description |
+|-------|-------------|
+| **Title** | Name of the fundraiser |
+| **Date** | Start date |
+| **End Date** | When the event closes; used by the archive split |
+| **Description** | Details shown in catalog and printed materials |
+| **Type** | Auction, Silent Auction, Live Auction, Raffle, Gala, or Mixed |
+| **Status** | Planning, Active, or Closed |
+| **Goal Amount** | Fundraising target; displayed as a progress bar on the dashboard |
+| **Associated Fund** | Links the fundraiser to a Finance fund for reporting |
 
-The fields are:
+---
 
-- **Item** This Item identifier will be used to sort the items so you can easily rearrange them.
+## View page
 
-- **Multiple items: Sell to everyone** If this is enabled many copies of this item may be sold. There will be a count on the buyer's page and the buyer will be charged for whatever count is entered.
+Each fundraiser has a **read-only view page** at `/fundraiser/view/{id}` showing:
+- Details card (all fields)
+- Goal progress bar
+- Donated items table
+- At-a-Glance and Financials sidebar cards
 
-- **Donor** The donor is a [person](Person) in the database.
+From the view page you can also **Add Item** directly. A **View** link on the editor page takes you to the view page.
 
-- **Title** This is a very short description of the item.
+---
 
-- **Estimated Price** This is an estimated value for the item, for reference.
+## How are donated items entered?
 
-- **Material Value** The material value is the donation value, not including labor.
+Once the fundraiser is saved, press **Add Donated Item** from either the edit or view page.
 
-- **Estimated Price** The minimum price is for reference, in case the donor does not want it to sell too low.
+| Field | Description |
+|-------|-------------|
+| **Item** | Identifier used for sorting |
+| **Multiple items: Sell to everyone** | Enable to allow multiple copies to be sold; buyers are charged per quantity |
+| **Donor** | A [person](Persons) in the database |
+| **Title** | Short description |
+| **Estimated Price** | Reference value for the item |
+| **Material Value** | Donation value excluding labor |
+| **Minimum Price** | Lowest acceptable price, for reference |
+| **Description** | Longer description for catalog and bid sheet |
+| **Buyer** | Filled in once a purchase is finalized |
+| **Final Price** | Price paid; applies to all _Sell to everyone_ copies |
 
-- **Description** A longer description, used in the catalog and bid sheet.
+---
 
-- **Buyer** The person who purchased the item. The buyers are registered before they can buy things (see below). This field and the Final Price are filled in once the purchase is finalized.
+## Reports — availability by fundraiser type
 
-- **Final Price** The price paid for the item. For _Sell to everyone_ items this price will apply to all purchases.
+Some reports are only available for certain types:
+
+| Report | When available |
+|--------|---------------|
+| **Bid Sheets** | Auction and Silent Auction only |
+| **Catalog / Certificates** | All types except Raffle |
+| **Buyer Statements** | All types |
+| **Donated Items / Batch Winner Entry** | All types |
+
+These restrictions are enforced in both the UI and at the route level — accessing a report URL directly for an ineligible type redirects away.
+
+---
 
 ## Why and how are buyers registered?
 
-Buyers are registered so they can purchase multiple items and then check out at the end and pay for everything. To enter buyers, select _"Fundraiser → View Buyers"_. Press _"Add Buyer"_ to add a buyer. The buyer numbers increment automatically, or you can type them in (perhaps to match a bidding paddle number). The Buyer is a person in the database. The Buyer must be a member of a family in the database.
+Buyers are registered so they can purchase multiple items and pay at the end. Select **Fundraiser → View Buyers**, then **Add Buyer**. Buyer numbers increment automatically (or type them to match a bidding paddle). The buyer must be a person in the database.
+
+---
 
 ## How is a single purchase recorded?
 
-Select _"Fundraiser → Edit Fundraiser"_ to see the list of items. Click the link to the left for the item to bring up the donated item editor page. Select the buyer and enter the price on the right side, then press _"Save"_.
+Select **Fundraiser → Edit Fundraiser** to see the items list. Click the item link on the left, select the buyer, enter the price, and press **Save**.
+
+---
 
 ## Is there a way to enter lots of purchases quickly?
 
-Select _"Fundraiser → Edit Fundraiser"_ and then press _"Batch Winner Entry"_ (upper-right). This page allows ten items to be entered quickly. For each item, select the Item and Winner and enter the price. Press the _"Enter Winners"_ button to enter all the items on the page at once.
+Select **Fundraiser → Edit Fundraiser** then press **Batch Winner Entry** (upper-right). Enter up to ten items per page — select Item and Winner, enter price, then press **Enter Winners**.
 
-## How are the multiple purchase items recorded?
+---
 
-Select _"Fundraiser → View Buyers"_ and then click the link for a buyer. There is a place on this page to enter the quantity for each of the _Sell to Everyone_ items.
+## How are multiple-purchase items recorded?
+
+Select **Fundraiser → View Buyers** and click a buyer's link. Enter quantities for each _Sell to Everyone_ item on their page.
+
+---
 
 ## How does someone check out and pay?
 
-Select _"Fundraiser → View Buyers"_ and then click the link for a buyer. Check that the _Sell to Everyone_ quantities are correct, then press _"Generate Statement"_. This will create a PDF statement showing both donations and purchases for this buyer. The total of purchases is shown so that is the amount to be paid at check-out. The statement may be printed and given to the buyer. There is a payment stub portion at the bottom to help record the payment.
+1. Select **Fundraiser → View Buyers** and click the buyer's link.
+2. Confirm the _Sell to Everyone_ quantities.
+3. Press **Generate Statement** — a PDF statement is produced showing donations and purchases, with a payment stub at the bottom.
 
-### What if someone donates but does not attend? How can a statement be prepared to show the donations?
-Once the fundraiser is over and all of the donations and purchases have been entered select the menu option _"Fundraiser → Add Donors"_ to Buyer List. This will create a buyer record for anyone who donated items but was not already listed as a buyer. Once these buyer records are created they can be selected and their statements may be generated. These statements may be helpful to the donors for tax purposes.
+---
+
+## What if a donor doesn't attend? How can a statement be prepared?
+
+After all donations and purchases are entered, select **Fundraiser → Add Donors to Buyer List**. This creates buyer records for anyone who donated but wasn't registered as a buyer. Their statements can then be generated for tax purposes.
+
+---
+
+## System Calendar
+
+Fundraisers appear on the main **Calendar** page. Toggle the **Fundraisers** layer in the calendar to show or hide them. Each fundraiser appears on its start date (and end date if set).
