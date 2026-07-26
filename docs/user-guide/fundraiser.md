@@ -15,10 +15,6 @@ The Fundraiser feature helps you manage [events](Events) where members buy and s
 
 > **Tip:** This feature works best when most buyers and sellers are already in your ChurchCRM database.
 
-:::note Updated in 7.4.3
-The Fundraiser backend was fully modernized in ChurchCRM 7.4.3. The pages now load significantly faster and match the performance of other dashboards. No workflow changes — all existing fundraiser data and steps are the same.
-:::
-
 ## How is a fundraiser created?
 
 Select _"Fundraiser → Create New Fundraiser"_. Enter a date, title and description and press _"Save"_.

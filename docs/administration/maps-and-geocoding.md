@@ -14,22 +14,11 @@ ChurchCRM displays interactive maps and geocodes addresses (converting street ad
 
 ## No API key required
 
-As of ChurchCRM 7.1, maps and geocoding use **OpenStreetMap** tiles rendered via **Leaflet**, and addresses are geocoded with **Nominatim** — OpenStreetMap's free, public geocoding service.
+Maps and geocoding use **OpenStreetMap** tiles rendered via **Leaflet**, and addresses are geocoded with **Nominatim** — OpenStreetMap's free, public geocoding service.
 
 :::tip Zero configuration
 There is nothing to set up. No Google Cloud account, no API key, no billing. Maps work out of the box on every new install and every upgrade.
 :::
-
-### What changed from earlier versions
-
-Earlier ChurchCRM releases required a Google Maps API key (and optionally a Bing Maps key) to render maps or geocode addresses. Those keys are no longer used:
-
-- `sGoogleMapsGeocodeKey` — **removed**
-- `sGoogleMapsRenderKey` — **removed**
-- `sBingMapKey` / `sGeoCoderProvider` — **removed**
-- The **Map Settings** section of System Settings has been removed; only **Map Zoom Level** remains (under general settings)
-
-If you are upgrading from an older release, no action is required. Your existing latitude/longitude coordinates on family records are preserved, and the app will use them immediately with the new map.
 
 ---
 
