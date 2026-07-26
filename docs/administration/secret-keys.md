@@ -24,8 +24,8 @@ Any user can self-enroll in 2FA at any time:
 
 Once enrolled, you will be prompted for a TOTP code on every login.
 
-:::tip Consolidated in User Settings
-As of ChurchCRM 7.1, 2FA enrollment, recovery codes, and disabling 2FA all live on the same **User Settings** page as password, theme, and API token management. The older standalone "Manage Two-Factor Authentication" page has been removed. See [User Management](/administration/users) for the full list of User Settings tabs.
+:::tip
+2FA enrollment, recovery codes, and disabling 2FA all live on the **User Settings** page alongside password, theme, and API token management. See [User Management](/administration/users) for the full list of User Settings tabs.
 :::
 
 ## Admin controls

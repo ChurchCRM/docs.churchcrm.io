@@ -55,15 +55,11 @@ The following permissions are controlled at the **permission group level** (Admi
 - US address verification
 - Add event
 
-:::note Changed in 7.4.3
-Prior to 7.4.3, "Create Directory" and "Export CSV" appeared as checkboxes on each individual user's settings page. As of 7.4.3 these settings are **permission-group level only** and no longer appear in individual user settings. If you previously configured these per-user, you will need to set them at the permission group level instead (Admin → Permission Groups).
-:::
-
 ## Media Privacy
 
-### Member Photo Folder Protection (Added in 7.4.3)
+### Member Photo Folder Protection
 
-As of ChurchCRM 7.4.3, the member and family photo directories are protected from unauthenticated access. Web requests to photo folder paths that do not have a valid logged-in ChurchCRM session are blocked (HTTP 403).
+Member and family photo directories are protected from unauthenticated access. Web requests to photo folder paths without a valid logged-in ChurchCRM session are blocked (HTTP 403).
 
 This applies to:
 - Member/person photo uploads
@@ -74,20 +70,8 @@ This applies to:
 - Any external integrations or kiosk displays that embedded direct photo URLs (without a valid ChurchCRM session) will need to be updated to authenticate first.
 - The ChurchCRM directory listing feature is unaffected — it continues to display photos to logged-in users normally.
 
-## Security Improvements in 7.x
-
-**7.4.3** — Member and family photo folders are now protected: unauthenticated requests are blocked (HTTP 403). "Create Directory" and "Export CSV" permissions moved from per-user settings to permission groups only.
-
-**7.2.2** — CSRF tokens added to all remaining delete pages (CVE: GHSA-3xq9-c86x-cwpp).
-
-**7.2.1** — Essential security features (password change, 2FA) are now accessible regardless of permission level. A redirect loop on forced password change is fixed. Browser autofill blocked on the 2FA code field.
-
-**7.1.1** — Stored XSS in ListOption name rendering patched (GHSA-j9gv-26c7-3qrh). CSP nonce added to inline scripts.
-
-**7.1.0** — Session regenerated on login; cookies set `HttpOnly`, `SameSite=Lax`, `Secure`; minimum password length enforced at 8 characters; CSRF token on password-change endpoint.
-
 ## Two-Factor Authentication (2FA)
 
-Users can self-enroll 2FA from **My Settings → Security** (added in 7.0.5). Admins can reset 2FA for any user from the Users panel.
+Users can self-enroll 2FA from **My Settings → Security**. Admins can reset 2FA for any user from the Users panel.
 
 Supported method: **TOTP** (compatible with Google Authenticator, Authy, 1Password, and any RFC 6238 app). Recovery codes are generated at enrollment — advise users to store them safely.

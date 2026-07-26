@@ -17,17 +17,7 @@ All locale and format settings live in one place: **Admin → Localization & For
 
 ChurchCRM supports **42 languages**.
 
-:::note Updated in 7.4.3
-All 42 supported languages were reviewed and updated in ChurchCRM 7.4.3 to cover new menu options and alert messages added in this release. If you use a non-English locale, update to 7.4.3 to get the latest translations for your language.
-:::
-
-| Setting | Description |
-|---------|-------------|
-| Application language | Default UI language for all users. Overridable per user in User Settings. |
-| Time zone | Server time zone used for all date/time calculations and displays. |
-| Distance unit | Miles or kilometers — used in mapping and address features. |
-
-The language picker shows each locale's **native name**, **translation completeness %**, and whether the GNU locale is installed on your server.
+## Features
 
 ### Browser language auto-detection
 

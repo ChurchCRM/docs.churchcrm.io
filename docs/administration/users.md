@@ -45,7 +45,7 @@ New users receive an email containing their username and initial password. The f
 
 ## User Settings page
 
-Each user has a dedicated **User Settings** page (reached from the user's dropdown menu in the top navbar, or from **Admin → Edit Users → Edit**). As of ChurchCRM 7.1, this page has been redesigned with a Tabler-themed left-tab layout and now consolidates several settings that used to live in different places.
+Each user has a dedicated **User Settings** page (reached from the user's dropdown menu in the top navbar, or from **Admin → Edit Users → Edit**). The page uses a tab layout and consolidates several settings in one place.
 
 Tabs available on the User Settings page:
 
@@ -53,15 +53,11 @@ Tabs available on the User Settings page:
 |-----|-----------------|
 | **Profile** | Display name, avatar/photo upload, basic profile fields |
 | **Password** | Change your own password |
-| **Two-Factor Authentication** | Enroll, view recovery codes, or disable 2FA (previously on its own standalone page) |
+| **Two-Factor Authentication** | Enroll, view recovery codes, or disable 2FA |
 | **Theme** | Toggle dark mode and choose a primary accent color for the Tabler interface |
 | **Localization** | Per-user language and locale preferences |
 | **API Access** | Create and revoke personal API tokens |
 | **Advanced** | Link to legacy per-user settings (power users only) |
-
-:::note Changed in 7.4.3
-The **"Create Directory"** and **"Export CSV"** checkboxes have been removed from the individual user settings page. These permissions are now managed exclusively at the **permission group level** (Admin → Permission Groups). See [Security → Granular Permissions](/administration/security#granular-permissions-permission-group-level) for details.
-:::
 
 ### Two-Factor Authentication
 
