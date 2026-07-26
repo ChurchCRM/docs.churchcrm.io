@@ -44,6 +44,49 @@ This makes it easier to review pastoral care history or attendance patterns for 
 
 ---
 
+## Attendance History
+
+The **Attendance History** tab on the Person profile page (added in 7.5.0) shows a complete record of every event a person has checked in to.
+
+### How to find it
+
+1. Open a person's profile (search by name or click from a family/group record).
+2. Click the **Attendance History** tab.
+
+The tab loads on demand — it fetches data the first time you open it.
+
+### Summary stats
+
+Three stat cards appear at the top of the tab:
+
+| Stat | What it shows |
+|------|--------------|
+| **Total Events** | All-time count of events the person attended |
+| **Attendance Streak** | Current consecutive-week streak (resets if a week is missed) |
+| **Last Attendance** | Date of the most recent check-in |
+
+### Attendance table
+
+Below the stats, a table lists all events in reverse chronological order:
+
+| Column | Description |
+|--------|-------------|
+| **Event Name** | Name of the event |
+| **Type** | Event type (e.g. Sunday Service, Group Meeting) |
+| **Date** | Event date |
+| **Check-in / Check-out** | Times recorded at check-in |
+
+### Filters
+
+Use the filter controls above the table to narrow results:
+
+- **Event Type** — filter to a specific type of event
+- **Date Range** — show only events within a date window
+
+Filters apply instantly without reloading the page.
+
+---
+
 ## Photo Management
 
 When a person record is deleted, any associated profile photo is automatically cleaned up from the server.
