@@ -46,7 +46,7 @@ This makes it easier to review pastoral care history or attendance patterns for 
 
 ## Attendance History
 
-The **Attendance History** tab on the Person profile page (added in 7.5.0) shows a complete record of every event a person has checked in to.
+The **Attendance History** tab on the Person profile page shows a complete record of every event a person has checked in to.
 
 ### How to find it
 
