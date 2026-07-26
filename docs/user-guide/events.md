@@ -34,6 +34,20 @@ From the dashboard you can click any event to open its detail page, record atten
 The **Calendar** (in the top navigation) shows events in a month/week view with an offcanvas editor — great for scheduling. The **Events Dashboard** is focused on attendance, metrics, and event management. Both read from the same underlying event data.
 :::
 
+### Past Events (collapsed sections)
+
+Past and inactive events are grouped into collapsible **month sections** below the active events list. This keeps the dashboard focused on upcoming events without losing access to history.
+
+**What counts as a past event:**
+- The event's end date/time is earlier than now, **or**
+- The event has been manually deactivated (marked inactive)
+
+**How to use past events:**
+- Each month with past events shows a collapsed card header (e.g. *"July 2026 — 4 events"*).
+- Click the header to expand that month and see the events inside.
+- Your expanded/collapsed state is remembered per browser — refreshing the page keeps the same sections open.
+- If a month contains *only* past events (no upcoming events fall in that month), its section expands automatically so the events are visible without an extra click.
+
 ---
 
 ## Step-by-step: Recording Attendance
