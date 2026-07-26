@@ -36,7 +36,7 @@ The **Calendar** (in the top navigation) shows events in a month/week view with 
 
 ### Past Events (collapsed sections)
 
-Past and inactive events are grouped into collapsible **month sections** below the active events list (added in 7.5.0). This keeps the dashboard focused on upcoming events without losing access to history.
+Past and inactive events are grouped into collapsible **month sections** below the active events list. This keeps the dashboard focused on upcoming events without losing access to history.
 
 **What counts as a past event:**
 - The event's end date/time is earlier than now, **or**
