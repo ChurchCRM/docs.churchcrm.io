@@ -79,6 +79,7 @@ const sidebars: SidebarsConfig = {
       label: '💰 Finance',
       items: [
         'user-guide/finances',
+        'user-guide/pledge-dashboard',
         'user-guide/cart',
         'user-guide/fundraiser',
       ],
