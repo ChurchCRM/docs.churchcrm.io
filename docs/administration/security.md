@@ -50,10 +50,10 @@ The following permissions are controlled at the **permission group level** (Admi
 
 - Email via mailto links
 - Mailto delimiter
-- Create Directory
-- Export CSV
 - US address verification
 - Add event
+
+> **Note:** Directory listing and CSV export are available to all authenticated users and do not require a per-user or per-group permission flag.
 
 ## Media Privacy
 
