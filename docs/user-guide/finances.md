@@ -121,6 +121,21 @@ Payments are very similar to pledges. There are two ways in which payments can b
   3. Find the sQBDTSettings setting, and choose 'Edit Settings'
   4. Adjust the values for each setting according to our needs.
 
+## Pledge Dashboard
+
+The **Pledge Dashboard** provides an interactive summary of pledges and payments by fund and by family for any fiscal year. It replaces the former Pledge Summary PDF report.
+
+Go to **Finance** → **Pledges** (or **Finance** → **Reports** → **Pledge Summary**) to open the dashboard.
+
+Key features:
+- **Fund Summary table** — sortable/searchable breakdown of pledges, payments, overpaid, and underpaid per fund, with CSV/PDF/print export.
+- **Family Pledges table** — per-family, per-fund pledge vs. payment detail, colour-coded by completion.
+- **Fiscal-year selector** — view data for any past or current year.
+
+See [Pledge Dashboard](/user-guide/pledge-dashboard) for full details.
+
+---
+
 ## How do I Add a new Deposit Fund?
 
 1. Go to **Fundraiser** → **Edit Fundraiser**.

@@ -133,7 +133,7 @@ See [Email](/user-guide/email) for more options, including Mailchimp.
 ### Run Reports
 
 1. Go to **Data/Reports** → **Reports Menu**.
-2. Try **Family Directory**, **Attendance Reports**, or **Pledge Summary**.
+2. Try **Family Directory**, **Attendance Reports**, or the **[Pledge Dashboard](/user-guide/pledge-dashboard)** (Finance → Pledges).
 
 ---
 
