@@ -109,13 +109,14 @@ Language, timezone, date/time formats, and phone number formats have moved to a 
 
 ## Security Settings
 
-| Setting | Description |
-|---------|-------------|
-| Minimum password length | Default 8 characters |
-| Password expiry | Optionally require password changes after N days |
-| Two-factor authentication | Enable/require 2FA for all users or specific roles |
-| Session timeout | Idle session timeout in minutes |
-| HTTPS enforcement | Redirects all HTTP traffic to HTTPS (recommended) |
+| Setting | Key | Description |
+|---------|-----|-------------|
+| Minimum password length | — | Default 8 characters |
+| Password expiry | — | Optionally require password changes after N days |
+| Require 2FA | `bRequire2FA` | Mandate 2FA enrollment for all users |
+| 2FA grace period (days) | `i2FAGracePeriodDays` | Days users have to enroll before access is blocked. Default 7. Set to 0 to block immediately. See [Mandatory 2FA](./security.md#mandatory-2fa). |
+| Session timeout | — | Idle session timeout in minutes |
+| HTTPS enforcement | — | Redirects all HTTP traffic to HTTPS (recommended) |
 
 ---
 

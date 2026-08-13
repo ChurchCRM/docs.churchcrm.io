@@ -75,3 +75,40 @@ This applies to:
 Users can self-enroll 2FA from **My Settings → Security**. Admins can reset 2FA for any user from the Users panel.
 
 Supported method: **TOTP** (compatible with Google Authenticator, Authy, 1Password, and any RFC 6238 app). Recovery codes are generated at enrollment — advise users to store them safely.
+
+### Mandatory 2FA
+
+Administrators can require every user to enroll in 2FA by enabling **Require all users to enroll in two-factor authentication** (`bRequire2FA`) under **Admin → Settings → Security**.
+
+When the mandate is turned on, two additional settings control what happens to users who have not yet enrolled:
+
+| Setting | Key | Default | Description |
+|---------|-----|---------|-------------|
+| Require 2FA | `bRequire2FA` | Off | Mandate 2FA enrollment for all users. |
+| Grace period (days) | `i2FAGracePeriodDays` | 7 | Days a user may continue using the system before enrollment is enforced. Set to `0` to block access immediately (legacy behavior). |
+
+Both settings are found at **Admin → Settings → Security**.
+
+### Grace Period Behavior
+
+When `bRequire2FA` is enabled and `i2FAGracePeriodDays` is greater than zero, users who have not enrolled get a grace window:
+
+1. **Grace period starts** — the first time the user logs in after the mandate is enabled, ChurchCRM records the start date. The user can continue using the system normally during this window.
+2. **Warning banner** — a dismissible alert appears on every page while the grace period is active:
+   - **Yellow** when more than one day remains: *"Two-factor authentication is required. You have N days to enroll."*
+   - **Red** when one day or fewer remains.
+   - A **Set up now** link takes the user directly to the enrollment page (`My Settings → Security → Two-Factor Authentication`).
+3. **Enrollment** — the user visits the enrollment page, scans the QR code with their authenticator app (Google Authenticator, Authy, 1Password, or any RFC 6238-compatible app), enters the verification code, and saves. Enrollment clears the grace period timestamp and removes the banner.
+4. **Grace period expires** — once the deadline passes the user is **blocked from all pages** on their next request and redirected to the 2FA enrollment page. They cannot access any other part of the system until they complete enrollment.
+
+:::warning One-way ratchet
+The grace period clock is a one-way ratchet. Once it has started, it cannot be reset by logging out, changing passwords, or any other action short of completing 2FA enrollment. Shortening `i2FAGracePeriodDays` after a grace window has already begun may cause some users' deadlines to pass immediately.
+:::
+
+### Grace Period — Admin Tips
+
+- **Announce in advance.** Because the grace period starts on first login after the mandate is enabled, users who do not log in during the grace window will encounter the hard block the first time they do log in after the deadline. Send a notification before enabling the mandate so users can enroll proactively.
+- **Setting `i2FAGracePeriodDays` to 0** replicates the original behavior: any user without 2FA is blocked immediately after the mandate is enabled, with no grace window.
+- **Disabling 2FA under an active mandate.** If a user disables their 2FA enrollment while the mandate is on, ChurchCRM stamps a new grace-period start date, giving them a fresh window to re-enroll rather than locking them out instantly.
+- **Turning the mandate off.** Disabling `bRequire2FA` stops enforcement and hides the banner for all users. The grace-period start timestamp is preserved in the database so it resumes if the mandate is re-enabled, without resetting the clock.
+- **Admin reset.** Administrators can reset (delete) a user's 2FA enrollment from **Admin → Users → [user] → Reset 2FA**. After a reset, the user's grace-period clock is re-stamped on next login.
