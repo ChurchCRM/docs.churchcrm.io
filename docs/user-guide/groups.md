@@ -113,11 +113,17 @@ Use the **Create Group + ADD Cart** button to create a brand-new group and assig
 
 3. Click on _"Edit this group"_.
 
-4. Under the heading of _"Group Roles"_ is a list of current group roles. Type the name of the desired new Role in the input box...
+4. In the **Group Roles** card, click the **Add Role** button (top-right of the card).
 
-5. ...press _"Add"_.
+5. An **Add New Role** dialog appears. Type the name of the new Role in the **Role Name** field.
 
-The new Role should appear in the list.
+6. Click **Add Role** (or press Enter) to confirm.
+
+The new Role appears in the roles table immediately. The **Add Role** button in the dialog is disabled until you enter at least one character.
+
+:::note
+Sunday School groups have two protected roles — **Student** and **Teacher** — that cannot be renamed or deleted. You can still add extra roles to a Sunday School group.
+:::
 
 ## How do I change a Role in a Group?
 
@@ -127,13 +133,35 @@ The new Role should appear in the list.
 
 3. Click on _"Edit this group"_.
 
-4. Under the heading of "Group Roles" is a list of current group roles. Type the name of the desired new name in the input box of the old name,
+4. In the **Group Roles** table, click the role name in the **Role Name** column and type the new name.
 
-5. press _"Save Changes"_.
+5. Click or tab away from the field — changes are **saved automatically** when the input loses focus. No separate "Save" button is needed.
 
-> **Note:** If you make changes without clicking _"Save Changes"_, all changes will be lost.
+:::tip
+Role name changes take effect immediately. The success notification confirms the save.
+:::
 
-The new Role should appear in the list.
+## How do I delete a Role from a Group?
+
+1. Go to **Groups** → **List Groups**.
+
+2. Click on the desired Group.
+
+3. Click on _"Edit this group"_.
+
+4. In the **Group Roles** table, click the **trash** icon (🗑) in the **Delete** column for the role you want to remove.
+
+5. A **Delete Confirmation** dialog appears, asking: _"Are you sure you want to remove the role '…'?"_
+
+6. Click **Delete** to confirm, or **Cancel** to abort.
+
+:::warning Last-role protection
+If the role you are trying to delete is the **only remaining role** in the group, a warning is displayed in the confirmation dialog and the **Delete** button is disabled. You must add at least one other role before you can delete this one.
+:::
+
+:::note Sunday School roles
+The **Student** and **Teacher** roles in Sunday School groups are protected — their delete button is disabled and shows a tooltip: _"This role cannot be deleted."_
+:::
 
 ## What is the Default Role?
 
@@ -149,7 +177,7 @@ Default Roles allow you to quickly add new Members to a group. If you have 200 P
 
 3. Click on _"Edit this group"_.
 
-4. Under the heading of "Group Roles" is a list of current group roles. Click on "Make Default" to make the desired role the Default. The word "Default" appears over the number of the shaded box for the default role.
+4. In the **Group Roles** table, click the **Default** button next to the role you want to set as default. The current default role shows a checkmark (✓ Default) instead of a button.
 
 ## What is Group Type?
 
