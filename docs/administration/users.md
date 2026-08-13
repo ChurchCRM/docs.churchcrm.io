@@ -19,6 +19,7 @@ sidebar_position: 2
 - **Manage [Properties](/user-guide/properties) and [Classifications](/user-guide/classifications)** — manage property/classification metadata.
 - **Manage [Groups](/user-guide/groups) and Roles** — add, edit, and delete groups and their roles.
 - **Manage Donations and [Finances](/user-guide/finances)** — add, edit, and delete donations.
+- **Manage [Fundraisers](/user-guide/fundraiser)** — grants access to the Fundraiser menu (create/edit fundraisers, manage items, buyers, and winners). This permission is only effective when the **Enable Fundraiser menu** setting is turned on in **System Settings → Finance Settings**; if that global toggle is off, the Fundraiser menu is hidden for everyone regardless of this per-user permission. Admins always have access when the feature is enabled.
 - **View, Add, and Edit [Notes](/user-guide/notes)** — manage notes on person and family records.
 - **Edit Self** — lets a user maintain only their own person record and their own family members. Useful for members who update their own contact info.
 - **Admin** — grants all of the above.

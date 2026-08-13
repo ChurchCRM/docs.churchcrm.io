@@ -47,6 +47,7 @@ Church name is **required** — ChurchCRM will prompt you to set it on first run
 | Currency symbol | Displayed on donation and report pages |
 | Tax-exempt number | Printed on tax statements |
 | Default fund | Pre-selected fund for new donation entries |
+| Enable Fundraiser menu | Show or hide the Fundraiser menu site-wide. When disabled, no user sees the Fundraiser module regardless of their per-user **Manage Fundraisers** permission. When enabled, the menu is visible to Admins and to users who have the **Manage Fundraisers** right. |
 
 ---
 

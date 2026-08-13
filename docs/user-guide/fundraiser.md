@@ -17,6 +17,27 @@ The Fundraiser feature helps you manage events — auctions, raffles, galas, bak
 
 ---
 
+## Access & permissions
+
+Access to the Fundraiser module is controlled at two levels:
+
+| Level | Setting | Where to configure |
+|-------|---------|--------------------|
+| System-wide | **Enable Fundraiser menu** (`bEnabledFundraiser`) | **Admin → System Settings → Finance Settings** |
+| Per-user | **Manage Fundraisers** permission (`bManageFundraisers`) | **Admin → Edit Users → Edit** |
+
+**How they interact:**
+
+1. If **Enable Fundraiser menu** is **off**, the Fundraiser menu is hidden for _everyone_ — admins included.
+2. If **Enable Fundraiser menu** is **on**, only the following users see the Fundraiser menu:
+   - Users with the **Admin** right (they bypass the per-user permission).
+   - Users who have the **Manage Fundraisers** right granted on their account.
+3. Users in **Edit Self** mode never have fundraiser access, even if the permission is set.
+
+The API routes that power the Fundraiser module are protected by the same check: a user must be an Admin or have the Manage Fundraisers permission. Attempting to access a fundraiser API endpoint without the required role returns a 403 error.
+
+---
+
 ## Dashboard
 
 The Fundraiser landing page shows all active fundraisers in an enriched table with stat widgets and filters.
