@@ -27,6 +27,20 @@ ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gif
 3. Click **Generate PDF** to print a bank deposit form.
 4. When ready for the bank, click **Close deposit slip**.
 
+### Finding and Filtering Deposit Slips
+
+Go to **Finance** → **Deposit** → **Find Deposit Slip** (or navigate to `/finance/deposit/search`) to search and filter all deposit records.
+
+Available filters:
+- **From Date / To Date** — restrict results to a date range
+- **Deposit ID** — look up a specific deposit by number
+- **Fund** — filter by donation fund
+- **Status** — All, Open, or Closed
+- **Teller** — filter by the person who entered the deposit
+- **Amount Min / Amount Max** — filter by total deposit amount
+
+The results table supports bulk selection, CSV/OFX/PDF export, and per-row actions (View, Add Payment).
+
 See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 
 ---
@@ -120,6 +134,20 @@ Payments are very similar to pledges. There are two ways in which payments can b
   2. Select the 'Report Settings' tab.
   3. Find the sQBDTSettings setting, and choose 'Edit Settings'
   4. Adjust the values for each setting according to our needs.
+
+## Finance Dashboard
+
+The **Finance Dashboard** (`/finance/`) is the home page for the Finance module. It shows year-to-date summary cards, a tax-year checklist, and a **Recent Deposits** card.
+
+### Fiscal year and Recent Deposits
+
+All summary figures on the Finance Dashboard — YTD Payments, YTD Pledges, Donor Families, and Total Payments — reflect the **current fiscal year** as configured in your system settings.
+
+The **Quick Actions** card displays a label showing which fiscal year is currently active (e.g. *Fiscal Year: 2024–2025*). To change the fiscal-year start month, open the **Financial Settings** panel (gear icon, visible to admins) and update the **First month of the fiscal year** setting.
+
+The **Recent Deposits** card lists the most recent deposit slips scoped to the active fiscal year. Clicking **View All** opens the full deposit search page.
+
+---
 
 ## Pledge Dashboard
 
