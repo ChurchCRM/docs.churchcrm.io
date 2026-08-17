@@ -77,9 +77,11 @@ Kiosk check-in is no longer limited to Sunday School classes. Any group can be u
 | Feature | Description |
 |--------|-------------|
 | **Two-column layout** | "Waiting to Check In" (left) and "Checked In" (right); tablet-optimized. |
+| **Alphabetical order** | Both columns list members sorted by last name, then first name. |
 | **Student cards** | Photo (or gender icon), name, age, check-in button; optional birthday icon. |
 | **Birthday recognition** | Highlights today’s birthdays, upcoming (14 days), and recent (14 days). |
 | **Parent Alert** | One-tap notification to parents (email, SMS, and/or OpenLP) for pickup/alert. |
+| **Check-in By** | Optional toggle in the kiosk header; when enabled, prompts for the authorized adult on each check-in and check-out. |
 | **Checkout All** | One tap to check out everyone in the class. |
 | **No login on device** | Kiosk uses a cookie; no ChurchCRM user login on the tablet. |
 | **Reload / Identify** | Admin can force reload or show an ID message on the kiosk screen. |
@@ -151,8 +153,8 @@ If the dropdown is empty, create a **future** event with a **group** and refresh
 
 - **Header** — Event title, group name, start/end time, counts (Here / Expected), **Checkout All** button.
 - **Birthday banner** — Optional; shows students with birthdays in the next or past 14 days.
-- **Left column** — "Waiting to Check In" (yellow); tap to check in.
-- **Right column** — "Checked In" (green); tap **Parent Alert** or use **Checkout All**.
+- **Left column** — "Waiting to Check In" (yellow); members listed alphabetically by last name, then first name. Tap to check in.
+- **Right column** — "Checked In" (green); also sorted alphabetically. Tap **Parent Alert** or use **Checkout All**.
 
 ### Student cards
 
@@ -175,6 +177,33 @@ Each person has:
 
 - In the header, **Checkout All** moves every checked-in person back to "Waiting to Check In" and updates attendance with checkout time.
 - Use it at the end of class.
+
+### Recording who checks a child in/out (Check-in By)
+
+The **Check-in By** feature is controlled by a toggle labeled **Check-in By** in the kiosk header (the switch in the top-right area of the kiosk header, below the Here/Expected counts). The toggle is **off by default** and its state is saved per browser, so each device can be configured independently.
+
+When the toggle is **on**, tapping to check a child **in** or **out** shows a prompt:
+
+- **Check in:** *"Who is bringing in [name]?"*
+- **Check out:** *"Who is picking up [name]?"*
+
+The prompt lists the **adult family members** of that child as selectable buttons — each shows a photo if one is on record, or a person icon otherwise. Tap a name to record who is responsible for that transaction. Tap **Skip** to check in/out without recording a responsible adult. Closing the prompt with the X, pressing Escape, or tapping outside it **cancels** the check-in/out entirely — the child’s attendance status does not change.
+
+The name selected is stored on the attendance record as the authorized adult for that transaction.
+
+**Who appears in the picker?**
+
+| Condition | Result |
+|-----------|--------|
+| Family member has a complete, valid birth date on record | Shown if age ≥ 18 |
+| Family member has no birth date on record | Shown if their family role is Head or Spouse (as configured under **Admin** → **Family Roles**) |
+| The child being checked in | Always excluded |
+
+The list is sorted alphabetically by last name, then first name.
+
+:::note
+If no eligible adults are found for the child’s family, the prompt closes automatically and the check-in/out proceeds without recording a responsible adult. See [**"Check-in By" picker shows no one or the wrong people**](#check-in-by-picker-shows-no-one-or-the-wrong-people) in Troubleshooting if the picker is unexpectedly empty.
+:::
 
 ---
 
@@ -307,6 +336,15 @@ chrome --kiosk https://your-churchcrm-url/kiosk/
 - Confirm Wi‑Fi and that the kiosk tab is open and not sleeping.
 - Manually refresh the browser on the device.
 
+### "Check-in By" picker shows no one or the wrong people
+
+The picker only lists adult members of the child’s family. If it appears empty or is missing someone, check:
+
+- **Birth date not set** — A family member with no birth date on record falls back to their family role. If their role is not Head or Spouse (as configured under **Admin** → **Family Roles**), they are excluded. Either add a birth date that shows they are 18 or older, or update their role to Head or Spouse.
+- **Under 18** — A family member with a birth date on record is only shown if they are 18 or older. Verify the birth year is correct on the family member’s person record.
+- **Wrong family** — Confirm the child is linked to the correct family (**People** → open the person → **Family** tab).
+- **No family record** — If the child has no family in ChurchCRM, the picker has no one to show. Link the child to a family to enable the Check-in By feature.
+
 ---
 
 ## API reference
@@ -333,10 +371,35 @@ For integrations and automation. All admin endpoints require an authenticated **
 | GET | `/kiosk/device/heartbeat` | Heartbeat; returns pending commands. |
 | GET | `/kiosk/device/activeClassMembers` | List of group members and check-in status. |
 | GET | `/kiosk/device/activeClassMember/{id}/photo` | Member photo. |
-| POST | `/kiosk/device/checkin` | Check in (body: `PersonId`). |
-| POST | `/kiosk/device/checkout` | Check out (body: `PersonId`). |
+| GET | `/kiosk/device/activeClassMember/{id}/family` | Adult family members for the Check-in By picker. |
+| POST | `/kiosk/device/checkin` | Check in (body: `PersonId`; optional: `CheckedInById`). |
+| POST | `/kiosk/device/checkout` | Check out (body: `PersonId`; optional: `CheckedOutById`). |
 | POST | `/kiosk/device/checkoutAll` | Check out all. |
 | POST | `/kiosk/device/triggerNotification` | Parent alert (body: `PersonId`). |
+
+### Example: activeClassMember/{id}/family response
+
+```json
+{
+  "members": [
+    {
+      "Id": 42,
+      "FirstName": "Jane",
+      "LastName": "Smith",
+      "hasPhoto": true
+    },
+    {
+      "Id": 43,
+      "FirstName": "Robert",
+      "LastName": "Smith",
+      "hasPhoto": false
+    }
+  ]
+}
+```
+
+- **members**: Adult family members eligible to be the authorized adult, sorted by last name then first name. Empty array if the person has no family or no eligible adults.
+- **hasPhoto**: Whether a photo is stored for this person (determines whether a photo or icon is shown in the picker).
 
 ### Example: activeClassMembers response
 
