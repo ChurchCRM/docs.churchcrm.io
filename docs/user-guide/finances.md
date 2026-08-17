@@ -22,10 +22,11 @@ ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gif
 
 ### Creating a Deposit Slip
 
-1. Go to **Finance** → **Deposit** → **New Deposit Slip**.
-2. Enter each donation for the batch.
-3. Click **Generate PDF** to print a bank deposit form.
-4. When ready for the bank, click **Close deposit slip**.
+1. Go to **Finance** → **View All Deposits**, then click **New Deposit** (top-right of the results card).
+2. Fill in the deposit comment, type, and date in the modal.
+3. Add each donation to the deposit.
+4. Click **Generate PDF** to print a bank deposit form.
+5. When ready for the bank, click **Close deposit slip**.
 
 See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 
@@ -121,6 +122,20 @@ Payments are very similar to pledges. There are two ways in which payments can b
   3. Find the sQBDTSettings setting, and choose 'Edit Settings'
   4. Adjust the values for each setting according to our needs.
 
+## Finding and managing deposits
+
+The **Deposits** page (`/finance/deposit/search`) lets you search, filter, and manage all deposit slip records in one place. It replaces the legacy `FindDepositSlip.php` URL — existing bookmarks redirect automatically.
+
+Key capabilities:
+- Filter deposits by date range, amount, fund, status, teller, or deposit ID
+- Select multiple deposits and export: bulk CSV (single file), or per-deposit OFX/PDF
+- Delete selected deposits in bulk
+- Add a new deposit directly from the page
+
+See [Deposits](./deposit-search.md) for full details.
+
+---
+
 ## Pledge Dashboard
 
 The **Pledge Dashboard** provides an interactive summary of pledges and payments by fund and by family for any fiscal year. It replaces the former Pledge Summary PDF report.
@@ -141,3 +156,12 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for full details.
 1. Go to **Fundraiser** → **Edit Fundraiser**.
     ![Fundraiser Admin](/img/Finances/fund-raiser-admin-1.png)
 2. Use the on-screen editor to add / remove donation funds.
+
+---
+
+## Related pages
+
+- [Deposits](./deposit-search.md) — search, filter, and bulk-export deposit slips
+- [Pledge Dashboard](./pledge-dashboard.md) — pledge and payment tracking by fund and fiscal year
+- [Fundraiser](./fundraiser.md) — managing donation funds and campaigns
+- [Reports & Queries](./reports-and-queries.md) — other financial reports
