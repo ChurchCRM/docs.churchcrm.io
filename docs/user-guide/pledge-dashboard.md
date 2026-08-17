@@ -43,7 +43,7 @@ The **Fund Summary** table breaks down pledge and payment data by donation fund.
 
 | Column | Description |
 |--------|-------------|
-| **Fund** | Donation fund name |
+| **Fund** | Donation fund name — click to open the [Fund Contributor drill-down](#fund-contributor-drill-down) for that fund |
 | **Pledges** | Total pledged amount for this fund |
 | **Payments** | Total payments received for this fund |
 | **# Pledges** | Count of pledge records |
@@ -94,6 +94,72 @@ The Family Pledges table also provides **Copy**, **CSV**, **Excel**, **PDF**, an
 ## Adding a new pledge
 
 Click the **Add New Pledge** button (top-right) to open the pledge editor for the selected fiscal year. See [Finances](/user-guide/finances#how-do-i-enter-a-pledge) for full pledge entry instructions.
+
+---
+
+## Fund Contributor Drill-Down
+
+The **Fund Contributor** page (`/finance/fund/{fundId}/contributors`) shows every family that has pledged or paid to a specific donation fund within a chosen fiscal year.
+
+### Getting there
+
+Click a **fund name** in the [Fund Summary table](#fund-summary-table) on the Pledge Dashboard. The drill-down opens for that fund and the currently selected fiscal year. You can also reach it from the per-fund progress cards on the main **Finance Dashboard**.
+
+### Fiscal-Year Filter
+
+A **Fiscal Year** drop-down appears at the top of the page alongside a note identifying the current fiscal year. Changing the selection reloads the page immediately and updates all stats and the contributor table to reflect the chosen year.
+
+### Stats Cards
+
+Four summary cards present totals across all contributors for the selected fund and fiscal year:
+
+| Card | Description |
+|------|-------------|
+| **Total Pledged** | Sum of all pledge commitments for this fund |
+| **Total Paid** | Total payments received; shown as a percentage of pledges (displays "Payments only" when there are no pledge records) |
+| **Remaining** | Total outstanding balance (Total Pledged − Total Paid) |
+| **Contributors** | Count of families who have pledged or paid to this fund |
+
+### Contributor Table
+
+The contributor listing shows one row per family.
+
+| Column | Description |
+|--------|-------------|
+| **Family Name** | Links to the family record |
+| **Envelope** | Donation envelope number (only shown when envelope numbering is enabled in system settings) |
+| **Pledged Amount** | Amount the family committed for this fund; shown as "—" when no pledge record exists |
+| **Payments** | Total payments received from this family for this fund |
+| **Remaining** | Outstanding balance (Pledged − Paid); colour-coded by payment status (see below) |
+| **% Paid** | Percentage of the pledge that has been collected |
+| **Actions** | Per-row action menu (see [Pledge / Payment Detail](#pledge--payment-detail)) |
+
+**Remaining / % Paid colour coding:**
+
+| Colour | Status | Meaning |
+|--------|--------|---------|
+| 🟢 **Green (bold)** | Complete / Payment-only | Pledge fully met, or payments recorded with no associated pledge |
+| 🔵 **Blue** | On-track | Payments on track relative to the pledge schedule |
+| 🟡 **Yellow** | Behind | Payments lagging behind the expected schedule |
+| 🔴 **Red** | Critical | Payments significantly behind or not started |
+
+The table is sorted by **Family Name** by default and displays 25 rows per page. Click any column header to re-sort, or use the search box to filter by family name or amount.
+
+> **Note:** If no pledge or payment data exists for the selected fund and fiscal year, the table is replaced by an informational alert: "No contributors found for this fund in the selected fiscal year".
+
+### Pledge / Payment Detail
+
+Each row's **Actions** menu contains:
+
+- **View Pledge** — opens the pledge detail page for that family-fund record.
+- **View Payment** — shown instead for families whose contributions are payments only (no pledge record). Opens the payment detail page.
+
+### Controls
+
+| Control | Description |
+|---------|-------------|
+| **← Back to Pledge Dashboard** | Returns to the Pledge Dashboard, preserving the currently selected fiscal year |
+| **Manage Funds** | Opens the donation fund editor (admin users only) |
 
 ---
 
