@@ -21,7 +21,16 @@ The Fundraiser feature helps you manage events — auctions, raffles, galas, bak
 
 The Fundraiser landing page shows all active fundraisers in an enriched table with stat widgets and filters.
 
-**Stat widgets** at the top show counts of active, planning, and closed fundraisers.
+**Stat widgets** at the top show counts of active, planning, and closed fundraisers, along with fiscal-year aggregates:
+
+| Widget | Description |
+|--------|-------------|
+| **Active Fundraisers** | Count of fundraisers in Active or Planning status |
+| **Raised This Fiscal Year** | Total revenue from fundraisers whose start date falls in the current fiscal year |
+| **Items Donated (This Fiscal Year)** | Count of donated items across this fiscal year’s fundraisers |
+| **Buyers This Fiscal Year** | Count of registered buyers for this fiscal year’s fundraisers |
+
+> **Note:** “This fiscal year” is determined by the **First month of the fiscal year** system setting (**Admin** → **General Settings**), not the calendar year. A fiscal year that starts in July, for example, includes July of one year through June of the next.
 
 **Filters:** narrow by Type, Status, or date range using the filter bar above the table.
 

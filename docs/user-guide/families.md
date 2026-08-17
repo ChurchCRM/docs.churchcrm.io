@@ -29,6 +29,35 @@ Every Person should belong to a family.
 
 ---
 
+## Pledges and Payments
+
+Finance-enabled users see a **Pledges and Payments** card at the bottom of the Family profile. This card shows all pledge and payment records for the family.
+
+### Type filter
+
+Pills at the top-right of the card let you narrow the list by record type:
+
+| Pill | Shows |
+|------|-------|
+| **All** | Pledges and payments together |
+| **Pledges** | Pledge records only |
+| **Payments** | Payment records only |
+
+### Fiscal-year filter
+
+A second set of pills filters by fiscal year:
+
+| Pill | Shows |
+|------|-------|
+| **All Time** | Every record regardless of year |
+| **FY [current year]** | Records that fall within the current fiscal year (active by default) |
+
+The current fiscal year pill is pre-selected when you open the page, so you see only this year’s activity at a glance. Click **All Time** to see the complete history.
+
+The fiscal year boundaries are determined by the **First month of the fiscal year** setting in **Admin** → **General Settings**.
+
+---
+
 ## How do I add a new Family?
 
 1. Go to **People** → **Add New Family**.
