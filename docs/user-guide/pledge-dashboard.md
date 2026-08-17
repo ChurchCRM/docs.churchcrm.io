@@ -53,6 +53,10 @@ The **Fund Summary** table breaks down pledge and payment data by donation fund.
 
 A **Total** footer row summarises all visible rows and updates dynamically when the table is filtered.
 
+### Drill down into contributors
+
+Click any **fund name** in the Fund column to open the [Fund Contributor Detail](./fund-contributors.md) page for that fund. This drill-down view shows per-family pledge and payment data, payment-status colour coding, and a link to each family's individual pledge or payment record.
+
 ### Sorting and searching
 
 Click any column header to sort. Use the search box (top-right of the table) to filter by fund name or any column value. The footer totals recalculate to match the filtered rows.
@@ -166,5 +170,6 @@ Each row's **Actions** menu contains:
 ## Related pages
 
 - [Finances](/user-guide/finances) — entering pledges, payments, and deposits
+- [Fund Contributor Detail](./fund-contributors.md) — per-family contributor breakdown for a specific fund
 - [Fundraiser](/user-guide/fundraiser) — managing donation funds
 - [Reports & Queries](/user-guide/reports-and-queries) — other financial reports

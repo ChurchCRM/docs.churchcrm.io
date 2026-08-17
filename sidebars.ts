@@ -81,6 +81,7 @@ const sidebars: SidebarsConfig = {
         'user-guide/finances',
         'user-guide/deposit-search',
         'user-guide/pledge-dashboard',
+        'user-guide/fund-contributors',
         'user-guide/cart',
         'user-guide/fundraiser',
       ],
