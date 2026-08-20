@@ -118,7 +118,7 @@ See [Finances](/user-guide/finances) for pledges, payments, deposits, and tax st
 
 ### Configure Email (Admin)
 
-1. Go to **Communication** → **Email**, then click the **Settings** gear icon.
+1. Go to **Communication** → **Email**, then click the **Email Settings** button.
 2. Enter SMTP host, username, and password.
 3. Test by sending a test email.
 

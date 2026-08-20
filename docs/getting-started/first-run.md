@@ -74,7 +74,7 @@ Open **Admin** → **System Settings** → **Families** tab.
 
 ### Email Settings
 
-Open **Communication** → **Email**, then click the **Settings** gear icon.
+Open **Communication** → **Email**, then click the **Email Settings** button.
 
 - **Default "To" Email Address** — address that receives system requests (e.g. `webmaster@domain.com`).
 - **SMTP Host**, **SMTP Username**, **SMTP Password** — credentials for your outbound email relay.
