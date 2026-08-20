@@ -9,18 +9,16 @@ Sunday School classes in ChurchCRM are managed as [Groups](Groups) with a specia
 
 ## Creating a Sunday School Class
 
-1. Navigate to **Groups → Add a New Group**
+1. Go to **Groups** → **Dashboard**, then click **Add New Group** (top-right of the page).
 2. Enter the class name (e.g., "Children's Class - Ages 5-7")
 3. Set **Type of Group** to **Sunday School Class**
 4. Click **Save Changes**
 
 ### Setting Up Roles
 
-By default, groups have a "Member" role. For Sunday School, you'll want:
+Sunday School groups come with two **pre-created, protected roles**: **Teacher** and **Student**. These roles cannot be renamed or deleted. The Student role is the default role for new members.
 
-1. Rename the default "Member" role to "Teacher"
-2. Add a new role called "Student" (this will be the default role)
-3. Optionally add "Assistant Teacher" or "Substitute" roles
+You can optionally add extra roles (e.g., "Assistant Teacher", "Substitute") using the **Add Role** button in the group's offcanvas editor.
 
 ## Adding Students and Teachers
 

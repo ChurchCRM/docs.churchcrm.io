@@ -33,7 +33,7 @@ Click any group to open the **Group View** page, which has been rebuilt as a mod
 
 ## Step-by-step: Creating a Group
 
-1. Go to **Groups** → **Add New Group**.
+1. Go to **Groups** → **Dashboard**, then click **Add New Group** (top-right of the page).
 2. Enter **Group Name** (e.g., "3rd Grade Sunday School").
 3. Enter **Description** (optional).
 4. Choose **Group Type** (e.g., Sunday School, Small Group, Committee).
@@ -83,7 +83,7 @@ Use the **Create Group + ADD Cart** button to create a brand-new group and assig
 
 ## How do I add a new Group?
 
-1. Go to **Groups** → **Add New Group**.
+1. Go to **Groups** → **Dashboard**, then click **Add New Group** (top-right of the page).
 
 2. Complete the form.
 
@@ -93,25 +93,23 @@ Use the **Create Group + ADD Cart** button to create a brand-new group and assig
 
 ## How do I change the Name/Description/Type of a Group?
 
-1. Go to **Groups** → **List Groups**.
+1. Go to **Groups** → **Dashboard**.
 
-2. Click on the desired Group.
+2. Click on the desired Group to open its Group View page.
 
-3. Click on _"Edit this group"_
+3. Click the **edit (pencil) icon** in the Group View header to open the offcanvas editor.
 
-4. Under the heading of "Group Editor" is a list of current group roles.
+4. Update the group name, description, or type in the editor.
 
-5. Type the new title in the input box, and press _"Save"_.
-
-6. The new information should appear.
+5. Click **Save**.
 
 ## How do I add a new Role to a Group?
 
-1. Go to **Groups** → **List Groups**.
+1. Go to **Groups** → **Dashboard**.
 
-2. Click on the desired Group.
+2. Click on the desired Group to open its Group View page.
 
-3. Click on _"Edit this group"_.
+3. Click the **edit (pencil) icon** in the Group View header to open the offcanvas editor.
 
 4. In the **Group Roles** card, click the **Add Role** button (top-right of the card).
 
@@ -127,11 +125,11 @@ Sunday School groups have two protected roles — **Student** and **Teacher** �
 
 ## How do I change a Role in a Group?
 
-1. Go to **Groups** → **List Groups**.
+1. Go to **Groups** → **Dashboard**.
 
-2. Click on the desired Group.
+2. Click on the desired Group to open its Group View page.
 
-3. Click on _"Edit this group"_.
+3. Click the **edit (pencil) icon** in the Group View header to open the offcanvas editor.
 
 4. In the **Group Roles** table, click the role name in the **Role Name** column and type the new name.
 
@@ -143,11 +141,11 @@ Role name changes take effect immediately. The success notification confirms the
 
 ## How do I delete a Role from a Group?
 
-1. Go to **Groups** → **List Groups**.
+1. Go to **Groups** → **Dashboard**.
 
-2. Click on the desired Group.
+2. Click on the desired Group to open its Group View page.
 
-3. Click on _"Edit this group"_.
+3. Click the **edit (pencil) icon** in the Group View header to open the offcanvas editor.
 
 4. In the **Group Roles** table, click the **trash** icon (🗑) in the **Delete** column for the role you want to remove.
 
@@ -171,11 +169,11 @@ Default Roles allow you to quickly add new Members to a group. If you have 200 P
 
 ## How do I change the Default Role for a Group?
 
-1. Go to **Groups** → **List Groups**.
+1. Go to **Groups** → **Dashboard**.
 
-2. Click on the desired Group.
+2. Click on the desired Group to open its Group View page.
 
-3. Click on _"Edit this group"_.
+3. Click the **edit (pencil) icon** in the Group View header to open the offcanvas editor.
 
 4. In the **Group Roles** table, click the **Default** button next to the role you want to set as default. The current default role shows a checkmark (✓ Default) instead of a button.
 
@@ -213,11 +211,11 @@ All People will be added to the Group in that group's Default Role, unless you s
 
 ### How do I change the role of a Person in a Group?
 
-1. Go to **Groups** → **List Groups**.
+1. Go to **Groups** → **Dashboard**.
 
-2. Click on the desired Group.
+2. Click on the desired Group to open its Group View page.
 
-3. Click on _"View Members"_.
+3. Click **View Members** (or the Members tab).
 
 4. Find the desired Member and click on _"Change Role"_.
 

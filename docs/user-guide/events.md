@@ -52,7 +52,7 @@ Past and inactive events are grouped into collapsible **month sections** below t
 
 ## Step-by-step: Recording Attendance
 
-1. **Create an event type** (if needed): **Events** → **List Event Types** → **Add Event Type**.
+1. **Create an event type** (if needed): **Events** → **Admin** → **Event Types** → **Add Event Type**.
 2. **Create an event**: **Events** → **Add Church Event** — choose type, date, time, and save.
 3. **Add people to the Cart**: Search or browse people, click **Add to Cart**.
 4. **Record attendance**: **Cart** → **Empty Cart to Event** → select the event → **Add Cart to Event**.
@@ -69,8 +69,8 @@ You can also create free-form text fields allowing you to identify the type of i
 
 To create an event type:
 
-1. Choose *Events – List Event Types*.
-2. Choose *Add Event Type*.
+1. Go to **Events** → **Admin** → **Event Types**.
+2. Click **Add Event Type**.
 3. Make your entries and choose *Save Changes*.
 
 ### Example
@@ -100,7 +100,7 @@ Throughout the course of an event, you can take attendance to track the particip
 
 To add an existing person to an event:
 
-1. Choose *Members -> View All Persons*.
+1. Go to **People** → **Person Listing**.
 2. In the **Filter and Cart** area, enter a name in the search field and choose *Apply Filter*.
 3. In the **Listing** area, choose the *Add to Cart* icon.
 4. Continue adding people to the cart as described in the previous steps.
@@ -110,7 +110,7 @@ To add an existing person to an event:
 
 To add a visitor to an event:
 
-1. Choose *Members -> Add New Person*.
+1. Go to **People** → **Add New Person**.
 2. Make your entries, ensuring you set the **Classification** field to *Guest*.
 3. Choose *Save*.
 4. Choose *Add to Cart*.
@@ -124,7 +124,7 @@ You can generate reports based on attendance history for an event. The tracked p
 
 To generate a report:
 
-1. Choose *Data/Reports -> Reports Menu*.
+1. Go to **Data/Reports** (direct link in the navigation).
 2. Choose an event type from the *Event Attendance Reports* area.
 3. Choose a person type corresponding to the event for which you wish to generate a report.
 
@@ -154,7 +154,7 @@ To check a child into an event:
 
 1. Choose *Events -> Check-in and Check-out*.
 2. Select an event.
-3. Enter the `PersonID` of the child in the left-hand field and the `PersonID` of the parent or guardian in the right-hand field. Note that you can use the Person Listing (*Members -> View All Members*) to look up and determine the `PersonID` of any individual.
+3. Enter the `PersonID` of the child in the left-hand field and the `PersonID` of the parent or guardian in the right-hand field. Note that you can use the **Person Listing** (**People** → **Person Listing**) to look up and determine the `PersonID` of any individual.
 4. Choose *Verify*.
 5. Review the data and choose *CheckIn*.
 
@@ -163,6 +163,6 @@ To check a child out of an event:
 1. Choose *Events -> Check-in and Check-out*.
 2. Select an event.
 3. Locate the entry of a child who had previously been checked into the system and choose *Checkout*.
-4. Enter the `PersonID` of the parent or guardian in the right-hand field. Note that you can use the **Person Listing** (*Members -> View All Members*) to look up and determine the `PersonID` of any individual.
+4. Enter the `PersonID` of the parent or guardian in the right-hand field. Note that you can use the **Person Listing** (**People** → **Person Listing**) to look up and determine the `PersonID` of any individual.
 5. Choose *Verify CheckOut*.
 6. Review the data and choose *Finalize CheckOut*.
