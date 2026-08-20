@@ -20,7 +20,7 @@ docs.churchcrm.io/
 │   ├── getting-started/       ← first run, features overview
 │   ├── user-guide/            ← how-to pages for end users
 │   ├── administration/        ← sysadmin, troubleshooting
-│   └── developers/            ← dev setup, contributing, reference
+│   └── api/                   ← 3rd-party developer API reference (auto-generated from OpenAPI spec)
 ├── static/
 │   └── img/                   ← all images, grouped by section
 ├── src/css/custom.css         ← theme overrides only
@@ -114,7 +114,9 @@ The doc ID is the file path relative to `docs/`, without `.md`:
 docs/user-guide/new-feature.md  →  ID: user-guide/new-feature
 ```
 
-Four sidebars exist: `gettingStartedSidebar`, `userGuideSidebar`, `adminSidebar`, `devSidebar`.
+Four sidebars exist: `gettingStartedSidebar`, `userGuideSidebar`, `adminSidebar`, `apiSidebar`.
+
+- `apiSidebar` contains the auto-generated 3rd-party API reference pages (produced by `npm run regen` from the OpenAPI specs). Do not manually edit files inside `docs/api/` except `docs/api/private/index.md` and `docs/api/public/index.md` (the hand-maintained overview pages).
 
 ---
 

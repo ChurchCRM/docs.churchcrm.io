@@ -257,7 +257,7 @@ This makes them:
 
 **For security vulnerabilities, DO NOT create a public GitHub issue.**
 
-Instead, see [Security Policy](Security.md#reporting-vulnerabilities) for responsible disclosure.
+Instead, see [Security Policy](./security.md) for responsible disclosure.
 
 ---
 
