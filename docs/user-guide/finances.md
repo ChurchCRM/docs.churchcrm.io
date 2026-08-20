@@ -23,10 +23,11 @@ ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gif
 ### Creating a Deposit Slip
 
 1. Go to **Finance** → **View All Deposits**, then click **New Deposit** (top-right of the results card).
-2. Fill in the deposit comment, type, and date in the modal.
-3. Add each donation to the deposit.
-4. Click **Generate PDF** to print a bank deposit form.
-5. When ready for the bank, click **Close deposit slip**.
+2. Fill in the deposit **Comment**, **Type** (Bank, Credit Card, or Bank Draft), and **Date** in the modal, then click **Add New Deposit**.
+3. The page redirects to the **Deposit Slip Editor** (breadcrumb: Finance → Deposits → Edit Deposit).
+4. Click **Add Payment** to add each donation — the new payment form opens pre-linked to this deposit. Fill in Method, Fund, Amount, and a Family record, then save. Repeat for every payment in the batch.
+5. Click **Generate Report** to download a PDF bank deposit form.
+6. When the deposit is ready to be finalised, toggle the **Closed** status switch and click **Save**.
 
 See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 
@@ -64,38 +65,25 @@ There are two ways in which pledges can be added:
 
 ## How do I deposit donations?
 
-When a batch of cash and check donations is received they are entered into ChurchCRM so the donating families receive credit against their pledges and also for tax purposes.
+When a batch of cash and check donations is received, create a deposit slip in ChurchCRM so the donating families receive credit against their pledges and for tax purposes.
 
-*   **Make a new deposit slip:** Select "New Deposit Slip (checks and cash)"  from the "Deposit" menu.
+### Cash / Check deposits (Bank type)
 
-*   **Enter the deposits:** See below.
+1. **Create the deposit slip:** Go to **Finance** → **View All Deposits**, then click **New Deposit** (top-right of the results card). Choose type **Bank**, enter a comment and date, then click **Add New Deposit**.
+2. **Add payments:** On the Deposit Slip Editor, click **Add Payment** for each donation. Fill in the payment method (Cash, Check, etc.), fund, amount, and donor family, then save. Repeat until all donations are recorded.
+3. **Print the deposit form:** Click **Generate Report** to download a PDF that can be printed on a standard bank deposit form.
+4. **Finalise the deposit:** Toggle the **Closed** status switch and click **Save** once the batch is packaged for the bank.
 
-*   **Print the deposit slip:**
-  1. Select _"Edit Deposit Slip"_ from the _"Deposit"_ menu.
+### Credit Card / Bank Draft deposits
 
-  2. Click on _"Generate PDF"_.
+For **Credit Card** or **Bank Draft** deposit types, the Deposit Slip Editor provides two additional buttons:
 
-  3. This PDF document will print on a standard bank deposit form.
+- **Load Authorized** — creates payment records for all automatic transactions authorised as of today. Only transactions matching the deposit type (Credit Card or Bank Draft) are loaded; next payment dates are advanced automatically.
+- **Run Transactions** — submits the loaded payments for processing. Check the _Cleared_ column on refresh; use the payment record to investigate any that failed.
 
-* **Close the deposit:**
-Select _"Close deposit slip"_ to close the deposit slip once the deposit has been packaged for the bank.
+After processing, click **Generate Report** for the PDF and toggle **Closed** to finalise.
 
-Automatic credit card and bank draft deposits are supported for churches and other organizations with an ECHO account.
-
-* **Configure the automatic payments** For each family participating in the automatic payment program, in the Family view, click _"Add a new automatic payment"_.
-
-* **Fill in the automatic payment information** Fill in all of the fields
-in this form, except for the last six fields. Of the last six fields, the first three must be filled for credit card transactions, and the last three must be filled for bank draft transactions. Many of these fields start with default values taken from the Family record, but these values may be edited if appropriate. Note that the date specified here is the first date that the payment is authorized, and the payment interval specifies the period of time in months until another payment is authorized.
-
-* **Make a new deposit slip:** Select _"New Deposit Slip (credit card)"_ or _"New Deposit Slip (bank draft)"_ from the _"Deposit"_ menu.
-
-* **Load the authorized payments** Press _"Load Authorized Transactions"_ to create payment records for all of the automatic transactions that have been authorized as of today. Note that only credit card transactions or bank draft transactions will be loaded, depending on the nature of this deposit slip. When the transactions are loaded the next payment date for each automatic payment is pushed forward by the specified interval in months.
-
-* **Process payments** Press _"Run Transactions"_ to execute all of the transactions using the ECHO transaction server. This may take some time, depending on the number of transactions and the speed of the network connection. When the page refreshes note the status of each transaction in the _Cleared_ column.
-
-* **Fix problems with payments that did not clear** Press _"Details"_ for any transactions that do not clear to see why the transaction failed. Edit the automatic transaction record using the Family view to correct any errors. After making corrections, repeat the _"Process payments"_ step to re-submit the failed transactions. Successful transactions will not be submitted again.
-
-* **Close the deposit slip** Enable _"Close deposit slip"_ when finished with this deposit slip, and press _"Save"_.
+> **Tip:** See [Deposits](./deposit-search.md) for bulk export, searching, and managing all deposit slips.
 
 ## How do I enter a payment?
 
@@ -140,7 +128,7 @@ See [Deposits](./deposit-search.md) for full details.
 
 The **Pledge Dashboard** provides an interactive summary of pledges and payments by fund and by family for any fiscal year. It replaces the former Pledge Summary PDF report.
 
-Go to **Finance** → **Pledges** (or **Finance** → **Reports** → **Pledge Summary**) to open the dashboard.
+Go to **Finance** → **Pledge Dashboard** to open it.
 
 Key features:
 - **Fund Summary table** — sortable/searchable breakdown of pledges, payments, overpaid, and underpaid per fund, with CSV/PDF/print export.
@@ -151,11 +139,10 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for full details.
 
 ---
 
-## How do I Add a new Deposit Fund?
+## How do I add a new Donation Fund?
 
-1. Go to **Fundraiser** → **Edit Fundraiser**.
-    ![Fundraiser Admin](/img/Finances/fund-raiser-admin-1.png)
-2. Use the on-screen editor to add / remove donation funds.
+1. Go to **Finance** → **Admin** → **Donation Funds**.
+2. Use the on-screen editor to add, rename, or remove donation funds.
 
 ---
 
