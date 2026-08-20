@@ -66,7 +66,7 @@ Once the mandatory setup is done, a few additional settings are worth configurin
 
 ### Member Defaults
 
-Open **Admin** → **Edit General Settings** → **Member Setup** tab.
+Open **Admin** → **System Settings** → **Families** tab.
 
 - **Default City** — pre-fills the city field for new member records.
 - **Default State** — pre-fills the state (two-letter abbreviation).
@@ -74,7 +74,7 @@ Open **Admin** → **Edit General Settings** → **Member Setup** tab.
 
 ### Email Settings
 
-Open **Admin** → **Edit General Settings** → **Email** tab.
+Open **Communication** → **Email**, then click the **Email Settings** button.
 
 - **Default "To" Email Address** — address that receives system requests (e.g. `webmaster@domain.com`).
 - **SMTP Host**, **SMTP Username**, **SMTP Password** — credentials for your outbound email relay.

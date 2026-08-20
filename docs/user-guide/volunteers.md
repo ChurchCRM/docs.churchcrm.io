@@ -33,7 +33,7 @@ The Volunteers feature helps you track member talents and willingness to serve i
 
 When you need volunteers for a specific task:
 
-1. Navigate to **Data/Reports → Query Menu**
+1. Navigate to **Data/Reports** (direct link in the navigation).
 2. Scroll to the bottom and click **Volunteers**
 3. Select the volunteer opportunity you need help with
 4. The query will return all [people](Persons) who volunteered for that task

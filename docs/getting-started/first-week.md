@@ -14,10 +14,10 @@ This guide walks you through a typical first week as you get your church set up 
 ### Configure Church Details
 
 1. Log in as **admin** (change the default password immediately).
-2. Go to **Admin** → **Edit General Settings**.
+2. Go to **Admin** → **System Settings**.
 3. Under **Church Information**, enter your church name, address, phone, and email.
 4. Under **Report Settings**, fill in the same details — these appear on financial statements and letters.
-5. Under **Member Setup**, set your default city, state, and country for new records.
+5. Under **Families**, set your default city, state, and country for new records.
 
 ### Add Your First Families
 
@@ -58,7 +58,7 @@ See [Persons](/user-guide/persons) for step-by-step instructions.
 
 Groups help you organize people — Bible studies, ministry teams, committees:
 
-1. Go to **Groups** → **Add New Group**.
+1. Go to **Groups** → **Dashboard**, then click **Add New Group** (top-right of the page).
 2. Enter a name (e.g., "Sunday School – 3rd Grade").
 3. Choose a group type (e.g., Sunday School, Small Group).
 4. Add roles if needed (Leader, Member, etc.).
@@ -79,7 +79,7 @@ See [Groups](/user-guide/groups) for full details.
 
 ### Create an Event Type
 
-1. Go to **Events** → **List Event Types**.
+1. Go to **Events** → **Admin** → **Event Types**.
 2. Click **Add Event Type**.
 3. Set name, recurrence (weekly, monthly, etc.), and default start time.
 4. Add attendance count fields (e.g., Members, Visitors, Children).
@@ -100,7 +100,7 @@ See [Events](/user-guide/events) for step-by-step attendance workflows.
 
 ### Set Up Funds
 
-1. Go to **Fundraiser** → **Edit Fundraiser** (or via Admin).
+1. Go to **Finance** → **Admin** → **Donation Funds**.
 2. Add donation funds (e.g., General Fund, Building Fund, Missions).
 
 ### Enter Pledges and Donations
@@ -118,7 +118,7 @@ See [Finances](/user-guide/finances) for pledges, payments, deposits, and tax st
 
 ### Configure Email (Admin)
 
-1. Go to **Admin** → **Edit General Settings** → **Email Settings**.
+1. Go to **Communication** → **Email**, then click the **Email Settings** button.
 2. Enter SMTP host, username, and password.
 3. Test by sending a test email.
 
@@ -132,8 +132,8 @@ See [Email](/user-guide/email) for more options, including Mailchimp.
 
 ### Run Reports
 
-1. Go to **Data/Reports** → **Reports Menu**.
-2. Try **Family Directory**, **Attendance Reports**, or the **[Pledge Dashboard](/user-guide/pledge-dashboard)** (Finance → Pledges).
+1. Go to **Data/Reports** (direct link in the navigation).
+2. Try **Family Directory**, **Attendance Reports**, or the **[Pledge Dashboard](/user-guide/pledge-dashboard)** (Finance → Pledge Dashboard).
 
 ---
 
@@ -161,7 +161,7 @@ See [Backup & Restore](/administration/backup-restore).
 |------|----------|
 | Add family | People → Add New Family |
 | Add person | People → Add New Person |
-| Create group | Groups → Add New Group |
+| Create group | Groups → Dashboard → Add New Group |
 | Add to group | Cart → Empty Cart to Group |
 | Create event | Events → Add Church Event |
 | Record attendance | Cart → Empty Cart to Event |
