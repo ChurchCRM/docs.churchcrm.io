@@ -377,7 +377,7 @@ For integrations and automation. All admin endpoints require an authenticated **
 | POST | `/kiosk/device/checkoutAll` | Check out all. |
 | POST | `/kiosk/device/triggerNotification` | Parent alert (body: `PersonId`). |
 
-### Example: activeClassMember/{id}/family response
+### Example: activeClassMember/\{id\}/family response
 
 ```json
 {

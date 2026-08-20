@@ -81,7 +81,7 @@ Returns the active-family mailing list grouped by classification role. Used by t
 
 Returns email addresses of everyone currently in the cart. Same response shape as above.
 
-### GET /api/groups/{id}/emails
+### GET /api/groups/\{id\}/emails
 
 Returns email addresses of all members of a group.
 
