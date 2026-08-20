@@ -40,3 +40,25 @@ Follow this structure for every doc:
 - Use "ChurchCRM" not "CRM" in prose
 - Link to related pages using relative Docusaurus paths (e.g., `[Backup & Restore](./backup-restore)`)
 - Screenshots go in `static/img/<section>/` and reference as `/img/<section>/filename.png`
+
+### Content that does NOT belong in user-guide or administration pages <!-- learned: 2026-08-20 -->
+
+Never include any of the following in `docs/user-guide/` or `docs/administration/`:
+
+| Wrong content | Where it belongs |
+|---|---|
+| HTTP endpoint tables (`GET /api/...`) | `docs/api/` — auto-generated from Swagger `@OA\` annotations |
+| JSON request/response examples for endpoints | Same — OpenAPI spec pages |
+| API authentication instructions for developers | `docs/api/private/index.md` overview |
+| ChurchCRM architecture, plugin internals, contributing | GitHub Wiki |
+
+If a feature has an API surface that 3rd-party developers might use, **link** to the Private API reference (`[Private API reference](/api/private)`) rather than duplicating endpoint docs inline. Example:
+
+```md
+## For developers
+
+Kiosk admin endpoints are documented in the [Private API reference](/api/private).
+All admin endpoints require an authenticated administrator.
+```
+
+API docs are regenerated automatically from `@OA\` annotations in the CRM PHP route files — any hand-written endpoint markdown in the docs site will drift and eventually break the build.
