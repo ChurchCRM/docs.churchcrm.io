@@ -54,21 +54,21 @@ Coordinates are detected automatically — no manual entry is required. Re-savin
 
 ## Geocoding family addresses
 
-To populate latitude/longitude for all families in bulk:
+Geocoding a family record happens automatically when you save an address in the Family Editor — coordinates are filled in as soon as the save succeeds, so ongoing maintenance is hands-off. There is currently no bulk "geocode all families" action; to backfill coordinates for existing records, re-save each family's address to trigger geocoding individually.
 
-1. Go to **People → Family Geographic Utilities**
-2. Click **Update All Family Coordinates**
-3. Families with valid addresses will have their coordinates filled in
+---
 
-Geocoding a single family record happens automatically when you save an address in the Family Editor, so ongoing maintenance is hands-off.
+## Finding neighbors and viewing the map
+
+Once families are geocoded, use **People → Family Map** to see them plotted on the map, and **Find Neighbors** (from the map page) to locate families near a given family for pastoral visits or outreach — see [Geographic Features](/user-guide/geographic) for the full walkthrough.
 
 ---
 
 ## Fair use and rate limits
 
-Nominatim is a free public service with a [usage policy](https://operations.osmfoundation.org/policies/nominatim/) that caps lookups at roughly 1 request per second and prohibits heavy bulk scraping. ChurchCRM's usage — a handful of lookups when an address is saved, plus periodic "update all coordinates" runs — stays well within these limits for any normal church.
+Nominatim is a free public service with a [usage policy](https://operations.osmfoundation.org/policies/nominatim/) that caps lookups at roughly 1 request per second and prohibits heavy bulk scraping. ChurchCRM's usage — a handful of lookups whenever an address is saved — stays well within these limits for any normal church.
 
-If your installation has tens of thousands of family records and you run frequent full re-geocodes, consider running your own [Nominatim instance](https://nominatim.org/release-docs/latest/admin/Installation/) to avoid throttling.
+If your installation does frequent bulk imports that save many family addresses in a short window, consider running your own [Nominatim instance](https://nominatim.org/release-docs/latest/admin/Installation/) to avoid throttling.
 
 ---
 
@@ -79,7 +79,6 @@ If your installation has tens of thousands of family records and you run frequen
 | Map tiles don't load | Server or client can't reach `tile.openstreetmap.org` | Check outbound HTTPS from your server and from the user's browser |
 | Address saves but no coordinates appear | `nominatim.openstreetmap.org` is unreachable from your server | Check your server's outbound HTTPS and DNS |
 | Map shows but centers on the wrong place | Church location not set | Open **Admin → Church Information**, save a valid address |
-| "Update All Family Coordinates" is slow | Nominatim rate-limits at ~1 req/sec | This is expected; the job spaces requests to stay polite |
 | Coordinates are wrong for one family | Nominatim couldn't parse the address | Edit the family address for clarity (spell out street suffixes, include country) and re-save |
 
 ---
@@ -87,5 +86,5 @@ If your installation has tens of thousands of family records and you run frequen
 ## Related pages
 
 - [Families](/user-guide/families) — where addresses are edited
-- [Geographic Utilities](/user-guide/geographic) — neighbor finder and map view
+- [Geographic Features](/user-guide/geographic) — neighbor finder and map view
 - [First Run Configuration](/getting-started/first-run) — initial church location setup
