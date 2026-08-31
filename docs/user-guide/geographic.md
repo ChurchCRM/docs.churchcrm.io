@@ -17,31 +17,22 @@ Maps and geocoding work out of the box using **OpenStreetMap** tiles and **Nomin
 
 ## Geocoding
 
-ChurchCRM stores latitude and longitude with each family for map push-pins and proximity. Coordinates are filled in automatically when a family address is saved. To populate coordinates in bulk for existing records, use **People → Family Geographic Utilities → Update All Family Coordinates**.
-
-:::tip Fair use
-Nominatim is a free public service. "Update All Family Coordinates" spaces requests out to respect the [Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/) — expect it to take a few seconds per 1,000 families.
-:::
+ChurchCRM stores latitude and longitude with each family for map push-pins and proximity. Coordinates are filled in automatically whenever a family address is saved — there's no separate bulk step to run.
 
 ---
 
 ## In-app maps
 
-From the **People** area, use **Family Map** (or **Family Geographic Utilities**) to view family locations by classification. The map uses Leaflet and OpenStreetMap tiles. Only families that have been successfully geocoded will appear as pins.
+From the **People** area, use **Family Map** to view family locations by classification. The map uses Leaflet and OpenStreetMap tiles. Only families that have been successfully geocoded will appear as pins.
 
 ---
 
 ## Finding families that live close together
 
-1. Go to **People** → **Family Geographic Utilities**.
-2. Select a family from the list.
-3. Click **Show Neighbors**.
-4. Use **Maximum number of neighbors** and **Maximum distance** to limit results.
+1. Go to **People** → **Family Map**.
+2. Click **Find Neighbors** (header button on the map page).
+3. Select a family, then set **Maximum number of neighbors** and **Maximum distance**, and optionally filter by classification.
+4. Click **Find Neighbors** to see results as map markers and as a results table (distance, direction, family, people).
+5. Use **Add All to Cart** / **Remove All from Cart** to act on the results.
 
 The neighbor finder is also available via the `/api/map/neighbors/{familyId}` API endpoint for custom integrations.
-
----
-
-## Export for other map tools
-
-The Family Geographic Utilities page can generate annotation files for external tools (e.g. GPS Visualizer, mapping software). Choose the desired format and click **Make Data File**.
