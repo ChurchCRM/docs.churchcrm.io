@@ -34,6 +34,37 @@ From the dashboard you can click any event to open its detail page, record atten
 The **Calendar** (in the top navigation) shows events in a month/week view with an offcanvas editor — great for scheduling. The **Events Dashboard** is focused on attendance, metrics, and event management. Both read from the same underlying event data.
 :::
 
+### Filtering the Dashboard
+
+Three filter dropdowns appear at the top of the Events Dashboard:
+
+| Filter | Options | Default |
+|--------|---------|--------|
+| **Type** | Any event type defined in your system | All Types |
+| **Month** | All Months, January – December | All Months |
+| **Year** | Years that have events | Current year |
+
+**Month filter** — Select a specific month to narrow the dashboard to events that fall in that month within the chosen year. Selecting **All Months** (the default) restores the full-year view with no change in behaviour.
+
+**Direct linking to a specific month** — Append the `?month=N` query parameter to the dashboard URL (where `N` is `1` for January through `12` for December) to open the dashboard pre-filtered to that month:
+
+```
+/crm/event/dashboard?month=3        ← March of the current year
+/crm/event/dashboard?month=12       ← December of the current year
+```
+
+You can combine parameters to link directly to a specific month *and* year:
+
+```
+/crm/event/dashboard?month=6&year=2025   ← June 2025
+```
+
+**Clear Filter link** — A **Clear Filter** link appears in the filter bar whenever a Type or Month filter is active. Clicking it resets both dropdowns to their "All" defaults while keeping the current Year selection. The link does *not* appear when only the Year is changed.
+
+:::note Auto-scroll behaviour
+By default the dashboard auto-scrolls to the current month's section. When a Month filter is active, auto-scroll is suppressed so the filtered view stays at the top of the page.
+:::
+
 ### Past Events (collapsed sections)
 
 Past and inactive events are grouped into collapsible **month sections** below the active events list. This keeps the dashboard focused on upcoming events without losing access to history.
