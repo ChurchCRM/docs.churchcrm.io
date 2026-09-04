@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # Installing ChurchCRM on a VPS or Cloud Provider
 
-ChurchCRM runs on any Linux server with Apache, PHP 8.2+, and MySQL/MariaDB. If you or your church has a volunteer comfortable with the command line, a VPS gives you more control, better performance, and lower cost than most shared hosting plans.
+ChurchCRM runs on any Linux server with Apache, PHP 8.4+, and MySQL/MariaDB. If you or your church has a volunteer comfortable with the command line, a VPS gives you more control, better performance, and lower cost than most shared hosting plans.
 
 This page covers the popular cloud options and maps you to the right install guide. The underlying steps are the same across all of them — the only difference is how you spin up the VM.
 

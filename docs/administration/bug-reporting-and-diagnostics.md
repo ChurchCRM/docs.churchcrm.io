@@ -65,7 +65,7 @@ If you need to report via GitHub or can't access the in-app tool, gather this in
 
 - Operating System: [e.g., Windows / macOS / Linux]
 - Web Server: [Apache / Nginx / Other]
-- PHP Version: [e.g., 8.2.5]
+- PHP Version: [e.g., 8.4.5]
 - Database: [MySQL 8.0.11+ / MariaDB 10.5+ / Other and version]
 
 - Browser: [e.g., Chrome, Firefox, Safari]
@@ -167,7 +167,7 @@ Copy and fill in:
 - ChurchCRM Version: [e.g., 6.0.0]
 - Installation: [Shared Hosting / Self-Hosted / Docker]
 - Hosting Provider: [if applicable]
-- PHP Version: [e.g., 8.2]
+- PHP Version: [e.g., 8.4]
 - Database: [MySQL 8.0.11+ / MariaDB 10.5+]
 - Browser: [Chrome / Firefox / Safari]
 

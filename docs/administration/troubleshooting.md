@@ -61,7 +61,7 @@ A 500 error immediately after install is almost always a **file permissions** pr
 If permissions look correct, check logs (Step 1 above). Other causes:
 - A missing PHP extension — see [System Requirements](/installation/system-requirements)
 - `mod_rewrite` not enabled — see the install guide for your platform
-- PHP below the minimum — requires PHP 8.2 or higher
+- PHP below the minimum — requires PHP 8.4 or higher
 
 See [File System Permissions](/administration/file-system-permissions) for full details.
 

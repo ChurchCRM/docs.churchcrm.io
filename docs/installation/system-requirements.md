@@ -21,7 +21,7 @@ Validation occurs in the [`getApplicationPrerequisites()` function](https://gith
 
 | Component | Minimum Version | Recommended | Notes |
 |-----------|-----------------|-------------|-------|
-| **PHP** | 8.2 | 8.3 or 8.4 | Required for all core functionality |
+| **PHP** | 8.4 | 8.4 or 8.5 | Required for all core functionality |
 | **Web server** | Apache 2.4 with mod_rewrite | Apache 2.4+ or FrankenPHP | The [`docker/`](https://github.com/ChurchCRM/CRM/tree/master/docker) directory has example Dockerfiles (including FrankenPHP) used for development and CI — not a maintained production image, see [Docker](/installation/vps-cloud#docker); nginx may work but requires per-subdirectory routing configuration |
 | **MySQL** | 8.0.11 | 8.0+ | Or MariaDB 10.5+ |
 | **MariaDB** | 10.5 | 10.6+ | Alternative to MySQL |
@@ -30,21 +30,20 @@ Validation occurs in the [`getApplicationPrerequisites()` function](https://gith
 
 ## Detailed Prerequisites
 
-### PHP 8.2 or Higher
+### PHP 8.4 or Higher
 
 **Status:** REQUIRED
 
-ChurchCRM requires **PHP 8.2 or higher** as the absolute minimum. This requirement is enforced in the application and verified at every page load.
+ChurchCRM requires **PHP 8.4 or higher** as the absolute minimum. This requirement is enforced in the application and verified at every page load.
 
 **Installation:**
-- **Shared Hosting (cPanel):** Select PHP 8.2 or higher from your hosting control panel
+- **Shared Hosting (cPanel):** Select PHP 8.4 or higher from your hosting control panel
 - **Self-Hosted Linux:** Follow the steps at [Self-Hosted on Rocky Linux](/installation/rocky-linux)
 
 **Tested Versions:**
 The application is tested and verified to work with the following PHP versions:
-- PHP 8.2 (minimum supported)
-- PHP 8.3
-- PHP 8.4
+- PHP 8.4 (minimum supported)
+- PHP 8.5
 - PHP 8.5 (safe to run)
 
 For a complete list of tested versions and configurations, see the [GitHub Actions CI workflow](https://github.com/ChurchCRM/CRM/blob/master/.github/workflows/build-test-package.yml).
