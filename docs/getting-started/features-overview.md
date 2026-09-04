@@ -87,7 +87,7 @@ ChurchCRM 7.1 is the largest UI overhaul in the project's history:
 * **[Data Import](/user-guide/data-import)** — Import member records from CSV, including Classification and Family Role columns.
 * **[Export & Data](/user-guide/export)** — Export Hub with CSV, ChMeetings format, and database backup — all in one place.
 * **Backup / Restore** — Full database backups with one-click restore.
-* **Localization** — 46 languages, regional grouping, and browser auto-detection.
+* **Localization** — 50+ languages, regional grouping, and browser auto-detection.
 * **[User Management](/administration/users)** — User accounts, role-based access, granular permissions, and 2FA.
 * **[Plugins](/administration/plugins/index)** — Extend ChurchCRM with community and built-in plugins. Install from approved registries.
 
