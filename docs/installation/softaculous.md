@@ -81,7 +81,7 @@ Alternatively, use ChurchCRM's built-in upgrade wizard (**Admin → System → U
 | VPS or dedicated server (Ubuntu) | [Self-Hosted on Ubuntu](/installation/ubuntu) |
 | VPS or dedicated server (Rocky Linux / RHEL) | [Self-Hosted on Rocky Linux](/installation/rocky-linux) |
 | Microsoft Azure | [Azure](/installation/azure) |
-| Docker | [Installation Overview](/installation) — FrankenPHP image |
+| Docker (development/CI only, not an officially supported production path) | [Docker](/installation/vps-cloud#docker) |
 
 ---
 
