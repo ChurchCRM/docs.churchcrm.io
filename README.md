@@ -15,7 +15,7 @@ npm run start   # live preview at http://localhost:3000
 
 Click **"Edit this page"** at the bottom of any docs page to submit a PR directly from GitHub.
 
-See [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md) for full contributor and AI agent conventions.
+See the [ChurchCRM documentation skill](.agents/skills/docs/SKILL.md) for repository-specific authoring conventions.
 
 ## Structure
 
@@ -25,7 +25,7 @@ See [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md) for full contributor and AI
 | `docs/getting-started/` | First run setup, features overview |
 | `docs/user-guide/` | How-to pages for People, Finance, Events, etc. |
 | `docs/administration/` | Upgrades, backup, troubleshooting, FAQs |
-| `docs/developers/` | Dev setup, contributing, code reference |
+| `docs/api/` | Generated public and private API reference |
 | `static/img/` | Screenshots and images |
 
 ## Deployment
