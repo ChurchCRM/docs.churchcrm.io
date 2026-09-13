@@ -15,7 +15,7 @@ npm run start   # live preview at http://localhost:3000
 
 Click **"Edit this page"** at the bottom of any docs page to submit a PR directly from GitHub.
 
-See the [ChurchCRM documentation skill](.agents/skills/docs/SKILL.md) for repository-specific authoring conventions.
+See the [ChurchCRM documentation skill](.agents/skills/churchcrm-docs/SKILL.md) for repository-specific authoring conventions.
 
 ## Structure
 
