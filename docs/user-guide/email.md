@@ -65,6 +65,27 @@ As of **7.5.0**, ChurchCRM includes an in-app email composer that replaces the o
 
 ---
 
+## Email history and the Email dashboard
+
+As of **7.8.0**, ChurchCRM keeps a record of every email it sends: messages written in the composer, birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and the SMTP test. Each person's history is shown on their Person View; see [Email History](/user-guide/persons#email-history).
+
+### Recent Sends (administrators)
+
+Administrators also see a **Recent Sends** panel at the bottom of the Email dashboard (**Communication → Email** in the left navigation). It lists every email ChurchCRM has sent to anyone, newest first, with the recipient address, the status, and who sent it (a user, or **Automatic**). The badge next to the title is the total number of emails on record; a red **failed** badge next to it counts the emails the mail server refused.
+
+![Recent Sends panel on the Email dashboard](/img/user-guide/email-dashboard-recent-sends.png)
+
+This is the first place to look when somebody says "nobody got the email":
+
+- If the message is listed as **Sent**, ChurchCRM handed it to the mail server; ask the recipient to check their spam folder.
+- If it is **Failed**, hover over the badge to read the mail server's error, then check the [email settings](/administration/email-setup).
+- If it is **Skipped**, email sending was disabled when the message was written; enable it and send again.
+- If it is not listed at all, the person was not emailed. Open the composer result again, or the person's history, to see why they were left out.
+
+Click a subject to open the email as it was sent, or open a person to see their full history. The panel is visible to administrators only; other users see the history of the people they can open.
+
+---
+
 ## Migration Note (7.5.1)
 
 The `sMailtoDelimiter` setting (previously in **Admin → System Settings**) has been removed in 7.5.1. It controlled the separator used in the old mailto: links, which are no longer generated. The 7.5.1 database migration removes this setting automatically — no manual action required.
