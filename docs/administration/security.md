@@ -13,6 +13,8 @@ sidebar_position: 3
 
 Any person record in ChurchCRM can be promoted to a user account. By default, a person is not permitted to log in until an administrator provisions them with a user account.
 
+Administrators can open a session as any non-administrator user to see ChurchCRM as that user sees it. The session is marked with a banner, the user's password and two-factor authentication are not involved, and both ends of the masquerade are written to the authentication log. See [Login as User](./users.md#login-as-user).
+
 ## Role-Based Access Control
 
 ChurchCRM uses roles to control access to sensitive data. The available roles are:
