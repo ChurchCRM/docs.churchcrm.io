@@ -13,10 +13,10 @@ ChurchCRM uses email for:
 
 - **System notifications** — password resets, new user setup
 - **Parent alerts** — kiosk check-in notifications to parents
-- **Cart email** — opens your email client with recipients (no server config needed)
+- **Messages from the composer** — since 7.8.0, users with the Email permission send messages to a person, a family, a group, or the cart from inside ChurchCRM (see [User Guide: Email](/user-guide/email)). Without a mail server the composer falls back to copying addresses or opening the user's own mail program.
 - **Mailchimp** — bulk newsletters (configured separately in Integration settings)
 
-For outbound email (notifications, alerts), configure **Admin** → **Edit General Settings** → **Email Settings**.
+For outbound email (notifications, alerts, composer messages), configure **Admin** → **Edit General Settings** → **Email Settings**.
 
 ---
 
@@ -30,8 +30,15 @@ For outbound email (notifications, alerts), configure **Admin** → **Edit Gener
    - **SMTP Port** — Usually 465 (SSL) or 587 (TLS)
    - **SMTP Username** — Your email account username
    - **SMTP Password** — Your email account password
-   - **Default "To" Email** — Address for system requests (e.g., `webmaster@yourchurch.org`)
+   - **Default "To" Email** — Address for system requests (e.g., `webmaster@yourchurch.org`). The composer also offers it as a removable extra recipient when a user copies a list of addresses or opens their mail program.
+   - **Enable email sending from ChurchCRM** — must be on. Required for password resets, notifications, and the composer's **Send Email** button.
 5. Click **Save**.
+
+:::note What turns on sending from the composer
+The **Send Email** button and the paper-plane buttons next to email addresses appear only when the SMTP host is set (with a username and password if authentication is on) **and** email sending is enabled. Users additionally need the **Email** permission on their account (**Admin** → **System Users**). Until both are in place, the composer offers **Copy Addresses** and **Open in Email Client** only.
+:::
+
+Every email ChurchCRM sends ends with the church's contact block (name, address, phone, email, website) as shown in the **Display Preview** on **Admin** → **Church Information**. Keep that page current so recipients know who wrote to them.
 
 ---
 
