@@ -54,15 +54,31 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 
 ## Predefined Query Details
 
+Open **Data & Reports** (the Query Listing) and click **Run** next to a query to see its form. Two filters are shared by most of the people queries.
+
+### Filters shared by the people queries
+
+![The Birthdays query form: Month dropdown and Classification list](/img/user-guide/query-birthdays-filters.png)
+
+**Classification.** Every query that returns people (Person by Property, Birthdays, Membership anniversaries, both Volunteers queries, Recent friends, Missing people, Wedding Anniversaries and Birthdays & Anniversaries) has a **Classification** list:
+
+- It is a multi-select. Hold **Ctrl** (**Cmd** on a Mac) to choose more than one classification, for example Member and Regular Attender in a single run.
+- Leave it empty to include everyone, including people who have no classification set (listed as **Unassigned**). Choose **Unassigned** on its own to find the people who still need a classification.
+- The list is read from **People → Classification Manager**, so classifications you add or rename appear automatically. Previously only Birthdays had a classification filter, and it was a fixed list of five names.
+
+**Month.** Birthdays, Membership anniversaries, Wedding Anniversaries and Birthdays & Anniversaries take their month from a dropdown of month names instead of a number box. It is preselected to **next month**, which is when these lists are usually prepared (bulletins, cards and announcements at the end of the month). Pick another month to change it.
+
+The SQL that was run, with your choices substituted, is shown beneath the results.
+
 ### Birthdays
 
-Returns all people whose birthday falls in the selected month. Requires a **Classification** filter (e.g., Active Members) and a **Month** parameter (1–12). Results are [Cart](./cart.md)-enabled — click **Add Results to Cart** to process the list further.
+Returns all people whose birthday falls in the selected month. Choose the **Month** (next month is preselected) and, if you want, narrow the list by **Classification**; leaving it empty returns everyone. Results are [Cart](./cart.md)-enabled — click **Add Results to Cart** to process the list further.
 
 See also: [Birthdays & Anniversaries](#birthdays--anniversaries) for a combined view.
 
 ### Membership Anniversaries
 
-Returns active members whose `MembershipDate` falls in the selected month. Enter the **Month** (1–12) when prompted. Results are [Cart](./cart.md)-enabled.
+Returns people who joined in the selected month (their membership date). Choose the **Month** and, optionally, one or more **Classifications**. The query is no longer limited to Members: leave Classification empty for everyone with a membership date in that month, or pick **Member** to get the previous behaviour. Results are [Cart](./cart.md)-enabled.
 
 See also: [Wedding Anniversaries](#wedding-anniversaries) for marriage-date anniversaries.
 
@@ -70,7 +86,7 @@ See also: [Wedding Anniversaries](#wedding-anniversaries) for marriage-date anni
 
 Returns people whose family's **wedding date** falls in the selected month.
 
-**Parameter:** Month (1–12, required) — the calendar month to search.
+**Parameters:** Month (dropdown, preselected to next month) and Classification (optional; empty means everyone).
 
 **Result columns:** Day, Date, Name.
 
@@ -88,7 +104,7 @@ See also: [Birthdays & Anniversaries](#birthdays--anniversaries) for a combined 
 
 A combined query that returns **both birthdays and wedding anniversaries** for a single selected month, unified in one result set.
 
-**Parameter:** Month (1–12, required) — the calendar month to search.
+**Parameters:** Month (dropdown, preselected to next month) and Classification (optional; empty means everyone). The classification applies to both halves of the list.
 
 **Result columns:** Type (`Birthday` or `Anniversary`), Day, Name.
 
