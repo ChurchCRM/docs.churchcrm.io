@@ -22,6 +22,7 @@ Found at **Admin → Church Info** (also accessible from the Admin Dashboard).
 | Phone, email | Shown on contact pages and auto-emails |
 | Latitude / Longitude | Override the auto-geocoded map position |
 | Logo | Uploaded image used in PDF reports and email headers |
+| Social media links | Optional `https://` addresses of the church's X, YouTube, Facebook and Instagram accounts. Shown as icons in the Display Preview and on member-facing pages such as the Member Portal footer; blank hides the network. See [Church Information](../getting-started/first-run.md#social-media). |
 
 Church name is **required** — ChurchCRM will prompt you to set it on first run and will block certain features until it is configured.
 

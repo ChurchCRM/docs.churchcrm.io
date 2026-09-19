@@ -48,9 +48,28 @@ This tab covers your church's physical address.
 
 After saving an address, a **Leaflet map** appears showing your geocoded location. Coordinates are detected automatically — no manual entry required. The map updates on every save.
 
+### Social Media
+
+Optional links to the church's own accounts on **X**, **YouTube**, **Facebook** and **Instagram**. Leave a field blank to hide that network; nothing is shown for a network you have not set.
+
+![Social Media card on the Church Information page, with the four links filled in](/img/getting-started/church-info-social-media.png)
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| **X** | No | Full address, e.g. `https://x.com/yourchurch` |
+| **YouTube** | No | Full address, e.g. `https://youtube.com/@yourchurch` |
+| **Facebook** | No | Full address, e.g. `https://facebook.com/yourchurch` |
+| **Instagram** | No | Full address, e.g. `https://instagram.com/yourchurch` |
+
+Each value must be a full `https://` web address. A plain `http://` link, a bare handle such as `@yourchurch`, or anything that is not a web address is rejected with a message naming the field, and what you typed stays on the form so you can correct it.
+
+:::note
+These links are stored with the other church identity settings and are edited only here; they do not appear on the **System Settings** page. Pages ChurchCRM shows to members, such as the Member Portal footer, can display the icons for the networks you set.
+:::
+
 ### Display Preview tab
 
-This tab shows a live preview of how your church information will appear on reports and printed directories. It updates as you fill in the other tabs. Use it to confirm the address block looks correct before saving.
+This tab shows a live preview of how your church information will appear on reports and printed directories. It updates as you fill in the other tabs. Use it to confirm the address block looks correct before saving. Each social media link you set appears as a clickable brand icon under the website line, in the order X, YouTube, Facebook, Instagram.
 
 ---
 
