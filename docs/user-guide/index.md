@@ -44,7 +44,8 @@ Organizing your church activities:
 * [Groups](/user-guide/groups) - Creating and managing groups
 * [Events](/user-guide/events) - Scheduling and tracking events
 * [Sunday School](/user-guide/sunday-school) - Managing Sunday School classes
-* [Volunteers](/user-guide/volunteers) - Volunteer management and scheduling
+* [Volunteers](/user-guide/volunteers) - Volunteer Opportunities (legacy)
+* [Volunteer Management (v2)](/user-guide/ministries) - Ministries, teams, positions, schedules, staffing and reminder email
 
 ---
 

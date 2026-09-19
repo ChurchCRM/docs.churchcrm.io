@@ -20,6 +20,8 @@ sidebar_position: 2
 - **Manage [Groups](/user-guide/groups) and Roles** — add, edit, and delete groups and their roles.
 - **Manage Donations and [Finances](/user-guide/finances)** — add, edit, and delete donations.
 - **Manage [Fundraisers](/user-guide/fundraiser)** — grants access to the Fundraiser menu (create/edit fundraisers, manage items, buyers, and winners). This permission is only effective when the **Enable Fundraiser menu** setting is turned on in **System Settings → Finance Settings**; if that global toggle is off, the Fundraiser menu is hidden for everyone regardless of this per-user permission. Admins always have access when the feature is enabled.
+- **Manage Ministries** — a global ministry manager for [Volunteer Management (v2)](/user-guide/ministries): every ministry — create, deactivate, delete, and grant coordinators and team leaders. Only effective while the volunteer experience on **Admin → Ministry Settings** is V2 or Both.
+- **Manage My Ministries** — a ministry coordinator's permission: opens the **Ministries** heading, the Ministry Dashboard and the pages of the ministries the person has been made a coordinator of (on the ministry page), and grants nothing over any other ministry. See [Who can do what](/user-guide/ministries/permissions).
 - **View, Add, and Edit [Notes](/user-guide/notes)** — manage notes on person and family records.
 - **Edit Self** — lets a user maintain only their own person record and their own family members. Useful for members who update their own contact info.
 - **Admin** — grants all of the above.

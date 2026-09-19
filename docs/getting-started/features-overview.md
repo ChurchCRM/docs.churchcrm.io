@@ -27,6 +27,7 @@ sidebar_position: 2
 * **[Fundraiser](/user-guide/fundraiser)** — Manage auctions and fundraising events where members buy and sell items.
 * **[Reports & Queries](/user-guide/reports-and-queries)** — Directories, mailing labels, birthday lists, financial statements, and custom queries.
 * **[Volunteers](/user-guide/volunteers)** — Track member availability for specific roles and find volunteers for upcoming needs.
+* **[Volunteer Management (v2)](/user-guide/ministries)** — Ministries with teams and positions, schedules that follow the calendar, assignments, substitutions and reminder email (7.8.0, off by default).
 * **[Data Import](/user-guide/data-import)** — Import member records from CSV, including Classification and Family Role columns.
 * **[Export & Data](/user-guide/export)** — Export Hub with CSV, ChMeetings format, and database backup — all in one place.
 * **Backup / Restore** — Full database backups with one-click restore.

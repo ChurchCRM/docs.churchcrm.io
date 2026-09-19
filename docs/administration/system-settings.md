@@ -100,6 +100,21 @@ Requires the **OpenLP** plugin.
 
 ---
 
+## Ministry Settings
+
+The Volunteer Management settings live on their own page, **Admin → Ministry Settings**, not under System Settings.
+
+![Admin → Ministry Settings](/img/administration/ministry-settings.png)
+
+| Setting | Description |
+|---------|-------------|
+| Volunteer experience | **V1 — Volunteer Opportunities (legacy)** (the default, today's feature), **V2 — Ministries** (the new [Volunteer Management (v2)](/user-guide/ministries)), or **Both (transition)** for running the two side by side. System-wide. Switching shows or hides pages and menu entries and never deletes data. |
+| Reminder lead time (hours) | How many hours before an occurrence the volunteer reminder email is sent. Default 48; 0 sends no reminders. |
+
+The page also explains the three choices, and its **Notification delivery** card shows the failed and queued volunteer messages, when background jobs last ran, the cron line to install, and a **Run background jobs now** button. See [Volunteer email and reminders](/user-guide/ministries/email-and-reminders).
+
+---
+
 ## Locale & Language Settings
 
 :::info Moved in 7.4.1
