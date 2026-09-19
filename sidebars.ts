@@ -77,6 +77,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: '🏠 Member Portal',
+      items: [
+        'user-guide/member-portal',
+      ],
+    },
+    {
+      type: 'category',
       label: '💰 Finance',
       items: [
         'user-guide/finances',
@@ -156,6 +163,14 @@ const sidebars: SidebarsConfig = {
         'administration/system-settings',
         'administration/maps-and-geocoding',
         'administration/server-locale',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🏠 Member Portal',
+      items: [
+        'administration/member-portal',
+        'administration/member-portal-themes',
       ],
     },
     {
