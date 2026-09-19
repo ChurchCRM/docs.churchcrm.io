@@ -27,6 +27,16 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 - **People Directory** - Printable directory grouped by family
 - **Letters and Mailing Labels** - For postal mailings
 
+#### Which address is printed
+
+Anything that goes in the post is addressed to the family's **mailing address**: the family's second address when it is ticked as _This is the mailing address_, and the primary address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). Families with no second address, or whose second address is not ticked, print their primary address everywhere, exactly as before.
+
+- **Newsletter labels** and **Confirm data labels** (**Data & Reports → Letters and Labels**) print the mailing address. Labels are still ordered by ZIP code for presorting, using the ZIP code that is actually printed.
+- Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
+- **Church Directory** (**Data & Reports → Directory Reports**): under _Information to Include_, the **Primary Address** option (previously called _Address_; still on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print the flagged mailing address beneath it, under a "Mailing Address:" label. Families whose mail goes to their primary address print exactly as before.
+
+Not affected: the [Cart](./cart.md)'s **Generate Labels**, which prints each person's own address, and envelopes, which carry no address.
+
 ### Membership Reports
 - **Birthdays** - Members with birthdays in a specific month
 - **Membership Anniversaries** - People who joined in a specific month

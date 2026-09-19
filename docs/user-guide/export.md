@@ -29,7 +29,7 @@ The CSV export produces a flat file with one row per person, suitable for spread
 
 1. Go to **Admin → Export**
 2. Click **Export Members (CSV)**
-3. The file downloads immediately — no configuration required
+3. Tick the fields you want under **Field Selection** (the standard columns are pre-selected), set any filters, and click **Create File**
 
 ### What's included
 
@@ -40,6 +40,7 @@ The exported CSV includes the following fields:
 - Email addresses (primary, home, work)
 - Phone numbers (mobile, home, work)
 - Address (street, city, state, zip, country)
+- Second address and mailing-address flag (optional, see [below](#second-address-columns))
 - Date of birth, gender, marital status
 - Classification, family role
 - Custom fields (if configured)
@@ -48,6 +49,17 @@ The exported CSV includes the following fields:
 :::tip Controlling what's exported
 Use **Reports → Custom Queries** to export a filtered subset of members (e.g., only a specific classification or group).
 :::
+
+### Second address columns
+
+A family can record an optional second address with a **This is the mailing address** checkbox (see [Families](./families.md#second-address-and-mailing-address)). These columns are **not** exported unless you tick **Second Address** under **Field Selection**, so existing exports keep their exact layout. When ticked, every person's row gains seven columns taken from their family record:
+
+| Column | Content |
+|--------|---------|
+| `Second Address 1`, `Second Address 2`, `Second City`, `Second State`, `Second Zip`, `Second Country` | The family's second address; blank when the family has none |
+| `Mailing Address` | `Yes` when the second address is the family's mailing address, otherwise `No` |
+
+Every member of a family gets the same values, since the second address belongs to the family. The [CSV import](./data-import.md#contact-information) recognises the same column headers.
 
 ---
 
