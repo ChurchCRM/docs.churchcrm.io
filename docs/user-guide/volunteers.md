@@ -5,6 +5,10 @@ sidebar_position: 13
 
 # Volunteers
 
+:::info Legacy feature
+This page describes **Volunteer Opportunities (V1)**, the original volunteer feature. ChurchCRM 7.8.0 adds [Volunteer Management (v2)](./ministries/index.md) — ministries, teams, positions, schedules, assignments and reminder email. Which one you see is chosen on **Admin → Ministry Settings** (*Volunteer experience*: **V1**, **V2** or **Both**). The default is V1, so nothing changes on upgrade; choose **Both** to run the two side by side while you move over, with a person record showing a **Volunteer (Legacy)** tab beside the new **Volunteer** tab. Switching never deletes V1 data. Retiring V1 is tracked separately in ChurchCRM issue #9702.
+:::
+
 The Volunteers feature helps you track member talents and willingness to serve in specific roles. This makes it easy to find the right people when needs arise.
 
 ## Common Volunteer Opportunities

@@ -181,6 +181,10 @@ Those links do nothing for outside apps until an administrator turns on **Enable
 
 **Calendar Embed Origins** (also under **Calendar Settings**) lists which websites may place the public calendar in a frame. The default `*` allows any site.
 
+## Volunteer Ministry and the Volunteers card
+
+When [Volunteer Management (v2)](./ministries/index.md) is on, the event editor gains a **Volunteer Ministry** dropdown under **Linked Group** (open **Show more options**). Linking an event to a ministry lets that ministry's schedules follow it: one volunteer occurrence per date, with the event staying in charge of the time. An event that has volunteer occurrences shows a **Volunteers** card on its detail page — the ministry, the schedule, *"N of M filled"*, a *still needed* / **Fully staffed** badge, and a **Manage staffing** link. A ministry coordinator without the Add Events permission may create and edit events of their own ministry, and no other. Details are on [Events and the calendar](./ministries/events-and-calendar.md).
+
 ## Unified Event Editor
 
 The **event editor is consistent across all entry points** — Calendar offcanvas, Events Dashboard, and full event detail page all show the same form. All times are saved in the local wall-clock time of the church, eliminating daylight-saving edge cases.
