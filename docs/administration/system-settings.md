@@ -21,7 +21,7 @@ Found at **Admin → Church Info** (also accessible from the Admin Dashboard).
 | Address, city, state, zip | Used for geocoding the church location on maps |
 | Phone, email | Shown on contact pages and auto-emails |
 | Latitude / Longitude | Override the auto-geocoded map position |
-| Logo | Uploaded image used in PDF reports and email headers |
+| Logo | Uploaded from the **Church Logo** card on this page. Shown in the sidebar, on the login and other sign-in pages, and in emails (see [First Run Configuration](/getting-started/first-run#church-logo)). The `sChurchLogoURL` setting is only an email fallback used when no logo has been uploaded; application pages ignore it. The PDF report letterhead is a separate image — see [FAQs](./faqs.md#how-do-i-set-up-my-logo-or-letterhead). |
 
 Church name is **required** — ChurchCRM will prompt you to set it on first run and will block certain features until it is configured.
 
