@@ -1,6 +1,6 @@
 # ChurchCRM Documentation
 
-This repo powers **[docs.churchcrm.io](https://docs.churchcrm.io)** — the official user, administrator, installation, and developer documentation for free, open-source [ChurchCRM](https://churchcrm.io).
+This repo powers **[docs.churchcrm.io](https://docs.churchcrm.io)** — the official user, administrator, installation, and developer documentation for free, open-source [ChurchCRM](https://churchcrm.io/?utm_source=github&utm_medium=referral&utm_campaign=github_content&utm_content=docs_readme_website).
 
 Built with [Docusaurus](https://docusaurus.io/). Auto-deployed to GitHub Pages on every push to `main`.
 
