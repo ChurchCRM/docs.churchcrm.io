@@ -48,6 +48,14 @@ Organizing your church activities:
 
 ---
 
+## Member Portal
+
+What a church member sees when they sign in:
+
+* [Member Portal](/user-guide/member-portal) - Profile, family, calendar, volunteering and team pages for members
+
+---
+
 ## Tools
 
 Utilities for working with data:
