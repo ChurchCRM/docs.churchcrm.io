@@ -52,6 +52,35 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 
 ---
 
+## Church Directory Report
+
+**Data & Reports → Directory Reports** builds a printable PDF directory of your families. Choose which families to include (active only, by classification, by group membership), which family roles count as head of household, spouse and child, and which details to print under **Information to Include**. Then pick the page layout, columns, paper size and font size, optionally add a title page and disclaimer, and click **Create Directory**.
+
+### Page Layout
+
+![Directory Reports form: Page Layout, Columns per Page, Paper Size and Font Size](/img/user-guide/directory-report-page-layout.png)
+
+| Layout | What you get |
+|--------|--------------|
+| **Single Pages** (default) | One portrait directory page per sheet, as before. |
+| **Folded Booklet** | Two half-size pages side by side on each landscape sheet, arranged in booklet order and padded to a multiple of four pages, so the printed stack folds into a booklet. Letter paper gives 5.5 × 8.5 in pages, A4 gives A5 pages, Legal gives 7 × 8.5 in pages. |
+
+**Columns per Page** (previously _Number of Columns_) is counted per directory page. In the booklet layout a page is one half of the sheet, so **2 cols** shows four columns across an open booklet. For a small booklet, **1 col** is often the easiest to read.
+
+### Printing a folded booklet
+
+1. Choose **Folded Booklet**, set **Paper Size** to the paper in your printer, and click **Create Directory**.
+2. Print the PDF on both sides of the paper. In the printer's two-sided (duplex) options choose **flip on short edge** (some drivers call it _short-edge binding_). Most drivers default to _long edge_, which prints the backs upside down.
+3. Fold the stack of sheets in half down the middle and staple on the fold.
+
+If **Use Title Page** is ticked, the title page becomes the front cover of the booklet.
+
+:::tip
+Print the first two sheets as a test before running the whole directory. With the short-edge setting right, the pages on the back of each sheet are the right way up once the sheet is folded.
+:::
+
+---
+
 ## Predefined Query Details
 
 ### Birthdays
