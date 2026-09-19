@@ -11,7 +11,7 @@ ChurchCRM provides:
 - **In-browser maps** — Show locations of people and families
 - **Proximity** — Find families that live close to each other
 
-Maps and geocoding work out of the box using **OpenStreetMap** tiles and **Nominatim** — no API key, no billing, and no setup required. If you want background on how it works or how to troubleshoot, see [Maps & Geocoding](/administration/maps-and-geocoding).
+Maps and geocoding work out of the box using **OpenStreetMap** tiles and free, keyless geocoding services (**Nominatim**, then the **US Census Bureau** geocoder for US addresses) — no API key, no billing, and no setup required. If you want background on how it works, how to change the services used, or how to troubleshoot, see [Maps & Geocoding](/administration/maps-and-geocoding).
 
 ![People map in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/people-map-overview.png)
 
@@ -19,13 +19,13 @@ Maps and geocoding work out of the box using **OpenStreetMap** tiles and **Nomin
 
 ## Geocoding
 
-ChurchCRM stores latitude and longitude with each family for map pins and proximity. Map tiles come from **OpenStreetMap**. Looking up an address uses **Nominatim**.
+ChurchCRM stores latitude and longitude with each family for map pins and proximity. Map tiles come from **OpenStreetMap**. Addresses are looked up with the geocoding services an administrator has chosen under **Map Settings** on the Family Map — see [Geocoding services](/administration/maps-and-geocoding#geocoding-services).
 
 The Family Map does not draw until the church address itself has been geocoded. If it has not, the page says the church address has not been geocoded yet.
 
 Saving a family runs auto-geocode when the address changed and the family still has no coordinates.
 
-Administrators see **Update All Coordinates** on the map. That finds coordinates for families that are missing them.
+Administrators see **Update All Coordinates** on the map. That finds coordinates for families that are missing them (for example after an import). It runs to completion from one click and reports any addresses it could not place.
 
 ---
 
