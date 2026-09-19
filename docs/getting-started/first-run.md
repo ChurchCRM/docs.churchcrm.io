@@ -34,6 +34,26 @@ This tab covers your church's identity and contact details.
 | **Language** | No | Controls date formats, phone formats, and UI language |
 | **Time Zone** | No | Used for scheduling events and reporting times |
 
+### Church Logo
+
+Directly below the church name fields is the **Church Logo** card. Uploading a logo here replaces the ChurchCRM branding everywhere it appears: in the sidebar (where it also replaces the church name text), on the login page and the password-reset, two-factor, error, limited-access and change-password pages, and in emails.
+
+![Church Logo card on the Church Information page, showing the current logo with Upload and Remove buttons](/img/getting-started/church-logo-card.png)
+
+1. Click **Upload** and choose an image. PNG, JPG, GIF or WebP are accepted (not SVG). A wide banner of roughly 3.5:1 — for example 700×200 pixels — works best, and a transparent PNG looks best on the coloured login page.
+2. The image editor opens; adjust the crop if you like and click **Save**, then click **Upload 1 file**. The preview, the sidebar and the login page update immediately; there is nothing else to save.
+3. To go back to the default ChurchCRM branding, click **Remove**.
+
+The image is scaled down to fit 1200×400 pixels and stored as `Images/church-logo.png`. It is kept across upgrades and is ignored by the file-integrity check.
+
+| Sidebar | Login page |
+|---------|------------|
+| ![Sidebar showing the uploaded church logo in place of the ChurchCRM branding](/img/getting-started/church-logo-sidebar.png) | ![Login page showing the uploaded church logo above the sign-in form](/img/getting-started/church-logo-login.png) |
+
+:::note
+This step is optional and can be done at any time from **Admin → Church Information**. The letterhead printed on PDF reports is a separate image — see [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead).
+:::
+
 ### Location & Map tab
 
 This tab covers your church's physical address.
