@@ -120,6 +120,12 @@ Language, timezone, date/time formats, and phone number formats have moved to a 
 
 ---
 
+## Scheduled Tasks
+
+Birthday emails and plugin background jobs run from a cron entry, with a rate-limited page-load fallback. The `iTimerJobsStaleHours` (default `26`) and `iTimerJobsMinIntervalMinutes` (default `15`) settings control the Admin Dashboard warning and the fallback interval. See [Scheduled Tasks (Cron)](./scheduled-tasks.md) for the crontab line and the full explanation.
+
+---
+
 ## Map Settings
 
 ChurchCRM uses **Leaflet + Nominatim (OpenStreetMap)** — no API key is required.
@@ -139,5 +145,6 @@ See [Maps & Geocoding](./maps-and-geocoding.md) for full details.
 - [Email Setup](./email-setup.md)
 - [Maps & Geocoding](./maps-and-geocoding.md)
 - [Localization](./localization.md)
+- [Scheduled Tasks (Cron)](./scheduled-tasks.md)
 - [Security](./security.md)
 - [Plugins](./plugins/index.md)

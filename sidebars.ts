@@ -154,6 +154,7 @@ const sidebars: SidebarsConfig = {
       label: '⚙️ Configuration',
       items: [
         'administration/system-settings',
+        'administration/scheduled-tasks',
         'administration/maps-and-geocoding',
         'administration/server-locale',
       ],

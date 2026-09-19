@@ -31,6 +31,7 @@ Choose the path that matches your hosting setup:
 Once the application is running:
 
 - **[First Run Configuration](/getting-started/first-run)** — Configure your church details and initial settings
+- **[Scheduled Tasks (Cron)](/administration/scheduled-tasks)** — Add the cron entry so birthday emails and plugin jobs run without anyone logged in
 - **[Upgrade Guide](/administration/upgrade)** — Keep ChurchCRM up to date
 - **[FAQs](/administration/faqs)** — Frequently asked questions
 

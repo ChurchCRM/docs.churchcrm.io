@@ -134,3 +134,4 @@ sudo firewall-cmd --reload
 - [SSL / HTTPS](/installation/ssl-https) — Strongly recommended before going live
 - [System Requirements](/installation/system-requirements) — Full PHP and DB requirements
 - [First Run Configuration](/getting-started/first-run) — Initial setup after install
+- [Scheduled Tasks (Cron)](/administration/scheduled-tasks) — Add the `apache` cron entry for background jobs

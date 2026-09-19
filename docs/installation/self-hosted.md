@@ -37,5 +37,6 @@ ChurchCRM is built and developed with Docker, but there is no officially maintai
 ## After installation
 
 - **[First Run Configuration](/getting-started/first-run)** — church details and initial settings
+- **[Scheduled Tasks (Cron)](/administration/scheduled-tasks)** — one crontab line so background jobs run without logins
 - **[Set up HTTPS](/installation/ssl-https)** — Let's Encrypt / certbot
 - **[Upgrade Guide](/administration/upgrade)** — keeping ChurchCRM up to date

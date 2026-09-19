@@ -88,5 +88,6 @@ Alternatively, use ChurchCRM's built-in upgrade wizard (**Admin → System → U
 ## See Also
 
 - [First Run Configuration](/getting-started/first-run)
+- [Scheduled Tasks (Cron)](/administration/scheduled-tasks) — set up a cPanel cron job for background jobs
 - [Upgrade Guide](/administration/upgrade)
 - [System Requirements](/installation/system-requirements)
