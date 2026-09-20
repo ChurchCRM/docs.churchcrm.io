@@ -7,7 +7,34 @@ const localSearch = require('@easyops-cn/docusaurus-search-local');
 const config: Config = {
   title: 'ChurchCRM Docs',
   tagline: 'Our ministry: open-source, community-built, freely given.',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://churchcrm.io/media/favicon-32x32.png',
+
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: 'https://churchcrm.io/media/favicon-16x16.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: 'https://churchcrm.io/media/apple-touch-icon.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'manifest',
+        href: 'https://churchcrm.io/site.webmanifest',
+      },
+    },
+  ],
 
   url: 'https://docs.churchcrm.io',
   baseUrl: '/',
@@ -98,7 +125,7 @@ const config: Config = {
   themes: ['docusaurus-theme-openapi-docs'],
 
   themeConfig: {
-    image: 'img/churchcrm-social.png',
+    image: 'https://churchcrm.io/images/screenshots/desktop/dashboard-hero.png',
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
@@ -107,8 +134,11 @@ const config: Config = {
     navbar: {
       title: 'ChurchCRM Docs',
       logo: {
-        alt: 'ChurchCRM Logo',
-        src: 'img/logo.png',
+        alt: 'ChurchCRM',
+        src: 'https://churchcrm.io/media/brand/churchcrm-logo-ink-blue.svg',
+        srcDark: 'https://churchcrm.io/media/brand/churchcrm-logo-paper-blue.svg',
+        width: 120,
+        height: 40,
       },
       items: [
         {

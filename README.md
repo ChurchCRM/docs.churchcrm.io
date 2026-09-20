@@ -28,6 +28,12 @@ See [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md) for full contributor and AI
 | `docs/developers/` | Dev setup, contributing, code reference |
 | `static/img/` | Screenshots and images |
 
+## Asset Ownership
+
+The marketing website is the single source for shared ChurchCRM logos, favicons, app icons, the web manifest, the default social-preview image, and reusable product screenshots. This docs site references those assets from `https://churchcrm.io/` instead of keeping copies that can drift.
+
+Keep only documentation-specific screenshots and diagrams with no suitable canonical website equivalent in `static/img/`. Marketing strategy belongs in `ChurchCRM/marketing`; shared brand assets and reusable product screenshots belong in `ChurchCRM/ChurchCRM.io`; shipped product behavior belongs in `ChurchCRM/CRM`.
+
 ## Deployment
 
 Every push to `main` triggers `.github/workflows/deploy.yml` which builds and deploys to `gh-pages`.  
