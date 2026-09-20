@@ -29,13 +29,12 @@ Church name is **required** — ChurchCRM will prompt you to set it on first run
 
 ## People Settings
 
+People Settings are found on the **People Dashboard** (at **People → Dashboard**). Click the **"People Settings"** button in the page header to expand the settings panel.
+
 | Setting | Description |
 |---------|-------------|
-| Default country | Pre-fills the country field on new person/family forms |
-| Date format | Controls how dates display throughout the application |
-| Person list columns | Choose which columns appear in the people list |
-| Photo upload size limit | Maximum file size for member photo uploads |
-| Self-registration | Allow members to create their own accounts (disabled by default) |
+| Self-registration | Allow visitors to create their own family account (disabled by default). When enabled, a registration link appears on the login page. |
+| Hide deceased from directory | Exclude deceased members from the printed directory and CSV exports. |
 
 ---
 
