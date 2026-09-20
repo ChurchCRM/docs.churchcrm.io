@@ -13,6 +13,8 @@ A Family is a group of Person records. Person records are grouped into Families 
 
 Every Person should belong to a family.
 
+![Family overview in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/people-family-overview.png)
+
 ---
 
 ## Step-by-step: Adding a Family
