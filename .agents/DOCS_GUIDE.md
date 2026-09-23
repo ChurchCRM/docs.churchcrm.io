@@ -1,35 +1,40 @@
 # ChurchCRM Docs — Agent Guide
 
-This file tells AI agents (Claude, Copilot, etc.) everything they need to know to
-update, create, and reorganize documentation in this repo correctly.
+This file tells AI agents (Claude, Copilot, etc.) everything they need to know to update, create, and reorganize documentation in this repo correctly.
 
----
+## Release truth is the merge gate
+
+`docs.churchcrm.io` documents **released ChurchCRM software**, not `master` and not feature branches.
+
+- A product-feature documentation PR may be opened before the feature ships, but it must **not merge** until the ChurchCRM release containing that feature is published.
+- Every product-feature documentation PR must have a docs-repo milestone matching the CRM release milestone that owns the implementation, for example `7.7.1` or `7.8.0`.
+- A merged CRM PR is **not sufficient**. If the corresponding ChurchCRM release/tag is not published yet, keep the docs PR open.
+- If one docs PR covers implementation split across multiple CRM releases, split the docs PR by release. Do not publish future behavior early.
+- Documentation-only corrections to behavior already present in the latest published release use the next docs-maintenance milestone for that released line.
+- Repository/tooling-only changes that do not describe product behavior (CI, authoring guidance, dependency maintenance) are not release-gated.
+- Before merging product docs, verify the implementation PR is merged, identify its CRM milestone, and verify that matching GitHub Release exists in `ChurchCRM/CRM`.
+
+This policy exists because the docs site deploys from `main`: merging documentation publishes it immediately.
 
 ## Repo Structure
 
 ```
 docs.churchcrm.io/
-├── .agents/
-│   └── DOCS_GUIDE.md          ← you are here
-├── .github/
-│   └── workflows/
-│       └── deploy.yml         ← auto-deploys on every push to main
+├── .agents/DOCS_GUIDE.md
+├── .github/workflows/
 ├── docs/
-│   ├── index.md               ← site home / welcome page
-│   ├── installation/          ← install guides
-│   ├── getting-started/       ← first run, features overview
-│   ├── user-guide/            ← how-to pages for end users
-│   ├── administration/        ← sysadmin, troubleshooting
-│   └── api/                   ← 3rd-party developer API reference (auto-generated from OpenAPI spec)
-├── static/
-│   └── img/                   ← documentation-specific images only
-├── src/css/custom.css         ← theme overrides only
-├── docusaurus.config.ts       ← site config, navbar, footer
-├── sidebars.ts                ← navigation tree (update when adding pages)
+│   ├── index.md
+│   ├── installation/
+│   ├── getting-started/
+│   ├── user-guide/
+│   ├── administration/
+│   └── api/
+├── static/img/
+├── src/css/custom.css
+├── docusaurus.config.ts
+├── sidebars.ts
 └── package.json
 ```
-
----
 
 ## Repository Boundaries and Sources of Truth
 
@@ -37,63 +42,27 @@ docs.churchcrm.io/
 |---|---|
 | `ChurchCRM/marketing` | Marketing strategy, messaging, and asset-governance decisions |
 | `ChurchCRM/ChurchCRM.io` | Public marketing site and canonical shared brand assets |
-| `ChurchCRM/CRM` | Shipped product behavior and all product screenshot generation / Playwright capture automation |
-| `ChurchCRM/docs.churchcrm.io` | Installation, user, administrator, and API documentation |
+| `ChurchCRM/CRM` | Shipped product behavior, release milestones, releases, and product screenshot generation |
+| `ChurchCRM/docs.churchcrm.io` | Documentation for released software |
 
-Read the approved marketing strategy before changing positioning or cross-site journeys. Verify product claims against the current CRM application and releases. The docs site should stay utilitarian and help readers install, use, administer, and integrate ChurchCRM.
+Verify product claims against the **published CRM release**, not merely current `master`.
 
 ### Shared brand assets and product screenshots
 
 - Do not copy shared logos, favicons, app icons, manifests, or default social-preview images into this repository.
 - Do not add Playwright, Cypress, browser-automation scripts, seeded screenshot fixtures, or screenshot-capture workflows to this repository.
-- Product screenshot generation belongs in `ChurchCRM/CRM`, where screenshots can be captured against the product, its fixtures, and its test stack.
+- Product screenshot generation belongs in `ChurchCRM/CRM`.
 - Reference canonical product screenshots published by the CRM/website asset pipeline rather than committing generated product screenshots here.
-- Reference shared brand files hosted by `https://churchcrm.io/` in `docusaurus.config.ts`.
-- The website repository owns shared brand files under `static/media/brand/`, `static/media/`, and reusable website image assets.
-- Keep a local image here only when it is documentation-specific, has no canonical CRM/website equivalent, and must remain versioned with its instructions (for example, an external-tool screenshot used in a troubleshooting guide).
+- Keep a local image only when it is documentation-specific, has no canonical CRM/website equivalent, and must remain versioned with its instructions.
 
-See [`.agents/skills/brand-assets/SKILL.md`](skills/brand-assets/SKILL.md) before changing logos, icons, favicons, manifests, or social metadata.
+## Editing and adding pages
 
----
-
-## How to Edit an Existing Page
-
-1. Open `docs/<section>/<page>.md`
-2. Make your changes
-3. Commit and push to `main`
-4. GitHub Actions builds and deploys automatically (~90 seconds)
-
----
-
-## How to Add a New Page
-
-1. Create `docs/<section>/your-new-page.md`
-2. Add front matter at the top (see below)
-3. Open `sidebars.ts` and add the page ID under the correct category
-4. Commit and push
-
----
-
-## Required Front Matter
-
-```md
----
-title: Human Readable Title
-sidebar_position: 3
----
-```
-
-Optional but encouraged:
-
-```md
----
-title: Human Readable Title
-sidebar_position: 3
-description: One sentence summary shown in search results and social previews.
----
-```
-
----
+1. Edit or create `docs/<section>/<page>.md`.
+2. New pages need `title` and `sidebar_position` front matter.
+3. Add new pages to the appropriate sidebar in `sidebars.ts`.
+4. Open a PR. Do not push product documentation directly to `main`.
+5. For product docs, assign the matching release milestone and wait until that CRM release is published.
+6. CI must pass before merge.
 
 ## Adding Documentation Images / Screenshots
 
@@ -101,13 +70,9 @@ For product UI, reference the canonical screenshot produced by the CRM screensho
 
 A local image under `static/img/` is appropriate only when it is documentation-specific and cannot be sourced canonically from CRM or the website.
 
-Reference a local documentation-only image as:
-
 ```md
 ![alt text](/img/section/filename.png)
 ```
-
----
 
 ## Internal Links
 
@@ -118,44 +83,20 @@ Use relative paths:
 [Upgrade Guide](../administration/upgrade.md)
 ```
 
----
-
 ## Callout Boxes
 
-```md
-:::tip
-A helpful suggestion.
-:::
-
-:::warning
-Something to be careful about.
-:::
-
-:::danger
-Could cause data loss or security issues.
-:::
-```
-
----
+Use Docusaurus `tip`, `warning`, and `danger` admonitions when they change what the reader should do.
 
 ## Sidebar Doc IDs
 
-The doc ID is the file path relative to `docs/`, without `.md`:
+The doc ID is the file path relative to `docs/`, without `.md`. Four sidebars exist: `gettingStartedSidebar`, `userGuideSidebar`, `adminSidebar`, and `apiSidebar`.
 
-```
-docs/user-guide/new-feature.md  →  ID: user-guide/new-feature
-```
+`apiSidebar` contains generated API reference pages from CRM OpenAPI specs. Do not manually edit generated endpoint pages.
 
-Four sidebars exist: `gettingStartedSidebar`, `userGuideSidebar`, `adminSidebar`, `apiSidebar`.
-
-- `apiSidebar` contains the auto-generated 3rd-party API reference pages (produced by `npm run regen` from the OpenAPI specs). Do not manually edit files inside `docs/api/` except `docs/api/private/index.md` and `docs/api/public/index.md` (the hand-maintained overview pages).
-
----
-
-## What NOT to Change
+## What NOT to Change casually
 
 - `package.json` / `package-lock.json`
 - `.github/workflows/deploy.yml`
-- `src/css/custom.css` (unless specifically asked)
-- Shared brand-asset URLs in `docusaurus.config.ts` unless the corresponding canonical website asset is verified first
-- Product screenshot generation or browser-automation ownership — that belongs in `ChurchCRM/CRM`
+- `src/css/custom.css`
+- Shared brand-asset URLs without verifying the canonical website asset
+- Product screenshot generation/browser automation ownership
