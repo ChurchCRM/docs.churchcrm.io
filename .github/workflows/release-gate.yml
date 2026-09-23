@@ -1,0 +1,72 @@
+name: Release Gate
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited, labeled, unlabeled, milestoned, demilestoned]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  release-gate:
+    name: Released software gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate product documentation release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          DOCS_REPO: ${{ github.repository }}
+          CRM_REPO: ChurchCRM/CRM
+        run: |
+          set -euo pipefail
+
+          # Manual runs have no PR context and are informational only.
+          if [ -z "${PR_NUMBER:-}" ]; then
+            echo "No pull request context; nothing to validate."
+            exit 0
+          fi
+
+          milestone=$(gh api "repos/$DOCS_REPO/issues/$PR_NUMBER" --jq '.milestone.title // ""')
+          labels=$(gh api "repos/$DOCS_REPO/issues/$PR_NUMBER" --jq '[.labels[].name] | join(",")')
+
+          echo "Milestone: ${milestone:-<none>}"
+          echo "Labels: ${labels:-<none>}"
+
+          # Repo/site maintenance does not describe product behavior and may merge independently.
+          if echo ",$labels," | grep -qiE ',(infrastructure|dependencies|ci|repo-maintenance),'; then
+            echo "Repository-only change: release gate not required."
+            exit 0
+          fi
+
+          if [ -z "$milestone" ]; then
+            echo "::error::Product documentation PRs require a release milestone matching the CRM release."
+            echo "If this is repository-only maintenance, apply one of: infrastructure, dependencies, ci, repo-maintenance."
+            exit 1
+          fi
+
+          # Milestone names used for product docs must be semantic release versions.
+          if ! echo "$milestone" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::Docs milestone '$milestone' is not a ChurchCRM release version (x.y.z)."
+            exit 1
+          fi
+
+          # The exact version must already be a published, non-draft, non-prerelease CRM release.
+          release=$(gh api "repos/$CRM_REPO/releases/tags/$milestone" 2>/dev/null || true)
+          if [ -z "$release" ]; then
+            echo "::error::ChurchCRM $milestone has not been released. Keep this docs PR open until the CRM release is published."
+            exit 1
+          fi
+
+          draft=$(echo "$release" | jq -r '.draft')
+          prerelease=$(echo "$release" | jq -r '.prerelease')
+          if [ "$draft" = "true" ] || [ "$prerelease" = "true" ]; then
+            echo "::error::ChurchCRM $milestone is not a production release yet (draft=$draft, prerelease=$prerelease)."
+            exit 1
+          fi
+
+          echo "ChurchCRM $milestone is published. Product docs may merge."
