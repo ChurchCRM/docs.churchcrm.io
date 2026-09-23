@@ -5,35 +5,97 @@ sidebar_position: 18
 
 # Email
 
-ChurchCRM provides built-in tools to email individuals, groups, and cart selections directly from the app, plus optional Mailchimp integration for newsletters.
+ChurchCRM provides built-in tools to email individuals, families, groups, and cart selections directly from the app, plus optional Mailchimp integration for newsletters.
 
 ## Prerequisites
 
-Before sending emails, ensure your system administrator has configured email settings in **Admin → System Settings → Email Settings**.
+To send email from ChurchCRM itself, your system administrator must configure an outgoing mail server and turn on email sending in **Admin → System Settings → Email**. See [Email Setup](/administration/email-setup) for the steps. Until then, the composer still helps you reach people through your own mail program (see [Fallbacks](#fallbacks-copy-addresses-and-open-in-email-client)).
+
+You also need the **Email** permission on your user account (an administrator grants it under **Admin → System Users**). Ask an administrator if the paper-plane button described below does not appear for you.
 
 ---
 
-## In-App Email Composer
+## Sending email from ChurchCRM
 
-As of **7.5.0**, ChurchCRM includes an in-app email composer that replaces the old mailto: link approach. The composer works across all email entry points — people dashboard, group view, and cart — and handles unlimited recipient lists without hitting browser URL length limits.
+As of **7.8.0**, ChurchCRM sends email itself when email sending is enabled. You write the message in the composer, click **Send Email**, and every recipient receives their own message from the church's email address. Nothing is handed off to a mail program on your computer.
 
-### How to use it
+### Sending to one person or family
 
-1. Navigate to the page you want to email from (see entry points below).
-2. Click the **Email** button (or "Email Group", "Email Cart", etc.).
-3. The composer modal opens showing:
-   - **Recipient count badge** — total recipients, with a collapsible list grouped by role (e.g. Head of Household, Member).
-   - **BCC toggle** — switch between To: and BCC: addressing.
-   - **Copy Addresses** — copies all email addresses to your clipboard so you can paste them into any email client.
-   - **Open in Email Client** — opens your default mail app with recipients pre-filled. Available for lists of **50 addresses or fewer**; disabled with a tooltip for larger lists (use Copy Addresses instead).
+A paper-plane button appears next to each email address on:
 
-### Entry points
+- the **Person View** (the person's own address),
+- the **Family View** (the family address and each family member),
+- the **People** list,
+- the **Photo Directory**.
+
+![Paper-plane button next to the email address on the Person View](/img/user-guide/email-person-view-send-button.png)
+
+Click it to open the composer with that one recipient. The email address next to the button is still an ordinary link that opens your own mail program, for anyone who prefers that.
+
+### Sending to a list
 
 | Where | How to reach it |
 |-------|----------------|
-| People / mailing list | **People → Email Members** on the dashboard |
-| Group members | Open a group → **Email Group** button |
-| Cart | **Cart → List Cart Items** → **Email Cart** |
+| Everyone | **People** dashboard → **Email All** |
+| Group members | Open a group → **Email** |
+| Sunday School class | Open a class → **Email** (teachers, students, and parents also have their own buttons) |
+| Cart | **Cart** → **Email** |
+| Event attendees | Open an event → the button on each row, or **Email All** for the people who have not attended |
+
+The composer opens with the list already loaded. The **recipient count** badge shows how many people will be emailed; expand the list to see who they are, grouped by role.
+
+### Writing the message
+
+1. Click **Compose Message** at the bottom of the composer.
+2. Enter a **Subject**.
+3. Write the **Message**. The box starts empty so you can write your own greeting. Two lines down, the closing is already filled in for you: "Sincerely," followed by your name and the church name. Edit or delete it as you like.
+4. Click **Preview** to see the message exactly as the first recipient will receive it, with the church logo and header. Click **Back to editing** to return.
+5. Click **Send Email**.
+
+![The composer with a subject, the message, and the pre-filled closing](/img/user-guide/email-composer-form.png)
+
+![Preview of the message as it will arrive](/img/user-guide/email-composer-preview.png)
+
+Each recipient gets a separate message addressed to them alone, so nobody sees anyone else's address. The message is sent from the church's email address.
+
+:::note What the recipient sees
+The email contains your message as you typed it, with the church logo and name above it and the church's contact block below it (name, address, phone, email, and website, exactly as shown in the **Display Preview** on **Admin → Church Information**). ChurchCRM does not add a "Dear …" line or a closing of its own, and there is no "you received this email because…" or unsubscribe text: newsletters go through [Mailchimp](#mailchimp-integration), which adds its own.
+:::
+
+### Who was not emailed
+
+After sending, a banner in the composer confirms how many people were emailed. If anyone was left out, the banner lists them under **Not sent** with the reason:
+
+| Reason | Meaning |
+|--------|---------|
+| no email address | Neither the person nor their family has an email address on record. |
+| marked do not email | The person has the "do not email" property. |
+| deceased | The person has a date of death recorded. |
+| inactive family | The family record is deactivated. |
+| same address as another recipient | Two people share one address; the message went to that address once. |
+| record not found | The person or family was deleted after the list was loaded. |
+
+![The result banner listing a recipient who was not emailed and why](/img/user-guide/email-send-result-not-sent.png)
+
+A skipped person is not an error: ChurchCRM checked the record and decided not to send. Everyone counted as sent did receive the message. If the mail server refused a message, the banner shows that person's name with the error the server returned; ask your administrator to check the [email settings](/administration/email-setup).
+
+### Fallbacks: Copy Addresses and Open in Email Client
+
+The composer keeps the two older options at the bottom of the window:
+
+- **Copy Addresses** — copies every address to your clipboard so you can paste it into any mail program.
+- **Open in Email Client** — opens your default mail program with the recipients filled in. Available for lists of **50 addresses or fewer**; for larger lists use Copy Addresses instead.
+- **BCC Mode** — switches those two options between To: and BCC: addressing. It has no effect on **Send Email**, which always sends one message per person.
+
+Use these when email sending is not set up, or when you would rather write the message in your own mail program.
+
+:::tip The church's own address
+When you email a list (cart, group, class, everyone), the composer can add the church's default address (*Default "To" email* in **Admin → System Settings → Email**) as a removable recipient, so the office keeps a copy. This applies to **Copy Addresses** and **Open in Email Client** only. **Send Email** mails the people in the list and nobody else.
+:::
+
+### Permissions
+
+The paper-plane buttons and the **Send Email** button appear only for users who have the **Email** permission, and only when an administrator has enabled email sending. Everyone else still sees email addresses as ordinary links that open their own mail program.
 
 ---
 
@@ -60,7 +122,7 @@ As of **7.5.0**, ChurchCRM includes an in-app email composer that replaces the o
 
 - Always get consent before adding someone to an email list.
 - Use Mailchimp for newsletters and large announcements.
-- Use the in-app composer for ad-hoc group and cart emails.
+- Use the in-app composer for ad-hoc messages to a person, a family, a group, or the cart.
 - Keep your [Classifications](Classifications) updated to target the right audiences.
 
 ---
