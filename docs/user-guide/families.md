@@ -57,6 +57,14 @@ Family View includes a **Timeline** tab with type and date filters, making it ea
 
 ---
 
+## Pledges & Payments fiscal-year filter
+
+The finance section on a Family profile defaults to the **current fiscal year**. Use the fiscal-year pills to switch to a historical fiscal year for which that family has financial data, or select **All Time** to view the family's complete pledge and payment history.
+
+The selected fiscal year is applied by the server, so the totals and records shown are scoped to that fiscal year rather than simply hiding rows in the browser. Your church's fiscal-year start month is configured under **Admin → System Settings → Finance**.
+
+---
+
 ## Photo Cleanup
 
 Profile images are automatically deleted from the server when a family or person record is removed, preventing orphaned files from accumulating.
