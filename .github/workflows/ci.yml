@@ -13,6 +13,47 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  release-gate:
+    name: Released software gate
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+      pull-requests: read
+    steps:
+      - name: Require a published CRM release for release-milestoned docs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+
+          milestone=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}" --jq '.milestone.title // ""')
+
+          # Repo/tooling PRs may intentionally have no release milestone.
+          if [ -z "$milestone" ]; then
+            echo "No release milestone: treating this as repo/tooling or non-product documentation."
+            exit 0
+          fi
+
+          if ! [[ "$milestone" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Product documentation milestones must be semantic release versions (for example 7.7.1). Found: $milestone"
+            exit 1
+          fi
+
+          echo "Docs target release: $milestone"
+          release=$(curl -fsSL "https://api.github.com/repos/ChurchCRM/CRM/releases/tags/${milestone}" || true)
+          published=$(printf '%s' "$release" | jq -r '.published_at // empty')
+          draft=$(printf '%s' "$release" | jq -r '.draft // true')
+          prerelease=$(printf '%s' "$release" | jq -r '.prerelease // true')
+
+          if [ -z "$published" ] || [ "$draft" = "true" ] || [ "$prerelease" = "true" ]; then
+            echo "::error::ChurchCRM ${milestone} is not a published stable release. Keep this docs PR open until the CRM release is published."
+            exit 1
+          fi
+
+          echo "ChurchCRM ${milestone} was published at ${published}; product docs may merge."
+
   validate:
     name: Validate Docusaurus site
     runs-on: ubuntu-latest
