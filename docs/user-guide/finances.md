@@ -13,6 +13,20 @@ ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gif
 
 ---
 
+## Fiscal years
+
+Finance views use the church's configured fiscal year, which may differ from the calendar year. Set the starting month under **Admin → System Settings → Finance → Fiscal year start month**.
+
+In ChurchCRM 7.7, fiscal-year selectors are used consistently across finance workflows:
+
+- The **Finance Dashboard** Recent Deposits card can be scoped to a fiscal year.
+- The **Deposits** listing provides a fiscal-year selector alongside its other search filters.
+- A Family profile's **Pledges & Payments** section defaults to the current fiscal year and lets you select historical years or **All Time**.
+- Fundraiser financial statistics labeled **This Fiscal Year** follow the configured fiscal year, not January–December unless January is your configured start month.
+- The **Pledge Dashboard** and fund-contributor views can be switched between fiscal years.
+
+---
+
 ## Step-by-step: Managing Donations
 
 ### Recording a Donation (Cash/Check)
@@ -52,18 +66,14 @@ There are two ways in which pledges can be added:
 ### From the Family View
 
 1. When viewing a [family](Families), a link for _"Add a new pledge"_ will be near the bottom of the screen.
-
-2. Enter the information
-
-3. click _"Save"_.
+2. Enter the information.
+3. Click _"Save"_.
 
 ### Batch Entry
 
 1. If you click _"Save and Add"_ rather than _"Save"_, the Pledge Editor will clear and prepare for another pledge entry.
-
-2. Select the next family making a pledge from the list, and fill in the rest of the pledge information. Continue to click...
-
-3. _"Save and Add"_ until all the pledges have been entered.
+2. Select the next family making a pledge from the list, and fill in the rest of the pledge information.
+3. Continue to click _"Save and Add"_ until all the pledges have been entered.
 
 ## How do I deposit donations?
 
@@ -92,32 +102,23 @@ After processing, click **Generate Report** for the PDF and toggle **Closed** to
 Payments are very similar to pledges. There are two ways in which payments can be added:
 
 * **From the Family View:** When viewing a Family, a link for _"Add a new payment"_ will be near the bottom of the screen. Enter the information and click _"Save"_.
-
-* **Batch Entry:**
-  1. If you click _"Save and Add"_ rather than _"Save"_, the Payment Editor will clear and prepare for another pledge entry.
-
-  2. Select the next family making a payment from the list, and fill in the rest of the payment information.
-
-  3. Continue to click _"Save and Add"_ until all the payments have been entered.
+* **Batch Entry:** Use _"Save and Add"_ to save the current payment and prepare the form for the next family.
 
 ## How do I edit the QuickBooks Deposit Ticket Layout?
 
-  The layout for most QuickBooks deposit tickets should nearly identical; however, differences in printers and deposit ticket providers may require you to adjust the position of various elements of the report.
+The layout for most QuickBooks deposit tickets should be nearly identical; however, differences in printers and deposit ticket providers may require you to adjust the position of various elements of the report.
 
-  1. Go to **Admin** → **Edit General Settings**
-
-      ![Admin (gear) menu](/img/Setup/admin-gen-settings-1.png)
-
-  2. Select the 'Report Settings' tab.
-  3. Find the sQBDTSettings setting, and choose 'Edit Settings'
-  4. Adjust the values for each setting according to our needs.
+1. Go to **Admin** → **Edit General Settings**.
+2. Select the **Report Settings** tab.
+3. Find `sQBDTSettings` and choose **Edit Settings**.
+4. Adjust the values for your deposit ticket and printer.
 
 ## Finding and managing deposits
 
 The **Deposits** page (`/finance/deposit/search`) lets you search, filter, and manage all deposit slip records in one place. It replaces the legacy `FindDepositSlip.php` URL — existing bookmarks redirect automatically.
 
 Key capabilities:
-- Filter deposits by date range, amount, fund, status, teller, or deposit ID
+- Filter deposits by fiscal year, date range, amount, fund, status, teller, or deposit ID
 - Select multiple deposits and export: bulk CSV (single file), or per-deposit OFX/PDF
 - Delete selected deposits in bulk
 - Add a new deposit directly from the page
@@ -152,5 +153,5 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for full details.
 
 - [Deposits](./deposit-search.md) — search, filter, and bulk-export deposit slips
 - [Pledge Dashboard](./pledge-dashboard.md) — pledge and payment tracking by fund and fiscal year
-- [Fundraiser](./fundraiser.md) — managing donation funds and campaigns
+- [Fundraiser](./fundraiser.md) — managing fundraisers
 - [Reports & Queries](./reports-and-queries.md) — other financial reports
