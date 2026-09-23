@@ -73,11 +73,22 @@ Every other column is optional and can be omitted entirely or left blank.
 | `State` | State or province |
 | `Zip` | Postal / ZIP code |
 | `Country` | Defaults to the system's configured default country when omitted |
+| `SecondAddress1` | Second address line 1. Stored on the Family record (only used when a `FamilyID` is present); see [Second address columns](#second-address-columns) |
+| `SecondAddress2` | Second address line 2 |
+| `SecondCity` | |
+| `SecondState` | |
+| `SecondZip` | |
+| `SecondCountry` | |
+| `MailingAddress` | `Yes` / `No` (also `true` / `false`, `1` / `0`): whether the second address is the family's mailing address |
 | `HomePhone` | |
 | `WorkPhone` | |
 | `MobilePhone` | Cell / mobile number |
 | `Email` | Personal email address |
 | `WorkEmail` | Work / business email address |
+
+### Second address columns
+
+A family can have an optional second address with a mailing-address flag (see [Families](./families.md#second-address-and-mailing-address)). The seven columns above are read from the first row of each `FamilyID`, like the primary address, and are ignored for rows without a `FamilyID`. Headers such as `Second Address 1`, `Mailing Address 1` or `mailing_zip` are auto-mapped to the matching field, so a file produced by the [CSV export](./export.md#second-address-columns) with **Second Address** ticked imports without manual mapping. Leave the columns blank (or out of the file) for families with a single address; `MailingAddress` is only applied when a second address was given.
 
 ---
 
