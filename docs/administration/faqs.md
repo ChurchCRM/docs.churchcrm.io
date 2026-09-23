@@ -5,7 +5,7 @@ sidebar_position: 12
 
 # Frequently Asked Questions
 
-> 💬 **Have a question?** Post it on [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) to get answers from the community!
+> 💬 **Have a question?** Ask in the [ChurchCRM Community Chat](https://discord.gg/tuWyFzj3Nj). For reproducible software bugs, use [GitHub Issues](https://github.com/ChurchCRM/CRM/issues).
 
 ## Installation
 
