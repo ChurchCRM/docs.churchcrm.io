@@ -42,7 +42,7 @@ The API routes that power the Fundraiser module are protected by the same check:
 
 The Fundraiser landing page shows all active fundraisers in an enriched table with stat widgets and filters.
 
-**Stat widgets** at the top show counts of active, planning, and closed fundraisers.
+**Stat widgets** at the top show counts of active, planning, and closed fundraisers. Financial widgets labeled **This Fiscal Year** use the church's configured fiscal year rather than the calendar year. Configure the fiscal-year start month under **Admin → System Settings → Finance**.
 
 **Filters:** narrow by Type, Status, or date range using the filter bar above the table.
 
