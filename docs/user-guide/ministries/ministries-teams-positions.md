@@ -50,7 +50,7 @@ A ministry also appears on that page when any of its active positions is marked 
 Teams live in the **Teams** card on the **Overview** tab. Each row shows the name, description, **Team Leader**, the number of positions and an Active/Inactive status.
 
 - **Add team** opens the team dialog: **Team name**, **Description**, **Team leader** and an **Active** switch.
-- The row menu offers **Edit** and **Delete**. A team that still has positions or schedules cannot be deleted; move or delete those first.
+- The row menu offers **Edit** and **Delete**. **Delete** removes the team and everything in it — its positions, qualifications, staffing needs, schedules, occurrences and assignments, past service records included — and its team-leader grant. The confirmation says so. A ministry's last team cannot be deleted; rename it instead.
 - Turning a team's **Active** switch off keeps it, greyed, with its history.
 
 The **Team leader** field is where a team leader is granted. Only a ministry manager sees the picker; a coordinator sees the current leader as read-only text. Clearing the field removes the leader. What a team leader can do is on [Who can do what](./permissions.md).
@@ -75,7 +75,7 @@ A position is a role someone serves in — Espresso, Song Leader, Lead Teacher. 
 The row menu also offers:
 
 - **Add Volunteers to Cart** — puts everyone qualified for the position into the [Cart](../cart.md), ready to email or export.
-- **Delete** — removes the position outright. Prefer deactivating a position that has served on past occurrences.
+- **Delete** — removes the position with its qualifications, staffing needs and assignments, past service records included. To keep the history, deactivate the position instead.
 
 A position nobody is qualified for cannot be staffed; the next step is the [Volunteers tab](./volunteers-and-qualifications.md).
 
