@@ -75,6 +75,14 @@ Use the **Create Group + ADD Cart** button to create a brand-new group and assig
 
 ---
 
+## Ministry pool groups
+
+When [Volunteer Management (v2)](./ministries/index.md) is on, every ministry created under **Ministries** gets a **pool Group** of its own, listed here by the ministry's name. Its members are the ministry's volunteers, and you can add or remove members here like any other group. The Group's identity, though, belongs to the ministry: its page says *"This group is the volunteer pool of …"*, and **Edit** and **Delete** are disabled — deleting the ministry deletes the Group. Which positions each member can serve in is set on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md), not with group roles.
+
+:::note The "Ministry" group type is not a v2 ministry
+A Group whose **type** is "Ministry" is just a group with that label. A v2 ministry is created from **Ministries → Dashboard → New ministry**, uses positions rather than group roles, and is where schedules, assignments and reminders live.
+:::
+
 ## Common Uses for Groups
 - Bible study classes
 - Ministry teams

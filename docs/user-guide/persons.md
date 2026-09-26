@@ -112,6 +112,16 @@ Filters apply instantly without reloading the page.
 
 ---
 
+## Volunteer tab
+
+With [Volunteer Management (v2)](./ministries/index.md) switched on, the Person View has a **Volunteer** tab in two columns: **Qualified for** (each position, with a link to its ministry) and **Serving next** (each upcoming date with an **Accepted** or **Awaiting reply** badge, linking to the occurrence's staffing view). A person with no volunteer history shows *"Not volunteering yet"*. The tab is read-only; qualifications are ticked on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md) and assignments are made on the [staffing view](./ministries/staffing-an-occurrence.md).
+
+![The Volunteer tab on a person record](/img/user-guide/ministries/person-volunteer-tab.png)
+
+When the volunteer experience is **Both**, the legacy opportunities list appears on a second tab labelled **Volunteer (Legacy)** so it is always obvious which one you are looking at.
+
+---
+
 ## Photo Management
 
 When a person record is deleted, any associated profile photo is automatically cleaned up from the server.
