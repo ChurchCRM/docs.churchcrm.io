@@ -75,3 +75,11 @@ This applies to:
 Users can self-enroll 2FA from **My Settings → Security**. Admins can reset 2FA for any user from the Users panel.
 
 Supported method: **TOTP** (compatible with Google Authenticator, Authy, 1Password, and any RFC 6238 app). Recovery codes are generated at enrollment — advise users to store them safely.
+
+### Requiring 2FA
+
+Administrators can require users to enroll in 2FA. The **2FA Grace Period Days** setting controls how long a user has to complete enrollment after mandatory 2FA takes effect. The default is **7 days**; set the grace period to **0** for immediate enforcement.
+
+During the grace period, users can continue signing in and see a warning reminding them to enroll. The warning becomes more urgent when one day or less remains. Once the grace period expires, the user must complete 2FA enrollment before continuing to use ChurchCRM.
+
+If a user disables their own 2FA while mandatory 2FA is active, a new grace window begins for that user. Disabling the system-wide mandate does not erase the stored grace-start timestamp.

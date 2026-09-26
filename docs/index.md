@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ChurchCRM exists to serve the Church — every congregation, in every country, in every language. We believe that God's people deserve world-class tools without the burden of licensing fees, vendor lock-in, or data ownership concerns. This documentation covers installation, administration, and day-to-day use of our free, open-source church management platform.
 
-Start at the [official ChurchCRM website](https://churchcrm.io/) for product overview, live demo access, and installation entry points.
+Start at the [official ChurchCRM website](https://churchcrm.io/?utm_source=github&utm_medium=referral&utm_campaign=github_content&utm_content=docs_index_website) for product overview, live demo access, and installation entry points.
 
 :::tip Primary documentation
 If you're reading this on the **GitHub Wiki**, you've reached the right place — **docs.churchcrm.io** is now the primary documentation site. All user and administrator manuals live here.
@@ -52,6 +52,7 @@ For ongoing system management and maintenance.
 - [Backup & Restore](/administration/backup-restore) — Protect your data
 - [Users](/administration/users) — Manage user accounts and permissions
 - [Email Setup](/administration/email-setup) — Configure SMTP for notifications
+- [Background Jobs & Scheduler](/administration/background-jobs) — Configure scheduled jobs introduced in 7.7
 - [Maps & Geocoding](/administration/maps-and-geocoding) — OpenStreetMap / Nominatim (no API key required)
 - [Troubleshooting](/administration/troubleshooting) — Common issues and solutions
 - [FAQs](/administration/faqs) — Frequently asked questions
@@ -68,6 +69,7 @@ For ongoing system management and maintenance.
 | Create a group | [Groups](/user-guide/groups) |
 | Record attendance | [Events](/user-guide/events) |
 | Manage donations | [Finances](/user-guide/finances) |
+| Configure scheduled jobs | [Background Jobs](/administration/background-jobs) |
 | Upgrade ChurchCRM | [Upgrade](/administration/upgrade) |
 | Back up my data | [Backup & Restore](/administration/backup-restore) |
 | Fix a problem | [Troubleshooting](/administration/troubleshooting) |
@@ -76,5 +78,5 @@ For ongoing system management and maintenance.
 
 ## Get Help
 
-- [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) — Ask the community
-- [Report an Issue](https://github.com/ChurchCRM/CRM/issues) — Found a bug? Let us know
+- [ChurchCRM Community Chat](https://discord.gg/tuWyFzj3Nj) — Ask questions and connect with the community
+- [Report an Issue](https://github.com/ChurchCRM/CRM/issues) — Found a reproducible bug? Let us know

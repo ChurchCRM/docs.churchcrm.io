@@ -22,6 +22,8 @@ There are two kinds of plugins:
 
 All plugin management happens at **Admin → Plugins**.
 
+![Plugin management in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/admin-plugin-management.png)
+
 :::tip Community Plugin Registry
 The **Admin → Plugins** page connects to the approved community plugin registry. Browse available community plugins, read the risk summary, and install with one click — no manual file uploads required.
 :::

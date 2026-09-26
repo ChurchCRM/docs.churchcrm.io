@@ -22,12 +22,37 @@ docs.churchcrm.io/
 │   ├── administration/        ← sysadmin, troubleshooting
 │   └── api/                   ← 3rd-party developer API reference (auto-generated from OpenAPI spec)
 ├── static/
-│   └── img/                   ← all images, grouped by section
+│   └── img/                   ← documentation-specific images only
 ├── src/css/custom.css         ← theme overrides only
 ├── docusaurus.config.ts       ← site config, navbar, footer
 ├── sidebars.ts                ← navigation tree (update when adding pages)
 └── package.json
 ```
+
+---
+
+## Repository Boundaries and Sources of Truth
+
+| Repository | Owns |
+|---|---|
+| `ChurchCRM/marketing` | Marketing strategy, messaging, and asset-governance decisions |
+| `ChurchCRM/ChurchCRM.io` | Public marketing site and canonical shared brand assets |
+| `ChurchCRM/CRM` | Shipped product behavior and all product screenshot generation / Playwright capture automation |
+| `ChurchCRM/docs.churchcrm.io` | Installation, user, administrator, and API documentation |
+
+Read the approved marketing strategy before changing positioning or cross-site journeys. Verify product claims against the current CRM application and releases. The docs site should stay utilitarian and help readers install, use, administer, and integrate ChurchCRM.
+
+### Shared brand assets and product screenshots
+
+- Do not copy shared logos, favicons, app icons, manifests, or default social-preview images into this repository.
+- Do not add Playwright, Cypress, browser-automation scripts, seeded screenshot fixtures, or screenshot-capture workflows to this repository.
+- Product screenshot generation belongs in `ChurchCRM/CRM`, where screenshots can be captured against the product, its fixtures, and its test stack.
+- Reference canonical product screenshots published by the CRM/website asset pipeline rather than committing generated product screenshots here.
+- Reference shared brand files hosted by `https://churchcrm.io/` in `docusaurus.config.ts`.
+- The website repository owns shared brand files under `static/media/brand/`, `static/media/`, and reusable website image assets.
+- Keep a local image here only when it is documentation-specific, has no canonical CRM/website equivalent, and must remain versioned with its instructions (for example, an external-tool screenshot used in a troubleshooting guide).
+
+See [`.agents/skills/brand-assets/SKILL.md`](skills/brand-assets/SKILL.md) before changing logos, icons, favicons, manifests, or social metadata.
 
 ---
 
@@ -70,10 +95,17 @@ description: One sentence summary shown in search results and social previews.
 
 ---
 
-## Adding Images / Screenshots
+## Adding Documentation Images / Screenshots
 
-1. Place in `static/img/<section>/filename.png`
-2. Reference as: `![alt text](/img/section/filename.png)`
+For product UI, reference the canonical screenshot produced by the CRM screenshot pipeline. Do not capture or generate product screenshots from this repository.
+
+A local image under `static/img/` is appropriate only when it is documentation-specific and cannot be sourced canonically from CRM or the website.
+
+Reference a local documentation-only image as:
+
+```md
+![alt text](/img/section/filename.png)
+```
 
 ---
 
@@ -125,4 +157,5 @@ Four sidebars exist: `gettingStartedSidebar`, `userGuideSidebar`, `adminSidebar`
 - `package.json` / `package-lock.json`
 - `.github/workflows/deploy.yml`
 - `src/css/custom.css` (unless specifically asked)
-- `static/img/logo.png` / `favicon.ico`
+- Shared brand-asset URLs in `docusaurus.config.ts` unless the corresponding canonical website asset is verified first
+- Product screenshot generation or browser-automation ownership — that belongs in `ChurchCRM/CRM`
