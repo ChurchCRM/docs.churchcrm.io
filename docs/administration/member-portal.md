@@ -72,6 +72,7 @@ The tab's own rule is the one to remember: **Members see only the calendars swit
 - After an **upgrade**, no calendar is shared. Members see *"No calendar has been shared with members yet."* until you switch one on.
 - On a **new installation**, the church's **Events** calendar is shared from the start.
 - The switches also decide what a member can put in the [calendar subscription](../user-guide/member-portal.md#subscribe-in-your-own-calendar-app) they add to their own calendar app.
+- Members can [hide any shared calendar](../user-guide/member-portal.md#show-or-hide-a-calendar) from the legend of their own **Calendar** page. That changes only what their browser shows, not what you share here.
 
 ---
 
@@ -84,7 +85,7 @@ The portal adds a module; it does not alter the office side of ChurchCRM. A few 
 - **Every ministry has its own calendar**, created with the ministry, renamed when it is renamed and deleted with it. The admin calendar page lists these under **Ministry Calendars**, and the heading that used to say *My Calendars* now reads **Church Calendars**. Ministry calendars are off in the portal until you switch them on.
 - **The old limited-access page is retired.** `/external/limited-access` now redirects to the portal.
 - **Staff and administrators open the portal from their user menu** (**Member Portal**), and get back through the portal's account menu (**Admin Console**).
-- **Login as User** into a self-service account lands you in the portal with the masquerade banner — *"You are logged in as NAME. Actions are recorded as them."* — on every page; the banner's exit control is the way back to that user's record. See [Login as User](./users.md).
+- **Login as User** into a self-service account lands you in the portal with the masquerade banner — *"You are logged in as NAME. Actions are recorded as them."* — on every page. Two controls end the masquerade and return you to your own account, on that user's record: the banner's exit button, and **Exit to your account**, which replaces **Sign out** in the portal's **Hello *\<name\>*** menu while you are logged in as someone else. The menu shows no **Admin Console** entry during a masquerade. See [Login as User](./users.md).
 - **Member photos** in the portal are served through the portal itself, scoped to the member and their family. Nothing for an administrator to configure.
 
 ![The Member Portal entry in the user menu](/img/administration/member-portal-user-menu.png)

@@ -30,6 +30,8 @@ On a phone the navigation folds behind the menu button in the header; every page
 
 The **Hello *\<your name\>*** menu in the header holds **Email History** (what the church has emailed you), **Change Password** and **Sign out**. Staff who also have an office login see **Admin Console** there as their way back.
 
+When an administrator opens the portal as you with [Login as User](../administration/users.md), the menu shows **Exit to your account** in place of **Sign out**: it ends the visit and takes the administrator back to their own account, on your user record.
+
 ---
 
 ## Home
@@ -91,11 +93,21 @@ Churches periodically ask households to check what is on file. **Confirm your fa
 
 **Calendar** shows the church calendars an administrator has chosen to share with members. The calendars are listed above the grid with their colours; **Month**, **Week** and **List** views are available, and on a phone the calendar opens in list view. Click an event to see **When**, **Where** and **Details**. The calendar is read-only: nothing here can change an event.
 
-![The portal calendar](/img/user-guide/member-portal-calendar.png)
+![The portal calendar, with the Bible Classes calendar switched off in the legend](/img/user-guide/member-portal-calendar.png)
 
 If your church shares its birthday or anniversary calendar, entries show a first name and last initial (*"Albert C."*) and never an age or a full surname.
 
 The ministry calendar of a team you lead is marked **You lead this**.
+
+### Show or hide a calendar
+
+Each calendar in the legend above the grid is a switch — *"Select a calendar to hide or show its events."*
+
+- Select a calendar to hide its events. Its name is struck through and its colour dot turns hollow.
+- Select it again to show its events.
+- Your browser remembers which calendars you switched off, so the calendar opens the same way next time on that device. Another browser or device starts with every calendar shown.
+
+This helps when the church shares several calendars — for example a calendar of Bible classes next to the main church calendar — and you only want to see some of them. The switches change only what this page shows: they do not change what the church shares or what your [calendar subscription](#subscribe-in-your-own-calendar-app) contains.
 
 ### Subscribe in your own calendar app
 
@@ -152,22 +164,51 @@ With nothing open the page says *"Nothing open right now"* and *"We will email y
 
 ## My Teams
 
-**My Teams** appears only for a member who leads a volunteer team. It lists the teams you look after — *"Open one to set up its positions, say who can serve where, and fill the weeks ahead."* — with each team's ministry, its number of positions and its next scheduled date.
+**My Teams** appears only for a member who leads a volunteer team. It lists the teams you look after — *"Open one to set up its positions, say who can serve where, and fill the weeks ahead."* — with each team's ministry, its number of positions and its next date (*"Next on Oct 4"*). Dates on the portal's volunteer pages are shown in the language and date format your church has set for ChurchCRM.
 
 ![My Teams](/img/user-guide/member-portal-my-teams.png)
 
-**Open this team** shows four tabs for that team and nothing else:
+**Open this team** shows the team's ministry, the Sunday School class it is linked to (if any), and four tabs for that team and nothing else:
 
 | Tab | What you can do |
 |-----|-----------------|
-| **Positions** | **Add position** — a job someone does on this team, such as Espresso or Song Leader — with a name, description, order, whether it is active, and **Recruit Volunteers**, which advertises it on the page where members look for something to help with. |
-| **Volunteers** | A grid of your team's people against its positions. Tick who can serve where; *"Ticks save as you make them."* |
-| **Schedules** | **Add schedule** — the recurring pattern the team serves, either following a calendar event type or repeating weekly on its own — with **Staffing needs** (how many people each position needs each time). **Generate occurrences** fills the weeks ahead, optionally with the default volunteers you name. |
-| **Dates** | Every generated date. Open one to see its staffing, **Assign a volunteer** (whoever served least recently is listed first) and answer any requests to swap. |
+| **Positions** | **Add position** — a job someone does on this team, such as Espresso or Song Leader — with a name, description, order, whether it is active, **Recruit Volunteers**, which advertises it on the page where members look for something to help with, and **Self-assignable**, which lets qualified volunteers sign themselves up for its open dates. Switch **Self-assignable** off for a position only you or a coordinator should assign. |
+| **Volunteers** | A grid of your team's people against its positions. Tick who can serve where; *"Ticks save as you make them."* On a team linked to a Sunday School class, a tick also makes that person a teacher of the class. |
+| **Schedules** | **Add schedule** — which calendar events the team serves, at what times, and how many people each position needs. See [Add a schedule](#add-a-schedule) below. |
+| **Dates** | Every date your team serves, soonest first, with how well each is filled. Filter by **Event**, **From** and **To**. Open a date to see its staffing, **Assign a volunteer** (whoever served least recently is listed first) and answer any requests to swap. **Staff an event** staffs a single upcoming calendar event; to staff a whole series, add a schedule instead. |
 
 ![A team's Positions tab](/img/user-guide/member-portal-team-positions.png)
 
-A team leader works on their own team only. Adding people to the ministry's pool, renaming or deleting teams, and ministry-wide settings such as **Help Wanted** belong to the ministry's coordinator in the office side of ChurchCRM. Opening a team you do not lead shows *"You cannot open this page"*.
+### Add a schedule
+
+A schedule follows events that are already on the church calendar. It never makes dates of its own: each date your team serves is a calendar event, and the event's date and time are the schedule's. If the event moves, your team's date moves with it.
+
+![The Add schedule dialog](/img/user-guide/member-portal-team-schedule.png)
+
+1. On the **Schedules** tab, press **Add schedule** and give the schedule a **Name**.
+2. Under **Where the dates come from**, choose one:
+   - **Church events of a type** — choose the **Event type**, then the **Event** (for example *Worship Hour*). The schedule follows every date of that event.
+   - **A class's meetings** — choose the **Class**. The schedule follows every calendar event whose Linked Group is that class. This is the default for a team linked to a Sunday School class, and it is only offered when the ministry provides Sunday School teachers.
+   - **This ministry's events** — choose the **Event** from the ministry's own events, such as a workday.
+
+   Only events already on the calendar can be chosen; each choice shows how many dates are coming up. A class with no meetings on the calendar cannot be chosen yet. A team leader cannot add events: ask the ministry's coordinator to add them on the ministry's **Calendar** tab.
+3. Under **Volunteer times**, set when your volunteers start and finish, in minutes before or after the event's start and end — for example, start 15 minutes before the event starts. Leave both at 0 to serve exactly when the event happens.
+4. Optionally limit the schedule with **From** and **Until** dates.
+5. Under **Staffing needs**, tick the positions each date needs, with **Min** and **Max** people for each. Optionally choose a **Default volunteer** for a position: they are put on every new date while they stay qualified for it.
+6. Press **Save**.
+
+**Save** creates the schedule and its dates straight away, up to your church's scheduling horizon (eight weeks ahead unless your church has changed it). The **Dates** tab opens with the new dates and a message saying how many were made and how many default volunteers were assigned. ChurchCRM adds the next dates by itself every day as the horizon moves on, so you never have to generate the weeks ahead by hand.
+
+If Save finds no event to staff yet — for example because the schedule's **From** date lies beyond the horizon — the schedule is still saved and an amber message says why.
+
+The action menu of each schedule offers:
+
+- **Edit** — change the schedule. Editing never makes dates. New staffing needs apply to every date that has not been changed on its own; a new default volunteer goes only on dates made from then on.
+- **Generate occurrences** — make any dates still missing up to the horizon (*"Occurrences are created for events in the next 8 weeks (through …)"*), and choose who to **Fill by default with** for each position. Your choice is saved on the schedule. Dates that already exist are left alone.
+- **Deactivate** — pause the schedule: it makes no new dates until you **Reactivate** it.
+- **Delete** — remove the schedule and its dates. A schedule with volunteers assigned on any of its dates cannot be deleted; deactivate it instead.
+
+A team leader works on their own team only. Adding people to the ministry's pool, renaming or deleting teams, creating calendar events, and ministry-wide settings such as **Help Wanted** belong to the ministry's coordinator in the office side of ChurchCRM. Opening a team you do not lead shows *"You cannot open this page"*.
 
 ---
 
