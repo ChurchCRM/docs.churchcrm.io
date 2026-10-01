@@ -10,6 +10,10 @@ Out of the box the [Member Portal](../user-guide/member-portal.md) wears ChurchC
 
 This page is the overview. The complete authoring reference — every design token, every template block and variable — is the [theme authoring guide](https://github.com/ChurchCRM/CRM/blob/master/docs/portal-themes.md) in the ChurchCRM repository, which **Admin → Member Portal → Themes** links to as **Read the theme authoring guide**.
 
+:::note
+The theme authoring guide (`docs/portal-themes.md`) and the template reference (`docs/portal-templates.md`) are added to the ChurchCRM repository together with the Member Portal, in ChurchCRM 7.8.0. The links on this page open once that release is merged into `master`.
+:::
+
 :::warning Themes are your church's responsibility
 Themes are provided by your church, not by ChurchCRM, and are not reviewed, signed or verified by the ChurchCRM project. A theme's files are trusted exactly as far as the administrator who uploaded them. The admin page says so too.
 :::
@@ -82,4 +86,4 @@ Every failure is also written to the application log (**Admin → System → Log
 
 - [Member Portal administration](./member-portal.md)
 - [Member Portal — for members](../user-guide/member-portal.md)
-- [Theme authoring guide](https://github.com/ChurchCRM/CRM/blob/master/docs/portal-themes.md) and [template reference](https://github.com/ChurchCRM/CRM/blob/master/docs/portal-templates.md) in the ChurchCRM repository
+- [Theme authoring guide](https://github.com/ChurchCRM/CRM/blob/master/docs/portal-themes.md) and [template reference](https://github.com/ChurchCRM/CRM/blob/master/docs/portal-templates.md) in the ChurchCRM repository (added with ChurchCRM 7.8.0)
