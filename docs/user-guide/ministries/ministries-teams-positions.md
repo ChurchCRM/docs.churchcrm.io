@@ -1,12 +1,12 @@
 ---
 title: Ministries, teams and positions
 sidebar_position: 2
-description: Create a ministry, organise its teams, define the positions people serve in, and deactivate or delete a ministry you no longer run.
+description: Create a ministry, organise its teams, link a team to a Sunday School class, define the positions people serve in, and deactivate or delete a ministry you no longer run.
 ---
 
 # Ministries, teams and positions
 
-A **ministry** is the unit everything else hangs off: it owns its teams, positions, volunteer pool, schedules and a calendar of its own. Every **position** belongs to a **team**, and every ministry has at least one team.
+A **ministry** is the unit everything else hangs off: it owns its teams, positions, volunteer pool, schedules, its events and a calendar of its own. Every **position** belongs to a **team**, and every ministry has at least one team.
 
 :::note Not the same as a Group of type "Ministry"
 A [Group](../groups.md) whose type is "Ministry" is just a group. A v2 ministry is created under **Ministries**, uses positions rather than group roles, and gets a pool Group of its own automatically. See [Volunteers: the pool and qualifications](./volunteers-and-qualifications.md).
@@ -18,26 +18,39 @@ Only an administrator or a user with **Manage Ministries** can create one (see [
 
 1. Go to **Ministries → Dashboard**.
 2. Click **New ministry**. The dialog explains: *"A ministry is created with its own calendar, volunteer pool and first team, so the only things to decide here are its name and what it does."*
-3. Enter the **Ministry name** and a **Description**, then click **Create ministry**.
+3. Enter the **Ministry name** and a **Description**.
+4. Turn on **Can this ministry provide teachers for Sunday School?** only for a ministry whose teams teach Sunday School classes, such as a children's ministry (see [Editing a ministry](#editing-a-ministry)). It is off by default.
+5. Click **Create ministry**.
 
 You land on the new ministry's page. Its first team (named after the ministry) and its pool Group already exist, and the ministry now has an entry under **Ministries** in the sidebar.
 
 ## The ministry page
 
-**Ministries → *the ministry's name***, or `/ministries/{id}`. The header shows the name, an **Inactive** badge when the ministry is deactivated, and the lifecycle buttons described [below](#deactivating-reactivating-and-deleting). Six tabs follow:
+**Ministries → *the ministry's name***, or `/ministries/{id}`. The header shows the name, an **Inactive** badge when the ministry is deactivated, an **Edit** button (see [Editing a ministry](#editing-a-ministry)) and the lifecycle buttons described [below](#deactivating-reactivating-and-deleting). Seven tabs follow:
 
 | Tab | What it holds |
 |---|---|
 | **Overview** | Three counts (**Teams**, **Volunteers**, **Unfilled Positions**), the description, the **Teams** card and — for ministry managers — the **Ministry Coordinators** card. |
 | **Positions** | The roles people serve in. |
 | **Volunteers** | The pool and the qualification grid — see [Volunteers: the pool and qualifications](./volunteers-and-qualifications.md). |
-| **Schedules** | The recurring patterns the ministry staffs — see [Schedules and occurrences](./schedules-and-occurrences.md). |
-| **Occurrences** | The dated occurrences those schedules produced, with a **Filled** indicator each. |
+| **Schedules** | Which calendar events each team staffs, with how many people — see [Schedules and occurrences](./schedules-and-occurrences.md). |
+| **Occurrences** | The dates those schedules produced, each with a **Filled** indicator, and **Staff an event** for a single event. |
+| **Calendar** | The events this ministry owns, with **New event** and **New recurring event** — see [Events and the calendar](./events-and-calendar.md). |
 | **Help Wanted** | A switch that puts the ministry on the Member Portal's Open Opportunities page, and the text shown there. |
 
 ![The ministry page, Overview tab](/img/user-guide/ministries/ministry-overview.png)
 
 **Unfilled Positions** counts the open slots across every future occurrence of the ministry, so it is the quickest way to see whether the ministry is short of people.
+
+## Editing a ministry
+
+**Edit** in the header opens **Edit ministry**: the **Ministry name**, the **Description** and **Can this ministry provide teachers for Sunday School?**
+
+![Edit ministry](/img/user-guide/ministries/edit-ministry.png)
+
+Turn the switch on for a ministry whose teams teach Sunday School classes: *"Its teams can then be linked to a class, and its schedules and events can use one."* While it is off, the ministry's screens hide everything about classes: the **Sunday School Class** field in the team dialog, the **A class's meetings** choice in the schedule dialog (except on a schedule that already follows a class) and the **Class** field for new events.
+
+Only an administrator or a Manage Ministries user can change the switch. A coordinator sees it greyed out, with *"Only a volunteer manager can change this."* It cannot be turned off while one of the ministry's teams is linked to a class; unlink the class first.
 
 ### Help Wanted
 
@@ -47,13 +60,27 @@ A ministry also appears on that page when any of its active positions is marked 
 
 ## Teams
 
-Teams live in the **Teams** card on the **Overview** tab. Each row shows the name, description, **Team Leader**, the number of positions and an Active/Inactive status.
+Teams live in the **Teams** card on the **Overview** tab. Each row shows the name (with its Sunday School class underneath when it has one), description, **Team Leader**, the number of positions and an Active/Inactive status.
 
-- **Add team** opens the team dialog: **Team name**, **Description**, **Team leader** and an **Active** switch.
+- **Add team** opens the team dialog: **Team name**, **Description**, **Team leader**, **Sunday School Class** (when the ministry provides teachers for Sunday School) and an **Active** switch.
 - The row menu offers **Edit** and **Delete**. **Delete** removes the team and everything in it — its positions, qualifications, staffing needs, schedules, occurrences and assignments, past service records included — and its team-leader grant. The confirmation says so. A ministry's last team cannot be deleted; rename it instead.
 - Turning a team's **Active** switch off keeps it, greyed, with its history.
 
-The **Team leader** field is where a team leader is granted. Only a ministry manager sees the picker; a coordinator sees the current leader as read-only text. Clearing the field removes the leader. What a team leader can do is on [Who can do what](./permissions.md).
+The **Team leader** field is where a team leader is granted. Only a ministry manager sees the picker; a coordinator sees the current leader as read-only text with *"Only a volunteer manager can change the team leader"*. Clearing the field removes the leader. What a team leader can do is on [Who can do what](./permissions.md).
+
+### Linking a team to a Sunday School class
+
+A team that teaches a Sunday School class can be linked to it in the team dialog's **Sunday School Class** field. The class's teachers are then managed here, in the ministry, and not on the class page.
+
+![A team linked to a Sunday School class](/img/user-guide/ministries/team-sunday-school-class.png)
+
+- **Everyone qualified for a position of this team becomes a teacher of the class.** Ticking a qualification on the [Volunteers tab](./volunteers-and-qualifications.md) gives the person the class's **Teacher** role; taking away their last qualification in the team removes it. Someone who is a **Student** of the class cannot be qualified.
+- **The class's current teachers are brought in.** When you choose a class that already has teachers, the dialog asks which position to **Qualify its current teachers for**, and says how many there are (*"Teachers to import: 2"*). A team with no position named Teacher can create one here (*"New position: Teacher"*).
+- **The class page stops changing teachers.** The Sunday School class page and the group page say *"Teachers of this class are managed in Ministries → Children's Ministry → Faith City."* with a link, and refuse teacher changes. Students are still managed there as before. Attendance, the Sunday School dashboard and the class reports keep reading the Teacher role as before.
+- **A new schedule for the team** starts on *A class's meetings* with this class. See [Adding a schedule](./schedules-and-occurrences.md#adding-a-schedule).
+- **Clearing the field** unlinks the class and leaves its members as they are.
+
+The link and the class's events are separate things. When **Edit team** changes or clears the class and this ministry created events for the old class, the dialog says how many (*"Children's Ministry created 52 events for Class 1-3 (52 upcoming)."*) and asks what should happen to them: **Keep them on Class 1-3** (the default), **Remove the class from them**, or **Move them to** the new class. **Delete** on a linked team asks the same, with **Delete those events** instead of moving them, and names any other ministry that staffs some of them. Only events this ministry created are changed; events an administrator created are never touched.
 
 ## Positions
 

@@ -1,6 +1,6 @@
 ---
 title: Substitutions
-sidebar_position: 6
+sidebar_position: 7
 description: A volunteer who cannot serve proposes someone who can; the coordinator approves or rejects.
 ---
 
@@ -10,7 +10,7 @@ A volunteer who has accepted a date and then cannot make it does not simply drop
 
 ## How it works
 
-1. **The volunteer proposes.** From their schedule in the Member Portal they choose **Find a sub**, pick someone qualified for the same position (never themselves, never someone already on that date), add a note, and send it. Their card reads *"Substitute asked: … — waiting for your coordinator to confirm"*.
+1. **The volunteer proposes.** From their schedule in the Member Portal they choose **Find a sub**, pick someone qualified for the same position (never themselves, never someone already on that date), add a note, and send it. Their card shows a *"Substitute asked: …"* badge and *"Waiting for your coordinator to confirm."*
 2. **Until it is decided, the original volunteer is still expected.** Nothing changes on the occurrence; their row stays **Accepted**.
 3. **The coordinator decides.** The request appears under **Substitution requests** on the [Ministry Dashboard](./ministry-dashboard.md) and at the bottom of the [staffing view](./staffing-an-occurrence.md) — position, volunteer, proposed substitute and when it was proposed.
    - **Approve** — *"the original volunteer is released and the substitute takes the position. Both are told."* The original row becomes **Substituted** (its history is kept) and a new **Accepted** row for the substitute appears on the same position. The position still counts as filled once, not twice.

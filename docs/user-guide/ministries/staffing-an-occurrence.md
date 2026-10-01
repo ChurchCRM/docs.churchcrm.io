@@ -1,18 +1,22 @@
 ---
 title: Staffing an occurrence
-sidebar_position: 5
+sidebar_position: 6
 description: Fill the positions for one date, record who said yes or no, and adjust this week's staffing needs.
 ---
 
 # Staffing an occurrence
 
-The staffing view answers *who is needed, who is on, and what is still short* for a single date. Reach it from the **Fill** button on the [Ministry Dashboard](./ministry-dashboard.md), from the date link on the ministry's **Occurrences** tab, from the **Manage staffing** link on an event, or by URL at `/ministries/occurrences/{id}`.
+The staffing view answers *who is needed, who is on, and what is still short* for a single date. Reach it from the **Fill** button on the [Ministry Dashboard](./ministry-dashboard.md), from the date link on the ministry's **Occurrences** tab, from a staffing badge on its **Calendar** tab, from the **Manage staffing** link on an event, or by URL at `/ministries/occurrences/{id}`.
 
 ![The staffing view](/img/user-guide/ministries/occurrence-staffing.png)
 
+**Back to Occurrences** at the top returns to the ministry's Occurrences tab with the team, event and date filters you came from.
+
 ## The header
 
-The schedule name, the date and time, the ministry and team, and a **Scheduled** or **Cancelled** badge. For an occurrence linked to a calendar event the header names the event with *"Times come from this event"* and its location: change the event's time in the calendar and the occurrence follows.
+The schedule name, when the volunteers serve (for example *"Oct 4, 9:15 AM – 10:15 AM"*), the ministry and team, and a **Scheduled** or **Cancelled** badge. On the right, the header links to the calendar event the occurrence follows, says *"Times come from this event"*, and gives the event's location when it has one. When the schedule moves the volunteers' times away from the event's, a sentence says how, for example *"Volunteers start 15 minutes before the event starts."* Change the event's time in the calendar and the occurrence follows.
+
+Dates and times on this page, and everywhere in Volunteer Management, follow ChurchCRM's language setting ([Localization & Formats](../../administration/localization.md), or the user's own language), for example *"Oct 4, 9:15 AM"* in English. They are always the church's local time, and the year is shown only for a date in another year.
 
 ## One card per position
 
@@ -50,6 +54,10 @@ Click **Assign**. The card updates, the person is emailed (once background jobs 
 
 An occurrence whose schedule has no staffing needs shows *No staffing needs set* with a **Set staffing needs** button instead of position cards.
 
+## Headcount
+
+Below the staffing, the **Headcount** card shows the event's attendance counts: each count category of the event's type with its number, and the **Total**, or *"No headcount recorded yet"*. Counts are entered in the church event editor, which **Enter counts** opens for anyone who may edit the event. When the event has a class as its Linked Group, the card also says how many of the class have checked in, for example *"Checked in: 6 of 8 on the class roster"*. The card is read-only: Volunteer Management never records counts or check-ins itself.
+
 ## Assigned outside the current plan
 
 If a position is removed from the staffing plan after people were assigned to it, they are listed in a separate **Assigned outside the current plan** card so they are not lost. Cancel them or add the position back.
@@ -58,9 +66,11 @@ If a position is removed from the staffing plan after people were assigned to it
 
 The **Substitution requests** card at the bottom lists proposals from volunteers on this occurrence, with **Approve** and **Reject** in the row menu. How that works is on [Substitutions](./substitutions.md).
 
-## Cancelling an occurrence
+## When a date will not happen
 
-An occurrence that will not happen can be cancelled (its status badge turns **Cancelled**); it stays in the list with its history and its **Assign** buttons are disabled. To remove dates entirely, tick them on the ministry's **Occurrences** tab and click **Delete**.
+To remove a date, tick it on the ministry's **Occurrences** tab and click **Delete**: the occurrence goes with its assignments, responses and queued reminders, and the calendar event stays. To call off the event itself, delete it on the ministry's Calendar tab, or deactivate or delete it in the event editor (see [Deleting an event](./events-and-calendar.md#deleting-an-event)).
+
+An occurrence whose status is **Cancelled** keeps its history and its **Assign** buttons are disabled.
 
 ## Related pages
 

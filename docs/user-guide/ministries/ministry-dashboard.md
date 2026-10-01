@@ -1,6 +1,6 @@
 ---
 title: The Ministry Dashboard
-sidebar_position: 7
+sidebar_position: 8
 description: What needs your attention — gaps to fill, replies still outstanding, substitution requests and the weeks ahead.
 ---
 
@@ -15,9 +15,9 @@ description: What needs your attention — gaps to fill, replies still outstandi
 Top to bottom, in the order that matters:
 
 1. **Needs filling** — every position still short in the window, with the date, ministry and team, a red *"N still needed"* badge and a **Fill** button that opens the [staffing view](./staffing-an-occurrence.md) on that date. The red count in the card header is the total. When nothing is short the card says *"Nothing is short — every position in this window has the people it needs."*
-2. **Waiting for a reply** — assignments still **Pending**. A yellow **Due soon** badge marks those inside the reminder lead time. The row menu lets you record their answer, resend the message or cancel the assignment without leaving the page.
+2. **Waiting for a reply** — assignments still **Pending**, each with the person, position, date, ministry and team. A yellow **Due soon** badge marks those inside the reminder lead time. The row menu offers **Open the occurrence**, where you can record their answer, send the message again or cancel the assignment, and **View person**.
 3. **Substitution requests** — one card per proposal (*"Lena Black asks Jean Hart to take their place"*) with **Approve** and **Reject**. See [Substitutions](./substitutions.md).
-4. **Upcoming** — a table of the occurrences in the window: **When**, **Ministry**, **Schedule**, **Staffed**, **Status** and an action menu with **Staff this occurrence**, **Open the ministry** and, for a calendar-linked occurrence, **View the event**. The Staffed badge is green when full and confirmed, amber when full but someone has not answered, and red when short.
+4. **Upcoming** — a table of the occurrences in the window: **When** (the volunteers' start time), **Ministry** and team, **Schedule**, **Staffed** (for example *0 / 3*), **Status** and an action menu with **Staff this occurrence**, **Open the ministry** and, unless its event was deleted, **View the event**. The Staffed badge is green when full and confirmed, amber when full but someone has not answered, and red when short.
 5. **My ministries and teams** — the ministries and teams the viewer manages. For a team leader on a staff login this card is their way in: they lead a team, not the ministry above it, so the ministry name is marked **View only**.
 6. **Notifications** — the number of volunteer emails that could not be delivered. An administrator gets a **Ministry Settings** button; anyone else is asked to tell an administrator. See [Volunteer email and reminders](./email-and-reminders.md).
 
