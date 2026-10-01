@@ -127,6 +127,10 @@ The selected fiscal year is applied by the server, so the totals and records sho
 
 Profile images are automatically deleted from the server when a family or person record is removed, preventing orphaned files from accumulating.
 
+## Photo Upload
+
+Family photos are uploaded the same way as person photos: JPEG or PNG up to 50 MB, resized in your browser to 600x600 and never enlarged. HEIC/HEIF is not supported. See [Photo Management](persons.md#photo-management).
+
 ---
 
 ## How do I change the available Family Roles?
