@@ -57,7 +57,7 @@ A family can also record an optional **second address** with the same fields (Ad
 
 ### Entering a second address
 
-1. Open the family and click **Edit Family**.
+1. Open the family and click **Edit** in the toolbar above the family members.
 2. Below the address fields, click **Second Address (optional)** to expand the section. It is collapsed on families that have no second address.
 3. Enter the address.
 4. Tick **This is the mailing address** if mail should go here. The checkbox is greyed out until you have entered at least an address line or a city, and the record will not save with the box ticked on an empty second address (_"Enter a second address before marking it as the mailing address"_).
@@ -157,12 +157,12 @@ Profile images are automatically deleted from the server when a family or person
 
 ## How do I assign a Property to a Family?
 
-See the [Properties](Properties) help topic.
+See the [Properties](./properties.md) help topic.
 
 ## How do I add a Note to a Family?
 
-See the [Notes](Notes) help topic.
+See the [Notes](./notes.md) help topic.
 
 ## What is the Classification feature?
 
-See the [Classification](Classifications) help topic.
+See the [Classification](./classifications.md) help topic.
