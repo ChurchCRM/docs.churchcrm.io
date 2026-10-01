@@ -23,7 +23,7 @@ As of **7.8.0**, ChurchCRM sends email itself when email sending is enabled. You
 
 A paper-plane button appears next to each email address on:
 
-- the **Person View** (the person's own address),
+- the **Person View** (the person's own address, and the address of each other member in the family list),
 - the **Family View** (the family address and each family member),
 - the **People** list,
 - the **Photo Directory**.
@@ -31,6 +31,10 @@ A paper-plane button appears next to each email address on:
 ![Paper-plane button next to the email address on the Person View](/img/user-guide/email-person-view-send-button.png)
 
 Click it to open the composer with that one recipient. The email address next to the button is still an ordinary link that opens your own mail program, for anyone who prefers that.
+
+On the Person View, the family card (for example **Campbell Family**) also carries the button on every other family member's row, so you can email a relative without opening their record. The person's own row has none, because their address under **Contact & Personal Info** already has one.
+
+![Paper-plane buttons on the family members' rows of the Person View](/img/user-guide/email-person-view-family-send-buttons.png)
 
 ### Sending to a list
 
@@ -46,11 +50,11 @@ The composer opens with the list already loaded. The **recipient count** badge s
 
 ### Writing the message
 
-1. Click **Compose Message** at the bottom of the composer.
+1. Click **Compose Message** at the bottom of the composer. The form opens, and the button changes to **Cancel**, which closes the form and discards what you typed.
 2. Enter a **Subject**.
 3. Write the **Message**. The box starts empty so you can write your own greeting. Two lines down, the closing is already filled in for you: "Sincerely," followed by your name and the church name. Edit or delete it as you like.
-4. Click **Preview** to see the message exactly as the first recipient will receive it, with the church logo and header. Click **Back to editing** to return.
-5. Click **Send Email**.
+4. Click **Preview** to see the message exactly as the first recipient will receive it, with the church logo and header. The preview's title names that recipient and how many others will get the message. Click **Back to editing** to return.
+5. Click **Send Email**. When the message has gone, the button reads **Sent** and the form is locked, so the same message cannot be sent twice.
 
 ![The composer with a subject, the message, and the pre-filled closing](/img/user-guide/email-composer-form.png)
 
@@ -77,7 +81,7 @@ After sending, a banner in the composer confirms how many people were emailed. I
 
 ![The result banner listing a recipient who was not emailed and why](/img/user-guide/email-send-result-not-sent.png)
 
-A skipped person is not an error: ChurchCRM checked the record and decided not to send. Everyone counted as sent did receive the message. If the mail server refused a message, the banner shows that person's name with the error the server returned; ask your administrator to check the [email settings](/administration/email-setup).
+A skipped person is not an error: ChurchCRM checked the record and decided not to send. Everyone counted as sent did receive the message. If nobody could be emailed, the banner is red and says so (for example *No email was sent.*), with the same **Not sent** list, and **Send Email** stays available so you can correct the records and try again. If the mail server refused a message, the banner shows that person's name with the error the server returned; ask your administrator to check the [email settings](/administration/email-setup).
 
 ### Fallbacks: Copy Addresses and Open in Email Client
 
@@ -90,7 +94,7 @@ The composer keeps the two older options at the bottom of the window:
 Use these when email sending is not set up, or when you would rather write the message in your own mail program.
 
 :::tip The church's own address
-When you email a list (cart, group, class, everyone), the composer can add the church's default address (*Default "To" email* in **Admin → System Settings → Email**) as a removable recipient, so the office keeps a copy. This applies to **Copy Addresses** and **Open in Email Client** only. **Send Email** mails the people in the list and nobody else.
+When you email a list (cart, group, class, everyone), the composer can add the church's default address (*Default "To" email* in **Admin → System Settings → Email**) as a removable recipient, so the office keeps a copy. This applies to **Copy Addresses** and **Open in Email Client** only. **Send Email** mails the people in the list and nobody else: when the list holds an address with no person record behind it, such as the church's own, the compose form says it is not included.
 :::
 
 ### Permissions
@@ -112,7 +116,7 @@ The paper-plane buttons and the **Send Email** button appear only for users who 
 
 ### Subscribing Families to Newsletters
 
-1. Open a [Family](Families) record.
+1. Open a [Family](./families.md) record.
 2. Enable the **Newsletter** option.
 3. Use Mailchimp's audience sync to import subscribers.
 
@@ -123,7 +127,7 @@ The paper-plane buttons and the **Send Email** button appear only for users who 
 - Always get consent before adding someone to an email list.
 - Use Mailchimp for newsletters and large announcements.
 - Use the in-app composer for ad-hoc messages to a person, a family, a group, or the cart.
-- Keep your [Classifications](Classifications) updated to target the right audiences.
+- Keep your [Classifications](./classifications.md) updated to target the right audiences.
 
 ---
 
