@@ -14,9 +14,9 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 | Type | Purpose |
 |------|--------|
 | **Reports** | Pre-formatted documents ready for printing (directories, labels, letters) |
-| **Queries** | Database searches that return lists of [people](Persons) or [families](Families) |
+| **Queries** | Database searches that return lists of [people](./persons.md) or [families](./families.md) |
 
-> **Tip:** Many query results can be added to the [Cart](Cart) for further processing.
+> **Tip:** Many query results can be added to the [Cart](./cart.md) for further processing.
 
 ---
 
@@ -29,7 +29,7 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 
 #### Which address is printed
 
-Anything that goes in the post is addressed to the family's **mailing address**: the family's second address when it is ticked as _This is the mailing address_, and the primary address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). Families with no second address, or whose second address is not ticked, print their primary address everywhere, exactly as before.
+The labels and mailed letters listed below are addressed to the family's **mailing address**: the family's second address when it is ticked as _This is the mailing address_, and the primary address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). Families with no second address, or whose second address is not ticked, print their primary address on them, exactly as before.
 
 - **Newsletter labels** and **Confirm data labels** (**Data & Reports → Letters and Labels**) print the mailing address. Labels are still ordered by ZIP code for presorting, using the ZIP code that is actually printed.
 - Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
@@ -44,20 +44,20 @@ Not affected: the [Cart](./cart.md)'s **Generate Labels**, which prints each per
 - **Birthdays & Anniversaries** - Combined view of birthdays and wedding anniversaries for a specific month
 - **Family Member Count** - Families with their member totals
 - **Person by Age** - People within a specified age range
-- **Person by Properties** - People with specific [properties](Properties) assigned
+- **Person by Properties** - People with specific [properties](./properties.md) assigned
 - **Person by Role and Gender** - Filter by family role and gender
 - **Person Count** - Total counts by various criteria
 - **Total By Gender** - Gender statistics
 
 ### Group Reports
 - **Reports on Groups and Roles** - Group membership details
-- **Class Students** - Students in a specific [Sunday School](Sunday-School) class
+- **Class Students** - Students in a specific [Sunday School](./sunday-school.md) class
 - **Class Teachers** - Teachers for a specific class
 - **Registered Students** - All enrolled students
 
 ### Other Reports
 
-- [Financial Reports](Finances): Pledges and Payments
+- [Financial Reports](./finances.md): Pledges and Payments
 - Pledge comparison: Compare pledges between two fiscal years
 
 ---
@@ -120,7 +120,7 @@ A Free-Text Query allows you to run any query on the database. Since ChurchCRM i
 
 ## What is a Cart-Enabled Query?
 
-A [Cart](Cart)-Enabled Query is one in which the results of the query can be entered into the cart.
+A [Cart](./cart.md)-Enabled Query is one in which the results of the query can be entered into the cart.
 
 ## How do I use Cart-Enabled Queries?
 

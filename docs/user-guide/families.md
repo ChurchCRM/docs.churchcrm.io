@@ -82,13 +82,13 @@ Each person's page shows the address they inherit from their family. When the fa
 
 ### Where the mailing address is used
 
-Anything that is put in the post is addressed to the family's mailing address, which is the flagged second address when there is one and the primary address otherwise:
+The family's mailing address is the flagged second address when there is one, and the primary address otherwise. It is used here:
 
-- **Newsletter labels**, **Confirm data labels** and mailed letters such as confirmation letters, tax statements and reminder letters. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
+- **Newsletter labels**, **Confirm data labels** and mailed letters such as confirmation letters, tax statements and reminder letters are addressed to it. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
 - The **Church Directory** report can print the mailing address beneath the primary address; see the same section.
 - The [CSV export](./export.md#second-address-columns) can include the second address and the mailing flag, and the [CSV import](./data-import.md#contact-information) can load them.
 
-The [Cart](./cart.md)'s **Generate Labels** is not affected: it prints each person's own address, as it always has. Maps and geocoding always use the primary address.
+The [Cart](./cart.md)'s **Generate Labels** is not affected: it prints each person's own address, as it always has. Family maps and geocoding always use the family's primary address, never the second address. A person with an address of their own is still mapped and geocoded at that address, as before.
 
 :::note
 A person's own address override (someone who lives somewhere other than the rest of the family) works exactly as before. The second address belongs to the whole family; it is not a per-person setting.
