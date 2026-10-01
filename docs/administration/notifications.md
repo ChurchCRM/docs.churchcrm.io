@@ -36,7 +36,7 @@ ChurchCRM sends transactional email for specific events. Email delivery requires
 
 ### Volunteer email needs the background jobs
 
-Volunteer Management v2 never sends email at the moment you click: assignment messages, reminders and coordinator alerts are queued and delivered by ChurchCRM's **background jobs**. Run the scheduled-task runner from cron every 15 minutes (`0,15,30,45 * * * * /usr/bin/php /path/to/churchcrm/cli/timerjobs.php`; the exact line is shown on **Admin → Ministry Settings**). Without cron the jobs run on page loads at most every 15 minutes, so reminders can be late. **Run background jobs now** on Ministry Settings delivers the queue immediately, and the same page shows how many messages are queued, how many failed after five attempts, and when the jobs last ran. The messages themselves are listed on [Volunteer email and reminders](/user-guide/ministries/email-and-reminders).
+Volunteer Management v2 never sends email at the moment you click: assignment messages, reminders and coordinator alerts are queued and delivered by ChurchCRM's **background jobs**, which also top up the volunteer schedules once a day. Run the scheduled-task runner from cron every 15 minutes (`0,15,30,45 * * * * /usr/bin/php /path/to/churchcrm/cli/timerjobs.php`; the exact line is shown on **Admin → Ministry Settings**). Without cron the jobs run on page loads at most every 15 minutes, so reminders can be late. **Run background jobs now** on Ministry Settings delivers the queue immediately, and the same page shows how many messages are queued, how many failed after five attempts, and when the jobs last ran. The messages themselves are listed on [Volunteer email and reminders](/user-guide/ministries/email-and-reminders).
 
 ### Configuring email
 
