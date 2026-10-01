@@ -80,11 +80,11 @@ const sidebars: SidebarsConfig = {
           items: [
             'user-guide/ministries/ministries-teams-positions',
             'user-guide/ministries/volunteers-and-qualifications',
+            'user-guide/ministries/events-and-calendar',
             'user-guide/ministries/schedules-and-occurrences',
             'user-guide/ministries/staffing-an-occurrence',
             'user-guide/ministries/substitutions',
             'user-guide/ministries/ministry-dashboard',
-            'user-guide/ministries/events-and-calendar',
             'user-guide/ministries/email-and-reminders',
             'user-guide/ministries/permissions',
           ],

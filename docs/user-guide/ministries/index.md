@@ -6,7 +6,7 @@ description: Ministries, teams, positions, schedules, staffing, substitutions an
 
 # Volunteer Management (v2)
 
-Volunteer Management v2 organises volunteering the way a church runs it. A **ministry** (Coffee Bar, Worship, Children's Church) has **teams**; every team has **positions** (Barista, Song Leader, Lead Teacher); people are **qualified** for positions and belong to the ministry's **volunteer pool**; a **schedule** turns a weekly service or a calendar event into dated **occurrences** with **staffing needs**; a coordinator **assigns** people, who accept, decline or propose a **substitute**; and reminders and alerts go out by email.
+Volunteer Management v2 organises volunteering the way a church runs it. A **ministry** (Coffee Bar, Worship, Children's Ministry) has **teams**; every team has **positions** (Barista, Song Leader, Teacher); people are **qualified** for positions and belong to the ministry's **volunteer pool**. The **events** volunteers serve at are ordinary events on the church calendar: services, class meetings, or the ministry's own events created on its Calendar tab. A **schedule** follows those events and gives each one an **occurrence** with **staffing needs**; a coordinator **assigns** people, who accept, decline or propose a **substitute**; and reminders and alerts go out by email.
 
 Members see their own side of it in the **Member Portal** — their schedule, the open dates they can sign up for, and the ministries asking for help. Those pages are described in the Member Portal guide; this section covers the coordinator's and administrator's side.
 
@@ -24,7 +24,7 @@ Nothing described in this section exists until an administrator chooses it. Go t
 | **V2 — Ministries** | The new experience described in this section. The legacy Volunteer Opportunities pages are hidden (nothing is deleted). |
 | **Both (transition)** | Both experiences at once. A person record shows a **Volunteer (Legacy)** tab beside the **Volunteer** tab. Use it while you move from V1 to V2. |
 
-The same page holds the **reminder lead time**, shows email delivery health (failed and queued messages, when background jobs last ran, and the cron line to install) and has a **Run background jobs now** button. See [Volunteer email and reminders](./email-and-reminders.md) and the [Ministry Settings](../../administration/system-settings.md#ministry-settings) reference.
+The same page holds the **reminder lead time**, the **scheduling horizon** (how many weeks ahead schedules make their occurrences, 8 by default) and the **default event type for ministry events**. Its **Background jobs and delivery** card shows failed and queued messages, when background jobs last ran, when schedules were last topped up and what that made, and the cron line to install, with a **Run background jobs now** button. See [Volunteer email and reminders](./email-and-reminders.md) and the [Ministry Settings](../../administration/system-settings.md#ministry-settings) reference.
 
 ![Admin → Ministry Settings](/img/administration/ministry-settings.png)
 
@@ -40,13 +40,13 @@ Once V2 or Both is chosen, a **Ministries** heading appears in the sidebar for a
 
 The pages in this section, in the order a coordinator meets them:
 
-1. [Ministries, teams and positions](./ministries-teams-positions.md) — create a ministry, name its teams and the positions people serve in.
+1. [Ministries, teams and positions](./ministries-teams-positions.md) — create a ministry, name its teams and the positions people serve in, and link a team to a Sunday School class.
 2. [Volunteers: the pool and qualifications](./volunteers-and-qualifications.md) — who serves in the ministry, and what each person can do.
-3. [Schedules and occurrences](./schedules-and-occurrences.md) — the weekly pattern or calendar event, and the dated occurrences it produces.
-4. [Staffing an occurrence](./staffing-an-occurrence.md) — fill the positions for one date, and record who said yes.
-5. [Substitutions](./substitutions.md) — when a volunteer cannot make it and finds someone who can.
-6. [The Ministry Dashboard](./ministry-dashboard.md) — gaps, unanswered assignments and substitution requests, in one place.
-7. [Events and the calendar](./events-and-calendar.md) — how a ministry's schedule follows the church calendar.
+3. [Events and the calendar](./events-and-calendar.md) — the ministry's Calendar tab, its one-time and recurring events, and staffing a single event.
+4. [Schedules and occurrences](./schedules-and-occurrences.md) — which events a team staffs, how many people they need, and the occurrences that follow.
+5. [Staffing an occurrence](./staffing-an-occurrence.md) — fill the positions for one date, and record who said yes.
+6. [Substitutions](./substitutions.md) — when a volunteer cannot make it and finds someone who can.
+7. [The Ministry Dashboard](./ministry-dashboard.md) — gaps, unanswered assignments and substitution requests, in one place.
 8. [Volunteer email and reminders](./email-and-reminders.md) — the messages volunteers and coordinators receive, and what makes them go out.
 9. [Who can do what](./permissions.md) — administrators, ministry managers, coordinators, team leaders and volunteers.
 
@@ -57,10 +57,11 @@ If you have twenty minutes:
 1. **Ministries → Dashboard → New ministry.** Name it. It is created with its own calendar, volunteer pool and first team.
 2. On the ministry page, **Positions → Add position** for each role (say, Barista and Host).
 3. **Volunteers → Add Volunteer** a few people, then tick the positions each one can serve in.
-4. **Schedules → Add schedule**, choose a weekly pattern or a calendar event type, set how many of each position are needed, and **Generate occurrences** — optionally naming who fills each position by default.
-5. Back on the **Dashboard**, the dates that are still short appear under **Needs filling**. Click **Fill**, assign someone, and the gap is gone.
+4. Make sure the events exist. A team that serves at Sunday worship can follow the services already on the church calendar. For the ministry's own events, open the **Calendar** tab and click **New recurring event** (or **New event**), then answer **Staff them** when the page asks *"Staff them now?"*
+5. **Schedules → Add schedule** (already filled in if you came from step 4): choose the events it follows, set how many of each position are needed and, if you like, who fills each one by default, and click **Save**. The occurrences for the next 8 weeks are made at once, and a daily background job keeps adding them.
+6. Back on the **Dashboard**, the dates that are still short appear under **Needs filling**. Click **Fill**, assign someone, and the gap is gone.
 
-Everything else — responses, reminders, substitutions, the member's own pages — follows from those five steps.
+Everything else — responses, reminders, substitutions, the member's own pages — follows from those six steps.
 
 :::note Legacy feature and migration
 The legacy [Volunteer Opportunities](../volunteers.md) feature keeps working in V1 and Both. Its data is never touched by v2, and there is no automatic migration from opportunities to ministries yet; retiring V1 is tracked separately in ChurchCRM issue #9702.
