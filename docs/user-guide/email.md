@@ -9,7 +9,7 @@ ChurchCRM provides built-in tools to email individuals, families, groups, and ca
 
 ## Prerequisites
 
-To send email from ChurchCRM itself, your system administrator must configure an outgoing mail server and turn on email sending in **Admin → System Settings → Email**. See [Email Setup](/administration/email-setup) for the steps. Until then, the composer still helps you reach people through your own mail program (see [Fallbacks](#fallbacks-copy-addresses-and-open-in-email-client)).
+To send email from ChurchCRM itself, your system administrator must configure an outgoing mail server and turn on email sending under **Communication → Email → Email Settings**. See [Email Setup](/administration/email-setup) for the steps. Until then, the composer still helps you reach people through your own mail program (see [Fallbacks](#fallbacks-copy-addresses-and-open-in-email-client)).
 
 You also need the **Email** permission on your user account (an administrator grants it under **Admin → System Users**). Ask an administrator if the paper-plane button described below does not appear for you.
 
@@ -17,7 +17,7 @@ You also need the **Email** permission on your user account (an administrator gr
 
 ## Sending email from ChurchCRM
 
-As of **7.8.0**, ChurchCRM sends email itself when email sending is enabled. You write the message in the composer, click **Send Email**, and every recipient receives their own message from the church's email address. Nothing is handed off to a mail program on your computer.
+As of **7.8.0**, ChurchCRM sends email itself when email sending is enabled. You write the message in the composer, click **Send Email**, and ChurchCRM hands the church's mail server a separate message for each recipient, sent from the church's email address. Nothing is handed off to a mail program on your computer.
 
 ### Sending to one person or family
 
@@ -81,7 +81,7 @@ After sending, a banner in the composer confirms how many people were emailed. I
 
 ![The result banner listing a recipient who was not emailed and why](/img/user-guide/email-send-result-not-sent.png)
 
-A skipped person is not an error: ChurchCRM checked the record and decided not to send. Everyone counted as sent did receive the message. If nobody could be emailed, the banner is red and says so (for example *No email was sent.*), with the same **Not sent** list, and **Send Email** stays available so you can correct the records and try again. If the mail server refused a message, the banner shows that person's name with the error the server returned; ask your administrator to check the [email settings](/administration/email-setup).
+A skipped person is not an error: ChurchCRM checked the record and decided not to send. A person counted as sent had their message handed to the mail server without an error; ChurchCRM cannot see whether it then reached their mailbox. If nobody could be emailed, the banner is red and says so (for example *No email was sent.*), with the same **Not sent** list, and **Send Email** stays available so you can correct the records and try again. If the mail server refused a message, the banner shows that person's name with the error the server returned; ask your administrator to check the [email settings](/administration/email-setup).
 
 ### Fallbacks: Copy Addresses and Open in Email Client
 
@@ -94,7 +94,7 @@ The composer keeps the two older options at the bottom of the window:
 Use these when email sending is not set up, or when you would rather write the message in your own mail program.
 
 :::tip The church's own address
-When you email a list (cart, group, class, everyone), the composer can add the church's default address (*Default "To" email* in **Admin → System Settings → Email**) as a removable recipient, so the office keeps a copy. This applies to **Copy Addresses** and **Open in Email Client** only. **Send Email** mails the people in the list and nobody else: when the list holds an address with no person record behind it, such as the church's own, the compose form says it is not included.
+When you email a list (cart, group, class, everyone), the composer can add the church's own address (*Copy Church Email* under **Communication → Email → Email Settings**) as a removable recipient, so the office keeps a copy. This applies to **Copy Addresses** and **Open in Email Client** only. **Send Email** mails the people in the list and nobody else: when the list holds an address with no person record behind it, such as the church's own, the compose form says it is not included.
 :::
 
 ### Permissions
