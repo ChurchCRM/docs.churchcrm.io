@@ -56,14 +56,23 @@ The **Login as User** button is only offered when all of the following are true:
 - The user is not another administrator. Administrators cannot log in as each other.
 - You are not already logged in as someone else. Finish the current masquerade first.
 
+You can log in as a user whose person record is marked deceased or inactive. That user cannot sign in themselves — their Settings page says **Deceased — cannot sign in** or **Inactive — cannot sign in** — but an administrator can still open a masquerade to see what the account would see.
+
 ### Ending a masquerade
 
-Do either of the following:
+Do any of the following:
 
 - Click the exit icon at the right end of the banner (**Exit and return to your own account**).
 - Open the user menu in the top navbar and click **Exit to your account**. While you are masquerading this item replaces **Sign out**, so you cannot accidentally end your own session instead.
+- On the limited-access page of a user with only the **Edit Self** right, click **Exit to your account**. While you are masquerading it replaces that page's **Log Out** button.
 
-You are returned to your own account, on the Settings page of the user you were logged in as.
+You are returned to your own account, on the Settings page of the user you were logged in as. If your own administrator account has been deleted or has lost its administrator right in the meantime, the session ends instead and you are taken to the login page.
+
+A masquerade never outlives the session it was started in:
+
+- Opening the sign-out address `/session/end` directly (for example from a bookmark) during a masquerade is a plain sign-out. It ends the whole session, yours included, and you sign in again with your own account.
+- If the session times out while you are logged in as someone else, the masquerade ends with it. Sign in again with your own account.
+- A new sign-in discards any masquerade left over from an earlier session in the same browser, so signing in never resumes an old masquerade.
 
 ### What happens to the other user's account
 
@@ -72,7 +81,8 @@ Nothing. A masquerade is not a login for that user:
 - Their password is not checked and their two-factor authentication is not prompted for.
 - Their **Last login** date and login counts are not updated.
 - If they must change their password at next login, or must still enroll in two-factor authentication, that requirement is not applied to you and is not cleared — it still applies the next time they sign in themselves.
-- A user with only the **Edit Self** right is taken to their limited-access page, with the banner on it, exactly as they would be.
+- A user with only the **Edit Self** right is taken to their limited-access page, with the banner on it, exactly as they would be. The only difference is the page's **Log Out** button, which reads **Exit to your account** and returns you to your own account.
+- A deceased or inactive user's sign-in block stays in place: the masquerade does not let them sign in.
 
 :::warning
 While you are masquerading, anything you save is recorded under the other user's name — edits, notes, deposits, sent email. Look; do not change things you would not change while logged in as them.
