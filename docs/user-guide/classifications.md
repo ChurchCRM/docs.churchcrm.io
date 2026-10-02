@@ -28,9 +28,18 @@ Classifications help you categorize people in your congregation for record-keepi
 3. Type a name and click **Add New Person Classification**.
 4. Change a name in the **Existing Options** table, then click **Save Changes**.
 5. Reorder with **Move up** and **Move down** in the row **Actions** menu.
-6. **Delete** removes a classification you no longer use. **Inactive** marks a classification so it is not offered for new people.
+6. **Delete** removes a classification you no longer use.
 
 There is no family control named **Assign a New Classification** that changes every member of a family. Change a classification on each person: open the person, click **Edit**, choose **Classification** under **Church Membership**, and click **Save**.
+
+### Inactive and In Directory
+
+Each classification has two checkboxes. They save as soon as you tick or untick them; you do not need "Save Changes".
+
+- **Inactive** — people in this classification are treated as inactive. They are left out of the dashboard counts and the photo gallery.
+- **In Directory** — this classification starts ticked when you open the Directory report. You can still change the selection each time you run the report.
+
+The header of this page has a **People Settings** button that returns to [People Settings](../administration/system-settings.md#people-settings).
 
 ---
 

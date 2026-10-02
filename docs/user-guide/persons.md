@@ -58,7 +58,7 @@ Clear the checkbox to undo the mark.
 
 The person record, pledges, payments, notes, and history stay in place. Header search only returns living people. Voting-member reporting excludes deceased people.
 
-Administrators hide deceased people from the printed directory and from CSV exports with **People → Dashboard → People Settings → Hide Deceased from Directory**. The setting text is **Hide deceased members from the printed directory and CSV exports.**
+Administrators hide deceased people from the printed directory and from CSV exports with **People → Admin → People Settings → People → Hide Deceased from Directory**. The setting text is **Hide deceased members from the printed directory and CSV exports.**
 
 ## Timeline
 

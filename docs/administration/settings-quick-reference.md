@@ -5,24 +5,26 @@ sidebar_position: 9
 
 # Settings Quick Reference — Where to Find Everything
 
-Use this page to find the menu for a setting. System Settings tabs are **New Members & Greeting**, **People**, **Families**, **Financial Settings**, **Quick Search**, **Confession**, **Scheduled Tasks**, and **Report Settings**. There is no Edit General Settings page, and no Advanced, Finance, Search, Security, or Integration tab.
+Use this page to find the menu for a setting. System Settings tabs are **Financial Settings**, **Quick Search**, **Confession**, **Scheduled Tasks**, and **Report Settings**. There is no Edit General Settings page, and no Advanced, Finance, Search, Security, or Integration tab.
 
 ## 👥 People & Registration
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Enable visitor self-registration | People → Dashboard → People Settings | Self-registration. Review sign-ups on [Self Registrations](/user-guide/self-registrations) |
-| Hide deceased people from exports | People → Dashboard → People Settings | Hide deceased from directory |
-| Change how names display | Admin → System Settings → People | Person name format |
-| Change person avatar initials | Admin → System Settings → People | Person initials style |
-| Set default country for new families | Admin → System Settings → Families, or Admin → Church Information → Address Defaults | Default country |
-| Set default city | Admin → System Settings → Families, or Address Defaults | Default city |
-| Set default state | Admin → System Settings → Families, or Address Defaults | Default state |
-| Set default ZIP code | Admin → System Settings → Families, or Address Defaults | Default ZIP |
-| Disable "Friend Date" | Admin → System Settings → People | Hide friend date |
-| Disable "Wedding Date" | Admin → System Settings → People | Hide wedding date |
-| Auto-uppercase ZIP codes | Admin → System Settings → People | Force UPPERCASE ZIP codes |
-| Hide a person's address when they have no family | Admin → System Settings → People | Hide person address |
+| Enable visitor self-registration | People → Admin → People Settings → New Members & Greeting | Self-Registration. Review sign-ups on [Self Registrations](/user-guide/self-registrations) |
+| Choose who is emailed about new people and families | People → Admin → People Settings → New Members & Greeting | Notification Recipients |
+| Add a greeting to the new-member email | People → Admin → People Settings → New Members & Greeting | Greeter Message 1 / 2 |
+| Hide deceased people from exports | People → Admin → People Settings → People | Hide Deceased from Directory |
+| Change how names display (format) | People → Admin → People Settings → People | Person name display style |
+| Change person avatar initials | People → Admin → People Settings → People | Person initials style |
+| Set default country, state, city, or ZIP for new records | People → Admin → People Settings → New Members & Greeting → New Record Defaults | Default Country, Default State, Default City, Default Zip. Also under Address Defaults on Admin → Church Information |
+| Disable "Friend Date" field | People → Admin → People Settings → People | Hide Friend Date |
+| Disable "Wedding Date" field | People → Admin → People Settings → Families | Hide Wedding Date |
+| Auto-uppercase ZIP codes | People → Admin → People Settings → Families | Uppercase Zip/Postcodes |
+| Hide a person's address when they have no family | People → Admin → People Settings → People | Hide Address Without Family |
+| Choose which family roles are head, spouse and child | People → Admin → People Settings → Families | Head of House / Spouse / Child Role |
+| Mark a classification as inactive | People → Admin → Person Classifications | Inactive column |
+| Choose which classifications start ticked on the Directory report | People → Admin → Person Classifications | In Directory column |
 
 ## 🏛️ Church Information
 
@@ -38,10 +40,10 @@ Use this page to find the menu for a setting. System Settings tabs are **New Mem
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Set initial map zoom | People → Family Map → Map Settings | Default map view |
+| Set initial map zoom | People → Admin → People Settings → Map Settings | Default Map View |
 | Set the map center | Admin → Church Information | Latitude and longitude |
-| Hide lat/lon fields | People → Family Map → Map Settings | Hide latitude/longitude |
-| Choose geocoding services (add US Census) | People → Family Map → Map Settings | Geocoding services |
+| Hide lat/lon fields | People → Admin → People Settings → Map Settings | Hide Latitude/Longitude |
+| Choose geocoding services (add US Census) | People → Admin → People Settings → Map Settings | Geocoding services |
 
 ## 💰 Finance & Donations
 
@@ -101,9 +103,9 @@ Content Security Policy (`bEnforceCSP`) is not on a settings tab. There is no sw
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Choose who is told when a person is added | Admin → System Settings → New Members & Greeting | New member notification recipients |
-| Include contact details in that email | Admin → System Settings → New Members & Greeting | Include data in notifications |
-| Send birthday emails | Admin → System Settings → New Members & Greeting | Birthday emails |
+| Choose who is told when a person is added | People → Admin → People Settings → New Members & Greeting | Notification Recipients |
+| Include contact details in that email | People → Admin → People Settings → New Members & Greeting | Include Details in Notifications |
+| Send birthday emails | Admin → Feature Toggles | Birthday emails |
 | Warn when background jobs have not run | Admin → System Settings → Scheduled Tasks | Background jobs warning |
 
 ## 🔍 Search
@@ -121,13 +123,13 @@ Content Security Policy (`bEnforceCSP`) is not on a settings tab. There is no sw
 | Show Events | Calendar → Calendar Settings | Enable Events Menu |
 | Let other sites read the calendar | Calendar → Calendar Settings | Enable External Calendar API |
 | Limit which sites may embed the calendar | Calendar → Calendar Settings | Calendar Embed Origins |
-| Hide the family newsletter field | Admin → System Settings → Families | Hide family newsletter |
+| Hide the family newsletter field | People → Admin → People Settings → Families | Hide Newsletter Subscriptions |
 
 ## 📊 Reports
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Leave deceased people out of the printed directory | People → Dashboard → People Settings | Hide deceased from directory |
+| Leave deceased people out of the printed directory | People → Admin → People Settings → People | Hide Deceased from Directory |
 | Set the letterhead image | Admin → System Settings → Report Settings | Church letterhead (`bDirLetterHead`) |
 | Save a PDF or open it in the browser | Admin → System Settings → Report Settings | PDF output type |
 | Change report margins | Admin → System Settings → Report Settings | Left margin, line thickness |
@@ -152,12 +154,11 @@ Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 | **Admin → Localization & Formats** | Language, time zone, dates, currency display, phone formats |
 | **Admin → System Users → Settings → Quick Settings** | Password rules, lockout, session timeout, 2FA |
 | **Communication → Email → Email Settings** | SMTP and sending |
-| **Admin → System Settings → People** | Names, initials, friend and wedding dates |
-| **Admin → System Settings → Families** | Default city, state, ZIP, and country, and family roles |
+| **People → Admin → People Settings** | Name and initials style, hidden fields, family roles, self-registration, new-member notifications and greeter messages, new-record defaults, map zoom and geocoding |
+| **People → Admin → Person Classifications** | Classification names and order, Inactive and In Directory flags |
 | **Admin → System Settings → Financial Settings** | Finance and fundraiser menus, fiscal year, envelopes |
 | **Admin → System Settings → Quick Search** | What search includes, and how many results |
 | **Admin → System Settings → Report Settings** | Letterhead (`bDirLetterHead`), PDF handling, report wording |
-| **People → Family Map → Map Settings** | Zoom, and hiding latitude and longitude |
 | **Groups → Dashboard → Group Settings** | Sunday School module |
 | **Calendar → Calendar Settings** | Events menu, external calendar API, embed origins |
 | **Admin → System Logs → Settings** | Log level |
