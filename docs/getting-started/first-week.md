@@ -152,6 +152,7 @@ See [Backup & Restore](/administration/backup-restore).
 - **Data Import** — Import existing members from a CSV ([Data Import](/user-guide/data-import))
 - **Kiosk Devices** — Set up self-service check-in for events ([Kiosk Devices](/user-guide/kiosk-devices))
 - **Users** — Create accounts for staff with appropriate [permissions](/administration/users)
+- **Background Jobs** — Configure cron for reliable scheduled processing ([Background Jobs & Scheduler](/administration/background-jobs))
 
 ---
 
@@ -175,4 +176,5 @@ See [Backup & Restore](/administration/backup-restore).
 
 - [FAQs](/administration/faqs)
 - [Troubleshooting](/administration/troubleshooting)
-- [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions)
+- [ChurchCRM Community Chat](https://discord.gg/tuWyFzj3Nj)
+- [GitHub Issues](https://github.com/ChurchCRM/CRM/issues) for reproducible bugs

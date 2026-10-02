@@ -25,7 +25,7 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 ### Contact & Directory Reports
 - **Contact Lists** - Phone and email lists
 - **People Directory** - Printable directory grouped by family
-- **Letters and Mailing Labels** - For postal mailings
+- **Letters and Mailing Labels** - For postal mailings (see [Mailing labels](#mailing-labels) below)
 
 ### Membership Reports
 - **Birthdays** - Members with birthdays in a specific month
@@ -78,6 +78,16 @@ If **Use Title Page** is ticked, the title page becomes the front cover of the b
 :::tip
 Print the first two sheets as a test before running the whole directory. With the short-edge setting right, the pages on the back of each sheet are the right way up once the sheet is folded.
 :::
+
+---
+
+## Mailing labels
+
+Mailing labels for any set of people are produced from the [Cart](./cart.md#generate-mailing-labels): put the people in the Cart, then click **Labels** in the Cart Functions bar. The **Generate Labels** dialog offers one label per person or per family, bulk-mail presort, a "To the parents of" prefix, Avery and tractor-feed label types, font and size, a start row and column, and PDF or CSV output.
+
+**Which address is printed:** the person's own address when one has been entered, otherwise the family address. Households that keep their address on the family record only — the normal case — get correct labels; a label never mixes a person's street with the family's city.
+
+**Labels for a filtered mailing** (for example birthdays or wedding anniversaries in a date range): go to **Data/Reports → CSV Export**, set the filters, choose **Add Individuals to Cart**, then open **People → Cart** and click **Labels**. Query results with an **Add Results to Cart** button feed the same workflow.
 
 ---
 
