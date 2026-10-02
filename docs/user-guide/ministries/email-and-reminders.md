@@ -14,7 +14,7 @@ Every subject is prefixed with the church name. Every body names the ministry, t
 
 | Message | Who receives it | When |
 |---|---|---|
-| **You have been scheduled to serve** | the volunteer | when a coordinator assigns them, or when a schedule assigns them as its default volunteer without *Set as Accepted* (on Save, Generate, Staff them or the daily top-up) |
+| **You have been scheduled to serve** | the volunteer | when a coordinator assigns them, or when a schedule assigns them as one of its default volunteers without *Set as Accepted* (on Save, Generate, Staff them or the daily top-up) |
 | **Reminder: you are scheduled to serve** | the volunteer | the configured number of hours before they start serving (see below); once per assignment |
 | **Thank you for signing up to serve** | the volunteer | when they sign themselves up on the Member Portal |
 | **Your substitute request was approved** / **was not approved** | the volunteer *and* the proposed substitute | when a coordinator decides a [substitution](./substitutions.md) |

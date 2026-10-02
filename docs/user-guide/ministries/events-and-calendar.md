@@ -28,7 +28,7 @@ The **Calendar** tab of the [ministry page](./ministries-teams-positions.md) lis
 | **Event** | The title, linked to the event's page, with its event type underneath and an *Inactive* badge when the event is inactive. |
 | **Calendars** | The calendars the event is on. |
 | **Class** | The Sunday School class that is the event's Linked Group, if any. |
-| **Staffing** | One badge per team of this ministry that staffs the event, for example *"Faith City: 3 of 3"*: red while a position is short, yellow while someone has not answered, green when every position is filled and confirmed. Each badge opens that occurrence. *Not staffed* when no team staffs it. A past event also shows its headcount, for example *"Headcount: 42"* or *"No headcount recorded yet"*. |
+| **Staffing** | One badge per team of this ministry that staffs the event, for example *"Faith City: Needs 2 more"* or *"Faith City: Covered · 1 more welcome"*: red while a position is short, yellow while someone has not answered, green when every position has its people and everyone has answered, grey when nothing is required. The tooltip gives the numbers, for example *"1 of 3–4"*. Each badge opens that occurrence. *Not staffed* when no team staffs it. A past event also shows its headcount, for example *"Headcount: 42"* or *"No headcount recorded yet"*. |
 
 The action menu of a row offers **Staff this event** (for an upcoming, active event: the [Staff an event](#staff-an-event) dialog with the event already chosen), **Edit event**, which opens the church event editor, and **View event**.
 
@@ -104,7 +104,7 @@ In the church event editor (and in the calendar's side-panel editor), under **Sh
 
 ## The Volunteers card on the event view
 
-An event with volunteer occurrences shows a **Volunteers** card on its detail page: the ministry, the schedule, *"N of M filled"* and a badge (*"N still needed"*, **Fully staffed**, or **No staffing needs set**), with a **Manage staffing** link to the [staffing view](./staffing-an-occurrence.md). An event that no team staffs shows no card.
+An event with volunteer occurrences shows a **Volunteers** card on its detail page: the ministry, the schedule, the numbers (for example *"3 assigned, 3 needed, room for 1 more"*) and a badge in the same words as the ministry pages (*"Needs 2 more"*, *"Covered · 1 more welcome"*, *"Full"*, *"Optional"*, or **No staffing needs set**; see [How staffing reads](./staffing-an-occurrence.md#how-staffing-reads)), with a **Manage staffing** link to the [staffing view](./staffing-an-occurrence.md). An event that no team staffs shows no card.
 
 ## Coordinators and events
 

@@ -20,7 +20,7 @@ Dates and times on this page, and everywhere in Volunteer Management, follow Chu
 
 ## One card per position
 
-Each card shows **filled / needed** and the people assigned, each with a status badge and a row menu. A position that is short carries a *"N still needed"* banner; one with nobody on it shows *Nobody assigned yet*.
+Each card says in its header how the position stands, for example **Needs 2 more** or **Covered · 1 more welcome**, with the numbers on the line below (*"2 assigned, 2 needed, room for 1 more"*). Then come the people assigned, each with a status badge and a row menu. A position with nobody on it shows *Nobody assigned yet*.
 
 | Status | Meaning |
 |---|---|
@@ -30,6 +30,21 @@ Each card shows **filled / needed** and the people assigned, each with a status 
 | **Cancelled** | The coordinator took them off. The row stays, because it has history. |
 | **Substituted** | Someone else took their place — see [Substitutions](./substitutions.md). |
 | **Completed** | The occurrence has passed. |
+
+### How staffing reads
+
+A count is always a status word first and the numbers second. Min decides the colour and Max decides how much room is left.
+
+| Label | When | Colour |
+|---|---|---|
+| **Needs 2 more** | Fewer people than Min. The numbers read *"0 of 2–3"* (nobody yet, 2 to 3 wanted) or *"0 of 1"* when Min and Max are the same. | Red |
+| **Covered · 1 more welcome** | Min is met and Max leaves room for more, for example *"2 assigned, 2 needed, room for 1 more"*. | Green, or yellow while someone has not answered (*"· 2 not yet confirmed"*) |
+| **Optional · up to 2 welcome** | Min is 0 and nobody is on it yet. | Grey |
+| **Optional · 1 of up to 2** | Min is 0 and someone is on it. | Green, or yellow while someone has not answered |
+| **Full · 3 of 3** | Max is reached. | Green, or yellow while someone has not answered |
+| **Not needed this time** | This occurrence's own needs set the position to Min 0 and Max 0. | Grey |
+
+A whole date (every position of the occurrence together, or one team on an event) reads the same way, added up: **Needs N more** with the total shortfall when any position is short, otherwise **Full** when no position has room, **Optional** when nothing is required, and **Covered · N more welcome** in every other case. The same words are used everywhere Volunteer Management shows a count: the [Ministry Dashboard](./ministry-dashboard.md), the tooltips on the Occurrences tab, the badges on the Calendar tab, the Volunteers card on an event and the member portal's volunteer pages.
 
 ### Assign a volunteer
 

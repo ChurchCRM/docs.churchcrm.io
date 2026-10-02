@@ -42,14 +42,14 @@ The rows are the pool **plus** anyone qualified for a position in view who is no
 For a team [linked to a Sunday School class](./ministries-teams-positions.md#linking-a-team-to-a-sunday-school-class), a tick also makes the person a **Teacher** of the class, and taking away their last tick in that team removes the Teacher role.
 
 :::tip A position nobody is qualified for cannot be staffed
-Before creating a schedule, make sure every position it needs has at least one tick. The staffing picker and the **Default volunteer** lists only ever offer qualified people, and the **Generate occurrences** dialog says *"Nobody is qualified for this position yet, so it stays open."*
+Before creating a schedule, make sure every position it needs has at least one tick. The staffing picker and the **Default volunteers** lists only ever offer qualified people, and the **Generate occurrences** dialog says *"Nobody is qualified for this position yet, so it stays open."*
 :::
 
 ## Removing a volunteer
 
-The **Actions** menu at the end of a row offers **Remove Volunteer** (ministry coordinators and above). It takes away every qualification the person holds in this ministry, cancels their assignments on upcoming occurrences, clears them as the [default volunteer](./schedules-and-occurrences.md#staffing-needs-and-default-volunteers) on every schedule of the ministry, and removes them from the pool Group. Past service history stays. The notification reports what was removed, for example *"Removed. 2 qualifications, 3 upcoming assignments, 2 schedule defaults."*
+The **Actions** menu at the end of a row offers **Remove Volunteer** (ministry coordinators and above). It takes away every qualification the person holds in this ministry, cancels their assignments on upcoming occurrences, clears them as a [default volunteer](./schedules-and-occurrences.md#staffing-needs-and-default-volunteers) on every schedule of the ministry (a position's other default volunteers stay), and removes them from the pool Group. Past service history stays. The notification reports what was removed, for example *"Removed. 2 qualifications, 3 upcoming assignments, 2 schedule defaults."*
 
-Taking away a single qualification is different: the person stays a schedule's default volunteer, and that position is left open on new occurrences until they are qualified again.
+Taking away a single qualification is different: the person stays one of the schedule's default volunteers, and their place is left open on new occurrences until they are qualified again.
 
 ## Where else qualifications show up
 

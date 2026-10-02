@@ -58,7 +58,7 @@ If you have twenty minutes:
 2. On the ministry page, **Positions → Add position** for each role (say, Barista and Host).
 3. **Volunteers → Add Volunteer** a few people, then tick the positions each one can serve in.
 4. Make sure the events exist. A team that serves at Sunday worship can follow the services already on the church calendar. For the ministry's own events, open the **Calendar** tab and click **New recurring event** (or **New event**), then answer **Staff them** when the page asks *"Staff them now?"*
-5. **Schedules → Add schedule** (already filled in if you came from step 4): choose the events it follows, set how many of each position are needed and, if you like, who fills each one by default, and click **Save**. The occurrences for the next 8 weeks are made at once, and a daily background job keeps adding them.
+5. **Schedules → Add schedule** (already filled in if you came from step 4): choose the events it follows, set how many of each position are needed and, if you like, who fills them by default (as many people as the position's Max), and click **Save**. The occurrences for the next 8 weeks are made at once, and a daily background job keeps adding them.
 6. Back on the **Dashboard**, the dates that are still short appear under **Needs filling**. Click **Fill**, assign someone, and the gap is gone.
 
 Everything else — responses, reminders, substitutions, the member's own pages — follows from those six steps.

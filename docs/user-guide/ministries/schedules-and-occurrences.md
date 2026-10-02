@@ -28,7 +28,7 @@ On the ministry page, open the **Schedules** tab. Each row shows the schedule's 
 
 The rest of the dialog, and the **Save** button, appear only once an event or a class is chosen. A schedule must follow at least one event that is still to come.
 
-![Add schedule, with a default volunteer](/img/user-guide/ministries/add-schedule.png)
+![Add schedule, with two default volunteers for a position with Max 2](/img/user-guide/ministries/add-schedule.png)
 
 | Where the dates come from | Then choose | The schedule follows |
 |---|---|---|
@@ -59,11 +59,12 @@ Each value can be at most 720 minutes (12 hours). The times are always worked ou
 
 **Staffing needs** has one row per active position of the team, each with **Min** and **Max**. Every position starts ticked on a new schedule; untick a position the schedule never uses. A schedule with no staffing needs makes occurrences that need nobody, so there is nothing to fill. Raising **Min** above **Max** raises Max with it, and a Max below Min is refused.
 
-Each row also has a **Default volunteer**. The list offers only people qualified for that position, people in the volunteer pool first and whoever served least recently at the top. Choose someone and they are assigned on every new occurrence of this schedule for as long as they stay qualified, and asked to respond. Tick **Set as Accepted** to record their acceptance as well, so they are not asked; reminders are still sent. Choose **None** to fill the position week by week.
+Each row also has **Default volunteers**: one list per place the position has, so a position with **Max** 2 has two lists (up to 10 lists; with a higher Max, one more list than people already chosen). Each list offers only people qualified for that position, people in the volunteer pool first and whoever served least recently at the top, and someone chosen in one list is not offered in the others. Everyone chosen is assigned on every new occurrence of this schedule, in the order of the lists, for as long as they stay qualified, and asked to respond. Tick **Set as Accepted** beside a person to record their acceptance as well, so they are not asked; reminders are still sent. Leave a list on **None** to fill that place week by week.
 
-- Changing a default never changes occurrences that already exist. It applies to occurrences made from then on.
-- If the default volunteer loses the qualification, the dialog shows them as *"(no longer qualified)"*, and the position is left open on new occurrences until they are qualified again.
-- **Remove Volunteer** on the [Volunteers tab](./volunteers-and-qualifications.md#removing-a-volunteer) clears the person as a default on every schedule of the ministry.
+- Changing the defaults never changes occurrences that already exist. It applies to occurrences made from then on.
+- If a default volunteer loses the qualification, their list shows them as *"(no longer qualified)"*, and their place is left open on new occurrences until they are qualified again. The other default volunteers of the position are still assigned.
+- Lowering **Max** below the number of default volunteers keeps every choice but marks the extra ones *"Over Max: remove this one or raise Max."*, and **Save** is refused with, for example, *"Barista: Max is 1 but 2 default volunteers are chosen. Remove one or raise Max."*
+- **Remove Volunteer** on the [Volunteers tab](./volunteers-and-qualifications.md#removing-a-volunteer) clears the person as a default on every schedule of the ministry. The position's other default volunteers stay.
 
 ## What happens when you save
 
@@ -75,7 +76,7 @@ Editing a schedule never makes occurrences. Changing what a schedule follows (wh
 
 Occurrences are made only up to the **scheduling horizon**: **Admin → Ministry Settings → Scheduling horizon (weeks)**, 8 weeks by default, from 1 to 52. The horizon applies to every schedule in the church, including schedules with a later last date.
 
-Nobody has to come back to make more. Once a day the background jobs **top up** every active schedule of every active ministry: each one gets occurrences for its events up to the horizon, and each position's default volunteer is assigned on the new ones. Ministry Settings shows when the top-up last ran and what it made, for example *"Schedules last topped up: Oct 1, 5:13 PM — 0 new occurrences"*, and **Run background jobs now** on that page runs it at once. See the [Ministry Settings](../../administration/system-settings.md#ministry-settings) reference.
+Nobody has to come back to make more. Once a day the background jobs **top up** every active schedule of every active ministry: each one gets occurrences for its events up to the horizon, and each position's default volunteers are assigned on the new ones. Ministry Settings shows when the top-up last ran and what it made, for example *"Schedules last topped up: Oct 1, 5:13 PM — 0 new occurrences"*, and **Run background jobs now** on that page runs it at once. See the [Ministry Settings](../../administration/system-settings.md#ministry-settings) reference.
 
 ## Generate occurrences
 
@@ -83,12 +84,12 @@ Nobody has to come back to make more. Once a day the background jobs **top up** 
 
 ![The Generate occurrences dialog](/img/user-guide/ministries/generate-occurrences.png)
 
-The first line says how far the run reaches: *"Occurrences are created for events in the next 8 weeks (through Nov 26)."*, or *"Occurrences are created for events through Nov 1, when this schedule ends."* Below it, each position the schedule needs has **Fill by default with**. This is the schedule's default volunteer: the list opens on the saved choice, and whatever the dialog shows when you click **Generate** is saved on the schedule. **Leave open** means no default. A position nobody is qualified for says *"Nobody is qualified for this position yet, so it stays open."*
+The first line says how far the run reaches: *"Occurrences are created for events in the next 8 weeks (through Nov 27)."*, or *"Occurrences are created for events through Nov 1, when this schedule ends."* Below it, each position the schedule needs is listed with how many it needs (for example *"Teacher — 1 to 2 needed"*) and **Fill by default with**. These are the schedule's default volunteers, one list per place up to Max, each with its own **Set as Accepted**, as in [the schedule dialog](#staffing-needs-and-default-volunteers). The lists open on the saved choices, and whatever the dialog shows when you click **Generate** is saved on the schedule. **Leave open** leaves that place without a default. A position nobody is qualified for says *"Nobody is qualified for this position yet, so it stays open."*
 
 Click **Generate**. The result appears as a message:
 
 - **Occurrences made**: for example *"8 occurrences created, 0 were already there. 16 volunteers assigned"*.
-- **Nothing new**: *"No new occurrences. All 8 events through Nov 26 already have one."* Running Generate again is always safe: it never makes a second occurrence for the same event, and default volunteers go only on the occurrences that the run makes.
+- **Nothing new**: *"No new occurrences. All 8 events through Nov 27 already have one."* Running Generate again is always safe: it never makes a second occurrence for the same event, and default volunteers go only on the occurrences that the run makes.
 - **No events found**: the dialog stays open with an amber warning in the schedule's own terms, for example *"No events on the calendar use Faith City as their class between Oct 4 and Nov 29."* For a class or a ministry schedule, a coordinator also gets a button such as **New recurring event for Faith City**, which opens [New recurring event](./events-and-calendar.md#new-event-and-new-recurring-event) on the Calendar tab with the class or the title filled in.
 
 A single run makes at most 366 occurrences.
@@ -113,10 +114,13 @@ The **Occurrences** tab of the ministry page lists the dates every schedule prod
 
 | Icon | Meaning |
 |---|---|
-| Green check | Every position is filled and confirmed. |
-| Amber hourglass | Every position is assigned, but someone has not answered yet. |
-| Red triangle | At least one position is still short. The tooltip says how many are still needed. |
+| Green check | Every position has the people it needs (*Full*, *Covered · N more welcome* or *Optional*), and everyone has answered. |
+| Amber hourglass | Every position has the people it needs, but someone has not answered yet. |
+| Red triangle | At least one position is still short. The tooltip says how many more are needed in all and which positions are short, for example *"Needs 3 more"*, *"0 of 3–4"* and *"2 Faith City · Helper, 1 Faith City · Teacher"*. |
+| Grey circle | Nothing is required (every Min is 0) and nobody has signed up yet. |
 | Grey question mark | No staffing needs set, so there is nothing to fill. |
+
+The tooltip uses the same words as the rest of Volunteer Management; see [How staffing reads](./staffing-an-occurrence.md#how-staffing-reads).
 
 - Tick one or more rows and click **Delete** (it reads *Delete (N)*) to remove those occurrences. Their assignments, the volunteers' responses, any substitutions and the queued reminders go with them. The calendar events stay.
 - **Staff an event** staffs a single event that no schedule follows, such as a workday. See [Staff an event](./events-and-calendar.md#staff-an-event). Its occurrence is listed with a **single event** badge.
