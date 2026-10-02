@@ -156,7 +156,7 @@ Places you are trained for that still need someone, plus ministries that are loo
 ![Find something to do](/img/user-guide/member-portal-volunteering-opportunities.png)
 
 - **Ministries looking for help** lists ministries that have said they would like more people. Press **I'd like to help** and the coordinator is told; the page confirms with *"Thanks — the coordinator has been told you'd like to help."*
-- **Upcoming availability** lists scheduled positions that still need someone. **Sign up** puts you on the list — *"You are on the list — thank you."* — and the date appears on **My schedule**. If you are already helping that day in another position, the card says so before you sign up.
+- **Upcoming availability** lists scheduled positions you are trained for that still have room. Each card says how the place stands: *"Needs 1 more"* while the position is short of the people it needs, or *"Covered · 1 more welcome"* when it has enough but would welcome another. **Sign up** puts you on the list — *"You are on the list — thank you."* — and the date appears on **My schedule**. If you are already helping that day in another position, the card says so before you sign up.
 
 With nothing open the page says *"Nothing open right now"* and *"We will email you when something needs filling."*
 
@@ -175,7 +175,7 @@ With nothing open the page says *"Nothing open right now"* and *"We will email y
 | **Positions** | **Add position** — a job someone does on this team, such as Espresso or Song Leader — with a name, description, order, whether it is active, **Recruit Volunteers**, which advertises it on the page where members look for something to help with, and **Self-assignable**, which lets qualified volunteers sign themselves up for its open dates. Switch **Self-assignable** off for a position only you or a coordinator should assign. |
 | **Volunteers** | A grid of your team's people against its positions. Tick who can serve where; *"Ticks save as you make them."* On a team linked to a Sunday School class, a tick also makes that person a teacher of the class. |
 | **Schedules** | **Add schedule** — which calendar events the team serves, at what times, and how many people each position needs. See [Add a schedule](#add-a-schedule) below. |
-| **Dates** | Every date your team serves, soonest first, with how well each is filled. Filter by **Event**, **From** and **To**. Open a date to see its staffing, **Assign a volunteer** (whoever served least recently is listed first) and answer any requests to swap. **Staff an event** staffs a single upcoming calendar event; to staff a whole series, add a schedule instead. |
+| **Dates** | Every date your team serves, soonest first, with an icon for how well each is filled; point at it to read it in words, for example *"Needs 2 more"* or *"Covered · 1 more welcome"*. Filter by **Event**, **From** and **To**. Open a date to see each position's staffing in the same words (*"Needs 1 more"*, *"Full · 2 of 2"*), **Assign a volunteer** (whoever served least recently is listed first) and answer any requests to swap. **Staff an event** staffs a single upcoming calendar event; to staff a whole series, add a schedule instead. |
 
 ![A team's Positions tab](/img/user-guide/member-portal-team-positions.png)
 
@@ -194,7 +194,7 @@ A schedule follows events that are already on the church calendar. It never make
    Only events already on the calendar can be chosen; each choice shows how many dates are coming up. A class with no meetings on the calendar cannot be chosen yet. A team leader cannot add events: ask the ministry's coordinator to add them on the ministry's **Calendar** tab.
 3. Under **Volunteer times**, set when your volunteers start and finish, in minutes before or after the event's start and end — for example, start 15 minutes before the event starts. Leave both at 0 to serve exactly when the event happens.
 4. Optionally limit the schedule with **From** and **Until** dates.
-5. Under **Staffing needs**, tick the positions each date needs, with **Min** and **Max** people for each. Optionally choose a **Default volunteer** for a position: they are put on every new date while they stay qualified for it.
+5. Under **Staffing needs**, tick the positions each date needs, with **Min** and **Max** people for each. Optionally choose **Default volunteers** for a position: there is one list per place, so a position with Max 2 has two, and someone chosen in one list is not offered in the others. Everyone chosen is put on every new date while they stay qualified for it. Tick **Set as Accepted** beside a person who has already agreed, so they are not asked. If you lower **Max** below the number of people chosen, **Save** stops with a message such as *"Helper: Max is 1 but 2 default volunteers are chosen. Remove one or raise Max."*
 6. Press **Save**.
 
 **Save** creates the schedule and its dates straight away, up to your church's scheduling horizon (eight weeks ahead unless your church has changed it). The **Dates** tab opens with the new dates and a message saying how many were made and how many default volunteers were assigned. ChurchCRM adds the next dates by itself every day as the horizon moves on, so you never have to generate the weeks ahead by hand.
@@ -203,8 +203,8 @@ If Save finds no event to staff yet — for example because the schedule's **Fro
 
 The action menu of each schedule offers:
 
-- **Edit** — change the schedule. Editing never makes dates. New staffing needs apply to every date that has not been changed on its own; a new default volunteer goes only on dates made from then on.
-- **Generate occurrences** — make any dates still missing up to the horizon (*"Occurrences are created for events in the next 8 weeks (through …)"*), and choose who to **Fill by default with** for each position. Your choice is saved on the schedule. Dates that already exist are left alone.
+- **Edit** — change the schedule. Editing never makes dates. New staffing needs apply to every date that has not been changed on its own; new default volunteers go only on dates made from then on.
+- **Generate occurrences** — make any dates still missing up to the horizon (*"Occurrences are created for events in the next 8 weeks (through …)"*), and choose who to **Fill by default with** for each position, one list per place up to its Max. Your choices are saved on the schedule. Dates that already exist are left alone.
 - **Deactivate** — pause the schedule: it makes no new dates until you **Reactivate** it.
 - **Delete** — remove the schedule and its dates. A schedule with volunteers assigned on any of its dates cannot be deleted; deactivate it instead.
 
