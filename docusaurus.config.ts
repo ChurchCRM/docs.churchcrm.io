@@ -27,7 +27,7 @@ const config: Config = {
 
   plugins: [
     [localSearch, { hashed: true, language: ['en'], docsRouteBasePath: '/', highlightSearchTermsOnTargetPage: true, explicitSearchResultPath: true }],
-    ['@docusaurus/plugin-google-gtag', { trackingID: 'G-4F7K8Z3T5J' }],
+    ['@docusaurus/plugin-google-gtag', { trackingID: 'G-HDZJHBTJ11' }],
     ['docusaurus-plugin-openapi-docs', {
       id: 'churchcrm-api',
       docsPluginId: 'classic',
