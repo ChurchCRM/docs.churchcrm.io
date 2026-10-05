@@ -47,7 +47,7 @@ To end a series or remove events, tick them (the header box selects every row) a
 | **Description** | Optional, for example the room. |
 | **Class** | Optional. The class becomes the event's Linked Group: its roster is who checks in, and a schedule for the class finds these events. Shown only when the ministry provides teachers for Sunday School. |
 | **Date** | One-time only. Starts on tomorrow. |
-| **Repeats** | Recurring only: **Weekly** on a **Day of the week**, **Monthly** on a **Day of the month** (*"A day a month does not have falls on its last day."*), or **Yearly** on a **Date each year**. |
+| **Repeats** | Recurring only: **Weekly** on a **Day of the week**, **Monthly** on a **Day of the month** (if a month does not have that day, for example the 31st in April, the event falls on that month's last day), or **Yearly** on a **Date each year**. |
 | **First date**, **Last date** | Recurring only. **Last date** starts one year after the first date and moves with it until you change it yourself. It is required: if you clear it, it is put back with the note *"A recurring event needs a last date, so it is back to …"*. |
 | **Start time**, **End time** | The event's times. They start at 9:00 and 10:00. |
 | **Calendars** | The calendars the events go on. The ministry's own calendar is ticked to start with. A coordinator sees only the ministry's own calendar and the church calendars an administrator has opened to the ministry (see [Calendars a ministry may use](#calendars-a-ministry-may-use)). |
@@ -84,7 +84,7 @@ The occurrence appears on the Occurrences tab with a **single event** badge. Del
 
 ## The "Other" event type
 
-ChurchCRM 7.8.0 adds an event type named **Other** when the installation has none. A ministry's new events start with the type chosen in **Admin → Ministry Settings → Default event type for ministry events**. When that setting is not set, or names a type that was deleted or deactivated, the type named "Other" is used. The type can still be changed for each event.
+ChurchCRM 7.8.0 adds an event type named **Other** when the installation has none. A ministry's new events start with the type chosen in **Admin → Ministry Settings → Default event type for ministry events**. When that setting is not set, or names a type that was deleted or deactivated, the active type named "Other" is used. If there is no active type named "Other" either, no type is chosen in advance and you choose one for each event. The type can still be changed for each event.
 
 ## Calendars a ministry may use
 
