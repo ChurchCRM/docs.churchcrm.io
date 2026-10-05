@@ -36,7 +36,7 @@ Configure basic church details that appear throughout ChurchCRM.
 | **Email** | Primary contact email |  |
 | **Website** | Church website URL |  |
 | **Logo URL** | HTTPS URL for logo in emails (3.5:1 aspect ratio recommended) |  |
-| **Social media links** | Optional `https://` addresses of the church's X, YouTube, Facebook and Instagram accounts. Shown as icons in the Display Preview and on member-facing pages such as the Member Portal footer; blank hides the network. See [Church Information](../getting-started/first-run.md#social-media). |  |
+| **Social media links** | Optional `https://` addresses of the church's X, YouTube, Facebook and Instagram accounts, set in the **Social Media** card. At present they are shown only as icons in the page's Display Preview; leave a field blank to hide that network. See [Church Information](../getting-started/first-run.md#social-media). |  |
 
 :::note
 Church name is **required** and will be requested on first setup. Many features require this to be configured.

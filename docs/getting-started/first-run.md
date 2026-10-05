@@ -19,11 +19,11 @@ After your password is set, you are automatically redirected to **Admin → Chur
 
 ## Church Information Page
 
-The Church Information page is organized into three tabs.
+The Church Information page is one form made of several cards, one below the other. Fill them in and click **Save Church Information** at the bottom of the page to save them all at once.
 
-### Basic Information tab
+### Church Identity and Contact Information
 
-This tab covers your church's identity and contact details.
+The **Church Identity** card holds the church name and website; the **Contact Information** card holds the phone number and email address.
 
 | Field | Required | Notes |
 |-------|----------|-------|
@@ -31,26 +31,26 @@ This tab covers your church's identity and contact details.
 | **Website** | No | Full URL, e.g. `https://yourchurch.org` |
 | **Phone Number** | ✅ Yes | Main contact number |
 | **Email Address** | ✅ Yes | Main contact email |
-| **Language** | No | Controls date formats, phone formats, and UI language |
-| **Time Zone** | No | Used for scheduling events and reporting times |
 
-### Location & Map tab
+Language and time zone are not on this page; they are under **Admin → Localization & Formats** (see [Localization & Formats](../administration/localization.md)).
 
-This tab covers your church's physical address.
+### Location
+
+This card covers your church's physical address.
 
 | Field | Required | Notes |
 |-------|----------|-------|
 | **Street Address** | ✅ Yes | |
 | **City** | ✅ Yes | |
-| **State / Province** | ✅ Yes | Populated dynamically based on selected country |
-| **Zip / Postal Code** | ✅ Yes | |
+| **State** | ✅ Yes | Populated dynamically based on selected country |
+| **Zip Code** | ✅ Yes | |
 | **Country** | ✅ Yes | |
 
-After saving an address, a **Leaflet map** appears showing your geocoded location. Coordinates are detected automatically — no manual entry required. The map updates on every save.
+Under **Map Coordinates**, click **Generate Coordinates** to look up the latitude and longitude from the address, or type them in yourself. If both are blank when you save, ChurchCRM looks them up from the address. Once coordinates are saved, a map shows the church's location. Saving does not look up the address again while coordinates are filled in: if you change the address, the card warns that it has changed since the coordinates were set, so click **Generate Coordinates** before you save.
 
 ### Social Media
 
-Optional links to the church's own accounts on **X**, **YouTube**, **Facebook** and **Instagram**. Leave a field blank to hide that network; nothing is shown for a network you have not set.
+Optional links to the church's own accounts on **X**, **YouTube**, **Facebook** and **Instagram**. Leave a field blank to hide that network.
 
 ![Social Media card on the Church Information page, with the four links filled in](/img/getting-started/church-info-social-media.png)
 
@@ -61,15 +61,15 @@ Optional links to the church's own accounts on **X**, **YouTube**, **Facebook** 
 | **Facebook** | No | Full address, e.g. `https://facebook.com/yourchurch` |
 | **Instagram** | No | Full address, e.g. `https://instagram.com/yourchurch` |
 
-Each value must be a full `https://` web address. A plain `http://` link, a bare handle such as `@yourchurch`, or anything that is not a web address is rejected with a message naming the field, and what you typed stays on the form so you can correct it.
+Each value must be a full `https://` web address. A plain `http://` link, a bare handle such as `@yourchurch`, or anything that is not a web address is rejected with a message naming the network, for example "X must be a full https:// web address". Nothing on the page is saved until you fix it, and what you typed stays on the form so you can correct it.
 
 :::note
-These links are stored with the other church identity settings and are edited only here; they do not appear on the **System Settings** page. Pages ChurchCRM shows to members, such as the Member Portal footer, can display the icons for the networks you set.
+These links are stored with the other church identity settings and are edited only here; they do not appear on the **System Settings** page. The card says they are shown to members on pages such as the portal footer; at present the only place ChurchCRM shows them is the Display Preview below.
 :::
 
-### Display Preview tab
+### Display Preview
 
-This tab shows a live preview of how your church information will appear on reports and printed directories. It updates as you fill in the other tabs. Use it to confirm the address block looks correct before saving. Each social media link you set appears as a clickable brand icon under the website line, in the order X, YouTube, Facebook, Instagram.
+This card shows how your church information will appear on reports and printed directories. The name, address and contact lines update as you type. Use it to confirm the address block looks correct before saving. Below them, each saved social media link appears as a clickable brand icon, in the order X, YouTube, Facebook, Instagram; the icons change when you save, not as you type.
 
 ---
 
