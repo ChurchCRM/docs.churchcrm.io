@@ -60,22 +60,22 @@ Administrators can control whether deceased people appear in printed directories
 
 ## Timeline Filters
 
-The **Person View** includes a **Timeline** tab that shows notes, attendance records, and activity in chronological order. Use the filter controls to narrow the timeline by:
+The **Person View** includes a **Timeline** tab that shows notes, attendance records, and activity in chronological order, grouped by year. The chips above it narrow the timeline by type:
 
-- **Type** — Notes, Events, Emails, System, or all of them
-- **Date range** — Show entries from a specific period
+- **Notes**, **Events**, **Emails**, and **System** — each chip shows how many entries it holds. Click chips to turn them on or off; several can be on at once. **Notes** is on when the page opens.
+- **Show all** — shows every entry.
 
-This makes it easier to review pastoral care history or attendance patterns for a specific member without scrolling through unrelated entries.
+The filters make it easier to review pastoral care history or attendance patterns for a specific member without scrolling through unrelated entries.
 
 ![Timeline filter chips: Notes, Events, Emails, System](/img/user-guide/email-history-timeline-filter.png)
 
-The **Emails** chip shows every email ChurchCRM has sent to this person in the timeline, alongside notes and attendance. See [Email History](#email-history) below.
+The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside notes and attendance. See [Email History](#email-history) below.
 
 ---
 
 ## Email History
 
-As of **7.8.0**, ChurchCRM keeps a record of every email it sends to a person: messages written in the [email composer](/user-guide/email), birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and the SMTP test. Anyone who can open the person can see it.
+As of **7.8.0**, ChurchCRM keeps a record of every email it sends. A person's history holds the emails addressed to them: messages written in the [email composer](/user-guide/email), birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and volunteer emails from Volunteer Management v2. Anyone who can open the person can see it.
 
 ### Recent Emails card
 
@@ -86,7 +86,7 @@ The **Recent Emails** card on the Person View lists the five latest emails to th
 | **Date** | When the email was sent |
 | **Type** | What kind of email it was: Message (written in the composer), Birthday greeting, Family verification, Password reset link, New account, Notification, and so on |
 | **Subject** | The subject line; click it to open the email |
-| **Status** | **Sent**, **Failed** (the mail server refused it; hover over the badge for the error), or **Skipped** (email sending was disabled at the time) |
+| **Status** | **Sent**, **Failed** (the mail server refused it; hover over the badge for the error), or **Skipped** (email sending was turned off, or no mail server was set up, at the time) |
 | **Sent by** | The user who wrote it, or **Automatic** for emails ChurchCRM sent on its own |
 
 ![Recent Emails card on the Person View](/img/user-guide/email-history-recent-emails-card.png)
@@ -99,7 +99,7 @@ Click a subject to see the email as it was sent, with the recipient address, dat
 
 ![An email opened from the history, shown as it was sent](/img/user-guide/email-history-modal.png)
 
-The full content is kept only for messages written in the composer. Account emails contain a password or a one-time link, so ChurchCRM stores their subject and date only; opening one shows **The content of this email is not stored** instead of the message.
+ChurchCRM keeps the full content of messages written in the composer and of volunteer emails. For every other email it stores the subject, date, and status only, because many of them (account emails, password reset links) contain a password or a one-time link. Opening one shows **The content of this email is not stored** instead of the message.
 
 ![An account email in the history: the content is not stored](/img/user-guide/email-history-modal-not-stored.png)
 
@@ -110,7 +110,7 @@ Click **Show all** at the bottom of the card to open the person's complete email
 ![The full Email History page for a person](/img/user-guide/email-history-show-all.png)
 
 :::note
-Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. Administrators can see every email across everyone on the [Email dashboard](/user-guide/email#email-history-and-the-email-dashboard).
+Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. An email sent to the family's own address (for example from the Family View) is recorded against the family, not a person, so it appears on nobody's card. Administrators see the most recent emails to everyone, family addresses included, on the [Email dashboard](/user-guide/email#email-history-and-the-email-dashboard).
 :::
 
 ---

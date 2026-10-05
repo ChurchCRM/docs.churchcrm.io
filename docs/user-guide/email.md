@@ -50,28 +50,19 @@ As of **7.5.0**, ChurchCRM includes an in-app email composer that replaces the o
 
 ### Subscribing Families to Newsletters
 
-1. Open a [Family](Families) record.
+1. Open a [Family](./families.md) record.
 2. Enable the **Newsletter** option.
 3. Use Mailchimp's audience sync to import subscribers.
 
 ---
 
-## Best Practices
-
-- Always get consent before adding someone to an email list.
-- Use Mailchimp for newsletters and large announcements.
-- Use the in-app composer for ad-hoc group and cart emails.
-- Keep your [Classifications](Classifications) updated to target the right audiences.
-
----
-
 ## Email history and the Email dashboard
 
-As of **7.8.0**, ChurchCRM keeps a record of every email it sends: messages written in the composer, birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and the SMTP test. Each person's history is shown on their Person View; see [Email History](/user-guide/persons#email-history).
+As of **7.8.0**, ChurchCRM keeps a record of every email it sends, including messages written in the composer, birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, volunteer emails, and the SMTP test. Each person's history is shown on their Person View; see [Email History](/user-guide/persons#email-history).
 
 ### Recent Sends (administrators)
 
-Administrators also see a **Recent Sends** panel at the bottom of the Email dashboard (**Communication → Email** in the left navigation). It lists every email ChurchCRM has sent to anyone, newest first, with the recipient address, the status, and who sent it (a user, or **Automatic**). The badge next to the title is the total number of emails on record; a red **failed** badge next to it counts the emails the mail server refused.
+Administrators also see a **Recent Sends** panel at the bottom of the Email dashboard (**Communication → Email** in the left navigation). It lists the 20 most recent emails ChurchCRM sent to anyone, newest first, with the date, type, subject, recipient address, status, and who sent it (a user, or **Automatic**). The badge next to the title is the total number of emails on record; a red **failed** badge next to it counts the emails the mail server refused.
 
 ![Recent Sends panel on the Email dashboard](/img/user-guide/email-dashboard-recent-sends.png)
 
@@ -79,10 +70,19 @@ This is the first place to look when somebody says "nobody got the email":
 
 - If the message is listed as **Sent**, ChurchCRM handed it to the mail server; ask the recipient to check their spam folder.
 - If it is **Failed**, hover over the badge to read the mail server's error, then check the [email settings](/administration/email-setup).
-- If it is **Skipped**, email sending was disabled when the message was written; enable it and send again.
-- If it is not listed at all, the person was not emailed. Open the composer result again, or the person's history, to see why they were left out.
+- If it is **Skipped**, email sending was turned off, or no mail server was set up, when the message was sent; fix the [email settings](/administration/email-setup) and send again.
+- If it is not listed at all, ChurchCRM never tried to send it. A person the composer left out (no email address, do not email, deceased, or the same address as another recipient) was named under **Not sent** in the composer's result banner and leaves no entry in the history. The panel shows only the latest 20 emails, so for an older one open the person's history.
 
 Click a subject to open the email as it was sent, or open a person to see their full history. The panel is visible to administrators only; other users see the history of the people they can open.
+
+---
+
+## Best Practices
+
+- Always get consent before adding someone to an email list.
+- Use Mailchimp for newsletters and large announcements.
+- Use the in-app composer for ad-hoc messages to a person, a family, a group, or the cart.
+- Keep your [Classifications](./classifications.md) updated to target the right audiences.
 
 ---
 
