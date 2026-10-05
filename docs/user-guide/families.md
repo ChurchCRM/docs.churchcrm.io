@@ -13,6 +13,8 @@ A Family is a group of Person records. Person records are grouped into Families 
 
 Every Person should belong to a family.
 
+![Family overview in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/people-family-overview.png)
+
 ---
 
 ## Step-by-step: Adding a Family
@@ -52,6 +54,14 @@ Person and Family profiles have been consolidated. Notes that previously appeare
 ## Timeline Filters
 
 Family View includes a **Timeline** tab with type and date filters, making it easy to review family history, pastoral notes, and attendance in one place.
+
+---
+
+## Pledges & Payments fiscal-year filter
+
+The finance section on a Family profile defaults to the **current fiscal year**. Use the fiscal-year pills to switch to a historical fiscal year for which that family has financial data, or select **All Time** to view the family's complete pledge and payment history.
+
+The selected fiscal year is applied by the server, so the totals and records shown are scoped to that fiscal year rather than simply hiding rows in the browser. Your church's fiscal-year start month is configured under **Admin → System Settings → Finance**.
 
 ---
 
