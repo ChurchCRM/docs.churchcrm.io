@@ -87,7 +87,7 @@ Churches periodically ask households to check what is on file. **Confirm your fa
 
 ### Add a family member
 
-An adult of the household can also press **Add a family member**. It opens a short form — first name, last name, role and an optional birthday — and sends it to the church office with **Send to the church office**. As the dialog says, *nobody is added to the church records until a member of staff has looked at it.* The church office sees the request among the registrations waiting for review and approves it there.
+An adult of the household can also press **Add a family member**. It opens a short form — first name, last name, role and an optional birthday — and sends it to the church office with **Send to the church office**. As the dialog says, *"This goes to the church office for review. Until a member of staff approves it, the new family member shows here as waiting for review."* The new person appears under **Family Members** — and on **Confirm your family details** — with a **Waiting for review** badge. The church office sees the request among the registrations waiting for review and approves it there; from then on the badge is gone.
 
 ---
 
@@ -210,7 +210,7 @@ The action menu of each schedule offers:
 
 - **Edit** — change the schedule. Editing never makes dates. New staffing needs apply to every date that has not been changed on its own; new default volunteers go only on dates made from then on.
 - **Generate occurrences** — make any dates still missing up to the horizon (*"Occurrences are created for events in the next 8 weeks (through …)"*), and choose who to **Fill by default with** for each position, one list per place up to its Max. Your choices are saved on the schedule. Dates that already exist are left alone.
-- **Deactivate** — pause the schedule: it makes no new dates until you **Reactivate** it.
+- **Deactivate** — pause the schedule: it makes no new dates until you **Reactivate** it. A paused schedule's menu does not offer **Generate occurrences**.
 - **Delete** — remove the schedule and its dates. A schedule with volunteers assigned on any of its dates cannot be deleted; deactivate it instead.
 
 A team leader works on their own team only. Adding people to the ministry's pool, renaming or deleting teams, creating calendar events, and ministry-wide settings such as **Help Wanted** belong to the ministry's coordinator in the office side of ChurchCRM. Opening a team you do not lead shows *"You cannot open this page"*.
