@@ -90,7 +90,7 @@ Nothing. A masquerade is not a login for that user:
 While you are masquerading, anything you save is recorded under the other user's name — edits, notes, deposits, sent email. Look; do not change things you would not change while logged in as them.
 :::
 
-Both the start and the end of every masquerade are written to the authentication log with both user IDs (`Masquerade started: admin 1 (…) as user 3 (…)` and `Masquerade ended: admin 1 back from user 3`), so it is always possible to tell who really performed an action. These lines are written at the **INFO** log level, the default; raising the log level to **WARNING** or higher leaves them out. See [Logging and Diagnostics](./logging-and-diagnostics.md) for where the `yyyy-mm-dd-auth.log` file lives and how to change the log level.
+Both the start and the end of every masquerade are written to the authentication log with both user IDs (`Masquerade started: admin 1 (…) as user 3 (…)` and `Masquerade ended: admin 1 back from user 3`). These lines are written at the **INFO** log level, the default. While the log level is **INFO** or **DEBUG**, the log shows which administrator was really acting during a masquerade. Raising the log level to **WARNING** or higher leaves these lines out, and the log then cannot tell a masquerade from the user's own session. See [Logging and Diagnostics](./logging-and-diagnostics.md) for where the `yyyy-mm-dd-auth.log` file lives and how to change the log level.
 
 ## What is the default password assigned to new Users?
 
