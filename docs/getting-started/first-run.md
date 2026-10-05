@@ -69,7 +69,7 @@ These links are stored with the other church identity settings and are edited on
 
 ### Display Preview
 
-This card shows how your church information will appear on reports and printed directories. The name, address and contact lines update as you type. Use it to confirm the address block looks correct before saving. Below them, each saved social media link appears as a clickable brand icon, in the order X, YouTube, Facebook, Instagram; the icons change when you save, not as you type.
+This card shows how your church information will appear on reports and printed directories. The name, address and contact lines update as you type. Use it to confirm the address block looks correct before saving. Below them, each saved social media link appears as a clickable brand icon, in the order X, YouTube, Facebook, Instagram; the icons change when you save, not as you type. When no social media link is saved, the row of icons is hidden.
 
 ---
 
