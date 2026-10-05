@@ -14,9 +14,9 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 | Type | Purpose |
 |------|--------|
 | **Reports** | Pre-formatted documents ready for printing (directories, labels, letters) |
-| **Queries** | Database searches that return lists of [people](Persons) or [families](Families) |
+| **Queries** | Database searches that return lists of [people](./persons.md) or [families](./families.md) |
 
-> **Tip:** Many query results can be added to the [Cart](Cart) for further processing.
+> **Tip:** Many query results can be added to the [Cart](./cart.md) for further processing.
 
 ---
 
@@ -34,27 +34,33 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 - **Birthdays & Anniversaries** - Combined view of birthdays and wedding anniversaries for a specific month
 - **Family Member Count** - Families with their member totals
 - **Person by Age** - People within a specified age range
-- **Person by Properties** - People with specific [properties](Properties) assigned
+- **Person by Properties** - People with specific [properties](./properties.md) assigned
 - **Person by Role and Gender** - Filter by family role and gender
 - **Person Count** - Total counts by various criteria
 - **Total By Gender** - Gender statistics
 
 ### Group Reports
 - **Reports on Groups and Roles** - Group membership details
-- **Class Students** - Students in a specific [Sunday School](Sunday-School) class
+- **Class Students** - Students in a specific [Sunday School](./sunday-school.md) class
 - **Class Teachers** - Teachers for a specific class
 - **Registered Students** - All enrolled students
 
 ### Other Reports
 
-- [Financial Reports](Finances): Pledges and Payments
+- [Financial Reports](./finances.md): Pledges and Payments
 - Pledge comparison: Compare pledges between two fiscal years
 
 ---
 
 ## Church Directory Report
 
-**Data & Reports → Directory Reports** builds a printable PDF directory of your families. Choose which families to include (active only, by classification, by group membership), which family roles count as head of household, spouse and child, and which details to print under **Information to Include**. Then pick the page layout, columns, paper size and font size, optionally add a title page and disclaimer, and click **Create Directory**.
+**Reports → People Reports → People Directory** opens the **Directory reports** form, which builds a printable PDF directory of your families. The **Reports** card on the People dashboard links to the same form. Choose which families to include (**Exclude Inactive Families**, classifications, group membership), which family roles count as head of household, spouse and child, and which details to print under **Information to Include**. Then pick the page layout, columns, paper size and font size, optionally add a title page and disclaimer, and click **Create Directory**.
+
+### Who is included
+
+- Select at least one classification under **Select classifications to include**. The form will not run with none selected. The classifications ticked **In Directory** under **People → Admin → Person Classifications** are selected when the form opens.
+- People who signed up through the public registration form are left out until they are approved under **People → Self Registrations**.
+- For a directory of only the people in the [Cart](./cart.md), click **Directory** in the Cart Functions bar. That form has no classification or group filters: the Cart decides who is printed.
 
 ### Page Layout
 
@@ -62,7 +68,7 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 
 | Layout | What you get |
 |--------|--------------|
-| **Single Pages** (default) | One portrait directory page per sheet, as before. |
+| **Single Pages** (default) | One portrait directory page per sheet. |
 | **Folded Booklet** | Two half-size pages side by side on each landscape sheet, arranged in booklet order and padded to a multiple of four pages, so the printed stack folds into a booklet. Letter paper gives 5.5 × 8.5 in pages, A4 gives A5 pages, Legal gives 7 × 8.5 in pages. |
 
 **Columns per Page** (previously _Number of Columns_) is counted per directory page. In the booklet layout a page is one half of the sheet, so **2 cols** shows four columns across an open booklet. For a small booklet, **1 col** is often the easiest to read.
@@ -149,7 +155,7 @@ A Free-Text Query allows you to run any query on the database. Since ChurchCRM i
 
 ## What is a Cart-Enabled Query?
 
-A [Cart](Cart)-Enabled Query is one in which the results of the query can be entered into the cart.
+A [Cart](./cart.md)-Enabled Query is one in which the results of the query can be entered into the cart.
 
 ## How do I use Cart-Enabled Queries?
 
