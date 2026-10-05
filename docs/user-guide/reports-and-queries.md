@@ -31,11 +31,13 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 
 The labels and mailed letters listed below are addressed to the family's **mailing address**: the family's second address when it is ticked as _This is the mailing address_, and the primary address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). Families with no second address, or whose second address is not ticked, print their primary address on them, exactly as before.
 
-- **Newsletter labels** and **Confirm data labels** (**Data & Reports → Letters and Labels**) print the mailing address. Labels are still ordered by ZIP code for presorting, using the ZIP code that is actually printed.
-- Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
-- **Church Directory** (**Data & Reports → Directory Reports**): under _Information to Include_, the **Primary Address** option (previously called _Address_; still on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print the flagged mailing address beneath it, under a "Mailing Address:" label. Families whose mail goes to their primary address print exactly as before.
+The **Letters & Mailing Labels** and **People Directory** pages are linked from the **Reports** card on **People → Dashboard** and, for administrators, from **Reports → People Reports**.
 
-Not affected: the [Cart](./cart.md)'s **Generate Labels**, which prints each person's own address, and envelopes, which carry no address.
+- **Newsletter labels** and **Confirm data labels** (**Letters & Mailing Labels**) print the mailing address. Labels are still ordered by ZIP code for presorting, using the ZIP code that is actually printed.
+- Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. Confirmation letters and tax statements sent by email use the same address. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
+- **People Directory**: under _Information to Include_, the **Primary Address** option (previously called _Address_; still on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print a family's flagged mailing address beneath it, under a "Mailing Address:" label, when it differs from the primary address. The option can only be ticked while **Primary Address** is ticked. Families whose mail goes to their primary address print exactly as before.
+
+Not affected: the [Cart](./cart.md)'s **Generate Labels**, which prints each person's own address (or the family's primary address when the person has none), and envelopes, which carry no address.
 
 ### Membership Reports
 - **Birthdays** - Members with birthdays in a specific month

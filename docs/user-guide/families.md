@@ -61,8 +61,8 @@ A family can also record an optional **second address** with the same fields (Ad
 
 1. Open the family and click **Edit** in the toolbar above the family members.
 2. Below the address fields, click **Second Address (optional)** to expand the section. It is collapsed on families that have no second address.
-3. Enter the address.
-4. Tick **This is the mailing address** if mail should go here. The checkbox is greyed out until you have entered at least an address line or a city, and the record will not save with the box ticked on an empty second address (_"Enter a second address before marking it as the mailing address"_).
+3. Enter the address. The family has a second address once **Address 1** or **City** is filled in.
+4. Tick **This is the mailing address** if mail should go here. The checkbox is greyed out until **Address 1** or **City** has a value, and the record will not save with the box ticked on an empty second address (_"Enter a second address before marking it as the mailing address"_).
 5. Click **Save**.
 
 ![Family editor: the Second Address section with "This is the mailing address" ticked](/img/user-guide/family-editor-second-address.png)
@@ -80,17 +80,17 @@ The map, the geocoding badge, **Get Directions** and **Find Neighbors** stay on 
 
 ![Family view: the Primary Address card and the Mailing Address card](/img/user-guide/family-view-mailing-address.png)
 
-Each person's page shows the address they inherit from their family. When the family has a mailing address that differs from the primary address, it is listed beneath it as **Mailing Address**, so it is clear where that person's mail goes.
+Each person's page shows their address: their own, or the one they inherit from their family. When the family has a mailing address that differs from the primary address, it is listed beneath it as **Mailing Address**, so it is clear where that person's mail goes.
 
 ### Where the mailing address is used
 
 The family's mailing address is the flagged second address when there is one, and the primary address otherwise. It is used here:
 
 - **Newsletter labels**, **Confirm data labels** and mailed letters such as confirmation letters, tax statements and reminder letters are addressed to it. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
-- The **Church Directory** report can print the mailing address beneath the primary address; see the same section.
-- The [CSV export](./export.md#second-address-columns) can include the second address and the mailing flag, and the [CSV import](./data-import.md#contact-information) can load them.
+- The **People Directory** report can print the mailing address beneath the primary address; see the same section.
+- The [CSV export](./export.md#second-address-columns) can include the second address and the mailing flag, and the [CSV import](./data-import.md#second-address-columns) can load them.
 
-The [Cart](./cart.md)'s **Generate Labels** is not affected: it prints each person's own address, as it always has. Family maps and geocoding always use the family's primary address, never the second address. A person with an address of their own is still mapped and geocoded at that address, as before.
+The [Cart](./cart.md)'s **Generate Labels** is not affected: it prints each person's own address, or the family's primary address when the person has none, as it always has. Family maps and geocoding always use the family's primary address, never the second address. A person with an address of their own is still mapped and geocoded at that address, as before.
 
 :::note
 A person's own address override (someone who lives somewhere other than the rest of the family) works exactly as before. The second address belongs to the whole family; it is not a per-person setting.
