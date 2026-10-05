@@ -32,7 +32,7 @@ ChurchCRM sends transactional email for specific events. Email delivery requires
 | Password reset requested | The user | Contains a reset link |
 | Kiosk parent alert | Parent email on record | Sent when a child is checked out (if configured) |
 | Event reminder | Event attendees | Must be triggered manually from the Events page |
-| Volunteer scheduling and reminders | Volunteers and ministry coordinators | Only with [Volunteer Management (v2)](/user-guide/ministries) on. Queued when the action happens and delivered by the background jobs — see below |
+| Volunteer scheduling and reminders | Volunteers, team leaders and ministry coordinators | Sent by [Volunteer Management (v2)](/user-guide/ministries). Queued when the action happens and delivered by the background jobs — see below |
 
 ### Volunteer email needs the background jobs
 

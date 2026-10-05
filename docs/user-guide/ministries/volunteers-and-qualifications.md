@@ -23,6 +23,7 @@ People arrive in the pool in several ways:
 
 - **Add Volunteer** on the Volunteers tab — the standard person search, then **Add**.
 - **Add from Cart** — everyone in the [Cart](../cart.md) joins in one step (*"Everyone in the cart joins this ministry's volunteers. Tick their positions afterwards."*).
+- Being qualified for one of the ministry's positions: a tick in the grid also adds the person to the pool, and so does bringing in a class's teachers when a team is [linked to a Sunday School class](./ministries-teams-positions.md#linking-a-team-to-a-sunday-school-class).
 - Being made a **coordinator** of the ministry or a **leader** of one of its teams.
 - Offering to help from the Member Portal's Open Opportunities page.
 - Being added to the Group under **Groups**.
@@ -37,7 +38,7 @@ The grid shows people down the side and the selected team's positions across the
 - Untick to take a qualification away. The history of what that person served is kept.
 - Only **active** positions have a column. Deactivating a position hides its column; reactivating it brings the ticks back.
 
-The rows are the pool **plus** anyone qualified for a position in view who is not in the pool — those rows carry a **Not in the pool** hint. Qualifying someone outside the pool is allowed; they are offered in the staffing picker under *"Not in the pool"*.
+The rows are the pool **plus** anyone still qualified for a position in view who has since been taken out of the pool Group, for example under **Groups**. Those rows carry a **Not in the pool** hint. They can still be assigned, and the staffing picker lists them under *"Not in the pool"*.
 
 For a team [linked to a Sunday School class](./ministries-teams-positions.md#linking-a-team-to-a-sunday-school-class), a tick also makes the person a **Teacher** of the class, and taking away their last tick in that team removes the Teacher role.
 

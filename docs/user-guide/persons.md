@@ -134,11 +134,11 @@ Filters above the table are **Event Type**, **From**, and **To**. **Clear** rese
 
 ## Volunteer tab
 
-With [Volunteer Management (v2)](./ministries/index.md) switched on, the Person View has a **Volunteer** tab in two columns: **Qualified for** (each position, with a link to its ministry) and **Serving next** (each upcoming date with an **Accepted** or **Awaiting reply** badge, linking to the occurrence's staffing view). A person with no volunteer history shows *"Not volunteering yet"*. The tab is read-only; qualifications are ticked on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md) and assignments are made on the [staffing view](./ministries/staffing-an-occurrence.md).
+With [Volunteer Management (v2)](./ministries/index.md) switched on, the Person View has a **Volunteer** tab in two columns: **Qualified for** (each position, with a link to its ministry) and **Serving next** (each upcoming date with an **Accepted** or **Awaiting reply** badge, linking to the occurrence's staffing view). A person with no qualification and no upcoming date shows *"Not volunteering yet"*. The tab is read-only; qualifications are ticked on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md) and assignments are made on the [staffing view](./ministries/staffing-an-occurrence.md).
 
 ![The Volunteer tab on a person record](/img/user-guide/ministries/person-volunteer-tab.png)
 
-When the volunteer experience is **Both**, the legacy opportunities list appears on a second tab labelled **Volunteer (Legacy)** so it is always obvious which one you are looking at.
+When the volunteer experience is **Both**, the legacy opportunities list appears on its own tab, **Volunteer (Legacy)**, just before the **Volunteer** tab, so it is always obvious which one you are looking at.
 
 ---
 

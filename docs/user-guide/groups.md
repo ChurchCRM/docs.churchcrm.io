@@ -79,7 +79,7 @@ When [Volunteer Management (v2)](./ministries/index.md) is on, every ministry cr
 A Sunday School class whose teachers come from a ministry team says so on its group page, and its **Teacher** role can then be changed only from the ministry. See [Linking a team to a Sunday School class](./ministries/ministries-teams-positions.md#linking-a-team-to-a-sunday-school-class).
 
 :::note The "Ministry" group type is not a v2 ministry
-A Group whose **type** is "Ministry" is just a group with that label. A v2 ministry is created from **Ministries → Dashboard → New ministry**, uses positions rather than group roles, and is where schedules, assignments and reminders live.
+Every pool Group has the type "Ministry", but giving a Group that type does not make it a v2 ministry: it is just a group with that label. A v2 ministry is created from **Ministries → Dashboard → New ministry**, uses positions rather than group roles, and is where schedules, assignments and reminders live.
 :::
 
 ## Common Uses for Groups

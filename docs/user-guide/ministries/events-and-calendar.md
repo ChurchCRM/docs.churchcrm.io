@@ -18,7 +18,7 @@ After you create events on the Calendar tab, the page asks whether to staff them
 
 ## The Calendar tab
 
-The **Calendar** tab of the [ministry page](./ministries-teams-positions.md) lists the events this ministry owns, the soonest first. Turn on **Show past events** to see the last year's events instead, the newest first.
+The **Calendar** tab of the [ministry page](./ministries-teams-positions.md) lists the events this ministry owns from today to a year ahead, the soonest first. Turn on **Show past events** to see the last year's events instead, the newest first.
 
 ![The Calendar tab](/img/user-guide/ministries/ministry-calendar.png)
 
@@ -28,11 +28,11 @@ The **Calendar** tab of the [ministry page](./ministries-teams-positions.md) lis
 | **Event** | The title, linked to the event's page, with its event type underneath and an *Inactive* badge when the event is inactive. |
 | **Calendars** | The calendars the event is on. |
 | **Class** | The Sunday School class that is the event's Linked Group, if any. |
-| **Staffing** | One badge per team of this ministry that staffs the event, for example *"Faith City: Needs 2 more"* or *"Faith City: Covered · 1 more welcome"*: red while a position is short, yellow while someone has not answered, green when every position has its people and everyone has answered, grey when nothing is required. The tooltip gives the numbers, for example *"1 of 3–4"*. Each badge opens that occurrence. *Not staffed* when no team staffs it. A past event also shows its headcount, for example *"Headcount: 42"* or *"No headcount recorded yet"*. |
+| **Staffing** | One badge per team of this ministry that staffs the event, for example *"Faith City: Needs 2 more"* or *"Faith City: Covered · 1 more welcome"*: red while a position is short, yellow while someone has not answered, green when every position has its people and everyone has answered, grey while nothing is required and nobody has signed up. A team whose occurrence has no staffing needs reads *"Faith City: no staffing needs set"*, also grey. The tooltip gives the numbers, for example *"1 of 3–4"*. A badge opens the team's occurrence on that event; when the team staffs the event twice (a schedule and a single event), the badge adds both up and opens the first. *Not staffed* when no team staffs it. A past event also shows its headcount, for example *"Headcount: 42"* or *"No headcount recorded yet"*. |
 
 The action menu of a row offers **Staff this event** (for an upcoming, active event: the [Staff an event](#staff-an-event) dialog with the event already chosen), **Edit event**, which opens the church event editor, and **View event**.
 
-To end a series or remove events, tick them (the header box selects every row) and click **Delete events (N)**. The confirmation explains that the events leave every calendar, with their check-ins and headcounts, and that the ministry's occurrences for them keep only their dates. If another ministry has volunteers assigned to one of the events, the confirmation names that ministry, and the delete is refused unless you may manage the church calendar (the **Add Events** permission). The **Delete** on the Occurrences tab, by contrast, removes only the staffing and never the event.
+To end a series or remove events, tick them (the header box selects every row) and click **Delete events (N)**. The confirmation explains that the events leave every calendar, with their check-ins and headcounts, and that the ministry's occurrences for them keep only their dates. If another ministry has volunteers assigned to one of the events, the confirmation names that ministry, and the delete is refused unless you may manage the church calendar (the **Add Events** permission). Nothing is deleted while people are still checked in to one of the events or a kiosk is assigned to it; the message names the event. The **Delete** on the Occurrences tab, by contrast, removes only the staffing and never the event.
 
 ## New event and New recurring event
 
@@ -100,15 +100,15 @@ The [occurrence page](./staffing-an-occurrence.md#headcount) shows the event's *
 
 ## The Volunteer Ministry field on an event
 
-In the church event editor (and in the calendar's side-panel editor), under **Show more options**, a **Volunteer Ministry** dropdown sits directly beneath **Linked Group**: *"Lets that ministry's coordinators schedule volunteers for this event — and edit the event itself."* It lists the ministries the editor may manage, with **No ministry** first. Events created on a ministry's Calendar tab already have it set.
+In the church event editor (and in the event dialog the Calendar page opens), under **Show more options**, a **Volunteer Ministry** dropdown sits directly beneath **Linked Group**: *"Lets that ministry's coordinators schedule volunteers for this event — and edit the event itself."* It lists the active ministries the user may manage, with **No ministry** first, and is hidden for a user who may manage none. Events created on a ministry's Calendar tab already have it set.
 
 ## The Volunteers card on the event view
 
-An event with volunteer occurrences shows a **Volunteers** card on its detail page: the ministry, the schedule, the numbers (for example *"3 assigned, 3 needed, room for 1 more"*) and a badge in the same words as the ministry pages (*"Needs 2 more"*, *"Covered · 1 more welcome"*, *"Full"*, *"Optional"*, or **No staffing needs set**; see [How staffing reads](./staffing-an-occurrence.md#how-staffing-reads)), with a **Manage staffing** link to the [staffing view](./staffing-an-occurrence.md). An event that no team staffs shows no card.
+An event with volunteer occurrences shows a **Volunteers** card on its detail page to anyone who may manage one of those occurrences: the ministry, the schedule, the numbers (for example *"3 assigned, 3 needed, room for 1 more"*) and a badge in the same words as the ministry pages (*"Needs 2 more"*, *"Covered · 1 more welcome"*, *"Full"*, *"Optional"*, or **No staffing needs set**; see [How staffing reads](./staffing-an-occurrence.md#how-staffing-reads)), with a **Manage staffing** link to the [staffing view](./staffing-an-occurrence.md). An event that no team staffs shows no card.
 
 ## Coordinators and events
 
-Normally only users with **Add Events** may create and edit events. A ministry coordinator (or a Manage Ministries user) without that permission may still create, edit, re-time, deactivate and delete the events **of their own ministry**: on the ministry's Calendar tab, and in the church event editor, where the **Add Church Event** entry appears for them, the Volunteer Ministry field lists only their ministries and must be set. Any other event is refused. Team leaders cannot create events.
+Normally only users with **Add Events** may create and edit events. A ministry coordinator (or a Manage Ministries user) without that permission may still create, edit, re-time, deactivate and delete the events **of their own ministry**: on the ministry's Calendar tab, and in the church event editor, where the **Add Church Event** entry appears for them, the Volunteer Ministry field lists only their ministries and must be set. Any other event is refused. Team leaders cannot create events unless their login has **Add Events**.
 
 ## Deleting an event
 

@@ -32,7 +32,7 @@ Switching hides or shows pages and menu entries — it never deletes data, so yo
 
 ## Where it lives
 
-Once V2 or Both is chosen, a **Ministries** heading appears in the sidebar for anyone who may manage a ministry (see [Who can do what](./permissions.md)):
+Once V2 or Both is chosen, a **Ministries** heading appears in the sidebar for anyone who may manage a ministry, and for a team leader whose login has **Manage My Ministries** (see [Who can do what](./permissions.md)). It holds:
 
 - **Dashboard** — the [Ministry Dashboard](./ministry-dashboard.md), "what needs your attention this week".
 - **One entry per ministry** the viewer manages, opening the [ministry page](./ministries-teams-positions.md).
@@ -57,8 +57,8 @@ If you have twenty minutes:
 1. **Ministries → Dashboard → New ministry.** Name it. It is created with its own calendar, volunteer pool and first team.
 2. On the ministry page, **Positions → Add position** for each role (say, Barista and Host).
 3. **Volunteers → Add Volunteer** a few people, then tick the positions each one can serve in.
-4. Make sure the events exist. A team that serves at Sunday worship can follow the services already on the church calendar. For the ministry's own events, open the **Calendar** tab and click **New recurring event** (or **New event**), then answer **Staff them** when the page asks *"Staff them now?"*
-5. **Schedules → Add schedule** (already filled in if you came from step 4): choose the events it follows, set how many of each position are needed and, if you like, who fills them by default (as many people as the position's Max), and click **Save**. The occurrences for the next 8 weeks are made at once, and a daily background job keeps adding them.
+4. Make sure the events exist. A team that serves at Sunday worship can follow the services already on the church calendar. For the ministry's own events, open the **Calendar** tab, click **New recurring event**, and answer **Staff them** when the page asks *"… Staff them now?"*
+5. **Schedules → Add schedule** (already filled in if you came from step 4): choose the events it follows, set how many of each position are needed and, if you like, who fills them by default (as many people as the position's Max), and click **Save**. The occurrences up to the scheduling horizon (8 weeks unless an administrator changed it) are made at once, and a daily background job keeps adding them.
 6. Back on the **Dashboard**, the dates that are still short appear under **Needs filling**. Click **Fill**, assign someone, and the gap is gone.
 
 Everything else — responses, reminders, substitutions, the member's own pages — follows from those six steps.

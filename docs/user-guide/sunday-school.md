@@ -30,7 +30,7 @@ You can optionally add extra roles (e.g., "Assistant Teacher", "Substitute") usi
 
 ### Teachers managed from a ministry
 
-With [Volunteer Management (v2)](./ministries/index.md) on, a ministry that provides teachers for Sunday School can link one of its teams to a class. From then on the class's teachers are managed in the ministry: everyone qualified for a position of that team is a **Teacher** of the class. The class page says *"Teachers of this class are managed in Ministries → … → …"* with a link to the ministry, and teacher changes are refused here. Students are added and removed on the class page as before. See [Linking a team to a Sunday School class](./ministries/ministries-teams-positions.md#linking-a-team-to-a-sunday-school-class).
+With [Volunteer Management (v2)](./ministries/index.md) on, a ministry that provides teachers for Sunday School can link one of its teams to a class. From then on the class's teachers are managed in the ministry: everyone qualified for a position of that team is a **Teacher** of the class. The class page says *"Teachers of this class are managed in Ministries → … → …"* (with an **Open the ministry** link for those who may manage it), and teacher changes are refused here. Students are added and removed on the class page as before. See [Linking a team to a Sunday School class](./ministries/ministries-teams-positions.md#linking-a-team-to-a-sunday-school-class).
 
 ## Tracking Attendance
 

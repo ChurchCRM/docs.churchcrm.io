@@ -13,7 +13,7 @@ Volunteer Management v2 has five levels. Each one is decided in a different plac
 | **Administrator** | the Admin flag on the user | everything |
 | **Manage Ministries** | the **Manage Ministries** switch in the user editor (custom permissions) | a global ministry manager: every ministry — create, deactivate, delete, set whether it provides teachers for Sunday School, grant coordinators and team leaders, and everything below |
 | **Ministry coordinator** | the **Manage My Ministries** switch in the user editor **plus** a coordinator grant on the ministry page | the Ministries heading, the dashboard and the pages of the ministries they coordinate, including creating and deleting those ministries' events; nothing over any other ministry. May deactivate their own ministry but not delete it, may not change its Sunday School switch, and may not grant coordinators |
-| **Team leader** | a team grant (the **Team leader** field of the team dialog), on a staff *or* a member login | their team — its positions, schedules, staffing needs and assignments — from the Member Portal's **My Teams** pages; with Manage My Ministries on a staff login, also the Ministry Dashboard. A team leader cannot create events |
+| **Team leader** | a team grant (the **Team leader** field of the team dialog), on a staff *or* a member login | their team — its positions, schedules, staffing needs and assignments — from the Member Portal's **My Teams** pages; with Manage My Ministries on a staff login, also the **Ministries** heading with the Ministry Dashboard. A team leader cannot create events unless their login also has **Add Events** |
 | **Volunteer** | any member | their own schedule and answers, proposing a substitute for their own dates, and signing up for open dates of positions they are qualified for |
 
 ## Where each is granted
@@ -27,7 +27,7 @@ Volunteer Management v2 has five levels. Each one is decided in a different plac
 
 Grants are given to the *person*, not to a login, so they can be made before the person has one. A person whose login is self-service only keeps seeing just their own schedule in the Member Portal until an administrator widens their account: a self-service login is never a coordinator, whatever grants it holds, but it can lead a team.
 
-A **Manage My Ministries** user who coordinates nothing yet sees the Permission Required page at the dashboard, which names the permission. Turning the switch off removes the Ministries heading.
+A **Manage My Ministries** user who neither coordinates a ministry nor leads a team has no **Ministries** heading yet; opening the dashboard's address shows the Permission Required page, which names what is missing (*"Manage My Ministries access, with a ministry or team to manage"*). Turning the switch off removes the Ministries heading.
 
 ## What each level sees
 
@@ -42,10 +42,10 @@ A **Manage My Ministries** user who coordinates nothing yet sees the Permission 
 | **Calendar** tab: **New event**, **New recurring event**, **Delete events** | yes | their ministries | no | — |
 | **Ministries that may add events** on a church calendar | only with **Add Events** (administrators have it) | no | no | — |
 | Assign, record responses, approve substitutes | everywhere | their ministries | their team | own dates only |
-| Events of a ministry (create, edit, delete) | yes | their ministries, even without Add Events | no | — |
+| Events of a ministry (create, edit, delete) | yes | their ministries, even without Add Events | only with Add Events | — |
 | **Admin → Ministry Settings** | administrators only | — | — | — |
 
-The screen is not the gate: every action is checked on the server, so a URL typed by hand for another ministry lands on Access Denied.
+The screen is not the gate: every action is checked on the server, so a URL typed by hand for another ministry lands on the Permission Required page.
 
 ## Related pages
 
