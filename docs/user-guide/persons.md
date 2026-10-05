@@ -33,6 +33,31 @@ Clicking on a person's name opens their Person View, which lists all information
 
 This is a wildcard search: the system looks for that sequence of characters anywhere in the first or last name. For example, searching for "ian" will return records for "Ian," "Brian," and anyone else whose name contains those letters in that order.
 
+## Active and inactive people
+
+Person records can be made inactive without deleting their history. Use **Set Inactive** on the Person View when someone should no longer appear as an active person. Use **Set Active** to reactivate the record later.
+
+The Person Listing shows active people by default, with options to view inactive people or all people. Making a person inactive does **not** delete the person, their family relationship, giving history, notes, groups, or other records.
+
+You cannot deactivate the person record associated with your own signed-in account.
+
+## Marking a person as deceased
+
+ChurchCRM 7.7 adds a first-class deceased status so a person's history can be preserved without treating them as a living member.
+
+1. Open the person and choose **Edit**.
+2. In the Church Membership section, select **Deceased**.
+3. Enter the date of death when known. The deceased status can also be recorded without a date.
+4. Save the person.
+
+The Person View displays a **Deceased** badge. On the Family View, deceased family members are visually distinguished and are not included in the living/active-member count. If the deceased person was the Head of Household, ChurchCRM prompts staff to review family leadership.
+
+The status is reversible: edit the person and clear **Deceased** if it was selected by mistake.
+
+ChurchCRM preserves the person's record, pledges, payments, notes, and history. Deceased people are automatically excluded from workflows intended for living members, including birthday reminders, search autocomplete, kiosk and event rosters, group contact exports, mailing labels, Mailchimp synchronization, and living-member statistics.
+
+Administrators can control whether deceased people appear in printed directories and CSV exports with **Hide deceased members from the printed directory and CSV exports** in the People settings. Voting-member reporting always excludes deceased people.
+
 ## Timeline Filters
 
 The **Person View** includes a **Timeline** tab that shows notes, attendance records, and activity in chronological order. Use the filter controls to narrow the timeline by:

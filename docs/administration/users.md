@@ -5,6 +5,8 @@ sidebar_position: 2
 
 # Users
 
+![User permissions in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/settings-user-permissions.png)
+
 ## How do I add new Users?
 
 1. Open the **Admin** menu and click **Add New User**, or navigate directly to `/admin/system/users/new`.

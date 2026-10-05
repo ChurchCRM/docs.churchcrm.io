@@ -5,6 +5,8 @@ sidebar_position: 2
 
 # Features Overview
 
+![ChurchCRM dashboard](https://churchcrm.io/images/screenshots/desktop/dashboard-hero.png)
+
 ## Core Features
 
 * **Congregation Management**

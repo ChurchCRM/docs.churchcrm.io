@@ -30,4 +30,11 @@ Use `POST /public/user/login` with your ChurchCRM credentials to receive an `api
 
 ## Self-registration
 
-Registration endpoints are only active when **public registration is enabled** in ChurchCRM's system settings (Administration → Settings → Public Registration).
+Registration endpoints are only active when **Self-registration is enabled** in the **People Settings** panel. To enable it:
+
+1. Go to **People → Dashboard**
+2. Click the **"People Settings"** button (with the sliders icon)
+3. Toggle **"Self Registration"** on
+4. Click **"Save Settings"**
+
+When enabled, a registration link appears on the login page and the registration API endpoints become available.

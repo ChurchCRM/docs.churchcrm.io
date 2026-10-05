@@ -1,0 +1,52 @@
+name: Docs CI
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: docs-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate Docusaurus site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download latest OpenAPI specs from CRM
+        run: |
+          mkdir -p openapi
+          curl -fsSL \
+            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/docs/openapi/generated/public-api.yaml" \
+            -o openapi/public-api.yaml
+          curl -fsSL \
+            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/docs/openapi/generated/private-api.yaml" \
+            -o openapi/private-api.yaml
+          test -s openapi/public-api.yaml
+          test -s openapi/private-api.yaml
+
+      - name: Generate API docs
+        run: npm run regen
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build site
+        run: npm run build
