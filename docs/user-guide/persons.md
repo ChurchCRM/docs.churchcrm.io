@@ -84,7 +84,7 @@ The **Recent Emails** card on the Person View lists the five latest emails to th
 | Column | What it shows |
 |--------|---------------|
 | **Date** | When the email was sent |
-| **Type** | What kind of email it was: Message (written in the composer), Birthday greeting, Family verification, Password reset link, New account, Notification, and so on |
+| **Type** | What kind of email it was: Message (written in the composer), Birthday greeting, Family verification, Password reset link, New account, Notification, and so on. Volunteer emails show Volunteer assignment, Volunteer reminder, Volunteer declined, Volunteers needed, Volunteer sign-up, Substitute proposed, Substitute decision, or Offer to help. An email of a kind ChurchCRM does not know shows Email |
 | **Subject** | The subject line; click it to open the email |
 | **Status** | **Sent**, **Failed** (the mail server refused it; hover over the badge for the error), or **Skipped** (email sending was turned off, or no mail server was set up, at the time) |
 | **Sent by** | The user who wrote it, or **Automatic** for emails ChurchCRM sent on its own |
@@ -99,7 +99,7 @@ Click a subject to see the email as it was sent, with the recipient address, dat
 
 ![An email opened from the history, shown as it was sent](/img/user-guide/email-history-modal.png)
 
-ChurchCRM keeps the full content of messages written in the composer and of volunteer emails. For every other email it stores the subject, date, and status only, because many of them (account emails, password reset links) contain a password or a one-time link. Opening one shows **The content of this email is not stored** instead of the message.
+ChurchCRM keeps the full content of messages written in the composer and of volunteer emails. For every other email it stores the subject, date, and status only. Opening one shows a note instead of the message: **The content of this email is not stored. ChurchCRM keeps the text of messages written in the email composer and of volunteer emails only.**
 
 ![An account email in the history: the content is not stored](/img/user-guide/email-history-modal-not-stored.png)
 
