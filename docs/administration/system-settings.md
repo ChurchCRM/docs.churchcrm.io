@@ -97,7 +97,7 @@ ChurchCRM uses Leaflet and OpenStreetMap, with free geocoding services. No map A
 | **Default map view** | Starting zoom, from continent down to street | City |
 | **Hide latitude/longitude** | Hide the latitude and longitude fields in the Family Editor. Geocoding still runs | Off |
 | **Hide person address** | Same switch as on System Settings → People | On |
-| **Geocoding services** | Ranked, comma-separated list of keyless geocoders | `Nominatim, Census` |
+| **Geocoding services** | Keyless geocoders, tried in the order picked. Nominatim works worldwide; US Census covers United States addresses only | Nominatim |
 
 The map is centered on the latitude and longitude saved with **Church Information**.
 
