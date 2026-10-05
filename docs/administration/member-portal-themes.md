@@ -28,7 +28,7 @@ Include/themes/<your-theme>/
 
 `Include/` is the one directory ChurchCRM promises to leave alone: the upgrader never overwrites it and the file-integrity scan ignores it. Your theme survives every ChurchCRM upgrade.
 
-The **folder name is the theme**: it is the id ChurchCRM stores and the name shown on the admin page, spelled exactly as you spelled it. An optional `theme.json` can give it a friendlier display name, an author and a description for the admin page — nothing more.
+The **folder name is the theme**: it is the id ChurchCRM stores and the name shown on the admin page, spelled exactly as you spelled it. Use only letters, digits, dots, dashes and underscores in the folder name: a folder with any other character (a space, for example) is not listed as a theme. An optional `theme.json` can give it a friendlier display name, an author and a description for the admin page — nothing more.
 
 :::danger Never edit the system theme
 `Include/themes/default/` ships with ChurchCRM and is overwritten on every upgrade. Copy it, rename the copy, and edit that.
@@ -71,7 +71,7 @@ A theme fails loudly. There is no silent fall-back to the system theme, because 
 | The active theme fails while rendering a page | **The Member Portal theme could not be rendered**, with theme, file, line and message | **The Member Portal is temporarily unavailable** — *"The church office has been notified. Please try again later."* |
 | The active theme's folder is gone | The same error page, and **The active theme folder is missing** on the admin page | The same page |
 
-Every failure is also written to the application log (**Admin → System → Logs**). So after uploading a change, open a portal page yourself while signed in as an administrator: if something is wrong, you — not your members — will see exactly what.
+Every failure is also written to the application log (**Admin → System Logs**, see [Logging & Diagnostics](./logging-and-diagnostics.md)) and to the web server's error log. So after uploading a change, open a portal page yourself while signed in as an administrator: if something is wrong, you — not your members — will see exactly what.
 
 ## Deploying and keeping a theme
 

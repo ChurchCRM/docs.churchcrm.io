@@ -32,6 +32,8 @@ The **Hello *\<your name\>*** menu in the header holds **Email History** (what t
 
 When an administrator opens the portal as you with [Login as User](../administration/users.md), the menu shows **Exit to your account** in place of **Sign out**: it ends the visit and takes the administrator back to their own account, on your user record.
 
+The footer at the bottom of every page shows the church's name and how to reach it — phone, email and a link to the church website — and links to the church's social media, as far as the church office has filled them in.
+
 ---
 
 ## Home
@@ -40,23 +42,23 @@ The home page opens with a welcome card — your first name, your family's name,
 
 | Card | What it shows |
 |------|---------------|
-| **Church calendar** | The next three events from the calendars the church shares with members, and **See the whole calendar**. With nothing coming up it says *"Nothing is on the calendar just now."*; if the church has not shared any calendar yet it says so instead. |
+| **Church calendar** | The next three events from the calendars the church shares with members — each with its day, date and time and the calendar it is on — and **See the whole calendar**. With nothing coming up it says *"Nothing is on the calendar just now."*; if the church has not shared any calendar yet it says so instead. |
 | **My volunteering** | The next thing you are on for, as *date · ministry — team — position*, and how many of your assignments are still **waiting for your answer**. With nothing booked: *"Nothing on your list yet. Have a look at what needs filling."* |
 | **My Family** | Your household's name, how many people are in it, and **Update your details**. A member with no family record sees *"You are not currently associated with a family"* and a link explaining how to correct this. |
-| **Profile** | Your name and the contact details the church has on file, with **Update your details**. |
+| **Profile** | Your name, your email, mobile and home phone as the church has them, your role in the family, and **Update your details**. Your birthday is shown too when your church lets members edit it. |
 
 ---
 
 ## Profile
 
-**Profile** shows **Your photo** — the picture on file, or your initials while there is none — and **Your details**: title, first, middle and last name, suffix, email, work email, and mobile, home and work phone.
+**Profile** shows your photo — or your initials while there is none — your family and your role in it, and **Your details**: first, middle and last name, title, suffix, email, work email, and mobile, home and work phone.
 
 ![The Profile page](/img/user-guide/member-portal-profile.png)
 
-- **Update your details** opens an edit form. Changes are saved straight away; the page confirms with *"Your details have been saved"*. A field the church needs (your first name, for example) cannot be left blank.
-- **Choose a new photo** on the edit form uploads a new picture. A square picture of your face works best.
+- **Update your details** opens an edit form. Press **Save changes**; the page confirms with *"Your details have been saved."* Your first and last name cannot be left blank.
+- **Choose a new photo** on the edit form uploads a new picture straight away. A square picture of your face works best.
 - **Birthday** appears only when your church allows members to change it. Otherwise it is neither shown nor editable here — ask the church office.
-- Your surname and your household's address belong to the family, so they are changed under [My Family](#my-family), not here.
+- Your household's address, home phone and email belong to the family, so they are changed under [My Family](#my-family), not here.
 
 Under **Sign-in and security** you will find **Change your password** and **Two-factor authentication**. Both open inside the portal, so you never leave it to look after your account.
 
@@ -70,7 +72,7 @@ Under **Sign-in and security** you will find **Change your password** and **Two-
 
 ### Update your details
 
-An adult of the household (head or spouse) can press **Update your details** to change the address and household phone and email — *"This is where the church sends post and who it calls about your household."* Other family members see *"Only an adult of your family can change these details. Please contact the church office."*
+An adult of the household (head or spouse) can press **Update your details** to change the address, home phone, email and wedding date — *"This is where the church sends post and who it calls about your household."* Press **Save changes** to save them. Other family members see *"Only an adult of your family can change these details. Please contact the church office."*
 
 ### Confirm your family details
 
@@ -85,13 +87,13 @@ Churches periodically ask households to check what is on file. **Confirm your fa
 
 ### Add a family member
 
-**Add a family member** opens a short form — first name, last name, role and an optional birthday — and sends it to the church office with **Send to the church office**. As the dialog says, *nobody is added to the church records until a member of staff has looked at it.* The office reviews the request in the same place it reviews online registrations.
+An adult of the household can also press **Add a family member**. It opens a short form — first name, last name, role and an optional birthday — and sends it to the church office with **Send to the church office**. As the dialog says, *nobody is added to the church records until a member of staff has looked at it.* The church office sees the request among the registrations waiting for review and approves it there.
 
 ---
 
 ## Calendar
 
-**Calendar** shows the church calendars an administrator has chosen to share with members. The calendars are listed above the grid with their colours; **Month**, **Week** and **List** views are available, and on a phone the calendar opens in list view. Click an event to see **When**, **Where** and **Details**. The calendar is read-only: nothing here can change an event.
+**Calendar** shows the church calendars an administrator has chosen to share with members. The calendars are listed above the grid with their colours; **Month**, **Week** and **List** views are available, and on a phone the calendar opens in list view. Click an event to see **When**, **Where**, **Calendar** and **Details** below the grid. The calendar is read-only: nothing here can change an event.
 
 ![The portal calendar, with the Bible Classes calendar switched off in the legend](/img/user-guide/member-portal-calendar.png)
 
@@ -117,7 +119,7 @@ This helps when the church shares several calendars — for example a calendar o
 
 1. Press **Subscribe** and tick the calendars you want.
 2. Press **Save**. The portal gives you one **Calendar address** covering everything you ticked.
-3. **Copy** the address and add it to your calendar app as a new calendar subscription, or press **Open in calendar app** to hand it straight to the app.
+3. **Copy** the address and add it to your calendar app as a new calendar subscription. When your church's ChurchCRM runs over `https`, you can also press **Open in calendar app** to hand it straight to the app.
 
 :::warning The address is personal
 The subscription address is a secret that identifies you. Do not share it. If you have given it out by mistake, press **Reset link**: the old address stops working straight away and you get a new one.
@@ -138,13 +140,16 @@ Everything you have been asked to do, soonest first. Each card names the date, m
 | **Needs an answer** | Somebody has put you on this date and is waiting to hear back. |
 | **Going** | You have said yes. |
 | **Declined** | You have said you cannot make it. |
-| **Covered** | Somebody else has agreed to take your place. |
+| **Substitute asked** | You have asked someone to cover for you (the badge names them), and your coordinator has not confirmed it yet. |
+| **Someone else is covering** | Your coordinator confirmed the swap: somebody else takes your place. |
+| **No longer needed** | Your coordinator took you off this date, or the date was cancelled. |
+| **Thank you** | A date you have served. |
 
 ![My schedule](/img/user-guide/member-portal-volunteering-schedule.png)
 
 - **I'll be there** accepts; the badge changes to **Going**.
 - **I can't** declines. You can add a note for your coordinator — *"Let them know why (optional)"*.
-- **Find a sub** opens **Ask someone to cover for you**: pick someone who has already agreed to take your place, add anything your coordinator should know, and press **Ask them**. Your coordinator confirms the swap.
+- **Find a sub** opens **Ask someone to cover for you**: pick someone who has already agreed to take your place, add anything your coordinator should know, and press **Ask them**. Your coordinator confirms the swap. Until they do, the card says *"Waiting for your coordinator to confirm."* and **Take that back** withdraws the request.
 - **Show what I have already done** includes past dates in the list.
 
 With nothing on your list the page says *"Nothing on your list yet"* and points you to **See what needs filling**.
@@ -155,8 +160,8 @@ Places you are trained for that still need someone, plus ministries that are loo
 
 ![Find something to do](/img/user-guide/member-portal-volunteering-opportunities.png)
 
-- **Ministries looking for help** lists ministries that have said they would like more people. Press **I'd like to help** and the coordinator is told; the page confirms with *"Thanks — the coordinator has been told you'd like to help."*
-- **Upcoming availability** lists scheduled positions you are trained for that still have room. Each card says how the place stands: *"Needs 1 more"* while the position is short of the people it needs, or *"Covered · 1 more welcome"* when it has enough but would welcome another. **Sign up** puts you on the list — *"You are on the list — thank you."* — and the date appears on **My schedule**. If you are already helping that day in another position, the card says so before you sign up.
+- **Ministries looking for help** lists ministries that have said they would like more people, with the positions they are recruiting for under *"New volunteers needed for the following positions"*. Press **I'd like to help** and the coordinator is told; the page confirms with *"Thanks — the coordinator has been told you'd like to help."*
+- **Upcoming availability** lists scheduled positions you are trained for that still have room. Each card says how the place stands: *"Needs 1 more"* while the position is short of the people it needs, *"Covered · 1 more welcome"* when it has enough but would welcome another, or *"Optional · up to 2 welcome"* when nobody is required. **Sign up** puts you on the list — *"You are on the list — thank you."* — and the date appears on **My schedule**. If you are already helping that day in another position, the card says so before you sign up.
 
 With nothing open the page says *"Nothing open right now"* and *"We will email you when something needs filling."*
 
@@ -194,7 +199,7 @@ A schedule follows events that are already on the church calendar. It never make
    Only events already on the calendar can be chosen; each choice shows how many dates are coming up. A class with no meetings on the calendar cannot be chosen yet. A team leader cannot add events: ask the ministry's coordinator to add them on the ministry's **Calendar** tab.
 3. Under **Volunteer times**, set when your volunteers start and finish, in minutes before or after the event's start and end — for example, start 15 minutes before the event starts. Leave both at 0 to serve exactly when the event happens.
 4. Optionally limit the schedule with **From** and **Until** dates.
-5. Under **Staffing needs**, tick the positions each date needs, with **Min** and **Max** people for each. Optionally choose **Default volunteers** for a position: there is one list per place, so a position with Max 2 has two, and someone chosen in one list is not offered in the others. Everyone chosen is put on every new date while they stay qualified for it. Tick **Set as Accepted** beside a person who has already agreed, so they are not asked. If you lower **Max** below the number of people chosen, **Save** stops with a message such as *"Helper: Max is 1 but 2 default volunteers are chosen. Remove one or raise Max."*
+5. Under **Staffing needs**, tick the positions each date needs, with **Min** and **Max** people for each. Optionally choose **Default volunteers** for a position: there is one list per place, so a position with Max 2 has two, and someone chosen in one list is not offered in the others. Everyone chosen is put on every new date while they stay qualified for it. Tick **Set as Accepted** beside a person who has already agreed, so they are not asked. If you lower **Max** below the number of people chosen, **Save** stops and the staffing needs show a message such as *"Helper: Max is 1 but 2 default volunteers are chosen. Remove one or raise Max."*
 6. Press **Save**.
 
 **Save** creates the schedule and its dates straight away, up to your church's scheduling horizon (eight weeks ahead unless your church has changed it). The **Dates** tab opens with the new dates and a message saying how many were made and how many default volunteers were assigned. ChurchCRM adds the next dates by itself every day as the horizon moves on, so you never have to generate the weeks ahead by hand.

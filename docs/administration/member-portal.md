@@ -40,7 +40,7 @@ Switching a section off hides it: its navigation entry and home card disappear a
 
 ### Themes
 
-A table of every theme folder found on the server: its display name and description, the **Folder** it lives in, its **Author**, how many templates it **overrides**, and its last **Validation** result — expand **Findings** to read the individual messages. Each row's action menu offers **Check** and **Activate**, exactly as on the Settings tab.
+A table of every theme folder found on the server: its display name and description, the **Folder** it lives in, its **Author**, how many **Overridden templates** it has, and its last **Validation** result — expand **Findings** to read the individual messages. Each row's action menu offers **Check** and **Activate**, exactly as on the Settings tab.
 
 The tab carries the notice *"Themes are provided by your church, not by ChurchCRM, and are not verified by the ChurchCRM project."* and a link to the theme authoring guide. See [Church themes](./member-portal-themes.md).
 
@@ -65,12 +65,12 @@ How much the portal is being used. As the tab says, *these numbers count self-se
 
 ![The Calendars tab](/img/administration/member-portal-calendars.png)
 
-Which calendars members see. Every calendar on the installation is listed with its **Kind** — *Church calendar*, *Ministry calendar* (a calendar that belongs to a volunteer ministry) or *System calendar* (Birthdays, Anniversaries, Fundraisers, Unpinned Events, holidays) — its **Colour**, and a **Show in Member Portal** switch. Press **Save calendars** to apply.
+Which calendars members see. Every calendar on the installation is listed with its **Kind** — *Church calendar*, *Ministry calendar* (a calendar that belongs to a volunteer ministry) or *System calendar* (Birthdays, Anniversaries, Fundraisers, Unpinned Events, and any calendar a plugin adds, such as the Holidays plugin's) — its **Colour**, and a **Show in Member Portal** switch. Press **Save calendars** to apply.
 
 The tab's own rule is the one to remember: **Members see only the calendars switched on here. Birthdays and anniversaries show first names and last initials only.** A member never sees an age or a full surname from a shared birthday or anniversary calendar — but sharing those calendars is still a decision about members' personal information, and it is yours to make.
 
 - After an **upgrade**, no calendar is shared. Members see *"No calendar has been shared with members yet."* until you switch one on.
-- On a **new installation**, the church's **Events** calendar is shared from the start.
+- On a **new installation**, the **Public Calendar** is shared from the start.
 - The switches also decide what a member can put in the [calendar subscription](../user-guide/member-portal.md#subscribe-in-your-own-calendar-app) they add to their own calendar app.
 - Members can [hide any shared calendar](../user-guide/member-portal.md#show-or-hide-a-calendar) from the legend of their own **Calendar** page. That changes only what their browser shows, not what you share here.
 
@@ -87,6 +87,8 @@ The portal adds a module; it does not alter the office side of ChurchCRM. A few 
 - **Staff and administrators open the portal from their user menu** (**Member Portal**), and get back through the portal's account menu (**Admin Console**).
 - **Login as User** into a self-service account lands you in the portal with the masquerade banner — *"You are logged in as NAME. Actions are recorded as them."* — on every page. Two controls end the masquerade and return you to your own account, on that user's record: the banner's exit button, and **Exit to your account**, which replaces **Sign out** in the portal's **Hello *\<name\>*** menu while you are logged in as someone else. The menu shows no **Admin Console** entry during a masquerade. See [Login as User](./users.md).
 - **Member photos** in the portal are served through the portal itself, scoped to the member and their family. Nothing for an administrator to configure.
+- **A family member proposed in the portal waits on People → Self Registrations.** When an adult of a household uses **Add a family member**, the new person is saved in that family and marked for review. The dashboard lists them as a *Family Member* row with the family's name and counts them as pending. Approve them on their own from the row menu (**Approve**), or with others using **Approve selected**.
+- **The portal footer comes from Admin → Church Information**: the church's name, phone and email, a **Church website** link and the church's social media links. A website or social media address is only shown when it is a web address starting with `http://` or `https://`.
 
 ![The Member Portal entry in the user menu](/img/administration/member-portal-user-menu.png)
 
