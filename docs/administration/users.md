@@ -40,14 +40,14 @@ An administrator can open a session as another user and see ChurchCRM exactly as
 
 ### Starting a masquerade
 
-1. Open the **Admin** menu and click **Edit Users**, or navigate to `/admin/system/users`.
-2. Click the user you want to log in as. Their **Settings** page opens on the **Account** tab.
-3. At the bottom of the **Account** tab, click **Login as User** (next to **Advanced Settings**).
-4. Confirm **Log in as (name)?** in the dialog.
+1. Open the **Admin** menu and click **System Users**, or navigate to `/admin/system/users`.
+2. Click the name of the user you want to log in as. Their **Settings** page opens on the account tab, which is named after them (for example **Tony's Account**).
+3. At the bottom of that tab, click **Login as User** (next to **Advanced Settings**).
+4. The **Login as User** dialog asks **Log in as (name)?** Click **Login as User** to confirm.
 
 ![Login as User button on a user's Settings page](/img/administration/login-as-user-button.png)
 
-You land on the dashboard as that user. Every page now shows an orange banner across the top: **You are logged in as (name). Actions are recorded as them.**
+You land on the dashboard as that user. A self-service user (one with only the **Edit Self** right) lands on the Member Portal instead, because that is the only part of ChurchCRM they can use. Every page, Member Portal pages included, now shows an orange banner across the top: **You are logged in as (name). Actions are recorded as them.**
 
 ![The masquerade banner shown on every page](/img/administration/login-as-user-banner.png)
 
@@ -66,7 +66,7 @@ Do any of the following:
 
 - Click the exit icon at the right end of the banner (**Exit and return to your own account**).
 - Open the user menu in the top navbar and click **Exit to your account**. While you are masquerading this item replaces **Sign out**, so you cannot accidentally end your own session instead.
-- On the limited-access page of a user with only the **Edit Self** right, click **Exit to your account**. While you are masquerading it replaces that page's **Log Out** button.
+- In the Member Portal, open the **Hello (name)** menu at the top right and click **Exit to your account**. While you are masquerading this item replaces the portal's **Sign out**.
 
 You are returned to your own account, on the Settings page of the user you were logged in as. If your own administrator account has been deleted or has lost its administrator right in the meantime, the session ends instead and you are taken to the login page.
 
@@ -83,14 +83,14 @@ Nothing. A masquerade is not a login for that user:
 - Their password is not checked and their two-factor authentication is not prompted for.
 - Their **Last login** date and login counts are not updated.
 - If they must change their password at next login, or must still enroll in two-factor authentication, that requirement is not applied to you and is not cleared — it still applies the next time they sign in themselves.
-- A user with only the **Edit Self** right is taken to their limited-access page, with the banner on it, exactly as they would be. The only difference is the page's **Log Out** button, which reads **Exit to your account** and returns you to your own account.
+- A self-service user is taken to the Member Portal, with the banner on it, exactly as they would be. The differences are in the **Hello (name)** menu: **Sign out** reads **Exit to your account** and returns you to your own account, and there is no **Admin Console** entry.
 - A deceased or inactive user's sign-in block stays in place: the masquerade does not let them sign in.
 
 :::warning
 While you are masquerading, anything you save is recorded under the other user's name — edits, notes, deposits, sent email. Look; do not change things you would not change while logged in as them.
 :::
 
-Both the start and the end of every masquerade are written to the authentication log with both user IDs (`Masquerade started: admin 1 (…) as user 3 (…)`), so it is always possible to tell who really performed an action. See [Logging and Diagnostics](./logging-and-diagnostics.md) for where the `yyyy-mm-dd-auth.log` file lives.
+Both the start and the end of every masquerade are written to the authentication log with both user IDs (`Masquerade started: admin 1 (…) as user 3 (…)` and `Masquerade ended: admin 1 back from user 3`), so it is always possible to tell who really performed an action. These lines are written at the **INFO** log level, the default; raising the log level to **WARNING** or higher leaves them out. See [Logging and Diagnostics](./logging-and-diagnostics.md) for where the `yyyy-mm-dd-auth.log` file lives and how to change the log level.
 
 ## What is the default password assigned to new Users?
 
