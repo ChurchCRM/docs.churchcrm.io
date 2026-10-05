@@ -32,16 +32,16 @@ For outbound email (notifications, alerts, composer messages), open **Communicat
    - **SMTP Authentication** — On when your server needs a username and password, which most do.
    - **SMTP Username** — Your email account username
    - **SMTP Password** — Your email account password
-   - **Copy Church Email** — The church's own address (e.g., `office@yourchurch.org`). The composer offers it as a removable extra recipient when a user copies a list of addresses or opens their mail program.
+   - **Copy Church Email** — The church's own address (e.g., `office@yourchurch.org`). When a user emails a list, the composer offers it as a removable extra recipient (**Also send to church address**) for **Copy Addresses** and **Open in Email Client**. **Send Email** never includes it.
 5. Click **Save Settings**.
 
-The other settings in the panel (**SMTP Timeout**, **Auto TLS**, **Do Not Email Property**, **Default Inbox Preview Text**) can usually stay as they are. **All System Settings** opens the full settings page.
+**Do Not Email Property** picks the person property that keeps someone off email lists; the composer skips anyone who has it. The other settings in the panel (**SMTP Timeout**, **Auto TLS**, **Default Inbox Preview Text**) can usually stay as they are. **All System Settings** opens the full settings page.
 
 :::note What turns on sending from the composer
-The **Send Email** button and the paper-plane buttons next to email addresses appear only when the SMTP host is set (with a username and password if authentication is on) **and** email sending is enabled. Users additionally need the **Email** permission on their account (**Admin** → **System Users**). Until both are in place, the composer offers **Copy Addresses** and **Open in Email Client** only.
+The composer's **Compose Message** button (which leads to **Send Email**) and the paper-plane buttons next to email addresses appear only when the SMTP host is set (with a username and password if authentication is on) **and** **Enable Email** is on. Users additionally need the **Email** permission: administrators always have it; for other users, edit the user under **Admin** → **System Users** and set **Permission** to **True** on the `bEmailMailto` row of the **User Config** table. Until both are in place, the composer offers **Copy Addresses** and **Open in Email Client** only.
 :::
 
-Every email ChurchCRM sends ends with the church's contact block (name, address, phone, email, website) as shown in the **Display Preview** on **Admin** → **Church Information**. Keep that page current so recipients know who wrote to them.
+Composer messages and ChurchCRM's notification and account emails are sent from the church email address and end with the church's contact block (name, address, phone, email, website) as shown in the **Display Preview** on **Admin** → **Church Information**. Keep that page current so recipients know who wrote to them.
 
 ---
 
