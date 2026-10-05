@@ -48,7 +48,7 @@ A whole date (every position of the occurrence together, or one team on an event
 
 ### Assign a volunteer
 
-Click **Assign** on a card. The **Assign a volunteer** dialog lists only people qualified for that position, *"Whoever served least recently is listed first."* That ordering is the rotation, with nothing to configure. People **In the volunteer pool** come first; anyone qualified but **Not in the pool** is listed under its own heading, with a note that assigning them adds them to this occurrence only.
+Click **Assign** on a card. The **Assign a volunteer** dialog lists only people qualified for that position, *"Whoever served least recently is listed first."* That ordering is the rotation, with nothing to configure. People already on that position for this date are left out; someone who **Declined** or was **Cancelled** is offered again. People **In the volunteer pool** come first; anyone qualified but **Not in the pool** is listed under its own heading, with a note that assigning them adds them to this occurrence only.
 
 Each name says when the person last served in this ministry, in any position (*"Paul Smith — last served Sep 27"*), or *"has not served yet"*. The date is never in the future: a date someone is booked for but has not served yet is not shown, though it still counts for the order, so a person already booked a few weeks ahead moves down the list.
 
@@ -66,7 +66,7 @@ The other items are offered while the person is **Pending** or **Accepted**:
 
 - **Record: they accepted** / **Record: they declined** — for a reply that came by phone or in the corridor. The confirmation says the response is saved as coming from you, and that is how it is kept in the history.
 - **Send the assignment message again** — re-queues the assignment email.
-- **Cancel assignment** — takes the person off and reopens the slot. The row stays visible as **Cancelled**. No email is sent; the date shows *"No longer needed"* on the volunteer's own schedule in the Member Portal.
+- **Cancel assignment** — takes the person off and reopens the slot. The row stays visible as **Cancelled**. As the confirmation says, no email is sent; the date shows *"No longer needed"* on the volunteer's own schedule in the Member Portal.
 
 ## Edit staffing needs
 

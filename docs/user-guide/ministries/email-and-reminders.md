@@ -25,6 +25,8 @@ Every subject is prefixed with the church name. A message about a date names the
 
 *The team leader* is the leader of the team the date belongs to. A ministry with no team leader and no coordinator gets no decline, gap or substitute alerts.
 
+In these alerts, **Fill this gap** opens the date's [staffing view](./staffing-an-occurrence.md) and **Review this request** opens the [Ministry Dashboard](./ministry-dashboard.md). A team leader whose login lacks **Manage My Ministries** cannot open those pages, so for them both buttons open the same date on the Member Portal's **My Teams**, where they can fill it and answer the request.
+
 **Reply-To** is set so that replying reaches the right person: for messages to a volunteer, the team leader if the team has one, otherwise a ministry coordinator; for the decline and substitute alerts, the volunteer concerned; for an offer to help, the person offering. The gap alert has none, and none is set when that person has no email address or does not want email. **From** is always the church address.
 
 Every volunteer email that is sent is kept, with its body, in **Email History**, on the record whose email address it went to.

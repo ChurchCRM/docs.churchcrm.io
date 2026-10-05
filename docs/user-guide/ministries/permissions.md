@@ -29,9 +29,11 @@ Grants are given to the *person*, not to a login, so they can be made before the
 
 A **Manage My Ministries** user who neither coordinates a ministry nor leads a team has no **Ministries** heading yet; opening the dashboard's address shows the Permission Required page, which names what is missing (*"Manage My Ministries access, with a ministry or team to manage"*). Turning the switch off removes the Ministries heading.
 
+A team leader whose login lacks **Manage My Ministries** (a member login, or a staff login without the switch) runs their team from the Member Portal's **My Teams** only. The Ministry Dashboard, the ministry pages and the occurrence pages turn them away, even when the address is typed by hand, and the alert emails they receive link to the date on **My Teams** instead (see [Volunteer email and reminders](./email-and-reminders.md)).
+
 ## What each level sees
 
-| Where | Administrator / Manage Ministries | Coordinator | Team leader (staff login) | Volunteer |
+| Where | Administrator / Manage Ministries | Coordinator | Team leader (staff login with Manage My Ministries) | Volunteer |
 |---|---|---|---|---|
 | Sidebar **Ministries** heading | Dashboard + every ministry | Dashboard + their ministries | Dashboard only | not shown |
 | [Ministry Dashboard](./ministry-dashboard.md) | whole church | their ministries | their team's dates | — |

@@ -82,7 +82,7 @@ Nobody has to come back to make more. Once a day the background jobs **top up** 
 
 ## Generate occurrences
 
-**Generate occurrences** in a schedule's action menu makes the occurrences now instead of waiting for the daily top-up, for example right after adding events that an existing schedule follows.
+**Generate occurrences** in a schedule's action menu makes the occurrences now instead of waiting for the daily top-up, for example right after adding events that an existing schedule follows. It is offered only on an active schedule; reactivate an inactive one first.
 
 ![The Generate occurrences dialog](/img/user-guide/ministries/generate-occurrences.png)
 
@@ -101,7 +101,7 @@ A run is refused when its period holds more than 366 events (*"Too many occurren
 The action menu of a row offers:
 
 - **Edit**: the same dialog as Add schedule. Changing the staffing needs applies to every occurrence of the schedule, past and future, except an occurrence that has its own needs (see [Edit staffing needs](./staffing-an-occurrence.md#edit-staffing-needs)).
-- **Deactivate**: the daily top-up and **Staff them** stop making occurrences for it. Its existing occurrences and assignments stay, and it can be reactivated. The row then shows **Inactive**, and the menu offers **Reactivate**.
+- **Deactivate**: **Generate occurrences**, the daily top-up and **Staff them** stop making occurrences for it. Its existing occurrences and assignments stay, and it can be reactivated. The row then shows **Inactive**, and the menu offers **Reactivate** and no longer offers **Generate occurrences**.
 - **Delete**: removes the schedule and its occurrences. A schedule whose occurrences have volunteer assignments cannot be deleted; deactivate it instead, or delete those occurrences first.
 
 ## The Occurrences tab
