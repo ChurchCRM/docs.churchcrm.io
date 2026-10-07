@@ -101,9 +101,9 @@ If your application files are **older** than the database schema (i.e., you acci
 
 ## Upgrading from version 5.x (or older)
 
-The current release cannot upgrade a 5.x database directly. Go through **6.0.1** first, then move to the latest release. Do not skip the stop at 6.0.1.
+The current release cannot upgrade a 5.x database directly. Go through the **latest 6.x release** first, then move to the latest release. Do not skip the 6.x stop.
 
-This works on shared hosting (cPanel or similar). The in-app wizard is not available on 5.x, so both hops use a manual file upload.
+This works on shared hosting (cPanel or similar). The in-app wizard is not available on 5.x, so the first hop uses a manual file upload. After upgrading to 6.x, use the in-app wizard or a manual upload for the second hop.
 
 ### Step 1: Back up with the in-app backup
 
@@ -114,21 +114,25 @@ This works on shared hosting (cPanel or similar). The in-app wizard is not avail
 
 ### Step 2: Check your PHP and database versions
 
-| Step | PHP | Database |
-|------|-----|----------|
-| Upgrade to 6.0.1 | **8.2 or higher** (checked on every page load) | MySQL 8.0.11+ or MariaDB 10.5+ |
-| Upgrade to the latest release | **8.4 or higher** (checked on every page load) | MySQL 8.0.11+ or MariaDB 10.5+ |
+| Release | PHP | Database |
+|---------|-----|----------|
+| Any 6.x release | **8.2 or higher** (checked on every page load) | MySQL 8.0.11+ or MariaDB 10.5+ |
+| 7.0.0 and later, including the latest release | **8.4 or higher** (checked on every page load) | MySQL 8.0.11+ or MariaDB 10.5+ |
 
 - The app checks the PHP version itself and shows a warning if it is too old. It does not check the database version, so confirm it in cPanel (**MySQL Databases**, or phpMyAdmin's home page) before you start.
 - If your database is older than the table says, ask your host to upgrade it before Step 3. Restoring a backup into an older database can fail.
-- In cPanel, open **MultiPHP Manager** and switch the site to the PHP version the next step needs. If your host does not offer it, ask them or move to a host that does.
+- In cPanel, open **MultiPHP Manager** and switch the site to the PHP version the next step needs.
 - Also see the [System Requirements](/installation/system-requirements) for the required PHP extensions.
 
-### Step 3: Upgrade to 6.0.1
+:::caution Your host cannot offer PHP 8.4?
+Stop at the latest 6.x release and stay on it. It is the newest release that runs on PHP 8.2 and 8.3. Do not use **Admin → System → Upgrade** there, because it installs the latest release, which needs PHP 8.4. Ask your host about PHP 8.4, or move to a host that offers it, before doing Step 4.
+:::
 
-1. Download [6.0.1](https://github.com/ChurchCRM/CRM/releases/tag/6.0.1) from GitHub.
+### Step 3: Upgrade to the latest 6.x release
+
+1. On the [GitHub releases page](https://github.com/ChurchCRM/CRM/releases), find the newest release whose version starts with 6 and download its zip.
 2. Upload and extract it over your existing files. Overwrite everything, then restore your `Include/Config.php`.
-3. Open ChurchCRM in your browser. The database migrates to 6.0.1 on the first page load.
+3. Open ChurchCRM in your browser. The database migrates on the first page load.
 4. Log in and check People, Families, Groups, and Finances.
 5. Take another **Admin → Backup** and download it. This is your restore point for the next step.
 
