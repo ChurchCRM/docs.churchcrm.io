@@ -30,8 +30,6 @@ On a phone the navigation folds behind the menu button in the header; every page
 
 The **Hello *\<your name\>*** menu in the header holds **Email History** (what the church has emailed you), **Change Password** and **Sign out**. Staff who also have an office login see **Admin Console** there as their way back.
 
-When an administrator opens the portal as you with [Login as User](../administration/users.md), the menu shows **Exit to your account** in place of **Sign out**: it ends the visit and takes the administrator back to their own account, on your user record.
-
 The footer at the bottom of every page shows the church's name and how to reach it — phone, email and a link to the church website — and links to the church's social media, as far as the church office has filled them in.
 
 ---

@@ -85,7 +85,6 @@ The portal adds a module; it does not alter the office side of ChurchCRM. A few 
 - **Every ministry has its own calendar**, created with the ministry, renamed when it is renamed and deleted with it. The admin calendar page lists these under **Ministry Calendars**, and the heading that used to say *My Calendars* now reads **Church Calendars**. Ministry calendars are off in the portal until you switch them on.
 - **The old limited-access page is retired.** `/external/limited-access` now redirects to the portal.
 - **Staff and administrators open the portal from their user menu** (**Member Portal**), and get back through the portal's account menu (**Admin Console**).
-- **Login as User** into a self-service account lands you in the portal with the masquerade banner — *"You are logged in as NAME. Actions are recorded as them."* — on every page. Two controls end the masquerade and return you to your own account, on that user's record: the banner's exit button, and **Exit to your account**, which replaces **Sign out** in the portal's **Hello *\<name\>*** menu while you are logged in as someone else. The menu shows no **Admin Console** entry during a masquerade. See [Login as User](./users.md).
 - **Member photos** in the portal are served through the portal itself, scoped to the member and their family. Nothing for an administrator to configure.
 - **A family member proposed in the portal waits on People → Self Registrations.** When an adult of a household uses **Add a family member**, the new person is saved in that family and marked for review; the household sees them on **My Family** with a **Waiting for review** badge until you approve them. The dashboard lists them as a *Family Member* row with the family's name and counts them as pending. Approve them on their own from the row menu (**Approve**), or with others using **Approve selected**.
 - **The portal footer comes from Admin → Church Information**: the church's name, phone and email, a **Church website** link and the church's social media links. A website or social media address is only shown when it is a web address starting with `http://` or `https://`.
@@ -116,5 +115,5 @@ The release that carries the portal also adds database columns on first page loa
 
 - [Member Portal — for members](../user-guide/member-portal.md)
 - [Church themes](./member-portal-themes.md)
-- [User Management](./users.md) — creating member accounts and Login as User
+- [User Management](./users.md) — creating member accounts
 - [Upgrade Guide](./upgrade.md)
