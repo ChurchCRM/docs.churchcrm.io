@@ -18,6 +18,17 @@ The installation and setup process creates an admin user that you can use to cre
 
 Change this password immediately after your first login.
 
+### How do I upgrade from version 5.x to the current release?
+
+Go through the latest 6.x release first. The current release has no upgrade steps for a 5.x database.
+
+1. Take an in-app backup (**Admin → Backup**, **Database + images**) and download it.
+2. Check your database is MySQL 8.0.11+ or MariaDB 10.5+. Set your host to PHP 8.2 or higher and upload the newest 6.x zip from the [releases page](https://github.com/ChurchCRM/CRM/releases) over your files. Keep your `Include/Config.php`.
+3. Open the site so the database migrates, check it works, and take another backup.
+4. Set PHP to 8.4 or higher and upgrade to the latest release. If your host cannot offer PHP 8.4, stay on the latest 6.x release.
+
+Full steps, including shared hosting notes: [Upgrading from version 5.x](/administration/upgrade#upgrading-from-version-5x-or-older).
+
 ## I get "Too Many Redirects" or errors while making API calls
 
 Please check whether mod_rewrite is working on your server. In addition, read the comment thread at [#3153](https://github.com/ChurchCRM/CRM/issues/3153) for more steps on how to diagnose mod_rewrite.

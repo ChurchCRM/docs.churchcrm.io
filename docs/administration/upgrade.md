@@ -99,6 +99,60 @@ If your application files are **older** than the database schema (i.e., you acci
 
 ---
 
+## Upgrading from version 5.x (or older)
+
+The current release cannot upgrade a 5.x database directly. Go through the **latest 6.x release** first, then move to the latest release. Do not skip the 6.x stop.
+
+This works on shared hosting (cPanel or similar). The in-app wizard is not available on 5.x, so the first hop uses a manual file upload. After upgrading to 6.x, use the in-app wizard or a manual upload for the second hop.
+
+### Step 1: Back up with the in-app backup
+
+1. On your current version, go to **Admin → Backup**.
+2. Choose **Database + images**. If the archive times out on your host, choose **Database only**.
+3. Click **Create Backup** and download the file to your own computer. A backup that stays only on the server is lost if the site breaks.
+4. Also copy `Include/Config.php` and download a copy of the site folder, or take a full cPanel backup.
+
+### Step 2: Check your PHP and database versions
+
+| Release | PHP | Database |
+|---------|-----|----------|
+| Any 6.x release | **8.2 or higher** (checked on every page load) | MySQL 8.0.11+ or MariaDB 10.5+ |
+| 7.0.0 and later, including the latest release | **8.4 or higher** (checked on every page load) | MySQL 8.0.11+ or MariaDB 10.5+ |
+
+- The app checks the PHP version itself and shows a warning if it is too old. It does not check the database version, so confirm it in cPanel (**MySQL Databases**, or phpMyAdmin's home page) before you start.
+- If your database is older than the table says, ask your host to upgrade it before Step 3. Restoring a backup into an older database can fail.
+- In cPanel, open **MultiPHP Manager** and switch the site to the PHP version the next step needs.
+- Also see the [System Requirements](/installation/system-requirements) for the required PHP extensions.
+
+:::caution Your host cannot offer PHP 8.4?
+Stop at the latest 6.x release and stay on it. It is the newest release that runs on PHP 8.2 and 8.3. Do not use **Admin → System → Upgrade** there, because it installs the latest release, which needs PHP 8.4. Ask your host about PHP 8.4, or move to a host that offers it, before doing Step 4.
+:::
+
+### Step 3: Upgrade to the latest 6.x release
+
+1. On the [GitHub releases page](https://github.com/ChurchCRM/CRM/releases), find the newest release whose version starts with 6 and download its zip.
+2. Upload and extract it over your existing files. Overwrite everything, then restore your `Include/Config.php`.
+3. Open ChurchCRM in your browser. The database migrates on the first page load.
+4. Log in and check People, Families, Groups, and Finances.
+5. Take another **Admin → Backup** and download it. This is your restore point for the next step.
+
+### Step 4: Upgrade to the latest release
+
+1. Set PHP to **8.4 or higher** (see Step 2).
+2. Use **Admin → System → Upgrade**, or follow [Option 2 — Manual Upgrade](#option-2--manual-upgrade) if your host blocks outbound HTTPS.
+3. Open the site. The remaining migrations run on the next page load.
+4. Check the version number at the bottom of any page and run the **File Integrity Check** on the upgrade page.
+
+### If something goes wrong
+
+Put back the files you copied for that step, then go to **Admin → Restore** and load the backup you took before it. If the site no longer opens, restore the database dump from phpMyAdmin. See [Rollback](/administration/rollback).
+
+:::tip Try it on a copy first
+Make a second database and a subfolder, restore your backup into it, and run both steps there before touching the live site.
+:::
+
+---
+
 ## Troubleshooting upgrades
 
 | Symptom | Likely cause | Fix |
