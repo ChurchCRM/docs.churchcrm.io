@@ -30,6 +30,16 @@ The same page holds the **reminder lead time**, the **scheduling horizon** (how 
 
 Switching hides or shows pages and menu entries — it never deletes data, so you can switch back. The setting is system-wide, not per user.
 
+### Before you switch it on
+
+1. **Back up the database** ([Backup and restore](../../administration/backup-restore.md)). The 7.8.0 upgrade already created the Volunteer Management tables, and switching changes no data, but start from a backup.
+2. **Install the cron line** shown in the **Background jobs and delivery** card on Ministry Settings ([Background jobs](../../administration/background-jobs.md#recommended-setup-cron)). Reminders, staffing top-ups and volunteer email are sent by the background jobs. Without cron, they run only when someone happens to load a page.
+3. **Set up email** ([Email setup](../../administration/email-setup.md)). Assignments, reminders and alerts are sent by email. Without a mail server they are recorded as skipped and never sent.
+4. **Give people their permissions** ([Who can do what](./permissions.md)): **Manage Ministries** for the staff who set up ministries, and **Manage My Ministries** plus a coordinator grant for each ministry's coordinators.
+5. **If you use Volunteer Opportunities today, choose Both first.** Set up your ministries alongside the opportunities, then switch to V2 when you're ready.
+
+Switching on adds an **Other** event type, used for ministry events that don't fit an existing type. Switching back to V1 hides the ministry pages and pauses volunteer email and reminders. Nothing is deleted, and switching to V2 or Both again picks up where you left off.
+
 ## Where it lives
 
 Once V2 or Both is chosen, a **Ministries** heading appears in the sidebar for anyone who may manage a ministry, and for a team leader whose login has **Manage My Ministries** (see [Who can do what](./permissions.md)). It holds:
