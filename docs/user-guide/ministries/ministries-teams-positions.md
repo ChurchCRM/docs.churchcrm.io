@@ -66,7 +66,7 @@ Teams live in the **Teams** card on the **Overview** tab. Each row shows the nam
 - The row menu offers **Edit** and **Delete**. **Delete** removes the team and everything in it — its positions, qualifications, staffing needs, schedules, occurrences and assignments, past service records included — and its team-leader grant. The confirmation says so. A ministry's last team cannot be deleted; rename it instead.
 - Turning a team's **Active** switch off keeps it, with its history; its status then reads **Inactive**.
 
-The **Team leader** field is where a team leader is granted. Only a ministry manager sees the picker; a coordinator sees the current leader as read-only text with *"Only a volunteer manager can change the team leader"*. Clearing the field removes the leader. What a team leader can do is on [Who can do what](./permissions.md).
+The **Team leader** field is where a team leader is granted, by an administrator, a Manage Ministries user or the ministry's coordinator. Clearing the field removes the leader. What a team leader can do is on [Who can do what](./permissions.md).
 
 ### Linking a team to a Sunday School class
 

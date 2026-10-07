@@ -12,7 +12,7 @@ Volunteer Management v2 has five levels. Each one is decided in a different plac
 |---|---|---|
 | **Administrator** | the Admin flag on the user | everything |
 | **Manage Ministries** | the **Manage Ministries** switch in the user editor (custom permissions) | a global ministry manager: every ministry — create, deactivate, delete, set whether it provides teachers for Sunday School, grant coordinators and team leaders, and everything below |
-| **Ministry coordinator** | the **Manage My Ministries** switch in the user editor **plus** a coordinator grant on the ministry page | the Ministries heading, the dashboard and the pages of the ministries they coordinate, including creating and deleting those ministries' events; nothing over any other ministry. May deactivate their own ministry but not delete it, may not change its Sunday School switch, and may not grant coordinators |
+| **Ministry coordinator** | the **Manage My Ministries** switch in the user editor **plus** a coordinator grant on the ministry page | the Ministries heading, the dashboard and the pages of the ministries they coordinate, including creating and deleting those ministries' events; nothing over any other ministry. May deactivate their own ministry but not delete it, may not change its Sunday School switch, and may not grant coordinators, but may name the team leaders of their own ministries' teams |
 | **Team leader** | a team grant (the **Team leader** field of the team dialog), on a staff *or* a member login | their team — its positions, schedules, staffing needs and assignments — from the Member Portal's **My Teams** pages; with Manage My Ministries on a staff login, also the **Ministries** heading with the Ministry Dashboard. A team leader cannot create events unless their login also has **Add Events** |
 | **Volunteer** | any member | their own schedule and answers, proposing a substitute for their own dates, and signing up for open dates of positions they are qualified for |
 
@@ -23,7 +23,7 @@ Volunteer Management v2 has five levels. Each one is decided in a different plac
   ![The two switches in the user editor](/img/administration/user-editor-ministry-permissions.png)
 
 - **Coordinators** are granted on the ministry page, **Overview → Ministry Coordinators → Add coordinator** (administrators and Manage Ministries users only).
-- **Team leaders** are named in the **Team leader** field of the **Add team** / **Edit team** dialog on the same tab (same audience).
+- **Team leaders** are named in the **Team leader** field of the **Add team** / **Edit team** dialog on the same tab, by administrators, Manage Ministries users and that ministry's coordinators.
 
 Grants are given to the *person*, not to a login, so they can be made before the person has one. A person whose login is self-service only keeps seeing just their own schedule in the Member Portal until an administrator widens their account: a self-service login is never a coordinator, whatever grants it holds, but it can lead a team.
 
@@ -38,7 +38,8 @@ A team leader whose login lacks **Manage My Ministries** (a member login, or a s
 | Sidebar **Ministries** heading | Dashboard + every ministry | Dashboard + their ministries | Dashboard only | not shown |
 | [Ministry Dashboard](./ministry-dashboard.md) | whole church | their ministries | their team's dates | — |
 | [Ministry page](./ministries-teams-positions.md) | every ministry | their ministries | — (their team is on the portal's My Teams) | — |
-| **New ministry**, **Delete**, **Add coordinator**, Team leader picker | yes | no | no | — |
+| **New ministry**, **Delete**, **Add coordinator** | yes | no | no | — |
+| **Team leader** picker in Add/Edit team | yes | their ministries' teams | no | — |
 | **Deactivate** / **Reactivate** a ministry | yes | their own | no | — |
 | **Can this ministry provide teachers for Sunday School?** in Edit ministry | yes | sees it, cannot change it | no | — |
 | **Calendar** tab: **New event**, **New recurring event**, **Delete events** | yes | their ministries | no | — |
