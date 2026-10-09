@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
   pull_request_review:
-    types: [submitted]
+    types: [submitted, dismissed]
 
 permissions:
   contents: read
@@ -23,7 +23,8 @@ jobs:
         run: |
           set -euo pipefail
           state=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/reviews" \
-            --jq '[.[] | select(.user.login=="coderabbitai")] | last | .state // "NONE"')
+            --jq '.[] | select(.user.login=="coderabbitai") | .state' | tail -n 1)
+          state=${state:-NONE}
           echo "Latest CodeRabbit review: ${state}"
           if [ "$state" != "APPROVED" ]; then
             echo "::error::CodeRabbit has not approved this pull request."

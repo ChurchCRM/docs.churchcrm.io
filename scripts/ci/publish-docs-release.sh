@@ -63,7 +63,8 @@ ready_to_merge() {
   pending=$(gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
     --jq '[.statusCheckRollup[]? | select(.name != null and (.status != "COMPLETED" or .conclusion != "SUCCESS"))] | length')
   rabbit=$(gh api --paginate "repos/${DOCS_REPO}/pulls/${number}/reviews" \
-    --jq '[.[] | select(.user.login=="coderabbitai")] | last | .state // "NONE"')
+    --jq '.[] | select(.user.login=="coderabbitai") | .state' | tail -n 1)
+  rabbit=${rabbit:-NONE}
   if [ "$pending" != "0" ]; then
     echo "Pull request #$number is not merged. A CI check is missing or not successful."
     return 1
@@ -92,12 +93,13 @@ else
   echo "No open API pin pull request for $VERSION."
 fi
 
+pr_numbers=$(gh pr list --repo "$DOCS_REPO" --state open --limit 100 --json number,milestone,isDraft \
+  --jq ".[] | select(.isDraft == false and .milestone.title == \"$VERSION\") | .number")
 while read -r number; do
   [ -z "$number" ] && continue
   [ "$number" = "$pin_number" ] && continue
   merge_pr "$number" || skipped=1
-done < <(gh pr list --repo "$DOCS_REPO" --state open --limit 100 --json number,milestone,isDraft \
-  --jq ".[] | select(.isDraft == false and .milestone.title == \"$VERSION\") | .number")
+done <<< "$pr_numbers"
 
 if [ "$skipped" -ne 0 ]; then
   echo "::error::At least one docs pull request is waiting for CI or a CodeRabbit approval."

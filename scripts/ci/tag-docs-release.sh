@@ -11,11 +11,12 @@ fi
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-if git rev-parse "v${version}" >/dev/null 2>&1; then
+if git rev-parse "refs/tags/v${version}" >/dev/null 2>&1; then
   echo "Tag v${version} already exists."
 else
   git tag -a "v${version}" -m "Docs for ChurchCRM ${version}"
   if ! git push origin "v${version}"; then
+    git tag -d "v${version}"
     git fetch origin "refs/tags/v${version}:refs/tags/v${version}"
     echo "Tag v${version} was created by another run."
   fi
