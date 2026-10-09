@@ -55,6 +55,7 @@ Utilities for working with data:
 * [Search](/user-guide/search) - Finding people, families, and records
 * [Cart](/user-guide/cart) - Batch operations on selected records
 * [Email](/user-guide/email) - Sending emails to members
+* [Text Messages](/user-guide/text-messages) - Phone lists and the device messaging app
 * [Reports & Queries](/user-guide/reports-and-queries) - Generating reports
 * [Geographic Utilities](/user-guide/geographic) - Maps and location features
 * [Data Import](/user-guide/data-import) - Importing data from CSV files
