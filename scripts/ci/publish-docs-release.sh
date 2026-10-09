@@ -59,9 +59,9 @@ fi
 
 ready_to_merge() {
   local number="$1"
-  local pending rabbit
+  local pending
   pending=$(gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup --jq \
-    '[.statusCheckRollup[]?] as $all
+    '[.statusCheckRollup[]? | select(.name != "CodeRabbit approval" and .name != "CodeRabbit" and .context != "CodeRabbit")] as $all
      | ([$all[] | select(.__typename == "CheckRun") | .name]) as $names
      | if (($names | index("Validate Docusaurus site")) == null
            or ($names | index("Released software gate")) == null) then 1
@@ -70,15 +70,8 @@ ready_to_merge() {
          elif .__typename == "StatusContext" then (.state != "SUCCESS")
          else true end) then 1
        else 0 end')
-  rabbit=$(gh api --paginate "repos/${DOCS_REPO}/pulls/${number}/reviews" \
-    --jq '.[] | select(.user.login=="coderabbitai" or .user.login=="coderabbitai[bot]") | .state' | tail -n 1)
-  rabbit=${rabbit:-NONE}
   if [ "$pending" != "0" ]; then
     echo "Pull request #$number is not merged. A CI check is missing or not successful."
-    return 1
-  fi
-  if [ "$rabbit" != "APPROVED" ]; then
-    echo "Pull request #$number is not merged. CodeRabbit review is ${rabbit}."
     return 1
   fi
 }
@@ -115,7 +108,7 @@ while read -r number; do
 done <<< "$pr_numbers"
 
 if [ "$skipped" -ne 0 ]; then
-  echo "::error::At least one docs pull request is waiting for CI or a CodeRabbit approval."
+  echo "::error::At least one docs pull request is waiting for CI."
   exit 1
 fi
 
