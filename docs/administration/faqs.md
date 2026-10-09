@@ -22,7 +22,7 @@ Change this password immediately after your first login.
 
 Go through the latest 6.x release first. The current release has no upgrade steps for a 5.x database.
 
-1. Take an in-app backup (**Admin → Backup**, **Database + images**) and download it.
+1. Take an in-app backup from the **Admin Dashboard** (**System Info → Backup**). Choose **Full Backup** (or **Database Only** if the full archive times out) and click **Generate & Download Backup**.
 2. Check your database is MySQL 8.0.11+ or MariaDB 10.5+. Set your host to PHP 8.2 or higher and upload the newest 6.x zip from the [releases page](https://github.com/ChurchCRM/CRM/releases) over your files. Keep your `Include/Config.php`.
 3. Open the site so the database migrates, check it works, and take another backup.
 4. Set PHP to 8.4 or higher and upgrade to the latest release. If your host cannot offer PHP 8.4, stay on the latest 6.x release.
@@ -71,7 +71,7 @@ It may be tempting to simply upload your own artwork and rename the files as abo
 
    ```scp my_fancy_letterhead.jpg user@hostingprovider:ChurchCRM/Images```
 4. Log in to ChurchCRM with an admin account.
-5. Go to **Admin** → **Edit General Settings** → **Report Settings**.
-6. Set **sDirLetterHead** to `../Images/<your_file_name>` and click **Save Settings**.
+5. Go to **Admin → System Settings → Report Settings**.
+6. Set **bDirLetterHead** to `../Images/<your_file_name>` and click **Save Settings**.
 
    Replace `<your_file_name>` with the image you uploaded in step 3.
