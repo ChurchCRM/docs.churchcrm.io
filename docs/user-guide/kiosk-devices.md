@@ -83,7 +83,7 @@ Kiosk check-in is no longer limited to Sunday School classes. Any group can be u
 | **Parent Alert** | One-tap notification to parents (email, SMS, and/or OpenLP) for pickup/alert. |
 | **Check-in By** | Optional toggle in the kiosk header; when enabled, prompts for the authorized adult on each check-in and check-out. |
 | **Checkout all students** | Floating button (tooltip **Checkout all students**) that checks out everyone still checked in. It is not a header button. |
-| **Register Walk-In Guest** | Person-plus button on the check-in screen. Staff register someone who is not on the group roster and check them in to the current event. New in 7.8.0. |
+| **Register Walk-In Guest** | Person-plus button on the check-in screen. Staff register someone who is not on the group roster and check them in to the current event. |
 | **No login on device** | Kiosk uses a cookie; no ChurchCRM user login on the tablet. |
 | **Reload / Identify** | Admin can force reload or show an ID message on the kiosk screen. |
 | **Heartbeat** | Device polls the server so it can receive reload/identify commands. |
@@ -208,10 +208,6 @@ If no eligible adults are found for the child’s family, the prompt closes auto
 ---
 
 ## Walk-in guests
-
-:::note New in 7.8.0
-Registering a walk-in guest from the kiosk ships in ChurchCRM **7.8.0**. It is not in ChurchCRM 7.7.1.
-:::
 
 Use this when someone arrives who is not a member of the event’s group. Staff stay on the kiosk: the guest is created and checked in to the current event in one step. This does not add a Members / Visitors / Total head count on the event, and it does not print a name tag.
 
