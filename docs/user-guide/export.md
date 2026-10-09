@@ -5,49 +5,29 @@ sidebar_position: 22
 
 # Export & Data
 
-**Admin → Export** is the Export Hub. Membership CSV, a ChMeetings migration file, and a full database backup all start there.
+**Admin → Export** is where membership CSV, a ChMeetings file, and a database backup start. There is no separate **Admin → Backup** menu.
 
 ---
 
 ## The Export Hub
 
-Navigate to **Admin → Export** to see all available export options grouped by type:
-
-| Export type | Description |
-|-------------|-------------|
-| **Member CSV** | Exports all people and family data as a downloadable CSV file |
-| **ChMeetings** | Exports data in ChMeetings-compatible format for migration |
-| **Database Backup** | Creates a full SQL dump of your ChurchCRM database |
+| Card | Button |
+|------|--------|
+| **CSV Export** | **Open CSV Export** — choose fields, then **Create File** |
+| **ChMeetings Export** | **Export to ChMeetings CSV** |
+| **Database Backup** | **Go to Database Backup** |
 
 ---
 
-## Member CSV Export
+## CSV Export
 
-The CSV export produces a flat file with one row per person, suitable for spreadsheet analysis, mail merges, or importing into another system.
+1. Go to **Admin → Export**.
+2. Click **Open CSV Export**.
+3. Tick the fields you want. **Last Name** is always included. There is no marital-status field and no last-login field.
+4. Under **Output Method**, pick a **Format**: **CSV Individual Records**, **CSV Combine Families**, or **Add Individuals to Cart**.
+5. Click **Create File**.
 
-### Steps
-
-1. Go to **Admin → Export**
-2. Click **Export Members (CSV)**
-3. The file downloads immediately — no configuration required
-
-### What's included
-
-The exported CSV includes the following fields:
-
-- First name, last name, middle name
-- Family name and family ID
-- Email addresses (primary, home, work)
-- Phone numbers (mobile, home, work)
-- Address (street, city, state, zip, country)
-- Date of birth, gender, marital status
-- Classification, family role
-- Custom fields (if configured)
-- Membership date, last login date
-
-:::tip Controlling what's exported
-Use **Reports → Custom Queries** to export a filtered subset of members (e.g., only a specific classification or group).
-:::
+**Add Individuals to Cart** does not download a file. It puts the matching people in the [cart](./cart.md).
 
 ---
 
@@ -55,9 +35,9 @@ Use **Reports → Custom Queries** to export a filtered subset of members (e.g.,
 
 If you are migrating to or integrating with [ChMeetings](https://www.chmeetings.com/), ChurchCRM can export your data in the format ChMeetings expects.
 
-1. Go to **Admin → Export**
-2. Click **Export for ChMeetings**
-3. Download the generated file and use it in the ChMeetings import wizard
+1. Go to **Admin → Export**.
+2. Click **Export to ChMeetings CSV**.
+3. Use the downloaded file in the ChMeetings import wizard.
 
 ---
 
@@ -71,9 +51,11 @@ Store backup files outside your web server (e.g., a local drive, cloud storage).
 
 ### Steps
 
-1. Go to **Admin → Export** (or **Admin → Backup**)
-2. Click **Download Database Backup**
-3. A `.sql` or `.sql.gz` file downloads to your browser
+1. Go to **Admin → Export** and click **Go to Database Backup**.
+2. Choose **Database Only** (`.sql`) or **Full Backup** (`.tar.gz`, database plus photos).
+3. Click **Generate & Download Backup**.
+
+The full backup is a `.tar.gz` file, not a `.sql.gz` file.
 
 ### Restoring from backup
 
