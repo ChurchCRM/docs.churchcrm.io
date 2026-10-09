@@ -1,9 +1,9 @@
 ---
-title: Groups
+title: Groups and roles
 sidebar_position: 10
 ---
 
-# Groups
+# Groups and roles
 
 A Group is a collection of [People](/user-guide/persons) who occupy Roles within the Group. Groups can represent organizational, educational, and social constructs within your church.
 
@@ -28,6 +28,7 @@ Click any group to open the **Group View** page, which has been rebuilt as a mod
 ### Key Features
 
 - **Map This Group** — plots all group members on a Leaflet map directly from the Group View page, useful for geographic outreach planning.
+- **Text** — copies phone numbers or opens the device messaging app for everyone in the group, or for one role. See [Text Messages](/user-guide/text-messages).
 - **Kiosk check-in for all groups** — any group can be assigned to a kiosk station, not just Sunday School. Link a group to an event, then assign that event to a kiosk device.
 - **Event roster with member photos** — group event rosters show member photos on each row with improved badge contrast.
 

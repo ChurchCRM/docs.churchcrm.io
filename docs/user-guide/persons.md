@@ -1,9 +1,9 @@
 ---
-title: Persons
+title: People
 sidebar_position: 2
 ---
 
-# Persons
+# People
 
 A Person record represents an individual in your congregation. Person records can be grouped into [Families](/user-guide/families), belong to [Groups](/user-guide/groups), have [Properties](/user-guide/properties) assigned, and can be made [Users](/administration/users) of the application.
 
@@ -117,6 +117,20 @@ Filters apply instantly without reloading the page.
 When a person record is deleted, any associated profile photo is automatically cleaned up from the server.
 
 Photo uploads are processed through the **Uppy** uploader — drag-and-drop a file directly onto the photo area on the Person Editor page.
+
+## Photo Directory
+
+**People** → **Photo Directory** shows a grid of active people so you can match a face to a name. People in inactive classifications are not listed.
+
+Each card shows the photo, or initials when there is no photo, plus the classification. **Not Classified** means no classification is set. Click the photo or the name to open the person record.
+
+The three buttons under the name are:
+
+- **Call** — dials the cell number, or the home number if there is no cell number. It is disabled with **No phone number on file** when neither is set.
+- **Send text message** — opens a text to the cell number. It is disabled with **No cell phone on file** when there is no cell number.
+- **Email** — opens a mail message to the address on the person. It is disabled with **No email address on file** when there is no address.
+
+Filter the grid with **All Classifications**, a single classification, or **Unassigned**. Turn on **Photos only** to hide people who have no photo. Choose how many cards appear with the **page** list, or **All**. **Reset** clears the filters. If nothing matches, the page says **No people found** and offers **Reset Filters**.
 
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: Security
+title: Account security
 sidebar_position: 3
 ---
 
-# Security
+# Account security
 
 > ChurchCRM should only run over HTTPS connections.
 >

@@ -1,11 +1,12 @@
 ---
-title: Welcome to ChurchCRM
+title: ChurchCRM Documentation
+description: Install ChurchCRM, configure it, and use it day to day.
 sidebar_position: 1
 ---
 
-# Welcome to ChurchCRM
+# ChurchCRM documentation
 
-ChurchCRM exists to serve the Church — every congregation, in every country, in every language. We believe that God's people deserve world-class tools without the burden of licensing fees, vendor lock-in, or data ownership concerns. This documentation covers installation, administration, and day-to-day use of our free, open-source church management platform.
+Install ChurchCRM, configure it, and use it day to day.
 
 Start at the [official ChurchCRM website](https://churchcrm.io/?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=docs_index_website) for product overview, live demo access, and installation entry points.
 

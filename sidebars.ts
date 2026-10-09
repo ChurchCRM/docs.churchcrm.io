@@ -92,6 +92,7 @@ const sidebars: SidebarsConfig = {
       label: '📧 Communications',
       items: [
         'user-guide/email',
+        'user-guide/text-messages',
         'user-guide/reports-and-queries',
         'user-guide/geographic',
         'user-guide/data-import',
