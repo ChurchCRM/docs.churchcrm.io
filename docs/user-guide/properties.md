@@ -9,58 +9,56 @@ A Property is a label that can be applied to a [Person](/user-guide/persons), a 
 
 Additionally, Properties can have values which contain information related to that Property. For example, a Property for a Person record might be "Hospitalized." A person with this Property is currently in the hospital, and the value of this Property could contain the name of the hospital and the room number.
 
-## How do I know what Properties have been assigned?
+There is no **Properties** menu.
 
-On the Person, Family, or Group View, you'll find a section called "Assigned Properties" in which will be listed all the Properties assigned to that Person, Family or Group along with the Property Values, if supported by that Property.
+## How do I know what properties have been assigned?
 
-## How do I assign a Property to a Person/Family/Group?
+On the person, family, or group page, the card title is **Properties**. It lists each assigned property and its value when the property has one. There is no heading named **Assigned Properties**.
 
-1. For a person or family, filter for the desired person and bring up the Person/Family View for that record. For a group, click on _"List Groups"_ under _"Groups"_ in the drop-down menu and select the desired group.
-2. Under the section called "Assigned Properties" will be a drop-down list of all available Properties which are not currently assigned to that Person. Select the desired Property and press _"Assign"_.
-3. If the property supports a Property Value, then you'll be prompted to enter the Value. If the Property does not support a Value, the Property will just be automatically assigned.
+## How do I assign a property?
 
-## How do a edit a Property Value assigned to a Person/Family/Group?
+1. Open the person, family, or group.
+2. On the **Properties** card, choose a property and click **Assign**.
+3. If the property has a prompt, enter the value when asked. A blank prompt means the property has no value.
 
-1. For a person or family, filter for the desired person and bring up the Person/Family View for that record. For a group, click on _"List Groups"_ under _"Groups"_ in the drop-down menu and select the desired group.
-2. Under the section called "Assigned Properties" find the Property you wish to edit. Click the _"Edit"_ link (if this link is not present, then the Property does not support a value and there is nothing to edit).
-3. On the resulting page, edit the Value. Press _"Update"_.
+Open a group from **Groups**, not from a **List Groups** item. That menu item is not there.
 
-## How do I remove or un-assign a Property from a Person/Family/Group?
+## How do I edit a property value?
 
-1. For a person or family, filter for the desired person and bring up the Person/Family View for that record. For a group, click on _"List Groups"_ under _"Groups"_ in the drop-down menu and select the desired group.
-2. Under the section called "Assigned Properties" find the Property you wish to remove. Click the _"Remove"_ link.
-3. On the resulting screen, confirm the removal.
+On the group **Properties** card, a property that has a prompt shows **Edit Value**. Change the value and save it. If **Edit Value** is not there, the property does not store a value.
 
-## How do a I add a brand-new Property that I can assign to a Person record?
+## How do I remove a property?
 
-1. Go to **Properties** → **People Properties**.
-2. On the resulting screen, select _"Add a New Person Property"_.
-3. Complete the form. If you would like the Property to support a Value, enter a prompt (ex. - "Enter the hospital name and room number.").
+On the **Properties** card, use **Remove** on that property and confirm.
 
-Leaving the Prompt field blank will disallow the storing of a Value with the Property.
+## How do I add a property I can assign to a person?
 
-## How do a I add a brand-new Property that I can assign to a Family record?
+1. Go to **People → Admin → Person Properties**.
+2. Click **Add New**.
+3. Complete the form. Enter a prompt (for example, "Enter the hospital name and room number") if the property should store a value.
 
-1. Go to **Properties** → **Family Properties**.
-2. On the resulting screen, select _"Add a New Family Property"_.
-3. Complete the form. If you would like the Property to support a Value, enter a prompt (ex. - "Enter the hospital name and room number.").
+Leave the prompt blank when the property should not store a value. The page also has **Manage Person Property Types**.
 
-Leaving the Prompt field blank will disallow the storing of a Value with the Property.
+## How do I add a property I can assign to a family?
 
-## How do a I add a brand-new Property that I can assign to a Group record?
+1. Go to **People → Admin → Family Properties**.
+2. Click **Add New**.
+3. Complete the form the same way as a person property.
 
-1. Go to **Properties** → **Group Properties**.
-2. On the resulting screen, select _"Add a New Group Property"_.
-3. Complete the form. If you would like the Property to support a Value, enter a prompt (ex. - "Enter the hospital name and room number.").
+Property types for families are **Manage Family Property Types**.
 
-Leaving the Prompt field blank will disallow the storing of a Value with the Property.
+## How do I add a property I can assign to a group?
 
-## What is a Property Type?
+1. Go to **Groups → Admin → Group Properties**.
+2. Click **Add New**.
+3. Complete the form the same way.
 
-This is just a method of organizing Properties into groups. A Property must be associated with a Property Type. Common Property Types might be: Physical Status containing the Properties of: Disabled, Home-bound, Hospitalized, etc.
+Property types for groups are **Manage Group Property Types**.
 
-## How do I add a new Property Type?
+## What is a property type?
 
-1. Go to **Properties** → **Property Types**.
-2. On the resulting screen, select _"Add a New Property Type"_.
-3. Complete the form and press _"Save"_.
+A property type groups related properties. A property belongs to one type. For example, a type named Physical Status might hold Disabled, Home-bound, and Hospitalized.
+
+## How do I add a property type?
+
+On the person, family, or group property list, click **Manage … Property Types** (the label includes the record type, such as **Manage Person Property Types**). Add the type and save it.

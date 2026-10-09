@@ -45,28 +45,24 @@ Click any group to open the **Group View** page, which has been rebuilt as a mod
 
 ### Adding People to a Group
 
-1. Search for people or go to **People** → **View All Persons**.
-2. Add desired people to your [Cart](/user-guide/cart).
-3. Go to **Groups** → **Cart to Group** (or navigate to `/groups/cart-to-group`).
-4. Select the target group and optionally a role, then click **Add to Group**.
+1. Search for people or go to **People → Person Listing**.
+2. Add the people to the [Cart](/user-guide/cart).
+3. Open the cart and choose **Empty Cart to Group**.
+4. The page title is **Add Cart to Group**. Select the group and, if you want, a role, then click **Add to Group**.
 
 ---
 
-## Cart to Group
+## Empty Cart to Group
 
-The **Cart to Group** page (`/groups/cart-to-group`) lets you bulk-assign all members currently in the Cart to a Group.
+**Empty Cart to Group** assigns everyone currently in the cart to one group. The page title is **Add Cart to Group**.
 
-:::note New in 7.5.0
-The Cart to Group feature is now available at `/groups/cart-to-group`. The legacy `CartToGroup.php` URL redirects to this new page.
-:::
+### How to use Empty Cart to Group
 
-### How to use Cart to Group
-
-1. Add the desired people to your [Cart](/user-guide/cart).
-2. Navigate to **Groups** → **Cart to Group**.
-3. Select the target **Group** from the dropdown.
-4. Optionally select a **Role** for the new members (defaults to the group's Default Role if left blank).
-5. Click **Add to Group** to assign all cart members.
+1. Add the people to the [Cart](/user-guide/cart).
+2. Open the cart and choose **Empty Cart to Group**.
+3. Select the **Group**.
+4. Optionally select a **Role**. If you leave it blank, people are added in the group's default role.
+5. Click **Add to Group**.
 
 All members of the cart will be added to the specified Group _if_ they do not already exist in that Group. Existing members will not be duplicated.
 
@@ -190,7 +186,7 @@ When a new group is created, you are given the option to set the group type.
 
 ### How do I change the available Group Types?
 
-Go to **Groups** → **Edit Group Types**.
+Go to **Groups → Admin → Group Types**. The page title is **Group Types Editor**. **Add New Group Type** adds a type. Reorder with **Move up** and **Move down**.
 
 ### What are Group-Specific Properties?
 
@@ -204,7 +200,7 @@ See the [Custom Fields](/user-guide/custom-fields) help topic.
 
 1. Add the desired people to your Cart.
 
-2. With people in the Cart, go to **Groups** → **Cart to Group** (or navigate to `/groups/cart-to-group`).
+2. With people in the cart, open the cart and choose **Empty Cart to Group**. The page title is **Add Cart to Group**.
 
 3. On the resulting screen, select the desired Group, then press _"Add to Group"_.
 
@@ -218,13 +214,13 @@ All People will be added to the Group in that group's Default Role, unless you s
 
 2. Click on the desired Group to open its Group View page.
 
-3. Click **View Members** (or the Members tab).
+3. Members are listed on the group page. There is no **View Members** step.
 
-4. Find the desired Member and click on _"Change Role"_.
+4. Find the member and click **Change Role**.
 
-5. Select the new Role from the drop-down list.
+5. Choose the new role.
 
-6. Press _"Update"_.
+6. Click **Save**.
 
 ### What is _"Add Group Members to Cart"_?
 

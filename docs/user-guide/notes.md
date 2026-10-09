@@ -29,20 +29,18 @@ Long notes show a 3-line preview in the timeline. Click **Read more** to view th
 
 | Type | Who Can See Full Content | Who Can Edit | Who Can Delete |
 |------|--------------------------|--------------|----------------|
-| **Public** | All users with Notes permission | Creator only | Creator or Admin |
-| **Private** | Creator only | Creator only | Creator or Admin |
+| **Public** | Users who can see notes | Creator, and an administrator | Creator or an administrator |
+| **Private** | The author, and administrators | The author, and an administrator | Creator or an administrator |
 
-### Private Note Details
+### Private notes
 
-When you create a **private note**, only you can read it. Administrators have limited access:
+Check **Private** when you save a note.
 
-- **Creator** — sees full content, can edit or delete
-- **Admins (not creator)** — see a placeholder *[Private Note — visible only to creator]* in the timeline; can delete if necessary but cannot read the content
-- **Other users** — note is invisible
+- The author sees the full note and an **Edit** link.
+- An administrator sees the full private note and an **Edit** link, even when someone else wrote it.
+- Other users do not see the note at all. There is no placeholder such as "[Private Note — visible only to creator]".
 
-> **Tip:** Use private notes for sensitive pastoral information — prayer requests, medical concerns, or confidential conversations that should not be shared with other staff.
-
-> **Note for Admins:** Private notes are protected by design. You cannot view another user's private note content, only delete it when required.
+Use a private note for pastoral details you do not want the rest of the staff to read.
 
 ---
 
@@ -66,7 +64,7 @@ Deleting a note creates a **System** timeline entry recording who deleted it and
 
 ## Editing a Note
 
-Only the note's author can edit it. Admins cannot edit other users' notes.
+The author can edit the note. An administrator can edit it as well, including a private note written by someone else. Other users cannot.
 
 1. Find the note in the Timeline
 2. Click **Edit** in the note's footer

@@ -22,12 +22,11 @@ You can optionally add extra roles (e.g., "Assistant Teacher", "Substitute") usi
 
 ## Adding Students and Teachers
 
-1. Open the Sunday School class group
-2. Click **View Members**
-3. Use the search to find and add [people](/user-guide/persons)
-4. Assign the appropriate role (Teacher or Student)
+1. Open the Sunday School class.
+2. Use **Add Member** on the group page and choose the person.
+3. The new member is a **Student** unless you set another role. Use **Change Role** and **Save** to make someone a **Teacher**.
 
-> **Tip:** Use the [Cart](/user-guide/cart) feature to add multiple students at once by selecting them and choosing "Empty Cart to Group."
+> **Tip:** To add several students at once, put them in the [Cart](/user-guide/cart) and choose **Empty Cart to Group**. The page title is **Add Cart to Group**. Click **Add to Group**.
 
 ## Tracking Attendance
 
@@ -47,11 +46,8 @@ Each Sunday School class has a dedicated dashboard showing:
 - Attendance statistics
 - Quick actions for common tasks
 
-## Communicating with Parents
+## Contacting the class
 
-To contact parents of students in a class:
+There is no **View Members** action and no **Compose Message** button.
 
-1. Navigate to the Sunday School Dashboard for your class
-2. Click the **Compose Message** button
-3. Select whether to message students, parents, or both
-4. Compose and send your message
+On the class group page, **Email** opens a message to the class when email is turned on. **Text** copies numbers or opens the device messaging app. See [Text Messages](/user-guide/text-messages).

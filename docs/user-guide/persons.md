@@ -14,24 +14,24 @@ A Person record represents an individual in your congregation. Person records ca
 ## Step-by-step: Adding a Person
 
 1. Go to **People** → **Add New Person**.
-2. Enter **First Name** and **Last Name**.
-3. Select or create a **Family** (required).
-4. Enter **Classification** (Member, Guest, etc.).
-5. Add address, phone, email (or leave blank to inherit from family).
-6. Add birth date (year required; age is calculated automatically).
+2. Enter a **Last Name**. That is the only required field. First name can be left blank.
+3. Choose a **Family** if this person belongs to one. Family is optional. You can also create a new family from the same form.
+4. Enter **Classification** (Member, Guest, and so on) if you use classifications.
+5. Add address, phone, and email, or leave them blank to inherit them from the family.
+6. Enter a birth date only when you have the month and the day. A birth year by itself is rejected with **Invalid Birth Date: Missing birth month and day.** Age is calculated from a complete birth date.
 7. Click **Save** or **Save and Add** to add another person.
 
-> **Tip:** To add several people at once, use the [Family Editor](/user-guide/families) — you can add up to 10 family members in one form.
+> **Tip:** To add several people at once, use the [Family Editor](/user-guide/families). A new family starts with four member rows. **Add Another Family Member** appends another row. There is no limit of 10.
 
 ---
 
 ## How do I find a specific person?
 
-In the left navigation, find the search box just above **Dashboard**. Enter a search string — results appear as you type, matching first or last name.
+Use the search field in the page header. Its placeholder is **Search people, families, groups…**. Results appear as you type. People matches look at first name, middle name, last name, email, work email, and home, cell, and work phone, and only living people are included.
 
-Clicking on a person's name opens their Person View, which lists all information about that person, including assigned properties, assigned groups, and notes.
+Clicking a person's name opens their Person View, which lists the information on that person, including properties, groups, and notes.
 
-This is a wildcard search: the system looks for that sequence of characters anywhere in the first or last name. For example, searching for "ian" will return records for "Ian," "Brian," and anyone else whose name contains those letters in that order.
+This is a wildcard search. Searching for "ian" can return "Ian" or "Brian" when those letters appear in a name, email, or phone that is searched. See [Find people and families](/user-guide/search) for the other result types.
 
 ## Active and inactive people
 
@@ -43,72 +43,42 @@ You cannot deactivate the person record associated with your own signed-in accou
 
 ## Marking a person as deceased
 
-ChurchCRM 7.7 adds a first-class deceased status so a person's history can be preserved without treating them as a living member.
+Deceased is not a classification and not a choice in a list named Deceased.
 
 1. Open the person and choose **Edit**.
-2. In the Church Membership section, select **Deceased**.
-3. Enter the date of death when known. The deceased status can also be recorded without a date.
+2. In **Church Membership**, check **This person is deceased**.
+3. Enter the date of death when you know it. The date field can be left blank. If you save with the box checked and no date, ChurchCRM stores today's date.
 4. Save the person.
 
-The Person View displays a **Deceased** badge. On the Family View, deceased family members are visually distinguished and are not included in the living/active-member count. If the deceased person was the Head of Household, ChurchCRM prompts staff to review family leadership.
+Clear the checkbox to undo the mark.
 
-The status is reversible: edit the person and clear **Deceased** if it was selected by mistake.
+The person record, pledges, payments, notes, and history stay in place. Header search only returns living people. Voting-member reporting excludes deceased people.
 
-ChurchCRM preserves the person's record, pledges, payments, notes, and history. Deceased people are automatically excluded from workflows intended for living members, including birthday reminders, search autocomplete, kiosk and event rosters, group contact exports, mailing labels, Mailchimp synchronization, and living-member statistics.
+Administrators hide deceased people from the printed directory and from CSV exports with **People → Dashboard → People Settings → Hide Deceased from Directory**. The setting text is **Hide deceased members from the printed directory and CSV exports.**
 
-Administrators can control whether deceased people appear in printed directories and CSV exports with **Hide deceased members from the printed directory and CSV exports** in the People settings. Voting-member reporting always excludes deceased people.
+## Timeline
 
-## Timeline Filters
+The Person View timeline shows notes, attendance, and system activity, newest first. Filter chips are **Notes**, **Events**, and **System**. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
 
-The **Person View** includes a **Timeline** tab that shows notes, attendance records, and activity in chronological order. Use the filter controls to narrow the timeline by:
-
-- **Type** — Notes only, Attendance only, or All
-- **Date range** — Show entries from a specific period
-
-This makes it easier to review pastoral care history or attendance patterns for a specific member without scrolling through unrelated entries.
+Long notes show a short preview. **Read more** opens the full note.
 
 ---
 
-## Attendance History
+## Attendance
 
-The **Attendance History** tab on the Person profile page shows a complete record of every event a person has checked in to.
+Open the person and click the **Attendance** tab. It loads the first time you open it.
 
-### How to find it
+Three cards sit at the top:
 
-1. Open a person's profile (search by name or click from a family/group record).
-2. Click the **Attendance History** tab.
+| Card | What it shows |
+|------|----------------|
+| **Total Events** | Events this person has checked in to |
+| **Last Attendance** | Date of the most recent check-in, or **Never** |
+| **Best Streak** | Longest run for one event type (the type name is the tooltip). The count is shown as a number of events. |
 
-The tab loads on demand — it fetches data the first time you open it.
+The table columns are **Event**, **Type**, **Date**, **Check-in**, and **Check-out**.
 
-### Summary stats
-
-Three stat cards appear at the top of the tab:
-
-| Stat | What it shows |
-|------|--------------|
-| **Total Events** | All-time count of events the person attended |
-| **Attendance Streak** | Current consecutive-week streak (resets if a week is missed) |
-| **Last Attendance** | Date of the most recent check-in |
-
-### Attendance table
-
-Below the stats, a table lists all events in reverse chronological order:
-
-| Column | Description |
-|--------|-------------|
-| **Event Name** | Name of the event |
-| **Type** | Event type (e.g. Sunday Service, Group Meeting) |
-| **Date** | Event date |
-| **Check-in / Check-out** | Times recorded at check-in |
-
-### Filters
-
-Use the filter controls above the table to narrow results:
-
-- **Event Type** — filter to a specific type of event
-- **Date Range** — show only events within a date window
-
-Filters apply instantly without reloading the page.
+Filters above the table are **Event Type**, **From**, and **To**. **Clear** resets them. There is no **Apply Filter** button.
 
 ---
 
@@ -116,7 +86,7 @@ Filters apply instantly without reloading the page.
 
 When a person record is deleted, any associated profile photo is automatically cleaned up from the server.
 
-Photo uploads are processed through the **Uppy** uploader — drag-and-drop a file directly onto the photo area on the Person Editor page.
+Upload a photo from the person view, not the Person Editor. Click the photo (the tooltip is **Click to upload photo**) and choose the file. You need permission to edit records.
 
 ## Photo Directory
 
@@ -156,7 +126,20 @@ A classification defines a person's role within the church. Common [Classificati
 
 ## How do I enter a person's age?
 
-You don't. ChurchCRM automatically calculates age from the birth date. At minimum, a birth year must be entered. If the exact year is unknown, you can enter an estimate and update it later.
+You don't enter an age. ChurchCRM calculates it from the birth date. A year by itself is not enough: saving a birth year without a month and a day shows **Invalid Birth Date: Missing birth month and day.** Enter the month and the day as well. If only the month or only the day is filled in, the message is **Invalid Birth Date: Missing birth month or day.**
+
+## People Dashboard
+
+**People → Dashboard** opens the People Dashboard.
+
+Count cards link to families, people, Sunday School (when that menu is on), and groups. **People by Classification** lists each classification with its share and count. The same page also shows **Family Roles**, **Gender Demographics**, **Age Distribution**, and report links for **People Directory** and **Letters & Mailing Labels**.
+
+**Quick Actions** includes **Verify People** and **New Self-Registrations**. When email is available, **Email All** is there too.
+
+Administrators open **People Settings** on this dashboard:
+
+- **Self Registration** — **Allow visitors to self-register as new families.**
+- **Hide Deceased from Directory** — **Hide deceased members from the printed directory and CSV exports.**
 
 ## How do I delete a person?
 

@@ -35,8 +35,8 @@ Kiosk check-in is no longer limited to Sunday School classes. Any group can be u
 | What | Details |
 |------|---------|
 | **URL (device)** | `https://your-churchcrm-url/kiosk/` |
-| **URL (admin)** | **Admin** → **Kiosk Manager** or `https://your-churchcrm-url/kiosk/admin` |
-| **Registration window** | 30 seconds (enable in Kiosk Manager) |
+| **URL (admin)** | **Groups → Admin → Kiosk Manager** |
+| **Registration window** | 2 minutes. The switch is **Enable new kiosk registration**. |
 | **Who can manage** | Administrators only |
 | **Assignment** | One event per kiosk; event must have a **group** linked (any group type) |
 | **Heartbeat** | Device polls server at an optimized rate for faster reload/identify response |
@@ -51,7 +51,7 @@ Kiosk check-in is no longer limited to Sunday School classes. Any group can be u
    (Only **future** events appear for kiosk assignment.)
 
 2. **Enable registration**  
-   **Admin** → **Kiosk Manager** → turn **Enable New Kiosk Registration** **On**. You have 30 seconds.
+   **Groups → Admin → Kiosk Manager** → turn on **Enable new kiosk registration**. The window is 2 minutes. The heading on that row is **Register New Device**.
 
 3. **Register the device**  
    On the tablet/kiosk, open a browser and go to `https://your-churchcrm-url/kiosk/`. The device registers and shows "Awaiting Acceptance."
@@ -81,7 +81,7 @@ Kiosk check-in is no longer limited to Sunday School classes. Any group can be u
 | **Birthday recognition** | Highlights today’s birthdays, upcoming (14 days), and recent (14 days). |
 | **Parent Alert** | One-tap notification to parents (email, SMS, and/or OpenLP) for pickup/alert. |
 | **Check-in By** | Optional toggle in the kiosk header; when enabled, prompts for the authorized adult on each check-in and check-out. |
-| **Checkout All** | One tap to check out everyone in the class. |
+| **Checkout all students** | Floating button (tooltip **Checkout all students**) that checks out everyone still checked in. It is not a header button. |
 | **No login on device** | Kiosk uses a cookie; no ChurchCRM user login on the tablet. |
 | **Reload / Identify** | Admin can force reload or show an ID message on the kiosk screen. |
 | **Heartbeat** | Device polls the server so it can receive reload/identify commands. |
@@ -117,9 +117,9 @@ Only events with a **future** start date appear in the Kiosk Manager assignment 
 
 ### Step 1: Enable registration
 
-1. Go to **Admin** → **Kiosk Manager**.
-2. Turn **Enable New Kiosk Registration** **On**.
-3. A **30-second** countdown starts. New devices must open the kiosk URL in this window to register.
+1. Go to **Groups → Admin → Kiosk Manager**.
+2. Turn on **Enable new kiosk registration**.
+3. A 2-minute window opens. The device must open the kiosk URL during that window.
 
 ### Step 2: Open the kiosk URL on the device
 
@@ -150,10 +150,10 @@ If the dropdown is empty, create a **future** event with a **group** and refresh
 
 ### Layout
 
-- **Header** — Event title, group name, start/end time, counts (Here / Expected), **Checkout All** button.
+- **Header** — Event title, group name, start/end time, and counts (Here / Expected). Checkout-all is not a header button. It is the floating button whose tooltip is **Checkout all students**.
 - **Birthday banner** — Optional; shows students with birthdays in the next or past 14 days.
 - **Left column** — "Waiting to Check In" (yellow); members listed alphabetically by last name, then first name. Tap to check in.
-- **Right column** — "Checked In" (green); also sorted alphabetically. Tap **Parent Alert** or use **Checkout All**.
+- **Right column** — "Checked In" (green); also sorted alphabetically. Tap **Parent Alert**, or use the floating button whose tooltip is **Checkout all students**.
 
 ### Student cards
 
@@ -172,10 +172,9 @@ Each person has:
 | **Upcoming** | Green card, "Turning [age]" (next 14 days). |
 | **Recent** | Gray card (past 14 days). |
 
-### Checkout All
+### Checkout all students
 
-- In the header, **Checkout All** moves every checked-in person back to "Waiting to Check In" and updates attendance with checkout time.
-- Use it at the end of class.
+The floating button tooltip is **Checkout all students**. It is not a header button labeled Checkout All. Use it at the end of class to check out everyone who is still checked in.
 
 ### Recording who checks a child in/out (Check-in By)
 
@@ -195,7 +194,7 @@ The name selected is stored on the attendance record as the authorized adult for
 | Condition | Result |
 |-----------|--------|
 | Family member has a complete, valid birth date on record | Shown if age ≥ 18 |
-| Family member has no birth date on record | Shown if their family role is Head or Spouse (as configured under **Admin** → **Family Roles**) |
+| Family member has no birth date on record | Shown if their family role is Head or Spouse (roles are set under **People → Admin → Family Roles**) |
 | The child being checked in | Always excluded |
 
 The list is sorted alphabetically by last name, then first name.
@@ -213,7 +212,7 @@ The **Parent Alert** button (bell) sends a message to parents that the teacher h
 ### Requirements
 
 - The student must be **checked in** (button only shows for checked-in students).
-- At least one notification method must be configured: **Email**, **SMS (Nexmo/Vonage)**, or **OpenLP**.
+- At least one notification method must be configured: **Email**, **SMS (Vonage)**, or **OpenLP**.
 
 ### What parents receive
 
@@ -224,9 +223,9 @@ The **Parent Alert** button (bell) sends a message to parents that the teacher h
 
 | Method | Where | What to set |
 |--------|--------|-------------|
-| **Email** | **Admin** → **Edit General Settings** → **Email Settings** | SMTP host, port, user, password. See [Email Setup](/administration/email-setup). |
-| **SMS** | **Admin** → **System Settings** → **Integration** | Nexmo API Key, API Secret, From Number. |
-| **OpenLP** | **Admin** → **System Settings** → **Integration** | OpenLP URL, username, password (if used). |
+| **Email** | **Communication → Email** | See [Email Setup](/administration/email-setup). |
+| **SMS** | **Admin → Plugins** | Turn on the Vonage plugin and enter the Vonage API key, secret, and from number. This is not under System Settings → Integration, and the plugin is not named Nexmo. |
+| **OpenLP** | **Admin → System Settings → Integration** | OpenLP URL, username, and password, if you use OpenLP. |
 
 When a teacher taps Parent Alert, all configured channels are used at once.
 
@@ -238,12 +237,10 @@ When a teacher taps Parent Alert, all configured channels are used at once.
 
 | Column | Meaning |
 |--------|--------|
-| **Id** | Internal kiosk ID. |
-| **Kiosk Name** | Auto-generated name (e.g. `ipheec`); use it to match device to row. |
-| **Assignment** | Current event (and group). Change via dropdown. |
-| **Last Heartbeat** | Last time the device contacted the server. |
-| **Accepted** | Whether the kiosk has been accepted. |
-| **Actions** | Reload, Identify, Accept, Delete. |
+| **Status** | **Pending**, **Online**, or **Offline**. |
+| **Kiosk Name** | The device name, with **Last seen** under it. |
+| **Assignment** | The event assigned to this kiosk. |
+| **Actions** | **Accept**, **Rename**, **Reload**, **Identify**, and **Delete**. |
 
 ### Actions
 
@@ -339,7 +336,7 @@ chrome --kiosk https://your-churchcrm-url/kiosk/
 
 The picker only lists adult members of the child’s family. If it appears empty or is missing someone, check:
 
-- **Birth date not set** — A family member with no birth date on record falls back to their family role. If their role is not Head or Spouse (as configured under **Admin** → **Family Roles**), they are excluded. Either add a birth date that shows they are 18 or older, or update their role to Head or Spouse.
+- **Birth date not set** — A family member with no birth date on record falls back to their family role. If their role is not Head or Spouse (roles are under **People → Admin → Family Roles**), they are excluded. Either add a birth date that shows they are 18 or older, or update their role to Head or Spouse.
 - **Under 18** — A family member with a birth date on record is only shown if they are 18 or older. Verify the birth year is correct on the family member’s person record.
 - **Wrong family** — Confirm the child is linked to the correct family (**People** → open the person → **Family** tab).
 - **No family record** — If the child has no family in ChurchCRM, the picker has no one to show. Link the child to a family to enable the Check-in By feature.
