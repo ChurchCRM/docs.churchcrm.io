@@ -4,50 +4,46 @@ This file tells AI agents (Claude, Copilot, etc.) everything they need to know t
 
 ---
 
-## Release Gate — Product Documentation Must Match Released Software
+## Workflow
 
-**The public docs site documents released ChurchCRM software, not `master`.**
+The public site documents **released** ChurchCRM. A merged CRM pull request is not a release. Humans and agents follow the same rules. The short version for readers of the site is [Docs workflow](/workflow).
 
-For any PR that documents product behavior:
+### Decide what kind of change this is
 
-1. Identify the CRM issue/PR that implements the behavior.
-2. Identify the CRM release milestone containing that implementation.
-3. Assign the docs PR to the **same release milestone** (for example `7.7.1` or `7.8.0`).
-4. Keep the docs PR open until that exact CRM version has been published as a production GitHub Release.
-5. Only after the CRM release exists may the product-doc PR be merged into `main`.
+| Change | Milestone | Label | When it may merge |
+|---|---|---|---|
+| Product behavior: install, admin, user guide, screenshots of the app | The CRM version that will ship it, for example `7.8.0` | none | After that version is a published stable GitHub Release, and after the API pin pull request for that version if one is open |
+| Correction to docs for software that is already released | That published version, for example `7.7.1` | none | Immediately, because the release already exists |
+| CI, dependencies, agent instructions, site infrastructure, typos that do not describe new product behavior | **none** | `ci`, `repo-maintenance`, `infrastructure`, or `dependencies` | When CI is green |
 
-A merged CRM PR is **not** enough. Until the software is released, its documentation must not appear on the public docs site.
+Do not put infrastructure on the latest product milestone. A version milestone means "this pull request documents that release." The latest published milestone is already released, so the gate would pass and unreleased behavior could reach the site.
 
-Exceptions are repository-only changes that do not describe unreleased product behavior, such as CI, dependency maintenance, agent/skill instructions, site infrastructure, typo fixes, or corrections to documentation for software that is already released.
+`release-gate.yml` is the check that blocks a merge. It fails when a pull request has no milestone and none of those labels. It also fails when the milestone is not a published stable `x.y.z` release of `ChurchCRM/CRM`.
 
-### Milestone lifecycle
+### Product docs before the release
 
-- CRM is the source of truth for release versions.
-- Product documentation uses the matching release milestone in `ChurchCRM/docs.churchcrm.io`.
-- When CRM publishes a production release, release automation should create/synchronize the next release milestone in both CRM and docs.
-- Open docs PRs remain attached to their target release; they are not automatically treated as released just because implementation merged.
-- Do not merge a product-doc PR with no release milestone.
+1. Confirm the behavior in the CRM pull request and the milestone that pull request targets.
+2. Open the docs pull request against `main`. Set the **same** milestone. Do not add a maintenance label.
+3. Leave it open. The failing release gate is the staging area. Do not merge it to "get it ready."
+4. When ChurchCRM publishes that version, `Stage docs for a CRM release` opens a pull request that sets `crm-release.json` to the new tag and comments on pull requests already on that milestone.
+5. Merge the pin pull request first. That publishes the API reference for the release and tags the docs.
+6. Re-run CI on the staged product pull requests, then merge them.
 
-### API reference pin
+`Sync docs release milestones` creates the docs milestone for the version in CRM `package.json` and for the latest stable release when either is missing. If the milestone you need does not exist yet, run that workflow with the version, or create the `x.y.z` milestone by hand. Do not invent a non-version milestone.
 
-`crm-release.json` is the ChurchCRM version the public API reference documents. CI and the GitHub Pages deploy download `docs/openapi/generated/*.yaml` from that **tag**. They do not read `master`.
+### API reference, tags, and deploy
 
-The live site therefore matches the last release whose pin has been merged. A newer CRM release does not change the API docs until its pin pull request merges.
+`crm-release.json` is the ChurchCRM version the API reference documents. CI and GitHub Pages download `docs/openapi/generated/*.yaml` from that tag. They do not read `master`.
 
-### Staging docs for a release that is not out yet
+A push to `main` runs `deploy.yml` and publishes the site. Do not push `gh-pages`. There is no daily rebuild from `master`.
 
-1. Open the product-doc pull request against `main` and set its milestone to the CRM version that will contain the change, for example `7.8.0`.
-2. Leave it open. The **Released software gate** fails until that version is a published stable GitHub Release. That hold is the staging area.
-3. `Sync docs release milestones` creates the milestone for the version in CRM `package.json` and for the latest stable release, if either milestone is missing.
-4. `Stage docs for a CRM release` runs daily. When a newer stable CRM release exists, it opens `release/<version>` and a pull request that bumps `crm-release.json`. It comments on pull requests already milestoned for that version.
-5. Merge the pin pull request first. Merging it publishes the API reference for that release.
-6. Re-run CI on the staged product pull requests, then merge them. Their release gate is green only after the CRM release is published.
+When `crm-release.json` changes on `main`, `tag-docs-release.yml` creates annotated tag `v<version>` and points branch `release/<version>` at that commit. Use the tag to see the docs as published for that release. Do not commit onto `release/*`.
 
-Tooling pull requests that do not describe unreleased product behavior omit the milestone, so the gate does not hold them.
+Shell that the workflows call lives in `scripts/` and `scripts/ci/`. Run those scripts locally with the same environment variables. Do not put new multi-line shell back into the workflow files.
 
-### Tags and branches
+### Support path in the docs
 
-When `crm-release.json` changes on `main`, `Tag published docs release` creates annotated tag `v<version>` and moves branch `release/<version>` to that commit. Use the tag to see the docs as published for that ChurchCRM release. Do not commit product changes directly to `release/*`.
+Readers who cannot find an answer are sent to [Discord](https://discord.gg/tuWyFzj3Nj), then to a new issue on `ChurchCRM/CRM`. Do not send them to GitHub Discussions, and do not add a floating button to the marketing site. The line is the doc-page footer and the site footer. Keep new pages consistent with that.
 
 ---
 
@@ -102,9 +98,9 @@ See [`.agents/skills/brand-assets/SKILL.md`](skills/brand-assets/SKILL.md) befor
 1. Verify the documented behavior exists in a published CRM release.
 2. Create/update `docs/<section>/<page>.md`.
 3. Add/update `sidebars.ts` when adding pages.
-4. Open a PR; do not push product documentation directly to `main`.
-5. Assign the matching release milestone for product behavior.
-6. CI must pass before merge.
+4. Open a pull request against `main`. Do not push product documentation directly to `main`.
+5. Set the milestone or maintenance label from the workflow table above.
+6. CI, including the release gate, must pass before merge.
 
 Required front matter:
 
@@ -144,7 +140,8 @@ Four sidebars exist: `gettingStartedSidebar`, `userGuideSidebar`, `adminSidebar`
 ## What NOT to Change
 
 - Product behavior docs for software that has not been released
-- Product-doc PRs without a matching release milestone
+- Product-doc pull requests with no release milestone, or with a maintenance label
+- Infrastructure pull requests placed on a product milestone
 - `package.json` / `package-lock.json` unless specifically required
 - `src/css/custom.css` unless specifically asked
 - Product screenshot generation or browser-automation ownership — that belongs in `ChurchCRM/CRM`

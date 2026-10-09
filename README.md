@@ -15,7 +15,7 @@ npm run start   # live preview at http://localhost:3000
 
 Click **"Edit this page"** at the bottom of any docs page to submit a PR directly from GitHub.
 
-See [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md) for full contributor and AI agent conventions.
+Humans: [Docs workflow](docs/workflow.md). Agents: [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md). Product docs use a release milestone and stay open until that ChurchCRM version is published. Site and CI changes use the `ci` label and no milestone.
 
 ## Structure
 
