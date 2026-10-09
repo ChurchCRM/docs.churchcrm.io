@@ -1,5 +1,6 @@
 ---
 title: Installation Guide
+description: How to install ChurchCRM on shared hosting, your own server, or a cloud host.
 sidebar_position: 1
 ---
 

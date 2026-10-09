@@ -1,9 +1,9 @@
 ---
-title: Persons
+title: People
 sidebar_position: 2
 ---
 
-# Persons
+# People
 
 A Person record represents an individual in your congregation. Person records can be grouped into [Families](/user-guide/families), belong to [Groups](/user-guide/groups), have [Properties](/user-guide/properties) assigned, and can be made [Users](/administration/users) of the application.
 

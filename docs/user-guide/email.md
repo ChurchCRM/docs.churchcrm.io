@@ -1,9 +1,9 @@
 ---
-title: Email
+title: Email from ChurchCRM
 sidebar_position: 18
 ---
 
-# Email
+# Email from ChurchCRM
 
 ChurchCRM provides built-in tools to email individuals, groups, and cart selections directly from the app, plus optional Mailchimp integration for newsletters.
 

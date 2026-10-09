@@ -1,9 +1,9 @@
 ---
-title: Groups
+title: Groups and roles
 sidebar_position: 10
 ---
 
-# Groups
+# Groups and roles
 
 A Group is a collection of [People](/user-guide/persons) who occupy Roles within the Group. Groups can represent organizational, educational, and social constructs within your church.
 

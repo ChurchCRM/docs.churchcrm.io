@@ -1,9 +1,9 @@
 ---
-title: Events
+title: Events and attendance
 sidebar_position: 11
 ---
 
-# Events
+# Events and attendance
 
 ChurchCRM allows you to create events which will appear in your church calendar.
 
