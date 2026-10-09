@@ -9,10 +9,6 @@ ChurchCRM exists to serve the Church — every congregation, in every country, i
 
 Start at the [official ChurchCRM website](https://churchcrm.io/?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=docs_index_website) for product overview, live demo access, and installation entry points.
 
-:::tip Primary documentation
-If you're reading this on the **GitHub Wiki**, you've reached the right place — **docs.churchcrm.io** is now the primary documentation site. All user and administrator manuals live here.
-:::
-
 ---
 
 ## I'm installing ChurchCRM

@@ -84,17 +84,11 @@ sidebar_position: 6
           hostname so it looks like this (yours might be different):
 
           ```
-
-         ## Related Pages
-
-         - [Prerequisites](How-to-Manually-Upgrade-ChurchCRM.md)
-
-         ## Test the System Before Importing Real Data
-
-         - Test the system by importing demo data: [Importing Demo Data via Admin Pages](Importing-Demo-Data.md)
           127.0.0.1 localhost
           10.0.0.4 LAMPServer
           ```
+
+    Before you import real membership, load the fictional sample and click through the site. See [Importing Demo Data](/administration/demo-data).
 
    3. `CTRL+x` ; `Y` ; `Enter`
 10. Edit `apache2.conf` file

@@ -7,10 +7,6 @@ sidebar_position: 2
 
 This is the **single source of truth** for all ChurchCRM system requirements. All installation and deployment documentation should reference this page.
 
-:::tip Primary documentation
-If you're reading this on the **GitHub Wiki**, the primary documentation is at **docs.churchcrm.io**. All user and administrator manuals live there.
-:::
-
 ChurchCRM has specific platform prerequisites, and a built-in mechanism to ensure that all prerequisites are met. If there are any unmet prerequisites, a message will be displayed during setup and a notification will be displayed during runtime.
 
 Prerequisites are validated at every page load, so if the hosting environment is changed to an incomplete / unsupported model, a notification will appear.
