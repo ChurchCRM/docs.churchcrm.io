@@ -18,9 +18,9 @@ The Volunteers feature helps you track member talents and willingness to serve i
 
 ## Setting Up Volunteer Opportunities
 
-1. Navigate to **Admin → Volunteer Opportunity Editor**
-2. Add the volunteer opportunities relevant to your church
-3. For each opportunity, you can specify a description
+1. Go to **People → Admin → Volunteer Opportunities**.
+2. The page title is **Volunteer Opportunity Editor**.
+3. Click **Add New Opportunity** and enter the name and description your church uses.
 
 ## Assigning Volunteers to Opportunities
 
@@ -33,10 +33,10 @@ The Volunteers feature helps you track member talents and willingness to serve i
 
 When you need volunteers for a specific task:
 
-1. Navigate to **Data/Reports** (direct link in the navigation).
-2. Scroll to the bottom and click **Volunteers**
-3. Select the volunteer opportunity you need help with
-4. The query will return all [people](/user-guide/persons) who volunteered for that task
+1. Open **Data/Reports**. The page title is **Query Listing**. Queries are listed alphabetically, not in a block at the bottom of the page.
+2. Open the query named **Volunteers** (**Find volunteers for a particular opportunity**). A second query, also named **Volunteers**, matches two opportunity codes.
+3. Choose the volunteer opportunity.
+4. The query returns the [people](/user-guide/persons) who signed up for that opportunity.
 5. Add results to the [Cart](/user-guide/cart) for further actions:
    - Create a contact directory
    - Print address labels
