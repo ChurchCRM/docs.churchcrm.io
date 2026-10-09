@@ -40,4 +40,4 @@ Say the limit when there is one. Use "you" for their church. Use "we" only for t
 - The steps match the merged code, not a proposal
 - Links point at docs pages, not the CRM wiki, for user and admin tasks
 - A product pull request has the right milestone and no maintenance label
-- CI is green. CodeRabbit approval is required by the review rule, and an admin may still merge without waiting
+- The site build and the released-software gate are green. An admin may still merge without waiting. CodeRabbit comments are review notes. They do not block a merge.

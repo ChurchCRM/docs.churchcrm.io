@@ -26,7 +26,7 @@ The release gate stays red on a product pull request until that exact version is
 
 1. A daily job opens a pull request that points the API reference at the new release tag.
 2. Merge that pin pull request first. The site then documents that version's API, and the docs repo is tagged `v<version>`.
-3. Re-run the checks on the product pull requests for that milestone, then merge them.
+3. Re-run the checks on the product pull requests for that milestone. Merge a pull request when the site build and the release gate are green.
 
 The API reference does not track the CRM `master` branch. `crm-release.json` is the version the site builds.
 
