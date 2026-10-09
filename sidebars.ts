@@ -165,6 +165,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'administration/upgrade',
         'administration/backup-restore',
+        'administration/demo-data',
         'administration/rollback',
         'administration/file-system-permissions',
       ],

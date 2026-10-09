@@ -8,7 +8,7 @@ sidebar_position: 1
 
 Install ChurchCRM, configure it, and use it day to day.
 
-The [ChurchCRM website](https://churchcrm.io/?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=docs_index_website) has the product overview and the live demo.
+Start at the [official ChurchCRM website](https://churchcrm.io/?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=docs_index_website) for product overview, live demo access, and installation entry points.
 
 ---
 

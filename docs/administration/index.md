@@ -26,6 +26,7 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 ## Maintenance & Support
 
 - [Backup & Restore](/administration/backup-restore) — Configure automatic and manual database backups
+- [Importing Demo Data](/administration/demo-data) — Load fictional families and groups on a fresh installation
 - [Upgrade Guide](/administration/upgrade) — Upgrade ChurchCRM to the latest version
 - [Rollback](/administration/rollback) — Restore a previous version or database backup
 - [File System Permissions](/administration/file-system-permissions) — Set correct permissions for your web server
