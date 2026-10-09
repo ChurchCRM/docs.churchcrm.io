@@ -1,0 +1,74 @@
+name: Sync docs release milestones
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Optional milestone to ensure (for example 7.8.0). Blank uses the CRM package.json version and the latest stable release.'
+        required: false
+        type: string
+
+permissions:
+  issues: write
+
+concurrency:
+  group: docs-release-milestone-sync
+  cancel-in-progress: true
+
+jobs:
+  ensure-milestone:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Collect versions that need a docs milestone
+        id: versions
+        env:
+          REQUESTED_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          versions=""
+          add() {
+            local version="$1"
+            if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "::error::Invalid version: $version"
+              exit 1
+            fi
+            case " ${versions} " in
+              *" ${version} "*) ;;
+              *) versions="${versions} ${version}" ;;
+            esac
+          }
+
+          if [ -n "${REQUESTED_VERSION:-}" ]; then
+            add "$REQUESTED_VERSION"
+          else
+            add "$(curl -fsSL https://raw.githubusercontent.com/ChurchCRM/CRM/master/package.json | jq -r '.version')"
+            latest=$(gh api repos/ChurchCRM/CRM/releases/latest --jq '.tag_name')
+            add "$latest"
+          fi
+
+          echo "versions=${versions# }" >> "$GITHUB_OUTPUT"
+          echo "Milestones to ensure:${versions}"
+
+      - name: Create any missing milestones
+        env:
+          VERSIONS: ${{ steps.versions.outputs.versions }}
+        run: |
+          set -euo pipefail
+          for version in $VERSIONS; do
+            existing=$(gh api "repos/${GITHUB_REPOSITORY}/milestones?state=all&per_page=100" \
+              --jq ".[] | select(.title == \"$version\") | .number" | head -n 1)
+            if [ -n "$existing" ]; then
+              echo "Milestone $version already exists as #$existing"
+              continue
+            fi
+            number=$(gh api "repos/${GITHUB_REPOSITORY}/milestones" \
+              --method POST \
+              -f title="$version" \
+              -f description="Documentation for ChurchCRM $version. Product docs may merge only after this CRM release is published. The API reference moves to this version when the pin PR merges." \
+              --jq '.number')
+            echo "Created milestone $version as #$number"
+          done

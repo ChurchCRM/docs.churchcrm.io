@@ -35,6 +35,12 @@ The marketing website is the single source for shared ChurchCRM logos, favicons,
 
 Keep only documentation-specific screenshots and diagrams with no suitable canonical website equivalent in `static/img/`. Marketing strategy belongs in `ChurchCRM/marketing`; shared brand assets and reusable product screenshots belong in `ChurchCRM/ChurchCRM.io`; shipped product behavior belongs in `ChurchCRM/CRM`.
 
+## API reference version
+
+The public API reference follows the ChurchCRM release in `crm-release.json`, currently the latest published release. Builds download that tag's OpenAPI specs. They do not track `master`.
+
+Product documentation for a version that is not released yet stays in an open pull request with that version's milestone. When the CRM release is published, automation opens a pull request to move the pin, then those staged pull requests can merge. The published docs commit is tagged `v<version>` and branched as `release/<version>`.
+
 ## Deployment
 
 Every push to `main` triggers `.github/workflows/deploy.yml` which builds and deploys to `gh-pages`.  

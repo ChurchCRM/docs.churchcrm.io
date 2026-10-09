@@ -1,0 +1,129 @@
+name: Stage docs for a CRM release
+
+# When ChurchCRM publishes a newer stable release than crm-release.json,
+# open a pull request that moves the API pin. Product-doc pull requests
+# that already use that milestone stay open until the release exists;
+# this workflow then marks them ready to merge.
+on:
+  schedule:
+    - cron: '30 6 * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [crm-released]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: docs-stage-release
+  cancel-in-progress: true
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Compare the pin with the latest stable CRM release
+        id: release
+        run: |
+          set -euo pipefail
+          pinned=$(jq -r '.version' crm-release.json)
+          latest=$(gh api repos/ChurchCRM/CRM/releases/latest --jq '.tag_name')
+          draft=$(gh api repos/ChurchCRM/CRM/releases/latest --jq '.draft')
+          prerelease=$(gh api repos/ChurchCRM/CRM/releases/latest --jq '.prerelease')
+
+          if [ "$draft" = "true" ] || [ "$prerelease" = "true" ]; then
+            echo "::error::Latest CRM release is not a stable release."
+            exit 1
+          fi
+          if ! [[ "$latest" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Unexpected CRM release tag: $latest"
+            exit 1
+          fi
+
+          echo "pinned=$pinned" >> "$GITHUB_OUTPUT"
+          echo "latest=$latest" >> "$GITHUB_OUTPUT"
+          if [ "$pinned" = "$latest" ]; then
+            echo "behind=false" >> "$GITHUB_OUTPUT"
+            echo "Docs already pin ChurchCRM ${pinned}."
+          elif [ "$(printf '%s\n%s\n' "$pinned" "$latest" | sort -V | tail -n 1)" != "$latest" ]; then
+            echo "::error::Pinned version ${pinned} is newer than the latest CRM release ${latest}."
+            exit 1
+          else
+            echo "behind=true" >> "$GITHUB_OUTPUT"
+            echo "ChurchCRM ${latest} is published. Docs still pin ${pinned}."
+          fi
+
+      - name: Open the API pin pull request
+        if: steps.release.outputs.behind == 'true'
+        id: pin
+        env:
+          LATEST: ${{ steps.release.outputs.latest }}
+        run: |
+          set -euo pipefail
+          branch="release/${LATEST}"
+          existing=$(gh pr list --base main --head "$branch" --state open --json number --jq '.[0].number // ""')
+          if [ -n "$existing" ]; then
+            echo "number=$existing" >> "$GITHUB_OUTPUT"
+            echo "Pin pull request #$existing is already open."
+            exit 0
+          fi
+
+          git checkout -B "$branch"
+          jq --arg version "$LATEST" '.version = $version' crm-release.json > crm-release.json.tmp
+          mv crm-release.json.tmp crm-release.json
+          git add crm-release.json
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "Pin API docs to ChurchCRM ${LATEST}."
+          if git fetch origin "refs/heads/${branch}"; then
+            git push --force-with-lease="refs/heads/${branch}:$(git rev-parse FETCH_HEAD)" origin "HEAD:refs/heads/${branch}"
+          else
+            git push origin "HEAD:refs/heads/${branch}"
+          fi
+
+          sed 's/^          //' > /tmp/pin-pr.md <<EOF
+          ## Summary
+
+          - Move \`crm-release.json\` to **${LATEST}**.
+          - CI and the live site download OpenAPI specs from tag \`${LATEST}\`, not from \`master\`.
+          - After this merges, \`v${LATEST}\` and \`release/${LATEST}\` point at the published docs commit.
+
+          Merge this before product-doc pull requests milestoned ${LATEST}.
+          EOF
+          number=$(gh pr create --base main --head "$branch" \
+            --title "Publish docs for ChurchCRM ${LATEST}" \
+            --body-file /tmp/pin-pr.md)
+          echo "number=${number##*#}" >> "$GITHUB_OUTPUT"
+
+      - name: Mark staged product pull requests ready
+        if: steps.release.outputs.behind == 'true'
+        env:
+          LATEST: ${{ steps.release.outputs.latest }}
+          PIN_PR: ${{ steps.pin.outputs.number }}
+        run: |
+          set -euo pipefail
+          marker="<!-- docs-release-ready:${LATEST} -->"
+          gh pr list --state open --limit 100 --json number,milestone \
+            --jq ".[] | select(.milestone.title == \"$LATEST\") | .number" | while read -r number; do
+              [ "$number" = "$PIN_PR" ] && continue
+              if gh api "repos/${GITHUB_REPOSITORY}/issues/${number}/comments" --paginate --jq '.[].body' | grep -F "$marker" >/dev/null; then
+                echo "Pull request #$number already marked ready for $LATEST."
+                continue
+              fi
+              sed 's/^              //' > /tmp/ready.md <<EOF
+              ${marker}
+              ChurchCRM **${LATEST}** is published. This pull request can merge after the API pin in #${PIN_PR}.
+
+              The release gate stays red until that published release is visible to CI, then it goes green on the next run.
+              EOF
+              gh pr comment "$number" --body-file /tmp/ready.md
+            done
