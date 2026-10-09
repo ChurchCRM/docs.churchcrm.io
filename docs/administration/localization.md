@@ -6,7 +6,7 @@ sidebar_position: 5
 # Localization & Formats
 
 :::info Available since 7.4.1
-The dedicated **Localization & Formats** page was introduced in ChurchCRM 7.4.1. In earlier versions, these settings were split between Church Info and System Settings.
+The dedicated **Localization & Formats** page was introduced in ChurchCRM 7.4.1. In earlier versions, these settings were split between Church Information and System Settings.
 :::
 
 All locale and format settings live in one place: **Admin → Localization & Formats** (path: `admin/system/localization`).

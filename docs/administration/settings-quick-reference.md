@@ -27,18 +27,18 @@ This page lets you quickly find where any setting is located in the ChurchCRM UI
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Set church name | Admin → Church Info | Church name |
-| Add church address | Admin → Church Info | Address, City, State, ZIP |
-| Set church phone/email | Admin → Church Info | Phone, Email |
-| Add church website | Admin → Church Info | Website |
-| Upload church logo for emails | Admin → Church Info | Logo URL |
+| Set church name | Admin → Church Information | Church name |
+| Add church address | Admin → Church Information | Address, City, State, ZIP |
+| Set church phone/email | Admin → Church Information | Phone, Email |
+| Add church website | Admin → Church Information | Website |
+| Upload church logo for emails | Admin → Church Information | Logo URL |
 
 ## 🗺️ Maps & Location
 
 | I want to... | Location | Setting |
 |---|---|---|
 | Set initial map zoom level | People → Map → Map Settings | Map default zoom level |
-| Set map center point | Admin → Church Info | Latitude/Longitude |
+| Set map center point | Admin → Church Information | Latitude/Longitude |
 | Hide lat/lon fields from users | Admin → System Settings → People | Hide latitude/longitude |
 
 ## 💰 Finance & Donations
@@ -143,7 +143,7 @@ Quick reference of which admin page contains each setting category:
 
 | Location | Contains |
 |----------|----------|
-| **Admin → Church Info** | Church name, address, contact info, logo |
+| **Admin → Church Information** | Church name, address, contact info, logo |
 | **Admin → Localization & Formats** | Language, timezone, date/time/number formats |
 | **Admin → Security & Permissions** | Password rules, session timeout, 2FA |
 | **Admin → System Settings → Email** | SMTP configuration, sender info, email features |

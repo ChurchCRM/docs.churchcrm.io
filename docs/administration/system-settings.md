@@ -9,7 +9,7 @@ ChurchCRM's settings are spread across multiple locations for intuitive access. 
 
 :::tip Quick Navigation
 Use this guide to find where any setting is configured:
-- **Church Information** — Admin → Church Info
+- **Church Information** — Admin → Church Information
 - **People Settings** — People → Dashboard → People Settings button
 - **Map Settings** — People → Map → Map Settings button
 - **Localization & Formats** — Admin → Localization & Formats
@@ -22,7 +22,7 @@ Use this guide to find where any setting is configured:
 
 ## Church Information
 
-**Location:** Admin → Church Info
+**Location:** Admin → Church Information
 
 Configure basic church details that appear throughout ChurchCRM.
 
