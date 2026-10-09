@@ -19,8 +19,8 @@ Always take a database backup before upgrading. If something goes wrong, a backu
 
 1. Log in as an administrator.
 2. If a new version is available, a **download icon** appears in the top-right navbar.
-3. Click it and select **New Release**, or go directly to **Admin → System → Upgrade**.
-4. Click **Refresh from GitHub** to fetch the latest release info.
+3. Click it and select **New Release**, or open the **Admin Dashboard**, then **System Info**, and click **Upgrade**. Upgrade is not in the Admin sidebar. The page title is **System Upgrade**.
+4. Click **Refresh** to fetch the latest release info.
 
 ### Step 2: Back up
 
@@ -107,9 +107,9 @@ This works on shared hosting (cPanel or similar). The in-app wizard is not avail
 
 ### Step 1: Back up with the in-app backup
 
-1. On your current version, go to **Admin → Backup**.
-2. Choose **Database + images**. If the archive times out on your host, choose **Database only**.
-3. Click **Create Backup** and download the file to your own computer. A backup that stays only on the server is lost if the site breaks.
+1. On your current version, open the in-app backup and download it. On the current release that is **Admin Dashboard → System Info → Backup** — there is no Backup item in the Admin sidebar.
+2. Choose **Full Backup**. If the archive times out on your host, choose **Database Only**.
+3. Click **Generate & Download Backup** and keep the file on your own computer. The archive is deleted from the server after download.
 4. Also copy `Include/Config.php` and download a copy of the site folder, or take a full cPanel backup.
 
 ### Step 2: Check your PHP and database versions
@@ -125,7 +125,7 @@ This works on shared hosting (cPanel or similar). The in-app wizard is not avail
 - Also see the [System Requirements](/installation/system-requirements) for the required PHP extensions.
 
 :::caution Your host cannot offer PHP 8.4?
-Stop at the latest 6.x release and stay on it. It is the newest release that runs on PHP 8.2 and 8.3. Do not use **Admin → System → Upgrade** there, because it installs the latest release, which needs PHP 8.4. Ask your host about PHP 8.4, or move to a host that offers it, before doing Step 4.
+Stop at the latest 6.x release and stay on it. It is the newest release that runs on PHP 8.2 and 8.3. Do not click **Upgrade** on the Admin Dashboard there, because it installs the latest release, which needs PHP 8.4. Ask your host about PHP 8.4, or move to a host that offers it, before doing Step 4.
 :::
 
 ### Step 3: Upgrade to the latest 6.x release
@@ -134,18 +134,18 @@ Stop at the latest 6.x release and stay on it. It is the newest release that run
 2. Upload and extract it over your existing files. Overwrite everything, then restore your `Include/Config.php`.
 3. Open ChurchCRM in your browser. The database migrates on the first page load.
 4. Log in and check People, Families, Groups, and Finances.
-5. Take another **Admin → Backup** and download it. This is your restore point for the next step.
+5. Take another backup from the Admin Dashboard (**System Info → Backup**) and download it. This is your restore point for the next step.
 
 ### Step 4: Upgrade to the latest release
 
 1. Set PHP to **8.4 or higher** (see Step 2).
-2. Use **Admin → System → Upgrade**, or follow [Option 2 — Manual Upgrade](#option-2--manual-upgrade) if your host blocks outbound HTTPS.
+2. On the **Admin Dashboard**, click **Upgrade** under **System Info**, or follow [Option 2 — Manual Upgrade](#option-2--manual-upgrade) if your host blocks outbound HTTPS. The wizard still has a **Create Backup** step. If it lists leftover files, **Review & Delete** opens **Orphaned Files Management**.
 3. Open the site. The remaining migrations run on the next page load.
 4. Check the version number at the bottom of any page and run the **File Integrity Check** on the upgrade page.
 
 ### If something goes wrong
 
-Put back the files you copied for that step, then go to **Admin → Restore** and load the backup you took before it. If the site no longer opens, restore the database dump from phpMyAdmin. See [Rollback](/administration/rollback).
+Put back the files you copied for that step, then open **Restore Database** from the Admin Dashboard (**Advanced Operations → Restore**) and click **Restore Database**. If the site no longer opens, restore the database dump from phpMyAdmin. See [Rollback](/administration/rollback).
 
 :::tip Try it on a copy first
 Make a second database and a subfolder, restore your backup into it, and run both steps there before touching the live site.

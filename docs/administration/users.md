@@ -9,8 +9,8 @@ sidebar_position: 2
 
 ## How do I add new Users?
 
-1. Open the **Admin** menu and click **Add New User**, or navigate directly to `/admin/system/users/new`.
-2. A list of all non-users appears. Select the person you want to promote to a user. You can also pre-select a person by appending `?personId=N` to the URL.
+1. Open **Admin → System Users** and click **Add User** (`/admin/system/users/new`).
+2. A list of people who do not yet have a login appears. Select the person. You can also pre-select a person by appending `?personId=N` to the URL.
 3. Set the user's rights and click **Save**.
 
 ## What are the different rights available?
@@ -28,48 +28,49 @@ sidebar_position: 2
 
 ## How do I edit Users?
 
-1. Open the **Admin** menu and click **Edit Users**, or navigate to `/admin/system/users`.
-2. Pick the user you want to edit.
-    - **Reset** — resets the user's password; they must choose a new one at next login.
-    - **Edit** — opens the user editor at `/admin/system/users/{personId}/edit`, where you can change rights and profile details.
-    - **Delete** — removes the individual's user rights (their person record remains).
+1. Open **Admin → System Users**.
+2. Open the row menu for that person. The actions are:
+    - **Edit User** — `/admin/system/users/{personId}/edit`, where you change rights. Mailto links are the per-user **User Config** row **bEmailMailto**. There is no `sMailtoDelimiter`.
+    - **Change Password** — you set the password. The user is not forced to change it again unless you use a reset.
+    - **Reset Password via Email** — emails a new password. The user must change it at the next login. This action is shown only when email is configured and the person has an email address.
+    - **Disable 2FA** — shown when that user has two-factor authentication turned on.
+    - **Delete User** — removes the login. The person record remains.
 
 ## What is the default password assigned to new Users?
 
-New users receive an email containing their username and initial password. The first time they log in, they are required to change it.
+ChurchCRM creates the account with a random password and does not show that password on screen. If email is already configured, the person gets a welcome email with the username and password, and must change it at first login. If email is off, set a password yourself with **Change Password** on **System Users**.
 
 ## Password change behavior
 
-- Users must change their password at first login.
-- Users must change their password when an administrator **resets** it.
-- Users are **not** forced to change their password when an administrator **sets** it directly.
+- Users must change their password at first login when the account was created with the random password.
+- Users must change their password after **Reset Password via Email**.
+- Users are **not** forced to change their password when an administrator uses **Change Password**.
+
+Minimum password length, the failed-login lockout, and whether 2FA is required are under **System Users → Settings → Quick Settings**.
 
 ---
 
-## User Settings page
+## Change Settings
 
-Each user has a dedicated **User Settings** page (reached from the user's dropdown menu in the top navbar, or from **Admin → Edit Users → Edit**). The page uses a tab layout and consolidates several settings in one place.
+Open the user menu (your name, top right) and click **Change Settings**. An administrator can open the same page from the person's name on **System Users**.
 
-Tabs available on the User Settings page:
+| Section | What you can do |
+|---------|-----------------|
+| **Account** | Name, email, photo, and security status. **Change Password** is on this section. |
+| **Appearance** | Dark mode and the accent color |
+| **Localization** | This user's language and formats |
+| **API Access** | The account's API key. **Regenerate** replaces it. |
+| **Permissions** | What this account can do (read-only on this page). Change them with **Edit User**. |
 
-| Tab | What you can do |
-|-----|-----------------|
-| **Profile** | Display name, avatar/photo upload, basic profile fields |
-| **Password** | Change your own password |
-| **Two-Factor Authentication** | Enroll, view recovery codes, or disable 2FA |
-| **Theme** | Toggle dark mode and choose a primary accent color for the Tabler interface |
-| **Localization** | Per-user language and locale preferences |
-| **API Access** | Create and revoke personal API tokens |
-| **Advanced** | Link to legacy per-user settings (power users only) |
+There is no Permission Groups screen and no Security & Permissions menu.
 
-### Two-Factor Authentication
+### Two-factor authentication
 
-If 2FA is enabled site-wide in System Settings, each user enrolls from the **Two-Factor Authentication** tab of their own User Settings page:
+Enrollment is **Manage Two-Factor Authentication** in the user menu, not a section of Change Settings.
 
-1. Open **User menu → User Settings**
-2. Click the **Two-Factor Authentication** tab
-3. Scan the QR code with an authenticator app (Google Authenticator, Authy, 1Password, etc.)
-4. Enter the generated six-digit code to confirm enrollment
-5. **Save your recovery codes** somewhere safe — they are the only way to recover access if you lose your device
+1. Open the user menu and click **Manage Two-Factor Authentication**.
+2. Scan the QR code with an authenticator app (Google Authenticator, Authy, 1Password, etc.).
+3. Enter the generated six-digit code to confirm enrollment.
+4. Save the recovery codes somewhere safe.
 
-Administrators can disable a user's 2FA from **Admin → Edit Users** in an emergency (for example, if a user loses their phone).
+Administrators turn the requirement on under **System Users → Settings → Quick Settings**. To clear 2FA for one person, use **Disable 2FA** on **System Users**.

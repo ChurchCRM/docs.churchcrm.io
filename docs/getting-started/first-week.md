@@ -14,10 +14,9 @@ This guide walks you through a typical first week as you get your church set up 
 ### Configure Church Details
 
 1. Log in as **admin** (change the default password immediately).
-2. Go to **Admin** → **System Settings**.
-3. Under **Church Information**, enter your church name, address, phone, and email.
-4. Under **Report Settings**, fill in the same details — these appear on financial statements and letters.
-5. Under **Families**, set your default city, state, and country for new records.
+2. Go to **Admin** → **Church Information**. Enter the church name, address, phone, and email, then click **Save Church Information**.
+3. On the same page, set **Address Defaults** (city, state, zip, and country) for new families.
+4. Open **Admin** → **System Settings** → **Report Settings** and fill in the letter and statement text.
 
 ### Add Your First Families
 
@@ -141,8 +140,9 @@ See [Email](/user-guide/email) for more options, including Mailchimp.
 
 ### Back Up Your Data
 
-1. Go to **Admin** → **Backup Database**.
-2. Download the backup and store it safely.
+1. Open the **Admin Dashboard**.
+2. In **System Info**, click **Backup**.
+3. Choose **Database Only** or **Full Backup**, then click **Generate & Download Backup**. Store the file off the server. ChurchCRM deletes the archive after the download.
 
 See [Backup & Restore](/administration/backup-restore).
 
@@ -168,7 +168,7 @@ See [Backup & Restore](/administration/backup-restore).
 | Record attendance | Cart → Empty Cart to Event |
 | Enter donation | Family View → Add a new payment |
 | Search | Press `?` or use search box |
-| Backup | Admin → Backup Database |
+| Backup | Admin Dashboard → System Info → Backup |
 
 ---
 

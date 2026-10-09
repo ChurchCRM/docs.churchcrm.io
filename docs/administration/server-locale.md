@@ -91,10 +91,9 @@ sudo dnf install glibc-langpack-es glibc-langpack-fr glibc-langpack-de
 After installing system locales:
 
 1. Log in as administrator
-2. Go to **Admin** → **Edit General Settings**
-3. Open the **Localization** (or **System Settings** → **Localization**) tab
-4. Set **Language** to the desired locale
-5. Save
+2. Go to **Admin → Localization & Formats**
+3. Set the language and time zone
+4. Save
 
 ---
 
@@ -131,7 +130,8 @@ If some parts of the UI are translated and others are not, check both systems:
    - If server pages (PHP) remain English while client UI is translated, the server locale is likely missing; install the OS locale and restart the webserver / PHP-FPM.
 
 4. Quick checks
-   - Confirm user locale setting in Admin → Edit General Settings (and user profile preference).
+   - Confirm the language under **Admin → Localization & Formats**, and the signed-in user's language under the user menu → **Change Settings** → **Localization**.
+   - To see which locales the server actually has, open the **Admin Dashboard**, click **Debug Info** on **System Health**, then the **Environment** card → **Locale** tab. The heading is **System Locale Support**. Logs are **View Logs** on the same dashboard, not a sidebar item. Levels are **DEBUG**, **INFO**, **WARNING**, and **ERROR** only.
    - Verify `src/locale/i18n/<locale>.json` exists and contains translated keys.
    - Check file permissions on `src/locale/i18n` and `locale/terms` so the web user can read them.
 

@@ -11,10 +11,11 @@ Personal API tokens let you (or your scripts and integrations) authenticate to t
 
 ## Generating a Token
 
-1. Log in and click your avatar (top-right corner) → **My Settings**, or navigate directly to **Admin → Users → [your name] → Edit**
-2. Open the **API Access** tab
-3. Click **Generate New Token**
-4. Copy the token immediately — it is shown **only once**. Store it somewhere safe (e.g., a password manager)
+1. Open the user menu (your name, top right) and click **Change Settings**
+2. Open **API Access**
+3. Copy the **API Key** shown in the field. There is no separate token list.
+
+**Regenerate** replaces that key. The previous key stops working. Store the new value somewhere safe (for example, a password manager).
 
 :::warning Treat tokens like passwords
 Anyone with your token can authenticate to the API as you. Do not commit tokens to source control or paste them in chat messages.
@@ -99,23 +100,12 @@ error. Retrying will not help — tokens are static.
 
 ---
 
-## Revoking a Token
+## Replacing a key
 
-1. Go to **My Settings → API Access**
-2. Find the token in the list
-3. Click **Revoke** — the token is invalidated immediately
+1. Open **Change Settings → API Access**
+2. Click **Regenerate**
 
-Revoked tokens cannot be restored. Generate a new token if you need access again.
-
----
-
-## Rotating Tokens
-
-As a security best practice, rotate tokens periodically:
-
-1. Generate a new token
-2. Update any scripts or integrations to use the new token
-3. Revoke the old token
+The old key stops working immediately. Update any scripts that used it. There is no token list and no separate revoke button.
 
 ---
 

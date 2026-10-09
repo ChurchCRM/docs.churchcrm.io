@@ -40,7 +40,7 @@ This document endeavours to outline the process of:
 All processes on a modern operating systems run as a particular user. This allows administrators to limit the access a process has based on the user and associated groups the process runs as. This is particularly important for exposed services like web servers.
 
 ## 1.1 Determining the process user
-On Debian (and derivatives, eg, Ubuntu) the Apache web server process typically runs as user `www-data`. On RedHat (and derivatives, eg CentOS) the Apache web server process typically runs as user `httpd`.
+On Debian (and derivatives, eg, Ubuntu) the Apache web server process typically runs as user `www-data`. On Rocky Linux and RHEL the package is still `httpd`, and the process runs as user `apache`.
 
 You can check for yourself (this is a Debian system):
 ```
