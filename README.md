@@ -25,7 +25,8 @@ See [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md) for full contributor and AI
 | `docs/getting-started/` | First run setup, features overview |
 | `docs/user-guide/` | How-to pages for People, Finance, Events, etc. |
 | `docs/administration/` | Upgrades, backup, troubleshooting, FAQs |
-| `docs/developers/` | Dev setup, contributing, code reference |
+| `docs/api/` | Generated public and private API reference |
+| `docs/contributing.md` | How to contribute to the docs |
 | `static/img/` | Screenshots and images |
 
 ## Asset Ownership

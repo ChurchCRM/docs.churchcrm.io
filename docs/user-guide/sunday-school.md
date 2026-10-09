@@ -5,7 +5,7 @@ sidebar_position: 12
 
 # Sunday School
 
-Sunday School classes in ChurchCRM are managed as [Groups](Groups) with a special "Sunday School Class" type. This provides a dedicated dashboard with class-specific features.
+Sunday School classes in ChurchCRM are managed as [Groups](/user-guide/groups) with a special "Sunday School Class" type. This provides a dedicated dashboard with class-specific features.
 
 ## Creating a Sunday School Class
 
@@ -24,21 +24,21 @@ You can optionally add extra roles (e.g., "Assistant Teacher", "Substitute") usi
 
 1. Open the Sunday School class group
 2. Click **View Members**
-3. Use the search to find and add [people](Persons)
+3. Use the search to find and add [people](/user-guide/persons)
 4. Assign the appropriate role (Teacher or Student)
 
-> **Tip:** Use the [Cart](Cart) feature to add multiple students at once by selecting them and choosing "Empty Cart to Group."
+> **Tip:** Use the [Cart](/user-guide/cart) feature to add multiple students at once by selecting them and choosing "Empty Cart to Group."
 
 ## Tracking Attendance
 
-Sunday School attendance is tracked through [Events](Events):
+Sunday School attendance is tracked through [Events](/user-guide/events):
 
 1. Create an Event Type for your Sunday School (e.g., "Sunday School - Children")
 2. Create individual events for each class session
 3. Check in students as they arrive
 4. Generate attendance reports over time
 
-See the [Events](Events) documentation for detailed instructions.
+See the [Events](/user-guide/events) documentation for detailed instructions.
 
 ## Sunday School Dashboard
 

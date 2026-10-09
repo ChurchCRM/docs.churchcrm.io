@@ -40,7 +40,7 @@ Plugins can:
   menu building, calendar registration, and cron jobs.
 - Inject HTML/JS/CSS into core pages.
 - Store their own settings (sandboxed to `plugin.{id}.*` keys).
-- Ship their own translations (see [Plugin Localization](./plugin-localization)).
+- Ship their own translations (see [Plugin Localization](/administration/plugins/plugin-localization)).
 
 Plugins **cannot** touch another plugin's settings, bypass the admin
 auth middleware, write files outside their own directory, or ship
@@ -51,7 +51,7 @@ installer rejects archives that try.
 
 ## How to install a community plugin
 
-See [Installing Community Plugins](./installing-community-plugins).
+See [Installing Community Plugins](/administration/plugins/installing-community-plugins).
 The short version: from **Admin → Plugins**, choose a plugin from the
 approved list, click Install, review the risk summary, then click
 Enable when you're ready.
@@ -63,7 +63,7 @@ Enable when you're ready.
 Community plugins are a supply-chain surface — they run on your server
 with the same permissions as the ChurchCRM application. Before you
 install anything, read
-[Plugin Security & Compliance](./plugin-security-and-compliance).
+[Plugin Security & Compliance](/administration/plugins/plugin-security-and-compliance).
 It covers the risk levels admins see in the install screen, the
 capability tags approved plugins must declare, and the audit checklist
 we recommend running every quarter.

@@ -93,7 +93,7 @@ Once the fundraiser is saved, press **Add Donated Item** from either the edit or
 |-------|-------------|
 | **Item** | Identifier used for sorting |
 | **Multiple items: Sell to everyone** | Enable to allow multiple copies to be sold; buyers are charged per quantity |
-| **Donor** | A [person](Persons) in the database |
+| **Donor** | A [person](/user-guide/persons) in the database |
 | **Title** | Short description |
 | **Estimated Price** | Reference value for the item |
 | **Material Value** | Donation value excluding labor |

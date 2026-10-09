@@ -34,7 +34,7 @@ sidebar_position: 2
 * **Backup / Restore** — Full database backups with one-click restore.
 * **Localization** — 46 languages, regional grouping, and browser auto-detection.
 * **[User Management](/administration/users)** — User accounts, role-based access, granular permissions, and 2FA.
-* **[Plugins](/administration/plugins/index)** — Extend ChurchCRM with community and built-in plugins. Install from approved registries.
+* **[Plugins](/administration/plugins)** — Extend ChurchCRM with community and built-in plugins. Install from approved registries.
 
 ---
 

@@ -42,7 +42,7 @@ If ChurchCRM logs don't show the issue:
 - **Shared Hosting (cPanel)**: Check **cPanel** → **Error Log** (usually in Main section)
 - **Self-Hosted/VPS**: `grep ERROR /var/log/apache2/error_log` (or `/var/log/httpd/error_log`)
 
-**See [Logging and Diagnostics](Logging-and-Diagnostics) guide for detailed log information.**
+**See [Logging and Diagnostics](/administration/logging-and-diagnostics) guide for detailed log information.**
 
 ---
 

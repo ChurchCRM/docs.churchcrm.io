@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # Properties
 
-A Property is a label that can be applied to a [Person](Person), a [Group](Groups), or a [Family](Families). Separate sets of Properties are defined for the three different record types, and new properties can be created as need. A record can be assigned an unlimited number of Properties.
+A Property is a label that can be applied to a [Person](/user-guide/persons), a [Group](/user-guide/groups), or a [Family](/user-guide/families). Separate sets of Properties are defined for the three different record types, and new properties can be created as need. A record can be assigned an unlimited number of Properties.
 
 Additionally, Properties can have values which contain information related to that Property. For example, a Property for a Person record might be "Hospitalized." A person with this Property is currently in the hospital, and the value of this Property could contain the name of the hospital and the room number.
 

@@ -87,7 +87,7 @@ Shared hosting providers sometimes hide Apache error logs:
 4. If you can't find it, contact your hosting provider's support
 
 **Docker:**
-See [Docker Development Environment](Docker) for details on viewing container logs.
+See [Docker Development Environment](docker) for details on viewing container logs.
 
 **Tip:** When reporting an issue, if your ChurchCRM logs don't show the problem, an Apache error log is often very helpful for diagnosis.
 

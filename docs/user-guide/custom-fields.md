@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Custom Fields
 
-Custom Fields allow you to expand the functionality of ChurchCRM beyond the base information that can be stored as a default. Custom fields allow you to personalize the database to meet your specific needs. Custom fields can be added to [persons](Person), [families](Families), and [groups](Groups). For persons, you could, for example, have a custom field that shows an individual's mentor. For groups, you could have a start and stop date for a group of ushers.
+Custom Fields allow you to expand the functionality of ChurchCRM beyond the base information that can be stored as a default. Custom fields allow you to personalize the database to meet your specific needs. Custom fields can be added to [persons](/user-guide/persons), [families](/user-guide/families), and [groups](/user-guide/groups). For persons, you could, for example, have a custom field that shows an individual's mentor. For groups, you could have a start and stop date for a group of ushers.
 
 ## How do I assign Custom Fields?
 
@@ -34,7 +34,7 @@ If this link is not visible, this group may not have group-specific properties e
 
 ## What are the Types?
 
-See the [Custom Fields Types](Custom-Fields-Types) help topic.
+See the [Custom Fields Types](/user-guide/custom-fields-types) help topic.
 
 ---
 

@@ -14,9 +14,9 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 | Type | Purpose |
 |------|--------|
 | **Reports** | Pre-formatted documents ready for printing (directories, labels, letters) |
-| **Queries** | Database searches that return lists of [people](Persons) or [families](Families) |
+| **Queries** | Database searches that return lists of [people](/user-guide/persons) or [families](/user-guide/families) |
 
-> **Tip:** Many query results can be added to the [Cart](Cart) for further processing.
+> **Tip:** Many query results can be added to the [Cart](/user-guide/cart) for further processing.
 
 ---
 
@@ -34,20 +34,20 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 - **Birthdays & Anniversaries** - Combined view of birthdays and wedding anniversaries for a specific month
 - **Family Member Count** - Families with their member totals
 - **Person by Age** - People within a specified age range
-- **Person by Properties** - People with specific [properties](Properties) assigned
+- **Person by Properties** - People with specific [properties](/user-guide/properties) assigned
 - **Person by Role and Gender** - Filter by family role and gender
 - **Person Count** - Total counts by various criteria
 - **Total By Gender** - Gender statistics
 
 ### Group Reports
 - **Reports on Groups and Roles** - Group membership details
-- **Class Students** - Students in a specific [Sunday School](Sunday-School) class
+- **Class Students** - Students in a specific [Sunday School](/user-guide/sunday-school) class
 - **Class Teachers** - Teachers for a specific class
 - **Registered Students** - All enrolled students
 
 ### Other Reports
 
-- [Financial Reports](Finances): Pledges and Payments
+- [Financial Reports](/user-guide/finances): Pledges and Payments
 - Pledge comparison: Compare pledges between two fiscal years
 
 ---
@@ -120,7 +120,7 @@ A Free-Text Query allows you to run any query on the database. Since ChurchCRM i
 
 ## What is a Cart-Enabled Query?
 
-A [Cart](Cart)-Enabled Query is one in which the results of the query can be entered into the cart.
+A [Cart](/user-guide/cart)-Enabled Query is one in which the results of the query can be entered into the cart.
 
 ## How do I use Cart-Enabled Queries?
 
