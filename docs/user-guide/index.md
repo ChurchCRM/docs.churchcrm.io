@@ -1,5 +1,6 @@
 ---
 title: User Guide
+description: How to add people and families, run groups and events, and handle everyday records.
 sidebar_position: 1
 ---
 
