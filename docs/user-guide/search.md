@@ -1,9 +1,9 @@
 ---
-title: Search
+title: Find people and families
 sidebar_position: 9
 ---
 
-# Search
+# Find people and families
 
 ChurchCRM offers a powerful search capability to quickly locate data within your application.
 

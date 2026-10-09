@@ -1,5 +1,6 @@
 ---
-title: Welcome to ChurchCRM
+title: ChurchCRM Documentation
+description: Install ChurchCRM, configure it, and use it day to day.
 sidebar_position: 1
 ---
 

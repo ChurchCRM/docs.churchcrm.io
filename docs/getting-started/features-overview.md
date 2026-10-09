@@ -25,7 +25,7 @@ sidebar_position: 2
 * **[Groups](/user-guide/groups)** — Ministry teams, committees, Bible studies, small groups, or any other grouping. Includes kiosk check-in support.
 * **Sunday School** — Specialized group dashboard with roster and attendance tracking.
 * **[Kiosk Check-in](/user-guide/kiosk-devices)** — Self-service check-in tablets for any event with a linked group. Parent alerts via email or SMS.
-* **Calendar** — Shared church calendar with offcanvas event editor and timezone-aware event times.
+* **[Calendar](/user-guide/events#using-the-calendar)** — Month, week, day, and list views, plus birthdays, anniversaries, and fundraisers. Click a day to add an event.
 * **[Fundraiser](/user-guide/fundraiser)** — Manage auctions and fundraising events where members buy and sell items.
 * **[Reports & Queries](/user-guide/reports-and-queries)** — Directories, mailing labels, birthday lists, financial statements, and custom queries.
 * **[Volunteers](/user-guide/volunteers)** — Track member availability for specific roles and find volunteers for upcoming needs.
