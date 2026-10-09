@@ -13,6 +13,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  release-gate:
+    name: Released software gate
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: read
+      pull-requests: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Hold product docs until the matching CRM release is published
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: ./scripts/ci/hold-until-released.sh
+
   validate:
     name: Validate Docusaurus site
     runs-on: ubuntu-latest
@@ -33,17 +50,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Download latest OpenAPI specs from CRM
-        run: |
-          mkdir -p openapi
-          curl -fsSL \
-            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/docs/openapi/generated/public-api.yaml" \
-            -o openapi/public-api.yaml
-          curl -fsSL \
-            "https://raw.githubusercontent.com/ChurchCRM/CRM/master/docs/openapi/generated/private-api.yaml" \
-            -o openapi/private-api.yaml
-          test -s openapi/public-api.yaml
-          test -s openapi/private-api.yaml
+      - name: Download pinned OpenAPI specs
+        run: ./scripts/download-openapi.sh
 
       - name: Generate API docs
         run: npm run regen

@@ -1,0 +1,38 @@
+name: Sync docs release milestones
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Optional milestone to ensure (for example 7.8.0). Blank uses the CRM package.json version and the latest stable release.'
+        required: false
+        type: string
+
+permissions:
+  issues: write
+
+concurrency:
+  group: docs-release-milestone-sync
+  cancel-in-progress: true
+
+jobs:
+  ensure-milestone:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Collect versions that need a docs milestone
+        id: versions
+        env:
+          REQUESTED_VERSION: ${{ inputs.version }}
+        run: ./scripts/ci/collect-milestone-versions.sh
+
+      - name: Create any missing milestones
+        env:
+          VERSIONS: ${{ steps.versions.outputs.versions }}
+        run: ./scripts/ci/ensure-milestones.sh

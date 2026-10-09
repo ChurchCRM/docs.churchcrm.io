@@ -78,5 +78,7 @@ For ongoing system management and maintenance.
 
 ## Get Help
 
-- [ChurchCRM Community Chat](https://discord.gg/tuWyFzj3Nj) — Ask questions and connect with the community
-- [Report an Issue](https://github.com/ChurchCRM/CRM/issues) — Found a reproducible bug? Let us know
+Can't find what you need in these docs?
+
+- [Ask on Discord](https://discord.gg/tuWyFzj3Nj) — questions, setup help, and how-to advice
+- [Open a GitHub issue](https://github.com/ChurchCRM/CRM/issues/new/choose) — a bug, or a gap in the product, on the ChurchCRM repository

@@ -1,0 +1,51 @@
+name: Stage docs for a CRM release
+
+# When ChurchCRM publishes a newer stable release than crm-release.json,
+# open a pull request that moves the API pin. Product-doc pull requests
+# that already use that milestone stay open until the release exists;
+# this workflow then marks them ready to merge.
+on:
+  schedule:
+    - cron: '30 6 * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [crm-released]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: docs-stage-release
+  cancel-in-progress: true
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Compare the pin with the latest stable CRM release
+        id: release
+        run: ./scripts/ci/compare-crm-release.sh
+
+      - name: Open the API pin pull request
+        if: steps.release.outputs.behind == 'true'
+        id: pin
+        env:
+          LATEST: ${{ steps.release.outputs.latest }}
+        run: ./scripts/ci/open-pin-pr.sh
+
+      - name: Mark staged product pull requests ready
+        if: steps.release.outputs.behind == 'true'
+        env:
+          LATEST: ${{ steps.release.outputs.latest }}
+          PIN_PR: ${{ steps.pin.outputs.number }}
+        run: ./scripts/ci/mark-staged-prs.sh

@@ -28,6 +28,27 @@ Exceptions are repository-only changes that do not describe unreleased product b
 - Open docs PRs remain attached to their target release; they are not automatically treated as released just because implementation merged.
 - Do not merge a product-doc PR with no release milestone.
 
+### API reference pin
+
+`crm-release.json` is the ChurchCRM version the public API reference documents. CI and the GitHub Pages deploy download `docs/openapi/generated/*.yaml` from that **tag**. They do not read `master`.
+
+The live site therefore matches the last release whose pin has been merged. A newer CRM release does not change the API docs until its pin pull request merges.
+
+### Staging docs for a release that is not out yet
+
+1. Open the product-doc pull request against `main` and set its milestone to the CRM version that will contain the change, for example `7.8.0`.
+2. Leave it open. The **Released software gate** fails until that version is a published stable GitHub Release. That hold is the staging area.
+3. `Sync docs release milestones` creates the milestone for the version in CRM `package.json` and for the latest stable release, if either milestone is missing.
+4. `Stage docs for a CRM release` runs daily. When a newer stable CRM release exists, it opens `release/<version>` and a pull request that bumps `crm-release.json`. It comments on pull requests already milestoned for that version.
+5. Merge the pin pull request first. Merging it publishes the API reference for that release.
+6. Re-run CI on the staged product pull requests, then merge them. Their release gate is green only after the CRM release is published.
+
+Tooling pull requests that do not describe unreleased product behavior omit the milestone, so the gate does not hold them.
+
+### Tags and branches
+
+When `crm-release.json` changes on `main`, `Tag published docs release` creates annotated tag `v<version>` and moves branch `release/<version>` to that commit. Use the tag to see the docs as published for that ChurchCRM release. Do not commit product changes directly to `release/*`.
+
 ---
 
 ## Repo Structure
