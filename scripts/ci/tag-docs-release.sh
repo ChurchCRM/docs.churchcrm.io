@@ -11,16 +11,31 @@ fi
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-if git rev-parse "v${version}" >/dev/null 2>&1; then
+if git rev-parse "refs/tags/v${version}" >/dev/null 2>&1; then
   echo "Tag v${version} already exists."
 else
   git tag -a "v${version}" -m "Docs for ChurchCRM ${version}"
-  git push origin "v${version}"
+  if ! git push origin "v${version}"; then
+    git tag -d "v${version}"
+    if ! git fetch origin "refs/tags/v${version}"; then
+      echo "::error::Failed to push tag v${version}." >&2
+      exit 1
+    fi
+    if [ "$(git rev-parse 'FETCH_HEAD^{commit}')" != "$(git rev-parse HEAD)" ]; then
+      echo "::error::Tag v${version} exists but does not point at this commit." >&2
+      exit 1
+    fi
+    echo "Tag v${version} was created by another run."
+  fi
 fi
 
 ref="refs/heads/release/${version}"
 if git fetch origin "$ref"; then
-  git push --force-with-lease="${ref}:$(git rev-parse FETCH_HEAD)" origin "HEAD:${ref}"
+  if git merge-base --is-ancestor FETCH_HEAD HEAD; then
+    git push origin "HEAD:${ref}"
+  else
+    echo "release/${version} is not behind this commit. Leaving the branch where it is."
+  fi
 else
   git push origin "HEAD:${ref}"
 fi
