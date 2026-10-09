@@ -60,12 +60,7 @@ Find `memory_limit` and set:
 memory_limit = 256M
 ```
 
-For photo and backup uploads, also raise the upload limits (both must be at least as large as the biggest file you will upload):
-
-```ini
-upload_max_filesize = 32M
-post_max_size = 32M
-```
+For photo and backup uploads, raise `upload_max_filesize` and `post_max_size` together. Both must be at least as large as the biggest file you will upload.
 
 Save the file, then:
 
@@ -159,4 +154,4 @@ Continue with [First Run Configuration](/getting-started/first-run).
 
 A public church site should not stay on plain HTTP. Point a DNS name at the VM's public IP, open inbound **TCP 443**, and follow [SSL / HTTPS](/installation/ssl-https).
 
-To send mail, configure SMTP under **Admin → System Settings → Email**. That is an outbound connection from the VM to your mail host (often port 587). You do not need an inbound mail rule on the VM.
+To send mail, open **Communication → Email** and use **Email Settings** for the SMTP host. That is an outbound connection from the VM to your mail host (often port 587). You do not need an inbound mail rule on the VM.

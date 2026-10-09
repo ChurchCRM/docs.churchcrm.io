@@ -5,7 +5,7 @@ sidebar_position: 9
 
 # Settings Quick Reference — Where to Find Everything
 
-This page lets you quickly find where any setting is located in the ChurchCRM UI. Organized by the most common tasks.
+Use this page to find the menu for a setting. System Settings tabs are **New Members & Greeting**, **People**, **Families**, **Financial Settings**, **Quick Search**, **Confession**, **Scheduled Tasks**, and **Report Settings**. There is no Edit General Settings page, and no Advanced, Finance, Search, Security, or Integration tab.
 
 ## 👥 People & Registration
 
@@ -13,15 +13,16 @@ This page lets you quickly find where any setting is located in the ChurchCRM UI
 |---|---|---|
 | Enable visitor self-registration | People → Dashboard → People Settings | Self-registration |
 | Hide deceased people from exports | People → Dashboard → People Settings | Hide deceased from directory |
-| Change how names display (format) | Admin → System Settings → People | Person name format |
+| Change how names display | Admin → System Settings → People | Person name format |
 | Change person avatar initials | Admin → System Settings → People | Person initials style |
-| Set default country for new families | Admin → System Settings → People | Default country |
-| Set default city | Admin → System Settings → People | Default city |
-| Set default state | Admin → System Settings → People | Default state |
-| Set default ZIP code | Admin → System Settings → People | Default ZIP code |
-| Disable "Friend Date" field | Admin → System Settings → People | Hide friend date |
-| Disable "Wedding Date" field | Admin → System Settings → People | Hide wedding date |
+| Set default country for new families | Admin → System Settings → Families, or Admin → Church Information → Address Defaults | Default country |
+| Set default city | Admin → System Settings → Families, or Address Defaults | Default city |
+| Set default state | Admin → System Settings → Families, or Address Defaults | Default state |
+| Set default ZIP code | Admin → System Settings → Families, or Address Defaults | Default ZIP |
+| Disable "Friend Date" | Admin → System Settings → People | Hide friend date |
+| Disable "Wedding Date" | Admin → System Settings → People | Hide wedding date |
 | Auto-uppercase ZIP codes | Admin → System Settings → People | Force UPPERCASE ZIP codes |
+| Hide a person's address when they have no family | Admin → System Settings → People | Hide person address |
 
 ## 🏛️ Church Information
 
@@ -37,128 +38,133 @@ This page lets you quickly find where any setting is located in the ChurchCRM UI
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Set initial map zoom level | People → Map → Map Settings | Map default zoom level |
-| Set map center point | Admin → Church Information | Latitude/Longitude |
-| Hide lat/lon fields from users | Admin → System Settings → People | Hide latitude/longitude |
+| Set initial map zoom | People → Family Map → Map Settings | Default map view |
+| Set the map center | Admin → Church Information | Latitude and longitude |
+| Hide lat/lon fields | People → Family Map → Map Settings | Hide latitude/longitude |
 
 ## 💰 Finance & Donations
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Enable/disable Finance module | Admin → System Settings → Finance | Enable Finance module |
-| Enable/disable Fundraiser module | Admin → System Settings → Finance | Enable Fundraiser module |
-| Set fiscal year start month | Admin → System Settings → Finance | Fiscal year start month |
-| Set currency symbol | Admin → Localization & Formats | Currency symbol |
-| Set currency position ($ before or after) | Admin → Localization & Formats | Currency position |
-| Use numbered donation envelopes | Admin → System Settings → Finance | Use donation envelopes |
-| Track scanned check images | Admin → System Settings → Finance | Scanned check images |
-| Allow non-deductible donations | Admin → System Settings → Finance | Non-deductible donations |
+| Enable or disable Finance | Admin → System Settings → Financial Settings | Enable Finance menu |
+| Enable or disable Fundraiser | Admin → System Settings → Financial Settings | Enable Fundraiser menu |
+| Set the fiscal year start month | Admin → System Settings → Financial Settings | Fiscal year start month |
+| Set the currency symbol | Admin → Localization & Formats (also on Financial Settings) | Currency symbol |
+| Put the symbol before or after the amount | Admin → Localization & Formats | Currency position |
+| Use numbered donation envelopes | Admin → System Settings → Financial Settings | Use donation envelopes |
+| Track scanned check images | Admin → System Settings → Financial Settings | Scanned check images |
+| Allow non-deductible donations | Admin → System Settings → Financial Settings | Non-deductible payments |
 
 ## 🌍 Language & Localization
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Change application language | Admin → Localization & Formats | Language / I18n |
-| Set church time zone | Admin → Localization & Formats | Time zone |
-| Change date display format | Admin → Localization & Formats | Date format |
-| Set number formats (decimals, thousands) | Admin → Localization & Formats | Decimal separator, Thousands separator |
-| Set phone number format | Admin → Localization & Formats | Phone number format |
+| Change the church language | Admin → Localization & Formats | Language |
+| Change your own language | User menu → Change Settings → Localization | Localization |
+| Set the church time zone | Admin → Localization & Formats | Time zone |
+| Change date display | Admin → Localization & Formats | Date formats |
+| Set decimal and thousands separators | Admin → Localization & Formats | Decimal separator, thousands separator |
+| Set the phone number format | Admin → Localization & Formats | Phone number format |
 
 ## 📧 Email Setup
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Enable/disable email sending | Admin → System Settings → Email | Enable/disable email |
-| Configure SMTP server | Admin → System Settings → Email | SMTP host, port |
-| Set sender name/address | Admin → System Settings → Email | Sender name, Sender address |
-| Set reply-to address | Admin → System Settings → Email | Reply-to address |
-| Set default email recipient | Admin → System Settings → Email | Church email address |
-| Configure email encryption (TLS/SSL) | Admin → System Settings → Email | TLS/SSL encryption |
+| Turn email sending on or off | Communication → Email → Email Settings | Enable Email |
+| Set the SMTP server | Communication → Email → Email Settings | SMTP Host (include the port) |
+| Set the SMTP username and password | Communication → Email → Email Settings | SMTP Username, SMTP Password |
+| Choose TLS or SSL | Communication → Email → Email Settings | Encryption |
+| Add the church as a recipient when composing mail | Communication → Email → Email Settings | Copy Church Email |
 
-## 🔐 Security & Passwords
+The From address is the email on **Admin → Church Information**. The From name is the church name.
 
-| I want to... | Location | Setting |
-|---|---|---|
-| Set minimum password length | Admin → Security & Permissions | Minimum password length |
-| Force password changes | Admin → Security & Permissions | Password change requirement |
-| Block common passwords | Admin → Security & Permissions | Disallowed passwords |
-| Lock account after failed logins | Admin → Security & Permissions | Max failed logins |
-| Set session timeout | Admin → Security & Permissions | Session timeout |
-| Require two-factor authentication (2FA) | Admin → Security & Permissions | Require 2FA |
-| Set 2FA enrollment grace period | Admin → Security & Permissions | 2FA grace period |
-| Enable CSP (XSS protection) | Admin → System Settings → Advanced | Enforce CSP |
+## 🔐 Passwords, lockout, and 2FA
+
+These are on **Admin → System Users → Settings → Quick Settings**, not a Security menu.
+
+| I want to... | Setting |
+|---|---|
+| Set the minimum password length | Minimum password length |
+| Require a new password to differ from the old one | Minimum password change |
+| Block common passwords | Disallowed passwords |
+| Lock an account after failed sign-ins | Max failed logins |
+| Set how long a session stays open | Session timeout (seconds) |
+| Require two-factor authentication | Require 2FA |
+| Set how long people have to enroll | 2FA grace period |
+
+Content Security Policy (`bEnforceCSP`) is not on a settings tab. There is no switch for it in the UI.
 
 ## 🔔 Notifications
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Notify someone when new family added | Admin → System Settings | New member notification recipients |
-| Include contact details in notifications | Admin → System Settings | Include data in notifications |
-| Send birthday greeting emails | Admin → System Settings | Birthday emails |
-| Alert on missed background jobs | Admin → System Settings | Background jobs warning |
+| Choose who is told when a person is added | Admin → System Settings → New Members & Greeting | New member notification recipients |
+| Include contact details in that email | Admin → System Settings → New Members & Greeting | Include data in notifications |
+| Send birthday emails | Admin → System Settings → New Members & Greeting | Birthday emails |
+| Warn when background jobs have not run | Admin → System Settings → Scheduled Tasks | Background jobs warning |
 
-## 🔍 Search & Discovery
-
-| I want to... | Location | Setting |
-|---|---|---|
-| Show/hide people in search | Admin → System Settings → Search | Search people |
-| Show/hide families in search | Admin → System Settings → Search | Search families |
-| Show/hide groups in search | Admin → System Settings → Search | Search groups |
-| Show/hide donations in search | Admin → System Settings → Search | Search deposits, Search payments |
-| Limit search results | Admin → System Settings → Search | Max results per category |
-
-## 🎨 Display & UI
+## 🔍 Search
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Control PDF handling (save vs open) | Admin → System Settings → Advanced | PDF output type |
-| Show fundraiser menu | Admin → System Settings → Finance | Enable Fundraiser module |
-| Show Sunday School in menu | Admin → System Settings → Advanced | Enable Sunday School module |
-| Show Events in menu | Admin → System Settings → Advanced | Enable Events module |
-| Show/hide specific field types | Admin → System Settings → People | Hide person address, Hide friend date, Hide wedding date |
+| Show or hide people, families, groups, addresses, deposits, payments, or calendar events | Admin → System Settings → Quick Search | The matching Search switch |
+| Limit how many results appear | Admin → System Settings → Quick Search | Maximum for that kind of record |
 
-## 📊 Reporting & Exports
+## 🎨 Menus
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Exclude deceased from printed directory | People → Dashboard → People Settings | Hide deceased from directory |
-| Hide family newsletter subscription field | Admin → System Settings → People | Hide family newsletter |
-| Control page margins/spacing in reports | Admin → System Settings → Reports | Left margin, Line thickness |
+| Show Sunday School | Groups → Dashboard → Group Settings | Sunday School Module |
+| Show Events | Calendar → Calendar Settings | Enable Events Menu |
+| Let other sites read the calendar | Calendar → Calendar Settings | Enable External Calendar API |
+| Limit which sites may embed the calendar | Calendar → Calendar Settings | Calendar Embed Origins |
+| Hide the family newsletter field | Admin → System Settings → Families | Hide family newsletter |
 
-## 🛠️ Advanced & Developer
+## 📊 Reports
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Change application log level | Admin → System Settings → Advanced | Log severity level |
-| Enable external calendar API | Admin → System Settings → Advanced | Enable external calendar API |
-| Set calendar embedding origins | Admin → System Settings → Advanced | Calendar embed origins |
-| Allow pre-release upgrades | Admin → System Settings → Advanced | Allow pre-release upgrades |
-| Change telemetry sharing level | Admin → System Settings → Advanced | Telemetry level |
+| Leave deceased people out of the printed directory | People → Dashboard → People Settings | Hide deceased from directory |
+| Set the letterhead image | Admin → System Settings → Report Settings | Church letterhead (`bDirLetterHead`) |
+| Save a PDF or open it in the browser | Admin → System Settings → Report Settings | PDF output type |
+| Change report margins | Admin → System Settings → Report Settings | Left margin, line thickness |
+
+## 🛠️ Logs, upgrades, and telemetry
+
+| I want to... | Location | Setting |
+|---|---|---|
+| Change the log level | Admin → System Logs → Settings | DEBUG, INFO, WARNING, or ERROR |
+| Allow a pre-release upgrade | Admin Dashboard → Upgrade, then System Upgrade → Settings | Upgrade Settings |
+| Choose what anonymous diagnostics to share | Admin Dashboard prompt | Enable (full), Errors only, or No thanks |
+
+Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 
 ---
 
-## Settings by Location
-
-Quick reference of which admin page contains each setting category:
+## Settings by location
 
 | Location | Contains |
 |----------|----------|
-| **Admin → Church Information** | Church name, address, contact info, logo |
-| **Admin → Localization & Formats** | Language, timezone, date/time/number formats |
-| **Admin → Security & Permissions** | Password rules, session timeout, 2FA |
-| **Admin → System Settings → Email** | SMTP configuration, sender info, email features |
-| **Admin → System Settings → People** | People/family display options, classifications |
-| **Admin → System Settings → Finance** | Currency, fiscal year, donation options |
-| **Admin → System Settings → Search** | Search scope and result limits |
-| **Admin → System Settings → Advanced** | Logging, APIs, features, telemetry |
-| **People → Dashboard → People Settings** | Self-registration, deceased directory |
-| **People → Map → Map Settings** | Map zoom level |
+| **Admin → Church Information** | Church name, address, contact email, logo, and Address Defaults |
+| **Admin → Localization & Formats** | Language, time zone, dates, currency display, phone formats |
+| **Admin → System Users → Settings → Quick Settings** | Password rules, lockout, session timeout, 2FA |
+| **Communication → Email → Email Settings** | SMTP and sending |
+| **Admin → System Settings → People** | Names, initials, friend and wedding dates |
+| **Admin → System Settings → Families** | Default city, state, ZIP, and country, and family roles |
+| **Admin → System Settings → Financial Settings** | Finance and fundraiser menus, fiscal year, envelopes |
+| **Admin → System Settings → Quick Search** | What search includes, and how many results |
+| **Admin → System Settings → Report Settings** | Letterhead (`bDirLetterHead`), PDF handling, report wording |
+| **People → Family Map → Map Settings** | Zoom, and hiding latitude and longitude |
+| **Groups → Dashboard → Group Settings** | Sunday School module |
+| **Calendar → Calendar Settings** | Events menu, external calendar API, embed origins |
+| **Admin → System Logs → Settings** | Log level |
+| **System Upgrade → Upgrade Settings** | Pre-release upgrades |
 
 ---
 
 ## See Also
 
-- **[System Settings & Configuration](./system-settings.md)** — Full descriptions of all settings
-- **[Email Setup](./email-setup.md)** — Complete email configuration guide
-- **[Localization & Formats](./localization.md)** — Language and format details
-- **[Security](./security.md)** — Security policies and user permissions
+- **[System Settings & Configuration](./system-settings.md)** — What each setting does
+- **[Email Setup](./email-setup.md)** — Sending mail
+- **[Localization & Formats](./localization.md)** — Language and formats
+- **[Security](./security.md)** — Account security

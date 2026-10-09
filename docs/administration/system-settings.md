@@ -5,18 +5,19 @@ sidebar_position: 8
 
 # System Settings & Configuration
 
-ChurchCRM's settings are spread across multiple locations for intuitive access. This page is your comprehensive guide to finding and configuring every system setting.
+ChurchCRM's settings are spread across several pages. This page is where to look for each one.
 
 :::tip Quick Navigation
-Use this guide to find where any setting is configured:
 - **Church Information** — Admin → Church Information
-- **People Settings** — People → Dashboard → People Settings button
-- **Map Settings** — People → Map → Map Settings button
-- **Localization & Formats** — Admin → Localization & Formats
-- **Email Configuration** — Admin → System Settings → Email tab
-- **Security** — Admin → Security & Permissions
-- **Advanced Settings** — Admin → System Settings
+- **People Settings** — People → Dashboard → People Settings
+- **Map Settings** — People → Family Map → Map Settings
+- **Localization & Formats** — Admin → Localization & Formats (time zone is here)
+- **Email** — Communication → Email → Email Settings
+- **Passwords, lockout, session, and 2FA** — Admin → System Users → Settings → Quick Settings
+- **System Settings tabs** — New Members & Greeting, People, Families, Financial Settings, Quick Search, Confession, Scheduled Tasks, Report Settings
 :::
+
+There is no **Edit General Settings** page, and System Settings has no Advanced, Finance, Search, Security, or Integration tab.
 
 ---
 
@@ -24,76 +25,81 @@ Use this guide to find where any setting is configured:
 
 **Location:** Admin → Church Information
 
-Configure basic church details that appear throughout ChurchCRM.
-
 | Setting | Description | Required |
 |---------|-------------|----------|
-| **Church name** | Displayed in headers, emails, PDF reports | ✅ Yes |
-| **Address** | Street address for geocoding and mail |  |
-| **City, State, ZIP** | Used for church location on maps |  |
-| **Country** | Church location country |  |
-| **Phone** | Shown on contact pages and auto-emails |  |
-| **Email** | Primary contact email |  |
-| **Website** | Church website URL |  |
-| **Logo URL** | HTTPS URL for logo in emails (3.5:1 aspect ratio recommended) |  |
+| **Church name** | Shown in headers, emails, and PDF reports | Yes |
+| **Address** | Street address for mail and the map |  |
+| **City, State, ZIP** | Church location |  |
+| **Country** | Church country |  |
+| **Phone** | Shown on contact pages |  |
+| **Email** | Church contact email. Outbound mail uses this address as the From address, with the church name |  |
+| **Website** | Church website |  |
+| **Logo URL** | HTTPS address of the logo used in emails |  |
 
-:::note
-Church name is **required** and will be requested on first setup. Many features require this to be configured.
-:::
+**Address Defaults** on the same page sets the city, state, ZIP, and country filled in for a new family. The same four defaults are also on **Admin → System Settings → Families**.
+
+Church name is required. First-time setup sends you here to fill it in.
 
 ---
 
 ## People Settings
 
-**Location:** People → Dashboard → Click **"People Settings"** button (admin-only)
-
-Settings that control how people and family information is displayed and managed.
+**Location:** People → Dashboard → **People Settings** (administrators only)
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Self-registration** | Allow visitors to self-register as new families. When enabled, a link appears on the login page. | Off |
-| **Hide deceased from directory** | Exclude deceased members from printed directories and CSV exports | On |
+| **Self-registration** | Let a visitor create a family from the login page | Off |
+| **Hide deceased from directory** | Leave deceased people out of the printed directory and CSV exports | On |
 
 ---
 
-## People & Family Configuration
+## System Settings → People
 
-**Location:** Admin → System Settings → People tab
-
-Detailed settings for people management and directory display.
+**Location:** Admin → System Settings → **People**
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Default country** | Pre-fills country field on new person/family forms |  |
-| **Default city** | Pre-fills city field on new forms |  |
-| **Default state** | Pre-fills state field on new forms |  |
-| **Default ZIP code** | Pre-fills ZIP on new forms |  |
-| **Person name format** | How names display (FirstName LastName, LastName FirstName, etc.) | FirstName LastName |
-| **Person initials style** | Avatar initials (FirstName + LastName, or FirstName only) | First + Last |
-| **Hide person address** | Hide address fields for people not assigned to a family | On |
-| **Hide friend date** | Disable the "Friend Date" field in Person Editor | Off |
-| **Hide wedding date** | Disable the "Wedding Date" field in Family Editor | Off |
-| **Hide latitude/longitude** | Hide manual geocoding fields (background geocoding still runs) | Off |
-| **Inactive classifications** | Classifications to mark as inactive (comma-separated IDs) |  |
-| **Family roles — Head of House** | Person role type for head of household |  |
-| **Family roles — Spouse** | Person role type for spouse |  |
-| **Family roles — Child** | Person role type for children |  |
-| **Force UPPERCASE ZIP codes** | Auto-uppercase all ZIP/postal codes entered | Off |
-| **Hide family newsletter** | Disable newsletter subscription management in Family Editor | Off |
+| **Person name format** | How names are shown |  |
+| **Person initials style** | Letters used for the avatar |  |
+| **Hide person address** | Hide the address for a person who is not in a family | On |
+| **Hide friend date** | Remove Friend Date from the Person Editor | Off |
+| **Hide wedding date** | Remove Wedding Date from the Family Editor | Off |
+| **Force UPPERCASE ZIP codes** | Save postal codes in uppercase | Off |
+| **Inactive classifications** | Comma-separated classification IDs treated as inactive |  |
+| **Directory classifications** | Classifications included in the directory |  |
+
+---
+
+## System Settings → Families
+
+**Location:** Admin → System Settings → **Families**
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Default city** | Pre-filled on a new family. Also under Address Defaults on Church Information |  |
+| **Default state** | Two-letter state abbreviation. Also under Address Defaults |  |
+| **Default ZIP** | Pre-filled postal code. Also under Address Defaults |  |
+| **Default country** | Pre-filled country. Also under Address Defaults |  |
+| **Head of house / spouse / child roles** | Family role numbers used for those relationships |  |
+| **Hide family newsletter** | Remove newsletter subscription from the Family Editor | Off |
 
 ---
 
 ## Map Settings
 
-**Location:** People → Map → Click **"Map Settings"** button (admin-only)
+**Location:** People → Family Map → **Map Settings** (administrators only)
 
-ChurchCRM uses **Leaflet + Nominatim (OpenStreetMap)** — no API key required.
+ChurchCRM uses Leaflet and OpenStreetMap. No map API key is required.
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Map default zoom level** | Starting zoom when opening maps (Continent → Street) | City (10) |
+| **Default map view** | Starting zoom, from continent down to street | City |
+| **Hide latitude/longitude** | Hide the latitude and longitude fields in the Family Editor. Geocoding still runs | Off |
+| **Hide person address** | Same switch as on System Settings → People | On |
 
-For full mapping configuration, see [Maps & Geocoding](./maps-and-geocoding.md).
+The map is centered on the latitude and longitude saved with **Church Information**.
+
+For the rest of the map, see [Maps & Geocoding](./maps-and-geocoding.md).
 
 ---
 
@@ -101,145 +107,165 @@ For full mapping configuration, see [Maps & Geocoding](./maps-and-geocoding.md).
 
 **Location:** Admin → Localization & Formats
 
-:::info
-See the dedicated [Localization & Formats](./localization.md) guide for complete details.
-:::
+See [Localization & Formats](./localization.md).
 
 | Setting | Description |
 |---------|-------------|
-| **Language / I18n** | Application language (English, Spanish, French, German, etc.) |
+| **Language** | Church-wide language. A person can override it under **Change Settings → Localization** |
 | **Time zone** | Church time zone for events and scheduling |
-| **Date format** | How dates display (MM/DD/YYYY, DD/MM/YYYY, etc.) |
-| **Date picker format** | Date format in picker widgets |
-| **Currency symbol** | $ € £ etc. |
-| **Currency position** | Symbol before or after amount |
-| **Thousands separator** | , or . |
-| **Decimal separator** | . or , |
-| **Phone number format** | (999) 999-9999 or other format |
+| **Date formats** | Long date, short date, date and time, file names, and the date picker |
+| **Currency symbol and position** | Also listed on System Settings → Financial Settings |
+| **Thousands and decimal separators** | Also listed on Financial Settings |
+| **Phone number format** | Home, cell, and extension masks |
+| **Distance** | Miles or kilometers |
 
 ---
 
-## Email Configuration
+## Email
 
-**Location:** Admin → System Settings → Email tab
+**Location:** Communication → Email → **Email Settings**
 
-See [Email Setup](./email-setup.md) for detailed configuration instructions.
+Email is not a System Settings tab. See [Email Setup](./email-setup.md).
 
 | Setting | Description |
 |---------|-------------|
-| **Enable/disable email** | Turn email sending on or off |
-| **SMTP host** | Your outbound mail server (mail.example.com:25) |
-| **SMTP port** | Default 25, 465 (SSL), or 587 (TLS) |
-| **SMTP authentication** | Enable if server requires username/password |
-| **SMTP username** | Login for authenticated SMTP |
-| **SMTP password** | Password for authenticated SMTP |
-| **Sender name** | "From:" display name in outbound emails |
-| **Sender address** | "From:" email address |
-| **Reply-to address** | Optional separate reply-to address |
-| **TLS/SSL encryption** | Connection encryption mode |
-| **Church email address** | Auto-added as removable recipient in Email Composer |
-| **Email preheader** | Short text shown in email previews (optional) |
+| **Enable Email** | Turn sending on or off |
+| **SMTP Host** | Mail server, including the port, such as `mail.example.com:587` |
+| **SMTP Timeout** | Seconds to wait for the server |
+| **Encryption** | None, TLS, or SSL |
+| **Auto TLS** | Use encryption when the server offers it |
+| **SMTP Authentication** | On when the server requires a username and password |
+| **SMTP Username / Password** | Login for that server |
+| **Copy Church Email** | Address added as a removable recipient when someone composes mail |
+| **Do Not Email Property** | Person property that keeps someone off email lists |
+| **Default Inbox Preview Text** | Fallback preview line beside the subject |
+
+The From name is the church name, and the From address is the email on Church Information.
 
 ---
 
-## Finance & Donations
+## System Settings → Financial Settings
 
-**Location:** Admin → System Settings → Finance tab
+**Location:** Admin → System Settings → **Financial Settings**
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Enable Finance module** | Show/hide Finance in sidebar | On |
-| **Enable Fundraiser module** | Show/hide Fundraiser in sidebar | On |
-| **Fiscal year start month** | Month your financial year begins (Jan-Dec) | January |
-| **Currency symbol** | $ € £ CHF etc. | $ |
-| **Currency position** | Before or after amount | Before |
-| **Use donation envelopes** | Track contributions via numbered envelopes | Off |
-| **Checks per deposit slip** | How many check line items per deposit form | 14 |
-| **Scanned check images** | Allow attaching scanned check images | Off |
-| **Non-deductible donations** | Allow recording non-tax-deductible gifts | Off |
+| **Enable Finance menu** | Show or hide Finance | On |
+| **Enable Fundraiser menu** | Show or hide Fundraiser | On |
+| **Fiscal year start month** | Month the financial year begins | January |
+| **Use donation envelopes** | Track gifts with numbered envelopes | Off |
+| **Checks per deposit slip** | Check lines on one deposit form | 14 |
+| **Scanned check images** | Attach a scan to a deposit | Off |
+| **Non-deductible payments** | Record gifts that are not tax-deductible | Off |
+| **Currency symbol, position, separators** | Same values as Localization & Formats | $ before the amount |
 
 ---
 
-## Security Settings
+## System Settings → Quick Search
 
-**Location:** Admin → Security & Permissions
+**Location:** Admin → System Settings → **Quick Search**
 
-For comprehensive security guidance, see [Security](./security.md).
+Turn each kind of record on or off, and set how many results of that kind to show.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Minimum password length** | Characters required in user passwords | 8 |
-| **Password change difference** | # of characters that must change | 4 |
-| **Disallowed passwords** | Passwords that can never be used | password, god, jesus, church, christian |
-| **Max failed logins** | Attempts before account locks | 5 |
-| **Session timeout** | Minutes before idle logout | 60 |
-| **Require 2FA** | Mandate two-factor authentication | Off |
-| **2FA grace period** | Days to enroll before 2FA enforcement | 7 days |
-| **2FA app name** | Name shown in authenticator apps | ChurchCRM |
-| **Enforce CSP** | Content Security Policy (XSS protection) | Report only |
-
----
-
-## Search & Discovery
-
-**Location:** Admin → System Settings → Search tab
-
-Control what appears in the global search.
-
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Search people** | Include people in search results | On |
-| **Search families** | Include families in search | On |
-| **Search family head of house names** | Show family HOH names | On |
-| **Search groups** | Include groups | On |
-| **Search deposits** | Include financial deposits | On |
-| **Search payments** | Include donation payments | On |
-| **Search addresses** | Include address records | On |
-| **Search calendar events** | Include events | On |
-| **Max results per category** | Limit search results (15, 5, etc.) | Varies by type |
+| Setting | Default on | Default maximum |
+|---------|------------|-----------------|
+| People | Yes | 15 |
+| Addresses | Yes | 15 |
+| Families | Yes | 15 |
+| Family head-of-house names | Yes | 15 |
+| Groups | Yes | 15 |
+| Deposits | Yes | 5 |
+| Payments | Yes | 5 |
+| Calendar events | Yes | 15 |
+| Family custom properties | No |  |
 
 ---
 
-## Notifications & Automation
+## Passwords, lockout, session, and 2FA
 
-**Location:** Admin → System Settings
+**Location:** Admin → System Users → **Settings** → **Quick Settings**
+
+This is not a Security menu.
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **New member notification** | Send email when family/person added | Off |
-| **Notification recipients** | Person IDs to notify (comma-separated) |  |
-| **Include data in notifications** | Add contact details to notification email | Off |
-| **Birthday emails** | Auto-send birthday greeting emails | Off |
-| **Background jobs warning** | Alert admin if scheduled tasks haven't run (hours) | 26 |
-| **Background jobs interval** | Minimum minutes between timer job runs | 15 |
+| **Minimum password length** | Shortest password a person may choose | 8 |
+| **Minimum password change** | How many characters must differ from the old password. 0 turns this off | 4 |
+| **Disallowed passwords** | Comma-separated list that cannot be used | password, god, jesus, church, christian |
+| **Max failed logins** | Failures before the account locks. An administrator unlocks it. 0 turns this off | 5 |
+| **Session timeout** | Idle time in seconds. 0 turns the timeout off | 3600 |
+| **Lost password link** | Show or hide the link on the sign-in page | On |
+| **Require 2FA** | Require every user to enroll | Off |
+| **2FA grace period** | Days to enroll after 2FA is required. 0 enforces it immediately | 7 |
+| **2FA application name** | Name shown in the authenticator app | ChurchCRM |
+| **Email when a user is deleted** | Tell the person their account was removed | Off |
+
+Content Security Policy (`bEnforceCSP`) is not on a settings tab. Do not look for a switch for it in the menus.
 
 ---
 
-## Advanced & Expert Settings
+## System Settings → New Members & Greeting
 
-**Location:** Admin → System Settings → Advanced tab
-
-These settings are for advanced users and developers.
+**Location:** Admin → System Settings → **New Members & Greeting**
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Log severity level** | App log level (DEBUG, INFO, WARNING, ERROR) | INFO |
-| **PDF output type** | Save dialog vs open in browser | Save dialog |
-| **Event log queries** | Query IDs requiring finance permissions |  |
-| **Telemetry level** | Anonymous diagnostic data sharing | None |
-| **Enforce CSP** | Enforce Content Security Policy headers | Report-only |
-| **Enable external calendar API** | Allow public calendar embedding | Off |
-| **Calendar embed origins** | Origins allowed to embed calendar (CSP) | * (any) |
-| **Allow pre-release upgrades** | Update to pre-release versions | Off |
-| **Display distance in** | Miles or kilometers | Miles |
+| **New member notification recipients** | People notified when a person is added |  |
+| **Include data in notifications** | Put contact details in that email | Off |
+| **Greeter messages** | Two custom lines for greeter email |  |
+| **Birthday emails** | Send a greeting on a person's birthday | Off |
+
+---
+
+## System Settings → Scheduled Tasks
+
+**Location:** Admin → System Settings → **Scheduled Tasks**
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Background jobs warning** | Hours without a timer-job run before the Admin Dashboard warns you. 0 hides the warning | 26 |
+| **Minimum interval** | Minutes between timer jobs started by a page view. 0 runs them on every page view. The command-line runner ignores this | 15 |
+
+---
+
+## System Settings → Confession
+
+**Location:** Admin → System Settings → **Confession**
+
+Choose the person custom field that stores the father of confession, and the date field that stores the last confession.
+
+---
+
+## System Settings → Report Settings
+
+**Location:** Admin → System Settings → **Report Settings**
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Letterhead** | Path to the letterhead image. The setting name is `bDirLetterHead` | `../Images/church_letterhead.jpg` |
+| **PDF output type** | 1 opens a save dialog. 2 opens the PDF in the browser | 1 |
+| **Left margin and line thickness** | Report layout, in hundredths of an inch | 20 and 4 |
+| **Tax, pledge, confirmation, and directory text** | Sentences printed on those reports, plus the signer lines |  |
+
+---
+
+## Other pages
+
+| What you want | Where |
+|---------------|--------|
+| Sunday School in the menu | Groups → Dashboard → **Group Settings** → **Sunday School Module** |
+| Events menu, external calendar API, and embed origins | Calendar → **Calendar Settings** |
+| Log level (DEBUG, INFO, WARNING, or ERROR only) | Admin → System Logs → **Settings** |
+| Pre-release upgrades | Admin Dashboard → **Upgrade**, then System Upgrade → **Settings** (**Upgrade Settings**) |
+| Telemetry | The prompt on the Admin Dashboard: **Enable (full)**, **Errors only**, or **No thanks** |
 
 ---
 
 ## Related Pages
 
-- [Localization & Formats](./localization.md) — Language, timezone, date/number formats
-- [Email Setup](./email-setup.md) — Complete email configuration guide
-- [Maps & Geocoding](./maps-and-geocoding.md) — Church location and mapping
-- [Security](./security.md) — Security policies and user permissions
-- [Users](./users.md) — User account management
-- [Plugins](./plugins/index.md) — Community plugins and integrations
+- [Localization & Formats](./localization.md) — Language, time zone, and date and number formats
+- [Email Setup](./email-setup.md) — Sending mail
+- [Maps & Geocoding](./maps-and-geocoding.md) — Church location and the map
+- [Security](./security.md) — Account security
+- [Users](./users.md) — User accounts
+- [Plugins](./plugins/index.md) — Plugins
