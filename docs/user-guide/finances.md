@@ -65,7 +65,7 @@ There are two ways in which pledges can be added:
 
 ### From the Family View
 
-1. When viewing a [family](Families), a link for _"Add a new pledge"_ will be near the bottom of the screen.
+1. When viewing a [family](/user-guide/families), a link for _"Add a new pledge"_ will be near the bottom of the screen.
 2. Enter the information.
 3. Click _"Save"_.
 

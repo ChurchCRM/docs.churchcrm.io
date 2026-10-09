@@ -20,6 +20,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          # Full history so showLastUpdateTime has a real date in CI builds.
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v6

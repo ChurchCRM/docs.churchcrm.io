@@ -5,7 +5,7 @@ sidebar_position: 8
 
 # Notes
 
-Notes are memos attached to [Person](Persons) or [Family](Families) records. Use them to record pastoral visits, prayer requests, important conversations, or any other relevant information. Notes appear in the **Timeline** on each record, sorted newest-first alongside calendar events and system activity.
+Notes are memos attached to [Person](/user-guide/persons) or [Family](/user-guide/families) records. Use them to record pastoral visits, prayer requests, important conversations, or any other relevant information. Notes appear in the **Timeline** on each record, sorted newest-first alongside calendar events and system activity.
 
 ---
 

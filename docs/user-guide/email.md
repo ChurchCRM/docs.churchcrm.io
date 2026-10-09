@@ -50,7 +50,7 @@ As of **7.5.0**, ChurchCRM includes an in-app email composer that replaces the o
 
 ### Subscribing Families to Newsletters
 
-1. Open a [Family](Families) record.
+1. Open a [Family](/user-guide/families) record.
 2. Enable the **Newsletter** option.
 3. Use Mailchimp's audience sync to import subscribers.
 
@@ -61,7 +61,7 @@ As of **7.5.0**, ChurchCRM includes an in-app email composer that replaces the o
 - Always get consent before adding someone to an email list.
 - Use Mailchimp for newsletters and large announcements.
 - Use the in-app composer for ad-hoc group and cart emails.
-- Keep your [Classifications](Classifications) updated to target the right audiences.
+- Keep your [Classifications](/user-guide/classifications) updated to target the right audiences.
 
 ---
 

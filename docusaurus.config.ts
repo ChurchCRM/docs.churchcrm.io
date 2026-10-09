@@ -21,8 +21,13 @@ const config: Config = {
   projectName: 'docs.churchcrm.io',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   i18n: { defaultLocale: 'en', locales: ['en'] },
 
   plugins: [
@@ -35,12 +40,12 @@ const config: Config = {
         publicApi: {
           specPath: 'openapi/public-api.yaml', outputDir: 'docs/api/public',
           sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
-          downloadUrl: 'https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/public-api.yaml', showSchemas: true,
+          downloadUrl: 'https://raw.githubusercontent.com/ChurchCRM/CRM/master/docs/openapi/generated/public-api.yaml', showSchemas: true,
         },
         privateApi: {
           specPath: 'openapi/private-api.yaml', outputDir: 'docs/api/private',
           sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
-          downloadUrl: 'https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/private-api.yaml', showSchemas: true,
+          downloadUrl: 'https://raw.githubusercontent.com/ChurchCRM/CRM/master/docs/openapi/generated/private-api.yaml', showSchemas: true,
         },
       },
     }],
@@ -50,7 +55,7 @@ const config: Config = {
     docs: {
       sidebarPath: './sidebars.ts', routeBasePath: '/',
       editUrl: 'https://github.com/ChurchCRM/docs.churchcrm.io/edit/main/',
-      showLastUpdateTime: false, showLastUpdateAuthor: false, docItemComponent: '@theme/ApiItem',
+      showLastUpdateTime: true, showLastUpdateAuthor: false, docItemComponent: '@theme/ApiItem',
     },
     blog: false,
     theme: { customCss: './src/css/custom.css' },

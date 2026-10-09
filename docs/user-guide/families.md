@@ -114,12 +114,12 @@ Profile images are automatically deleted from the server when a family or person
 
 ## How do I assign a Property to a Family?
 
-See the [Properties](Properties) help topic.
+See the [Properties](/user-guide/properties) help topic.
 
 ## How do I add a Note to a Family?
 
-See the [Notes](Notes) help topic.
+See the [Notes](/user-guide/notes) help topic.
 
 ## What is the Classification feature?
 
-See the [Classification](Classifications) help topic.
+See the [Classification](/user-guide/classifications) help topic.

@@ -46,14 +46,14 @@ When generating reports or exporting data, you can filter by classification to t
 ### Changing a Person's Classification
 
 **For an Individual:**
-1. Open the [Person's](Persons) record
+1. Open the [Person's](/user-guide/persons) record
 2. Click **Edit**
 3. Find the **Classification** dropdown
 4. Select the new classification
 5. Click **Save**
 
 **For an Entire Family:**
-1. Open the [Family](Families) record
+1. Open the [Family](/user-guide/families) record
 2. Click **Assign a New Classification**
 3. Select the new classification
 4. Confirm the change

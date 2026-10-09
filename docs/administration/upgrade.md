@@ -178,4 +178,4 @@ A **smart version check** prevents old application code from running against a n
 
 - Review **Admin → Get Started** for any new configuration options added in this version
 - Check the [changelog](https://github.com/ChurchCRM/CRM/releases) for feature notes
-- The docs site version of this page reflects the current release — if something looks different, check [What's new in 7.1](/getting-started/features-overview#whats-new-in-71)
+- The docs site version of this page reflects the current release — if something looks different, check the [features overview](/getting-started/features-overview)

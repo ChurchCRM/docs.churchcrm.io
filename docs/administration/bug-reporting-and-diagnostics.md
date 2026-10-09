@@ -245,9 +245,9 @@ This makes them:
 
 ## Still Need Help?
 
-- **Wiki Troubleshooting**: [Troubleshooting Guide](Troubleshooting)
-- **Logging Details**: [Logging & Diagnostics](Logging-and-Diagnostics)
-- **System Requirements**: [System Requirements](ChurchCRM-Application-Platform-Prerequisites)
+- **Troubleshooting**: [Troubleshooting Guide](/administration/troubleshooting)
+- **Logging Details**: [Logging & Diagnostics](/administration/logging-and-diagnostics)
+- **System Requirements**: [System Requirements](/installation/system-requirements)
 - **Discord Chat**: [ChurchCRM Community Chat](https://discord.gg/tuWyFzj3Nj)
 - **GitHub Issues**: [Browse existing issues](https://github.com/ChurchCRM/CRM/issues)
 
