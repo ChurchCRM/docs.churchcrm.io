@@ -23,7 +23,7 @@ jobs:
         run: |
           set -euo pipefail
           state=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}/reviews" \
-            --jq '.[] | select(.user.login=="coderabbitai") | .state' | tail -n 1)
+            --jq '.[] | select(.user.login=="coderabbitai" or .user.login=="coderabbitai[bot]") | .state' | tail -n 1)
           state=${state:-NONE}
           echo "Latest CodeRabbit review: ${state}"
           if [ "$state" != "APPROVED" ]; then

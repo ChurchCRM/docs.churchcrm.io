@@ -63,7 +63,7 @@ ready_to_merge() {
   pending=$(gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
     --jq '[.statusCheckRollup[]? | select(.name != null and (.status != "COMPLETED" or .conclusion != "SUCCESS"))] | length')
   rabbit=$(gh api --paginate "repos/${DOCS_REPO}/pulls/${number}/reviews" \
-    --jq '.[] | select(.user.login=="coderabbitai") | .state' | tail -n 1)
+    --jq '.[] | select(.user.login=="coderabbitai" or .user.login=="coderabbitai[bot]") | .state' | tail -n 1)
   rabbit=${rabbit:-NONE}
   if [ "$pending" != "0" ]; then
     echo "Pull request #$number is not merged. A CI check is missing or not successful."
