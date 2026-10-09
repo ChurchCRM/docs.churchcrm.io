@@ -32,7 +32,7 @@ The **current fiscal year** is shown below the selector for quick reference.
 Two buttons appear in the top-right corner:
 
 - **Back to Pledge Dashboard** — returns to the dashboard, preserving the selected fiscal year.
-- **Manage Funds** — opens the Donation Fund editor *(visible to administrators only)*.
+- **Manage Funds** — opens the donation fund editor. Any user with finance access sees this button, not only administrators.
 
 ---
 

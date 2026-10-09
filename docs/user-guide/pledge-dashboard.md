@@ -5,7 +5,7 @@ sidebar_position: 16
 
 # Pledge Dashboard
 
-The **Pledge Dashboard** (`/finance/pledge/dashboard`) is the central view for tracking pledge and payment progress by fund and by family for a given fiscal year. It replaces the former **Pledge Summary** PDF report.
+The **Pledge Dashboard** (`/finance/pledge/dashboard`) shows pledge and payment progress by fund and by family for a fiscal year.
 
 > **Note:** Finance permissions are required to access this page. See [Users](/administration/users) for details.
 
@@ -13,13 +13,13 @@ The **Pledge Dashboard** (`/finance/pledge/dashboard`) is the central view for t
 
 ## Getting there
 
-Go to **Finance** → **Reports** → **Pledge Reports** → **Pledge Summary**, or navigate directly to **Finance** → **Pledges** in the top menu. Both links open the Pledge Dashboard.
+Go to **Finance → Pledge Dashboard**. The same page opens from **Finance → Deposit Reports**, on the **Pledge Reports** card, via **Pledge Summary**. There is no **Finance → Pledges** menu item.
 
 ---
 
 ## Fiscal-Year Selector
 
-At the top of the page, a **Fiscal Year** drop-down lists every year for which pledge data exists. Changing the selection reloads the page and updates all tables and stat cards to reflect the chosen year.
+At the top of the page, a **Fiscal Year** drop-down lists **All Time** and every year that has pledge data. Changing the selection reloads the page and updates the tables and cards.
 
 The current fiscal year is highlighted underneath the selector for quick reference.
 
@@ -27,13 +27,13 @@ The current fiscal year is highlighted underneath the selector for quick referen
 
 ## Overview Stat Cards
 
-Four summary cards appear at the top:
+Two totals sit beside one card per fund:
 
 | Card | Description |
 |------|-------------|
-| **Total Pledges** | Sum of all pledged amounts for the selected fiscal year |
-| **Total Payments** | Sum of all payments received, shown as a percentage of pledges |
-| **Per-fund cards** | One card per active fund showing amount paid vs. pledged and a progress bar |
+| **Total Pledges** | Sum of pledged amounts for the selected year |
+| **Payments** | Sum of payments, labeled as a percent of pledges |
+| **One card per fund** | Amount paid, the pledged total, family count, and a progress bar |
 
 ---
 
@@ -63,7 +63,7 @@ Click any column header to sort. Use the search box (top-right of the table) to 
 
 ### Exporting
 
-The table toolbar includes **Copy**, **CSV**, **Excel**, **PDF**, and **Print** buttons (standard DataTable export buttons). Use these to export the Fund Summary for offline analysis or inclusion in reports.
+The table toolbar exports **CSV** and **Print**. There is no Copy, Excel, or PDF button on these tables.
 
 ---
 
@@ -79,11 +79,14 @@ The **Family Pledges** table lists every pledge for the selected fiscal year, on
 | **Payments** | Total payments made against this pledge |
 | **Remaining** | Pledge amount minus payments, colour-coded by completion percentage |
 
-The **Remaining** column is colour-coded:
-- 🟢 **Green** — 100 % or more paid (fully met or overpaid)
-- 🔵 **Blue** — 75–99 % paid
-- 🟡 **Yellow** — 50–74 % paid
-- 🔴 **Red** — less than 50 % paid
+Status is the percent of the pledge that has been paid:
+
+- **complete** — 100% or more
+- **on-track** — 75% or more, and under 100%
+- **behind** — 50% or more, and under 75%
+- **critical** — under 50%
+
+A row with payments and no pledge amount is treated as complete.
 
 ### Sorting and searching
 
@@ -91,13 +94,13 @@ Click any column header to sort. The search box filters across all columns (fami
 
 ### Exporting
 
-The Family Pledges table also provides **Copy**, **CSV**, **Excel**, **PDF**, and **Print** buttons.
+The Family Pledges table also exports **CSV** and **Print**.
 
 ---
 
 ## Adding a new pledge
 
-Click the **Add New Pledge** button (top-right) to open the pledge editor for the selected fiscal year. See [Finances](/user-guide/finances#how-do-i-enter-a-pledge) for full pledge entry instructions.
+Click **Add New Pledge** (top-right). It opens `/finance/pledge/new?type=Pledge` with no fiscal-year id, even if a year is selected on the dashboard. See [Finances](/user-guide/finances#how-do-i-enter-a-pledge) for the editor.
 
 ---
 
@@ -142,10 +145,10 @@ The contributor listing shows one row per family.
 
 | Colour | Status | Meaning |
 |--------|--------|---------|
-| 🟢 **Green (bold)** | Complete / Payment-only | Pledge fully met, or payments recorded with no associated pledge |
-| 🔵 **Blue** | On-track | Payments on track relative to the pledge schedule |
-| 🟡 **Yellow** | Behind | Payments lagging behind the expected schedule |
-| 🔴 **Red** | Critical | Payments significantly behind or not started |
+| 🟢 **Green (bold)** | complete, or payment-only | 100% or more of the pledge, or payments with no pledge |
+| 🔵 **Blue** | on-track | At least 75% and under 100% |
+| 🟡 **Yellow** | behind | At least 50% and under 75% |
+| 🔴 **Red** | critical | Under 50% |
 
 The table is sorted by **Family Name** by default and displays 25 rows per page. Click any column header to re-sort, or use the search box to filter by family name or amount.
 
@@ -163,7 +166,7 @@ Each row's **Actions** menu contains:
 | Control | Description |
 |---------|-------------|
 | **← Back to Pledge Dashboard** | Returns to the Pledge Dashboard, preserving the currently selected fiscal year |
-| **Manage Funds** | Opens the donation fund editor (admin users only) |
+| **Manage Funds** | Opens the donation fund editor for any user who can use Finance |
 
 ---
 
