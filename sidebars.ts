@@ -92,6 +92,7 @@ const sidebars: SidebarsConfig = {
       label: '📧 Communications',
       items: [
         'user-guide/email',
+        'user-guide/text-messages',
         'user-guide/reports-and-queries',
         'user-guide/geographic',
         'user-guide/data-import',
@@ -164,6 +165,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'administration/upgrade',
         'administration/backup-restore',
+        'administration/demo-data',
         'administration/rollback',
         'administration/file-system-permissions',
       ],

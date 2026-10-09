@@ -1,9 +1,9 @@
 ---
-title: Events
+title: Events and attendance
 sidebar_position: 11
 ---
 
-# Events
+# Events and attendance
 
 ChurchCRM allows you to create events which will appear in your church calendar.
 
@@ -160,6 +160,31 @@ To generate a report:
 1. Go to **Data/Reports** (direct link in the navigation).
 2. Choose an event type from the *Event Attendance Reports* area.
 3. Choose a person type corresponding to the event for which you wish to generate a report.
+
+## Using the Calendar
+
+Open **Calendar** in the top navigation. The page subtitle is **Manage events, birthdays, and anniversaries**. Times on this page use the church time zone shown next to **Calendar time zone**. If your browser is in a different zone, a **Browser time zone differs** badge appears. Administrators can open **Details** from that badge.
+
+Use the **month**, **week**, **day**, and **list** buttons to change the view, and **today** to jump back to the current day in the church time zone.
+
+To show or hide a calendar, click **Calendars**.
+
+- **My Calendars** are calendars your church created. If you can add events, **New Calendar** is at the bottom of that list. Name it, pick a foreground and background color, and click **Save**.
+- **System Calendars** include **Birthdays**, **Anniversaries**, and **Unpinned Events**. **Fundraisers** is included when the fundraiser menu is turned on. A holiday calendar appears here only when that plugin is installed.
+
+Click a day, or drag across a range, to open the new-event form. You can do this when your account can add events. Click an event you are allowed to change to open the same editor. Drag or resize an event on the grid to move it; confirm the change when asked.
+
+Clicking a birthday, anniversary, or other item that is not an editable event shows a short notice with the title. It does not open the editor.
+
+The same form is used from the calendar, the Events Dashboard, and the event detail page. Times are the church's wall-clock time.
+
+### Sharing a calendar
+
+On a calendar you can edit, open its access token. ChurchCRM can show an **HTML URL** and an **ICS URL**. Copy the URL with **Copy to clipboard**, or open it with **Open**. **New Access Token** replaces the token. **Delete** removes it.
+
+Those links do nothing for outside apps until an administrator turns on **Enable External Calendar API** under **Calendar Settings**. If tokens exist and that switch is off, the calendar page shows **External Calendar API Disabled**.
+
+**Calendar Embed Origins** (also under **Calendar Settings**) lists which websites may place the public calendar in a frame. The default `*` allows any site.
 
 ## Unified Event Editor
 

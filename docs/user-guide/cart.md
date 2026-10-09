@@ -1,9 +1,9 @@
 ---
-title: Cart
+title: The cart
 sidebar_position: 16
 ---
 
-# Cart
+# The cart
 
 The Cart is a temporary holding space for People records. You can add People to the Cart, then process these People records all at once, by generating labels or dumping the contents of the cart to a group.
 

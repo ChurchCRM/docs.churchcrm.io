@@ -81,6 +81,7 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'userGuideSidebar', position: 'left', label: 'User Guide' },
         { type: 'docSidebar', sidebarId: 'adminSidebar', position: 'left', label: 'Administration' },
         { type: 'docSidebar', sidebarId: 'apiSidebar', position: 'left', label: 'API Reference' },
+        { href: 'https://churchcrm.io/install.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_install', label: 'Install', position: 'right' },
         { href: 'https://churchcrm.io/demo.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_demo', label: 'Demo', position: 'right' },
         { href: 'https://churchcrm.io/connect.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_connect', label: 'Connect', position: 'right' },
         { href: 'https://github.com/ChurchCRM/CRM', label: 'GitHub', position: 'right' },
@@ -101,7 +102,7 @@ const config: Config = {
           { label: 'Or open a GitHub issue', href: 'https://github.com/ChurchCRM/CRM/issues/new/choose' },
         ] },
         { title: 'ChurchCRM', items: [
-          { label: 'Website', href: 'https://churchcrm.io/?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_website' }, { label: 'Demo', href: 'https://churchcrm.io/demo.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_demo' },
+          { label: 'Website', href: 'https://churchcrm.io/?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_website' }, { label: 'Install', href: 'https://churchcrm.io/install.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_install' }, { label: 'Demo', href: 'https://churchcrm.io/demo.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_demo' },
           { label: 'Connect', href: 'https://churchcrm.io/connect.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_connect' }, { label: 'GitHub', href: 'https://github.com/ChurchCRM/CRM' },
           { label: 'Releases', href: 'https://github.com/ChurchCRM/CRM/releases' },
         ] },

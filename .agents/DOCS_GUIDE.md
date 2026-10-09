@@ -25,7 +25,7 @@ Do not put infrastructure on the latest product milestone. A version milestone m
 1. Confirm the behavior in the CRM pull request and the milestone that pull request targets.
 2. Open the docs pull request against `main`. Set the **same** milestone. Do not add a maintenance label.
 3. Leave it open. The failing release gate is the staging area. Do not merge it to "get it ready."
-4. When ChurchCRM publishes that version, `release-publish.yml` or `release-bookkeeping.yml` dispatches `crm-released`. The docs workflow creates the milestone and opens the API pin pull request. It merges that pin, and any other open pull request on the milestone, only when every CI check is successful and the latest CodeRabbit review is approved. A pull request that fails either wait stays open. A daily run does the same if the dispatch did not arrive.
+4. When ChurchCRM publishes that version, `release-publish.yml` or `release-bookkeeping.yml` dispatches `crm-released`. The docs workflow creates the milestone and opens the API pin pull request. It merges that pin, and any other open pull request on the milestone, only when the site build and the released-software gate are successful. A pull request that is still running or has a failing check stays open. A daily run does the same if the dispatch did not arrive.
 5. Do not merge those pull requests by hand unless the automation reports that it could not.
 
 `Sync docs release milestones` creates the docs milestone for the version in CRM `package.json` and for the latest stable release when either is missing. If the milestone you need does not exist yet, run that workflow with the version, or create the `x.y.z` milestone by hand. Do not invent a non-version milestone.
@@ -40,6 +40,12 @@ When `crm-release.json` changes on `main`, `tag-docs-release.yml` creates annota
 
 Shell that the workflows call lives in `scripts/` and `scripts/ci/`. Run those scripts locally with the same environment variables. Do not put new multi-line shell back into the workflow files.
 
+### Voice
+
+The reader is a church administrator or the person who runs the server. Write the way the marketing site does: warm, practical, and plain. Name the menu, the button, and the task. Do not pitch the product, do not mention the GitHub Wiki, and do not label a step "New in 7.8.0" when the page itself is the manual for that version.
+
+Reviewers use `.agents/skills/pr-review/SKILL.md`. A docs pull request is not ready while it mixes a change that can merge today with one that must wait for a release.
+
 ### Support path in the docs
 
 Readers who cannot find an answer are sent to [Discord](https://discord.gg/tuWyFzj3Nj), then to a new issue on `ChurchCRM/CRM`. Do not send them to GitHub Discussions, and do not add a floating button to the marketing site. The line is the doc-page footer and the site footer. Keep new pages consistent with that.
@@ -51,7 +57,8 @@ Readers who cannot find an answer are sent to [Discord](https://discord.gg/tuWyF
 ```
 docs.churchcrm.io/
 ├── .agents/
-│   └── DOCS_GUIDE.md
+│   ├── DOCS_GUIDE.md
+│   └── skills/pr-review/SKILL.md
 ├── .github/workflows/
 ├── docs/
 │   ├── index.md

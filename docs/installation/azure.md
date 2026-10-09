@@ -148,6 +148,8 @@ Outbound internet access is already allowed on a new Azure VM. The server needs 
 5. ChurchCRM sends you to **Change Password**. Enter `changeme` as the old password and choose a new one.
 6. You are then sent to **Admin → Church Information**. Fill in the church name and the other required fields, then click **Save Church Information**.
 
+Before you import real membership, you can load the sample church from **Admin → Get Started**. See [Importing Demo Data](/administration/demo-data).
+
 Continue with [First Run Configuration](/getting-started/first-run).
 
 ## 9. HTTPS
