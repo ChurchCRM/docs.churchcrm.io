@@ -58,7 +58,7 @@ As of **7.5.0**, ChurchCRM includes an in-app email composer that replaces the o
 
 ## Email history and the Email dashboard
 
-As of **7.8.0**, ChurchCRM keeps a record of every email it sends, including messages written in the composer, birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, volunteer emails, and the SMTP test. Each person's history is shown on their Person View; see [Email History](/user-guide/persons#email-history).
+ChurchCRM keeps a record of every email it sends, including messages written in the composer, birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, volunteer emails, and the SMTP test. Each person's history is shown on their Person View; see [Email History](/user-guide/persons#email-history).
 
 ### Recent Sends (administrators)
 

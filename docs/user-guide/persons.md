@@ -75,7 +75,7 @@ The **Emails** chip, which appears once ChurchCRM has emailed the person, shows 
 
 ## Email History
 
-As of **7.8.0**, ChurchCRM keeps a record of every email it sends. A person's history holds the emails addressed to them: messages written in the [email composer](/user-guide/email), birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and volunteer emails from Volunteer Management v2. Anyone who can open the person can see it.
+ChurchCRM keeps a record of every email it sends. A person's history holds the emails addressed to them: messages written in the [email composer](/user-guide/email), birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and volunteer emails from Volunteer Management v2. Anyone who can open the person can see it.
 
 ### Recent Emails card
 
