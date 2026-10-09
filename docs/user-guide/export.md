@@ -5,7 +5,7 @@ sidebar_position: 22
 
 # Export & Data
 
-ChurchCRM 7.1 introduced a dedicated **Export Hub** at **Admin → Export** that consolidates all data export formats into one place. Whether you need a CSV of your membership, a ChMeetings migration file, or a full database backup, start here.
+**Admin → Export** is the Export Hub. Membership CSV, a ChMeetings migration file, and a full database backup all start there.
 
 ---
 
