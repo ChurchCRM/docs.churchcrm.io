@@ -177,6 +177,7 @@ const sidebars: SidebarsConfig = {
         'administration/logging-and-diagnostics',
         'administration/bug-reporting-and-diagnostics',
         'administration/reporting-issues',
+        'workflow',
       ],
     },
     {
