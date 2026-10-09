@@ -11,7 +11,7 @@ Use this page to find the menu for a setting. System Settings tabs are **New Mem
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Enable visitor self-registration | People → Dashboard → People Settings | Self-registration |
+| Enable visitor self-registration | People → Dashboard → People Settings | Self-registration. Review sign-ups on [Self Registrations](/user-guide/self-registrations) |
 | Hide deceased people from exports | People → Dashboard → People Settings | Hide deceased from directory |
 | Change how names display | Admin → System Settings → People | Person name format |
 | Change person avatar initials | Admin → System Settings → People | Person initials style |

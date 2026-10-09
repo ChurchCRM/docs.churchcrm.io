@@ -49,7 +49,7 @@ Church name is required. First-time setup sends you here to fill it in.
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Self-registration** | Let a visitor create a family from the login page | Off |
+| **Self-registration** | Let a visitor create a family from the login page. Staff review sign-ups on [Self Registrations](/user-guide/self-registrations). | Off |
 | **Hide deceased from directory** | Leave deceased people out of the printed directory and CSV exports | On |
 
 ---

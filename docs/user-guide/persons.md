@@ -41,6 +41,10 @@ The Person Listing shows active people by default, with options to view inactive
 
 You cannot deactivate the person record associated with your own signed-in account.
 
+## Pending self-registrations
+
+A person who signed up on the public registration form, and has not been approved yet, shows a **Pending review** badge on the person list and the Person View. The same badge appears on the family. Those people are omitted from the printed directory until someone with **Edit Records** approves them on [Self Registrations](/user-guide/self-registrations).
+
 ## Marking a person as deceased
 
 Deceased is not a classification and not a choice in a list named Deceased.

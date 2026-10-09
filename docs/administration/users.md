@@ -16,7 +16,7 @@ sidebar_position: 2
 ## What are the different rights available?
 
 - **Add Records** — create new records.
-- **Edit Records** — modify existing records.
+- **Edit Records** — modify existing records. This is also the permission required to approve entries on [Self Registrations](/user-guide/self-registrations).
 - **Delete Records** — delete records.
 - **Manage [Properties](/user-guide/properties) and [Classifications](/user-guide/classifications)** — manage property/classification metadata.
 - **Manage [Groups](/user-guide/groups) and Roles** — add, edit, and delete groups and their roles.
