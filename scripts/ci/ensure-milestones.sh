@@ -7,7 +7,7 @@ set -euo pipefail
 : "${VERSIONS:?VERSIONS is required}"
 
 for version in $VERSIONS; do
-  existing=$(gh api "repos/${GITHUB_REPOSITORY}/milestones?state=all&per_page=100" \
+  existing=$(gh api --paginate "repos/${GITHUB_REPOSITORY}/milestones?state=all&per_page=100" \
     --jq ".[] | select(.title == \"$version\") | .number" | head -n 1)
   if [ -n "$existing" ]; then
     echo "Milestone $version already exists as #$existing"

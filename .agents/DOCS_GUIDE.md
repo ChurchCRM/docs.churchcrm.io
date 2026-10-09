@@ -25,9 +25,8 @@ Do not put infrastructure on the latest product milestone. A version milestone m
 1. Confirm the behavior in the CRM pull request and the milestone that pull request targets.
 2. Open the docs pull request against `main`. Set the **same** milestone. Do not add a maintenance label.
 3. Leave it open. The failing release gate is the staging area. Do not merge it to "get it ready."
-4. When ChurchCRM publishes that version, `Stage docs for a CRM release` opens a pull request that sets `crm-release.json` to the new tag and comments on pull requests already on that milestone.
-5. Merge the pin pull request first. That publishes the API reference for the release and tags the docs.
-6. Re-run CI on the staged product pull requests, then merge them.
+4. When ChurchCRM publishes that version, `release-publish.yml` or `release-bookkeeping.yml` dispatches `crm-released`. The docs workflow creates the milestone, opens the API pin pull request, merges it, and merges every open docs pull request on that milestone. A daily run does the same if the dispatch did not arrive.
+5. Do not merge those pull requests by hand unless the automation reports that it could not.
 
 `Sync docs release milestones` creates the docs milestone for the version in CRM `package.json` and for the latest stable release when either is missing. If the milestone you need does not exist yet, run that workflow with the version, or create the `x.y.z` milestone by hand. Do not invent a non-version milestone.
 

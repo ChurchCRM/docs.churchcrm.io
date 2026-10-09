@@ -1,13 +1,16 @@
-name: Stage docs for a CRM release
+name: Publish docs for a CRM release
 
-# When ChurchCRM publishes a newer stable release than crm-release.json,
-# open a pull request that moves the API pin. Product-doc pull requests
-# that already use that milestone stay open until the release exists;
-# this workflow then marks them ready to merge.
+# CRM release-publish.yml and release-bookkeeping.yml dispatch crm-released.
+# The daily run is the backup when that dispatch does not arrive.
 on:
   schedule:
     - cron: '30 6 * * *'
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Stable CRM version to publish, for example 7.8.0. Blank uses the latest stable release.'
+        required: false
+        type: string
   repository_dispatch:
     types: [crm-released]
 
@@ -15,13 +18,14 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
+  actions: write
 
 concurrency:
   group: docs-stage-release
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  stage:
+  publish:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
@@ -32,20 +36,15 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Compare the pin with the latest stable CRM release
-        id: release
-        run: ./scripts/ci/compare-crm-release.sh
-
-      - name: Open the API pin pull request
-        if: steps.release.outputs.behind == 'true'
-        id: pin
+      - name: Publish the released docs version
         env:
-          LATEST: ${{ steps.release.outputs.latest }}
-        run: ./scripts/ci/open-pin-pr.sh
-
-      - name: Mark staged product pull requests ready
-        if: steps.release.outputs.behind == 'true'
-        env:
-          LATEST: ${{ steps.release.outputs.latest }}
-          PIN_PR: ${{ steps.pin.outputs.number }}
-        run: ./scripts/ci/mark-staged-prs.sh
+          VERSION: ${{ github.event.client_payload.version || inputs.version }}
+          NEXT_VERSION: ${{ github.event.client_payload.next_version }}
+          MERGE: ${{ github.event.client_payload.merge == false && 'false' || github.event.client_payload.merge || 'true' }}
+        run: |
+          set -euo pipefail
+          if [ -z "${VERSION:-}" ]; then
+            VERSION=$(gh api repos/ChurchCRM/CRM/releases/latest --jq '.tag_name')
+          fi
+          export VERSION
+          ./scripts/ci/publish-docs-release.sh

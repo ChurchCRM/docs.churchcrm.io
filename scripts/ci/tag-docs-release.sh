@@ -15,12 +15,19 @@ if git rev-parse "v${version}" >/dev/null 2>&1; then
   echo "Tag v${version} already exists."
 else
   git tag -a "v${version}" -m "Docs for ChurchCRM ${version}"
-  git push origin "v${version}"
+  if ! git push origin "v${version}"; then
+    git fetch origin "refs/tags/v${version}:refs/tags/v${version}"
+    echo "Tag v${version} was created by another run."
+  fi
 fi
 
 ref="refs/heads/release/${version}"
 if git fetch origin "$ref"; then
-  git push --force-with-lease="${ref}:$(git rev-parse FETCH_HEAD)" origin "HEAD:${ref}"
+  if git merge-base --is-ancestor FETCH_HEAD HEAD; then
+    git push origin "HEAD:${ref}"
+  else
+    echo "release/${version} is not behind this commit. Leaving the branch where it is."
+  fi
 else
   git push origin "HEAD:${ref}"
 fi
