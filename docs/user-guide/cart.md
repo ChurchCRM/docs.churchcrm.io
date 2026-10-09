@@ -84,7 +84,9 @@ To send a mailing to a subset of people — for example everyone with a birthday
 2. Open **People → Cart** and check the list.
 3. Click **Labels** and generate the labels as above.
 
-Many [reports and queries](/user-guide/reports-and-queries) also offer **Add Results to Cart**, which feeds the same workflow.
+Many [reports and queries](/user-guide/reports-and-queries) also offer **Add Results to Cart** or **Add All to Cart**, which feeds the same workflow.
+
+People Reports can print the filtered list directly. On the report results, **Print Labels** sits next to **Add All to Cart** and uses this same dialog without putting anyone in the Cart. See [Print Labels on People Reports](/user-guide/reports-and-queries#print-labels-on-people-reports).
 
 ## How do I remove a person from the Cart?
 
