@@ -17,7 +17,14 @@ else
   git tag -a "v${version}" -m "Docs for ChurchCRM ${version}"
   if ! git push origin "v${version}"; then
     git tag -d "v${version}"
-    git fetch origin "refs/tags/v${version}:refs/tags/v${version}"
+    if ! git fetch origin "refs/tags/v${version}"; then
+      echo "::error::Failed to push tag v${version}." >&2
+      exit 1
+    fi
+    if [ "$(git rev-parse 'FETCH_HEAD^{commit}')" != "$(git rev-parse HEAD)" ]; then
+      echo "::error::Tag v${version} exists but does not point at this commit." >&2
+      exit 1
+    fi
     echo "Tag v${version} was created by another run."
   fi
 fi

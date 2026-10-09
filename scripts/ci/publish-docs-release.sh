@@ -60,8 +60,16 @@ fi
 ready_to_merge() {
   local number="$1"
   local pending rabbit
-  pending=$(gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
-    --jq '[.statusCheckRollup[]? | select(.name != null and (.status != "COMPLETED" or .conclusion != "SUCCESS"))] | length')
+  pending=$(gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup --jq \
+    '[.statusCheckRollup[]?] as $all
+     | ([$all[] | select(.__typename == "CheckRun") | .name]) as $names
+     | if (($names | index("Validate Docusaurus site")) == null
+           or ($names | index("Released software gate")) == null) then 1
+       elif any($all[];
+         if .__typename == "CheckRun" then (.status != "COMPLETED" or .conclusion != "SUCCESS")
+         elif .__typename == "StatusContext" then (.state != "SUCCESS")
+         else true end) then 1
+       else 0 end')
   rabbit=$(gh api --paginate "repos/${DOCS_REPO}/pulls/${number}/reviews" \
     --jq '.[] | select(.user.login=="coderabbitai" or .user.login=="coderabbitai[bot]") | .state' | tail -n 1)
   rabbit=${rabbit:-NONE}
@@ -93,8 +101,13 @@ else
   echo "No open API pin pull request for $VERSION."
 fi
 
-pr_numbers=$(gh pr list --repo "$DOCS_REPO" --state open --limit 100 --json number,milestone,isDraft \
-  --jq ".[] | select(.isDraft == false and .milestone.title == \"$VERSION\") | .number")
+milestone_number=$(gh api --paginate "repos/${DOCS_REPO}/milestones?state=open&per_page=100" \
+  --jq ".[] | select(.title == \"$VERSION\") | .number" | head -n 1)
+pr_numbers=""
+if [ -n "$milestone_number" ]; then
+  pr_numbers=$(gh api --paginate "repos/${DOCS_REPO}/issues?state=open&milestone=${milestone_number}&per_page=100" \
+    --jq '.[] | select(.pull_request != null and .draft != true) | .number')
+fi
 while read -r number; do
   [ -z "$number" ] && continue
   [ "$number" = "$pin_number" ] && continue
