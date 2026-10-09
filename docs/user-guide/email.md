@@ -17,7 +17,7 @@ You also need the **Email** permission on your user account. Administrators alwa
 
 ## Sending email from ChurchCRM
 
-As of **7.8.0**, ChurchCRM sends email itself when email sending is enabled. You write the message in the composer, click **Send Email**, and ChurchCRM hands the church's mail server a separate message for each recipient, sent from the church's email address. Nothing is handed off to a mail program on your computer.
+ChurchCRM sends email itself when email sending is enabled. You write the message in the composer, click **Send Email**, and ChurchCRM hands the church's mail server a separate message for each recipient, sent from the church's email address. Nothing is handed off to a mail program on your computer.
 
 ### Sending to one person or family
 
