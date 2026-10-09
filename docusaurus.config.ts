@@ -96,9 +96,9 @@ const config: Config = {
         { title: 'API Reference', items: [
           { label: 'Public API', to: '/api/public' }, { label: 'Private API', to: '/api/private' },
         ] },
-        { title: 'Community', items: [
-          { label: 'Community Chat', href: 'https://discord.gg/tuWyFzj3Nj' },
-          { label: 'Report a Bug', href: 'https://github.com/ChurchCRM/CRM/issues' },
+        { title: 'Need help?', items: [
+          { label: "Can't find it? Ask on Discord", href: 'https://discord.gg/tuWyFzj3Nj' },
+          { label: 'Or open a GitHub issue', href: 'https://github.com/ChurchCRM/CRM/issues/new/choose' },
         ] },
         { title: 'ChurchCRM', items: [
           { label: 'Website', href: 'https://churchcrm.io/?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_website' }, { label: 'Demo', href: 'https://churchcrm.io/demo.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_demo' },

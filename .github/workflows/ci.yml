@@ -21,38 +21,14 @@ jobs:
       issues: read
       pull-requests: read
     steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
       - name: Hold product docs until the matching CRM release is published
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: |
-          set -euo pipefail
-
-          milestone=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}" --jq '.milestone.title // ""')
-
-          # Tooling and corrections to already-released docs omit the milestone.
-          if [ -z "$milestone" ]; then
-            echo "No release milestone: not holding this pull request."
-            exit 0
-          fi
-
-          if ! [[ "$milestone" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "::error::Product documentation milestones must be semantic versions such as 7.7.1. Found: $milestone"
-            exit 1
-          fi
-
-          echo "Docs target release: $milestone"
-          release=$(curl -fsSL "https://api.github.com/repos/ChurchCRM/CRM/releases/tags/${milestone}" || true)
-          published=$(printf '%s' "$release" | jq -r '.published_at // empty')
-          draft=$(printf '%s' "$release" | jq -r '.draft // true')
-          prerelease=$(printf '%s' "$release" | jq -r '.prerelease // true')
-
-          if [ -z "$published" ] || [ "$draft" = "true" ] || [ "$prerelease" = "true" ]; then
-            echo "::error::ChurchCRM ${milestone} is not a published stable release. Leave this pull request open until that release exists."
-            exit 1
-          fi
-
-          echo "ChurchCRM ${milestone} was published at ${published}. This pull request may merge."
+        run: ./scripts/ci/hold-until-released.sh
 
   validate:
     name: Validate Docusaurus site

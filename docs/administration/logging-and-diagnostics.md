@@ -7,7 +7,7 @@ sidebar_position: 14
 
 ## 1. Background
 
-We receive support requests via [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) and [GitHub Issues](https://github.com/ChurchCRM/CRM/issues). However, we can only offer generic assistance unless we are provided with some details specific to *your* setup. There are literally hundreds of different ways to host ChurchCRM from dedicated hardware, virtual machines, shared hosting or containerized setups. How we support you and what we might suggest is heavily dependent on how you have deployed ChurchCRM.
+Ask for help in [Discord](https://discord.gg/tuWyFzj3Nj). If the docs do not cover the problem, or you have found a bug, [open an issue](https://github.com/ChurchCRM/CRM/issues/new/choose) on the ChurchCRM repository. We can only offer generic assistance unless you include details specific to *your* setup. There are literally hundreds of different ways to host ChurchCRM from dedicated hardware, virtual machines, shared hosting or containerized setups. How we support you and what we might suggest is heavily dependent on how you have deployed ChurchCRM.
 
 This page describes what information we need, and how to get it, when you ask for support.
 
