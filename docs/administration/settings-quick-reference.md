@@ -55,6 +55,8 @@ Use this page to find the menu for a setting. System Settings tabs are **New Mem
 | Track scanned check images | Admin → System Settings → Financial Settings | Scanned check images |
 | Allow non-deductible donations | Admin → System Settings → Financial Settings | Non-deductible payments |
 
+See the [Donation Envelopes guide](/user-guide/donation-envelopes) for activation and assignment.
+
 ## 🌍 Language & Localization
 
 | I want to... | Location | Setting |

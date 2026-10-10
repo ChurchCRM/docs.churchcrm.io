@@ -18,7 +18,7 @@ sidebar_position: 2
     * [Properties](/user-guide/properties) — Custom labels (e.g. "Homebound", "Choir Member") for people, families, and groups.
 * **[Finances](/user-guide/finances)**
     * Donations — Record contributions and link to family pledge accounts.
-    * Envelope — Track giving by numbered donation envelopes.
+    * Envelope — Track giving by numbered donation envelopes ([setup and usage](/user-guide/donation-envelopes)).
     * Deposits — Batch donations into deposit slips with printable bank forms.
     * Pledges — Track multi-year giving commitments with a dedicated Pledge Dashboard.
 * **[Events](/user-guide/events)** — Create one-time or recurring events, track attendance, manage child check-in/out, and use the unified event editor.

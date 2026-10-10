@@ -159,6 +159,8 @@ The From name is the church name, and the From address is the email on Church In
 | **Non-deductible payments** | Record gifts that are not tax-deductible | Off |
 | **Currency symbol, position, separators** | Same values as Localization & Formats | $ before the amount |
 
+See the [Donation Envelopes guide](/user-guide/donation-envelopes) for activation and assignment.
+
 ---
 
 ## System Settings → Quick Search

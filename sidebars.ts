@@ -86,6 +86,7 @@ const sidebars: SidebarsConfig = {
         'user-guide/cart',
         'user-guide/fundraiser',
         'user-guide/envelope-manager',
+        'user-guide/donation-envelopes',
       ],
     },
     {
