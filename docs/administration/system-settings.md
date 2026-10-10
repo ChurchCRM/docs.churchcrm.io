@@ -90,13 +90,14 @@ Church name is required. First-time setup sends you here to fill it in.
 
 **Location:** People → Family Map → **Map Settings** (administrators only)
 
-ChurchCRM uses Leaflet and OpenStreetMap. No map API key is required.
+ChurchCRM uses Leaflet and OpenStreetMap, with free geocoding services. No map API key is required.
 
 | Setting | Description | Default |
 |---------|-------------|---------|
 | **Default map view** | Starting zoom, from continent down to street | City |
 | **Hide latitude/longitude** | Hide the latitude and longitude fields in the Family Editor. Geocoding still runs | Off |
 | **Hide person address** | Same switch as on System Settings → People | On |
+| **Geocoding services** | Keyless geocoders, tried in the order picked. Nominatim works worldwide; US Census covers United States addresses only | Nominatim |
 
 The map is centered on the latitude and longitude saved with **Church Information**.
 

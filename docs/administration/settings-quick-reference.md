@@ -41,6 +41,7 @@ Use this page to find the menu for a setting. System Settings tabs are **New Mem
 | Set initial map zoom | People → Family Map → Map Settings | Default map view |
 | Set the map center | Admin → Church Information | Latitude and longitude |
 | Hide lat/lon fields | People → Family Map → Map Settings | Hide latitude/longitude |
+| Choose geocoding services (add US Census) | People → Family Map → Map Settings | Geocoding services |
 
 ## 💰 Finance & Donations
 
