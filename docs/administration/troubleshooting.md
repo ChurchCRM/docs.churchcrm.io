@@ -154,6 +154,31 @@ If restarting does not resolve the problem:
 
 ---
 
+## Logged Out After Being Idle
+
+### Symptom
+You leave ChurchCRM open and idle, and the next click sends you back to the login page with no error message. It usually happens after about 24 minutes.
+
+### Why it happens
+ChurchCRM has its own idle limit, **Session timeout** (`iSessionTimeout`, default 3600 seconds, set under **Admin → System Users → Settings → Quick Settings**). PHP has a separate cleanup setting, `session.gc_maxlifetime`, which defaults to 1440 seconds (24 minutes). When PHP deletes the idle session file first, ChurchCRM sees no session and shows the login page.
+
+ChurchCRM raises `session.gc_maxlifetime` to 7 days at runtime, which fixes this on most servers. It does not work where the server's own cleanup ignores the runtime value.
+
+### Fix by environment
+
+| Environment | What to do |
+|-------------|------------|
+| **Docker images** | Nothing. The image is already configured. |
+| **Debian / Ubuntu PHP packages** | The `phpsessionclean` cron job reads the value from `php.ini` and ignores the runtime override. Set `session.gc_maxlifetime` in `php.ini` to at least your Session timeout (for example `session.gc_maxlifetime = 86400`) and reload PHP or Apache. |
+| **Shared hosting without `php.ini` access** | Try a `.user.ini` file in the ChurchCRM root containing `session.gc_maxlifetime = 86400`, or `php_value session.gc_maxlifetime 86400` in `.htaccess`. Which one works depends on the host and PHP mode, so check the result after a day. If neither works, ask your host to raise it. |
+
+### Rule out browser causes
+- The browser is blocking cookies for your ChurchCRM address
+- The browser is set to clear cookies when it closes
+- A privacy extension is removing cookies
+
+---
+
 ## Related Documentation
 - [Localization](/administration/localization) — Language configuration overview
 - [Server Locale Requirements](/administration/server-locale) — Installing system locales
