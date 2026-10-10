@@ -13,7 +13,7 @@ Two separate statements are made about every volunteer:
 
 Being in the pool is candidacy; a tick is eligibility. The **Volunteers** tab of the [ministry page](./ministries-teams-positions.md) is where both are managed.
 
-![The Volunteers tab: the qualification grid](/img/user-guide/ministries/ministry-volunteers.png)
+![The Volunteers tab: the qualification grid](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-volunteers.png)
 
 ## The pool Group
 

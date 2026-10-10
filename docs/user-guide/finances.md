@@ -9,7 +9,7 @@ ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gif
 
 > **Note:** Only users with Finance permissions can access financial features. See [Users](/administration/users) for permission details.
 
-![Deposit entry in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/finance-deposit-entry.png)
+![Deposit entry in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/finance-deposit-entry.png)
 
 ---
 

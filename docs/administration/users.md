@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Users
 
-![User permissions in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/settings-user-permissions.png)
+![User permissions in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/settings-user-permissions.png)
 
 ## How do I add new Users?
 

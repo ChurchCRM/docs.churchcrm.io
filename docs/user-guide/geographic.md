@@ -13,7 +13,7 @@ ChurchCRM provides:
 
 Maps and geocoding work out of the box using **OpenStreetMap** tiles and free, keyless geocoding services (**Nominatim**, and optionally the **US Census Bureau** geocoder for US addresses) — no API key, no billing, and no setup required. If you want background on how it works, how to change the services used, or how to troubleshoot, see [Maps & Geocoding](/administration/maps-and-geocoding).
 
-![People map in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/people-map-overview.png)
+![People map in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/people-map-overview.png)
 
 ---
 

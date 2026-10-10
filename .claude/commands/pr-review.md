@@ -19,6 +19,7 @@ Read in order:
 - Check each fact against the CRM code for that version (the release tag, or `master` for a merged change): menu paths, setting labels, defaults, accepted file formats. Say which file you checked.
 - Search the other pages for the same fact. Release docs are written by several PRs at once, so the same format list, path or default often disagrees between pages.
 - A product PR names its CRM docs tracking issue as `Closes ChurchCRM/CRM#N`. After the PR merges into the release branch, a maintainer must manually close the issue.
-- No product screenshots, no "since x.y.z" or "new in x.y.z" wording (the site states which release the docs match), no developer material.
+- No image or video files. A screenshot is a link to `https://cdn.churchcrm.io/screenshots/en/desktop/<name>.png`. Check the name against `https://cdn.churchcrm.io/manifest.json`; if it is not there yet, find the capture (a CRM spec or the CRM capture issue) and say so.
+- No "since x.y.z" or "new in x.y.z" wording (the site states which release the docs match), no developer material.
 - Posted reviews include a checkbox list of what is still open.
 - Be thankful. Do not nitpick wording that is correct.

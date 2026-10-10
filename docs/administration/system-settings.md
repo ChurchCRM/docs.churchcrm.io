@@ -124,7 +124,7 @@ For the rest of the map, see [Maps & Geocoding](./maps-and-geocoding.md).
 
 The Volunteer Management settings live on their own page, **Admin → Ministry Settings**, not under System Settings.
 
-![Admin → Ministry Settings](/img/administration/ministry-settings.png)
+![Admin → Ministry Settings](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-settings.png)
 
 | Setting | Description |
 |---------|-------------|

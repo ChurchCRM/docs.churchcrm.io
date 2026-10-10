@@ -161,8 +161,6 @@ This process requires the following steps:
 
    a. expand the `churchcrm` database and click on the "**Tables**" - this will populate the right panel with all the tables in the database:
 
-      ![Expand database and select tables](/img/Rollback/phpMyAdmin-tables-1.png)
-
    b. Scroll to the bottom of the tables list on the right.
 
    c. Check the box for "**Check All**"
@@ -170,8 +168,6 @@ This process requires the following steps:
    d. Drop down the "**With selected:**" option list.
 
    e. Select "**Drop**"
-
-      ![Select all tables and drop](/img/Rollback/phpMyAdmin-tables-2.png)
 
 4. Deploy the desired version of the ChurchCRM zip file - essentially, treat this as a "new" installation and follow the relevant [installation instructions](/installation) for your hosting setup.
 5. Open the URL for your ChurchCRM instance and run through the ChurchCRM setup process.

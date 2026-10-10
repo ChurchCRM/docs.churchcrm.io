@@ -15,7 +15,7 @@ Custom Fields allow you to expand the functionality of ChurchCRM beyond the base
 2. Then click _"Admin"_
    - For people click on _"Person Custom Fields"_
    - For families click on _"Family Custom Fields"_
-   ![People Admin](/img/Features/Custom_Fields/Custom_Fields_Admin_Side_Menu.png)
+   ![The People menu expanded in the left sidebar, and the People Settings page with shortcuts to Person Custom Fields and Family Custom Fields](https://cdn.churchcrm.io/screenshots/en/desktop/admin-people-settings.png)
 3. To add a new field, select the type, a name and the side on which it should appear along with any security options this new field requires.
    ![Person Custom Field](/img/Features/Custom_Fields/Custom_Fields_Person_Add.png)
 4. The name will appear in the shaded box on Person View and the side determines which column it shows up in when viewing the Person View.

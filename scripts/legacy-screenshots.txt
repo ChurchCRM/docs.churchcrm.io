@@ -1,0 +1,47 @@
+# Screenshots that are still stored in this repo. This list only shrinks.
+# Each needs a capture in ChurchCRM/CRM (playwright/workflows). When it exists, link
+# https://cdn.churchcrm.io/screenshots/en/desktop/<name>.png from the page, delete the
+# file here, and remove its line. Do not add a line: new screenshots are captures, not files.
+static/img/administration/member-portal-settings.png
+static/img/administration/member-portal-statistics.png
+static/img/administration/member-portal-user-menu.png
+static/img/administration/user-editor-ministry-permissions.png
+static/img/Features/Custom_Fields/Custom_Fields_Group_Add_Edit_Prop.png
+static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Confirm.png
+static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Form.png
+static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Toggle.png
+static/img/Features/Custom_Fields/Custom_Fields_Person_Add.png
+static/img/getting-started/church-info-social-media.png
+static/img/user-guide/cart-functions-bar.png
+static/img/user-guide/cart-generate-labels.png
+static/img/user-guide/email-composer-form.png
+static/img/user-guide/email-composer-preview.png
+static/img/user-guide/email-dashboard-recent-sends.png
+static/img/user-guide/email-history-modal-not-stored.png
+static/img/user-guide/email-history-modal.png
+static/img/user-guide/email-history-recent-emails-card.png
+static/img/user-guide/email-history-show-all.png
+static/img/user-guide/email-history-timeline-filter.png
+static/img/user-guide/email-person-view-family-send-buttons.png
+static/img/user-guide/email-person-view-send-button.png
+static/img/user-guide/email-send-result-not-sent.png
+static/img/user-guide/family-view-mailing-address.png
+static/img/user-guide/member-portal-family-confirm.png
+static/img/user-guide/member-portal-my-teams.png
+static/img/user-guide/member-portal-profile.png
+static/img/user-guide/member-portal-team-positions.png
+static/img/user-guide/member-portal-team-schedule.png
+static/img/user-guide/ministries/add-schedule.png
+static/img/user-guide/ministries/edit-ministry.png
+static/img/user-guide/ministries/generate-occurrences.png
+static/img/user-guide/ministries/ministry-calendar.png
+static/img/user-guide/ministries/ministry-dashboard-coordinator.png
+static/img/user-guide/ministries/ministry-occurrences.png
+static/img/user-guide/ministries/ministry-overview.png
+static/img/user-guide/ministries/ministry-positions.png
+static/img/user-guide/ministries/ministry-schedules.png
+static/img/user-guide/ministries/new-recurring-event.png
+static/img/user-guide/ministries/person-volunteer-tab.png
+static/img/user-guide/ministries/staff-an-event.png
+static/img/user-guide/ministries/staff-them-prompt.png
+static/img/user-guide/ministries/team-sunday-school-class.png

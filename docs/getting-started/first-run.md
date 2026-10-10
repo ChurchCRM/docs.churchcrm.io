@@ -47,7 +47,7 @@ These links are only on this page, not on **Admin → System Settings**. In **Di
 
 The **Church Logo** card sits below **Church Identity**. Uploading a logo here replaces the ChurchCRM branding everywhere it appears: in the sidebar (where it also replaces the church name text), on the login page and the password-reset, two-factor, error, limited-access and change-password pages, and in emails. Until you upload one, the card shows the default ChurchCRM logo with the note **Using default ChurchCRM logo**.
 
-![Church Logo card on the Church Information page, showing the current logo with Upload and Remove buttons](/img/getting-started/church-logo-card.png)
+![Church Logo card on the Church Information page, showing the current logo with Upload and Remove buttons](https://cdn.churchcrm.io/screenshots/en/desktop/admin-church-logo.png)
 
 1. Click **Upload** and choose an image file (there is no webcam option for the logo). PNG, JPG, GIF or WebP are accepted (not SVG), and the file you pick can be up to 50 MB, so a photo straight from a phone works. An iPhone HEIC photo is converted to JPEG in your browser first. A wide banner of roughly 3.5:1 — for example 700×200 pixels — works best, and a transparent PNG is preferred.
 2. The image editor opens; adjust the crop if you like and click **Save**, then click **Upload 1 file**. When the server has stored the logo, the page reloads and shows it in the card and the sidebar; there is nothing else to save. If the upload fails, the page stays open, shows the reason, and offers **Retry**.
@@ -57,7 +57,7 @@ Your browser scales the image down to fit 1200×400 pixels before it is uploaded
 
 | Sidebar | Login page |
 |---------|------------|
-| ![Sidebar showing the uploaded church logo in place of the ChurchCRM branding](/img/getting-started/church-logo-sidebar.png) | ![Login page showing the uploaded church logo above the sign-in form](/img/getting-started/church-logo-login.png) |
+| ![Sidebar showing the uploaded church logo in place of the ChurchCRM branding](https://cdn.churchcrm.io/screenshots/en/desktop/dashboard-hero.png) | ![Login page showing the uploaded church logo above the sign-in form](https://cdn.churchcrm.io/screenshots/en/desktop/church-logo-sign-in.png) |
 
 :::note
 Uploading a logo is optional. You can do it at any time from **Admin → Church Information**. The letterhead printed on PDF reports is a separate image — see [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead).

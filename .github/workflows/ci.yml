@@ -42,5 +42,10 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: Check screenshots are not stored here
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: node scripts/check-visuals.mjs
+
       - name: Build site
         run: npm run build

@@ -8,7 +8,7 @@ description: Fill the positions for one date, record who said yes or no, and adj
 
 The staffing view answers *who is needed, who is on, and what is still short* for a single date. Reach it from the **Fill** button on the [Ministry Dashboard](./ministry-dashboard.md), from the date link on the ministry's **Occurrences** tab, from a staffing badge on its **Calendar** tab, from the **Manage staffing** link on an event, or by URL at `/ministries/occurrences/{id}`.
 
-![The staffing view](/img/user-guide/ministries/occurrence-staffing.png)
+![The staffing view](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-occurrence-staffing.png)
 
 **Back to Occurrences** at the top returns to the ministry's Occurrences tab with the team, event and date filters you came from.
 
@@ -52,7 +52,7 @@ Click **Assign** on a card. The **Assign a volunteer** dialog lists only people 
 
 Each name says when the person last served in this ministry, in any position (*"Paul Smith — last served Sep 27"*), or *"has not served yet"*. The date is never in the future: a date someone is booked for but has not served yet is not shown, though it still counts for the order, so a person already booked a few weeks ahead moves down the list.
 
-![The Assign a volunteer picker](/img/user-guide/ministries/occurrence-assign.png)
+![The Assign a volunteer picker](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-assign-picker.png)
 
 Choosing someone who already holds another position on this occurrence shows a caution — *"… is already serving as Barista on this occurrence. You can still assign them."* — and nothing more: two positions in one service is a supported arrangement, and the warning exists so it is never an accident.
 
