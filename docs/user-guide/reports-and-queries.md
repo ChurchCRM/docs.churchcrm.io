@@ -30,6 +30,41 @@ Finance letters and giving reports are under [Deposit Reports](/user-guide/finan
 
 ---
 
+## Church Directory Report
+
+**Reports → People Reports → People Directory** opens the **Directory reports** form, which builds a printable PDF directory of your families. The **Reports** card on the People dashboard links to the same form. Choose which families to include (**Exclude Inactive Families**, classifications, group membership), which family roles count as head of household, spouse and child, and which details to print under **Information to Include**. Then pick the page layout, columns, paper size and font size, optionally add a title page and disclaimer, and click **Create Directory**.
+
+### Who is included
+
+- Select at least one classification under **Select classifications to include**. The form will not run with none selected. The classifications ticked **In Directory** under **People → Admin → Person Classifications** are selected when the form opens.
+- People who signed up through the public registration form are left out until they are approved under **People → Self Registrations**.
+- For a directory of only the people in the [Cart](/user-guide/cart), click **Directory** in the Cart Functions bar. That form has no classification or group filters: the Cart decides who is printed.
+
+### Page Layout
+
+![Directory Reports form: Page Layout, Columns per Page, Paper Size and Font Size](/img/user-guide/directory-report-page-layout.png)
+
+| Layout | What you get |
+|--------|--------------|
+| **Single Pages** (default) | One portrait directory page per sheet. |
+| **Folded Booklet** | Two half-size pages side by side on each landscape sheet, arranged in booklet order and padded to a multiple of four pages, so the printed stack folds into a booklet. Letter paper gives 5.5 × 8.5 in pages, A4 gives A5 pages, Legal gives 7 × 8.5 in pages. |
+
+**Columns per Page** (previously _Number of Columns_) is counted per directory page. In the booklet layout a page is one half of the sheet, so **2 cols** shows four columns across an open booklet. For a small booklet, **1 col** is often the easiest to read.
+
+### Printing a folded booklet
+
+1. Choose **Folded Booklet**, set **Paper Size** to the paper in your printer, and click **Create Directory**.
+2. Print the PDF on both sides of the paper. In the printer's two-sided (duplex) options choose **flip on short edge** (some drivers call it _short-edge binding_). Most drivers default to _long edge_, which prints the backs upside down.
+3. Fold the stack of sheets in half down the middle and staple on the fold.
+
+If **Use Title Page** is ticked, the title page becomes the front cover of the booklet.
+
+:::tip
+Print the first two sheets as a test before running the whole directory. With the short-edge setting right, the pages on the back of each sheet are the right way up once the sheet is folded.
+:::
+
+---
+
 ## Mailing labels
 
 Mailing labels for any set of people are produced from the [Cart](./cart.md#generate-mailing-labels): put the people in the Cart, then click **Labels** in the Cart Functions bar. The **Generate Labels** dialog offers one label per person or per family, bulk-mail presort, a "To the parents of" prefix, Avery and tractor-feed label types, font and size, a start row and column, and PDF or CSV output.
