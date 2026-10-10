@@ -159,6 +159,39 @@ Make a second database and a subfolder, restore your backup into it, and run bot
 
 ---
 
+## Upgrading from ChurchInfo
+
+ChurchInfo 1.2.14, 1.3.0, 1.3.1 and 1.3.2 are supported by the in-app upgrader. Restore the ChurchInfo backup into a fresh ChurchCRM install and the upgrader brings the database forward to the latest release with no manual steps.
+
+| Starting point | Supported by the in-app upgrader? |
+|----------------|-----------------------------------|
+| ChurchInfo 1.2.14 – 1.3.2 | Yes, straight to the latest release |
+| ChurchCRM 2.x – 5.x | No. Follow [Upgrading from version 5.x](#upgrading-from-version-5x-or-older) |
+| ChurchCRM 6.0.0 and above | Yes |
+
+The upgrader does nothing (and logs a warning) if it does not recognise your starting version, so your data is not at risk.
+
+### Step 1: Back up your ChurchInfo database
+
+Export it as a `.sql` file using phpMyAdmin or your host's tools. Do this before anything else.
+
+### Step 2: Install ChurchCRM
+
+Download the latest release and run the setup wizard. Allow about 10 minutes on shared hosting.
+
+### Step 3: Restore your ChurchInfo backup
+
+During setup you are prompted to restore from a backup. Upload your ChurchInfo `.sql` file. ChurchCRM recognises the format and upgrades the schema automatically.
+
+### Step 4: Verify
+
+Spot-check a few family records, confirm giving history, and configure email settings.
+
+- **Carried over:** members and families, contact info, group memberships, donation and pledge history
+- **Set up fresh:** user accounts and passwords, SMTP settings, church name and logo
+
+---
+
 ## Troubleshooting upgrades
 
 | Symptom | Likely cause | Fix |
