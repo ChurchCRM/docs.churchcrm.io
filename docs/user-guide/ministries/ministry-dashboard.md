@@ -8,7 +8,7 @@ description: What needs your attention — gaps to fill, replies still outstandi
 
 **Ministries → Dashboard** (`/ministries/dashboard`) is the coordinator's daily screen: *"what needs your attention this week"*. Everything on it is one click from the action that fixes it.
 
-![The Ministry Dashboard](/img/user-guide/ministries/ministry-dashboard.png)
+![The Ministry Dashboard](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-dashboard.png)
 
 ## What it shows
 

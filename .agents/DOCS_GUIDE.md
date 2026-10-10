@@ -105,8 +105,8 @@ Verify product claims against a **published CRM release**, not merely the curren
 - Do not copy shared logos, favicons, app icons, manifests, or default social-preview images into this repository.
 - Do not add Playwright, Cypress, browser-automation scripts, seeded screenshot fixtures, or screenshot-capture workflows to this repository.
 - Product screenshot generation belongs in `ChurchCRM/CRM`.
-- Reference canonical product screenshots published by the CRM/website asset pipeline rather than committing generated product screenshots here.
-- Keep a local image here only when it is documentation-specific, has no canonical CRM/website equivalent, and must remain versioned with its instructions.
+- Link product screenshots from `https://cdn.churchcrm.io`, published by `ChurchCRM/visuals`. Never commit one here. `scripts/check-visuals.mjs` fails CI on an image or video file that is not in `scripts/legacy-screenshots.txt`.
+- A diagram is an SVG. There are no other exceptions: a screenshot of a third-party tool (phpMyAdmin, a hosting panel) is described in text.
 
 See [`.agents/skills/brand-assets/SKILL.md`](skills/brand-assets/SKILL.md) before changing logos, icons, favicons, manifests, or social metadata.
 
@@ -134,9 +134,24 @@ sidebar_position: 3
 
 ## Adding Documentation Images / Screenshots
 
-For product UI, reference the canonical screenshot produced by the CRM screenshot pipeline. Do not capture or generate product screenshots from this repository.
+Screenshots are captures, not files. `ChurchCRM/CRM` captures every workflow in 8 languages and 3 sizes, and `ChurchCRM/visuals` publishes the set for the current release at `https://cdn.churchcrm.io`. Its `manifest.json` lists each capture with its `name`, `title`, `category` and `purpose`.
 
-A local image under `static/img/` is appropriate only when it is documentation-specific and cannot be sourced canonically from CRM or the website.
+Link one like this:
+
+```md
+![Where to click on the Church Information page](https://cdn.churchcrm.io/screenshots/en/desktop/admin-church-logo.png)
+```
+
+- Use `en`. The size is `desktop`, `tablet` or `mobile`. A dark variant ends in `-dark`.
+- The alt text says what to look at, not "screenshot of".
+- `scripts/legacy-screenshots.txt` lists the images still stored in `static/img/`. The list only shrinks: when a page switches to a capture, delete the file and its line. Never add a line.
+
+**Planning a docs PR that needs a screenshot:**
+
+1. Search `manifest.json` for the screen. If a capture exists, link it. You are done.
+2. If not, the screen needs a capture in `ChurchCRM/CRM`: a spec in `playwright/workflows/` whose `captureScreen()` name becomes the file name. For a new feature, the feature PR carries it. For a feature that already shipped without one, add it to the CRM capture issue.
+3. Write the docs PR against `release-docs/<version>`, linking the name the capture will have. The CDN has it only after the release is published, so the link is not live while the PR is open. CI warns about it on a `release-docs/*` PR and fails on `main`. By the time the release PR reaches `main` it is live.
+4. Do not attach a PNG "for now". If the page reads fine without the picture until the capture exists, leave the picture out.
 
 ---
 

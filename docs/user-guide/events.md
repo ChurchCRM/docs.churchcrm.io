@@ -17,7 +17,7 @@ Once an event is created, you can:
 
 > **Tip:** Events appear on your church calendar and can be set to recur automatically.
 
-![Events calendar in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/events-calendar-overview.png)
+![Events calendar in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/events-calendar-overview.png)
 
 ---
 

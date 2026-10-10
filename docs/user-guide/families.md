@@ -13,7 +13,7 @@ A Family is a group of Person records. Person records are grouped into Families 
 
 Every Person should belong to a family.
 
-![Family overview in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/people-family-overview.png)
+![Family overview in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/people-family-overview.png)
 
 ---
 
@@ -69,7 +69,7 @@ A family can also record an optional **second address** with the same fields (Ad
 4. Tick **This is the mailing address** if mail should go here. The checkbox is greyed out until **Address 1** or **City** has a value, and the record will not save with the box ticked on an empty second address (_"Enter a second address before marking it as the mailing address"_).
 5. Click **Save**.
 
-![Family editor: the Second Address section with "This is the mailing address" ticked](/img/user-guide/family-editor-second-address.png)
+![Family editor: the Second Address section with "This is the mailing address" ticked](https://cdn.churchcrm.io/screenshots/en/desktop/family-mailing-address-editor.png)
 
 To remove a second address, clear its fields and save. The mailing checkbox is cleared with it.
 

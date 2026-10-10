@@ -63,7 +63,7 @@ How much the portal is being used. As the tab says, *these numbers count self-se
 
 ### Calendars
 
-![The Calendars tab](/img/administration/member-portal-calendars.png)
+![The Calendars tab](https://cdn.churchcrm.io/screenshots/en/desktop/admin-member-portal-calendars.png)
 
 Which calendars members see. Every calendar on the installation is listed with its **Kind** — *Church calendar*, *Ministry calendar* (a calendar that belongs to a volunteer ministry) or *System calendar* (Birthdays, Anniversaries, Fundraisers, Unpinned Events, and any calendar a plugin adds, such as the Holidays plugin's) — its **Colour**, and a **Show in Member Portal** switch. Press **Save calendars** to apply.
 

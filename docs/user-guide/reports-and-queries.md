@@ -42,7 +42,7 @@ Finance letters and giving reports are under [Deposit Reports](/user-guide/finan
 
 ### Page Layout
 
-![Directory Reports form: Page Layout, Columns per Page, Paper Size and Font Size](/img/user-guide/directory-report-page-layout.png)
+![Directory Reports form: Page Layout, Columns per Page, Paper Size and Font Size](https://cdn.churchcrm.io/screenshots/en/desktop/directory-booklet-options.png)
 
 | Layout | What you get |
 |--------|--------------|

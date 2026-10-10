@@ -39,5 +39,6 @@ Say the limit when there is one. Use "you" for their church. Use "we" only for t
 
 - The steps match the merged code, not a proposal
 - Links point at docs pages, not the CRM wiki, for user and admin tasks
+- No image or video file is added. A screenshot is a link to `https://cdn.churchcrm.io/screenshots/en/desktop/<name>.png`. On a `release-docs/*` PR the name may not be on the CDN yet: ask where the capture is (a CRM spec or the capture issue). `scripts/check-visuals.mjs` enforces the rest
 - A product pull request has the right milestone and no maintenance label
 - The site build and the released-software gate are green. An admin may still merge without waiting. CodeRabbit comments are review notes. They do not block a merge.

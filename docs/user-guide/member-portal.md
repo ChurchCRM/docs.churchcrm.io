@@ -20,7 +20,7 @@ Your church decides which sections appear. A section your church has not switche
 
 Sign in at the same address your church always gave you, with the same username and password. A member account — one that can only edit its own details — lands on the portal home page and stays in the portal: any address that belongs to the office side of ChurchCRM sends you back to the portal home.
 
-![The Member Portal home page on a laptop](/img/user-guide/member-portal-home.png)
+![The Member Portal home page on a laptop](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-home.png)
 
 The navigation across the top is, in order: **Home · Calendar · Volunteering · My Teams · My Family · Profile**. Only the entries your church has switched on and that apply to you are shown; a member who does not lead a volunteer team, for example, has no **My Teams** entry.
 
@@ -66,7 +66,7 @@ Under **Sign-in and security** you will find **Change your password** and **Two-
 
 **My Family** shows your household as the church has it: **Where we reach you** (address, city, state, zip, country, home phone, email and wedding date) and **Family Members**, with your own row marked **You**.
 
-![The My Family page](/img/user-guide/member-portal-family.png)
+![The My Family page](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-family.png)
 
 ### Update your details
 
@@ -93,7 +93,7 @@ An adult of the household can also press **Add a family member**. It opens a sho
 
 **Calendar** shows the church calendars an administrator has chosen to share with members. The calendars are listed above the grid with their colours; **Month**, **Week** and **List** views are available, and on a phone the calendar opens in list view. Click an event to see **When**, **Where**, **Calendar** and **Details** below the grid. The calendar is read-only: nothing here can change an event.
 
-![The portal calendar, with the Bible Classes calendar switched off in the legend](/img/user-guide/member-portal-calendar.png)
+![The portal calendar, with the Bible Classes calendar switched off in the legend](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-calendar.png)
 
 If your church shares its birthday or anniversary calendar, entries show a first name and last initial (*"Albert C."*) and never an age or a full surname.
 
@@ -113,7 +113,7 @@ This helps when the church shares several calendars — for example a calendar o
 
 **Subscribe** lets you follow the church calendar from your phone's or computer's own calendar app, so it updates on its own when the church calendar changes.
 
-![The Subscribe dialog](/img/user-guide/member-portal-calendar-subscribe.png)
+![The Subscribe dialog](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-calendar-subscribe.png)
 
 1. Press **Subscribe** and tick the calendars you want.
 2. Press **Save**. The portal gives you one **Calendar address** covering everything you ticked.
@@ -143,7 +143,7 @@ Everything you have been asked to do, soonest first. Each card names the date, m
 | **No longer needed** | Your coordinator took you off this date, or the date was cancelled. |
 | **Thank you** | A date you have served. |
 
-![My schedule](/img/user-guide/member-portal-volunteering-schedule.png)
+![My schedule](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-portal-schedule.png)
 
 - **I'll be there** accepts; the badge changes to **Going**.
 - **I can't** declines. You can add a note for your coordinator — *"Let them know why (optional)"*.
@@ -156,7 +156,7 @@ With nothing on your list the page says *"Nothing on your list yet"* and points 
 
 Places you are trained for that still need someone, plus ministries that are looking for people.
 
-![Find something to do](/img/user-guide/member-portal-volunteering-opportunities.png)
+![Find something to do](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-portal-opportunities.png)
 
 - **Ministries looking for help** lists ministries that have said they would like more people, with the positions they are recruiting for under *"New volunteers needed for the following positions"*. Press **I'd like to help** and the coordinator is told; the page confirms with *"Thanks — the coordinator has been told you'd like to help."*
 - **Upcoming availability** lists scheduled positions you are trained for that still have room. Each card says how the place stands: *"Needs 1 more"* while the position is short of the people it needs, *"Covered · 1 more welcome"* when it has enough but would welcome another, or *"Optional · up to 2 welcome"* when nobody is required. **Sign up** puts you on the list — *"You are on the list — thank you."* — and the date appears on **My schedule**. If you are already helping that day in another position, the card says so before you sign up.

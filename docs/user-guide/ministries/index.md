@@ -26,7 +26,7 @@ The Volunteer Management v2 pages and workflows described in this section are no
 
 The same page holds the **reminder lead time**, the **scheduling horizon** (how many weeks ahead schedules make their occurrences, 8 by default) and the **default event type for ministry events**. Its **Background jobs and delivery** card shows failed and queued messages, when background jobs last ran, when schedules were last topped up and what that made, and the cron line to install, with a **Run background jobs now** button. See [Volunteer email and reminders](./email-and-reminders.md) and the [Ministry Settings](../../administration/system-settings.md#ministry-settings) reference.
 
-![Admin → Ministry Settings](/img/administration/ministry-settings.png)
+![Admin → Ministry Settings](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-settings.png)
 
 Switching hides or shows pages and menu entries — it never deletes data, so you can switch back. The setting is system-wide, not per user.
 

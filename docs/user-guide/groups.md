@@ -9,7 +9,7 @@ A Group is a collection of [People](/user-guide/persons) who occupy Roles within
 
 **Example:** A Group called "Friday Night Bible Study" might have Roles like Leader, Assistant Leader, and Member. If 16 people are assigned to this group, 13 may be Members, 2 may be Assistant Leaders, and 1 may be the Leader.
 
-![Groups dashboard in ChurchCRM](https://churchcrm.io/images/screenshots/desktop/groups-ministry-overview.png)
+![Groups dashboard in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/groups-ministry-overview.png)
 
 ---
 
