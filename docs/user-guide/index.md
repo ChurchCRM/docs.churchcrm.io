@@ -30,6 +30,7 @@ Managing your congregation's member data:
 
 * [Families](/user-guide/families) - Creating and managing family records
 * [Persons](/user-guide/persons) - Individual member profiles and information
+* [Self Registrations](/user-guide/self-registrations) - Review and approve people who signed up on the public form
 * [Classifications](/user-guide/classifications) - Categorizing members (members, visitors, etc.)
 * [Notes](/user-guide/notes) - Adding notes to people and families
 * [Custom Fields](/user-guide/custom-fields) - Extending records with custom fields

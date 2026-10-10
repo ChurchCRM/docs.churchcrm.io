@@ -56,6 +56,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'user-guide/persons',
         'user-guide/families',
+        'user-guide/self-registrations',
         'user-guide/classifications',
         'user-guide/custom-fields',
         'user-guide/custom-fields-types',

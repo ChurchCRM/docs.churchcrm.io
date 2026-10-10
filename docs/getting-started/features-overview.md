@@ -12,7 +12,7 @@ sidebar_position: 2
 * **Congregation Management**
     * [Families](/user-guide/families) — Household records with shared contact info, pledge history, and unified family/member profiles.
     * [Persons](/user-guide/persons) — Individual member profiles with contact details, roles, church history, notes, and timeline filters.
-    * Self Registration — Members can register themselves through an online form.
+    * [Self Registrations](/user-guide/self-registrations) — Visitors can register through an online form. Staff review and approve them before they appear in the printed directory.
     * Online Verification — Members can review and confirm their own contact information.
     * [Notes](/user-guide/notes) — Private or shared memos on person and family records, with timeline filtering.
     * [Properties](/user-guide/properties) — Custom labels (e.g. "Homebound", "Choir Member") for people, families, and groups.
