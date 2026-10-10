@@ -74,7 +74,7 @@ The **Cart Functions** bar at the top of the Cart page has a **Labels** button, 
 
 ### Which address is used
 
-Each label uses the person's **own address** when one has been entered on their record, and otherwise the **family address**. A household whose address is recorded only on the family record — the normal case — is addressed correctly; the whole address block (both street lines, city, state and ZIP) always comes from one record, never a mix of the two.
+Each label uses the person's **own address** when one has been entered on their record, and otherwise the family's **mailing address**: the family's second address when it is ticked as **This is the mailing address**, and the primary family address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). A household whose address is recorded only on the family record — the normal case — is addressed correctly; the whole address block (both street lines, city, state and ZIP) always comes from one record, never a mix of the two.
 
 ### Labels for a filtered mailing
 
