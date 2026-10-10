@@ -1,0 +1,37 @@
+name: Close CRM tracking issues
+
+# GitHub closes "Closes ChurchCRM/CRM#N" only when the pull request merges into
+# the default branch. Docs for a release merge into release-docs/<version>
+# first, so close the CRM tracking issues here.
+on:
+  pull_request:
+    types: [closed]
+    branches: ['release-docs/**']
+
+permissions:
+  contents: read
+
+jobs:
+  close:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close the tracking issues named in the pull request
+        env:
+          GH_TOKEN: ${{ secrets.CRM_ISSUES_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_BASE: ${{ github.event.pull_request.base.ref }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::warning::CRM_ISSUES_TOKEN is not set. The tracking issues were not closed."
+            exit 0
+          fi
+          { printf '%s' "$PR_BODY" \
+            | grep -ioE '(close[sd]?|fix(es|ed)?|resolve[sd]?)[: ]+ChurchCRM/CRM#[0-9]+' \
+            | grep -oE '[0-9]+$' || true; } | sort -u | while read -r issue; do
+              gh issue close "$issue" --repo ChurchCRM/CRM --reason completed \
+                --comment "Documented in docs.churchcrm.io#${PR_NUMBER}, merged into \`${PR_BASE}\`. It goes live with the release."
+              echo "Closed ChurchCRM/CRM#${issue}"
+            done

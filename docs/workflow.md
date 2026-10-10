@@ -20,13 +20,23 @@ Agents follow the same rules in [`.agents/DOCS_GUIDE.md`](https://github.com/Chu
 
 Do not use the latest product milestone for site or CI work. That milestone means the pull request documents that release, and the release gate would allow it to merge.
 
-The release gate stays red on a product pull request until that exact version is a published stable release. Leave the pull request open. That is how unpublished work is staged.
+## Docs for a release that is not published yet
+
+Open the pull request against `release-docs/<version>`, for example `release-docs/7.8.0`, not `main`. Ask a maintainer to create the branch if it does not exist yet.
+
+1. The site build runs on the pull request. The release gate does not, because it guards `main`.
+2. When the pull request is approved, merge it into the release branch. Merge each one as it is ready; they do not need to wait for each other or for the release.
+3. Name the ChurchCRM tracking issue in the description, for example `Closes ChurchCRM/CRM#9922`. It is closed when the pull request merges into the release branch. GitHub would otherwise close it only after a merge into `main`.
+
+Nothing reaches the public site from `release-docs/<version>`. Leave the milestone set to the version.
 
 ## When a ChurchCRM version ships
 
-1. A daily job opens a pull request that points the API reference at the new release tag.
-2. Merge that pin pull request first. The site then documents that version's API, and the docs repo is tagged `v<version>`.
-3. Re-run the checks on the product pull requests for that milestone. Merge a pull request when the site build and the release gate are green.
+1. `release-docs/<version>` is merged into `main` as one pull request, after the site build and the release gate are green. The gate is re-run once the version is published.
+2. A pull request then points the API reference at the new release tag. It is merged second, so it starts from the `main` that holds the release docs. The site then documents that version's API, and the docs repo is tagged `v<version>`.
+3. Open `release-docs/<next version>` so the next docs pull requests have a place to land.
+
+A pull request opened against `main` for an unpublished version still works the old way. The release gate stays red until the version is published, and it merges after that. Prefer the release branch.
 
 The API reference does not track the CRM `master` branch. `crm-release.json` is the version the site builds.
 
