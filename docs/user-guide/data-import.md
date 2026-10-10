@@ -7,15 +7,15 @@ sidebar_position: 21
 
 ChurchCRM can import member data from CSV (comma-separated value) files, making it easy to migrate from another system or bulk-load a membership list.
 
-:::tip Other ways to import
-**Admin → Import** links to CSV Import, ChMeetings import, and database restore. **Admin → Export** gives you CSV, ChMeetings export, and database backup.
+:::tip Where to start
+There is no **Admin → Import** menu. Open **Admin → Get Started** and choose **Import from a Spreadsheet**. That page is `/admin/import/csv`. **Admin → Export** is where CSV export, the ChMeetings file, and database backup start.
 :::
 
 ---
 
 ## Quick Start
 
-1. Navigate to **Admin → Import → Import from Spreadsheet** (`/admin/import/csv`).
+1. Go to **Admin → Get Started → Import from a Spreadsheet** (`/admin/import/csv`).
 2. Click **Download CSV Template** to get a pre-formatted file with every supported column header and five sample rows.
 3. Fill in your data — each row is one person. People in the same family share a `FamilyID`.
 4. **Drag the file onto the upload area** (or click to browse) and click **Upload CSV**.

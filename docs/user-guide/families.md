@@ -21,9 +21,9 @@ Every Person should belong to a family.
 
 1. Go to **People** → **Add New Family**.
 2. Enter the **Family Name**.
-3. Enter the shared **Address**, **City**, **State**, **ZIP**, **Country**. If the family's mail goes somewhere else (a PO Box, for example), expand **Second Address** and see [Second Address and Mailing Address](#second-address-and-mailing-address).
+3. Enter the shared **Address**, **City**, **State**, **ZIP**, **Country**. If the family's mail goes somewhere else (a PO Box, for example), expand **Second Address (optional)** and see [Second Address and Mailing Address](#second-address-and-mailing-address).
 4. Enter **Home Phone** and **Family Email**.
-5. Add family members (up to 10): enter first name for each; last name only if different from family.
+5. The form starts with four family-member rows. **Add Another Family Member** appends another row. There is no limit of 10. Enter a first name for each person you are adding; enter a last name only when it differs from the family name.
 6. Set **Classification** for each person (Member, Guest, etc.).
 7. Click **Save**.
 
@@ -34,16 +34,20 @@ Every Person should belong to a family.
 ## How do I add a new Family?
 
 1. Go to **People** → **Add New Family**.
-2. Complete the form. Note that you can insert up to ten family members from directly from this form.
+2. Complete the form. It starts with four member rows. **Add Another Family Member** appends another row. There is no limit of 10.
 3. Complete the individual lines for each person, but only enter the last name if it differs from the last name of the Family record. All people entered in this manner will create a new Person record which will be assigned to the designated Family record.
 4. Press _Save_ when the form is complete.
 
 ## How do I view a family?
 
-There are two ways to view a family:
+1. Use the header search field (**Search people, families, groups…**) and open the family from the results.
+2. Or go to **People → Family Listing**.
 
-1. Enter a name to look for in the search field at the top of the page, click the button beside _"Family"_ and press enter.
-2. Click on _"View All Families"_ (under _"People"_).
+## Family Listing
+
+**People → Family Listing** is the list of families. The page title is **Family Listing**.
+
+The **Filters** card has **City**, **State**, **Status** (**All**, **Active**, or **Inactive**), and **Address Status**. Open a family name to see that family. This list is separate from the family editor.
 
 ## Second Address and Mailing Address
 
@@ -76,7 +80,7 @@ When a second address exists, the family page relabels the address card **Primar
 - **Mailing Address**, with a _Receives Mail_ badge, when the checkbox is ticked.
 - **Second Home** when it is not.
 
-The map, the geocoding badge, **Get Directions** and **Find Neighbors** stay on the primary card. When a family has no second address, the second card is not shown and the first card is simply called **Address**, as before.
+The map, the geocoding badge, **Get Directions** and **Find Neighbors** stay on the primary card. When a family has no second address, the second card is not shown and the first card is simply called **Address**.
 
 ![Family view: the Primary Address card and the Mailing Address card](/img/user-guide/family-view-mailing-address.png)
 
@@ -87,13 +91,14 @@ Each person's page shows their address: their own, or the one they inherit from 
 The family's mailing address is the flagged second address when there is one, and the primary address otherwise. It is used here:
 
 - **Newsletter labels**, **Confirm data labels** and mailed letters such as confirmation letters, tax statements and reminder letters are addressed to it. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
-- The **People Directory** report can print the mailing address beneath the primary address; see the same section.
+- The cart's **Labels** use it for anyone who has no address of their own on their person record. See [Which address is used](./cart.md#which-address-is-used).
+- The **People Directory** report can print the mailing address beneath the primary address; see [Which address is printed](./reports-and-queries.md#which-address-is-printed).
 - The [CSV export](./export.md#second-address-columns) can include the second address and the mailing flag, and the [CSV import](./data-import.md#second-address-columns) can load them.
 
-The [Cart](./cart.md)'s **Generate Labels** is not affected: it prints each person's own address, or the family's primary address when the person has none, as it always has. Family maps and geocoding always use the family's primary address, never the second address. A person with an address of their own is still mapped and geocoded at that address, as before.
+Family maps and geocoding always use the family's primary address, never the second address. A person with an address of their own is mapped and geocoded at that address.
 
 :::note
-A person's own address override (someone who lives somewhere other than the rest of the family) works exactly as before. The second address belongs to the whole family; it is not a per-person setting.
+A person's own address (someone who lives somewhere other than the rest of the family) is separate from this. The second address belongs to the whole family; it is not a per-person setting.
 :::
 
 ---
@@ -104,9 +109,9 @@ Person and Family profiles have been consolidated. Notes that previously appeare
 
 ---
 
-## Timeline Filters
+## Timeline
 
-Family View includes a **Timeline** tab with type and date filters, making it easy to review family history, pastoral notes, and attendance in one place.
+Family View uses the same timeline chips as a person: **Notes**, **Events**, and **System**, plus **Show all**. There is no date-range filter and no type list.
 
 ---
 
@@ -167,12 +172,12 @@ Profile images are automatically deleted from the server when a family or person
 
 ## How do I assign a Property to a Family?
 
-See the [Properties](./properties.md) help topic.
+See the [Properties](/user-guide/properties) help topic.
 
 ## How do I add a Note to a Family?
 
-See the [Notes](./notes.md) help topic.
+See the [Notes](/user-guide/notes) help topic.
 
 ## What is the Classification feature?
 
-See the [Classification](./classifications.md) help topic.
+See the [Classification](/user-guide/classifications) help topic.

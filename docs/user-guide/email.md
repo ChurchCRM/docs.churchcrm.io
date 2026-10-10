@@ -1,70 +1,47 @@
 ---
-title: Email
+title: Email from ChurchCRM
 sidebar_position: 18
 ---
 
-# Email
+# Email from ChurchCRM
 
-ChurchCRM provides built-in tools to email individuals, groups, and cart selections directly from the app, plus optional Mailchimp integration for newsletters.
+Use **Email** on a group or the cart, or **Email All** on the people dashboard, to open your own email program with those addresses. Newsletters can go through the Mailchimp plugin.
 
-## Prerequisites
+## Email dashboard
 
-Before sending emails, ensure your system administrator has configured email settings in **Admin → System Settings → Email Settings**.
+**Communication → Email** opens the Email dashboard at `/v2/email/dashboard`. SMTP and the switch that turns email on live here, not under **System Settings → Email Settings**.
 
----
+Admins use **Email Settings** on that page:
 
-## In-App Email Composer
+- **Enable Email**
+- SMTP fields: **SMTP Host**, **SMTP Timeout**, **Encryption**, **Auto TLS**, **SMTP Authentication**, **SMTP Username**, and **SMTP Password**
 
-As of **7.5.0**, ChurchCRM includes an in-app email composer that replaces the old mailto: link approach. The composer works across all email entry points — people dashboard, group view, and cart — and handles unlimited recipient lists without hitting browser URL length limits.
+Until email is enabled, the page says **Email is Disabled** and tells you to enable it, then configure SMTP. The status line is **SMTP Configured** or **SMTP Not Configured**.
 
-### How to use it
+**Email Tools** on the same page:
 
-1. Navigate to the page you want to email from (see entry points below).
-2. Click the **Email** button (or "Email Group", "Email Cart", etc.).
-3. The composer modal opens showing:
-   - **Recipient count badge** — total recipients, with a collapsible list grouped by role (e.g. Head of Household, Member).
-   - **BCC toggle** — switch between To: and BCC: addressing.
-   - **Copy Addresses** — copies all email addresses to your clipboard so you can paste them into any email client.
-   - **Open in Email Client** — opens your default mail app with recipients pre-filled. Available for lists of **50 addresses or fewer**; disabled with a tooltip for larger lists (use Copy Addresses instead).
+- **Duplicates** — addresses that are used more than once (`/v2/email/duplicate`)
+- **People Without Emails** — people with no personal or work email (`/v2/email/missing`)
 
-### Entry points
+Password resets and similar system messages use that SMTP setup. The buttons below do not send the message from inside ChurchCRM. They hand the addresses to your email program.
 
-| Where | How to reach it |
-|-------|----------------|
-| People / mailing list | **People → Email Members** on the dashboard |
-| Group members | Open a group → **Email Group** button |
-| Cart | **Cart → List Cart Items** → **Email Cart** |
+## Opening addresses in your email program
 
----
-
-## Mailchimp Integration
-
-[Mailchimp](https://mailchimp.com) is recommended for newsletters and announcements to large audiences. Free accounts support up to 500 contacts.
-
-### Setting Up Mailchimp
-
-1. Create a [Mailchimp account](https://mailchimp.com).
-2. [Generate an API Key](https://mailchimp.com/help/about-api-keys/) in your Mailchimp account.
-3. In ChurchCRM, go to **Admin → System Settings → Integration**.
-4. Enter your API key in the **sMailChimpApiKey** field and save.
-
-### Subscribing Families to Newsletters
-
-1. Open a [Family](Families) record.
-2. Enable the **Newsletter** option.
-3. Use Mailchimp's audience sync to import subscribers.
+1. Go to the people dashboard, a group, or the cart.
+2. Click **Email All** on the people dashboard, or **Email** on a group or on the cart.
+3. The dialog lists the addresses and offers:
+   - **BCC Mode** — put the addresses on the BCC line instead of To.
+   - **Copy Addresses** — copy the list so you can paste it into any mail program. This works for any size list.
+   - **Open in Email Client** — open a `mailto:` link. This stays disabled when there are more than 50 addresses. Copy the addresses instead.
 
 ---
 
-## Best Practices
+## Mailchimp
 
-- Always get consent before adding someone to an email list.
-- Use Mailchimp for newsletters and large announcements.
-- Use the in-app composer for ad-hoc group and cart emails.
-- Keep your [Classifications](Classifications) updated to target the right audiences.
+Mailchimp is a plugin, not a system-settings key. There is no **sMailChimpApiKey** field under System Settings.
 
----
+1. Create a [Mailchimp account](https://mailchimp.com) and an [API key](https://mailchimp.com/help/about-api-keys/).
+2. In ChurchCRM, go to **Admin → Plugins** and open the **mailchimp** plugin.
+3. Save the API key in that plugin's settings.
 
-## Migration Note (7.5.1)
-
-The `sMailtoDelimiter` setting (previously in **Admin → System Settings**) has been removed in 7.5.1. It controlled the separator used in the old mailto: links, which are no longer generated. The 7.5.1 database migration removes this setting automatically — no manual action required.
+The Email dashboard shows **Mailchimp Connected** or **Mailchimp Not Configured**, with **Plugin Settings** when you need to finish the connection.

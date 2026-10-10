@@ -35,7 +35,7 @@ ChurchCRM sends transactional email for specific events. Email delivery requires
 
 ### Configuring email
 
-Go to **Admin → Email Settings** to configure your SMTP server, sender name, and sender address. See [Email Setup](./email-setup.md) for full details.
+Open **Communication → Email** and click **Email Settings**. **SMTP Host** is one field. **Encryption** is **None**, **TLS**, or **SSL**. The copy address is **Copy Church Email**. See [Email Setup](./email-setup.md).
 
 ---
 

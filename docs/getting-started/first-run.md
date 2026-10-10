@@ -19,44 +19,31 @@ After your password is set, you are automatically redirected to **Admin → Chur
 
 ## Church Information Page
 
-The Church Information page is organized into three tabs.
+**Admin → Church Information** is a set of cards, not tabs. Click **Save Church Information** when you are done.
 
-### Basic Information tab
+| Card | What you enter |
+|------|----------------|
+| **Church Identity** | Church name (required) and website |
+| **Contact Information** | Phone number and email address |
+| **Location** | Street, city, state, zip, and country. **Map Coordinates** has latitude and longitude. Click **Generate Coordinates** to look up the address, or leave the coordinates blank and ChurchCRM fills them in when you save. |
+| **Address Defaults** | Default city, state, zip, and country for new families. **Copy from church address** fills these from the location above. |
+| **Social Media** | Optional https:// links. Leave a field blank to hide that network. |
+| **Display Preview** | How the church block will look on reports and directories |
 
-This tab covers your church's identity and contact details.
-
-| Field | Required | Notes |
-|-------|----------|-------|
-| **Church Name** | ✅ Yes | Appears on all reports, directories, and communications |
-| **Website** | No | Full URL, e.g. `https://yourchurch.org` |
-| **Phone Number** | ✅ Yes | Main contact number |
-| **Email Address** | ✅ Yes | Main contact email |
-| **Language** | No | Controls date formats, phone formats, and UI language |
-| **Time Zone** | No | Used for scheduling events and reporting times |
-
-### Location & Map tab
-
-This tab covers your church's physical address.
-
-| Field | Required | Notes |
-|-------|----------|-------|
-| **Street Address** | ✅ Yes | |
-| **City** | ✅ Yes | |
-| **State / Province** | ✅ Yes | Populated dynamically based on selected country |
-| **Zip / Postal Code** | ✅ Yes | |
-| **Country** | ✅ Yes | |
-
-After saving an address, a **Leaflet map** appears showing your geocoded location. Coordinates are detected automatically — no manual entry required. The map updates on every save.
-
-### Display Preview tab
-
-This tab shows a live preview of how your church information will appear on reports and printed directories. It updates as you fill in the other tabs. Use it to confirm the address block looks correct before saving.
+Language and time zone are not on this page. Set them under **Admin → Localization & Formats**.
 
 ---
 
-## Get Started checklist
+## Get Your Data Into ChurchCRM
 
-After the mandatory church-information step, ChurchCRM takes you to a **Get Started** page (also reachable any time from **Admin → Get Started**). This is a setup checklist that walks you through the remaining configuration tasks — email settings, user accounts, classifications, and import of existing data — and ticks each item off as you complete it. You can come back to it whenever you want; it's safe to ignore if you prefer to configure things directly.
+After the church name is saved, ChurchCRM opens **Get Started**. The page title is **Get Your Data Into ChurchCRM** (also under **Admin → Get Started**). Pick one path:
+
+- **Explore with Demo Data** — **Load demo data**
+- **Import from a Spreadsheet** — **Import CSV**
+- **Enter Data Manually** — **Add first family**
+- **Restore a Backup** — **Restore backup**
+
+The setup checklist is the **Admin Dashboard**, not this page. You can skip Get Started with **Skip — go to Admin Dashboard**.
 
 ---
 
@@ -64,24 +51,18 @@ After the mandatory church-information step, ChurchCRM takes you to a **Get Star
 
 Once the mandatory setup is done, a few additional settings are worth configuring right away.
 
-### Member Defaults
-
-Open **Admin** → **System Settings** → **Families** tab.
-
-- **Default City** — pre-fills the city field for new member records.
-- **Default State** — pre-fills the state (two-letter abbreviation).
-- **Default Country** — required for some locale-specific formatting.
-
 ### Email Settings
 
-Open **Communication** → **Email**, then click the **Email Settings** button.
+Open **Communication** → **Email**, then click **Email Settings**.
 
-- **Default "To" Email Address** — address that receives system requests (e.g. `webmaster@domain.com`).
-- **SMTP Host**, **SMTP Username**, **SMTP Password** — credentials for your outbound email relay.
+- **SMTP Host** — one field. Include the port in the host when your provider needs it, for example `smtp.gmail.com:587`.
+- **Encryption** — **None**, **TLS**, or **SSL**.
+- **SMTP Username** and **SMTP Password**
+- **Copy Church Email** — address that receives a copy of mail ChurchCRM sends
 
-### Security Considerations
+### Backups
 
-If you use the database backup utility, make sure the `churchcrm/SQL` directory is not publicly accessible. Consult your web server's documentation for how to restrict directory access.
+Backups are not kept in `churchcrm/SQL`. On the **Admin Dashboard**, open **System Info** and click **Backup**. The archive is temporary and is deleted after you download it. See [Backup & Restore](/administration/backup-restore).
 
 ---
 

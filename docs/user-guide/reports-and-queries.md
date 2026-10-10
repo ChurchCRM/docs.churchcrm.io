@@ -14,53 +14,19 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 | Type | Purpose |
 |------|--------|
 | **Reports** | Pre-formatted documents ready for printing (directories, labels, letters) |
-| **Queries** | Database searches that return lists of [people](./persons.md) or [families](./families.md) |
+| **Queries** | Database searches that return lists of [people](/user-guide/persons) or [families](/user-guide/families) |
 
-> **Tip:** Many query results can be added to the [Cart](./cart.md) for further processing.
+> **Tip:** Many query results can be added to the [Cart](/user-guide/cart) for further processing.
 
 ---
 
-## Built-in Reports
+## Query Listing
 
-### Contact & Directory Reports
-- **Contact Lists** - Phone and email lists
-- **People Directory** - Printable directory grouped by family
-- **Letters and Mailing Labels** - For postal mailings (see [Mailing labels](#mailing-labels) below)
+**Data/Reports** opens **Query Listing**. Only administrators see that menu item.
 
-#### Which address is printed
+Seeded queries include **Birthdays**, **Membership anniversaries**, **Wedding Anniversaries**, **Birthdays & Anniversaries**, and **Pledge comparison**. Other seeded queries on a new database are **Person by Property**, **Volunteers**, **Recent friends**, **Missing pledges**, and **Missing people**.
 
-The labels and mailed letters listed below are addressed to the family's **mailing address**: the family's second address when it is ticked as _This is the mailing address_, and the primary address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). Families with no second address, or whose second address is not ticked, print their primary address on them, exactly as before.
-
-The **Letters & Mailing Labels** and **People Directory** pages are linked from the **Reports** card on **People → Dashboard** and, for administrators, from **Reports → People Reports**.
-
-- **Newsletter labels** and **Confirm data labels** (**Letters & Mailing Labels**) print the mailing address. Labels are still ordered by ZIP code for presorting, using the ZIP code that is actually printed.
-- Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. Confirmation letters and tax statements sent by email use the same address. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
-- **People Directory**: under _Information to Include_, the **Primary Address** option (previously called _Address_; still on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print a family's flagged mailing address beneath it, under a "Mailing Address:" label, when it differs from the primary address. The option can only be ticked while **Primary Address** is ticked. Families whose mail goes to their primary address print exactly as before.
-
-Not affected: the [Cart](./cart.md)'s **Generate Labels**, which prints each person's own address (or the family's primary address when the person has none), and envelopes, which carry no address.
-
-### Membership Reports
-- **Birthdays** - Members with birthdays in a specific month
-- **Membership Anniversaries** - People who joined in a specific month
-- **Wedding Anniversaries** - People with wedding anniversaries in a specific month (both spouses listed individually)
-- **Birthdays & Anniversaries** - Combined view of birthdays and wedding anniversaries for a specific month
-- **Family Member Count** - Families with their member totals
-- **Person by Age** - People within a specified age range
-- **Person by Properties** - People with specific [properties](./properties.md) assigned
-- **Person by Role and Gender** - Filter by family role and gender
-- **Person Count** - Total counts by various criteria
-- **Total By Gender** - Gender statistics
-
-### Group Reports
-- **Reports on Groups and Roles** - Group membership details
-- **Class Students** - Students in a specific [Sunday School](./sunday-school.md) class
-- **Class Teachers** - Teachers for a specific class
-- **Registered Students** - All enrolled students
-
-### Other Reports
-
-- [Financial Reports](./finances.md): Pledges and Payments
-- Pledge comparison: Compare pledges between two fiscal years
+Finance letters and giving reports are under [Deposit Reports](/user-guide/finances#deposit-reports), not on Query Listing.
 
 ---
 
@@ -68,9 +34,18 @@ Not affected: the [Cart](./cart.md)'s **Generate Labels**, which prints each per
 
 Mailing labels for any set of people are produced from the [Cart](./cart.md#generate-mailing-labels): put the people in the Cart, then click **Labels** in the Cart Functions bar. The **Generate Labels** dialog offers one label per person or per family, bulk-mail presort, a "To the parents of" prefix, Avery and tractor-feed label types, font and size, a start row and column, and PDF or CSV output.
 
-**Which address is printed:** the person's own address when one has been entered, otherwise the family address. Households that keep their address on the family record only — the normal case — get correct labels; a label never mixes a person's street with the family's city.
+**Labels for a filtered mailing** (for example birthdays or wedding anniversaries in a date range): go to **Admin → Export → Open CSV Export**, set the filters, choose **Add Individuals to Cart**, then open the cart and click **Labels**. Query results with an **Add Results to Cart** button feed the same workflow.
 
-**Labels for a filtered mailing** (for example birthdays or wedding anniversaries in a date range): go to **Data/Reports → CSV Export**, set the filters, choose **Add Individuals to Cart**, then open **People → Cart** and click **Labels**. Query results with an **Add Results to Cart** button feed the same workflow.
+### Which address is printed
+
+Labels and mailed letters go to the family's **mailing address**: the family's second address when it is ticked as **This is the mailing address**, and the primary address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). Families with no second address, or whose second address is not ticked, get their primary address.
+
+- **Cart labels**, and **Print Labels** on a People Report: each label uses the person's own address when one has been entered on their record, otherwise the family's mailing address. A label never mixes a person's street with the family's city.
+- **Newsletter labels** and **Confirm data labels** on the **Letters and Mailing Labels** page print the mailing address. Labels are ordered by the ZIP code that is actually printed, for presorting.
+- Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. Confirmation letters and tax statements sent by email use the same address. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
+- **People Directory**: under _Information to Include_, **Primary Address** (on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print a family's flagged mailing address beneath it, under a "Mailing Address:" label, when it differs from the primary address. That option can only be ticked while **Primary Address** is ticked.
+
+**People Directory** and **Letters & Mailing Labels** are on the **Reports** card of **People → Dashboard**. Administrators also reach them from **Reports → People Reports**. Envelopes carry no address.
 
 ---
 
@@ -132,7 +107,7 @@ A Free-Text Query allows you to run any query on the database. Since ChurchCRM i
 
 ## What is a Cart-Enabled Query?
 
-A [Cart](./cart.md)-Enabled Query is one in which the results of the query can be entered into the cart.
+A [Cart](/user-guide/cart)-Enabled Query is one in which the results of the query can be entered into the cart.
 
 ## How do I use Cart-Enabled Queries?
 

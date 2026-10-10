@@ -54,7 +54,7 @@ If you see ChurchCRM listed, you're set. If Softaculous is present but ChurchCRM
 Navigate to your ChurchCRM URL. You'll be prompted to:
 
 1. Change the admin password (required on first login)
-2. Complete the **Church Information** setup (name, address, timezone)
+2. Complete **Church Information** (name, address, and contact details). Set the time zone under **Admin → Localization & Formats**.
 
 See [First Run Configuration](/getting-started/first-run) for a walkthrough of what comes next.
 
@@ -69,7 +69,7 @@ Softaculous can also handle upgrades:
 3. Click the **upgrade icon** (arrow) if a new version is shown
 4. Softaculous backs up your files and database, then applies the new version
 
-Alternatively, use ChurchCRM's built-in upgrade wizard (**Admin → System → Upgrade**) — it works the same way regardless of how ChurchCRM was originally installed. See [Upgrade Guide](/administration/upgrade).
+Alternatively, use ChurchCRM's built-in upgrade wizard. On the **Admin Dashboard**, open **System Info** and click **Upgrade** (`/admin/system/upgrade`). It works the same way regardless of how ChurchCRM was originally installed. See [Upgrade Guide](/administration/upgrade).
 
 ---
 

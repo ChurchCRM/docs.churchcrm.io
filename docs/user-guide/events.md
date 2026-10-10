@@ -1,9 +1,9 @@
 ---
-title: Events
+title: Events and attendance
 sidebar_position: 11
 ---
 
-# Events
+# Events and attendance
 
 ChurchCRM allows you to create events which will appear in your church calendar.
 
@@ -23,14 +23,11 @@ Once an event is created, you can:
 
 ## Events Dashboard
 
-The **Events** top-level menu opens a dedicated **Events Dashboard** that gives you an at-a-glance view of everything event-related:
+**Events → Events Dashboard** opens the events dashboard.
 
-- **Summary stats** — upcoming events, total events this month/quarter, and attendance totals
-- **Upcoming events list** — the next scheduled events with one-click access to edit or take attendance
-- **Event types** — quick access to add/edit event types
-- **Quick actions** — add a new event, add an event type, or jump to attendance reports
+Four cards sit at the top: **Events This Year**, **Total Check-ins**, **Current Events**, and **Event Types**.
 
-From the dashboard you can click any event to open its detail page, record attendance, or start child check-in/check-out. The dashboard replaces the older flat "list of events" page and is the recommended starting point for all event workflows.
+Actions on the page are **Add Event**, **Add Recurring Event**, **Check-in**, and **Calendar**. Open an event from the list to edit it or record attendance.
 
 :::tip Calendar vs. Events Dashboard
 The **Calendar** (in the top navigation) shows events in a month/week view with an offcanvas editor — great for scheduling. The **Events Dashboard** is focused on attendance, metrics, and event management. Both read from the same underlying event data.
@@ -61,7 +58,7 @@ You can combine parameters to link directly to a specific month *and* year:
 /crm/event/dashboard?month=6&year=2025   ← June 2025
 ```
 
-**Clear Filter link** — A **Clear Filter** link appears in the filter bar whenever a Type or Month filter is active. Clicking it resets both dropdowns to their "All" defaults while keeping the current Year selection. The link does *not* appear when only the Year is changed.
+**Clear Filter** — **Clear Filter** appears when a type or month filter is set. It goes to `/event/dashboard` and clears the type, month, and year, so the year returns to the current year. It is not shown when only the year has changed.
 
 :::note Auto-scroll behaviour
 By default the dashboard auto-scrolls to the current month's section. When a Month filter is active, auto-scroll is suppressed so the filtered view stays at the top of the page.
@@ -88,9 +85,9 @@ Past and inactive events are grouped into collapsible **month sections** below t
 1. **Create an event type** (if needed): **Events** → **Admin** → **Event Types** → **Add Event Type**.
 2. **Create an event**: **Events** → **Add Church Event** — choose type, date, time, and save.
 3. **Add people to the Cart**: Search or browse people, click **Add to Cart**.
-4. **Record attendance**: **Cart** → **Empty Cart to Event** → select the event → **Add Cart to Event**.
+4. **Record attendance**: open the cart and choose **Check In to Event**. The page title is **Add Cart to Event**. Select the event and confirm.
 
-Attendance is saved automatically. Use **Data/Reports** → **Event Attendance Reports** to view attendance history.
+Attendance is saved with the check-in. Saved queries live under **Data/Reports**, which opens **Query Listing**. There is no **Event Attendance Reports** block on that page.
 
 ---
 
@@ -104,7 +101,9 @@ To create an event type:
 
 1. Go to **Events** → **Admin** → **Event Types**.
 2. Click **Add Event Type**.
-3. Make your entries and choose *Save Changes*.
+3. Fill in the form and click **Save Event Type**.
+
+The count fields are **Attendance Count Categories**, not a field named Attendance Counts.
 
 ### Example
 
@@ -115,7 +114,7 @@ To do this, you will add a new event type and make the following settings:
 * **Event Type Name**: Newcomers' Lunch
 * **Recurrence Pattern**: None
 * **Default Start Time**: 12:30PM
-* **Attendance Counts**: Regular Churchgoers, Newcomers
+* **Attendance Count Categories**: Regular Churchgoers, Newcomers
 
 ## Creating an Event
 
@@ -133,13 +132,11 @@ Throughout the course of an event, you can take attendance to track the particip
 
 To add an existing person to an event:
 
-1. Go to **People** → **Person Listing**.
-2. In the **Filter and Cart** area, enter a name in the search field and choose *Apply Filter*.
-3. In the **Listing** area, choose the *Add to Cart* icon.
-4. Continue adding people to the cart as described in the previous steps.
-5. Choose the shopping cart icon in the header bar at the top of the screen.
-6. Choose *Empty Cart to Event*.
-7. Select your event and choose *Add Cart to Event*.
+1. Go to **People → Person Listing**.
+2. The **Filters** card narrows the list (family status, gender, classification, role, and so on). There is no **Apply Filter** button. **Clear Filter** resets the card.
+3. Use **Add to Cart** on the people you want.
+4. Open the cart in the header and choose **Check In to Event**.
+5. The page title is **Add Cart to Event**. Select the event and check those people in.
 
 To add a visitor to an event:
 
@@ -147,9 +144,8 @@ To add a visitor to an event:
 2. Make your entries, ensuring you set the **Classification** field to *Guest*.
 3. Choose *Save*.
 4. Choose *Add to Cart*.
-5. Choose the shopping cart icon in the header bar at the top of the screen.
-6. Choose *Empty Cart to Event*.
-7. Select your event and choose *Add Cart to Event*.
+5. Open the cart and choose **Check In to Event**.
+6. The page title is **Add Cart to Event**. Select the event and check the person in.
 
 ## Generating Attendance Reports for an Event
 
@@ -157,9 +153,33 @@ You can generate reports based on attendance history for an event. The tracked p
 
 To generate a report:
 
-1. Go to **Data/Reports** (direct link in the navigation).
-2. Choose an event type from the *Event Attendance Reports* area.
-3. Choose a person type corresponding to the event for which you wish to generate a report.
+1. Open **Data/Reports**. The page is **Query Listing**, an alphabetical list of saved queries.
+2. Run the query that matches the attendance question you have. There is no **Event Attendance Reports** block on that page.
+
+## Using the Calendar
+
+Open **Calendar** in the top navigation. The page subtitle is **Manage events, birthdays, and anniversaries**. Times on this page use the church time zone shown next to **Calendar time zone**. If your browser is in a different zone, a **Browser time zone differs** badge appears. Administrators can open **Details** from that badge.
+
+Use the **month**, **week**, **day**, and **list** buttons to change the view, and **today** to jump back to the current day in the church time zone.
+
+To show or hide a calendar, click **Calendars**.
+
+- **My Calendars** are calendars your church created. If you can add events, **New Calendar** is at the bottom of that list. Name it, pick a foreground and background color, and click **Save**.
+- **System Calendars** include **Birthdays**, **Anniversaries**, and **Unpinned Events**. **Fundraisers** is included when the fundraiser menu is turned on. A holiday calendar appears here only when that plugin is installed.
+
+Click a day, or drag across a range, to open the new-event form. You can do this when your account can add events. Click an event you are allowed to change to open the same editor. Drag or resize an event on the grid to move it; confirm the change when asked.
+
+Clicking a birthday, anniversary, or other item that is not an editable event shows a short notice with the title. It does not open the editor.
+
+The same form is used from the calendar, the Events Dashboard, and the event detail page. Times are the church's wall-clock time.
+
+### Sharing a calendar
+
+On a calendar you can edit, open its access token. ChurchCRM can show an **HTML URL** and an **ICS URL**. Copy the URL with **Copy to clipboard**, or open it with **Open**. **New Access Token** replaces the token. **Delete** removes it.
+
+Those links do nothing for outside apps until an administrator turns on **Enable External Calendar API** under **Calendar Settings**. If tokens exist and that switch is off, the calendar page shows **External Calendar API Disabled**.
+
+**Calendar Embed Origins** (also under **Calendar Settings**) lists which websites may place the public calendar in a frame. The default `*` allows any site.
 
 ## Unified Event Editor
 
@@ -181,21 +201,13 @@ During any event, you can monitor the checking in and checking out of children t
 For continuous self-service check-in at a station, see [Kiosk Devices](/user-guide/kiosk-devices). The kiosk now works with **any group type** — not just Sunday School.
 :::
 
-In this scenario, you use the `PersonID` number associated with an individual to identify them in the system. This `PersonID` number is recognizable in the URL of the individual’s record in the system.
+You do not type a PersonID, and there is no **Verify** or **Finalize CheckOut** step.
 
-To check a child into an event:
+To check someone in:
 
-1. Choose *Events -> Check-in and Check-out*.
-2. Select an event.
-3. Enter the `PersonID` of the child in the left-hand field and the `PersonID` of the parent or guardian in the right-hand field. Note that you can use the **Person Listing** (**People** → **Person Listing**) to look up and determine the `PersonID` of any individual.
-4. Choose *Verify*.
-5. Review the data and choose *CheckIn*.
+1. Open **Events → Check-in and Check-out**, or click **Check-in** on the Events Dashboard, and select the event.
+2. Under **Person Checking In**, search by name or email.
+3. **Checked In By** is optional. Search for the adult, or use **Assign to me**.
+4. Click **Check In**.
 
-To check a child out of an event:
-
-1. Choose *Events -> Check-in and Check-out*.
-2. Select an event.
-3. Locate the entry of a child who had previously been checked into the system and choose *Checkout*.
-4. Enter the `PersonID` of the parent or guardian in the right-hand field. Note that you can use the **Person Listing** (**People** → **Person Listing**) to look up and determine the `PersonID` of any individual.
-5. Choose *Verify CheckOut*.
-6. Review the data and choose *Finalize CheckOut*.
+To check someone out, find them under **People Checked In** and choose **Check Out**. **Check Out All** checks out everyone still checked in.
