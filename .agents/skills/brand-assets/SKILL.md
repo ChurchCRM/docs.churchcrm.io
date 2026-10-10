@@ -21,7 +21,7 @@ Keep shared visual identity consistent without duplicating files across reposito
 - Reference shared brand assets from `https://churchcrm.io/` in `docusaurus.config.ts`; do not copy them into `static/img/`.
 - Use the approved `CHURCH | CRM` wordmarks. Do not redraw, recolor, or generate a logo.
 - Use the ink/blue wordmark on light surfaces and the paper/blue wordmark on dark surfaces.
-- Reuse current screenshots from `https://churchcrm.io/images/screenshots/` when they show the documented workflow.
+- Reuse current captures from `https://cdn.churchcrm.io/screenshots/<lang>/<device>/<name>.png` (the manifest is `https://cdn.churchcrm.io/manifest.json`) when they show the documented workflow.
 - Keep a documentation-specific screenshot local only when no suitable canonical website image exists and it needs to evolve with the instructions.
 - Use authentic CRM screenshots for product UI. Do not generate or mock product screens.
 - Before changing a canonical URL, confirm that the replacement is already deployed on the website and update all consumers in the same coordinated change.
@@ -33,7 +33,7 @@ Keep shared visual identity consistent without duplicating files across reposito
 - Dark wordmark: `https://churchcrm.io/media/brand/churchcrm-logo-paper-blue.svg`
 - Favicons and touch icon: `https://churchcrm.io/media/`
 - Web manifest: `https://churchcrm.io/site.webmanifest`
-- Default product preview: `https://churchcrm.io/images/screenshots/desktop/dashboard-hero.png`
-- Product screenshot library: `https://churchcrm.io/images/screenshots/{desktop,tablet,mobile}/`
+- Default product preview: `https://cdn.churchcrm.io/screenshots/en/desktop/dashboard-hero.png`
+- Product screenshot library: `https://cdn.churchcrm.io/screenshots/<lang>/{desktop,tablet,mobile}/`
 
 Validate with `npm run typecheck` and `npm run build`. Inspect the generated HTML to confirm metadata contains absolute `https://churchcrm.io/` asset URLs and no removed local logo or favicon paths.

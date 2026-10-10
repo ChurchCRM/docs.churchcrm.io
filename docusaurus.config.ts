@@ -68,7 +68,7 @@ const config: Config = {
   themes: ['docusaurus-theme-openapi-docs'],
 
   themeConfig: {
-    image: 'https://churchcrm.io/images/screenshots/desktop/dashboard-hero.png',
+    image: 'https://cdn.churchcrm.io/screenshots/en/desktop/dashboard-hero.png',
     colorMode: { defaultMode: 'light', disableSwitch: false, respectPrefersColorScheme: true },
     navbar: {
       title: 'ChurchCRM Docs',
