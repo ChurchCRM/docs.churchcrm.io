@@ -58,9 +58,55 @@ Administrators hide deceased people from the printed directory and from CSV expo
 
 ## Timeline
 
-The Person View timeline shows notes, attendance, and system activity, newest first. Filter chips are **Notes**, **Events**, and **System**. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
+The Person View timeline shows notes, attendance, emails, and system activity, newest first and grouped by year. Filter chips are **Notes**, **Events**, **Emails**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Notes** is on when the page opens. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
 
 Long notes show a short preview. **Read more** opens the full note.
+
+![Timeline filter chips: Notes, Events, Emails, System](/img/user-guide/email-history-timeline-filter.png)
+
+The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside notes and attendance. See [Email History](#email-history) below.
+
+---
+
+## Email History
+
+ChurchCRM keeps a record of every email it sends. A person's history holds the emails addressed to them: messages written in the [email composer](/user-guide/email), birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and volunteer emails from Volunteer Management v2. Anyone who can open the person can see it.
+
+### Recent Emails card
+
+The **Recent Emails** card on the Person View lists the five latest emails to that person, newest first:
+
+| Column | What it shows |
+|--------|---------------|
+| **Date** | When the email was sent |
+| **Type** | What kind of email it was: Message (written in the composer), Birthday greeting, Family verification, Password reset link, New account, Notification, and so on. Volunteer emails show Volunteer assignment, Volunteer reminder, Volunteer declined, Volunteers needed, Volunteer sign-up, Substitute proposed, Substitute decision, or Offer to help. An email of a kind ChurchCRM does not know shows Email |
+| **Subject** | The subject line; click it to open the email |
+| **Status** | **Sent**, **Failed** (the mail server refused it; hover over the badge for the error), or **Skipped** (email sending was turned off, or no mail server was set up, at the time) |
+| **Sent by** | The user who wrote it, or **Automatic** for emails ChurchCRM sent on its own |
+
+![Recent Emails card on the Person View](/img/user-guide/email-history-recent-emails-card.png)
+
+The badge next to the title is the total number of emails on record for this person. If nothing has been sent yet, the card says so.
+
+### Opening an email
+
+Click a subject to see the email as it was sent, with the recipient address, date, type, status, and sender above it.
+
+![An email opened from the history, shown as it was sent](/img/user-guide/email-history-modal.png)
+
+ChurchCRM keeps the full content of messages written in the composer and of volunteer emails. For every other email it stores the subject, date, and status only. Opening one shows a note instead of the message: **The content of this email is not stored. ChurchCRM keeps the text of messages written in the email composer and of volunteer emails only.**
+
+![An account email in the history: the content is not stored](/img/user-guide/email-history-modal-not-stored.png)
+
+### Show all
+
+Click **Show all** at the bottom of the card to open the person's complete email history, newest first, 25 per page. **Back to Person** returns to the Person View.
+
+![The full Email History page for a person](/img/user-guide/email-history-show-all.png)
+
+:::note
+Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. An email sent to the family's own address (for example from the Family View) is recorded against the family, not a person, so it appears on nobody's card. Administrators see the most recent emails to everyone, family addresses included, on the [Email dashboard](/user-guide/email#email-history-and-the-email-dashboard).
+:::
 
 ---
 
