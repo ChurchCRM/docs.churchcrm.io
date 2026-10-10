@@ -14,7 +14,7 @@ Do not mix them in one pull request.
 | The code | The docs pull request |
 |---|---|
 | Merged and in a published ChurchCRM release | Milestone is that version. It may merge when CI is green. |
-| Merged, but the release is not published yet | Milestone is that unreleased version. Leave it open. |
+| Merged, but the release is not published yet | Milestone is that unreleased version. Base is `release-docs/<version>`, not `main`. It merges into that branch when approved, and the branch reaches `main` after the release. |
 | Not merged | Do not document it. |
 
 A `ci`, `repo-maintenance`, `infrastructure`, or `dependencies` label is only for work that does not describe product behavior. Those pull requests have no milestone.
@@ -30,7 +30,7 @@ Do not write:
 - A pitch: world-class, empower, seamlessly, unlock, vendor lock-in, "God's people deserve"
 - "If you are reading this on the GitHub Wiki" or any line that explains where the manual moved
 - "Whether you are a small church or…" and other filler that could describe any product
-- "As of 7.8.0" or "New in 7.8.0" on a page that is the manual for that version. Say what the screen does now
+- "Since 7.8.0", "As of 7.8.0" or "New in 7.8.0". The navbar and footer state which release the docs describe. Say what the screen does now
 - Developer material: endpoint tables, plugin internals, release process
 
 Say the limit when there is one. Use "you" for their church. Use "we" only for the ChurchCRM project.
