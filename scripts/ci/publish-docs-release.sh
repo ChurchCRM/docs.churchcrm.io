@@ -40,19 +40,38 @@ if [ -n "${NEXT_VERSION:-}" ] && [[ "$NEXT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ 
   ensure_milestone "$NEXT_VERSION"
 fi
 
-pinned=$(gh api "repos/${DOCS_REPO}/contents/crm-release.json?ref=main" --jq '.content' | base64 -d | jq -r '.version')
-echo "Docs pin is $pinned. Requested version is $VERSION."
+open_pin_pr() {
+  local pinned newer
+  pinned=$(gh api "repos/${DOCS_REPO}/contents/crm-release.json?ref=main" --jq '.content' | base64 -d | jq -r '.version')
+  echo "Docs pin is $pinned. Requested version is $VERSION."
 
-if [ "$pinned" != "$VERSION" ]; then
-  newer=$(printf '%s\n%s\n' "$pinned" "$VERSION" | sort -V | tail -n 1)
-  if [ "$newer" != "$VERSION" ]; then
-    echo "::error::Refusing to move the docs pin backwards from $pinned to $VERSION." >&2
-    exit 1
+  if [ "$pinned" != "$VERSION" ]; then
+    newer=$(printf '%s\n%s\n' "$pinned" "$VERSION" | sort -V | tail -n 1)
+    if [ "$newer" != "$VERSION" ]; then
+      echo "::error::Refusing to move the docs pin backwards from $pinned to $VERSION." >&2
+      exit 1
+    fi
+    LATEST="$VERSION" ./scripts/ci/open-pin-pr.sh
   fi
-  LATEST="$VERSION" ./scripts/ci/open-pin-pr.sh
+}
+
+# Product docs for a release merge into release-docs/<version> as they are
+# approved. That branch reaches main as one pull request.
+docs_branch="release-docs/${VERSION}"
+docs_pr=""
+if git ls-remote --exit-code --heads origin "$docs_branch" > /dev/null 2>&1; then
+  docs_pr=$(gh pr list --repo "$DOCS_REPO" --base main --head "$docs_branch" --state open --json number --jq '.[0].number // ""')
+  if [ -z "$docs_pr" ]; then
+    url=$(gh pr create --repo "$DOCS_REPO" --base main --head "$docs_branch" --milestone "$VERSION" \
+      --title "docs: ChurchCRM ${VERSION}" \
+      --body "Every product docs pull request for ChurchCRM ${VERSION}, merged into \`${docs_branch}\` as it was approved.")
+    docs_pr="${url##*/}"
+    echo "Opened release docs pull request #$docs_pr"
+  fi
 fi
 
 if [ "$MERGE" != "true" ]; then
+  open_pin_pr
   echo "MERGE is not true. The pin pull request is staged and will merge when the release is published."
   exit 0
 fi
@@ -85,10 +104,46 @@ merge_pr() {
   gh pr merge "$number" --repo "$DOCS_REPO" --merge
 }
 
+# Pull requests opened with the workflow token start no checks of their own, and
+# the released-software gate may have failed while the version was unpublished.
+# Start what is missing, re-run the gate, then wait for both checks.
+wait_for_checks() {
+  local number="$1" branch="$2" gate_run
+  gate_run=$(gh run list --repo "$DOCS_REPO" --workflow release-gate.yml --branch "$branch" --limit 1 \
+    --json databaseId,conclusion --jq '.[0] | select(.conclusion == "failure") | .databaseId // empty')
+  if [ -n "$gate_run" ]; then
+    gh run rerun "$gate_run" --repo "$DOCS_REPO" || true
+  fi
+  if ! gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
+    --jq '[.statusCheckRollup[]?.name] | index("Validate Docusaurus site")' | grep -qv null; then
+    gh workflow run ci.yml --repo "$DOCS_REPO" --ref "$branch" || true
+  fi
+  if ! gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
+    --jq '[.statusCheckRollup[]?.name] | index("Released software gate")' | grep -qv null; then
+    gh workflow run release-gate.yml --repo "$DOCS_REPO" --ref "$branch" || true
+  fi
+  for _ in $(seq 1 60); do
+    if ready_to_merge "$number" > /dev/null; then
+      return 0
+    fi
+    sleep 30
+  done
+}
+
+if [ -n "$docs_pr" ]; then
+  wait_for_checks "$docs_pr" "$docs_branch"
+  merge_pr "$docs_pr" || { echo "::error::Release docs pull request #$docs_pr is waiting for CI."; exit 1; }
+  # The pin pull request must start from the main that now holds the release docs.
+  git fetch --quiet origin main
+  git checkout --quiet -B main origin/main
+fi
+open_pin_pr
+
 pin_branch="release/${VERSION}"
 pin_number=$(gh pr list --repo "$DOCS_REPO" --base main --head "$pin_branch" --state open --json number --jq '.[0].number // ""')
 skipped=0
 if [ -n "$pin_number" ]; then
+  wait_for_checks "$pin_number" "$pin_branch"
   merge_pr "$pin_number" || skipped=1
 else
   echo "No open API pin pull request for $VERSION."
