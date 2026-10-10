@@ -33,8 +33,8 @@ The same year shows up in a few places:
 
 1. Open the [Family](/user-guide/families) record for the donor.
 2. On the family toolbar, open **Finance** and choose **Add Payment**.
-3. Enter the date, amount, fund, and method (Cash, Check, Credit Card, or Bank Draft), and the family if it is not already filled in.
-4. Click **Save**. Use **Save and Add Another** when you have more payments to enter.
+3. Enter the date, amount, fund, and method (Cash, Check, Credit Card, or Bank Draft), and the family if it is not already filled in. A check payment also needs a **Check #** unless the check-number requirement has been turned off.
+4. Click **Save**. Use **Save and Add Another** when you have more payments to enter. On a new payment, **Ctrl+Enter** (**⌘+Enter** on Mac) does the same as **Save and Add Another**.
 
 ### Creating a Deposit Slip
 
@@ -96,6 +96,16 @@ Payments use the same editor as pledges.
 
 * **From the family:** Open **Finance** on the family toolbar and choose **Add Payment**. Enter the payment and click **Save**.
 * **Batch entry:** Click **Save and Add Another** to save this payment and clear the form for the next family.
+
+### Keyboard shortcut on the payment and pledge editor
+
+On a new payment or pledge, **Ctrl+Enter** (**⌘+Enter** on Mac) runs **Save and Add Another**. When you are editing an existing record, the same keys run **Save**. Pressing Enter by itself does not save.
+
+After each save the **Family** field is focused, so a deposit can be entered from the keyboard. A short hint sits next to the buttons on a computer with a mouse or trackpad. Phones and tablets do not show that hint. The buttons stay disabled while a save is in progress, so holding the keys does not post the same payment twice.
+
+### Check numbers
+
+A check payment requires a check number by default. Turning the requirement off also turns off duplicate check-number detection, so the same check can be entered more than once.
 
 ## How do I edit the QuickBooks Deposit Ticket Layout?
 
