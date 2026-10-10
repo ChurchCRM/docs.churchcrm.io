@@ -39,7 +39,7 @@ Three counters sit under the banner and refresh after each approval:
 | Counter | Meaning |
 |---------|---------|
 | **Pending review** | Families and individuals still flagged for review |
-| **Approved** | Self-registrations that staff have already approved |
+| **Approved** | Self-registrations that are no longer waiting for review, including people you approved here and registrations already reviewed before this dashboard existed |
 | **Total registrations** | Pending plus approved |
 
 Members of a self-registered family are counted with that family, not as extra pending families.
