@@ -15,7 +15,7 @@ npm run start   # live preview at http://localhost:3000
 
 Click **"Edit this page"** at the bottom of any docs page to submit a PR directly from GitHub.
 
-See [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md) for full contributor and AI agent conventions.
+Humans: [Docs workflow](docs/workflow.md). Agents: [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md). Product docs use a release milestone and stay open until that ChurchCRM version is published. Site and CI changes use the `ci` label and no milestone.
 
 ## Structure
 
@@ -25,7 +25,8 @@ See [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md) for full contributor and AI
 | `docs/getting-started/` | First run setup, features overview |
 | `docs/user-guide/` | How-to pages for People, Finance, Events, etc. |
 | `docs/administration/` | Upgrades, backup, troubleshooting, FAQs |
-| `docs/developers/` | Dev setup, contributing, code reference |
+| `docs/api/` | Generated public and private API reference |
+| `docs/contributing.md` | How to contribute to the docs |
 | `static/img/` | Screenshots and images |
 
 ## Asset Ownership
@@ -33,6 +34,12 @@ See [`.agents/DOCS_GUIDE.md`](.agents/DOCS_GUIDE.md) for full contributor and AI
 The marketing website is the single source for shared ChurchCRM logos, favicons, app icons, the web manifest, the default social-preview image, and reusable product screenshots. This docs site references those assets from `https://churchcrm.io/` instead of keeping copies that can drift.
 
 Keep only documentation-specific screenshots and diagrams with no suitable canonical website equivalent in `static/img/`. Marketing strategy belongs in `ChurchCRM/marketing`; shared brand assets and reusable product screenshots belong in `ChurchCRM/ChurchCRM.io`; shipped product behavior belongs in `ChurchCRM/CRM`.
+
+## API reference version
+
+The public API reference follows the ChurchCRM release in `crm-release.json`, currently the latest published release. Builds download that tag's OpenAPI specs. They do not track `master`.
+
+Product documentation for a version that is not released yet stays in an open pull request with that version's milestone. When the CRM release is published, automation opens a pull request to move the pin, then those staged pull requests can merge. The published docs commit is tagged `v<version>` and branched as `release/<version>`.
 
 ## Deployment
 

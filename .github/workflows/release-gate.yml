@@ -1,0 +1,28 @@
+name: Release Gate
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited, labeled, unlabeled, milestoned, demilestoned]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  release-gate:
+    name: Released software gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Validate product documentation release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          DOCS_REPO: ${{ github.repository }}
+          CRM_REPO: ChurchCRM/CRM
+        run: ./scripts/ci/validate-product-docs-release.sh

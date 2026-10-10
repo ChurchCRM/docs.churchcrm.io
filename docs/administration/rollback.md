@@ -173,7 +173,7 @@ This process requires the following steps:
 
       ![Select all tables and drop](/img/Rollback/phpMyAdmin-tables-2.png)
 
-4. Deploy the desired version of the ChurchCRM zip file - essentially, treat this as a "new" installation and follow the relevant [installation instructions](Installation) for your hosting setup.
+4. Deploy the desired version of the ChurchCRM zip file - essentially, treat this as a "new" installation and follow the relevant [installation instructions](/installation) for your hosting setup.
 5. Open the URL for your ChurchCRM instance and run through the ChurchCRM setup process.
 6. Restore the ChurchCRM backup (from #1) using the "Restore Database" in the admin menu.
 
@@ -221,7 +221,7 @@ To be clear, it is *possible* to relocate to a newer version, but it introduces 
 This process requires the following steps:
 
 1. Ensure your previous ChurchCRM generated backup is available.
-2. Deploy the desired version of the ChurchCRM zip file - essentially, treat this as a "new" installation and follow the relevant [installation instructions](Installation) for your hosting setup.
+2. Deploy the desired version of the ChurchCRM zip file - essentially, treat this as a "new" installation and follow the relevant [installation instructions](/installation) for your hosting setup.
 3. Open the URL for your ChurchCRM instance and run through the ChurchCRM setup process.
 4. Restore the ChurchCRM backup (from #1) using the "Restore Database" in the admin menu.
 

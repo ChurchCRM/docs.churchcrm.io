@@ -16,28 +16,27 @@ Each user's TOTP secret is randomly generated during enrollment and stored encry
 Any user can self-enroll in 2FA at any time:
 
 1. Log in to ChurchCRM
-2. Click your name in the top-right navigation bar and choose **User Settings**
-3. Open the **Two-Factor Authentication** tab
-4. Scan the QR code with your authenticator app
-5. Enter the 6-digit code to confirm enrollment
-6. **Save the recovery codes** that appear — they are the only way to regain access if you lose your device
+2. Open the user menu (your name, top right) and click **Manage Two-Factor Authentication**
+3. Scan the QR code with your authenticator app
+4. Enter the 6-digit code to confirm enrollment
+5. **Save the recovery codes** that appear — they are the only way to regain access if you lose your device
 
 Once enrolled, you will be prompted for a TOTP code on every login.
 
 :::tip
-2FA enrollment, recovery codes, and disabling 2FA all live on the **User Settings** page alongside password, theme, and API token management. See [User Management](/administration/users) for the full list of User Settings tabs.
+Enrollment is **Manage Two-Factor Authentication** in the user menu. Password, appearance, language, and the API key are on **Change Settings** (**Account**, **Appearance**, **Localization**, **API Access**, **Permissions**). See [User Management](/administration/users).
 :::
 
 ## Admin controls
 
 Administrators can require all users to enroll in 2FA before accessing the system.
 
-Go to **Admin** → **System Settings** → **Security** and enable **Require all users to use 2FA**.
+Open **Admin → System Users**, click **Settings**, and in **Quick Settings** turn on **Require all users to enroll in two-factor authentication**.
 
 When this setting is enabled:
 - Users who have not enrolled in 2FA are allowed to log in but are redirected to the enrollment page on every request until they complete setup.
 - Users cannot access any other part of the system until enrollment is complete.
-- Administrators can disable 2FA for a specific user from the **Users** management page if needed (e.g., account recovery).
+- Administrators can choose **Disable 2FA** on **Admin → System Users** if needed (for example, account recovery).
 
 ## Recovery codes
 

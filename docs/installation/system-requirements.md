@@ -5,23 +5,17 @@ sidebar_position: 2
 
 # ChurchCRM System Requirements
 
-This is the **single source of truth** for all ChurchCRM system requirements. All installation and deployment documentation should reference this page.
-
-:::tip Primary documentation
-If you're reading this on the **GitHub Wiki**, the primary documentation is at **docs.churchcrm.io**. All user and administrator manuals live there.
-:::
-
 ChurchCRM has specific platform prerequisites, and a built-in mechanism to ensure that all prerequisites are met. If there are any unmet prerequisites, a message will be displayed during setup and a notification will be displayed during runtime.
 
 Prerequisites are validated at every page load, so if the hosting environment is changed to an incomplete / unsupported model, a notification will appear.
 
-Validation occurs in the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/3872c9a5aee37741a58e3c6f766328ecc91d8434/src/ChurchCRM/Service/AppIntegrityService.php#L153).
+Validation occurs in the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/7.7.1/src/ChurchCRM/Service/AppIntegrityService.php#L184).
 
 ## Authoritative Requirements Table
 
 | Component | Minimum Version | Recommended | Notes |
 |-----------|-----------------|-------------|-------|
-| **PHP** | 8.2 | 8.3 or 8.4 | Required for all core functionality |
+| **PHP** | 8.4 | 8.4 or 8.5 | Required for all core functionality |
 | **Web server** | Apache 2.4 with mod_rewrite | Apache 2.4+ or FrankenPHP | The [`docker/`](https://github.com/ChurchCRM/CRM/tree/master/docker) directory has example Dockerfiles (including FrankenPHP) used for development and CI — not a maintained production image, see [Docker](/installation/vps-cloud#docker); nginx may work but requires per-subdirectory routing configuration |
 | **MySQL** | 8.0.11 | 8.0+ | Or MariaDB 10.5+ |
 | **MariaDB** | 10.5 | 10.6+ | Alternative to MySQL |
@@ -30,114 +24,45 @@ Validation occurs in the [`getApplicationPrerequisites()` function](https://gith
 
 ## Detailed Prerequisites
 
-### PHP 8.2 or Higher
+### PHP 8.4 or Higher
 
 **Status:** REQUIRED
 
-ChurchCRM requires **PHP 8.2 or higher** as the absolute minimum. This requirement is enforced in the application and verified at every page load.
+ChurchCRM requires **PHP 8.4 or higher** as the absolute minimum. This requirement is enforced in the application and verified at every page load.
 
 **Installation:**
-- **Shared Hosting (cPanel):** Select PHP 8.2 or higher from your hosting control panel
+- **Shared Hosting (cPanel):** Select PHP 8.4 or higher from your hosting control panel
 - **Self-Hosted Linux:** Follow the steps at [Self-Hosted on Rocky Linux](/installation/rocky-linux)
 
 **Tested Versions:**
 The application is tested and verified to work with the following PHP versions:
-- PHP 8.2 (minimum supported)
-- PHP 8.3
-- PHP 8.4
+- PHP 8.4 (minimum supported)
 - PHP 8.5 (safe to run)
 
 For a complete list of tested versions and configurations, see the [GitHub Actions CI workflow](https://github.com/ChurchCRM/CRM/blob/master/.github/workflows/build-test-package.yml).
 
 ### Required PHP Extensions
 
-The following PHP extensions must be installed and enabled. These are validated during setup and at every page load via the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L213).
+Setup checks these on every page load via [`getApplicationPrerequisites()`](https://github.com/ChurchCRM/CRM/blob/7.7.1/src/ChurchCRM/Service/AppIntegrityService.php#L184):
 
-**Core Database & String Handling:**
+- **PHP 8.4+**
+- **PCRE with UTF-8** (`preg_match` with the `/u` flag)
+- **mbstring**
+- **Phar**
+- **session**
+- **XML**
+- **iconv**
+- **URL rewriting** (Apache `mod_rewrite`, nginx, or LiteSpeed)
+- **GD** (image create, resample, and PNG)
+- **fileinfo**
+- **cURL**
+- **gettext**
+- **ZipArchive** (`php-zip`)
+- **mysqli**
 
-#### bcmath
-**Purpose:** Arbitrary precision arithmetic  
-**Installation:** `php-bcmath` package
+Composer also requires these PHP extensions: **bcmath**, **PDO**, **filter**, and **zlib**.
 
-#### curl
-**Purpose:** HTTP requests and external API communication  
-**Installation:** `php-curl` package
-
-#### json
-**Purpose:** JSON encoding/decoding (API responses)  
-**Installation:** Usually bundled with PHP
-
-#### mbstring
-**Purpose:** Multibyte string handling (UTF-8 support)  
-**Installation:** `php-mbstring` package
-
-#### mysqli
-**Purpose:** MySQL/MariaDB database access  
-**Installation:** `php-mysql` or `php-mysqli` package
-
-#### xml
-**Purpose:** XML parsing and processing  
-**Installation:** `php-xml` package
-
-**Image & Content Processing:**
-
-#### gd
-**Purpose:** Image manipulation (profile pictures, charts)  
-**Installation:** `php-gd` package  
-**Additional Requirements:** Requires FreeType library for text rendering
-
-#### exif
-**Purpose:** Read EXIF data from uploaded images  
-**Installation:** `php-exif` or usually included with `php-gd`
-
-#### finfo / fileinfo
-**Purpose:** Detect file types and MIME types  
-**Installation:** Usually bundled with PHP
-
-**Internationalization & Localization:**
-
-#### gettext
-**Purpose:** Localization and translation support  
-**Installation:** `php-gettext` package
-
-#### intl
-**Purpose:** Internationalization and Unicode support  
-**Installation:** `php-intl` package
-
-**Archive & Data Handling:**
-
-#### phar
-**Purpose:** PHP Archive support (installation/updates)  
-**Installation:** Usually bundled with PHP
-
-#### soap
-**Purpose:** SOAP web services support  
-**Installation:** `php-soap` package
-
-#### zip
-**Purpose:** ZIP file handling (imports/exports, backups)  
-**Installation:** `php-zip` package
-
-**Character Encoding & Cryptography:**
-
-#### iconv
-**Purpose:** Character set conversion for text handling  
-**Installation:** Usually bundled with PHP
-
-#### session
-**Purpose:** PHP session support  
-**Installation:** Usually bundled with PHP
-
-#### sodium
-**Purpose:** Modern cryptography (password hashing, encryption)  
-**Installation:** `php-sodium` package
-
-**Regular Expression Support:**
-
-#### pcre (PCRE)
-**Purpose:** Regular expression support with Unicode (UTF-8)  
-**Installation:** Usually bundled with PHP  
-**Requirement:** Must support UTF-8 character matching (`preg_match` with /u flag)
+exif, soap, sodium, and intl are not required.
 
 ### Web Server
 
@@ -164,7 +89,7 @@ Database must support:
 
 ### File System Permissions
 
-These write permissions are validated during setup and at every page load via the [`getFilesystemPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L248).
+These write permissions are validated during setup and at every page load via the [`getFilesystemPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/7.7.1/src/ChurchCRM/Service/AppIntegrityService.php#L216).
 
 #### Include/Config Directory
 **Path:** `Include/` directory (contains `Config.php`)  
@@ -215,9 +140,6 @@ System should support UTF-8 locales for proper text handling
 **Configuration:** `max_execution_time` in `php.ini`
 
 ### Hosting Environment Considerations
-
-#### register_globals
-Must be turned OFF (deprecated PHP feature)
 
 #### File Uploads
 Must be enabled and configured:
