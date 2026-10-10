@@ -162,6 +162,13 @@ The three buttons under the name are:
 
 Filter the grid with **All Classifications**, a single classification, or **Unassigned**. Turn on **Photos only** to hide people who have no photo. Choose how many cards appear with the **page** list, or **All**. **Reset** clears the filters. If nothing matches, the page says **No people found** and offers **Reset Filters**.
 
+### Upload size and resizing
+
+- Pick any JPEG or PNG up to 50 MB, including a full-size phone photo. Your browser shrinks it to the stored size (600x600) and never enlarges it.
+- The webcam option is available for person and family photos.
+- HEIC/HEIF photos from an iPhone are converted to JPEG in your browser when you pick them. If the conversion fails, export the photo as JPEG and try again.
+- API callers that skip the browser are limited to 16 megapixels of source image.
+
 ---
 
 ## Why is some information on the Person View shown in red text?

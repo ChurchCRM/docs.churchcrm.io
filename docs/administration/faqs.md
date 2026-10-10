@@ -55,6 +55,15 @@ Explore various methods for debugging the ChurchCRM application, including turni
 
 Enable the logs in the System Settings, the default value is INFO but you may want to change that. The logs are created in the `/logs` dir. Please note that logs are not cleaned by the system and it is up to the admin to clean files.
 
+## How do I upload my church logo?
+
+Go to **Admin** → **Church Information** and use the logo upload dialog.
+
+- Pick any JPEG or PNG up to 50 MB. Your browser shrinks it to the stored size (1200x400) and never enlarges it.
+- The logo dialog has no webcam option.
+- HEIC/HEIF images are converted to JPEG in your browser when you pick them. If the conversion fails, export the image as JPEG or PNG and try again.
+- API callers that skip the browser are limited to 16 megapixels of source image.
+
 ## How do I set up my logo or letterhead?
 
 Many reports and documents can include a logo or letterhead. By default, ChurchCRM looks for these files in the `Images/` directory:
