@@ -154,6 +154,8 @@ The From name is the church name, and the From address is the email on Church In
 | **Enable Fundraiser menu** | Show or hide Fundraiser | On |
 | **Fiscal year start month** | Month the financial year begins | January |
 | **Use donation envelopes** | Track gifts with numbered envelopes | Off |
+
+See the [Donation Envelopes guide](/user-guide/donation-envelopes) for activation and assignment.
 | **Checks per deposit slip** | Check lines on one deposit form | 14 |
 | **Scanned check images** | Attach a scan to a deposit | Off |
 | **Non-deductible payments** | Record gifts that are not tax-deductible | Off |

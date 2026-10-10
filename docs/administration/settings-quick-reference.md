@@ -52,6 +52,8 @@ Use this page to find the menu for a setting. System Settings tabs are **New Mem
 | Set the currency symbol | Admin → Localization & Formats (also on Financial Settings) | Currency symbol |
 | Put the symbol before or after the amount | Admin → Localization & Formats | Currency position |
 | Use numbered donation envelopes | Admin → System Settings → Financial Settings | Use donation envelopes |
+
+See the [Donation Envelopes guide](/user-guide/donation-envelopes) for activation and assignment.
 | Track scanned check images | Admin → System Settings → Financial Settings | Scanned check images |
 | Allow non-deductible donations | Admin → System Settings → Financial Settings | Non-deductible payments |
 
