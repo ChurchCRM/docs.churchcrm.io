@@ -13,7 +13,7 @@ ChurchCRM uses email for:
 
 - **System notifications** — password resets, new user setup
 - **Parent alerts** — kiosk check-in notifications to parents
-- **Messages from the composer** — since 7.8.0, users with the Email permission send messages to a person, a family, a group, or the cart from inside ChurchCRM (see [User Guide: Email](/user-guide/email)). Without a mail server the composer falls back to copying addresses or opening the user's own mail program.
+- **Messages from the composer** — users with the Email permission send messages to a person, a family, a group, or the cart from inside ChurchCRM (see [User Guide: Email](/user-guide/email)). Without a mail server the composer falls back to copying addresses or opening the user's own mail program.
 - **Mailchimp** — bulk newsletters (configured separately in Integration settings)
 
 For outbound email (notifications, alerts, composer messages), open **Communication** → **Email** and click **Email Settings**.
