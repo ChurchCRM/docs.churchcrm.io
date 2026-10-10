@@ -104,6 +104,23 @@ For the rest of the map, see [Maps & Geocoding](./maps-and-geocoding.md).
 
 ---
 
+## Ministry Settings
+
+The Volunteer Management settings live on their own page, **Admin → Ministry Settings**, not under System Settings.
+
+![Admin → Ministry Settings](/img/administration/ministry-settings.png)
+
+| Setting | Description |
+|---------|-------------|
+| Volunteer experience | **V1 — Volunteer Opportunities (legacy)** (the default, today's feature), **V2 — Ministries** (the new [Volunteer Management (v2)](/user-guide/ministries)), or **Both (transition)** for running the two side by side. System-wide. Switching shows or hides pages and menu entries and never deletes data. |
+| Reminder lead time (hours) | How many hours before an occurrence the volunteer reminder email is sent. Default 48, from 0 to 720; 0 sends no reminders. |
+| Scheduling horizon (weeks) | How far ahead schedules make occurrences for the events they follow, for every schedule in the church. Default 8, from 1 to 52. A daily background job keeps every active schedule filled up to this point. See [Schedules and occurrences](/user-guide/ministries/schedules-and-occurrences#the-scheduling-horizon-and-the-daily-top-up). |
+| Default event type for ministry events | The event type a new event on a ministry's Calendar tab starts with; it can still be changed for each event. **Not set** uses the type named "Other", which ChurchCRM 7.8.0 adds when it does not exist. If there is no active type named "Other", the empty choice reads **None** and the type is chosen for each event. |
+
+The page also explains the three choices. Its **Background jobs and delivery** card shows the failed and queued volunteer messages, when background jobs last ran, when schedules were last topped up and what that made, the cron line to install, and a **Run background jobs now** button that also tops up the schedules. See [Volunteer email and reminders](/user-guide/ministries/email-and-reminders).
+
+---
+
 ## Localization & Formats
 
 **Location:** Admin → Localization & Formats
