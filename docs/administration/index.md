@@ -16,6 +16,8 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 - [Localization & Formats](/administration/localization) — Language, timezone, date/time, number formats
 - [Email Setup](/administration/email-setup) — Configure SMTP and email features
 - [Maps & Geocoding](/administration/maps-and-geocoding) — OpenStreetMap / Nominatim (no API key required)
+- [Member Portal](/administration/member-portal) — Settings, statistics and shared calendars for the member-facing portal
+- [Church Themes](/administration/member-portal-themes) — Give the Member Portal your church's look
 
 ## Users, Permissions & Security
 

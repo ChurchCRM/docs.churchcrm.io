@@ -13,6 +13,12 @@ Always take a database backup before upgrading. If something goes wrong, a backu
 
 ---
 
+:::info Upgrading to a release with the Member Portal
+Member accounts (users whose only permission is *Edit Self*) land in the new **Member Portal** after the upgrade, and no calendar is shared with members until you switch one on. See [Member Portal → For administrators upgrading](./member-portal.md#for-administrators-upgrading).
+:::
+
+---
+
 ## Option 1 — In-App Upgrade Wizard (recommended)
 
 ### Step 1: Check for a new version
