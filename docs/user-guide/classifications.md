@@ -21,16 +21,16 @@ Classifications help you categorize people in your congregation for record-keepi
 
 ## Managing Classifications
 
-### Viewing & Editing Classifications
+### Viewing and editing classifications
 
-1. Navigate to **People → Classification Manager**
-2. Here you can:
-   - **Add** - Type a new name and click "Add New Classification"
-   - **Edit** - Change any existing classification name
-   - **Reorder** - Use up/down arrows to change display order
-   - **Delete** - Remove unused classifications
+1. Go to **People → Admin → Person Classifications**.
+2. The page title is **Person Classifications Editor**.
+3. Type a name and click **Add New Person Classification**.
+4. Change a name in the **Existing Options** table, then click **Save Changes**.
+5. Reorder with **Move up** and **Move down** in the row **Actions** menu.
+6. **Delete** removes a classification you no longer use. **Inactive** marks a classification so it is not offered for new people.
 
-> **Important:** Click "Save Changes" before using any buttons, or your edits will be lost!
+There is no family control named **Assign a New Classification** that changes every member of a family. Change a classification on each person: open the person, click **Edit**, choose **Classification** under **Church Membership**, and click **Save**.
 
 ---
 
@@ -45,17 +45,9 @@ When generating reports or exporting data, you can filter by classification to t
 
 ### Changing a Person's Classification
 
-**For an Individual:**
-1. Open the [Person's](Persons) record
-2. Click **Edit**
-3. Find the **Classification** dropdown
-4. Select the new classification
-5. Click **Save**
+1. Open the [person](/user-guide/persons).
+2. Click **Edit**.
+3. Under **Church Membership**, choose **Classification**.
+4. Click **Save**.
 
-**For an Entire Family:**
-1. Open the [Family](Families) record
-2. Click **Assign a New Classification**
-3. Select the new classification
-4. Confirm the change
-
-> **Warning:** Changing a family's classification updates ALL family members, overriding any individual classifications.
+Each person keeps their own classification. Changing one person does not change the rest of the family.

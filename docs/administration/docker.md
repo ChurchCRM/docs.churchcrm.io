@@ -49,7 +49,7 @@ npm run docker:dev:start
 ## Overview
 
 The Docker setup includes:
-- **webserver**: Apache with PHP (see [System Requirements](/docs/churchcrm-application-platform-prerequisites)) with all ChurchCRM code
+- **webserver**: Apache with PHP (see [System Requirements](/installation/system-requirements)) with all ChurchCRM code
 - **database**: MariaDB server with sample data
 - **adminer**: Web-based database management interface  
 - **mailserver**: SMTP testing server for email functionality

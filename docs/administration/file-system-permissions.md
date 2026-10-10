@@ -40,7 +40,7 @@ This document endeavours to outline the process of:
 All processes on a modern operating systems run as a particular user. This allows administrators to limit the access a process has based on the user and associated groups the process runs as. This is particularly important for exposed services like web servers.
 
 ## 1.1 Determining the process user
-On Debian (and derivatives, eg, Ubuntu) the Apache web server process typically runs as user `www-data`. On RedHat (and derivatives, eg CentOS) the Apache web server process typically runs as user `httpd`.
+On Debian (and derivatives, eg, Ubuntu) the Apache web server process typically runs as user `www-data`. On Rocky Linux and RHEL the package is still `httpd`, and the process runs as user `apache`.
 
 You can check for yourself (this is a Debian system):
 ```
@@ -83,7 +83,7 @@ The above `chown` uses a shorthand to set the file/directory owner **and** group
 
 If the `find` command throws an error like `chown: changing ownership of '<FILE>': Operation not permitted` re-run the command with `sudo` (ie, `sudo find . -exec ..etc..`). I'll leave it up to the reader to get a grip on `sudo` as there are many online resources available explaining it's use specific to YOUR operating system, or Linux distribution.
 
-# 3. Setting Correct Permissions
+## 3. Setting Correct Permissions {#3-setting-correct-permissions}
 Now that we have the user and group assignments we need to set the permissions. Files and directories need to be handled separately because the execute bit has different meanings on each. Assigning the execute bit on PHP files can cause application errors on systems using Apaches security system called `mod_security`. However, leaving the execution bit *unset on directories* makes it impossible to open the directory; you would have to explicitly know what was inside the directory to access anything!
 
 Our target file permissions are:
@@ -109,7 +109,7 @@ find . -type d -exec chmod 755 "{}" \;
 
 Again, we've wrapped the commands in `find` to pick up the any hidden files or folders. Also, if you see an error like `chmod: changing permissions of '<FILE|DIR>': Operation not permitted`, prefix the `find` commands with `sudo`.
 
-# The TL;DR Version
+## The TL;DR Version {#the-tldr-version}
 Only do this if you know what you're doing:
 ```
 cd <directory where you unzipped ChurchCRM>

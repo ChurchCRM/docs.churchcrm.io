@@ -16,22 +16,24 @@ ChurchCRM uses email for:
 - **Cart email** — opens your email client with recipients (no server config needed)
 - **Mailchimp** — bulk newsletters (configured separately in Integration settings)
 
-For outbound email (notifications, alerts), configure **Admin** → **Edit General Settings** → **Email Settings**.
+For outbound email (notifications, alerts), open **Communication → Email** and click **Email Settings**.
 
 ---
 
 ## Step-by-step: Configuring SMTP
 
 1. Log in to ChurchCRM as an administrator.
-2. Go to **Admin** → **Edit General Settings**.
-3. Select the **Email Settings** tab.
+2. Go to **Communication → Email**.
+3. Click **Email Settings**.
 4. Enter the following:
-   - **SMTP Host** — Your mail server (e.g., `smtp.gmail.com`, `mail.yourchurch.org`)
-   - **SMTP Port** — Usually 465 (SSL) or 587 (TLS)
-   - **SMTP Username** — Your email account username
-   - **SMTP Password** — Your email account password
-   - **Default "To" Email** — Address for system requests (e.g., `webmaster@yourchurch.org`)
-5. Click **Save**.
+   - **Enable Email**
+   - **SMTP Host** — one field for the server, with the port in the same value when your provider needs it (for example `smtp.gmail.com:587` or `mail.yourchurch.org:465`)
+   - **Encryption** — **None**, **TLS**, or **SSL**
+   - **SMTP Username** and **SMTP Password** when **SMTP Authentication** is on
+   - **Copy Church Email** — address that receives a copy of mail ChurchCRM sends
+5. Save the settings panel.
+
+There is no separate SMTP port, sender name, or reply-to field.
 
 ---
 
@@ -42,15 +44,15 @@ For outbound email (notifications, alerts), configure **Admin** → **Edit Gener
 1. Enable [2-Step Verification](https://myaccount.google.com/security) on your Google account.
 2. Create an [App Password](https://myaccount.google.com/apppasswords).
 3. In ChurchCRM:
-   - **SMTP Host**: `smtp.gmail.com`
-   - **SMTP Port**: 587 (TLS) or 465 (SSL)
+   - **SMTP Host**: `smtp.gmail.com:587`
+   - **Encryption**: **TLS** (use `smtp.gmail.com:465` with **SSL** if your host requires it)
    - **SMTP Username**: Your Gmail address
    - **SMTP Password**: The App Password (not your regular password)
 
 ### Microsoft 365 / Outlook
 
-- **SMTP Host**: `smtp.office365.com`
-- **SMTP Port**: 587
+- **SMTP Host**: `smtp.office365.com:587`
+- **Encryption**: **TLS**
 - **SMTP Username**: Your full email address
 - **SMTP Password**: Your account password
 
@@ -58,8 +60,8 @@ For outbound email (notifications, alerts), configure **Admin** → **Edit Gener
 
 Use your hosting provider's SMTP server — often the same as your incoming mail server:
 
-- **SMTP Host**: `mail.yourchurch.org` or the hostname provided by your host
-- **SMTP Port**: 465 (SSL) or 587 (TLS)
+- **SMTP Host**: `mail.yourchurch.org:587` or the hostname and port your host gives you
+- **Encryption**: **TLS** or **SSL**, matching that port
 - **SMTP Username**: Your email address
 - **SMTP Password**: Your email password
 
@@ -67,8 +69,8 @@ Use your hosting provider's SMTP server — often the same as your incoming mail
 
 ## Testing Email
 
-1. After saving settings, use **Admin** → **Edit General Settings** → **Email Settings**.
-2. Look for a **Send Test Email** or **Test** button if available.
+1. After saving settings, stay on **Communication → Email**.
+2. Click **Debug**. ChurchCRM tries to send a message with the subject **ChurchCRM Test Email**.
 3. Or trigger a password reset for a test user to verify delivery.
 
 ---
@@ -78,7 +80,7 @@ Use your hosting provider's SMTP server — often the same as your incoming mail
 ### "Could not send email"
 
 - **Check SMTP credentials** — Username and password must be correct.
-- **Check SMTP port** — 587 (TLS) or 465 (SSL) are typical; some hosts block 25.
+- **Check the port on SMTP Host** — `:587` with **TLS** or `:465` with **SSL** is typical; some hosts block port 25.
 - **Check firewall** — Ensure outbound connections to your SMTP port are allowed.
 
 ### Gmail "Less secure app" or "App password required"

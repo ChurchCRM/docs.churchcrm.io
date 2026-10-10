@@ -5,17 +5,13 @@ sidebar_position: 5
 
 # Localization & Formats
 
-:::info Available since 7.4.1
-The dedicated **Localization & Formats** page was introduced in ChurchCRM 7.4.1. In earlier versions, these settings were split between Church Info and System Settings.
-:::
-
-All locale and format settings live in one place: **Admin → Localization & Formats** (path: `admin/system/localization`).
+Language, time zone, and date, number, and phone formats are on **Admin → Localization & Formats**.
 
 ---
 
 ## Language & Region
 
-ChurchCRM supports **42 languages**.
+ChurchCRM supports **49 languages**.
 
 ## Features
 
@@ -25,7 +21,7 @@ When an unauthenticated user visits ChurchCRM (e.g., the login page), the applic
 
 ### Per-user locale override
 
-Each user can set their own preferred language in **My Settings → Localization**, overriding the system-wide default. This allows multilingual teams to work in their own language on the same installation.
+Each person can set their own language under the user menu, **Change Settings → Localization**. That choice overrides the church-wide language.
 
 ---
 
@@ -86,5 +82,3 @@ npm run deploy   # or npm run build
 
 6. Commit & publish:
    - Commit `locale/terms/messages.po` (and generated frontend JSON if your workflow requires it) and open a PR, or sync via POEditor integration.
-
-For a complete developer-oriented guide (commands, POEditor API examples, and troubleshooting), see the [Localization management guide](https://github.com/ChurchCRM/CRM/wiki/Localization).

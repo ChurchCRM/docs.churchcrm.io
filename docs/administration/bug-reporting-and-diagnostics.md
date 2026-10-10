@@ -59,7 +59,7 @@ If you need to report via GitHub or can't access the in-app tool, gather this in
 ### Your Setup
 
 ```
-- ChurchCRM Version: [e.g., 6.0.0]
+- ChurchCRM Version: [e.g., 7.7.1]
 - Installation Type: [Shared Hosting / Self-Hosted Linux / Docker / Other]
 - Hosting Provider: [e.g., Bluehost, AWS, etc. - if applicable]
 
@@ -79,7 +79,7 @@ If you need to report via GitHub or can't access the in-app tool, gather this in
 #### Option 1: Admin UI (Easiest - No file access needed)
 1. Log in to ChurchCRM as **admin**
 2. Go to **Admin** → **System Logs**
-3. Filter by **ERROR** or **CRITICAL** level
+3. Open a log and filter by **ERROR** or **WARNING**
 4. Click **View** (eye icon) on relevant log file
 5. Copy the error messages
 
@@ -118,13 +118,13 @@ When reviewing logs, focus on:
 
 ```
 [ERROR] - Error messages (usually important)
-[CRITICAL] - Critical errors (almost always relevant)
 [WARNING] - Warnings (sometimes helpful)
 
-Ignore:
-[DEBUG] - Debug info (unless specifically asked)
-[INFO] - Info messages (usually not relevant)
-[NOTICE] - Notices (usually not relevant)
+Ignore, unless someone asks for them:
+[DEBUG] - Debug info
+[INFO] - Info messages
+
+The log level choices are only **DEBUG**, **INFO**, **WARNING**, and **ERROR**. Change that under **Admin → System Logs → Settings**.
 ```
 
 **Example error to copy:**
@@ -164,7 +164,7 @@ Copy and fill in:
 [What should have happened instead]
 
 ## Environment
-- ChurchCRM Version: [e.g., 6.0.0]
+- ChurchCRM Version: [e.g., 7.7.1]
 - Installation: [Shared Hosting / Self-Hosted / Docker]
 - Hosting Provider: [if applicable]
 - PHP Version: [e.g., 8.2]
@@ -174,7 +174,7 @@ Copy and fill in:
 ## Error Messages or Logs
 
 ### ChurchCRM Log (from Admin → System Logs)
-[Paste ERROR/CRITICAL entries here, wrapped in ```code``` blocks]
+[Paste ERROR or WARNING entries here, wrapped in ```code``` blocks]
 
 ### Apache/Server Error Log
 [If available, paste relevant Apache error log entries]
@@ -245,9 +245,9 @@ This makes them:
 
 ## Still Need Help?
 
-- **Wiki Troubleshooting**: [Troubleshooting Guide](Troubleshooting)
-- **Logging Details**: [Logging & Diagnostics](Logging-and-Diagnostics)
-- **System Requirements**: [System Requirements](ChurchCRM-Application-Platform-Prerequisites)
+- **Troubleshooting**: [Troubleshooting Guide](/administration/troubleshooting)
+- **Logging Details**: [Logging & Diagnostics](/administration/logging-and-diagnostics)
+- **System Requirements**: [System Requirements](/installation/system-requirements)
 - **Discord Chat**: [ChurchCRM Community Chat](https://discord.gg/tuWyFzj3Nj)
 - **GitHub Issues**: [Browse existing issues](https://github.com/ChurchCRM/CRM/issues)
 

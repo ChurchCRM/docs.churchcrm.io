@@ -116,9 +116,11 @@ CSV columns (one row per payment, not per deposit):
 | Comment | Payment-level comment |
 | Fiscal Year | Fiscal year label the payment is assigned to |
 
-### Single-deposit OFX / PDF / CSV
+### PDF, OFX, and CSV
 
-To export a single deposit, open it from the **Actions** → **View** dropdown. From the deposit editor page you can download OFX, PDF, or CSV for that deposit individually.
+**CSV**, **OFX**, and **PDF** are bulk buttons on this search page. Select one or more deposits, then click the button. They are not on the deposit editor.
+
+On the editor, **Generate Report** downloads the PDF deposit form for the deposit you have open.
 
 ---
 

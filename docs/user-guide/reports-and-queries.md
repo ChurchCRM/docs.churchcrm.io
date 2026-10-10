@@ -14,41 +14,19 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 | Type | Purpose |
 |------|--------|
 | **Reports** | Pre-formatted documents ready for printing (directories, labels, letters) |
-| **Queries** | Database searches that return lists of [people](./persons.md) or [families](./families.md) |
+| **Queries** | Database searches that return lists of [people](/user-guide/persons) or [families](/user-guide/families) |
 
-> **Tip:** Many query results can be added to the [Cart](./cart.md) for further processing.
+> **Tip:** Many query results can be added to the [Cart](/user-guide/cart) for further processing.
 
 ---
 
-## Built-in Reports
+## Query Listing
 
-### Contact & Directory Reports
-- **Contact Lists** - Phone and email lists
-- **People Directory** - Printable directory grouped by family
-- **Letters and Mailing Labels** - For postal mailings (see [Mailing labels](#mailing-labels) below)
+**Data/Reports** opens **Query Listing**. Only administrators see that menu item.
 
-### Membership Reports
-- **Birthdays** - Members with birthdays in a specific month
-- **Membership Anniversaries** - People who joined in a specific month
-- **Wedding Anniversaries** - People with wedding anniversaries in a specific month (both spouses listed individually)
-- **Birthdays & Anniversaries** - Combined view of birthdays and wedding anniversaries for a specific month
-- **Family Member Count** - Families with their member totals
-- **Person by Age** - People within a specified age range
-- **Person by Properties** - People with specific [properties](./properties.md) assigned
-- **Person by Role and Gender** - Filter by family role and gender
-- **Person Count** - Total counts by various criteria
-- **Total By Gender** - Gender statistics
+Seeded queries include **Birthdays**, **Membership anniversaries**, **Wedding Anniversaries**, **Birthdays & Anniversaries**, and **Pledge comparison**. Other seeded queries on a new database are **Person by Property**, **Volunteers**, **Recent friends**, **Missing pledges**, and **Missing people**.
 
-### Group Reports
-- **Reports on Groups and Roles** - Group membership details
-- **Class Students** - Students in a specific [Sunday School](./sunday-school.md) class
-- **Class Teachers** - Teachers for a specific class
-- **Registered Students** - All enrolled students
-
-### Other Reports
-
-- [Financial Reports](./finances.md): Pledges and Payments
-- Pledge comparison: Compare pledges between two fiscal years
+Finance letters and giving reports are under [Deposit Reports](/user-guide/finances#deposit-reports), not on Query Listing.
 
 ---
 
@@ -60,7 +38,7 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 
 - Select at least one classification under **Select classifications to include**. The form will not run with none selected. The classifications ticked **In Directory** under **People → Admin → Person Classifications** are selected when the form opens.
 - People who signed up through the public registration form are left out until they are approved under **People → Self Registrations**.
-- For a directory of only the people in the [Cart](./cart.md), click **Directory** in the Cart Functions bar. That form has no classification or group filters: the Cart decides who is printed.
+- For a directory of only the people in the [Cart](/user-guide/cart), click **Directory** in the Cart Functions bar. That form has no classification or group filters: the Cart decides who is printed.
 
 ### Page Layout
 
@@ -93,7 +71,7 @@ Mailing labels for any set of people are produced from the [Cart](./cart.md#gene
 
 **Which address is printed:** the person's own address when one has been entered, otherwise the family address. Households that keep their address on the family record only — the normal case — get correct labels; a label never mixes a person's street with the family's city.
 
-**Labels for a filtered mailing** (for example birthdays or wedding anniversaries in a date range): go to **Data/Reports → CSV Export**, set the filters, choose **Add Individuals to Cart**, then open **People → Cart** and click **Labels**. Query results with an **Add Results to Cart** button feed the same workflow.
+**Labels for a filtered mailing** (for example birthdays or wedding anniversaries in a date range): go to **Admin → Export → Open CSV Export**, set the filters, choose **Add Individuals to Cart**, then open the cart and click **Labels**. Query results with an **Add Results to Cart** button feed the same workflow.
 
 ---
 
@@ -155,7 +133,7 @@ A Free-Text Query allows you to run any query on the database. Since ChurchCRM i
 
 ## What is a Cart-Enabled Query?
 
-A [Cart](./cart.md)-Enabled Query is one in which the results of the query can be entered into the cart.
+A [Cart](/user-guide/cart)-Enabled Query is one in which the results of the query can be entered into the cart.
 
 ## How do I use Cart-Enabled Queries?
 

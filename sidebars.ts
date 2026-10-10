@@ -85,6 +85,7 @@ const sidebars: SidebarsConfig = {
         'user-guide/fund-contributors',
         'user-guide/cart',
         'user-guide/fundraiser',
+        'user-guide/envelope-manager',
       ],
     },
     {
@@ -92,6 +93,7 @@ const sidebars: SidebarsConfig = {
       label: '📧 Communications',
       items: [
         'user-guide/email',
+        'user-guide/text-messages',
         'user-guide/reports-and-queries',
         'user-guide/geographic',
         'user-guide/data-import',
@@ -164,6 +166,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'administration/upgrade',
         'administration/backup-restore',
+        'administration/demo-data',
         'administration/rollback',
         'administration/file-system-permissions',
       ],
@@ -177,6 +180,7 @@ const sidebars: SidebarsConfig = {
         'administration/logging-and-diagnostics',
         'administration/bug-reporting-and-diagnostics',
         'administration/reporting-issues',
+        'workflow',
       ],
     },
     {

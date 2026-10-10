@@ -1,9 +1,9 @@
 ---
-title: Security
+title: Account security
 sidebar_position: 3
 ---
 
-# Security
+# Account security
 
 > ChurchCRM should only run over HTTPS connections.
 >
@@ -44,16 +44,12 @@ ChurchCRM uses roles to control access to sensitive data. The available roles ar
 
 *Edit Self allows a user to update their own person record only.
 
-## Granular Permissions (Permission Group Level)
+## Other access switches
 
-The following permissions are controlled at the **permission group level** (Admin → Permission Groups), not on a per-user basis:
+There is no Permission Groups screen and no Security & Permissions menu.
 
-- Email via mailto links
-- Mailto delimiter
-- US address verification
-- Add event
-
-> **Note:** Directory listing and CSV export are available to all authenticated users and do not require a per-user or per-group permission flag.
+- **Mailto links** are the per-user **User Config** value **bEmailMailto** on **Edit User**. There is no `sMailtoDelimiter`.
+- **Manage Events** is a permission on **Edit User** when events are enabled. It is not a separate menu.
 
 ## Media Privacy
 
@@ -72,13 +68,13 @@ This applies to:
 
 ## Two-Factor Authentication (2FA)
 
-Users can self-enroll 2FA from **My Settings → Security**. Admins can reset 2FA for any user from the Users panel.
+Users enroll from the user menu item **Manage Two-Factor Authentication**. An administrator clears 2FA with **Disable 2FA** on **Admin → System Users**.
 
 Supported method: **TOTP** (compatible with Google Authenticator, Authy, 1Password, and any RFC 6238 app). Recovery codes are generated at enrollment — advise users to store them safely.
 
 ### Requiring 2FA
 
-Administrators can require users to enroll in 2FA. The **2FA Grace Period Days** setting controls how long a user has to complete enrollment after mandatory 2FA takes effect. The default is **7 days**; set the grace period to **0** for immediate enforcement.
+Administrators require 2FA from **Admin → System Users → Settings → Quick Settings** (**Require all users to enroll in two-factor authentication**). The same panel has minimum password length and the failed-login lockout. **2FA Grace Period Days** on that panel controls how long a user has to finish enrollment. The default is **7 days**; set the grace period to **0** for immediate enforcement.
 
 During the grace period, users can continue signing in and see a warning reminding them to enroll. The warning becomes more urgent when one day or less remains. Once the grace period expires, the user must complete 2FA enrollment before continuing to use ChurchCRM.
 
