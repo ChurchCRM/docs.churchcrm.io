@@ -34,7 +34,7 @@ Nothing reaches the public site from `release-docs/<version>`. Leave the milesto
 
 1. `release-docs/<version>` is merged into `main` as one pull request, after the site build and the release gate are green. The gate is re-run once the version is published.
 2. A pull request then points the API reference at the new release tag. It is merged second, so it starts from the `main` that holds the release docs. The site then documents that version's API, and the docs repo is tagged `v<version>`.
-3. Open `release-docs/<next version>` so the next docs pull requests have a place to land.
+3. A maintainer creates `release-docs/<next version>` from `main`, so the next docs pull requests have a place to land. For now this, and setting `crm-release.json` to the new version before step 1, are done by hand. They are listed in `DOCS_GUIDE.md`.
 
 A pull request opened against `main` for an unpublished version still works the old way. The release gate stays red until the version is published, and it merges after that. Prefer the release branch.
 

@@ -28,6 +28,17 @@ Do not put infrastructure on the latest product milestone. A version milestone m
 4. When ChurchCRM publishes that version, `release-publish.yml` or `release-bookkeeping.yml` dispatches `crm-released`. The docs workflow creates the milestone, opens `release-docs/<version>` as one pull request into `main`, and merges it when the site build and the released-software gate are successful. It then opens and merges the API pin pull request. A daily run does the same if the dispatch did not arrive.
 5. Do not merge the release pull request by hand unless the automation reports that it could not.
 
+Two steps are manual for now. A maintainer does them when the CRM release is published:
+
+1. **Pin the version on the release branch.** Before the release pull request merges, set `crm-release.json` on `release-docs/<version>` to `<version>` and push. The navbar, footer and API reference then match the pages in the same merge. The release tag must exist, because CI downloads the API specs from it. The API pin pull request that follows is then empty and can be closed.
+2. **Start the next release branch.** After the release pull request merges, create `release-docs/<next version>` from `main`:
+   ```bash
+   gh api repos/ChurchCRM/docs.churchcrm.io/git/refs \
+     -f ref=refs/heads/release-docs/<next version> \
+     -f sha=$(gh api repos/ChurchCRM/docs.churchcrm.io/git/ref/heads/main --jq .object.sha)
+   ```
+   Until it exists, docs for the next version have nowhere to go.
+
 The site shows the release it describes in the navbar and the footer. It comes from `crm-release.json`, which the API pin pull request moves. Pages therefore do not say "since" or "new in" a version.
 
 `Sync docs release milestones` creates the docs milestone for the version in CRM `package.json` and for the latest stable release when either is missing. If the milestone you need does not exist yet, run that workflow with the version, or create the `x.y.z` milestone by hand. Do not invent a non-version milestone.
