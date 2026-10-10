@@ -73,7 +73,7 @@ One way to print mailing labels is the [Cart](./cart.md#generate-mailing-labels)
 
 ### Which address is printed
 
-Labels and mailed letters go to the family's **mailing address**: the family's second address when it is ticked as **This is the mailing address**, and the primary address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). Families with no second address, or whose second address is not ticked, get their primary address.
+Mailed letters and the labels listed below go to the family's **mailing address**: the family's second address when it is ticked as **This is the mailing address**, and the primary address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). Families with no second address, or whose second address is not ticked, get their primary address.
 
 - **Cart labels**, and **Print Labels** on a People Report: each label uses the person's own address when one has been entered on their record, otherwise the family's mailing address. A label never mixes a person's street with the family's city.
 - **Newsletter labels** and **Confirm data labels** on the **Letters and Mailing Labels** page print the mailing address. Labels are ordered by the ZIP code that is actually printed, for presorting.

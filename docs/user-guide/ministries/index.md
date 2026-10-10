@@ -16,7 +16,7 @@ Volunteer Management v2 ships in ChurchCRM 7.8.0. It is **off by default**: an u
 
 ## Read this first: turning it on
 
-Nothing described in this section exists until an administrator chooses it. Go to **Admin → Ministry Settings** and set **Volunteer experience** to one of:
+The Volunteer Management v2 pages and workflows described in this section are not available until an administrator turns them on. Go to **Admin → Ministry Settings** and set **Volunteer experience** to one of:
 
 | Choice | What it means |
 |---|---|

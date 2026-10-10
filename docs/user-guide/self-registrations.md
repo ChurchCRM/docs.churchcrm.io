@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # Self Registrations
 
-ChurchCRM 7.8 adds a **Self Registrations** review page so staff can see who signed up on the public form and approve them before they are treated as reviewed members.
+ChurchCRM 7.8 adds a **Self Registrations** review page so staff can see who signed up on the public form, and who members proposed through the member portal, and approve them before they are treated as reviewed members.
 
 Open it from **People → Self Registrations**. The menu item is always listed. A count badge appears when registrations are waiting. The page subtitle is **Review new families and individuals who signed up on your public registration form**.
 

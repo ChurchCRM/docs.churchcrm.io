@@ -63,7 +63,7 @@ Saving does not look up the address again while coordinates are filled in. If yo
 
 ## Geocoding family addresses
 
-Geocoding a family record happens automatically when you save an address in the Family Editor — coordinates are filled in as soon as the save succeeds, so ongoing maintenance is hands-off.
+Geocoding a family record happens automatically when you save a family whose address changed and who has no coordinates yet. The coordinates are filled in as soon as the save succeeds. Saving an address change does not refresh coordinates a family already has.
 
 To backfill coordinates for existing records, open **People → Family Map** as an administrator and click **Update All Coordinates**. The button shows how many families are still missing coordinates. It works through them in batches of 50 (about a minute per batch) using the geocoding services chosen in Map Settings, runs to completion from one click, and lists the families it could not resolve when it finishes. Each batch reports at most 20 failed families; if a batch has more, the page shows how many are not listed. You can keep the page open while it runs.
 

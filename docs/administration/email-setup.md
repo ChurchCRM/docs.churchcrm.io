@@ -66,7 +66,7 @@ Composer messages and ChurchCRM's notification and account emails are sent from 
 - **SMTP Username**: Your full email address
 - **SMTP Password**: Your account password
 
-ChurchCRM signs in with the username and password (SMTP AUTH basic authentication); it does not support OAuth. SMTP AUTH must be enabled for the Microsoft 365 tenant and for the mailbox. Microsoft turns basic SMTP authentication off by default at the end of December 2026 (an administrator can still re-enable it for existing tenants), so if your tenant blocks it, send through another SMTP provider or relay instead.
+ChurchCRM signs in with the username and password (SMTP AUTH basic authentication); it does not support OAuth. SMTP AUTH has an organization-wide setting and a per-mailbox setting, and the mailbox setting overrides the organization one, so it has to be allowed for the mailbox you send from. Security defaults or an authentication policy in your tenant can also block it. Microsoft turns basic SMTP authentication off by default at the end of December 2026 (an administrator can still re-enable it for existing tenants), so if your tenant blocks it, send through another SMTP provider or relay instead.
 
 ### Church Hosting (cPanel, Plesk, etc.)
 

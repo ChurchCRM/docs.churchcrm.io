@@ -59,7 +59,7 @@ Enable the logs in the System Settings, the default value is INFO but you may wa
 
 Go to **Admin** → **Church Information** and use the logo upload dialog.
 
-- Pick any JPEG or PNG up to 50 MB. Your browser shrinks it to the stored size (1200x400) and never enlarges it.
+- Pick a PNG, JPG, GIF or WebP (not SVG) up to 50 MB. Your browser shrinks it to the stored size (1200x400) and never enlarges it.
 - The logo dialog has no webcam option.
 - HEIC/HEIF images are converted to JPEG in your browser when you pick them. If the conversion fails, export the image as JPEG or PNG and try again.
 - API callers that skip the browser are limited to 16 megapixels of source image.
