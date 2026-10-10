@@ -141,6 +141,8 @@ The contributor listing shows one row per family.
 | **% Paid** | Percentage of the pledge that has been collected |
 | **Actions** | Per-row action menu (see [Pledge / Payment Detail](#pledge--payment-detail)) |
 
+See [Donation Envelopes](/user-guide/donation-envelopes) for configuration, assignment, and matching rules.
+
 **Remaining / % Paid colour coding:**
 
 | Colour | Status | Meaning |

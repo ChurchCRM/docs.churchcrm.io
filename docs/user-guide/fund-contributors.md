@@ -63,6 +63,8 @@ The **Contributors** table lists one row per family. It supports sorting, search
 | **% Paid** | Payments as a percentage of the pledged amount; colour-coded by payment status |
 | **Actions** | Opens the pledge or payment detail record (see [Viewing pledge details](#viewing-pledge-or-payment-details) below) |
 
+See [Donation Envelopes](/user-guide/donation-envelopes) for configuration, assignment, and matching rules.
+
 ### Payment status colours
 
 The **Remaining** and **% Paid** columns are colour-coded to highlight each family's payment progress:
