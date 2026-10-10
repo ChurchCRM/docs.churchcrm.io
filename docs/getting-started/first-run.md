@@ -27,10 +27,20 @@ After your password is set, you are automatically redirected to **Admin → Chur
 | **Contact Information** | Phone number and email address |
 | **Location** | Street, city, state, zip, and country. **Map Coordinates** has latitude and longitude. Click **Generate Coordinates** to look up the address, or leave the coordinates blank and ChurchCRM fills them in when you save. |
 | **Address Defaults** | Default city, state, zip, and country for new families. **Copy from church address** fills these from the location above. |
-| **Social Media** | Optional https:// links. Leave a field blank to hide that network. |
-| **Display Preview** | How the church block will look on reports and directories |
+| **Social Media** | Optional https:// links to the church's X, YouTube, Facebook, and Instagram accounts. Leave a field blank to hide that network. See [Social Media](#social-media). |
+| **Display Preview** | How the church block will look on reports and directories, with an icon for each saved social media link |
 
 Language and time zone are not on this page. Set them under **Admin → Localization & Formats**.
+
+### Social Media
+
+The **Social Media** card has one field each for **X**, **YouTube**, **Facebook**, and **Instagram**. Members see each saved link as an icon in the footer of the Member Portal. Leave a field blank to hide that network.
+
+![Social Media card on the Church Information page, with the four links filled in](/img/getting-started/church-info-social-media.png)
+
+Each address must start with `https://`, for example `https://facebook.com/yourchurch`. A plain `http://` link or a handle such as `@yourchurch` is not saved. ChurchCRM names the network in the message, for example "X must be a full https:// web address", and nothing on the page is saved until you fix it. What you typed stays on the form.
+
+These links are only on this page, not on **Admin → System Settings**. In **Display Preview**, the icons change when you click **Save Church Information**, not as you type.
 
 ---
 

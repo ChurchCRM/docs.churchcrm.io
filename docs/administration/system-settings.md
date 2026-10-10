@@ -35,6 +35,7 @@ There is no **Edit General Settings** page, and System Settings has no Advanced,
 | **Email** | Church contact email. Outbound mail uses this address as the From address, with the church name |  |
 | **Website** | Church website |  |
 | **Logo URL** | HTTPS address of the logo used in emails |  |
+| **Social media links** | Optional https:// links to the church's X, YouTube, Facebook, and Instagram accounts, shown in the Member Portal footer. See [Social Media](../getting-started/first-run.md#social-media) |  |
 
 **Address Defaults** on the same page sets the city, state, ZIP, and country filled in for a new family. The same four defaults are also on **Admin → System Settings → Families**.
 

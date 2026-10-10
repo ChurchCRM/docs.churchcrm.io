@@ -34,10 +34,11 @@ The church location centers the main map view and the Church Information preview
 
 1. Log in as an administrator
 2. Go to **Admin → Church Information** (or complete the first-run wizard)
-3. Enter your church address on the **Location & Map** tab
-4. Click **Save** — the system automatically geocodes the address and displays a Leaflet map showing the detected location
+3. Enter your church address in the **Location** card
+4. Under **Map Coordinates**, click **Generate Coordinates** to look up the latitude and longitude from the address, or type them in yourself
+5. Click **Save Church Information**. If both coordinates are blank, ChurchCRM looks them up from the address when you save. Once coordinates are saved, a Leaflet map shows the church's location.
 
-Coordinates are detected automatically — no manual entry is required. Re-saving the address will refresh coordinates if you move or correct the address.
+Saving does not look up the address again while coordinates are filled in. If you move or correct the address, the card warns that the address has changed since the coordinates were set: click **Generate Coordinates** before you save to refresh them.
 
 ---
 
