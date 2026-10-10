@@ -156,7 +156,7 @@ Filter the grid with **All Classifications**, a single classification, or **Unas
 
 - Pick any JPEG or PNG up to 50 MB, including a full-size phone photo. Your browser shrinks it to the stored size (600x600) and never enlarges it.
 - The webcam option is available for person and family photos.
-- HEIC/HEIF images are not supported. Export the photo as JPEG or PNG first.
+- HEIC/HEIF photos from an iPhone are converted to JPEG in your browser when you pick them. If the conversion fails, export the photo as JPEG and try again.
 - API callers that skip the browser are limited to 16 megapixels of source image.
 
 ---

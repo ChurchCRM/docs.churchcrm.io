@@ -129,7 +129,7 @@ Profile images are automatically deleted from the server when a family or person
 
 ## Photo Upload
 
-Family photos are uploaded the same way as person photos: JPEG or PNG up to 50 MB, resized in your browser to 600x600 and never enlarged. HEIC/HEIF is not supported. See [Photo Management](persons.md#photo-management).
+Family photos are uploaded the same way as person photos: JPEG, PNG, or HEIC/HEIF up to 50 MB, resized in your browser to 600x600 and never enlarged. HEIC/HEIF photos are converted to JPEG in your browser. See [Photo Management](persons.md#photo-management).
 
 ---
 
