@@ -56,6 +56,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'user-guide/persons',
         'user-guide/families',
+        'user-guide/self-registrations',
         'user-guide/classifications',
         'user-guide/custom-fields',
         'user-guide/custom-fields-types',
@@ -72,7 +73,30 @@ const sidebars: SidebarsConfig = {
         'user-guide/events',
         'user-guide/sunday-school',
         'user-guide/volunteers',
+        {
+          type: 'category',
+          label: 'Volunteer Management (v2)',
+          link: { type: 'doc', id: 'user-guide/ministries/index' },
+          items: [
+            'user-guide/ministries/ministries-teams-positions',
+            'user-guide/ministries/volunteers-and-qualifications',
+            'user-guide/ministries/events-and-calendar',
+            'user-guide/ministries/schedules-and-occurrences',
+            'user-guide/ministries/staffing-an-occurrence',
+            'user-guide/ministries/substitutions',
+            'user-guide/ministries/ministry-dashboard',
+            'user-guide/ministries/email-and-reminders',
+            'user-guide/ministries/permissions',
+          ],
+        },
         'user-guide/kiosk-devices',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🏠 Member Portal',
+      items: [
+        'user-guide/member-portal',
       ],
     },
     {
@@ -159,6 +183,14 @@ const sidebars: SidebarsConfig = {
         'administration/system-settings',
         'administration/maps-and-geocoding',
         'administration/server-locale',
+      ],
+    },
+    {
+      type: 'category',
+      label: '🏠 Member Portal',
+      items: [
+        'administration/member-portal',
+        'administration/member-portal-themes',
       ],
     },
     {

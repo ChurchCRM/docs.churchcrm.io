@@ -181,6 +181,17 @@ Those links do nothing for outside apps until an administrator turns on **Enable
 
 **Calendar Embed Origins** (also under **Calendar Settings**) lists which websites may place the public calendar in a frame. The default `*` allows any site.
 
+## Volunteer Ministry and the Volunteers card
+
+When [Volunteer Management (v2)](./ministries/index.md) is on, volunteers are scheduled for calendar events: every volunteer occurrence follows an event, and the event stays in charge of the date and time. A ministry creates its own one-time and recurring events on its **Calendar** tab; a schedule can also follow church services (events of a type with one title) or a Sunday School class's meetings (events whose Linked Group is the class).
+
+- The event editor gains a **Volunteer Ministry** dropdown under **Linked Group** (open **Show more options**) that says which ministry owns the event. A ministry coordinator without the Add Events permission may create and edit events of their own ministry, and no other.
+- An event that has volunteer occurrences shows a **Volunteers** card on its detail page to those who may manage them — the ministry, the schedule, how it stands (for example *"Needs 2 more"* or *"Covered · 1 more welcome"*) with the numbers, and a **Manage staffing** link.
+- A church calendar's settings gain **Ministries that may add events**, so that a ministry's coordinators may put its events on that calendar.
+- ChurchCRM 7.8.0 adds an event type named **Other** when there is none; a ministry's new events start with it unless **Admin → Ministry Settings** names another default type.
+
+Details are on [Events and the calendar](./ministries/events-and-calendar.md).
+
 ## Unified Event Editor
 
 The **event editor is consistent across all entry points** — Calendar offcanvas, Events Dashboard, and full event detail page all show the same form. All times are saved in the local wall-clock time of the church, eliminating daylight-saving edge cases.

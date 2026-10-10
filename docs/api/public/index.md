@@ -37,4 +37,4 @@ Registration endpoints are only active when **Self-registration is enabled** in 
 3. Toggle **"Self Registration"** on
 4. Click **"Save Settings"**
 
-When enabled, a registration link appears on the login page and the registration API endpoints become available.
+When enabled, a registration link appears on the login page and the registration API endpoints become available. New sign-ups wait on **People → Self Registrations** until a user with **Edit Records** approves them. See [Self Registrations](/user-guide/self-registrations).

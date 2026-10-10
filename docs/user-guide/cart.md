@@ -74,7 +74,7 @@ The **Cart Functions** bar at the top of the Cart page has a **Labels** button, 
 
 ### Which address is used
 
-Each label uses the person's **own address** when one has been entered on their record, and otherwise the **family address**. A household whose address is recorded only on the family record — the normal case — is addressed correctly; the whole address block (both street lines, city, state and ZIP) always comes from one record, never a mix of the two.
+Each label uses the person's **own address** when one has been entered on their record, and otherwise the family's **mailing address**: the family's second address when it is ticked as **This is the mailing address**, and the primary family address otherwise (see [Second Address and Mailing Address](./families.md#second-address-and-mailing-address)). A household whose address is recorded only on the family record — the normal case — is addressed correctly; the whole address block (both street lines, city, state and ZIP) always comes from one record, never a mix of the two.
 
 ### Labels for a filtered mailing
 
@@ -84,7 +84,9 @@ To send a mailing to a subset of people — for example everyone with a birthday
 2. Open **People → Cart** and check the list.
 3. Click **Labels** and generate the labels as above.
 
-Many [reports and queries](/user-guide/reports-and-queries) also offer **Add Results to Cart**, which feeds the same workflow.
+Many [reports and queries](/user-guide/reports-and-queries) also offer **Add Results to Cart** or **Add All to Cart**, which feeds the same workflow.
+
+People Reports can print the filtered list directly. On the report results, **Print Labels** sits next to **Add All to Cart** and uses this same dialog without putting anyone in the Cart. See [Print Labels on People Reports](/user-guide/reports-and-queries#print-labels-on-people-reports).
 
 ## How do I remove a person from the Cart?
 

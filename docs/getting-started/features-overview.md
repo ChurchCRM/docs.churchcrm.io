@@ -12,7 +12,7 @@ sidebar_position: 2
 * **Congregation Management**
     * [Families](/user-guide/families) — Household records with shared contact info, pledge history, and unified family/member profiles.
     * [Persons](/user-guide/persons) — Individual member profiles with contact details, roles, church history, notes, and timeline filters.
-    * Self Registration — Members can register themselves through an online form.
+    * [Self Registrations](/user-guide/self-registrations) — Visitors can register through an online form. Staff review and approve them before they appear in the printed directory.
     * Online Verification — Members can review and confirm their own contact information.
     * [Notes](/user-guide/notes) — Private or shared memos on person and family records, with timeline filtering.
     * [Properties](/user-guide/properties) — Custom labels (e.g. "Homebound", "Choir Member") for people, families, and groups.
@@ -29,6 +29,7 @@ sidebar_position: 2
 * **[Fundraiser](/user-guide/fundraiser)** — Manage auctions and fundraising events where members buy and sell items.
 * **[Reports & Queries](/user-guide/reports-and-queries)** — Directories, mailing labels, birthday lists, financial statements, and custom queries.
 * **[Volunteers](/user-guide/volunteers)** — Track member availability for specific roles and find volunteers for upcoming needs.
+* **[Volunteer Management (v2)](/user-guide/ministries)** — Ministries with teams and positions, schedules that follow the calendar, assignments, substitutions and reminder email (7.8.0, off by default).
 * **[Data Import](/user-guide/data-import)** — Import member records from CSV, including Classification and Family Role columns.
 * **[Export & Data](/user-guide/export)** — Export Hub with CSV, ChMeetings format, and database backup — all in one place.
 * **Backup / Restore** — Full database backups with one-click restore.

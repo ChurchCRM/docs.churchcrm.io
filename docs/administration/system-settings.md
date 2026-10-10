@@ -9,12 +9,12 @@ ChurchCRM's settings are spread across several pages. This page is where to look
 
 :::tip Quick Navigation
 - **Church Information** — Admin → Church Information
-- **People Settings** — People → Dashboard → People Settings
-- **Map Settings** — People → Family Map → Map Settings
+- **People Settings** — People → Admin → People Settings
+- **Map Settings** — People → Admin → People Settings → Map Settings
 - **Localization & Formats** — Admin → Localization & Formats (time zone is here)
 - **Email** — Communication → Email → Email Settings
 - **Passwords, lockout, session, and 2FA** — Admin → System Users → Settings → Quick Settings
-- **System Settings tabs** — New Members & Greeting, People, Families, Financial Settings, Quick Search, Confession, Scheduled Tasks, Report Settings
+- **System Settings tabs** — Financial Settings, Quick Search, Confession, Scheduled Tasks, Report Settings
 :::
 
 There is no **Edit General Settings** page, and System Settings has no Advanced, Finance, Search, Security, or Integration tab.
@@ -34,9 +34,10 @@ There is no **Edit General Settings** page, and System Settings has no Advanced,
 | **Phone** | Shown on contact pages |  |
 | **Email** | Church contact email. Outbound mail uses this address as the From address, with the church name |  |
 | **Website** | Church website |  |
-| **Logo URL** | HTTPS address of the logo used in emails |  |
+| **Church Logo** | Uploaded on the **Church Logo** card. Shown in the sidebar, on the login and other sign-in pages, and in emails. See [Church Logo](/getting-started/first-run#church-logo). The `sChurchLogoURL` setting is only a fallback for emails when no logo has been uploaded. The PDF report letterhead is a separate image, see [FAQs](./faqs.md#how-do-i-set-up-my-logo-or-letterhead). |  |
+| **Social media links** | Optional https:// links to the church's X, YouTube, Facebook, and Instagram accounts, shown in the Member Portal footer. See [Social Media](../getting-started/first-run.md#social-media) |  |
 
-**Address Defaults** on the same page sets the city, state, ZIP, and country filled in for a new family. The same four defaults are also on **Admin → System Settings → Families**.
+**Address Defaults** on the same page sets the city, state, ZIP, and country filled in for a new family. The same four defaults are also on **People → Admin → People Settings → New Members & Greeting**.
 
 Church name is required. First-time setup sends you here to fill it in.
 
@@ -44,62 +45,95 @@ Church name is required. First-time setup sends you here to fill it in.
 
 ## People Settings
 
-**Location:** People → Dashboard → **People Settings** (administrators only)
+**Location:** People → Admin → People Settings (admin-only). The same **People Settings** button is in the header of the People Dashboard and of every People admin page.
+
+The page opens with shortcuts to the People lists and editors (Person Classifications, Person Properties, Person Custom Fields, Family Roles, Family Properties, Family Custom Fields, Volunteer Opportunities), followed by three groups of settings.
+
+:::tip Changes save automatically
+There is no Save button. Each setting saves as soon as you change it and a "Settings saved successfully" message confirms it. Text boxes save when you click out of them.
+:::
+
+### People
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Self-registration** | Let a visitor create a family from the login page | Off |
-| **Hide deceased from directory** | Leave deceased people out of the printed directory and CSV exports | On |
+| **Person name display style** | How names are written (for example FirstName MiddleName LastName, or LastName, Title FirstName) | FirstName MiddleName LastName |
+| **Person initials style** | Avatar initials: one character from first and last name, or two from the first name | First + Last |
+| **Hide Address Without Family** | Hide the address field for people who are not in a family | On |
+| **Hide Friend Date** | Hide the Friend Date field in the Person Editor | Off |
+| **Hide Deceased from Directory** | Leave deceased members out of printed directories and CSV exports | On |
+
+### Families
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Head of House Role** | The family role that counts as head of household | Head of Household |
+| **Spouse Role** | The family role that counts as spouse | Spouse |
+| **Child Role** | The family role that counts as a child | Child |
+| **Hide Wedding Date** | Hide the Wedding Date field in the Family Editor | Off |
+| **Hide Newsletter Subscriptions** | Hide newsletter subscription management in the Family Editor | Off |
+| **Uppercase Zip/Postcodes** | Save zip and postal codes in UPPERCASE | Off |
+
+### New Members & Greeting
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Self-Registration** | Allow visitors to register their own family. When enabled, a link appears on the login page. | Off |
+| **Notification Recipients** | The people who get an email when a new person or family is added. Search and pick them by name. | None |
+| **Include Details in Notifications** | Add contact and demographic details to that email | Off |
+| **Greeter Message 1 / 2** | Up to 255 characters each, shown near the end of the notification email. Line breaks are kept. | Empty |
+
+### Settings that live on the classification list
+
+Two settings are columns on the **Person Classifications** editor (People → Admin → Person Classifications), not on this page. See [Classifications](../user-guide/classifications.md).
+
+- **Inactive**: people in this classification are treated as inactive
+- **In Directory**: this classification starts ticked on the Directory report
 
 ---
 
-## System Settings → People
+## Default Location and Map Fields
 
-**Location:** Admin → System Settings → **People**
-
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Person name format** | How names are shown |  |
-| **Person initials style** | Letters used for the avatar |  |
-| **Hide person address** | Hide the address for a person who is not in a family | On |
-| **Hide friend date** | Remove Friend Date from the Person Editor | Off |
-| **Hide wedding date** | Remove Wedding Date from the Family Editor | Off |
-| **Force UPPERCASE ZIP codes** | Save postal codes in uppercase | Off |
-| **Inactive classifications** | Comma-separated classification IDs treated as inactive |  |
-| **Directory classifications** | Classifications included in the directory |  |
-
----
-
-## System Settings → Families
-
-**Location:** Admin → System Settings → **Families**
-
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Default city** | Pre-filled on a new family. Also under Address Defaults on Church Information |  |
-| **Default state** | Two-letter state abbreviation. Also under Address Defaults |  |
-| **Default ZIP** | Pre-filled postal code. Also under Address Defaults |  |
-| **Default country** | Pre-filled country. Also under Address Defaults |  |
-| **Head of house / spouse / child roles** | Family role numbers used for those relationships |  |
-| **Hide family newsletter** | Remove newsletter subscription from the Family Editor | Off |
+| Setting | Where | Description |
+|---------|-------|-------------|
+| **Default country, state, city, ZIP code** | People → Admin → People Settings → New Members & Greeting → New Record Defaults. Also under Address Defaults on Admin → Church Information | Pre-fill the address fields on new person and family forms |
+| **Hide latitude/longitude** | People → Admin → People Settings → Map Settings | Hide the manual geocoding fields (background geocoding still runs) |
 
 ---
 
 ## Map Settings
 
-**Location:** People → Family Map → **Map Settings** (administrators only)
+**Location:** People → Admin → People Settings → **Map Settings** (administrators only)
 
-ChurchCRM uses Leaflet and OpenStreetMap. No map API key is required.
+ChurchCRM uses Leaflet and OpenStreetMap, with free geocoding services. No map API key is required.
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Default map view** | Starting zoom, from continent down to street | City |
-| **Hide latitude/longitude** | Hide the latitude and longitude fields in the Family Editor. Geocoding still runs | Off |
-| **Hide person address** | Same switch as on System Settings → People | On |
+| **Default Map View** | Starting zoom, from continent down to street | City |
+| **Hide Latitude/Longitude** | Hide the latitude and longitude fields in the Family Editor. Geocoding still runs | Off |
+| **Hide Address Without Family** | Same switch as in the People section above | On |
+| **Geocoding services** | Keyless geocoders, tried in the order picked. Nominatim works worldwide; US Census covers United States addresses only | Nominatim |
 
 The map is centered on the latitude and longitude saved with **Church Information**.
 
 For the rest of the map, see [Maps & Geocoding](./maps-and-geocoding.md).
+
+---
+
+## Ministry Settings
+
+The Volunteer Management settings live on their own page, **Admin → Ministry Settings**, not under System Settings.
+
+![Admin → Ministry Settings](/img/administration/ministry-settings.png)
+
+| Setting | Description |
+|---------|-------------|
+| Volunteer experience | **V1 — Volunteer Opportunities (legacy)** (the default, today's feature), **V2 — Ministries** (the new [Volunteer Management (v2)](/user-guide/ministries)), or **Both (transition)** for running the two side by side. System-wide. Switching shows or hides pages and menu entries and never deletes data. |
+| Reminder lead time (hours) | How many hours before an occurrence the volunteer reminder email is sent. Default 48, from 0 to 720; 0 sends no reminders. |
+| Scheduling horizon (weeks) | How far ahead schedules make occurrences for the events they follow, for every schedule in the church. Default 8, from 1 to 52. A daily background job keeps every active schedule filled up to this point. See [Schedules and occurrences](/user-guide/ministries/schedules-and-occurrences#the-scheduling-horizon-and-the-daily-top-up). |
+| Default event type for ministry events | The event type a new event on a ministry's Calendar tab starts with; it can still be changed for each event. **Not set** uses the type named "Other", which ChurchCRM 7.8.0 adds when it does not exist. If there is no active type named "Other", the empty choice reads **None** and the type is chosen for each event. |
+
+The page also explains the three choices. Its **Background jobs and delivery** card shows the failed and queued volunteer messages, when background jobs last ran, when schedules were last topped up and what that made, the cron line to install, and a **Run background jobs now** button that also tops up the schedules. See [Volunteer email and reminders](/user-guide/ministries/email-and-reminders).
 
 ---
 
@@ -203,19 +237,6 @@ This is not a Security menu.
 | **Email when a user is deleted** | Tell the person their account was removed | Off |
 
 Content Security Policy (`bEnforceCSP`) is not on a settings tab. Do not look for a switch for it in the menus.
-
----
-
-## System Settings → New Members & Greeting
-
-**Location:** Admin → System Settings → **New Members & Greeting**
-
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **New member notification recipients** | People notified when a person is added |  |
-| **Include data in notifications** | Put contact details in that email | Off |
-| **Greeter messages** | Two custom lines for greeter email |  |
-| **Birthday emails** | Send a greeting on a person's birthday | Off |
 
 ---
 

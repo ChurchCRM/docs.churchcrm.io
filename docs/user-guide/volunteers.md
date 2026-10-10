@@ -5,6 +5,10 @@ sidebar_position: 13
 
 # Volunteers
 
+:::info Legacy feature
+This page describes **Volunteer Opportunities (V1)**, the original volunteer feature. ChurchCRM 7.8.0 adds [Volunteer Management (v2)](./ministries/index.md) — ministries, teams, positions, schedules, assignments and reminder email. Which one you see is chosen on **Admin → Ministry Settings** (*Volunteer experience*: **V1**, **V2** or **Both**). The default is V1, so nothing changes on upgrade; choose **Both** to run the two side by side while you move over, with a person record showing a **Volunteer (Legacy)** tab beside the new **Volunteer** tab. Switching never deletes V1 data. Retiring V1 is tracked separately in ChurchCRM issue #9702.
+:::
+
 The Volunteers feature helps you track member talents and willingness to serve in specific roles. This makes it easy to find the right people when needs arise.
 
 ## Common Volunteer Opportunities
@@ -18,26 +22,26 @@ The Volunteers feature helps you track member talents and willingness to serve i
 
 ## Setting Up Volunteer Opportunities
 
-1. Go to **People → Admin → Volunteer Opportunities**.
+1. Go to **People → Admin → Volunteer Opportunities** (administrators; hidden when the volunteer experience is V2).
 2. The page title is **Volunteer Opportunity Editor**.
 3. Click **Add New Opportunity** and enter the name and description your church uses.
 
 ## Assigning Volunteers to Opportunities
 
 1. Open a [Person's](/user-guide/persons) record
-2. Look for the "Volunteer Opportunities" section
-3. Check the opportunities they're willing to help with
-4. Save the changes
+2. Open the **Volunteer** tab (**Volunteer (Legacy)** when the volunteer experience is Both)
+3. Under **Assign a New Volunteer Opportunity**, choose the opportunities they're willing to help with
+4. Click **Assign Opportunities**
 
 ## Finding Volunteers
 
 When you need volunteers for a specific task:
 
-1. Open **Data/Reports**. The page title is **Query Listing**. Queries are listed alphabetically, not in a block at the bottom of the page.
-2. Open the query named **Volunteers** (**Find volunteers for a particular opportunity**). A second query, also named **Volunteers**, matches two opportunity codes.
-3. Choose the volunteer opportunity.
-4. The query returns the [people](/user-guide/persons) who signed up for that opportunity.
-5. Add results to the [Cart](/user-guide/cart) for further actions:
+1. Go to **Reports → People Reports** (administrators).
+2. Click **Run** beside **Volunteers** (or **Volunteers for Two Opportunities** to find people who match two)
+3. Choose the **Volunteer Opportunity**, and classifications if you like, and click **Run Report**
+4. The report lists all [people](/user-guide/persons) who volunteered for that task
+5. Click **Add All to Cart** to put them in the [Cart](/user-guide/cart) for further actions:
    - Create a contact directory
    - Print address labels
    - Send emails

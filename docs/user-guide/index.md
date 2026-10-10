@@ -30,6 +30,7 @@ Managing your congregation's member data:
 
 * [Families](/user-guide/families) - Creating and managing family records
 * [Persons](/user-guide/persons) - Individual member profiles and information
+* [Self Registrations](/user-guide/self-registrations) - Review and approve people who signed up on the public form
 * [Classifications](/user-guide/classifications) - Categorizing members (members, visitors, etc.)
 * [Notes](/user-guide/notes) - Adding notes to people and families
 * [Custom Fields](/user-guide/custom-fields) - Extending records with custom fields
@@ -45,7 +46,16 @@ Organizing your church activities:
 * [Groups](/user-guide/groups) - Creating and managing groups
 * [Events](/user-guide/events) - Scheduling and tracking events
 * [Sunday School](/user-guide/sunday-school) - Managing Sunday School classes
-* [Volunteers](/user-guide/volunteers) - Volunteer management and scheduling
+* [Volunteers](/user-guide/volunteers) - Volunteer Opportunities (legacy)
+* [Volunteer Management (v2)](/user-guide/ministries) - Ministries, teams, positions, schedules, staffing and reminder email
+
+---
+
+## Member Portal
+
+What a church member sees when they sign in:
+
+* [Member Portal](/user-guide/member-portal) - Profile, family, calendar, volunteering and team pages for members
 
 ---
 

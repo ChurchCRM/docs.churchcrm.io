@@ -22,6 +22,7 @@ Kiosk check-in is no longer limited to Sunday School classes. Any group can be u
 - [Prerequisites](#prerequisites)
 - [Registering and assigning a kiosk](#registering-and-assigning-a-kiosk)
 - [Sunday School check-in view](#sunday-school-check-in-view)
+- [Walk-in guests](#walk-in-guests)
 - [Parent alerts (notifications)](#parent-alerts-notifications)
 - [Managing kiosks](#managing-kiosks)
 - [Device setup and best practices](#device-setup-and-best-practices)
@@ -82,6 +83,7 @@ Kiosk check-in is no longer limited to Sunday School classes. Any group can be u
 | **Parent Alert** | One-tap notification to parents (email, SMS, and/or OpenLP) for pickup/alert. |
 | **Check-in By** | Optional toggle in the kiosk header; when enabled, prompts for the authorized adult on each check-in and check-out. |
 | **Checkout all students** | Floating button (tooltip **Checkout all students**) that checks out everyone still checked in. It is not a header button. |
+| **Register Walk-In Guest** | Person-plus button on the check-in screen. Staff register someone who is not on the group roster and check them in to the current event. |
 | **No login on device** | Kiosk uses a cookie; no ChurchCRM user login on the tablet. |
 | **Reload / Identify** | Admin can force reload or show an ID message on the kiosk screen. |
 | **Heartbeat** | Device polls the server so it can receive reload/identify commands. |
@@ -94,7 +96,7 @@ Before setting up kiosks:
 
 1. **Administrator access** to ChurchCRM.
 2. **At least one future event** (start date ≥ today).
-3. **A group linked to that event** — the kiosk roster is the event’s group. Without a group, the kiosk shows "No class members found."
+3. **A group linked to that event** — the kiosk roster is the event’s group. Without a group, the kiosk shows "No Group Members Found."
 
 ### Creating an event for kiosk check-in
 
@@ -205,6 +207,47 @@ If no eligible adults are found for the child’s family, the prompt closes auto
 
 ---
 
+## Walk-in guests
+
+Use this when someone arrives who is not a member of the event’s group. Staff stay on the kiosk: the guest is created and checked in to the current event in one step. This does not add a Members / Visitors / Total head count on the event, and it does not print a name tag.
+
+The person-plus button (tooltip **Register walk-in guest**) is one of the floating buttons on the check-in screen. It is shown only when the event has a linked group and check-in is open — from one hour before the event starts until the event ends. Outside that window, or when the event has no group, the button is hidden. The server refuses the same cases.
+
+### Register Walk-In Guest
+
+Tap the button. The dialog title is **Register Walk-In Guest**. It says **A phone number or email address is required.**
+
+| Field | Required | Rules |
+|-------|----------|--------|
+| **First Name** | Yes | 2–50 characters |
+| **Last Name** | Yes | 2–50 characters |
+| **Birth Year** | No | 1900 through the current year |
+| **Birth Month** | No | January–December |
+| **Birth Day** | No | 1–31; an impossible date is rejected |
+| **Phone** | One of phone or email | Either field may be filled; both may be filled |
+| **Email** | One of phone or email | Must be a valid email address when it is filled in |
+
+**Cancel** closes the dialog without creating a person. **Register & Check In** submits the form. While the request is in progress the button shows **Registering...** and ignores a second tap or the Enter key. On success the dialog closes and a notice says the person was registered and checked in. If the group roster was empty, the kiosk reloads so the new guest appears.
+
+If both contact fields are empty, the form shows **A phone number or email address is required**. A name shorter than 2 characters, a name longer than 50 characters, an invalid email, or an invalid birth date is rejected and no person is saved.
+
+### How a guest appears
+
+- **Checked In column** — amber border and a **Guest** badge. The row stays after a refresh. Check the guest out and back in the same way as anyone else on the list.
+- **People → Self Registrations** — the guest is saved as a pending self-registration and shows a **Pending review** badge until a staff member approves the record. Approving clears that badge. The guest stays checked in.
+- **Person timeline** — **Registered as a walk-in guest at the kiosk during event:** followed by the event title, then **Checked in to event:** followed by the event title.
+- **Event attendance** — the guest is on the event’s checked-in list even though they are not a member of the linked group.
+
+The guest is not added to the group.
+
+### Guest Classification
+
+On **Admin → Kiosk Manager**, administrators see a **Kiosk Settings** card with **Guest Classification**. It defaults to **Guest**. Any person classification can be selected. Users who can open Kiosk Manager but are not administrators do not see this card.
+
+New walk-in guests receive that classification. If the selected classification is later removed, later guests are saved with no classification.
+
+---
+
 ## Parent alerts (notifications)
 
 The **Parent Alert** button (bell) sends a message to parents that the teacher has requested attention (e.g. pickup, illness, behavior).
@@ -241,6 +284,8 @@ When a teacher taps Parent Alert, all configured channels are used at once.
 | **Kiosk Name** | The device name, with **Last seen** under it. |
 | **Assignment** | The event assigned to this kiosk. |
 | **Actions** | **Accept**, **Rename**, **Reload**, **Identify**, and **Delete**. |
+
+Administrators also see **Kiosk Settings** above the device table. **Guest Classification** there is the classification applied to [walk-in guests](#walk-in-guests).
 
 ### Actions
 
@@ -311,11 +356,17 @@ chrome --kiosk https://your-churchcrm-url/kiosk/
 - Create an event with a **future** start date and a **group**.
 - Refresh Kiosk Manager; new events should appear.
 
-### "No class members found" on the kiosk
+### "No Group Members Found" on the kiosk
 
 - Edit the **event** and set **Group** to the correct class/roster.
-- Ensure the group has **members**.
+- Ensure the group has **members**, or use **Register Walk-In Guest** when check-in is open.
 - Reload the kiosk (Reload button in Kiosk Manager).
+
+### Register walk-in guest button is missing
+
+- The event needs a **linked group**. Without one, the button stays hidden and the server will not create a guest.
+- Check-in opens **one hour before** the event start and closes when the event ends. Before that window the kiosk shows a countdown; after it, the event has ended. The button is hidden in both cases.
+- Refresh the kiosk after assigning the event in Kiosk Manager.
 
 ### Student ages not showing
 

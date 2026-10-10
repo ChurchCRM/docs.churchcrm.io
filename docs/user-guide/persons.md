@@ -41,6 +41,10 @@ The Person Listing shows active people by default, with options to view inactive
 
 You cannot deactivate the person record associated with your own signed-in account.
 
+## Pending self-registrations
+
+A person who signed up on the public registration form, and has not been approved yet, shows a **Pending review** badge on the person list and the Person View. The same badge appears on the family. Those people are omitted from the printed directory until someone with **Edit Records** approves them on [Self Registrations](/user-guide/self-registrations).
+
 ## Marking a person as deceased
 
 Deceased is not a classification and not a choice in a list named Deceased.
@@ -54,13 +58,59 @@ Clear the checkbox to undo the mark.
 
 The person record, pledges, payments, notes, and history stay in place. Header search only returns living people. Voting-member reporting excludes deceased people.
 
-Administrators hide deceased people from the printed directory and from CSV exports with **People → Dashboard → People Settings → Hide Deceased from Directory**. The setting text is **Hide deceased members from the printed directory and CSV exports.**
+Administrators hide deceased people from the printed directory and from CSV exports with **People → Admin → People Settings → People → Hide Deceased from Directory**. The setting text is **Hide deceased members from the printed directory and CSV exports.**
 
 ## Timeline
 
-The Person View timeline shows notes, attendance, and system activity, newest first. Filter chips are **Notes**, **Events**, and **System**. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
+The Person View timeline shows notes, attendance, emails, and system activity, newest first and grouped by year. Filter chips are **Notes**, **Events**, **Emails**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Notes** is on when the page opens. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
 
 Long notes show a short preview. **Read more** opens the full note.
+
+![Timeline filter chips: Notes, Events, Emails, System](/img/user-guide/email-history-timeline-filter.png)
+
+The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside notes and attendance. See [Email History](#email-history) below.
+
+---
+
+## Email History
+
+ChurchCRM keeps a record of every email it sends. A person's history holds the emails addressed to them: messages written in the [email composer](/user-guide/email), birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and volunteer emails from Volunteer Management v2. Anyone who can open the person can see it.
+
+### Recent Emails card
+
+The **Recent Emails** card on the Person View lists the five latest emails to that person, newest first:
+
+| Column | What it shows |
+|--------|---------------|
+| **Date** | When the email was sent |
+| **Type** | What kind of email it was: Message (written in the composer), Birthday greeting, Family verification, Password reset link, New account, Notification, and so on. Volunteer emails show Volunteer assignment, Volunteer reminder, Volunteer declined, Volunteers needed, Volunteer sign-up, Substitute proposed, Substitute decision, or Offer to help. An email of a kind ChurchCRM does not know shows Email |
+| **Subject** | The subject line; click it to open the email |
+| **Status** | **Sent**, **Failed** (the mail server refused it; hover over the badge for the error), or **Skipped** (email sending was turned off, or no mail server was set up, at the time) |
+| **Sent by** | The user who wrote it, or **Automatic** for emails ChurchCRM sent on its own |
+
+![Recent Emails card on the Person View](/img/user-guide/email-history-recent-emails-card.png)
+
+The badge next to the title is the total number of emails on record for this person. If nothing has been sent yet, the card says so.
+
+### Opening an email
+
+Click a subject to see the email as it was sent, with the recipient address, date, type, status, and sender above it.
+
+![An email opened from the history, shown as it was sent](/img/user-guide/email-history-modal.png)
+
+ChurchCRM keeps the full content of messages written in the composer and of volunteer emails. For every other email it stores the subject, date, and status only. Opening one shows a note instead of the message: **The content of this email is not stored. ChurchCRM keeps the text of messages written in the email composer and of volunteer emails only.**
+
+![An account email in the history: the content is not stored](/img/user-guide/email-history-modal-not-stored.png)
+
+### Show all
+
+Click **Show all** at the bottom of the card to open the person's complete email history, newest first, 25 per page. **Back to Person** returns to the Person View.
+
+![The full Email History page for a person](/img/user-guide/email-history-show-all.png)
+
+:::note
+Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. An email sent to the family's own address (for example from the Family View) is recorded against the family, not a person, so it appears on nobody's card. Administrators see the most recent emails to everyone, family addresses included, on the [Email dashboard](/user-guide/email#email-history-and-the-email-dashboard).
+:::
 
 ---
 
@@ -79,6 +129,16 @@ Three cards sit at the top:
 The table columns are **Event**, **Type**, **Date**, **Check-in**, and **Check-out**.
 
 Filters above the table are **Event Type**, **From**, and **To**. **Clear** resets them. There is no **Apply Filter** button.
+
+---
+
+## Volunteer tab
+
+With [Volunteer Management (v2)](./ministries/index.md) switched on, the Person View has a **Volunteer** tab in two columns: **Qualified for** (each position, with a link to its ministry) and **Serving next** (each upcoming date with an **Accepted** or **Awaiting reply** badge, linking to the occurrence's staffing view). A person with no qualification and no upcoming date shows *"Not volunteering yet"*. The tab is read-only; qualifications are ticked on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md) and assignments are made on the [staffing view](./ministries/staffing-an-occurrence.md).
+
+![The Volunteer tab on a person record](/img/user-guide/ministries/person-volunteer-tab.png)
+
+When the volunteer experience is **Both**, the legacy opportunities list appears on its own tab, **Volunteer (Legacy)**, just before the **Volunteer** tab, so it is always obvious which one you are looking at.
 
 ---
 
@@ -101,6 +161,13 @@ The three buttons under the name are:
 - **Email** — opens a mail message to the address on the person. It is disabled with **No email address on file** when there is no address.
 
 Filter the grid with **All Classifications**, a single classification, or **Unassigned**. Turn on **Photos only** to hide people who have no photo. Choose how many cards appear with the **page** list, or **All**. **Reset** clears the filters. If nothing matches, the page says **No people found** and offers **Reset Filters**.
+
+### Upload size and resizing
+
+- Pick any JPEG or PNG up to 50 MB, including a full-size phone photo. Your browser shrinks it to the stored size (600x600) and never enlarges it.
+- The webcam option is available for person and family photos.
+- HEIC/HEIF photos from an iPhone are converted to JPEG in your browser when you pick them. If the conversion fails, export the photo as JPEG and try again.
+- API callers that skip the browser are limited to 16 megapixels of source image.
 
 ---
 
