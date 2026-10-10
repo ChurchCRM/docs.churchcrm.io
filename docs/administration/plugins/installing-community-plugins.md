@@ -12,7 +12,7 @@ that isn't on that list. This page walks you through the install flow
 and explains what each safety check is doing for you.
 
 > **Before you install anything new,** read
-> [Plugin Security & Compliance](./plugin-security-and-compliance) so
+> [Plugin Security & Compliance](/administration/plugins/plugin-security-and-compliance) so
 > you know how to interpret the risk level you'll see on the install
 > screen.
 
@@ -229,7 +229,7 @@ Check the plugin's `dependencies` list — another plugin needs to be
 installed and enabled first.
 
 **A plugin is quietly misbehaving.**
-See [Plugin Security & Compliance → Compliance scan](./plugin-security-and-compliance#compliance-scan)
+See [Plugin Security & Compliance → Compliance scan](/administration/plugins/plugin-security-and-compliance#compliance-scan)
 for the audit commands to run against an installed plugin.
 
 **A plugin disappeared from the approved list.**

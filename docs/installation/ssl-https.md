@@ -11,10 +11,4 @@ ChurchCRM will display an administrative task in the application if it detects t
 
 This task will automatically be removed when ChurchCRM is accessed via SSL.
 
-For additional security, ChurchCRM can issue an `HTTP Strict Transport Security (HSTS)` header so that client browsers will always connect over HTTPS. This setting is configured at the database level, so if you migrate your database to a new host, the header will still be issued.
-
-To enable HSTS:
-
-* On the side menu, select Admin, which expands and then select "Edit General Settings"
-* Select the System Settings tab
-* Scroll down to `bHSTSEnable`, and set it to TRUE
+Turn HTTPS on at the web server (or at your host's control panel). ChurchCRM does not have an HSTS setting.

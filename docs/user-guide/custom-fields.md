@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Custom Fields
 
-Custom Fields allow you to expand the functionality of ChurchCRM beyond the base information that can be stored as a default. Custom fields allow you to personalize the database to meet your specific needs. Custom fields can be added to [persons](Person), [families](Families), and [groups](Groups). For persons, you could, for example, have a custom field that shows an individual's mentor. For groups, you could have a start and stop date for a group of ushers.
+Custom Fields allow you to expand the functionality of ChurchCRM beyond the base information that can be stored as a default. Custom fields allow you to personalize the database to meet your specific needs. Custom fields can be added to [persons](/user-guide/persons), [families](/user-guide/families), and [groups](/user-guide/groups). For persons, you could, for example, have a custom field that shows an individual's mentor. For groups, you could have a start and stop date for a group of ushers.
 
 ## How do I assign Custom Fields?
 
@@ -34,7 +34,7 @@ If this link is not visible, this group may not have group-specific properties e
 
 ## What are the Types?
 
-See the [Custom Fields Types](Custom-Fields-Types) help topic.
+See the [Custom Fields Types](/user-guide/custom-fields-types) help topic.
 
 ---
 
@@ -50,7 +50,7 @@ Many churches want to track nicknames, preferred names, or "goes by" names for t
 2. Add a new field with these settings:
    | Setting | Value |
    |---------|-------|
-   | **Type** | Text Field (50 Character) |
+   | **Type** | Text Field (50 char) |
    | **Name** | Nickname (or "Goes By", "Preferred Name") |
    | **Side** | Left or Right (your preference) |
    | **Security** | bAll (or appropriate security level) |
@@ -67,14 +67,14 @@ Now when viewing or editing any person's record:
 
 | Use Case | Recommended Field Type | Example |
 |----------|------------------------|---------|
-| **Spiritual Mentor** | Person From Group | Link to a mentor from "Mentors" group |
+| **Spiritual Mentor** | Person from Group | Link to a mentor from a "Mentors" group |
 | **Baptism Date** | Date | Track when members were baptized |
 | **Confirmation Date** | Date | Record confirmation ceremonies |
 | **T-Shirt Size** | Custom Drop-Down List | S, M, L, XL, XXL |
-| **Dietary Restrictions** | Text Field (100 Character) | Vegetarian, Gluten-Free, Allergies |
-| **Emergency Contact** | Text Field (100 Character) | Name and phone number |
-| **Employer** | Text Field (50 Character) | Workplace name |
-| **Spiritual Gifts** | Text Field (Long) | List of identified spiritual gifts |
+| **Dietary Restrictions** | Text Field (100 char) | Vegetarian, gluten-free, allergies |
+| **Emergency Contact** | Text Field (100 char) | Name and phone number |
+| **Employer** | Text Field (50 char) | Workplace name |
+| **Spiritual Gifts** | Text Field (long) | Gifts you want to record |
 | **Ministry Interest** | Custom Drop-Down List | Music, Children, Outreach, etc. |
 | **Membership Year** | Year | When they joined the church |
 

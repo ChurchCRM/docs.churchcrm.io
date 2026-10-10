@@ -15,15 +15,15 @@ ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gif
 
 ## Fiscal years
 
-Finance views use the church's configured fiscal year, which may differ from the calendar year. Set the starting month under **Admin → System Settings → Finance → Fiscal year start month**.
+Finance views use the church's fiscal year, which may not match the calendar year. Set it under **Admin → System Settings → Financial Settings**. The setting is **iFYMonth**: the month that starts your organization's fiscal year.
 
-In ChurchCRM 7.7, fiscal-year selectors are used consistently across finance workflows:
+The same year shows up in a few places:
 
-- The **Finance Dashboard** Recent Deposits card can be scoped to a fiscal year.
-- The **Deposits** listing provides a fiscal-year selector alongside its other search filters.
-- A Family profile's **Pledges & Payments** section defaults to the current fiscal year and lets you select historical years or **All Time**.
-- Fundraiser financial statistics labeled **This Fiscal Year** follow the configured fiscal year, not January–December unless January is your configured start month.
-- The **Pledge Dashboard** and fund-contributor views can be switched between fiscal years.
+- **Finance → Dashboard** scopes **Recent Deposits** with a **Fiscal Year** list that includes **All Time**.
+- The **Deposits** listing has a fiscal-year filter with its other search filters.
+- A family profile's pledges and payments default to the current fiscal year, and you can pick another year or **All Time**.
+- Fundraiser totals labeled **This Fiscal Year** follow that start month.
+- The **Pledge Dashboard** and fund-contributor pages can switch years, including **All Time**.
 
 ---
 
@@ -32,9 +32,9 @@ In ChurchCRM 7.7, fiscal-year selectors are used consistently across finance wor
 ### Recording a Donation (Cash/Check)
 
 1. Open the [Family](/user-guide/families) record for the donor.
-2. Scroll to the bottom and click **Add a new payment**.
-3. Enter **Date**, **Amount**, **Fund**, and **Method** (Cash, Check, etc.).
-4. Click **Save**.
+2. On the family toolbar, open **Finance** and choose **Add Payment**.
+3. Enter the date, amount, fund, and method (Cash, Check, Credit Card, or Bank Draft), and the family if it is not already filled in.
+4. Click **Save**. Use **Save and Add Another** when you have more payments to enter.
 
 ### Creating a Deposit Slip
 
@@ -42,8 +42,9 @@ In ChurchCRM 7.7, fiscal-year selectors are used consistently across finance wor
 2. Fill in the deposit **Comment**, **Type** (Bank, Credit Card, or Bank Draft), and **Date** in the modal, then click **Add New Deposit**.
 3. The page redirects to the **Deposit Slip Editor** (breadcrumb: Finance → Deposits → Edit Deposit).
 4. Click **Add Payment** to add each donation — the new payment form opens pre-linked to this deposit. Fill in Method, Fund, Amount, and a Family record, then save. Repeat for every payment in the batch.
-5. Click **Generate Report** to download a PDF bank deposit form.
-6. When the deposit is ready to be finalised, toggle the **Closed** status switch and click **Save**.
+5. The payments table lists **Family**, **Check Number**, **Fund**, **Amount**, and **Method**.
+6. Click **Generate Report** to download a PDF bank deposit form.
+7. When the deposit is ready to be finalised, toggle **Closed** and click **Save**.
 
 See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 
@@ -65,15 +66,15 @@ There are two ways in which pledges can be added:
 
 ### From the Family View
 
-1. When viewing a [family](Families), a link for _"Add a new pledge"_ will be near the bottom of the screen.
-2. Enter the information.
-3. Click _"Save"_.
+1. When viewing a [family](/user-guide/families), open **Finance** on the toolbar and choose **Add Pledge**.
+2. Enter the pledge.
+3. Click **Save**.
 
 ### Batch Entry
 
-1. If you click _"Save and Add"_ rather than _"Save"_, the Pledge Editor will clear and prepare for another pledge entry.
-2. Select the next family making a pledge from the list, and fill in the rest of the pledge information.
-3. Continue to click _"Save and Add"_ until all the pledges have been entered.
+1. Click **Save and Add Another** instead of **Save**. The editor clears for the next pledge. It does not keep a fiscal-year id in the address.
+2. Select the next family and fill in the pledge.
+3. Keep clicking **Save and Add Another** until the batch is done.
 
 ## How do I deposit donations?
 
@@ -83,34 +84,26 @@ When a batch of cash and check donations is received, create a deposit slip in C
 
 1. **Create the deposit slip:** Go to **Finance** → **View All Deposits**, then click **New Deposit** (top-right of the results card). Choose type **Bank**, enter a comment and date, then click **Add New Deposit**.
 2. **Add payments:** On the Deposit Slip Editor, click **Add Payment** for each donation. Fill in the payment method (Cash, Check, etc.), fund, amount, and donor family, then save. Repeat until all donations are recorded.
-3. **Print the deposit form:** Click **Generate Report** to download a PDF that can be printed on a standard bank deposit form.
-4. **Finalise the deposit:** Toggle the **Closed** status switch and click **Save** once the batch is packaged for the bank.
+3. **Review the payments:** Each row shows **Family**, **Check Number**, **Fund**, **Amount**, and **Method**.
+4. **Print the deposit form:** Click **Generate Report** to download a PDF that can be printed on a standard bank deposit form.
+5. **Finalise the deposit:** Toggle **Closed** and click **Save** once the batch is packaged for the bank.
 
-### Credit Card / Bank Draft deposits
-
-For **Credit Card** or **Bank Draft** deposit types, the Deposit Slip Editor provides two additional buttons:
-
-- **Load Authorized** — creates payment records for all automatic transactions authorised as of today. Only transactions matching the deposit type (Credit Card or Bank Draft) are loaded; next payment dates are advanced automatically.
-- **Run Transactions** — submits the loaded payments for processing. Check the _Cleared_ column on refresh; use the payment record to investigate any that failed.
-
-After processing, click **Generate Report** for the PDF and toggle **Closed** to finalise.
-
-> **Tip:** See [Deposits](./deposit-search.md) for bulk export, searching, and managing all deposit slips.
+> **Tip:** See [Deposits](./deposit-search.md) for searching deposits and for the **CSV** and **OFX** buttons on the search page.
 
 ## How do I enter a payment?
 
-Payments are very similar to pledges. There are two ways in which payments can be added:
+Payments use the same editor as pledges.
 
-* **From the Family View:** When viewing a Family, a link for _"Add a new payment"_ will be near the bottom of the screen. Enter the information and click _"Save"_.
-* **Batch Entry:** Use _"Save and Add"_ to save the current payment and prepare the form for the next family.
+* **From the family:** Open **Finance** on the family toolbar and choose **Add Payment**. Enter the payment and click **Save**.
+* **Batch entry:** Click **Save and Add Another** to save this payment and clear the form for the next family.
 
 ## How do I edit the QuickBooks Deposit Ticket Layout?
 
 The layout for most QuickBooks deposit tickets should be nearly identical; however, differences in printers and deposit ticket providers may require you to adjust the position of various elements of the report.
 
-1. Go to **Admin** → **Edit General Settings**.
-2. Select the **Report Settings** tab.
-3. Find `sQBDTSettings` and choose **Edit Settings**.
+1. Go to **Admin → System Settings**.
+2. Open **Report Settings**.
+3. Edit **QuickBooks Deposit Ticket Settings** (`sQBDTSettings`).
 4. Adjust the values for your deposit ticket and printer.
 
 ## Finding and managing deposits
@@ -127,18 +120,34 @@ See [Deposits](./deposit-search.md) for full details.
 
 ---
 
+## Finance Dashboard
+
+**Finance → Dashboard** is the finance home page.
+
+**Current Deposit** shows the open deposit you are working in: deposit number, date, type, **Total Amount**, and **Edit Deposit**. If nothing is open, the card is **No Active Deposit** and offers **Create Deposit**.
+
+**Recent Deposits** lists deposits for the **Fiscal Year** you pick (or **All Time**). Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search.
+
+**Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same year.
+
+## Deposit Reports
+
+**Finance → Deposit Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
+
+The page groups these links:
+
+- **Tax & Giving Reports** — **Giving Report (Tax Statements)** and **Zero Givers**
+- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, and **Pledge Reminders**
+- **Deposit Reports** — **Individual Deposit Report** and **Advanced Deposit Report**
+- **Membership Reports** — **Voting Members**
+
 ## Pledge Dashboard
 
-The **Pledge Dashboard** provides an interactive summary of pledges and payments by fund and by family for any fiscal year. It replaces the former Pledge Summary PDF report.
+Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Deposit Reports** opens the same page.
 
-Go to **Finance** → **Pledge Dashboard** to open it.
+The year list includes **All Time**. **Add New Pledge** goes to `/finance/pledge/new?type=Pledge` and does not put a fiscal-year id on that address.
 
-Key features:
-- **Fund Summary table** — sortable/searchable breakdown of pledges, payments, overpaid, and underpaid per fund, with CSV/PDF/print export.
-- **Family Pledges table** — per-family, per-fund pledge vs. payment detail, colour-coded by completion.
-- **Fiscal-year selector** — view data for any past or current year.
-
-See [Pledge Dashboard](/user-guide/pledge-dashboard) for full details.
+See [Pledge Dashboard](/user-guide/pledge-dashboard) for the tables and status colours.
 
 ---
 
@@ -153,5 +162,6 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for full details.
 
 - [Deposits](./deposit-search.md) — search, filter, and bulk-export deposit slips
 - [Pledge Dashboard](./pledge-dashboard.md) — pledge and payment tracking by fund and fiscal year
+- [Envelope Manager](./envelope-manager.md) — family envelope numbers
 - [Fundraiser](./fundraiser.md) — managing fundraisers
 - [Reports & Queries](./reports-and-queries.md) — other financial reports

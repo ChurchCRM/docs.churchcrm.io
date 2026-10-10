@@ -7,7 +7,7 @@ sidebar_position: 14
 
 ## 1. Background
 
-We receive support requests via [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) and [GitHub Issues](https://github.com/ChurchCRM/CRM/issues). However, we can only offer generic assistance unless we are provided with some details specific to *your* setup. There are literally hundreds of different ways to host ChurchCRM from dedicated hardware, virtual machines, shared hosting or containerized setups. How we support you and what we might suggest is heavily dependent on how you have deployed ChurchCRM.
+Ask for help in [Discord](https://discord.gg/tuWyFzj3Nj). If the docs do not cover the problem, or you have found a bug, [open an issue](https://github.com/ChurchCRM/CRM/issues/new/choose) on the ChurchCRM repository. We can only offer generic assistance unless you include details specific to *your* setup. There are literally hundreds of different ways to host ChurchCRM from dedicated hardware, virtual machines, shared hosting or containerized setups. How we support you and what we might suggest is heavily dependent on how you have deployed ChurchCRM.
 
 This page describes what information we need, and how to get it, when you ask for support.
 
@@ -51,15 +51,14 @@ Thankfully, ChurchCRM has a number of logs we can use to help which are in the `
 System administrators can view, filter, and manage logs directly from the ChurchCRM admin interface:
 
 1. Log in to ChurchCRM as an administrator
-2. Go to **Admin** → **System Logs**
-3. In the **Log Settings** section, you can adjust the log level (DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERGENCY)
-4. In the **System Logs** section, you can:
+2. Open the **Admin Dashboard**. Under **Advanced Operations**, **System Logs** has the button **View Logs**. System Logs is not in the Admin sidebar.
+3. On **System Logs**, click **Settings** and set **Log Level**. The only levels are **DEBUG**, **INFO**, **WARNING**, and **ERROR**.
+4. On the same page you can:
    - **View** any log file by clicking the eye icon - this opens a modal where you can filter by log level and view specific entries
    - **Delete** individual log files by clicking the trash icon
    - **Delete All Logs** using the red button (if logs are present)
-   - **Adjust the log level** to control the verbosity of future log entries
 
-**Note:** Lower numbers log more details (DEBUG = 100), while higher numbers only log severe issues (EMERGENCY = 600). Changes to the log level apply to new log entries immediately.
+Changes to the log level apply to new log entries.
 
 #### 3.1.2 Accessing Logs Directly From the File System
 
@@ -87,7 +86,7 @@ Shared hosting providers sometimes hide Apache error logs:
 4. If you can't find it, contact your hosting provider's support
 
 **Docker:**
-See [Docker Development Environment](Docker) for details on viewing container logs.
+See [Docker Development Environment](docker) for details on viewing container logs.
 
 **Tip:** When reporting an issue, if your ChurchCRM logs don't show the problem, an Apache error log is often very helpful for diagnosis.
 
@@ -96,9 +95,13 @@ See [Docker Development Environment](Docker) for details on viewing container lo
 If you suspect translations are not appearing because the server is missing locales, use the built-in Debug page to confirm what the server supports:
 
 1. Log in as an administrator.
-2. Go to **Admin** → **System** → **Debug** (`/admin/system/debug`).
-3. Open the **Locale Support** card — it shows a summary and a table of ChurchCRM-supported locales with a **System** column indicating whether each locale is installed on the server (`Yes`/`No`).
-4. If your desired locale shows **No**, install the OS locale (see "Install Locales" guidance in Server Locale Requirements) and restart the webserver/PHP-FPM, then reload the Debug page.
+2. On the **Admin Dashboard**, open **System Health** and click **Debug Info** (`/admin/system/debug`). Debug is not in the Admin sidebar.
+3. Open the **Environment** card and the **Locale** tab. The heading is **System Locale Support**. The table lists ChurchCRM locales and whether each one is installed on the server.
+4. If your desired locale is missing, install the OS locale (see "Install Locales" guidance in Server Locale Requirements) and restart the webserver/PHP-FPM, then reload the Debug page.
+
+## Clean Up Files
+
+**Admin Dashboard → System Health** shows **Clean Up Files** when ChurchCRM finds files that are no longer part of the install. The page title is **Orphaned Files Management** (`/admin/system/orphaned-files`). The upgrade wizard links to the same page as **Review & Delete**.
 
 The Debug page also surfaces timezone and PHP configuration information that can help with localization troubleshooting.
 

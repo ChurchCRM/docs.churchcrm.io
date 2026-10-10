@@ -19,63 +19,41 @@ After your password is set, you are automatically redirected to **Admin → Chur
 
 ## Church Information Page
 
-The Church Information page is one form made of several cards, one below the other. Fill them in and click **Save Church Information** at the bottom of the page to save them all at once.
+**Admin → Church Information** is a set of cards, not tabs. Click **Save Church Information** when you are done.
 
-### Church Identity and Contact Information
+| Card | What you enter |
+|------|----------------|
+| **Church Identity** | Church name (required) and website |
+| **Contact Information** | Phone number and email address |
+| **Location** | Street, city, state, zip, and country. **Map Coordinates** has latitude and longitude. Click **Generate Coordinates** to look up the address, or leave the coordinates blank and ChurchCRM fills them in when you save. |
+| **Address Defaults** | Default city, state, zip, and country for new families. **Copy from church address** fills these from the location above. |
+| **Social Media** | Optional https:// links to the church's X, YouTube, Facebook, and Instagram accounts. Leave a field blank to hide that network. See [Social Media](#social-media). |
+| **Display Preview** | How the church block will look on reports and directories, with an icon for each saved social media link |
 
-The **Church Identity** card holds the church name and website; the **Contact Information** card holds the phone number and email address.
-
-| Field | Required | Notes |
-|-------|----------|-------|
-| **Church Name** | ✅ Yes | Appears on all reports, directories, and communications |
-| **Website** | No | Full URL, e.g. `https://yourchurch.org` |
-| **Phone Number** | ✅ Yes | Main contact number |
-| **Email Address** | ✅ Yes | Main contact email |
-
-Language and time zone are not on this page; they are under **Admin → Localization & Formats** (see [Localization & Formats](../administration/localization.md)).
-
-### Location
-
-This card covers your church's physical address.
-
-| Field | Required | Notes |
-|-------|----------|-------|
-| **Street Address** | ✅ Yes | |
-| **City** | ✅ Yes | |
-| **State** | ✅ Yes | Populated dynamically based on selected country |
-| **Zip Code** | ✅ Yes | |
-| **Country** | ✅ Yes | |
-
-Under **Map Coordinates**, click **Generate Coordinates** to look up the latitude and longitude from the address, or type them in yourself. If both are blank when you save, ChurchCRM looks them up from the address. Once coordinates are saved, a map shows the church's location. Saving does not look up the address again while coordinates are filled in: if you change the address, the card warns that it has changed since the coordinates were set, so click **Generate Coordinates** before you save.
+Language and time zone are not on this page. Set them under **Admin → Localization & Formats**.
 
 ### Social Media
 
-Optional links to the church's own accounts on **X**, **YouTube**, **Facebook** and **Instagram**. Leave a field blank to hide that network.
+The **Social Media** card has one field each for **X**, **YouTube**, **Facebook**, and **Instagram**. Members see each saved link as an icon in the footer of the Member Portal. Leave a field blank to hide that network.
 
 ![Social Media card on the Church Information page, with the four links filled in](/img/getting-started/church-info-social-media.png)
 
-| Field | Required | Notes |
-|-------|----------|-------|
-| **X** | No | Full address, e.g. `https://x.com/yourchurch` |
-| **YouTube** | No | Full address, e.g. `https://youtube.com/@yourchurch` |
-| **Facebook** | No | Full address, e.g. `https://facebook.com/yourchurch` |
-| **Instagram** | No | Full address, e.g. `https://instagram.com/yourchurch` |
+Each address must start with `https://`, for example `https://facebook.com/yourchurch`. A plain `http://` link or a handle such as `@yourchurch` is not saved. ChurchCRM names the network in the message, for example "X must be a full https:// web address", and nothing on the page is saved until you fix it. What you typed stays on the form.
 
-Each value must be a full `https://` web address. A plain `http://` link, a bare handle such as `@yourchurch`, or anything that is not a web address is rejected with a message naming the network, for example "X must be a full https:// web address". Nothing on the page is saved until you fix it, and what you typed stays on the form so you can correct it.
-
-:::note
-These links are stored with the other church identity settings and are edited only here; they do not appear on the **System Settings** page. The card says they are shown to members on pages such as the portal footer; at present the only place ChurchCRM shows them is the Display Preview below.
-:::
-
-### Display Preview
-
-This card shows how your church information will appear on reports and printed directories. The name, address and contact lines update as you type. Use it to confirm the address block looks correct before saving. Below them, each saved social media link appears as a clickable brand icon, in the order X, YouTube, Facebook, Instagram; the icons change when you save, not as you type. When no social media link is saved, the row of icons is hidden.
+These links are only on this page, not on **Admin → System Settings**. In **Display Preview**, the icons change when you click **Save Church Information**, not as you type.
 
 ---
 
-## Get Started checklist
+## Get Your Data Into ChurchCRM
 
-After the mandatory church-information step, ChurchCRM takes you to a **Get Started** page (also reachable any time from **Admin → Get Started**). This is a setup checklist that walks you through the remaining configuration tasks — email settings, user accounts, classifications, and import of existing data — and ticks each item off as you complete it. You can come back to it whenever you want; it's safe to ignore if you prefer to configure things directly.
+After the church name is saved, ChurchCRM opens **Get Started**. The page title is **Get Your Data Into ChurchCRM** (also under **Admin → Get Started**). Pick one path:
+
+- **Explore with Demo Data** — **Load demo data**
+- **Import from a Spreadsheet** — **Import CSV**
+- **Enter Data Manually** — **Add first family**
+- **Restore a Backup** — **Restore backup**
+
+The setup checklist is the **Admin Dashboard**, not this page. You can skip Get Started with **Skip — go to Admin Dashboard**.
 
 ---
 
@@ -83,24 +61,18 @@ After the mandatory church-information step, ChurchCRM takes you to a **Get Star
 
 Once the mandatory setup is done, a few additional settings are worth configuring right away.
 
-### Member Defaults
-
-Open **Admin** → **System Settings** → **Families** tab.
-
-- **Default City** — pre-fills the city field for new member records.
-- **Default State** — pre-fills the state (two-letter abbreviation).
-- **Default Country** — required for some locale-specific formatting.
-
 ### Email Settings
 
-Open **Communication** → **Email**, then click the **Email Settings** button.
+Open **Communication** → **Email**, then click **Email Settings**.
 
-- **Default "To" Email Address** — address that receives system requests (e.g. `webmaster@domain.com`).
-- **SMTP Host**, **SMTP Username**, **SMTP Password** — credentials for your outbound email relay.
+- **SMTP Host** — one field. Include the port in the host when your provider needs it, for example `smtp.gmail.com:587`.
+- **Encryption** — **None**, **TLS**, or **SSL**.
+- **SMTP Username** and **SMTP Password**
+- **Copy Church Email** — address that receives a copy of mail ChurchCRM sends
 
-### Security Considerations
+### Backups
 
-If you use the database backup utility, make sure the `churchcrm/SQL` directory is not publicly accessible. Consult your web server's documentation for how to restrict directory access.
+Backups are not kept in `churchcrm/SQL`. On the **Admin Dashboard**, open **System Info** and click **Backup**. The archive is temporary and is deleted after you download it. See [Backup & Restore](/administration/backup-restore).
 
 ---
 
