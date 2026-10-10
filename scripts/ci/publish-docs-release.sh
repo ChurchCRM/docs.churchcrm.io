@@ -104,24 +104,34 @@ merge_pr() {
   gh pr merge "$number" --repo "$DOCS_REPO" --merge
 }
 
-if [ -n "$docs_pr" ]; then
-  # The released-software gate failed while the version was unpublished: run it again.
-  gate_run=$(gh run list --repo "$DOCS_REPO" --workflow release-gate.yml --branch "$docs_branch" --limit 1 \
+# Pull requests opened with the workflow token start no checks of their own, and
+# the released-software gate may have failed while the version was unpublished.
+# Start what is missing, re-run the gate, then wait for both checks.
+wait_for_checks() {
+  local number="$1" branch="$2" gate_run
+  gate_run=$(gh run list --repo "$DOCS_REPO" --workflow release-gate.yml --branch "$branch" --limit 1 \
     --json databaseId,conclusion --jq '.[0] | select(.conclusion == "failure") | .databaseId // empty')
   if [ -n "$gate_run" ]; then
     gh run rerun "$gate_run" --repo "$DOCS_REPO" || true
   fi
-  # A pull request opened with the workflow token starts no checks of its own.
-  if ! gh pr view "$docs_pr" --repo "$DOCS_REPO" --json statusCheckRollup \
+  if ! gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
     --jq '[.statusCheckRollup[]?.name] | index("Validate Docusaurus site")' | grep -qv null; then
-    gh workflow run ci.yml --repo "$DOCS_REPO" --ref "$docs_branch" || true
+    gh workflow run ci.yml --repo "$DOCS_REPO" --ref "$branch" || true
+  fi
+  if ! gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
+    --jq '[.statusCheckRollup[]?.name] | index("Released software gate")' | grep -qv null; then
+    gh workflow run release-gate.yml --repo "$DOCS_REPO" --ref "$branch" || true
   fi
   for _ in $(seq 1 60); do
-    if ready_to_merge "$docs_pr" > /dev/null; then
-      break
+    if ready_to_merge "$number" > /dev/null; then
+      return 0
     fi
     sleep 30
   done
+}
+
+if [ -n "$docs_pr" ]; then
+  wait_for_checks "$docs_pr" "$docs_branch"
   merge_pr "$docs_pr" || { echo "::error::Release docs pull request #$docs_pr is waiting for CI."; exit 1; }
   # The pin pull request must start from the main that now holds the release docs.
   git fetch --quiet origin main
@@ -133,6 +143,7 @@ pin_branch="release/${VERSION}"
 pin_number=$(gh pr list --repo "$DOCS_REPO" --base main --head "$pin_branch" --state open --json number --jq '.[0].number // ""')
 skipped=0
 if [ -n "$pin_number" ]; then
+  wait_for_checks "$pin_number" "$pin_branch"
   merge_pr "$pin_number" || skipped=1
 else
   echo "No open API pin pull request for $VERSION."

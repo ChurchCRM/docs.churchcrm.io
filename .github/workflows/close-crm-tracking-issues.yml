@@ -3,8 +3,11 @@ name: Close CRM tracking issues
 # GitHub closes "Closes ChurchCRM/CRM#N" only when the pull request merges into
 # the default branch. Docs for a release merge into release-docs/<version>
 # first, so close the CRM tracking issues here.
+# pull_request_target runs from the base branch and has the secret even for a
+# fork's pull request. It never checks out or runs the pull request's code; it
+# only reads the number and description.
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
     branches: ['release-docs/**']
 
