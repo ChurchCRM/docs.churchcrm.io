@@ -6,15 +6,12 @@ static/img/administration/member-portal-settings.png
 static/img/administration/member-portal-statistics.png
 static/img/administration/member-portal-user-menu.png
 static/img/administration/user-editor-ministry-permissions.png
-static/img/Features/Custom_Fields/Custom_Fields_Admin_Side_Menu.png
 static/img/Features/Custom_Fields/Custom_Fields_Group_Add_Edit_Prop.png
 static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Confirm.png
 static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Form.png
 static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Toggle.png
 static/img/Features/Custom_Fields/Custom_Fields_Person_Add.png
 static/img/getting-started/church-info-social-media.png
-static/img/getting-started/church-logo-sidebar.png
-static/img/Setup/admin-left-nav-1.png
 static/img/user-guide/cart-functions-bar.png
 static/img/user-guide/cart-generate-labels.png
 static/img/user-guide/email-composer-form.png
@@ -30,7 +27,6 @@ static/img/user-guide/email-person-view-send-button.png
 static/img/user-guide/email-send-result-not-sent.png
 static/img/user-guide/family-view-mailing-address.png
 static/img/user-guide/member-portal-family-confirm.png
-static/img/user-guide/member-portal-home-phone.png
 static/img/user-guide/member-portal-my-teams.png
 static/img/user-guide/member-portal-profile.png
 static/img/user-guide/member-portal-team-positions.png

@@ -7,7 +7,7 @@ sidebar_position: 1
 
 The Administration section covers everything needed to manage a ChurchCRM installation. Access these settings through the **Admin** menu in the left navigation.
 
-![Admin Menu](/img/Setup/admin-left-nav-1.png)
+![The Admin menu expanded in the left navigation](https://cdn.churchcrm.io/screenshots/en/desktop/settings-user-permissions.png)
 
 ## Configuration & Settings
 

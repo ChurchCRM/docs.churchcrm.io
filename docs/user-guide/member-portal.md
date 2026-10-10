@@ -26,7 +26,7 @@ The navigation across the top is, in order: **Home · Calendar · Volunteering �
 
 On a phone the navigation folds behind the menu button in the header; every page fits a phone screen without sideways scrolling.
 
-![The Member Portal home page on a phone](/img/user-guide/member-portal-home-phone.png)
+![The Member Portal home page on a phone](https://cdn.churchcrm.io/screenshots/en/mobile/portal-member-home.png)
 
 The **Hello *\<your name\>*** menu in the header holds **Email History** (what the church has emailed you), **Change Password** and **Sign out**. Staff who also have an office login see **Admin Console** there as their way back.
 

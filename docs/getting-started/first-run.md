@@ -57,7 +57,7 @@ Your browser scales the image down to fit 1200×400 pixels before it is uploaded
 
 | Sidebar | Login page |
 |---------|------------|
-| ![Sidebar showing the uploaded church logo in place of the ChurchCRM branding](/img/getting-started/church-logo-sidebar.png) | ![Login page showing the uploaded church logo above the sign-in form](https://cdn.churchcrm.io/screenshots/en/desktop/church-logo-sign-in.png) |
+| ![Sidebar showing the uploaded church logo in place of the ChurchCRM branding](https://cdn.churchcrm.io/screenshots/en/desktop/dashboard-hero.png) | ![Login page showing the uploaded church logo above the sign-in form](https://cdn.churchcrm.io/screenshots/en/desktop/church-logo-sign-in.png) |
 
 :::note
 Uploading a logo is optional. You can do it at any time from **Admin → Church Information**. The letterhead printed on PDF reports is a separate image — see [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead).
