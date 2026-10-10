@@ -13,27 +13,37 @@ ChurchCRM uses email for:
 
 - **System notifications** — password resets, new user setup
 - **Parent alerts** — kiosk check-in notifications to parents
-- **Cart email** — opens your email client with recipients (no server config needed)
+- **Messages from the composer** — since 7.8.0, users with the Email permission send messages to a person, a family, a group, or the cart from inside ChurchCRM (see [User Guide: Email](/user-guide/email)). Without a mail server the composer falls back to copying addresses or opening the user's own mail program.
 - **Mailchimp** — bulk newsletters (configured separately in Integration settings)
 
-For outbound email (notifications, alerts), open **Communication → Email** and click **Email Settings**.
+For outbound email (notifications, alerts, composer messages), open **Communication** → **Email** and click **Email Settings**.
 
 ---
 
 ## Step-by-step: Configuring SMTP
 
 1. Log in to ChurchCRM as an administrator.
-2. Go to **Communication → Email**.
-3. Click **Email Settings**.
+2. Open **Communication** → **Email**. The **Email Dashboard** opens.
+3. Click **Email Settings** at the top of the page. The settings panel opens; **Gmail (SMTP)** and **Outlook / Microsoft 365** fill in the server settings for those providers.
 4. Enter the following:
-   - **Enable Email**
-   - **SMTP Host** — one field for the server, with the port in the same value when your provider needs it (for example `smtp.gmail.com:587` or `mail.yourchurch.org:465`)
-   - **Encryption** — **None**, **TLS**, or **SSL**
-   - **SMTP Username** and **SMTP Password** when **SMTP Authentication** is on
-   - **Copy Church Email** — address that receives a copy of mail ChurchCRM sends
-5. Save the settings panel.
+   - **Enable Email** — must be on. Required for password resets, notifications, and the composer's **Send Email** button.
+   - **SMTP Host** — Your mail server and its port (e.g., `smtp.gmail.com:587`, `mail.yourchurch.org:465`). Port 587 is usually used with TLS and 465 with SSL.
+   - **Encryption** — **None**, **TLS**, or **SSL**: the encryption your server expects, usually TLS.
+   - **SMTP Authentication** — On when your server needs a username and password, which most do.
+   - **SMTP Username** — Your email account username
+   - **SMTP Password** — Your email account password
+   - **Copy Church Email** — The church's own address (e.g., `office@yourchurch.org`). When a user emails a list, the composer offers it as a removable extra recipient (**Also send to church address**) for **Copy Addresses** and **Open in Email Client**. **Send Email** never includes it.
+5. Click **Save Settings**.
 
 There is no separate SMTP port, sender name, or reply-to field.
+
+**Do Not Email Property** picks the person property that keeps someone off email lists; the composer skips anyone who has it. The other settings in the panel (**SMTP Timeout**, **Auto TLS**, **Default Inbox Preview Text**) can usually stay as they are. **All System Settings** opens the full settings page.
+
+:::note What turns on sending from the composer
+The composer's **Compose Message** button (which leads to **Send Email**) and the paper-plane buttons next to email addresses appear only when the SMTP host is set (with a username and password if authentication is on) **and** **Enable Email** is on. Users additionally need the **Email** permission: administrators always have it; for other users, edit the user under **Admin** → **System Users** and set **Permission** to **True** on the `bEmailMailto` row of the **User Config** table. Until both are in place, the composer offers **Copy Addresses** and **Open in Email Client** only.
+:::
+
+Composer messages and ChurchCRM's notification and account emails are sent from the church email address and end with the church's contact block (name, address, phone, email, website) as shown in the **Display Preview** on **Admin** → **Church Information**. Keep that page current so recipients know who wrote to them.
 
 ---
 
@@ -56,6 +66,8 @@ There is no separate SMTP port, sender name, or reply-to field.
 - **SMTP Username**: Your full email address
 - **SMTP Password**: Your account password
 
+ChurchCRM signs in with the username and password (SMTP AUTH basic authentication); it does not support OAuth. SMTP AUTH must be enabled for the Microsoft 365 tenant and for the mailbox. Microsoft turns basic SMTP authentication off by default at the end of December 2026 (an administrator can still re-enable it for existing tenants), so if your tenant blocks it, send through another SMTP provider or relay instead.
+
 ### Church Hosting (cPanel, Plesk, etc.)
 
 Use your hosting provider's SMTP server — often the same as your incoming mail server:
@@ -69,8 +81,8 @@ Use your hosting provider's SMTP server — often the same as your incoming mail
 
 ## Testing Email
 
-1. After saving settings, stay on **Communication → Email**.
-2. Click **Debug**. ChurchCRM tries to send a message with the subject **ChurchCRM Test Email**.
+1. After saving settings, click **Debug** on the **Email Dashboard** (**Communication** → **Email**). ChurchCRM sends a test message, *ChurchCRM Test Email*, to the church email address set on **Admin** → **Church Information**, and says whether the mail server accepted it.
+2. Check that mailbox, including its spam folder, to confirm the message arrived.
 3. Or trigger a password reset for a test user to verify delivery.
 
 ---
