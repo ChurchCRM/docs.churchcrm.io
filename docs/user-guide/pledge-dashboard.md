@@ -135,13 +135,13 @@ The contributor listing shows one row per family.
 |--------|-------------|
 | **Family Name** | Links to the family record |
 | **Envelope** | Donation envelope number (only shown when envelope numbering is enabled in system settings) |
-
-See [Donation Envelopes](/user-guide/donation-envelopes) for configuration, assignment, and matching rules.
 | **Pledged Amount** | Amount the family committed for this fund; shown as "—" when no pledge record exists |
 | **Payments** | Total payments received from this family for this fund |
 | **Remaining** | Outstanding balance (Pledged − Paid); colour-coded by payment status (see below) |
 | **% Paid** | Percentage of the pledge that has been collected |
 | **Actions** | Per-row action menu (see [Pledge / Payment Detail](#pledge--payment-detail)) |
+
+See [Donation Envelopes](/user-guide/donation-envelopes) for configuration, assignment, and matching rules.
 
 **Remaining / % Paid colour coding:**
 

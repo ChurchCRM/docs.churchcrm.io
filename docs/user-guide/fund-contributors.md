@@ -57,13 +57,13 @@ The **Contributors** table lists one row per family. It supports sorting, search
 |--------|-------------|
 | **Family Name** | Linked to the family record; click to open the family page |
 | **Envelope** | Giving-envelope number (visible only when donation envelopes are enabled in system settings) |
-
-See [Donation Envelopes](/user-guide/donation-envelopes) for configuration, assignment, and matching rules.
 | **Pledged Amount** | The amount the family committed to give; shown as a dash (—) for payment-only rows |
 | **Payments** | Total payments received from this family for this fund and fiscal year |
 | **Remaining** | Pledged Amount minus Payments; shown as a dash (—) for payment-only rows; colour-coded by payment status (see below) |
 | **% Paid** | Payments as a percentage of the pledged amount; colour-coded by payment status |
 | **Actions** | Opens the pledge or payment detail record (see [Viewing pledge details](#viewing-pledge-or-payment-details) below) |
+
+See [Donation Envelopes](/user-guide/donation-envelopes) for configuration, assignment, and matching rules.
 
 ### Payment status colours
 
