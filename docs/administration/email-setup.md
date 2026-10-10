@@ -28,12 +28,14 @@ For outbound email (notifications, alerts, composer messages), open **Communicat
 4. Enter the following:
    - **Enable Email** — must be on. Required for password resets, notifications, and the composer's **Send Email** button.
    - **SMTP Host** — Your mail server and its port (e.g., `smtp.gmail.com:587`, `mail.yourchurch.org:465`). Port 587 is usually used with TLS and 465 with SSL.
-   - **Encryption** — The encryption your server expects, usually TLS.
+   - **Encryption** — **None**, **TLS**, or **SSL**: the encryption your server expects, usually TLS.
    - **SMTP Authentication** — On when your server needs a username and password, which most do.
    - **SMTP Username** — Your email account username
    - **SMTP Password** — Your email account password
    - **Copy Church Email** — The church's own address (e.g., `office@yourchurch.org`). When a user emails a list, the composer offers it as a removable extra recipient (**Also send to church address**) for **Copy Addresses** and **Open in Email Client**. **Send Email** never includes it.
 5. Click **Save Settings**.
+
+There is no separate SMTP port, sender name, or reply-to field.
 
 **Do Not Email Property** picks the person property that keeps someone off email lists; the composer skips anyone who has it. The other settings in the panel (**SMTP Timeout**, **Auto TLS**, **Default Inbox Preview Text**) can usually stay as they are. **All System Settings** opens the full settings page.
 
@@ -52,13 +54,15 @@ Composer messages and ChurchCRM's notification and account emails are sent from 
 1. Enable [2-Step Verification](https://myaccount.google.com/security) on your Google account.
 2. Create an [App Password](https://myaccount.google.com/apppasswords).
 3. In ChurchCRM:
-   - **SMTP Host**: `smtp.gmail.com:587` (TLS) or `smtp.gmail.com:465` (SSL)
+   - **SMTP Host**: `smtp.gmail.com:587`
+   - **Encryption**: **TLS** (use `smtp.gmail.com:465` with **SSL** if your host requires it)
    - **SMTP Username**: Your Gmail address
    - **SMTP Password**: The App Password (not your regular password)
 
 ### Microsoft 365 / Outlook
 
 - **SMTP Host**: `smtp.office365.com:587`
+- **Encryption**: **TLS**
 - **SMTP Username**: Your full email address
 - **SMTP Password**: Your account password
 
@@ -68,7 +72,8 @@ ChurchCRM signs in with the username and password (SMTP AUTH basic authenticatio
 
 Use your hosting provider's SMTP server — often the same as your incoming mail server:
 
-- **SMTP Host**: `mail.yourchurch.org` or the hostname provided by your host, followed by the port: `:465` (SSL) or `:587` (TLS)
+- **SMTP Host**: `mail.yourchurch.org:587` or the hostname and port your host gives you
+- **Encryption**: **TLS** or **SSL**, matching that port
 - **SMTP Username**: Your email address
 - **SMTP Password**: Your email password
 
@@ -87,7 +92,7 @@ Use your hosting provider's SMTP server — often the same as your incoming mail
 ### "Could not send email"
 
 - **Check SMTP credentials** — Username and password must be correct.
-- **Check SMTP port** — 587 (TLS) or 465 (SSL) are typical; some hosts block 25.
+- **Check the port on SMTP Host** — `:587` with **TLS** or `:465` with **SSL** is typical; some hosts block port 25.
 - **Check firewall** — Ensure outbound connections to your SMTP port are allowed.
 
 ### Gmail "Less secure app" or "App password required"

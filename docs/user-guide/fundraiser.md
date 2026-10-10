@@ -23,7 +23,7 @@ Access to the Fundraiser module is controlled at two levels:
 
 | Level | Setting | Where to configure |
 |-------|---------|--------------------|
-| System-wide | **Enable Fundraiser menu** (`bEnabledFundraiser`) | **Admin → System Settings → Finance Settings** |
+| System-wide | **Enable Fundraiser menu.** (`bEnabledFundraiser`) | **Admin → System Settings → Financial Settings** |
 | Per-user | **Manage Fundraisers** permission (`bManageFundraisers`) | **Admin → Edit Users → Edit** |
 
 **How they interact:**
@@ -42,7 +42,9 @@ The API routes that power the Fundraiser module are protected by the same check:
 
 The Fundraiser landing page shows all active fundraisers in an enriched table with stat widgets and filters.
 
-**Stat widgets** at the top show counts of active, planning, and closed fundraisers. Financial widgets labeled **This Fiscal Year** use the church's configured fiscal year rather than the calendar year. Configure the fiscal-year start month under **Admin → System Settings → Finance**.
+The Fundraiser menu has two items: **Dashboard** and **Create New Fundraiser**.
+
+**Stat widgets** on the dashboard are **Active Fundraisers**, **Raised This Fiscal Year**, **Items Donated (This Fiscal Year)**, and **Buyers This Fiscal Year**. Those fiscal-year totals follow the start month in **Admin → System Settings → Financial Settings**.
 
 **Filters:** narrow by Type, Status, or date range using the filter bar above the table.
 
@@ -93,7 +95,7 @@ Once the fundraiser is saved, press **Add Donated Item** from either the edit or
 |-------|-------------|
 | **Item** | Identifier used for sorting |
 | **Multiple items: Sell to everyone** | Enable to allow multiple copies to be sold; buyers are charged per quantity |
-| **Donor** | A [person](Persons) in the database |
+| **Donor** | A [person](/user-guide/persons) in the database |
 | **Title** | Short description |
 | **Estimated Price** | Reference value for the item |
 | **Material Value** | Donation value excluding labor |
@@ -121,39 +123,33 @@ These restrictions are enforced in both the UI and at the route level — access
 
 ## Why and how are buyers registered?
 
-Buyers are registered so they can purchase multiple items and pay at the end. Select **Fundraiser → View Buyers**, then **Add Buyer**. Buyer numbers increment automatically (or type them to match a bidding paddle). The buyer must be a person in the database.
+Buyers are registered so they can purchase multiple items and pay at the end. Open the fundraiser view and click **View Buyers**, then **Add Buyer**. Buyer numbers increment automatically (or type them to match a bidding paddle). The buyer must be a person in the database. **View Buyers** is a button on that view, not a Fundraiser menu item.
 
 ---
 
 ## How is a single purchase recorded?
 
-Select **Fundraiser → Edit Fundraiser** to see the items list. Click the item link on the left, select the buyer, enter the price, and press **Save**.
+Open the fundraiser and click **Edit** to see the items list. Open an item, select the buyer, enter the price, and press **Save**.
 
 ---
 
 ## Is there a way to enter lots of purchases quickly?
 
-Select **Fundraiser → Edit Fundraiser** then press **Batch Winner Entry** (upper-right). Enter up to ten items per page — select Item and Winner, enter price, then press **Enter Winners**.
+On the fundraiser editor, press **Batch Winner Entry**. Select Item and Winner, enter the price, then press **Enter Winners**.
 
 ---
 
 ## How are multiple-purchase items recorded?
 
-Select **Fundraiser → View Buyers** and click a buyer's link. Enter quantities for each _Sell to Everyone_ item on their page.
+On the fundraiser view, click **View Buyers** and open the buyer. Enter quantities for each _Sell to Everyone_ item on their page.
 
 ---
 
 ## How does someone check out and pay?
 
-1. Select **Fundraiser → View Buyers** and click the buyer's link.
+1. On the fundraiser view, click **View Buyers** and open the buyer.
 2. Confirm the _Sell to Everyone_ quantities.
 3. Press **Generate Statement** — a PDF statement is produced showing donations and purchases, with a payment stub at the bottom.
-
----
-
-## What if a donor doesn't attend? How can a statement be prepared?
-
-After all donations and purchases are entered, select **Fundraiser → Add Donors to Buyer List**. This creates buyer records for anyone who donated but wasn't registered as a buyer. Their statements can then be generated for tax purposes.
 
 ---
 

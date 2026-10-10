@@ -23,7 +23,7 @@ Every Person should belong to a family.
 2. Enter the **Family Name**.
 3. Enter the shared **Address**, **City**, **State**, **ZIP**, **Country**.
 4. Enter **Home Phone** and **Family Email**.
-5. Add family members (up to 10): enter first name for each; last name only if different from family.
+5. The form starts with four family-member rows. **Add Another Family Member** appends another row. There is no limit of 10. Enter a first name for each person you are adding; enter a last name only when it differs from the family name.
 6. Set **Classification** for each person (Member, Guest, etc.).
 7. Click **Save**.
 
@@ -34,16 +34,20 @@ Every Person should belong to a family.
 ## How do I add a new Family?
 
 1. Go to **People** → **Add New Family**.
-2. Complete the form. Note that you can insert up to ten family members from directly from this form.
+2. Complete the form. It starts with four member rows. **Add Another Family Member** appends another row. There is no limit of 10.
 3. Complete the individual lines for each person, but only enter the last name if it differs from the last name of the Family record. All people entered in this manner will create a new Person record which will be assigned to the designated Family record.
 4. Press _Save_ when the form is complete.
 
 ## How do I view a family?
 
-There are two ways to view a family:
+1. Use the header search field (**Search people, families, groups…**) and open the family from the results.
+2. Or go to **People → Family Listing**.
 
-1. Enter a name to look for in the search field at the top of the page, click the button beside _"Family"_ and press enter.
-2. Click on _"View All Families"_ (under _"People"_).
+## Family Listing
+
+**People → Family Listing** is the list of families. The page title is **Family Listing**.
+
+The **Filters** card has **City**, **State**, **Status** (**All**, **Active**, or **Inactive**), and **Address Status**. Open a family name to see that family. This list is separate from the family editor.
 
 ## Unified Member & Family Profiles
 
@@ -51,9 +55,9 @@ Person and Family profiles have been consolidated. Notes that previously appeare
 
 ---
 
-## Timeline Filters
+## Timeline
 
-Family View includes a **Timeline** tab with type and date filters, making it easy to review family history, pastoral notes, and attendance in one place.
+Family View uses the same timeline chips as a person: **Notes**, **Events**, and **System**, plus **Show all**. There is no date-range filter and no type list.
 
 ---
 
@@ -114,12 +118,12 @@ Profile images are automatically deleted from the server when a family or person
 
 ## How do I assign a Property to a Family?
 
-See the [Properties](Properties) help topic.
+See the [Properties](/user-guide/properties) help topic.
 
 ## How do I add a Note to a Family?
 
-See the [Notes](Notes) help topic.
+See the [Notes](/user-guide/notes) help topic.
 
 ## What is the Classification feature?
 
-See the [Classification](Classifications) help topic.
+See the [Classification](/user-guide/classifications) help topic.

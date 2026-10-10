@@ -5,7 +5,7 @@ sidebar_position: 12
 
 # Sunday School
 
-Sunday School classes in ChurchCRM are managed as [Groups](Groups) with a special "Sunday School Class" type. This provides a dedicated dashboard with class-specific features.
+Sunday School classes in ChurchCRM are managed as [Groups](/user-guide/groups) with a special "Sunday School Class" type. This provides a dedicated dashboard with class-specific features.
 
 ## Creating a Sunday School Class
 
@@ -22,23 +22,22 @@ You can optionally add extra roles (e.g., "Assistant Teacher", "Substitute") usi
 
 ## Adding Students and Teachers
 
-1. Open the Sunday School class group
-2. Click **View Members**
-3. Use the search to find and add [people](Persons)
-4. Assign the appropriate role (Teacher or Student)
+1. Open the Sunday School class.
+2. Use **Add Member** on the group page and choose the person.
+3. The new member is a **Student** unless you set another role. Use **Change Role** and **Save** to make someone a **Teacher**.
 
-> **Tip:** Use the [Cart](Cart) feature to add multiple students at once by selecting them and choosing "Empty Cart to Group."
+> **Tip:** To add several students at once, put them in the [Cart](/user-guide/cart) and choose **Empty Cart to Group**. The page title is **Add Cart to Group**. Click **Add to Group**.
 
 ## Tracking Attendance
 
-Sunday School attendance is tracked through [Events](Events):
+Sunday School attendance is tracked through [Events](/user-guide/events):
 
 1. Create an Event Type for your Sunday School (e.g., "Sunday School - Children")
 2. Create individual events for each class session
 3. Check in students as they arrive
 4. Generate attendance reports over time
 
-See the [Events](Events) documentation for detailed instructions.
+See the [Events](/user-guide/events) documentation for detailed instructions.
 
 ## Sunday School Dashboard
 
@@ -47,11 +46,8 @@ Each Sunday School class has a dedicated dashboard showing:
 - Attendance statistics
 - Quick actions for common tasks
 
-## Communicating with Parents
+## Contacting the class
 
-To contact parents of students in a class:
+There is no **View Members** action and no **Compose Message** button.
 
-1. Navigate to the Sunday School Dashboard for your class
-2. Click the **Compose Message** button
-3. Select whether to message students, parents, or both
-4. Compose and send your message
+On the class group page, **Email** opens a message to the class when email is turned on. **Text** copies numbers or opens the device messaging app. See [Text Messages](/user-guide/text-messages).

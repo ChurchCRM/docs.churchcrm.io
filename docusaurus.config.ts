@@ -1,8 +1,12 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import crmRelease from './crm-release.json';
 // @ts-ignore — no types shipped with this plugin
 const localSearch = require('@easyops-cn/docusaurus-search-local');
+
+const openApiSpec = (file: string) =>
+  `https://raw.githubusercontent.com/ChurchCRM/CRM/${crmRelease.version}/docs/openapi/generated/${file}`;
 
 const config: Config = {
   title: 'ChurchCRM Docs',
@@ -21,8 +25,13 @@ const config: Config = {
   projectName: 'docs.churchcrm.io',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
   i18n: { defaultLocale: 'en', locales: ['en'] },
 
   plugins: [
@@ -35,12 +44,12 @@ const config: Config = {
         publicApi: {
           specPath: 'openapi/public-api.yaml', outputDir: 'docs/api/public',
           sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
-          downloadUrl: 'https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/public-api.yaml', showSchemas: true,
+          downloadUrl: openApiSpec('public-api.yaml'), showSchemas: true,
         },
         privateApi: {
           specPath: 'openapi/private-api.yaml', outputDir: 'docs/api/private',
           sidebarOptions: { groupPathsBy: 'tag', categoryLinkSource: 'tag' },
-          downloadUrl: 'https://raw.githubusercontent.com/ChurchCRM/CRM/master/openapi/private-api.yaml', showSchemas: true,
+          downloadUrl: openApiSpec('private-api.yaml'), showSchemas: true,
         },
       },
     }],
@@ -50,7 +59,7 @@ const config: Config = {
     docs: {
       sidebarPath: './sidebars.ts', routeBasePath: '/',
       editUrl: 'https://github.com/ChurchCRM/docs.churchcrm.io/edit/main/',
-      showLastUpdateTime: false, showLastUpdateAuthor: false, docItemComponent: '@theme/ApiItem',
+      showLastUpdateTime: true, showLastUpdateAuthor: false, docItemComponent: '@theme/ApiItem',
     },
     blog: false,
     theme: { customCss: './src/css/custom.css' },
@@ -72,8 +81,9 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'userGuideSidebar', position: 'left', label: 'User Guide' },
         { type: 'docSidebar', sidebarId: 'adminSidebar', position: 'left', label: 'Administration' },
         { type: 'docSidebar', sidebarId: 'apiSidebar', position: 'left', label: 'API Reference' },
-        { href: 'https://demo.churchcrm.io', label: 'Demo', position: 'right' },
-        { href: 'https://churchcrm.io/connect.html', label: 'Connect', position: 'right' },
+        { href: 'https://churchcrm.io/install.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_install', label: 'Install', position: 'right' },
+        { href: 'https://churchcrm.io/demo.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_demo', label: 'Demo', position: 'right' },
+        { href: 'https://churchcrm.io/connect.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_connect', label: 'Connect', position: 'right' },
         { href: 'https://github.com/ChurchCRM/CRM', label: 'GitHub', position: 'right' },
       ],
     },
@@ -87,13 +97,13 @@ const config: Config = {
         { title: 'API Reference', items: [
           { label: 'Public API', to: '/api/public' }, { label: 'Private API', to: '/api/private' },
         ] },
-        { title: 'Community', items: [
-          { label: 'Community Chat', href: 'https://discord.gg/tuWyFzj3Nj' },
-          { label: 'Report a Bug', href: 'https://github.com/ChurchCRM/CRM/issues' },
+        { title: 'Need help?', items: [
+          { label: "Can't find it? Ask on Discord", href: 'https://discord.gg/tuWyFzj3Nj' },
+          { label: 'Or open a GitHub issue', href: 'https://github.com/ChurchCRM/CRM/issues/new/choose' },
         ] },
         { title: 'ChurchCRM', items: [
-          { label: 'Website', href: 'https://churchcrm.io' }, { label: 'Demo', href: 'https://demo.churchcrm.io' },
-          { label: 'Connect', href: 'https://churchcrm.io/connect.html' }, { label: 'GitHub', href: 'https://github.com/ChurchCRM/CRM' },
+          { label: 'Website', href: 'https://churchcrm.io/?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_website' }, { label: 'Install', href: 'https://churchcrm.io/install.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_install' }, { label: 'Demo', href: 'https://churchcrm.io/demo.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_demo' },
+          { label: 'Connect', href: 'https://churchcrm.io/connect.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=footer_connect' }, { label: 'GitHub', href: 'https://github.com/ChurchCRM/CRM' },
           { label: 'Releases', href: 'https://github.com/ChurchCRM/CRM/releases' },
         ] },
       ],

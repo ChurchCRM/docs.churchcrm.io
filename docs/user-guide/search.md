@@ -1,31 +1,23 @@
 ---
-title: Search
+title: Find people and families
 sidebar_position: 9
 ---
 
-# Search
+# Find people and families
 
-ChurchCRM offers a powerful search capability to quickly locate data within your application.
+The search field is in the page header. The placeholder is **Search people, families, groups…**. Start typing. Results appear as you type. It is not a box in the left sidebar.
 
-## Quick Start
+## What you can search
 
-The search bar is located in the **top-left corner** of the application. Simply start typing to search!
-
-> **Keyboard Shortcut:** Press `?` anywhere in the app to open the search box.
-
----
-
-## What You Can Search
-
-| Category | What's Searched | Notes |
-|----------|-----------------|-------|
-| **People** | First and last names | Partial matches work |
-| **Families** | Family names, custom properties | Partial matches work |
+| Category | What is searched | Notes |
+|----------|------------------|-------|
+| **People** | First name, middle name, last name, email, work email, and home, cell, and work phone | Living people only |
+| **Families** | Family name | Family custom properties are included only when **Include family custom properties in global search** is on. That switch is off by default. |
 | **Groups** | Group names | Partial matches work |
-| **Addresses** | Street addresses | Searches family addresses |
-| **Calendar Events** | Title, description, event text | |
-| **Payments/Pledges** | Check numbers, amount ranges | Finance permission required |
-| **Deposits** | Deposit comments | Finance permission required |
+| **Addresses** | Street addresses | Family addresses |
+| **Calendar events** | Title, description, and event text | |
+| **Payments** | Check numbers and amount ranges | Finance permission required |
+| **Deposits** | Deposit id and comments | Finance permission required |
 
 ### Searching by Amount Range
 
@@ -41,9 +33,6 @@ To find payments within a specific range, format your search as `min-max`:
 
 Administrators can customize search behavior:
 
-1. Navigate to **Admin → System Settings → Quick Search**
-2. For each result type, you can:
-   - Enable/disable whether results of that type appear
-   - Set a maximum number of results to display
-
-This helps keep search results focused and relevant for your church's needs.
+1. Go to **Admin → System Settings → Quick Search**.
+2. For each result type you can turn that type on or off and set how many results to show.
+3. **Include family custom properties in global search** is off unless you turn it on. When it is off, family custom property values are not part of header search.
