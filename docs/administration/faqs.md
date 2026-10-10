@@ -66,15 +66,28 @@ Go to **Admin** → **Church Information** and use the logo upload dialog.
 
 ## How do I set up my logo or letterhead?
 
-Many reports and documents can include a logo or letterhead. By default, ChurchCRM looks for these files in the `Images/` directory:
+ChurchCRM uses two separate images: the **church logo** shown in the application and in emails, and the **letterhead** printed on PDF reports.
+
+### Church logo (application and emails)
+
+Upload the logo from **Admin → Church Information**. The **Church Logo** card shows the current image with an **Upload** button, and a **Remove** button once a logo has been uploaded. No file transfer is needed, and the uploaded logo survives upgrades.
+
+- Accepted formats: PNG, JPG, GIF or WebP (not SVG), picked from a file of up to 50 MB (no webcam option). An iPhone HEIC photo is converted to JPEG in the browser first. A wide banner of roughly 3.5:1, for example 700×200 pixels, works best; a transparent PNG is preferred.
+- The browser scales the image down to fit 1200×400 before uploading it, and it is stored as `Images/church-logo.png`. Uploads made directly through the API are limited to 16 megapixels.
+- Once uploaded, it replaces the ChurchCRM branding in the sidebar (the church name text beside it is hidden), on the login page and the password-reset, two-factor, error, limited-access and change-password pages, and in emails.
+
+See [First Run Configuration](/getting-started/first-run#church-logo) for a screenshot. The older `sChurchLogoURL` setting is now only a fallback for emails when no logo has been uploaded; the application pages ignore it.
+
+### Letterhead (PDF reports)
+
+Many reports and documents can include a letterhead. By default, ChurchCRM uses this file in the `Images/` directory:
 ```
 church_letterhead.jpg
-church_letterhead.png
 ```
 
-It may be tempting to simply upload your own artwork and rename the files as above, **but this is not "upgrade-safe"**. System upgrades will overwrite your files with the default ones again. The **correct method** is:
-1. Ensure your letterhead or logo is 500x80 pixels or an exact multiple of this ratio (eg. 1000x160 is also acceptable).
-2. Your logo should be either PNG or JPEG/JPG format. Be aware only PNG supports transparency (*alpha channel*).
+It may be tempting to simply upload your own artwork and rename it as above, **but this is not "upgrade-safe"**. System upgrades will overwrite your file with the default one again. The **correct method** is:
+1. Ensure your letterhead is 500x80 pixels or an exact multiple of this ratio (eg. 1000x160 is also acceptable).
+2. Your letterhead should be either PNG or JPEG/JPG format. Be aware only PNG supports transparency (*alpha channel*).
 3. Upload your image to `/Images` using FTP/sFTP/SSH (*whatever your hosting provider supports*).
    eg. using SSH secure copy:
 
