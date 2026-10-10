@@ -12,7 +12,7 @@ The public site documents **released** ChurchCRM. A merged CRM pull request is n
 
 | Change | Milestone | Label | When it may merge |
 |---|---|---|---|
-| Product behavior: install, admin, user guide, screenshots of the app | The CRM version that will ship it, for example `7.8.0` | none | After that version is a published stable GitHub Release, and after the API pin pull request for that version if one is open |
+| Product behavior: install, admin, user guide, screenshots of the app | The CRM version that will ship it, for example `7.8.0` | none | Into `release-docs/<version>` when approved. That branch reaches `main` as one pull request after the version is a published stable GitHub Release, and the API pin pull request follows it |
 | Correction to docs for software that is already released | That published version, for example `7.7.1` | none | Immediately, because the release already exists |
 | CI, dependencies, agent instructions, site infrastructure, typos that do not describe new product behavior | **none** | `ci`, `repo-maintenance`, `infrastructure`, or `dependencies` | When CI is green |
 
@@ -23,10 +23,12 @@ Do not put infrastructure on the latest product milestone. A version milestone m
 ### Product docs before the release
 
 1. Confirm the behavior in the CRM pull request and the milestone that pull request targets.
-2. Open the docs pull request against `main`. Set the **same** milestone. Do not add a maintenance label.
-3. Leave it open. The failing release gate is the staging area. Do not merge it to "get it ready."
-4. When ChurchCRM publishes that version, `release-publish.yml` or `release-bookkeeping.yml` dispatches `crm-released`. The docs workflow creates the milestone and opens the API pin pull request. It merges that pin, and any other open pull request on the milestone, only when the site build and the released-software gate are successful. A pull request that is still running or has a failing check stays open. A daily run does the same if the dispatch did not arrive.
-5. Do not merge those pull requests by hand unless the automation reports that it could not.
+2. Open the docs pull request against `release-docs/<version>`, for example `release-docs/7.8.0`, not `main`. Ask a maintainer to create the branch if it does not exist. Set the **same** milestone. Do not add a maintenance label.
+3. Name the CRM docs tracking issue in the description as `Closes ChurchCRM/CRM#N`. When the pull request merges into the release branch, that issue is closed. Merge each pull request into the release branch as soon as it is approved. The site build runs on it. The release gate guards `main`, so it does not run here.
+4. When ChurchCRM publishes that version, `release-publish.yml` or `release-bookkeeping.yml` dispatches `crm-released`. The docs workflow creates the milestone, opens `release-docs/<version>` as one pull request into `main`, and merges it when the site build and the released-software gate are successful. It then opens and merges the API pin pull request. A daily run does the same if the dispatch did not arrive.
+5. Do not merge the release pull request by hand unless the automation reports that it could not.
+
+The site shows the release it describes in the navbar and the footer. It comes from `crm-release.json`, which the API pin pull request moves. Pages therefore do not say "since" or "new in" a version.
 
 `Sync docs release milestones` creates the docs milestone for the version in CRM `package.json` and for the latest stable release when either is missing. If the milestone you need does not exist yet, run that workflow with the version, or create the `x.y.z` milestone by hand. Do not invent a non-version milestone.
 

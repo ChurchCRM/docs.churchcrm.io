@@ -81,6 +81,7 @@ const config: Config = {
         { type: 'docSidebar', sidebarId: 'userGuideSidebar', position: 'left', label: 'User Guide' },
         { type: 'docSidebar', sidebarId: 'adminSidebar', position: 'left', label: 'Administration' },
         { type: 'docSidebar', sidebarId: 'apiSidebar', position: 'left', label: 'API Reference' },
+        { href: `https://github.com/ChurchCRM/CRM/releases/tag/${crmRelease.version}`, label: `ChurchCRM ${crmRelease.version}`, position: 'right' },
         { href: 'https://churchcrm.io/install.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_install', label: 'Install', position: 'right' },
         { href: 'https://churchcrm.io/demo.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_demo', label: 'Demo', position: 'right' },
         { href: 'https://churchcrm.io/connect.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=navbar_connect', label: 'Connect', position: 'right' },
@@ -107,7 +108,7 @@ const config: Config = {
           { label: 'Releases', href: 'https://github.com/ChurchCRM/CRM/releases' },
         ] },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} ChurchCRM. Released under MIT License.`,
+      copyright: `These docs describe ChurchCRM ${crmRelease.version}, the latest release. Copyright © ${new Date().getFullYear()} ChurchCRM. Released under MIT License.`,
     },
     prism: {
       theme: prismThemes.github, darkTheme: prismThemes.dracula,
