@@ -20,7 +20,7 @@ The project welcomes and depends on contributions from developers and users in t
 
 ## Getting Started (Quick)
 
-We provide a few quick development options to get you contributing fast: Codespaces, Dev Containers, and DDEV. See the repository CONTRIBUTING.md in the project for full setup details.
+We provide a few quick development options to get you contributing fast: Codespaces and Dev Containers. See the repository CONTRIBUTING.md in the project for full setup details.
 
 (Full content has been imported from the repository's CONTRIBUTING.md and is available in the source tree.)
 

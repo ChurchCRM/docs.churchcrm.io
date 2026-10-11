@@ -34,7 +34,3 @@ Once the application is running:
 - **[First Run Configuration](/getting-started/first-run)** — Configure your church details and initial settings
 - **[Upgrade Guide](/administration/upgrade)** — Keep ChurchCRM up to date
 - **[FAQs](/administration/faqs)** — Frequently asked questions
-
-## Contributing / Local development
-
-- **[DDEV](https://ddev.com/)** — ChurchCRM ships with a ready-to-go DDEV configuration. From a clone of the repo, run `ddev start` then `ddev setup-churchcrm`. See `CONTRIBUTING.md` in the repo for the full walkthrough.
