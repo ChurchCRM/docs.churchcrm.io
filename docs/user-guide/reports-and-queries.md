@@ -92,6 +92,12 @@ Open **Reports → People Reports**. Each report is admin only, the same as this
 
 The results header has three actions: **Add All to Cart**, **Print Labels**, and **Download CSV**. **Print Labels** is disabled when the report has no rows.
 
+### People by Grade
+
+**People by Grade** lists everyone from one [school grade](/user-guide/school-grades) through another, sorted by grade and then by name. Choose **From Grade**, and **Through Grade** for a range. Leave **Through Grade** empty for a single grade. The **Classification** filter works as on the other reports. Deceased people are not listed.
+
+**Add All to Cart** followed by **Empty Cart to Group** fills a Sunday School class. See [Filling a class by grade](./sunday-school.md#filling-a-class-by-grade).
+
 ### Print Labels on People Reports
 
 **Print Labels** opens the same **Generate Labels** dialog as the Cart. It prints the rows on the page, with the filters currently applied. The Cart is not used, and the people in the Cart are not changed.

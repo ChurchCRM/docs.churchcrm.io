@@ -23,6 +23,8 @@ Use this page to find the menu for a setting. System Settings tabs are **Financi
 | Auto-uppercase ZIP codes | People → Admin → People Settings → Families | Uppercase Zip/Postcodes |
 | Hide a person's address when they have no family | People → Admin → People Settings → People | Hide Address Without Family |
 | Choose which family roles are head, spouse and child | People → Admin → People Settings → Families | Head of House / Spouse / Child Role |
+| Move everyone up one school grade each year | People → Admin → People Settings → Grade Promotion | Promotion Month, Promotion Day. **Promote Now** runs it right away. See [School Grades](/user-guide/school-grades#moving-everyone-up-one-grade) |
+| Change the grade names to another country's | People → Admin → Grades | Grade Names. See [School Grades](/user-guide/school-grades#grade-names-for-your-country) |
 | Mark a classification as inactive | People → Admin → Person Classifications | Inactive column |
 | Choose which classifications start ticked on the Directory report | People → Admin → Person Classifications | In Directory column |
 
