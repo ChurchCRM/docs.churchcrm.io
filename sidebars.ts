@@ -60,6 +60,7 @@ const sidebars: SidebarsConfig = {
         'user-guide/families',
         'user-guide/self-registrations',
         'user-guide/classifications',
+        'user-guide/school-grades',
         'user-guide/custom-fields',
         'user-guide/custom-fields-types',
         'user-guide/properties',
