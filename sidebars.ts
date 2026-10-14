@@ -29,6 +29,7 @@ const sidebars: SidebarsConfig = {
         'installation/rocky-linux',
         'installation/azure',
         'installation/vps-cloud',
+        'installation/docker',
         'installation/ssl-https',
       ],
     },

@@ -1,7 +1,6 @@
 ---
 title: Docker
 description: Run ChurchCRM from the official Docker images, and back it up.
-sidebar_position: 4
 ---
 
 # Docker
