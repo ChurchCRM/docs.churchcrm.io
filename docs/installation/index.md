@@ -25,7 +25,7 @@ Choose the path that matches your hosting setup:
 | **[Self-Hosted on Rocky Linux](/installation/rocky-linux)** | RHEL, Rocky Linux, AlmaLinux VPS or dedicated server |
 | **[Azure](/installation/azure)** | Microsoft Azure cloud |
 | **[VPS & Cloud Providers](/installation/vps-cloud)** | DigitalOcean, Linode, Hetzner, Vultr, AWS Lightsail, GCE and others |
-| **Docker** | Used for development/CI, no officially maintained production image — see [Docker](/installation/vps-cloud#docker) |
+| **[Docker](/installation/docker)** | Official multi-arch images for self-hosting with Docker Compose |
 
 ## After Installation
 
