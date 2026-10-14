@@ -76,11 +76,7 @@ Certbot auto-renews certificates — no annual fee, no manual renewal. See [SSL 
 
 ## Docker
 
-:::caution No officially supported production Docker image
-ChurchCRM is built and developed using Docker — the [`docker/`](https://github.com/ChurchCRM/CRM/tree/master/docker) directory has example Dockerfiles (Apache, FPM, FrankenPHP) used for local development and CI. **None of these are published or maintained as an official production image**, and this is a deliberate choice, not a temporary gap: once you run a container in production, keeping its base image patched and secure is the operator's ongoing responsibility, not something the ChurchCRM project can maintain on your behalf.
-
-If you want to run ChurchCRM in a container, you can adapt the example Dockerfiles yourself, but you own the security maintenance of the resulting image. For a supported path with no extra maintenance burden, a VPS with the standard Apache + PHP setup (this page) or a [self-hosted Linux install](/installation/self-hosted) is the safer choice.
-:::
+Official multi-architecture Docker images are now available. See the **[Docker installation guide](/installation/docker)** for the recommended Compose-based production setup using `churchcrm/crm`.
 
 ---
 
@@ -95,6 +91,7 @@ You can point ChurchCRM at a managed MySQL/MariaDB instance (AWS RDS, Google Clo
 - [Self-Hosted on Ubuntu](/installation/ubuntu)
 - [Self-Hosted on Rocky Linux](/installation/rocky-linux)
 - [Azure](/installation/azure)
+- [Docker](/installation/docker)
 - [SSL / HTTPS](/installation/ssl-https)
 - [System Requirements](/installation/system-requirements)
 - [Upgrade Guide](/administration/upgrade)
