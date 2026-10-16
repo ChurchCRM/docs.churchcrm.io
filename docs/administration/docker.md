@@ -1,4 +1,3 @@
-```markdown
 ---
 title: Docker Development Environment
 sidebar_position: 15
@@ -152,6 +151,4 @@ chmod a+rwx src/logs
 
 ## Production Note
 
-⚠️ **This Docker setup is for development and testing only.** Do not use in production environments. For production deployment, see the [Installation](/administration/upgrade) guides.
-
-```markdown
+This page is for editing the ChurchCRM source code. A church install uses the published image on [Docker](/installation/docker): `churchcrm/crm:latest-php8-apache`.

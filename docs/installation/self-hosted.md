@@ -30,7 +30,7 @@ The underlying steps are the same everywhere: install Apache/PHP/MariaDB, create
 
 ## Docker
 
-ChurchCRM is built and developed with Docker, but there is no officially maintained production Docker image — see [Docker](/installation/vps-cloud#docker) for why and what's available.
+ChurchCRM publishes official Docker images as `churchcrm/crm` — see [Docker](/installation/docker) for the tags, a Compose file, and how to back up and upgrade.
 
 ---
 

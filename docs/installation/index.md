@@ -1,10 +1,12 @@
 ---
 title: Installation Guide
-description: How to install ChurchCRM on shared hosting, your own server, or a cloud host.
+description: Pick an install path for ChurchCRM. Most churches start with Softaculous or cPanel. Docker, Ubuntu, and cloud hosts are here too.
 sidebar_position: 1
 ---
 
 # Installation
+
+Not sure where to start? If your host has cPanel or Plesk, use [One-Click Install (Softaculous)](/installation/softaculous). If Softaculous is not there, use [cPanel](/installation/cpanel-shared-hosting). Use the server guides only when someone on your team can use a Linux terminal. Use [Docker](/installation/docker) only when you already run containers.
 
 ## System Requirements
 
@@ -25,7 +27,7 @@ Choose the path that matches your hosting setup:
 | **[Self-Hosted on Rocky Linux](/installation/rocky-linux)** | RHEL, Rocky Linux, AlmaLinux VPS or dedicated server |
 | **[Azure](/installation/azure)** | Microsoft Azure cloud |
 | **[VPS & Cloud Providers](/installation/vps-cloud)** | DigitalOcean, Linode, Hetzner, Vultr, AWS Lightsail, GCE and others |
-| **Docker** | Used for development/CI, no officially maintained production image — see [Docker](/installation/vps-cloud#docker) |
+| **[Docker](/installation/docker)** | Official `churchcrm/crm` images on Docker Hub — for admins already comfortable with containers |
 
 ## After Installation
 
@@ -35,6 +37,9 @@ Once the application is running:
 - **[Upgrade Guide](/administration/upgrade)** — Keep ChurchCRM up to date
 - **[FAQs](/administration/faqs)** — Frequently asked questions
 
-## Contributing / Local development
+## Changing the ChurchCRM code
 
-- **[DDEV](https://ddev.com/)** — ChurchCRM ships with a ready-to-go DDEV configuration. From a clone of the repo, run `ddev start` then `ddev setup-churchcrm`. See `CONTRIBUTING.md` in the repo for the full walkthrough.
+This is only for people editing ChurchCRM itself, not for installing it at a church.
+
+- **[Docker Development Environment](/administration/docker)** — the containers used to work on the source code
+- **[DDEV](https://ddev.com/)** — from a clone of the repository, run `ddev start` then `ddev setup-churchcrm`. The repository `CONTRIBUTING.md` has the rest of that walkthrough.
