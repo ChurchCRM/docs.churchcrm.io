@@ -61,9 +61,10 @@ Right after an email sign-in on which you ticked **This is my own device**, the 
 - **Choose a new photo** on the edit form uploads a new picture straight away. A square picture of your face works best.
 - **Birthday** appears only when your church allows members to change it. Otherwise it is neither shown nor editable here — ask the church office.
 - **Email** is how you sign in, so a new address changes only after you use the link ChurchCRM sends to it; your old address gets a notice. See [Changing your email address](./member-sign-in.md#changing-your-email-address). If the field is locked, ask the church office.
+- **Language** on the edit form chooses the language the Member Portal is shown in. **Church default** uses your church's language. After you save, the portal changes language on the next page, and emails ChurchCRM sends you (such as your sign-in code) use it too.
 - Your household's address and home phone belong to the family, so they are changed under [My Family](#my-family), not here. Families have no email of their own: each person keeps theirs on their own profile.
 
-Staff who opened the portal from their office login also find **Sign-in and security** here, with **Change your password** and **Two-factor authentication**.
+Staff who opened the portal from their office login also find **Sign-in and security** here, with **Change your password** and **Two-factor authentication**. They have no Language field: the portal uses the language set on their office account.
 
 ---
 
