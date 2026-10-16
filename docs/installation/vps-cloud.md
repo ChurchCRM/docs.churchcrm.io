@@ -77,15 +77,15 @@ Certbot auto-renews certificates — no annual fee, no manual renewal. See [SSL 
 ## Docker
 
 ChurchCRM publishes official Docker images as
-[`churchcrm/crm`](https://hub.docker.com/r/churchcrm/crm), starting with 7.8.0.
+[`churchcrm/crm`](https://hub.docker.com/r/churchcrm/crm).
 They are built from each stable release for `linux/amd64` and `linux/arm64`, and
 run as a non-root user.
 
 See **[Docker](/installation/docker)** for the images, a Compose file, and how
 to back up and upgrade.
 
-Running a container shifts some maintenance onto you: pull a newer version tag
-when one is published, so the application and its base image stay patched. If
+Running a container shifts some maintenance onto you: pull a newer image
+when you are ready to upgrade, so the application and its base image stay patched. If
 you would rather not take that on, the standard Apache + PHP setup on this page
 or a [self-hosted Linux install](/installation/self-hosted) needs less ongoing
 attention.

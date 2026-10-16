@@ -6,10 +6,9 @@ description: Run ChurchCRM from the official Docker images, and back it up.
 # Docker
 
 ChurchCRM publishes official Docker images on Docker Hub as
-[`churchcrm/crm`](https://hub.docker.com/r/churchcrm/crm). 7.8.0 is the first
-release to ship them.
+[`churchcrm/crm`](https://hub.docker.com/r/churchcrm/crm).
 
-Every command on this page was run against `churchcrm/crm:7.8.0-php8-apache`
+Every command on this page was run against `churchcrm/crm:latest-php8-apache`
 before publication. Where something was reasoned about rather than executed, it
 says so.
 
@@ -17,20 +16,20 @@ says so.
 
 | Tag | What it is |
 | --- | --- |
-| `7.8.0-php8-apache` | A specific release. Apache + PHP 8.4, serves HTTP on port 8080. **Use this in production.** |
-| `latest-php8-apache` | Whatever the newest stable release is. Moves without warning. |
+| `latest-php8-apache` | The current release. Apache + PHP 8.4, serves HTTP on port 8080. **Use this.** |
 | `latest` | The same image as `latest-php8-apache`. |
-| `7.8.0-php8-fpm`, `latest-php8-fpm` | PHP-FPM, FastCGI on port 9000. **Not supported** — see [PHP-FPM](#php-fpm) below. |
+| `latest-php8-fpm` | PHP-FPM, FastCGI on port 9000. **Not supported** — see [PHP-FPM](#php-fpm) below. |
 
 All tags are built for `linux/amd64` and `linux/arm64`, so Apple Silicon and
 64-bit Raspberry Pi work.
 
-**Pin a version.** `churchcrm/crm:7.8.0-php8-apache`, not `latest`. A ChurchCRM
-upgrade also migrates the database, and there is no supported way back down
-without restoring a backup, so you do not want an unattended `docker compose
-pull` deciding when that happens.
+Use `churchcrm/crm:latest-php8-apache`. Docker Hub also publishes a tag named
+after the release, with `-php8-apache` on the end. There is no tag that is only
+the release number.
 
-There is no bare `7.8.0` tag. The variant suffix is always required.
+A ChurchCRM upgrade also migrates the database, and there is no supported way
+back down without restoring a backup. Pull a new image only when you mean to
+upgrade, and take a backup first.
 
 :::warning If you ran `churchcrm/crm` before October 2026
 The `latest` tag used to point at an unmaintained Alpine / PHP 7 image built in
@@ -89,7 +88,7 @@ services:
       - no-new-privileges:true
 
   web:
-    image: churchcrm/crm:7.8.0-php8-apache
+    image: churchcrm/crm:latest-php8-apache
     restart: unless-stopped
     depends_on:
       db:
@@ -243,17 +242,16 @@ Restore photo archives by extracting them back into the same volumes.
 ### Swap the image tag — recommended
 
 ```bash
-# edit compose.yaml: churchcrm/crm:<new-version>-php8-apache
 docker compose pull && docker compose up -d
 ```
 
 Back up first. The application code comes from the image, so this is the path
-that behaves like Docker expects: the new container is the new version, and
-rolling back means putting the old tag back and restoring your backup.
+that behaves like Docker expects: the new container is the new release, and
+rolling back means restoring your backup and the previous image.
 
-Cross-version upgrades could not be tested before publication, because 7.8.0 is
-the newest release and there was nothing newer to upgrade to. Treat the first
-one cautiously and take a backup you have actually tried restoring.
+An upgrade from an older image to a newer one was not run before this page was
+written. Treat the first one cautiously and take a backup you have actually
+tried restoring.
 
 ### The in-app updater — not recommended in Docker
 
@@ -269,8 +267,8 @@ a database-upgrade page. That happens *before* authentication, so an
 administrator cannot log in to fix it, and there is no schema downgrade path.
 Recovery means restoring a backup.
 
-If you do use the in-app updater, repin the image tag to the matching version
-immediately afterwards.
+If you do use the in-app updater, pull `churchcrm/crm:latest-php8-apache` again
+immediately afterwards so the image matches the database.
 
 ## Replacing the container
 
@@ -338,7 +336,7 @@ verify it in your own setup.
 
 ## PHP-FPM
 
-`churchcrm/crm:<version>-php8-fpm` exists and is published, but it is **not
+`churchcrm/crm:latest-php8-fpm` exists and is published, but it is **not
 supported**. It speaks FastCGI on port 9000 only, so it needs your own web
 server in front, and ChurchCRM's routing depends on Apache's rewrite rules.
 Reproducing them correctly in nginx is not a drop-in exercise.
