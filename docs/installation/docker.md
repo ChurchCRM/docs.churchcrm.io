@@ -179,10 +179,23 @@ Two things need backing up: the database, and the photos.
 The web image ships no `mariadb-dump`, so run it in the `db` container. The
 dump is consistent while the app stays live, because all 59 tables are InnoDB.
 
+The password goes in a file the database container can read, not on the command line. The file is removed when the command finishes, including when it fails.
+
 ```bash
 set -a; . ./.env; set +a
+umask 077
+printf '[client]\nuser=%s\npassword=%s\n' \
+  "$CHURCHCRM_DB_USER" "$CHURCHCRM_DB_PASSWORD" > client.cnf
+cleanup() {
+  rm -f client.cnf
+  docker compose exec -T db rm -f /tmp/client.cnf
+}
+trap cleanup EXIT
+docker compose cp client.cnf db:/tmp/client.cnf
+docker compose exec -u root -T db chown mysql:mysql /tmp/client.cnf
+docker compose exec -u root -T db chmod 600 /tmp/client.cnf
 docker compose exec -T db \
-  mariadb-dump -u"$CHURCHCRM_DB_USER" -p"$CHURCHCRM_DB_PASSWORD" \
+  mariadb-dump --defaults-extra-file=/tmp/client.cnf \
   --single-transaction --routines --events --triggers \
   "$CHURCHCRM_DB_NAME" > churchcrm-backup.sql
 ```
@@ -225,12 +238,25 @@ use `mariadb-dump` above.
 
 ### Restoring
 
+`docker compose down -v` removes the database volume `db-data` and the photo volumes `person-photos` and `family-photos`. Restore the photos after the database, from the archives in the section above.
+
 ```bash
-docker compose down -v          # destroys the current database volume
+docker compose down -v          # removes db-data, person-photos, and family-photos
 docker compose up -d db         # wait for healthy
 set -a; . ./.env; set +a
+umask 077
+printf '[client]\nuser=%s\npassword=%s\n' \
+  "$CHURCHCRM_DB_USER" "$CHURCHCRM_DB_PASSWORD" > client.cnf
+cleanup() {
+  rm -f client.cnf
+  docker compose exec -T db rm -f /tmp/client.cnf
+}
+trap cleanup EXIT
+docker compose cp client.cnf db:/tmp/client.cnf
+docker compose exec -u root -T db chown mysql:mysql /tmp/client.cnf
+docker compose exec -u root -T db chmod 600 /tmp/client.cnf
 docker compose exec -T db \
-  mariadb -u"$CHURCHCRM_DB_USER" -p"$CHURCHCRM_DB_PASSWORD" \
+  mariadb --defaults-extra-file=/tmp/client.cnf \
   "$CHURCHCRM_DB_NAME" < churchcrm-backup.sql
 docker compose up -d
 ```
