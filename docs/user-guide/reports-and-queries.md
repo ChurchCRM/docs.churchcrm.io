@@ -30,6 +30,10 @@ Finance letters and giving reports are under [Deposit Reports](/user-guide/finan
 - People who signed up through the public registration form are left out until they are approved under **People → Self Registrations**.
 - For a directory of only the people in the [Cart](/user-guide/cart), click **Directory** in the Cart Functions bar. That form has no classification or group filters: the Cart decides who is printed.
 
+### Email in the directory
+
+Under **Information to Include**, **Personal Email** and **Personal Work/Other Email** print each person's own addresses. There is no family email option: families have no email of their own, and a person without one prints none. See [Families → Email](/user-guide/families#email).
+
 ### Page Layout
 
 ![Directory Reports form: Page Layout, Columns per Page, Paper Size and Font Size](https://cdn.churchcrm.io/screenshots/en/desktop/directory-booklet-options.png)

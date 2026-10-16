@@ -32,7 +32,6 @@ Access to the Fundraiser module is controlled at two levels:
 2. If **Enable Fundraiser menu** is **on**, only the following users see the Fundraiser menu:
    - Users with the **Admin** right (they bypass the per-user permission).
    - Users who have the **Manage Fundraisers** right granted on their account.
-3. Users in **Edit Self** mode never have fundraiser access, even if the permission is set.
 
 The API routes that power the Fundraiser module are protected by the same check: a user must be an Admin or have the Manage Fundraisers permission. Attempting to access a fundraiser API endpoint without the required role returns a 403 error.
 

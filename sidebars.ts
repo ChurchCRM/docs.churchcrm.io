@@ -100,6 +100,7 @@ const sidebars: SidebarsConfig = {
       label: '🏠 Member Portal',
       items: [
         'user-guide/member-portal',
+        'user-guide/member-sign-in',
       ],
     },
     {
@@ -193,6 +194,8 @@ const sidebars: SidebarsConfig = {
       label: '🏠 Member Portal',
       items: [
         'administration/member-portal',
+        'administration/member-sign-in',
+        'administration/portal-permissions',
         'administration/member-portal-themes',
         'administration/member-portal-theme-guide',
         'administration/member-portal-template-reference',
@@ -229,6 +232,7 @@ const sidebars: SidebarsConfig = {
         'administration/plugins/installing-community-plugins',
         'administration/plugins/plugin-security-and-compliance',
         'administration/plugins/plugin-localization',
+        'administration/plugins/plugin-portal-pages',
       ],
     },
   ],

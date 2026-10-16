@@ -16,7 +16,11 @@ The installation and setup process creates an admin user that you can use to cre
 - **Username:** `admin`
 - **Password:** `changeme`
 
-Change this password immediately after your first login.
+Sign in at your site's `/admin/` address; the site's home page opens the member sign-in page, which has a **Staff sign-in** link. Change this password immediately after your first login.
+
+### How do members sign in?
+
+With their own email address, at the site's home page. ChurchCRM emails them a code and a link; there is no member password. Member sign-in is off until an administrator turns it on and chooses who may sign in. See [Member sign-in](/administration/member-sign-in).
 
 ### How do I upgrade from version 5.x to the current release?
 

@@ -3,7 +3,6 @@
 # https://cdn.churchcrm.io/screenshots/en/desktop/<name>.png from the page, delete the
 # file here, and remove its line. Do not add a line: new screenshots are captures, not files.
 static/img/administration/member-portal-settings.png
-static/img/administration/member-portal-statistics.png
 static/img/administration/member-portal-user-menu.png
 static/img/administration/user-editor-ministry-permissions.png
 static/img/getting-started/church-info-social-media.png

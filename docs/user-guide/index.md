@@ -56,6 +56,7 @@ Organizing your church activities:
 What a church member sees when they sign in:
 
 * [Member Portal](/user-guide/member-portal) - Profile, family, calendar, volunteering and team pages for members
+* [Signing in to the Member Portal](/user-guide/member-sign-in) - The email code and link, staying signed in, passkeys and your devices
 
 ---
 

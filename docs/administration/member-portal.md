@@ -1,22 +1,22 @@
 ---
 title: Member Portal
 sidebar_position: 40
-description: Admin → Member Portal — theme, section switches, usage statistics, which calendars members see and the member directory; what changes elsewhere; what to expect after upgrading.
+description: Admin → Member Portal — member sign-in, the member lists, portal permissions, the sign-in audit, usage statistics, theme, which calendars members see and the member directory; what changes elsewhere; what to expect after upgrading.
 ---
 
 # Member Portal administration
 
-The [Member Portal](../user-guide/member-portal.md) is the member-facing half of ChurchCRM. It is not a feature a church switches on: after the upgrade that carries it, it is simply there, and a member account lands in it instead of on the old limited-access page. Everything an administrator can change about it lives on one page, **Admin → Member Portal**.
+The [Member Portal](../user-guide/member-portal.md) is the member-facing half of ChurchCRM. Members sign in to it with their own email address; they have no user account and no password. Everything an administrator can change about it lives on one page, **Admin → Member Portal**.
 
 :::tip Who reaches the portal
-A **self-service account** — a user whose only permission is *Edit Self* — reaches the portal and nothing else. Every other login keeps the office side of ChurchCRM exactly as before and can open the portal from its user menu. There is no new permission to grant.
+**Members** sign in at `/portal/login` with a code ChurchCRM emails them, once you have turned member sign-in on and chosen who may use it. See [Member sign-in](./member-sign-in.md). **Staff** sign in at `/admin/` as before and open their own portal from the user menu. What each person can do in the portal is decided by [portal permissions](./portal-permissions.md), not by staff permissions.
 :::
 
 ---
 
 ## Admin → Member Portal
 
-**Admin → Member Portal** is for administrators only. It has five tabs: **Settings**, **Themes**, **Statistics**, **Calendars** and **Directory**. The **Open the Member Portal** button at the top right opens the portal as yourself.
+**Admin → Member Portal** is for administrators only. It has eight tabs: **Statistics**, **Sign-in**, **Members**, **Permissions**, **Audit**, **Themes**, **Calendars** and **Directory**. The **Open the Member Portal** button at the top right opens the portal as yourself.
 
 ### Settings
 
@@ -38,6 +38,52 @@ The **Portal settings** panel holds the switches, saved with **Save Settings**:
 
 Switching a section off hides it: its navigation entry and home card disappear and its pages are no longer reachable. Nothing is deleted, and switching it back on brings everything back.
 
+### Sign-in
+
+Member sign-in on or off, and who may sign in. Every field saves together with **Save sign-in settings**; if one value is wrong, the field says why and nothing is saved.
+
+![The Sign-in tab](https://cdn.churchcrm.io/screenshots/en/desktop/admin-member-portal-sign-in.png)
+
+| Setting | What it does | Default |
+|---------|--------------|---------|
+| **Let members sign in with their email** | Members sign in at `/portal/login` with an emailed code or link. It can only be turned on while ChurchCRM can send email; until then the switch is grayed out and the tab says why, with a **Set up email** link. | Off |
+| **Family Roles** | Which family roles may sign in, plus **No family role**. | Head of Household, Spouse |
+| **Classifications** | Which classifications may sign in, each with its number of active people, plus **Unassigned**. *"This is where you decide about guests."* | None |
+| **Minimum age** | Youngest age that may sign in. 0 means no age rule. Without a birth date, only a head of household or spouse qualifies. | 13 |
+| **Link and code lifetime (minutes)** | How long a sign-in code and link stay valid. | 120 |
+| **Sign-in emails per IP address per hour** | How many sign-in emails one IP address can ask for in an hour. 0 means no limit, for when everyone reaches ChurchCRM through one address. | 20 |
+| **Idle time (minutes)** | How many idle minutes end a member's session. | 30 |
+| **Keep me signed in (days)** | How long a device stays signed in after the member ticks **This is my own device**. 0 removes the choice and stops every remembered device. | 30 |
+| **Passkeys** | Let members add passkeys and sign in with them. When the site address can't carry passkeys (not `https`, or an IP address instead of a host name), the tab says why. | On |
+| **Office list** | People emailed when someone could not sign in, at most once per address per hour. Only people with their own email can be added. | Empty |
+| **Allow Login as User** | Administrators may open a member's portal as that member, from the person's **Actions** menu. | Off |
+| **Allow changes during Login as User** | When off, Login as User is read-only. | Off |
+
+The **Who may sign in** card's footer counts the people the saved settings let in, before the email rule. How these rules work together, and turning member sign-in on for the first time, are on [Member sign-in](./member-sign-in.md).
+
+### Members
+
+Lists of the people member sign-in applies to, each paged and searchable, with a count beside its name. The lists follow the rules on the Sign-in tab.
+
+![The Members tab](https://cdn.churchcrm.io/screenshots/en/desktop/admin-member-portal-members.png)
+
+| List | Who is on it |
+|------|--------------|
+| **May sign in now** | The sign-in rules let them in, and each has their own email that nobody else who may sign in uses |
+| **Signed in, last 30 days** | Members who signed in during the last 30 days |
+| **Never signed in** | People who may sign in but never have |
+| **Email needs attention** | People the rules let in whose email stops them: no personal email, an email shared with someone else, or an unconfirmed one. Filter by problem. **Confirm Email Address** is offered where you may confirm it ([The sign-in email](./member-sign-in.md#the-sign-in-email)) |
+| **Families confirmed, last 30 days** | Families who confirmed their details, how (Member Portal or emailed verification link), the answer, and which member confirmed |
+| **Family emails not moved** | Shown only after the upgrade moved family emails: each family whose email could not go to a person, with the reason, and counts of how many moved to a head of household, to a spouse, were already held by a family member, or were noted in the family timeline |
+
+### Permissions
+
+Every portal permission, core and plugin, with what it is held on, where it comes from, whether it is on, and how many people hold it. **People** lists the holders. See [Portal permissions](./portal-permissions.md).
+
+### Audit
+
+Every member sign-in, refusal and change to sign-in, newest first, filterable by person, dates and event, in plain words. It never holds a code, link or passkey. See [The audit](./member-sign-in.md#the-audit).
+
 ### Themes
 
 A table of every theme folder found on the server: its display name and description, the **Folder** it lives in, its **Author**, how many **Overridden templates** it has, and its last **Validation** result — expand **Findings** to read the individual messages. Each row's action menu offers **Check** and **Activate**, exactly as on the Settings tab.
@@ -48,18 +94,18 @@ If the folder of the active theme has been removed from the server, the page ope
 
 ### Statistics
 
-![The Statistics tab](/img/administration/member-portal-statistics.png)
+![The Statistics tab](https://cdn.churchcrm.io/screenshots/en/desktop/admin-member-portal-statistics.png)
 
-How much the portal is being used. As the tab says, *these numbers count self-service accounts only: people whose login can reach the Member Portal and nothing else* — staff and administrators who open the portal are not counted.
+How much the portal is being used: *"Member Portal sign-ins and activity, for members and for staff who open the portal from their staff sign-in."* Login as User doesn't count.
 
 | Number | Meaning |
 |--------|---------|
-| **Active now** | Members who opened a portal page in the last 15 minutes |
-| **Last 24 hours / Last 7 days / Last 30 days** | Members who signed in within that period |
-| **Self-service accounts** | Every account that reaches the portal |
-| **Never signed in** | Accounts that have never been used |
+| **Active now** | People who opened a portal page in the last 15 minutes |
+| **Last 24 hours / Last 7 days / Last 30 days** | People who signed in within that period |
+| **May sign in** | Everyone the sign-in rules let in |
+| **Never signed in** | People who may sign in but never have |
 
-**Ten most recent sign-ins** lists the newest sign-ins with the member's name (linked to their record), login, last sign-in and when they were last seen in the portal. Before anyone has used it the table reads *"No member has signed in to the Member Portal yet."*
+**Ten most recent sign-ins** lists the newest sign-ins with the member's name (linked to their record), how they signed in (for example *Email code* or *Passkey*), their last sign-in and when they were last seen in the portal. Before anyone has used it the table reads *"No member has signed in to the Member Portal yet."*
 
 ### Calendars
 
@@ -95,10 +141,10 @@ The tab's own rule is the one to remember: **the directory has no per-person opt
 The portal adds a module; it does not alter the office side of ChurchCRM. A few things around it did move:
 
 - **Volunteering for members lives only in the portal.** The admin sidebar has no *Volunteer* heading any more; coordinators work under **Ministries**, and members accept, decline, swap and sign up on the portal's **Volunteering** page. See [Volunteers](../user-guide/volunteers.md).
-- **A team leader can hold an ordinary member login.** Granting a *team* scope to a self-service account gives that person **My Teams** in the portal — positions, volunteers, schedules and dates for their own team — and nothing at all in the admin area. A church can hand a team to a volunteer without giving them a staff account.
+- **A team leader needs no staff account.** Naming a member in a team's **Team leader** field gives them **My Teams** in the portal — positions, volunteers, schedules and dates for their own team — and nothing at all in the admin area. See [Portal permissions](./portal-permissions.md).
 - **Every ministry has its own calendar**, created with the ministry, renamed when it is renamed and deleted with it. The admin calendar page lists these under **Ministry Calendars**, and the heading that used to say *My Calendars* now reads **Church Calendars**. Ministry calendars are off in the portal until you switch them on.
 - **The old limited-access page is retired.** `/external/limited-access` now redirects to the portal.
-- **Staff and administrators open the portal from their user menu** (**Member Portal**), and get back through the portal's account menu (**Admin Console**).
+- **Staff and administrators open the portal from their user menu** (**Member Portal**), and get back through the portal's account menu (**Admin Console**), without signing in again. See [Staff sign-in at /admin/](./member-sign-in.md#staff-sign-in-at-admin).
 - **Member photos** in the portal are served through the portal itself, scoped to the member and their family. Nothing for an administrator to configure.
 - **A family member proposed in the portal waits on People → Self Registrations.** When an adult of a household uses **Add a family member**, the new person is saved in that family and marked for review; the household sees them on **My Family** with a **Waiting for review** badge until you approve them. The dashboard lists them as a *Family Member* row with the family's name and counts them as pending. Approve them on their own from the row menu (**Approve**), or with others using **Approve selected**.
 - **The portal footer comes from Admin → Church Information**: the church's name, phone and email, a **Church website** link and the church's social media links. A website or social media address is only shown when it is a web address starting with `http://` or `https://`.
@@ -109,12 +155,12 @@ The portal adds a module; it does not alter the office side of ChurchCRM. A few 
 
 ## For administrators upgrading
 
-What you will notice after upgrading to a release that carries the Member Portal:
+What you will notice after upgrading:
 
-1. **Member logins land in the portal.** A user whose only permission is *Edit Self* used to land on a page with two buttons; they now land on the portal home page with their profile, their household and the calendar. This is the one change worth a line in your own announcement to members.
-2. **Those members cannot reach the admin area.** They never could, but the address they are sent back to is now the portal home.
-3. **Every other login is unchanged.** Staff and administrators see a new **Member Portal** entry in their user menu and nothing else different.
-4. **No calendar is shared until you switch one on.** Visit **Admin → Member Portal → Calendars** and choose. Birthdays and anniversaries stay off unless you share them.
+1. **Self-service logins are gone, and member sign-in is off.** The upgrade removes every user account whose only permission was *Edit Self*. Members sign in with their own email once you turn member sign-in on: the Admin Dashboard reminds you. This is the change worth an announcement to your members. See [Member sign-in → After the upgrade](./member-sign-in.md#after-the-upgrade).
+2. **Families have no email of their own.** The upgrade moves each family email to a person. See [Email belongs to people](./member-sign-in.md#email-belongs-to-people).
+3. **Staff sign in at `/admin/`.** Old `/session/begin` links redirect there. Staff and administrators have a **Member Portal** entry in their user menu.
+4. **No calendar is shared until you switch one on** (when you upgrade from a release without the portal). Visit **Admin → Member Portal → Calendars** and choose. Birthdays and anniversaries stay off unless you share them.
 5. **Birthday editing is off** until you switch it on.
 6. **There is no feature flag.** The portal cannot be turned off as a whole; the section switches above are what you have.
 7. **A church theme must survive deployment.** Themes live under `Include/themes/` on the server, the one folder ChurchCRM never overwrites. If you deploy with a script that mirrors the release over the installation and deletes what it does not know (for example `rsync --delete`), exclude that folder, or members will see *"The Member Portal is temporarily unavailable"* until you pick a theme that still exists. See [Church themes](./member-portal-themes.md).
@@ -128,6 +174,8 @@ The release that carries the portal also adds database columns on first page loa
 ## Related documentation
 
 - [Member Portal — for members](../user-guide/member-portal.md)
+- [Signing in to the Member Portal](../user-guide/member-sign-in.md) — for members
+- [Member sign-in](./member-sign-in.md)
+- [Portal permissions](./portal-permissions.md)
 - [Church themes](./member-portal-themes.md)
-- [User Management](./users.md) — creating member accounts
 - [Upgrade Guide](./upgrade.md)

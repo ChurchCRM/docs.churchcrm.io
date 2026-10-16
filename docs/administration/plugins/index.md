@@ -41,6 +41,7 @@ Plugins can:
 - Inject HTML/JS/CSS into core pages.
 - Store their own settings (sandboxed to `plugin.{id}.*` keys).
 - Ship their own translations (see [Plugin Localization](/administration/plugins/plugin-localization)).
+- Add pages, an API and navigation entries to the Member Portal, shown only to members who hold a portal capability the plugin declares (see [Member Portal pages in a plugin](/administration/plugins/plugin-portal-pages)).
 
 Plugins **cannot** touch another plugin's settings, bypass the admin
 auth middleware, write files outside their own directory, or ship

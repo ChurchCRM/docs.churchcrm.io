@@ -113,7 +113,7 @@ Logs can contain sensitive information or information you want to hide (IP addre
 ```log
 [2021-07-09T21:29:41.473127+10:00] authLogger.INFO: User partially authenticated, pending 2FA:
     jbloggs [] {
-        "url":"/session/begin",
+        "url":"/admin/",
         "remote_ip":"111.222.333.444",
         "correlation_id":"60e8332573831",
         "context":{
@@ -128,7 +128,7 @@ Logs can contain sensitive information or information you want to hide (IP addre
 ```log
 [2021-07-09T21:29:41.473127+10:00] authLogger.INFO: User partially authenticated, pending 2FA:
     username [] {
-        "url":"/session/begin",
+        "url":"/admin/",
         "remote_ip":"Remote.IP.Redacted",
         "correlation_id":"60e8332573831",
         "context":{

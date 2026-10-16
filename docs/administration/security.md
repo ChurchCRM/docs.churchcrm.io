@@ -11,7 +11,9 @@ sidebar_position: 3
 
 ## User Accounts
 
-Any person record in ChurchCRM can be promoted to a user account. By default, a person is not permitted to log in until an administrator provisions them with a user account.
+Any person record in ChurchCRM can be promoted to a staff user account, which signs in at `/admin/`. Nobody signs in as staff until an administrator gives them a user account.
+
+Members sign in to the Member Portal with their own email address and have no user account. Whether they may, and what they can do there, is set on [Member sign-in](./member-sign-in.md) and [Portal permissions](./portal-permissions.md). **Disable sign-in** on a person's page stops both kinds of sign-in.
 
 ## Role-Based Access Control
 
@@ -23,29 +25,27 @@ ChurchCRM uses roles to control access to sensitive data. The available roles ar
 - Manage Groups and Roles
 - Manage Donations and Finance
 - View, Add, and Edit Notes
-- Edit Self
 - Admin
 
 ## Permissions Matrix
 
-| Permission | Add Records | Edit Records | Delete Records | Manage Groups | Finance | Notes | Edit Self | Admin |
-|------------|:-----------:|:------------:|:--------------:|:-------------:|:-------:|:-----:|:---------:|:-----:|
-| View people & families | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Run reports, print letters & labels | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | ✓ |
-| Add people/families | ✓ | | | | | | | ✓ |
-| Edit existing records | | ✓ | | | | | ✓* | ✓ |
-| Assign properties to people & families | | ✓ | | | | | | ✓ |
-| Why Came, Verify People report & email | | ✓ | | | | | | ✓ |
-| Delete people & families | | | ✓ | | | | | ✓ |
-| Groups, roles, group types | | | | ✓ | | | | ✓ |
-| Assign properties to groups | | | | ✓ | | | | ✓ |
-| Donations & finance | | | | | ✓ | | | ✓ |
-| Add/edit/view notes | | | | | | ✓ | | ✓ |
-| Edit own profile only | | | | | | | ✓ | ✓ |
-| Define properties, property types, classifications & custom fields | | | | | | | | ✓ |
-| All admin functions | | | | | | | | ✓ |
+| Permission | Add Records | Edit Records | Delete Records | Manage Groups | Finance | Notes | Admin |
+|------------|:-----------:|:------------:|:--------------:|:-------------:|:-------:|:-----:|:-----:|
+| View people & families | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Run reports, print letters & labels | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Add people/families | ✓ | | | | | | ✓ |
+| Edit existing records | | ✓ | | | | | ✓ |
+| Assign properties to people & families | | ✓ | | | | | ✓ |
+| Why Came, Verify People report & email | | ✓ | | | | | ✓ |
+| Delete people & families | | | ✓ | | | | ✓ |
+| Groups, roles, group types | | | | ✓ | | | ✓ |
+| Assign properties to groups | | | | ✓ | | | ✓ |
+| Donations & finance | | | | | ✓ | | ✓ |
+| Add/edit/view notes | | | | | | ✓ | ✓ |
+| Define properties, property types, classifications & custom fields | | | | | | | ✓ |
+| All admin functions | | | | | | | ✓ |
 
-*Edit Self allows a user to update their own person record only. A user with only Edit Self is taken to the [Member Portal](/administration/member-portal) and does not see the staff pages.
+A member who only needs to keep their own details up to date uses the [Member Portal](../user-guide/member-portal.md) and needs no user account.
 
 ## Other access switches
 

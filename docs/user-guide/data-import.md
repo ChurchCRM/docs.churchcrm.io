@@ -44,7 +44,7 @@ Every other column is optional and can be omitted entirely or left blank.
 
 | Column | Description |
 |--------|-------------|
-| `FamilyID` | A token you assign to group people into a family. All rows sharing the same `FamilyID` are placed in one Family record. The first row with a given `FamilyID` creates the family and sets its name, address, phone, email, and wedding date from that row's values. Rows with an empty `FamilyID` are created as individuals with no family. |
+| `FamilyID` | A token you assign to group people into a family. All rows sharing the same `FamilyID` are placed in one Family record. The first row with a given `FamilyID` creates the family and sets its name, address, phone and wedding date from that row's values. Families have no email: each row's `Email` goes on that person only. Rows with an empty `FamilyID` are created as individuals with no family. |
 
 ### Personal Information
 
@@ -84,8 +84,10 @@ Every other column is optional and can be omitted entirely or left blank.
 | `HomePhone` | |
 | `WorkPhone` | |
 | `MobilePhone` | Cell / mobile number |
-| `Email` | Personal email address |
+| `Email` | Personal email address. It is also how the person signs in to the Member Portal |
 | `WorkEmail` | Work / business email address |
+
+An import that changes the email of someone who has already signed in to the Member Portal follows the same rules as a change made by staff: their sessions end, the old address gets a notice, and the new one can't be used to sign in until it is confirmed. See [The sign-in email](/administration/member-sign-in#the-sign-in-email).
 
 ### Second address columns
 

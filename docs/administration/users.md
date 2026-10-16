@@ -7,11 +7,17 @@ sidebar_position: 2
 
 ![User permissions in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/settings-user-permissions.png)
 
+A user is a **staff account**: someone who signs in at `/admin/` with a username, password and two-factor code to work on the office side of ChurchCRM. **Admin → System Users** lists staff accounts only.
+
+Members don't need a user account. They sign in to the Member Portal with their own email address once you turn [member sign-in](./member-sign-in.md) on. There is no *Self-service only* account: the upgrade that brought member sign-in removed those accounts.
+
 ## How do I add new Users?
 
 1. Open **Admin → System Users** and click **Add User** (`/admin/system/users/new`).
 2. A list of people who do not yet have a login appears. Select the person. You can also pre-select a person by appending `?personId=N` to the URL.
-3. Set the user's rights and click **Save**.
+3. Choose **Administrator**, or custom permissions and the rights below, and click **Save**. An account with every right off is a read-only staff account.
+
+The new user signs in at `/admin/`. The sign-in link in the welcome email points there, and old `/session/begin` links still lead there.
 
 ## What are the different rights available?
 
@@ -22,9 +28,8 @@ sidebar_position: 2
 - **Manage Donations and [Finances](/user-guide/finances)** — add, edit, and delete donations.
 - **Manage [Fundraisers](/user-guide/fundraiser)** — grants access to the Fundraiser menu (create/edit fundraisers, manage items, buyers, and winners). This permission is only effective when the **Enable Fundraiser menu** setting is turned on in **System Settings → Finance Settings**; if that global toggle is off, the Fundraiser menu is hidden for everyone regardless of this per-user permission. Admins always have access when the feature is enabled.
 - **Manage Ministries** — a global ministry manager for [Volunteer Management (v2)](/user-guide/ministries): every ministry — create, deactivate, delete, and grant coordinators and team leaders. Only effective while the volunteer experience on **Admin → Ministry Settings** is V2 or Both.
-- **Manage My Ministries** — a ministry coordinator's permission: opens the **Ministries** heading, the Ministry Dashboard and the pages of the ministries the person has been made a coordinator of (on the ministry page), including creating those ministries' events without **Add Events**, and grants nothing over any other ministry. Like Manage Ministries, it is only effective while the volunteer experience is V2 or Both, and never on a self-service login. See [Who can do what](/user-guide/ministries/permissions).
+- **Manage My Ministries** — a ministry coordinator's permission: opens the **Ministries** heading, the Ministry Dashboard and the pages of the ministries the person has been made a coordinator of (on the ministry page), including creating those ministries' events without **Add Events**, and grants nothing over any other ministry. Like Manage Ministries, it is only effective while the volunteer experience is V2 or Both. See [Who can do what](/user-guide/ministries/permissions).
 - **View, Add, and Edit [Notes](/user-guide/notes)** — manage notes on person and family records.
-- **Edit Self** — lets a user maintain only their own person record and their own family members. Useful for members who update their own contact info.
 - **Admin** — grants all of the above. Only an administrator can define [properties](/user-guide/properties), property types and [classifications](/user-guide/classifications).
 
 Every staff user, whatever their permissions, can read people and families, run reports, and print letters and mailing labels.
@@ -76,6 +81,8 @@ ChurchCRM creates the account with a random password and does not show that pass
 - Users are **not** forced to change their password when an administrator uses **Change Password**.
 
 Minimum password length, the failed-login lockout, and whether 2FA is required are under **System Users → Settings → Quick Settings**.
+
+A person with **Disable sign-in** on (on the Portal sign-in card of their person page) can't sign in as staff either, and neither can a person who is deceased, inactive, in a deactivated family or awaiting review. The **System Users** list marks those accounts as blocked. See [Member sign-in](./member-sign-in.md#who-may-sign-in).
 
 ---
 

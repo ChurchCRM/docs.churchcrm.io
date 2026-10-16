@@ -11,6 +11,7 @@ This guide covers configuring email for ChurchCRM so the system can send notific
 
 ChurchCRM uses email for:
 
+- **Member sign-in** — the code and link members sign in to the Member Portal with. Member sign-in can't be turned on until email works (see [Member sign-in](/administration/member-sign-in))
 - **System notifications** — password resets, new user setup
 - **Parent alerts** — kiosk check-in notifications to parents
 - **Messages from the composer** — users with the Email permission send messages to a person, a family, a group, or the cart from inside ChurchCRM (see [User Guide: Email](/user-guide/email)). Without a mail server the composer falls back to copying addresses or opening the user's own mail program.

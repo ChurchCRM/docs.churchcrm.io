@@ -95,11 +95,32 @@ These are on **Admin → System Users → Settings → Quick Settings**, not a S
 | Require a new password to differ from the old one | Minimum password change |
 | Block common passwords | Disallowed passwords |
 | Lock an account after failed sign-ins | Max failed logins |
+| Choose how long a locked account stays locked | Lockout period in minutes (15). It unlocks by itself after that |
+| Refuse sign-in from an IP address with too many failures | Maximum number of failed logins from one IP address (20; 0 turns it off) |
 | Set how long a session stays open | Session timeout (seconds) |
 | Require two-factor authentication | Require 2FA |
 | Set how long people have to enroll | 2FA grace period |
 
 Content Security Policy (`bEnforceCSP`) is not on a settings tab. There is no switch for it in the UI.
+
+## 🏠 Member Portal sign-in
+
+These are on **Admin → Member Portal → Sign-in**, saved together with **Save sign-in settings**. See [Member sign-in](./member-sign-in.md).
+
+| I want to... | Setting | Default |
+|---|---|---|
+| Let members sign in with their email | Let members sign in with their email (needs working email) | Off |
+| Choose which family roles may sign in | Family Roles | Head of Household, Spouse |
+| Choose which classifications may sign in (guests or not) | Classifications | None |
+| Set the youngest age that may sign in | Minimum age | 13 |
+| Change how long a sign-in code and link last | Link and code lifetime (minutes) | 120 |
+| Limit sign-in emails from one IP address | Sign-in emails per IP address per hour | 20 |
+| Change when an idle member session ends | Idle time (minutes) | 30 |
+| Change how long "This is my own device" keeps a device signed in, or remove it | Keep me signed in (days); 0 removes it | 30 |
+| Allow passkeys | Passkeys | On |
+| Choose who hears about failed sign-ins | Office list | Empty |
+| Let administrators see a member's portal | Allow Login as User | Off |
+| Allow changes during Login as User | Allow changes during Login as User | Off |
 
 ## 🔔 Notifications
 
@@ -155,6 +176,7 @@ Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 | **Admin → Church Information** | Church name, address, contact email, logo, and Address Defaults |
 | **Admin → Localization & Formats** | Language, time zone, dates, currency display, phone formats |
 | **Admin → System Users → Settings → Quick Settings** | Password rules, lockout, session timeout, 2FA |
+| **Admin → Member Portal → Sign-in** | Member sign-in, who may sign in, code and session times, passkeys, office list, Login as User |
 | **Communication → Email → Email Settings** | SMTP and sending |
 | **People → Admin → People Settings** | Name and initials style, hidden fields, family roles, self-registration, new-member notifications and greeter messages, new-record defaults, map zoom and geocoding |
 | **People → Admin → Person Classifications** | Classification names and order, Inactive and In Directory flags |

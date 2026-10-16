@@ -8,7 +8,7 @@ sidebar_position: 3
 A Family is a group of Person records. Person records are grouped into Families for three reasons:
 
 * To represent the social constructs of the Family within the church
-* To share information common to all members of the family — address, phone, email, etc.
+* To share information common to all members of the family — address, home phone, etc.
 * To support the church financially as a single unit ("pledge unit")
 
 Every Person should belong to a family.
@@ -22,12 +22,12 @@ Every Person should belong to a family.
 1. Go to **People** → **Add New Family**.
 2. Enter the **Family Name**.
 3. Enter the shared **Address**, **City**, **State**, **ZIP**, **Country**. If the family's mail goes somewhere else (a PO Box, for example), expand **Second Address (optional)** and see [Second Address and Mailing Address](#second-address-and-mailing-address).
-4. Enter **Home Phone** and **Family Email**.
+4. Enter **Home Phone**. There is no family email: enter each person's own email on their row or their person record.
 5. The form starts with four family-member rows. **Add Another Family Member** appends another row. There is no limit of 10. Enter a first name for each person you are adding; enter a last name only when it differs from the family name.
 6. Set **Classification** for each person (Member, Guest, etc.), and a **Grade** for each child if you track [school grades](/user-guide/school-grades).
 7. Click **Save**.
 
-> **Tip:** Family members share address, phone, and email. Enter them once on the family record — individual persons inherit them unless you override on the person record.
+> **Tip:** Family members share address and phone. Enter them once on the family record — individual persons inherit them unless you override on the person record. Email is each person's own and is never inherited.
 
 ---
 
@@ -47,7 +47,20 @@ Every Person should belong to a family.
 
 **People → Family Listing** is the list of families. The page title is **Family Listing**.
 
-The **Filters** card has **City**, **State**, **Status** (**All**, **Active**, or **Inactive**), and **Address Status**. Open a family name to see that family. This list is separate from the family editor.
+The **Filters** card has **City**, **State**, **Status** (**All**, **Active**, or **Inactive**), and **Address Status**. Open a family name to see that family. This list is separate from the family editor. The **Email** column shows the address mail for the family goes to: the head of household's own email, or the spouse's.
+
+## Email
+
+Families have no email address of their own. Email belongs to people: each person keeps their own, and that is also how members sign in to the [Member Portal](/user-guide/member-sign-in).
+
+The **Email** card on the family page lists the own email of each head of household and spouse, each with buttons to write from ChurchCRM and to copy the address. When none of them has one, it says *"No head of household or spouse has an email address."*
+
+![The Email card on a family page: each adult's own email and Email Carter Family](https://cdn.churchcrm.io/screenshots/en/desktop/people-family-email-card.png)
+
+- **Email \<name\> Family** writes to the family. The message goes to the head of household's own email, or to the spouse's when the head has none. When neither has one, nothing is sent and the composer says why.
+- Children and others without their own email are not emailed. Give a person their own address on their record if they should get mail.
+- The family editor, the portal's family form and the printed directory have no family email.
+- If your church upgraded from a release that had a family email, the upgrade moved each one to the head of household or spouse, or left a note in the family's timeline when nobody could take it. See [Email belongs to people](/administration/member-sign-in#email-belongs-to-people).
 
 ## Second Address and Mailing Address
 

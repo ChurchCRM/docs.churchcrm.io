@@ -18,7 +18,7 @@ A Person record represents an individual in your congregation. Person records ca
 3. Choose a **Family** if this person belongs to one. Family is optional. You can also create a new family from the same form.
 4. Enter **Classification** (Member, Guest, and so on) if you use classifications.
 5. For a child, choose a **Grade** if you track [school grades](/user-guide/school-grades).
-6. Add address, phone, and email, or leave them blank to inherit them from the family.
+6. Add address and phone, or leave them blank to inherit them from the family. Enter the person's own **Email**: email is never inherited from the family.
 7. Enter a birth date only when you have the month and the day. A birth year by itself is rejected with **Invalid Birth Date: Missing birth month and day.** Age is calculated from a complete birth date.
 8. Click **Save** or **Save and Add** to add another person.
 
@@ -129,8 +129,35 @@ Click **Show all** at the bottom of the card to open the person's complete email
 ![The full Email History page for a person](/img/user-guide/email-history-show-all.png)
 
 :::note
-Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. An email sent to the family's own address (for example from the Family View) is recorded against the family, not a person, so it appears on nobody's card. Administrators see the most recent emails to everyone, family addresses included, on the [Email dashboard](/user-guide/email#email-history-and-the-email-dashboard).
+Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. An email sent to a whole family (**Email \<name\> Family** on the Family View) goes to the head of household's own address, or the spouse's, and is recorded against the family, not a person, so it appears on nobody's card. Administrators see the most recent emails to everyone, family addresses included, on the [Email dashboard](/user-guide/email#email-history-and-the-email-dashboard).
 :::
+
+---
+
+## Portal sign-in
+
+The **Portal sign-in** card in the left column of the Person View shows whether this person may sign in to the [Member Portal](/user-guide/member-portal), or why not, in plain words (for example *"Their classification may not sign in"*), their last sign-in, and how many remembered devices and passkeys they have.
+
+![The Portal sign-in card on the Person View, as an administrator sees it](https://cdn.churchcrm.io/screenshots/en/desktop/person-portal-sign-in-card.png)
+
+- **Confirm Email Address** appears beside an unconfirmed email when you may vouch for it: after checking with the person, in person or by phone, that the address is theirs. Staff with **Edit Records** can confirm an address the upgrade moved from the family email; only an administrator can confirm any other. See [The sign-in email](/administration/member-sign-in#the-sign-in-email).
+- **Administrators** also see each remembered device and passkey with a button to sign it out or remove it, the person's portal permissions grouped by where they come from, and:
+  - **Give a permission** — give this one person a portal permission, with a reason and an optional last day. See [Portal permissions](/administration/portal-permissions#give-a-permission-to-one-person).
+  - **Disable sign-in** — with a reason, stop the person signing in anywhere, the portal and the staff side alike. Every session ends and their devices and passkeys are removed. **Enable sign-in** undoes it.
+  - **Sign out everywhere** — end every session and sign out every device. Passkeys stay.
+
+See [Member sign-in](/administration/member-sign-in#the-persons-portal-sign-in-card) for the details.
+
+### Changing a person's email
+
+A person's email is how they sign in to the Member Portal, so the person editor guards it:
+
+- For a person who has signed in, the editor warns: *"This person has signed in to the Member Portal. Changing this email signs them out everywhere, and the new address cannot be used to sign in until it is confirmed."* Their old address gets a notice with a link that confirms the new one.
+- For a person with a staff account or a portal permission given by an administrator, only an administrator can change the email; other staff see the field read-only.
+
+### Login as User
+
+When your church has switched on **Allow Login as User** (**Admin → Member Portal → Sign-in**), administrators find **Login as User** in the person's **Actions** menu. It opens the Member Portal as this person sees it, read-only unless the church allows changes, with a banner and **Stop** on every page. It is grayed out, with the reason on hover, for a deceased person, someone with Disable sign-in on, or someone with a staff account. The history card at the bottom of the left column lists each session and what was done. See [Login as User](/administration/member-sign-in#login-as-user).
 
 ---
 
@@ -193,7 +220,9 @@ Filter the grid with **All Classifications**, a single classification, or **Unas
 
 ## Why is some information on the Person View shown in red text?
 
-Red text indicates information inherited from the associated Family record. People assigned to the same family share common information — such as address, phone number, and email address. This information only needs to be entered once on the Family record; all members of that family will inherit it unless the individual Person record has its own value.
+Red text indicates information inherited from the associated Family record. People assigned to the same family share common information — such as address and phone number. This information only needs to be entered once on the Family record; all members of that family will inherit it unless the individual Person record has its own value.
+
+Email is not shared this way. Families have no email address of their own, and each person keeps their own: a person without one has no email. See [Families](/user-guide/families#email).
 
 For example, the Smith family has four members: John, Mary, Billy, and Sally. None of the four Person records have an address, but the Smith Family record does. When Sally's Person View is displayed, the system shows the family address in red to indicate it is inherited. If Sally moves to a college dorm and her dorm address is added to her Person record, that address will appear in black, indicating it is specific to her.
 
