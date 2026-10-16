@@ -192,8 +192,8 @@ cleanup() {
 }
 trap cleanup EXIT
 docker compose cp client.cnf db:/tmp/client.cnf
-docker compose exec -u root -T db chown mysql:mysql /tmp/client.cnf
 docker compose exec -u root -T db chmod 600 /tmp/client.cnf
+docker compose exec -u root -T db chown mysql:mysql /tmp/client.cnf
 docker compose exec -T db \
   mariadb-dump --defaults-extra-file=/tmp/client.cnf \
   --single-transaction --routines --events --triggers \
@@ -253,8 +253,8 @@ cleanup() {
 }
 trap cleanup EXIT
 docker compose cp client.cnf db:/tmp/client.cnf
-docker compose exec -u root -T db chown mysql:mysql /tmp/client.cnf
 docker compose exec -u root -T db chmod 600 /tmp/client.cnf
+docker compose exec -u root -T db chown mysql:mysql /tmp/client.cnf
 docker compose exec -T db \
   mariadb --defaults-extra-file=/tmp/client.cnf \
   "$CHURCHCRM_DB_NAME" < churchcrm-backup.sql

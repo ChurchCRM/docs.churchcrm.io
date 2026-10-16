@@ -21,7 +21,7 @@ Log in to cPanel, then pick one:
 
 1. Open **MySQL Databases**.
 2. Create a database. The panel will prefix it, so a name you type as `churchcrm` becomes something like `myusername_churchcrm`.
-3. Create a MySQL user and a password. Save both.
+3. Create a MySQL user and a password. The panel prefixes the user the same way, so a name you type as `crm` is shown as something like `myusername_crm`. Save the full name from **Current Users**, the password, and the full database name.
 4. **Add User To Database** and grant **All Privileges**.
 
 ## 3. Upload the current release
@@ -36,7 +36,7 @@ Files should be mode `644` and folders mode `755`. Many hosts set that when you 
 
 ## 4. Finish in the browser
 
-Open the address you chose, for example `https://mywebsite.org/churchcrm`. The setup wizard asks for the database name, user, and password from step 2.
+Open the address you chose, for example `https://mywebsite.org/churchcrm`. The setup wizard asks for the full database name, the full database user, and the password from step 2. Use the names cPanel shows, including the prefix.
 
 When setup finishes, sign in as **admin** with password **changeme**. ChurchCRM asks you to change that password. Keep at least one person with administrator access.
 
@@ -44,4 +44,4 @@ If setup stops, use [Logging & Diagnostics](/administration/logging-and-diagnost
 
 ## Try it before you enter real people
 
-On a new install, load the sample congregation from **Admin → Get Started → Explore with Demo Data**. See [Demo Data](/administration/demo-data). Do this before you type in your members, and skip it if the database already has real people.
+On a new install, load the sample congregation from **Admin → Get Started → Explore with Demo Data**. See [Demo Data](/administration/demo-data). Do this before you type in your members, and skip it if the database already has real people. The sample replaces the church name and contact details, so afterward open **Admin → Church Information** and put your own details back.
