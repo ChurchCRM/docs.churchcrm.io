@@ -28,6 +28,7 @@ Choose the path that matches your hosting setup:
 | **[Azure](/installation/azure)** | Microsoft Azure cloud |
 | **[VPS & Cloud Providers](/installation/vps-cloud)** | DigitalOcean, Linode, Hetzner, Vultr, AWS Lightsail, GCE and others |
 | **[Docker](/installation/docker)** | Official `churchcrm/crm` images on Docker Hub — for admins already comfortable with containers |
+| **[Windows and XAMPP](/installation/windows)** | Not supported. You may try it. We do not help when it fails |
 
 ## After Installation
 

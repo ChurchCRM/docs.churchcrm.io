@@ -7,6 +7,8 @@ sidebar_position: 2
 
 ChurchCRM needs three things: **PHP 8.4 or 8.5**, **MySQL 8.0 or MariaDB 10.5** (or newer), and a web server that can rewrite URLs. Apache is the tested server. The [Docker image](/installation/docker) already includes the right PHP.
 
+Windows, including XAMPP, is not a supported system. You may try it. See [Windows and XAMPP](/installation/windows) for what does not work and why we do not help with it.
+
 If something is missing, setup shows a message, and the same check runs again each time a page loads.
 
 Prerequisites are validated at every page load, so if the hosting environment is changed to an incomplete / unsupported model, a notification will appear.

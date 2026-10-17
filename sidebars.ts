@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
         'installation/vps-cloud',
         'installation/docker',
         'installation/ssl-https',
+        'installation/windows',
       ],
     },
     {
