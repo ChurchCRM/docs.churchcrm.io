@@ -192,6 +192,8 @@ const sidebars: SidebarsConfig = {
       items: [
         'administration/member-portal',
         'administration/member-portal-themes',
+        'administration/member-portal-theme-guide',
+        'administration/member-portal-template-reference',
       ],
     },
     {

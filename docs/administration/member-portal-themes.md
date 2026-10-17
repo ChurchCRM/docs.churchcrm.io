@@ -8,11 +8,7 @@ description: Give the Member Portal your church's own look with a theme folder �
 
 Out of the box the [Member Portal](../user-guide/member-portal.md) wears ChurchCRM's system theme. A **theme** is how your church makes it look like your church: your colours, your fonts, your welcome band. A theme is a folder your church uploads to the server and picks on **Admin → Member Portal**. Nothing is installed, registered or compiled.
 
-This page is the overview. The complete authoring reference — every design token, every template block and variable — is the [theme authoring guide](https://github.com/ChurchCRM/CRM/blob/master/docs/portal-themes.md) in the ChurchCRM repository, which **Admin → Member Portal → Themes** links to as **Read the theme authoring guide**.
-
-:::note
-The theme authoring guide (`docs/portal-themes.md`) and the template reference (`docs/portal-templates.md`) are added to the ChurchCRM repository together with the Member Portal, in ChurchCRM 7.8.0. The links on this page open once that release is merged into `master`.
-:::
+This page is the overview. The complete authoring reference — every design token, every template block and variable — is the [theme authoring guide](./member-portal-theme-guide.md), which **Admin → Member Portal → Themes** links to as **Read the theme authoring guide**.
 
 :::warning Themes are your church's responsibility
 Themes are provided by your church, not by ChurchCRM, and are not reviewed, signed or verified by the ChurchCRM project. A theme's files are trusted exactly as far as the administrator who uploaded them. The admin page says so too.
@@ -86,4 +82,4 @@ Every failure is also written to the application log (**Admin → System Logs**,
 
 - [Member Portal administration](./member-portal.md)
 - [Member Portal — for members](../user-guide/member-portal.md)
-- [Theme authoring guide](https://github.com/ChurchCRM/CRM/blob/master/docs/portal-themes.md) and [template reference](https://github.com/ChurchCRM/CRM/blob/master/docs/portal-templates.md) in the ChurchCRM repository (added with ChurchCRM 7.8.0)
+- [Theme authoring guide](./member-portal-theme-guide.md) and [template reference](./member-portal-template-reference.md)
