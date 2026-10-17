@@ -42,7 +42,7 @@ Every file is optional. A theme with only `theme.css` is a complete theme.
 | `templates/<path>.html.twig` | Replaces the portal template at the same path. Usually you extend the original and override one block (the home page's hero band, the footer) rather than rewriting a page. |
 | `theme.json` | Optional name, author and description for the admin page. |
 
-A theme never contains PHP. Templates can only use what the portal exposes, which is what makes an uploaded theme safe to render.
+A theme never contains PHP. Templates can only use what the portal exposes, so a theme cannot run PHP on the server. `theme.js` still runs in the member's browser, so upload a theme only when you trust it.
 
 ## Editing is live
 

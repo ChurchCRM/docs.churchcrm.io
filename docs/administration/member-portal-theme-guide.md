@@ -9,8 +9,9 @@ The Member Portal (`/portal`) is the member-facing area of ChurchCRM: what a
 congregation member lands in after signing in. A **theme** is how your church
 makes it look like your church.
 
-A theme is a folder. Nothing is registered, compiled or installed — you upload
-files and pick the theme on **Admin → Member Portal**.
+A theme is a folder. You do not build or install it separately. Upload the
+files and turn the theme on under **Admin → Member Portal**. Turning it on
+compiles its templates.
 
 > **Themes are provided by your church, not by ChurchCRM.** Unlike community
 > plugins, themes are not reviewed, signed or verified by anyone. A theme's
@@ -24,12 +25,14 @@ files and pick the theme on **Admin → Member Portal**.
 src/Include/themes/<your-theme>/
 ```
 
-`Include/` is the one directory ChurchCRM promises to leave alone: it holds
-`Config.php`, the upgrader never overwrites it, and the orphan-file scan ignores
-it. Your theme survives every ChurchCRM update.
+ChurchCRM leaves your own folders under `Include/themes/` in place across an
+upgrade. The system theme, `Include/themes/default/`, is replaced. `Include/`
+also holds `Config.php`, which the upgrader does not overwrite, and the
+orphan-file scan ignores `Include/`.
 
-The folder name **is** the theme: it is the id in the configuration and the name
-shown on the admin page, spelled exactly as you spelled it.
+The folder name is the theme id in the configuration, spelled exactly as you
+spelled it. The admin page shows the `name` from `theme.json` when that file
+has one. Otherwise it shows the folder name.
 
 > **Copy `Include/themes/default/` before editing.** It is the system theme; it ships
 > with the release and is overwritten on every upgrade. Rename the copy and edit that.
@@ -49,8 +52,10 @@ Every file is optional. A theme with only `theme.css` is a complete theme.
 | `theme.json` | Optional `{"name": "…", "author": "…", "description": "…"}` for the admin page. Nothing functional. |
 
 **A theme never contains PHP.** Templates can only call what the portal exposes
-(see [template reference](./member-portal-template-reference.md)), which is what makes an
-uploaded theme safe to render. A theme has no PHP extension point.
+(see [template reference](./member-portal-template-reference.md)). That stops a
+theme from running PHP on the server. `theme.js` still runs in the member's
+browser, so upload a theme only when you trust it. A theme has no PHP extension
+point.
 
 ### The smallest possible theme
 
