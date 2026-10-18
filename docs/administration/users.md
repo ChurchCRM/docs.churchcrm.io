@@ -17,7 +17,7 @@ sidebar_position: 2
 
 - **Add Records** — create new records.
 - **Edit Records** — modify existing records. This is also the permission required to approve entries on [Self Registrations](/user-guide/self-registrations).
-- **Delete Records** — delete records.
+- **Delete Records** — delete person and family records. It does not cover other areas; each has its own permission.
 - **Manage [Properties](/user-guide/properties) and [Classifications](/user-guide/classifications)** — manage property/classification metadata.
 - **Manage [Groups](/user-guide/groups) and Roles** — add, edit, and delete groups and their roles.
 - **Manage Donations and [Finances](/user-guide/finances)** — add, edit, and delete donations.
