@@ -13,7 +13,7 @@ If your host offers cPanel, the [one-click Softaculous install](/installation/so
 
 ## Before you start
 
-- Confirm your server meets the **[system requirements](/installation/system-requirements)** — PHP 8.4+, MySQL 8.0+ / MariaDB 10.5+, Apache or nginx with URL rewriting, and about 500 MB of disk to start.
+- Confirm your server meets the **[system requirements](/installation/system-requirements)** — PHP 8.4+, MySQL 8.0+ / MariaDB 10.5+, Apache 2.4 with URL rewriting, and about 500 MB of disk to start. nginx is not a tested install path.
 - Have a domain or subdomain pointed at the server's IP address.
 - Plan for [HTTPS](/installation/ssl-https) — ChurchCRM handles member and giving data and should never run over plain HTTP in production.
 
