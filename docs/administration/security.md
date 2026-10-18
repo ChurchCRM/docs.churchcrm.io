@@ -19,7 +19,7 @@ ChurchCRM uses roles to control access to sensitive data. The available roles ar
 
 - Add Records
 - Edit Records
-- Delete Records
+- Delete Records (people and families)
 - Manage Properties and Classifications
 - Manage Groups and Roles
 - Manage Donations and Finance
@@ -34,7 +34,7 @@ ChurchCRM uses roles to control access to sensitive data. The available roles ar
 | View people & families | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | Add people/families | ✓ | | | | | | | | ✓ |
 | Edit existing records | | ✓ | | | | | | ✓* | ✓ |
-| Delete records | | | ✓ | | | | | | ✓ |
+| Delete people & families | | | ✓ | | | | | | ✓ |
 | Custom fields & classifications | | | | ✓ | | | | | ✓ |
 | Groups, roles, group types | | | | | ✓ | | | | ✓ |
 | Donations & finance | | | | | | ✓ | | | ✓ |
