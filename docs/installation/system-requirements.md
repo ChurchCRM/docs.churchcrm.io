@@ -5,18 +5,22 @@ sidebar_position: 2
 
 # ChurchCRM System Requirements
 
-ChurchCRM has specific platform prerequisites, and a built-in mechanism to ensure that all prerequisites are met. If there are any unmet prerequisites, a message will be displayed during setup and a notification will be displayed during runtime.
+ChurchCRM needs three things: **PHP 8.4 or 8.5**, **MySQL 8.0 or MariaDB 10.5** (or newer), and a web server that can rewrite URLs. Apache is the tested server. The [Docker image](/installation/docker) already includes the right PHP.
+
+Windows, including XAMPP, is not a supported system. You may try it. See [Windows and XAMPP](/installation/windows) for what does not work and why we do not help with it.
+
+If something is missing, setup shows a message, and the same check runs again each time a page loads.
 
 Prerequisites are validated at every page load, so if the hosting environment is changed to an incomplete / unsupported model, a notification will appear.
 
-Validation occurs in the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/7.7.1/src/ChurchCRM/Service/AppIntegrityService.php#L184).
+Validation occurs in the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L184).
 
 ## Authoritative Requirements Table
 
 | Component | Minimum Version | Recommended | Notes |
 |-----------|-----------------|-------------|-------|
 | **PHP** | 8.4 | 8.4 or 8.5 | Required for all core functionality |
-| **Web server** | Apache 2.4 with mod_rewrite | Apache 2.4+ or FrankenPHP | The [`docker/`](https://github.com/ChurchCRM/CRM/tree/master/docker) directory has example Dockerfiles (including FrankenPHP) used for development and CI — not a maintained production image, see [Docker](/installation/vps-cloud#docker); nginx may work but requires per-subdirectory routing configuration |
+| **Web server** | Apache 2.4 with mod_rewrite | Apache 2.4+ | The official [Docker images](/installation/docker) bundle Apache 2.4 + PHP 8.4. nginx is not tested. FrankenPHP exists only as an unsupported example in [`docker/`](https://github.com/ChurchCRM/CRM/tree/master/docker) — no image is published and CI does not build it |
 | **MySQL** | 8.0.11 | 8.0+ | Or MariaDB 10.5+ |
 | **MariaDB** | 10.5 | 10.6+ | Alternative to MySQL |
 | **PHP memory_limit** | 256MB | 512MB+ | 1GB+ for larger congregations |
@@ -43,7 +47,7 @@ For a complete list of tested versions and configurations, see the [GitHub Actio
 
 ### Required PHP Extensions
 
-Setup checks these on every page load via [`getApplicationPrerequisites()`](https://github.com/ChurchCRM/CRM/blob/7.7.1/src/ChurchCRM/Service/AppIntegrityService.php#L184):
+Setup checks these on every page load via [`getApplicationPrerequisites()`](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L184):
 
 - **PHP 8.4+**
 - **PCRE with UTF-8** (`preg_match` with the `/u` flag)
@@ -70,7 +74,11 @@ exif, soap, sodium, and intl are not required.
 
 ChurchCRM currently requires Apache's `mod_rewrite` module for URL routing. While we'd like to deprecate this requirement, it still exists. If you know mod_rewrite is loaded and working on your Apache setup, it is SAFE to ignore this prerequisite during setup.
 
-**nginx compatibility:** nginx may work but is not officially supported or tested.
+**nginx:** not tested, and not a substitute for the Apache rules. ChurchCRM does not read `.htaccess` on nginx. Each Slim app has its own `index.php`, and a request for that directory has to reach that file. One `location /` that sends everything to the root `index.php` drops `/session/begin` and the other module URLs.
+
+These directories are separate apps: `setup`, `session`, `api`, `v2`, `admin`, `finance`, `kiosk`, `plugins`, `external`, `people`, `groups`, `event`, `fundraiser`, `ministries`, and `portal`. `Include/`, `cli/`, `logs/`, and `tmp_attach/` must not be served. Person and family photos under `Images/` must not be served as files.
+
+An unsupported example that encodes those rules is [`docker/examples/nginx/default.conf`](https://github.com/ChurchCRM/CRM/blob/master/docker/examples/nginx/default.conf). When a new directory with its own `index.php` is added, that file has to gain a matching `location`. Use Apache, or the official Docker image, unless you can maintain this yourself. A bare directory URL such as `/setup` has to redirect to `/setup/`. Without the slash, setup returns a JSON 404.
 
 ### Database Server
 
@@ -89,7 +97,7 @@ Database must support:
 
 ### File System Permissions
 
-These write permissions are validated during setup and at every page load via the [`getFilesystemPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/7.7.1/src/ChurchCRM/Service/AppIntegrityService.php#L216).
+These write permissions are validated during setup and at every page load via the [`getFilesystemPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L216).
 
 #### Include/Config Directory
 **Path:** `Include/` directory (contains `Config.php`)  

@@ -13,7 +13,7 @@ If your host offers cPanel, the [one-click Softaculous install](/installation/so
 
 ## Before you start
 
-- Confirm your server meets the **[system requirements](/installation/system-requirements)** — PHP 8.4+, MySQL 8.0+ / MariaDB 10.5+, Apache or nginx with URL rewriting, and about 500 MB of disk to start.
+- Confirm your server meets the **[system requirements](/installation/system-requirements)** — PHP 8.4+, MySQL 8.0+ / MariaDB 10.5+, Apache 2.4 with URL rewriting, and about 500 MB of disk to start. nginx is not a tested install path.
 - Have a domain or subdomain pointed at the server's IP address.
 - Plan for [HTTPS](/installation/ssl-https) — ChurchCRM handles member and giving data and should never run over plain HTTP in production.
 
@@ -30,7 +30,7 @@ The underlying steps are the same everywhere: install Apache/PHP/MariaDB, create
 
 ## Docker
 
-ChurchCRM is built and developed with Docker, but there is no officially maintained production Docker image — see [Docker](/installation/vps-cloud#docker) for why and what's available.
+ChurchCRM publishes official Docker images as `churchcrm/crm` — see [Docker](/installation/docker) for the tags, a Compose file, and how to back up and upgrade.
 
 ---
 

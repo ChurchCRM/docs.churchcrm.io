@@ -37,7 +37,7 @@ The Volunteers feature helps you track member talents and willingness to serve i
 
 When you need volunteers for a specific task:
 
-1. Go to **Reports → People Reports** (administrators).
+1. Go to **Reports → People Reports**.
 2. Click **Run** beside **Volunteers** (or **Volunteers for Two Opportunities** to find people who match two)
 3. Choose the **Volunteer Opportunity**, and classifications if you like, and click **Run Report**
 4. The report lists all [people](/user-guide/persons) who volunteered for that task
