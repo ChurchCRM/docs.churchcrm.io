@@ -36,7 +36,7 @@ There several ways to do this:
 
 ## Run the desired report
 
-If the report is Cart-enabled, at the bottom of the results you will find a button labeled _"Add Results to Cart."_ Clicking this button will add all the results of that report to the cart.
+On a People Report, click **Add All to Cart** in the results header to add every row to the cart.
 To add all people assigned to a Group:
 
 There is no **Groups → Cart to Group** menu item.
@@ -84,7 +84,7 @@ To send a mailing to a subset of people — for example everyone with a birthday
 2. Open **People → Cart** and check the list.
 3. Click **Labels** and generate the labels as above.
 
-Many [reports and queries](/user-guide/reports-and-queries) also offer **Add Results to Cart** or **Add All to Cart**, which feeds the same workflow.
+[People Reports](/user-guide/reports-and-queries#people-reports) offer **Add All to Cart**, which feeds the same workflow.
 
 People Reports can print the filtered list directly. On the report results, **Print Labels** sits next to **Add All to Cart** and uses this same dialog without putting anyone in the Cart. See [Print Labels on People Reports](/user-guide/reports-and-queries#print-labels-on-people-reports).
 

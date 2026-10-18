@@ -87,7 +87,7 @@ Past and inactive events are grouped into collapsible **month sections** below t
 3. **Add people to the Cart**: Search or browse people, click **Add to Cart**.
 4. **Record attendance**: open the cart and choose **Check In to Event**. The page title is **Add Cart to Event**. Select the event and confirm.
 
-Attendance is saved with the check-in. Saved queries live under **Data/Reports**, which opens **Query Listing**. There is no **Event Attendance Reports** block on that page.
+Attendance is saved with the check-in. To find people who missed events, use the **Missing People** report under **Reports → People Reports**.
 
 ---
 
@@ -153,8 +153,8 @@ You can generate reports based on attendance history for an event. The tracked p
 
 To generate a report:
 
-1. Open **Data/Reports**. The page is **Query Listing**, an alphabetical list of saved queries.
-2. Run the query that matches the attendance question you have. There is no **Event Attendance Reports** block on that page.
+1. Open **Reports → People Reports → Missing People**.
+2. Choose one or more **Events**, optionally narrow by **Classification**, and click **Run Report**.
 
 ## Using the Calendar
 
