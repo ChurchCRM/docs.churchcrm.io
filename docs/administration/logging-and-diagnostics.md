@@ -26,8 +26,7 @@ In all setups as much of the following information as possible:
   * **Windows** - Docker Desktop
   * **Linux** - distribution/version/etc
   * **MacOS** - version/MAMP/Homebrew
-* Web server:
-  * **Apache** (or **nginx** if used) — how it is deployed (vhost, subdirectory, etc.).
+* Web server — name which one is in front of PHP: **Apache**, **nginx**, **LiteSpeed**, or something else, and how it is deployed (vhost, subdirectory, reverse proxy). A missing page or a redirect loop means something different on nginx than on Apache, because nginx does not read ChurchCRM's `.htaccess` files. The bug report form asks for this.
   * **PHP** — version, configuration, and installed extensions. A [PHP `phpinfo()`](https://www.php.net/manual/en/function.phpinfo.php) page can help.
 * MySQL/MariaDB:
   * Version and configuration. Is it co-hosted on the same machine as the webserver or is it on a different machine?

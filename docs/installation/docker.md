@@ -364,11 +364,16 @@ verify it in your own setup.
 
 `churchcrm/crm:latest-php8-fpm` exists and is published, but it is **not
 supported**. It speaks FastCGI on port 9000 only, so it needs your own web
-server in front, and ChurchCRM's routing depends on Apache's rewrite rules.
-Reproducing them correctly in nginx is not a drop-in exercise.
+server in front. ChurchCRM's routing is the Apache rewrite rules in each
+directory. nginx does not read those files.
 
-Use the Apache image unless you are prepared to maintain that configuration
-yourself. Never publish port 9000 to an untrusted network.
+The unsupported example is
+[`docker/examples/nginx/default.conf`](https://github.com/ChurchCRM/CRM/blob/master/docker/examples/nginx/default.conf)
+in the ChurchCRM repository. It is not part of the published image, and CI does
+not run it. [System requirements](/installation/system-requirements) lists the
+directories that example has to route. Use the Apache image unless you can
+maintain that configuration yourself. Never publish port 9000 to an untrusted
+network.
 
 ## Getting help
 
