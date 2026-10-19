@@ -5,7 +5,7 @@
 # Required: GH_TOKEN with contents and pull-request access to the docs repo.
 # VERSION: stable x.y.z release tag.
 # MERGE: true to merge, false to only open the pin pull request and milestone.
-# NEXT_VERSION: optional upcoming milestone to create.
+# NEXT_VERSION: optional upcoming version. Blank, invalid or not newer than VERSION means the next patch.
 set -euo pipefail
 
 : "${GH_TOKEN:?GH_TOKEN is required}"
@@ -35,10 +35,52 @@ ensure_milestone() {
   fi
 }
 
-ensure_milestone "$VERSION"
-if [ -n "${NEXT_VERSION:-}" ] && [[ "$NEXT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-  ensure_milestone "$NEXT_VERSION"
+NEXT_VERSION="${NEXT_VERSION:-}"
+if ! [[ "$NEXT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] \
+  || [ "$(printf '%s\n%s\n' "$VERSION" "$NEXT_VERSION" | sort -V | tail -n 1)" != "$NEXT_VERSION" ] \
+  || [ "$NEXT_VERSION" = "$VERSION" ]; then
+  NEXT_VERSION="${VERSION%.*}.$(( ${VERSION##*.} + 1 ))"
 fi
+
+ensure_milestone "$VERSION"
+ensure_milestone "$NEXT_VERSION"
+
+# Release N closes the docs milestone of the release before it. N's own milestone
+# stays open: its docs pull requests can still merge after the release.
+close_previous_milestone() {
+  local previous number open_items
+  previous=""
+  while read -r title; do
+    [[ "$title" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || continue
+    [ "$title" = "$VERSION" ] && continue
+    # Sorted ascending, so the last title older than VERSION is the release before it.
+    if [ "$(printf '%s\n%s\n' "$title" "$VERSION" | sort -V | head -n 1)" = "$title" ]; then
+      previous="$title"
+    fi
+  done < <(gh api --paginate "repos/${DOCS_REPO}/milestones?state=open&per_page=100" --jq '.[].title' | sort -V)
+  [ -z "$previous" ] && return 0
+  number=$(gh api --paginate "repos/${DOCS_REPO}/milestones?state=open&per_page=100" \
+    --jq ".[] | select(.title == \"$previous\") | .number" | head -n 1)
+  open_items=$(gh api "repos/${DOCS_REPO}/milestones/$number" --jq '.open_issues')
+  if [ "$open_items" != "0" ]; then
+    echo "::warning::Docs milestone $previous has $open_items open item(s) and stays open."
+    return 0
+  fi
+  gh api -X PATCH "repos/${DOCS_REPO}/milestones/$number" -f state=closed --silent
+  echo "Closed docs milestone $previous."
+}
+
+# The next release's docs start from the main that now holds this release's docs.
+ensure_next_docs_branch() {
+  local branch="release-docs/${NEXT_VERSION}" sha
+  if git ls-remote --exit-code --heads origin "$branch" > /dev/null 2>&1; then
+    echo "Branch $branch already exists."
+    return 0
+  fi
+  sha=$(gh api "repos/${DOCS_REPO}/git/ref/heads/main" --jq '.object.sha')
+  gh api "repos/${DOCS_REPO}/git/refs" -f ref="refs/heads/${branch}" -f sha="$sha" --silent
+  echo "Created $branch from main (${sha:0:12})."
+}
 
 open_pin_pr() {
   local pinned newer
@@ -166,6 +208,9 @@ if [ "$skipped" -ne 0 ]; then
   echo "::error::At least one docs pull request is waiting for CI."
   exit 1
 fi
+
+close_previous_milestone
+ensure_next_docs_branch
 
 gh workflow run "Deploy to GitHub Pages" --repo "$DOCS_REPO" --ref main || echo "Deploy dispatch was not accepted. A token push to main still starts it."
 echo "Docs for ChurchCRM $VERSION are merged."
