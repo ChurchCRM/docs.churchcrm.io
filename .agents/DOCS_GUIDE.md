@@ -53,6 +53,10 @@ When `crm-release.json` changes on `main`, `tag-docs-release.yml` creates annota
 
 Shell that the workflows call lives in `scripts/` and `scripts/ci/`. Run those scripts locally with the same environment variables. Do not put new multi-line shell back into the workflow files.
 
+### Required versions
+
+The supported MySQL, MariaDB, and Ubuntu versions live in `requirements.json`. Write them in pages as tokens (`MySQL @@mysql@@+`, `MariaDB @@mariadb@@+`, `Ubuntu @@ubuntu@@`); never type the number. The build fills the tokens in text, links, and code blocks, and fails on a token that is missing from the file. A token in a page's first paragraph also reaches the meta description and search index, which the build check rejects: give that page a `description:` in its front matter that has no token. To change a supported version, edit `requirements.json` and the CRM repo's version line, nothing else.
+
 ### Voice
 
 The reader is a church administrator or the person who runs the server. Write the way the marketing site does: warm, practical, and plain. Name the menu, the button, and the task. Do not pitch the product, do not mention the GitHub Wiki, and do not label a step "New in 7.8.0" when the page itself is the manual for that version.

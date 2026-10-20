@@ -2,6 +2,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import crmRelease from './crm-release.json';
+import {fillRequirements} from './src/requirements/fill';
 // @ts-ignore — no types shipped with this plugin
 const localSearch = require('@easyops-cn/docusaurus-search-local');
 
@@ -28,6 +29,7 @@ const config: Config = {
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
   markdown: {
+    preprocessor: ({fileContent}) => fillRequirements(fileContent),
     hooks: {
       onBrokenMarkdownLinks: 'throw',
     },
