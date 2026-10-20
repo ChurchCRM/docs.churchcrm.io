@@ -38,6 +38,32 @@ sidebar_position: 2
     - **Disable 2FA** — shown when that user has two-factor authentication turned on.
     - **Delete User** — removes the login. The person record remains.
 
+## Which rights should each person get?
+
+Give each person the least they need for their job. These are starting points; adjust them to how your church works. A person can hold more than one job, so combine rows when you need to.
+
+| Person | Rights to grant | Why, and what to check |
+|--------|-----------------|------------------------|
+| Pastor | **Edit Records**, **Manage Groups and Roles**, **View, Add, and Edit Notes** | Notes hold pastoral care details. Check who else has the Notes right before you add it for anyone. |
+| Church secretary or office administrator | **Add Records**, **Edit Records**, **Manage Groups and Roles** | Keep **Delete Records** for one or two people. Deleting a person or family cannot be undone. |
+| Treasurer | **Manage Donations and Finances** | Giving stays apart from pastoral and membership records. |
+| Helper who enters donations | **Manage Donations and Finances** | There is no entry-only right. This grants all of finance, so give it to few people and review it each year. |
+| Ministry coordinator | **Manage My Ministries** | Covers only the ministries they coordinate. **Manage Groups and Roles** covers every group, so use it for staff, not for volunteers. |
+| Volunteer coordinator | **Manage Ministries** | Covers every ministry. Works only while the volunteer experience is V2 or Both. |
+| Event helper | **Add Events** | Nothing else. |
+| Board member | No staff rights | Board membership is a group, not a permission. Grant rights for the job the person does, not for the seat. |
+| Member who updates their own details | **Edit Self** only | They sign in to the [Member Portal](/administration/member-portal) and do not see staff pages. |
+| Read-only staff | No extra rights | They read people and families and run reports. They cannot change anything. |
+| Church administrator or IT volunteer | **Admin** | Only administrators define [properties](/user-guide/properties), property types and [classifications](/user-guide/classifications), and manage users and settings. Keep this to two or three trusted people, and give each their own login. |
+
+Before you save a new user, check three things:
+
+1. Does this person need to change data, or only read it? If they only read, grant no extra rights.
+2. Would they notice if a right were missing? If not, they do not need it.
+3. Who covers this job when they step down? Remove their rights on the day they leave.
+
+See [Security](/administration/security) for what each right allows.
+
 ## What is the default password assigned to new Users?
 
 ChurchCRM creates the account with a random password and does not show that password on screen. If email is already configured, the person gets a welcome email with the username and password, and must change it at first login. If email is off, set a password yourself with **Change Password** on **System Users**.
