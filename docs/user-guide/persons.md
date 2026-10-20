@@ -17,9 +17,10 @@ A Person record represents an individual in your congregation. Person records ca
 2. Enter a **Last Name**. That is the only required field. First name can be left blank.
 3. Choose a **Family** if this person belongs to one. Family is optional. You can also create a new family from the same form.
 4. Enter **Classification** (Member, Guest, and so on) if you use classifications.
-5. Add address, phone, and email, or leave them blank to inherit them from the family.
-6. Enter a birth date only when you have the month and the day. A birth year by itself is rejected with **Invalid Birth Date: Missing birth month and day.** Age is calculated from a complete birth date.
-7. Click **Save** or **Save and Add** to add another person.
+5. For a child, choose a **Grade** if you track [school grades](/user-guide/school-grades).
+6. Add address, phone, and email, or leave them blank to inherit them from the family.
+7. Enter a birth date only when you have the month and the day. A birth year by itself is rejected with **Invalid Birth Date: Missing birth month and day.** Age is calculated from a complete birth date.
+8. Click **Save** or **Save and Add** to add another person.
 
 > **Tip:** To add several people at once, use the [Family Editor](/user-guide/families). A new family starts with four member rows. **Add Another Family Member** appends another row. There is no limit of 10.
 

@@ -32,6 +32,17 @@ You can optionally add extra roles (e.g., "Assistant Teacher", "Substitute") usi
 
 With [Volunteer Management (v2)](./ministries/index.md) on, a ministry that provides teachers for Sunday School can link one of its teams to a class. From then on the class's teachers are managed in the ministry: everyone qualified for a position of that team is a **Teacher** of the class. The class page says *"Teachers of this class are managed in Ministries → … → …"* (with an **Open the ministry** link for those who may manage it), and teacher changes are refused here. Students are added and removed on the class page as before. See [Linking a team to a Sunday School class](./ministries/ministries-teams-positions.md#linking-a-team-to-a-sunday-school-class).
 
+## Filling a class by grade
+
+If you record [school grades](/user-guide/school-grades), next year's class starts from a range of grades:
+
+1. Open **Reports → People Reports → People by Grade**.
+2. Choose **From Grade** and **Through Grade**, for example **Kindergarten** through **5th**, and click **Run Report**.
+3. Click **Add All to Cart**.
+4. In the [Cart](/user-guide/cart), choose **Empty Cart to Group** and pick the class.
+
+The class roster has a **Grade** column, so you can see each student's grade at a glance.
+
 ## Tracking Attendance
 
 Sunday School attendance is tracked through [Events](/user-guide/events):

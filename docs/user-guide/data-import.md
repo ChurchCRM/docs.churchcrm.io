@@ -61,6 +61,7 @@ Every other column is optional and can be omitted entirely or left blank.
 | `WeddingDate` | Stored on the Family record (only used when a `FamilyID` is present); see [Date formats](#date-formats) |
 | `Classification` | Must match an existing Classification name (case-insensitive), e.g. `Member`, `Guest`, `Regular Attender`. Unrecognised values are silently ignored — see [Troubleshooting](#troubleshooting). |
 | `FamilyRole` | Must match an existing Family Role name (case-insensitive), e.g. `Head of Household`, `Spouse`, `Child`. Only applied when a `FamilyID` is present. Unrecognised values are silently ignored. |
+| `Grade` | Must match a name in the [grade list](/user-guide/school-grades) (case-insensitive), e.g. `Kindergarten`, `3rd`. An unrecognised value leaves the grade blank. |
 | `Envelope` | Giving-envelope number (integer) |
 
 ### Contact Information
@@ -134,6 +135,7 @@ When you upload a CSV, ChurchCRM compares each column header against a list of k
 | `MobilePhone` | `mobile_phone`, `cell`, `cell_phone`, `cellphone` |
 | `Classification` | `class`, `member_type`, `membership_type` |
 | `FamilyRole` | `family_role`, `role`, `household_role` |
+| `Grade` | `grade level`, `school grade` |
 | `FamilyID` | `family_id`, `fid` |
 
 If a column header does not match any alias, it appears with an **Unmapped** badge. Select the target field from the dropdown, or leave it as *Ignore* to skip the column.
