@@ -23,7 +23,7 @@ Classifications help you categorize people in your congregation for record-keepi
 
 ### Viewing and editing classifications
 
-1. Go to **People → Admin → Person Classifications**.
+1. As an administrator, go to **People → Admin → Person Classifications**.
 2. The page title is **Person Classifications Editor**.
 3. Type a name and click **Add New Person Classification**.
 4. Change a name in the **Existing Options** table, then click **Save Changes**.

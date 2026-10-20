@@ -20,7 +20,6 @@ ChurchCRM uses roles to control access to sensitive data. The available roles ar
 - Add Records
 - Edit Records
 - Delete Records (people and families)
-- Manage Properties and Classifications
 - Manage Groups and Roles
 - Manage Donations and Finance
 - View, Add, and Edit Notes
@@ -29,20 +28,24 @@ ChurchCRM uses roles to control access to sensitive data. The available roles ar
 
 ## Permissions Matrix
 
-| Permission | Add Records | Edit Records | Delete Records | Manage Props | Manage Groups | Finance | Notes | Edit Self | Admin |
-|------------|:-----------:|:------------:|:--------------:|:------------:|:-------------:|:-------:|:-----:|:---------:|:-----:|
-| View people & families | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Add people/families | ✓ | | | | | | | | ✓ |
-| Edit existing records | | ✓ | | | | | | ✓* | ✓ |
-| Delete people & families | | | ✓ | | | | | | ✓ |
-| Custom fields & classifications | | | | ✓ | | | | | ✓ |
-| Groups, roles, group types | | | | | ✓ | | | | ✓ |
-| Donations & finance | | | | | | ✓ | | | ✓ |
-| Add/edit/view notes | | | | | | | ✓ | | ✓ |
-| Edit own profile only | | | | | | | | ✓ | ✓ |
-| All admin functions | | | | | | | | | ✓ |
+| Permission | Add Records | Edit Records | Delete Records | Manage Groups | Finance | Notes | Edit Self | Admin |
+|------------|:-----------:|:------------:|:--------------:|:-------------:|:-------:|:-----:|:---------:|:-----:|
+| View people & families | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Run reports, print letters & labels | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | ✓ |
+| Add people/families | ✓ | | | | | | | ✓ |
+| Edit existing records | | ✓ | | | | | ✓* | ✓ |
+| Assign properties to people & families | | ✓ | | | | | | ✓ |
+| Why Came, Verify People report & email | | ✓ | | | | | | ✓ |
+| Delete people & families | | | ✓ | | | | | ✓ |
+| Groups, roles, group types | | | | ✓ | | | | ✓ |
+| Assign properties to groups | | | | ✓ | | | | ✓ |
+| Donations & finance | | | | | ✓ | | | ✓ |
+| Add/edit/view notes | | | | | | ✓ | | ✓ |
+| Edit own profile only | | | | | | | ✓ | ✓ |
+| Define properties, property types, classifications & custom fields | | | | | | | | ✓ |
+| All admin functions | | | | | | | | ✓ |
 
-*Edit Self allows a user to update their own person record only.
+*Edit Self allows a user to update their own person record only. A user with only Edit Self is taken to the [Member Portal](/administration/member-portal) and does not see the staff pages.
 
 ## Other access switches
 
