@@ -39,7 +39,7 @@ NEXT_VERSION="${NEXT_VERSION:-}"
 if ! [[ "$NEXT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] \
   || [ "$(printf '%s\n%s\n' "$VERSION" "$NEXT_VERSION" | sort -V | tail -n 1)" != "$NEXT_VERSION" ] \
   || [ "$NEXT_VERSION" = "$VERSION" ]; then
-  NEXT_VERSION="${VERSION%.*}.$(( ${VERSION##*.} + 1 ))"
+  NEXT_VERSION="${VERSION%.*}.$(( 10#${VERSION##*.} + 1 ))"
 fi
 
 ensure_milestone "$VERSION"
