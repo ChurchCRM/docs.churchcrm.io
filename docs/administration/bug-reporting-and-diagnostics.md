@@ -66,7 +66,7 @@ If you need to report via GitHub or can't access the in-app tool, gather this in
 - Operating System: [e.g., Windows / macOS / Linux]
 - Web Server: [Apache / Nginx / Other]
 - PHP Version: [e.g., 8.4.1]
-- Database: [MySQL 8.0.11+ / MariaDB 10.5+ / Other and version]
+- Database: [MySQL @@mysql@@+ / MariaDB @@mariadb@@+ / Other and version]
 
 - Browser: [e.g., Chrome, Firefox, Safari]
 - Browser Version: [e.g., 120.0]
@@ -168,7 +168,7 @@ Copy and fill in:
 - Installation: [Shared Hosting / Self-Hosted / Docker]
 - Hosting Provider: [if applicable]
 - PHP Version: [e.g., 8.4]
-- Database: [MySQL 8.0.11+ / MariaDB 10.5+]
+- Database: [MySQL @@mysql@@+ / MariaDB @@mariadb@@+]
 - Browser: [Chrome / Firefox / Safari]
 
 ## Error Messages or Logs
