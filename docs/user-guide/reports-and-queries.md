@@ -70,7 +70,7 @@ Mailed letters and the labels listed below go to the family's **mailing address*
 - Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. Confirmation letters and tax statements sent by email use the same address. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
 - **People Directory**: under _Information to Include_, **Primary Address** (on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print a family's flagged mailing address beneath it, under a "Mailing Address:" label, when it differs from the primary address. That option can only be ticked while **Primary Address** is ticked.
 
-**People Directory** and **Letters & Mailing Labels** are on the **Reports** card of **People → Dashboard**. Administrators also reach them from **Reports → People Reports**. Envelopes carry no address.
+**People Directory** and **Letters & Mailing Labels** are on the **Reports** card of **People → Dashboard**. Staff also reach them from **Reports → People Reports**. Any staff user can open them and print labels; no extra permission is needed. Envelopes carry no address.
 
 People Reports print the same labels without using the Cart. See [Print Labels on People Reports](#print-labels-on-people-reports).
 
