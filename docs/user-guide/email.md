@@ -142,8 +142,6 @@ Use the search box to find email by subject, recipient email address, or recipie
 
 The **To** column links to the recipient's Person View or Family View, with their email address below the name. **N failed** and **N queued** badges open Email History already filtered to that status. For an administrator, a failed email displays the mail server's error directly beneath the subject; a non-admin sender sees the failure status but not the server error.
 
-![Email History table on the administrator Email Log page](/img/user-guide/email-log-history-table.png)
-
 ### Troubleshooting an email that was not received
 
 - **Sent** means ChurchCRM handed the message to the configured mail server, not that it was delivered. Ask the recipient to check spam.
