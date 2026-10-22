@@ -131,21 +131,29 @@ Password resets and similar system messages use that SMTP setup.
 
 ChurchCRM keeps a record of every email it sends, including messages written in the composer, birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, volunteer emails, and the SMTP test. Each person's history is shown on their Person View; see [Email History](/user-guide/persons#email-history).
 
-### Recent Sends (administrators)
+### Searchable Email History
 
-Administrators also see a **Recent Sends** panel at the bottom of the Email dashboard (**Communication → Email** in the left navigation). It lists the 20 most recent emails ChurchCRM sent to anyone, newest first, with the date, type, subject, recipient address, status, and who sent it (a user, or **Automatic**). The badge next to the title is the total number of emails on record; a red **failed** badge next to it counts the emails the mail server refused.
+ChurchCRM shows the **Email History** table in two places:
 
-![Recent Sends panel on the Email dashboard](/img/user-guide/email-dashboard-recent-sends.png)
+- **Email Log** (`/admin/email/log`) is for administrators. It shows everyone's recorded email and includes **Delete Queue** for unsent items.
+- **Email** (`/people/email`) is available to users with the **Email** permission. A user who is not an administrator sees only email they sent, with **Only the email you sent is shown.** The sender filter is hidden for them. After sending with the composer, **Follow it in the email history** opens this page.
 
-This is the first place to look when somebody says "nobody got the email":
+Use the search box to find email by subject, recipient email address, or recipient name. You can filter the table by **status** (queued, sending, sent, failed, skipped), **type**, and (for administrators) **sender**, including automatic mail. Paging and filtering take place on the server. The search and filter settings remain in the URL, so a bookmark or refresh keeps the same view.
 
-- If the message is listed as **Sent**, ChurchCRM handed it to the mail server; ask the recipient to check their spam folder.
-- If it is **Failed**, hover over the badge to read the mail server's error, then check the [email settings](/administration/email-setup).
-- If it is **Skipped**, email sending was turned off, or no mail server was set up, when the message was sent; fix the [email settings](/administration/email-setup) and send again.
-- If it is not in the panel, it may be older than the latest 20 the panel shows: open the person's history. An email sent to a family's own address is recorded against the family, not a person, so it is on no person's history, and once it drops out of the latest 20, ChurchCRM no longer shows it.
-- If an email to a person is in neither the panel nor their history, ChurchCRM never tried to send it. A person the composer left out (no email address, do not email, deceased, or the same address as another recipient) was named under **Not sent** in the composer's result banner and leaves no entry in the history.
+The **To** column links to the recipient's Person View or Family View, with their email address below the name. **N failed** and **N queued** badges open Email History already filtered to that status. For an administrator, a failed email displays the mail server's error directly beneath the subject; a non-admin sender sees the failure status but not the server error.
 
-Click a subject to open the email, or open a person to see their full history. Messages written in the composer and volunteer emails open as they were sent; for every other email ChurchCRM keeps only the subject, date, and status, so it shows a note instead of the message (see [Opening an email](/user-guide/persons#opening-an-email)). The panel is visible to administrators only; other users see the history of the people they can open.
+![Email History table on the administrator Email Log page](/img/user-guide/email-log-history-table.png)
+
+### Troubleshooting an email that was not received
+
+- **Sent** means ChurchCRM handed the message to the configured mail server, not that it was delivered. Ask the recipient to check spam.
+- **Failed** means the mail server rejected the attempt. Administrators can read the error beneath the subject and check the [email settings](/administration/email-setup).
+- **Skipped** means sending was disabled or no mail server was configured at the time. Correct the [email settings](/administration/email-setup) before sending again.
+- **Queued** or **Sending** means delivery is not yet complete. Check the Email History again after the queue has been processed.
+- If no row matches, clear the filters and search, and check the relevant person or family history. A person excluded by the composer (for example, no usable address, Do Not Email, or a duplicate address) appears in the composer's **Not sent** list and has no sent-mail history entry.
+
+Select a subject to open the recorded message. Composer and volunteer emails can be reopened with their saved content; other system emails retain only metadata and display a notice rather than their body (see [Opening an email](/user-guide/persons#opening-an-email)). Per-person Email History on Person View is unchanged.
+
 
 ---
 
