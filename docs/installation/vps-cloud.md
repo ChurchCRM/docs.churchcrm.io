@@ -1,11 +1,12 @@
 ---
 title: VPS & Cloud Providers
 sidebar_position: 7
+description: "Install ChurchCRM on a VPS or cloud server you control, with Apache, PHP, and a supported database."
 ---
 
 # Installing ChurchCRM on a VPS or Cloud Provider
 
-ChurchCRM runs on any Linux server with Apache, PHP 8.4+, and MySQL/MariaDB. If you or your church has a volunteer comfortable with the command line, a VPS gives you more control, better performance, and lower cost than most shared hosting plans.
+ChurchCRM runs on any Linux server with Apache, PHP 8.4+, and MySQL @@mysql@@+ or MariaDB @@mariadb@@+. If you or your church has a volunteer comfortable with the command line, a VPS gives you more control, better performance, and lower cost than most shared hosting plans.
 
 This page covers the popular cloud options and maps you to the right install guide. The underlying steps are the same across all of them — the only difference is how you spin up the VM.
 
@@ -15,7 +16,7 @@ This page covers the popular cloud options and maps you to the right install gui
 
 | Provider | Notes |
 |----------|-------|
-| **[DigitalOcean](https://www.digitalocean.com)** | Simple UI, predictable pricing ($6–$12/mo for a small church), good for first-timers. Create a "Droplet" with Ubuntu 24.04. |
+| **[DigitalOcean](https://www.digitalocean.com)** | Simple UI, predictable pricing ($6–$12/mo for a small church), good for first-timers. Create a "Droplet" with Ubuntu @@ubuntu@@. |
 | **[Linode / Akamai](https://www.linode.com)** | Similar to DigitalOcean, very reliable, slightly cheaper at entry level. |
 | **[Hetzner](https://www.hetzner.com)** | Cheapest option (~€4/mo), European data centers, excellent value for money. |
 | **[Vultr](https://www.vultr.com)** | Many global regions, competitive pricing, good for international churches. |
@@ -32,17 +33,17 @@ For a congregation under 500 people: **1 vCPU, 1–2 GB RAM, 20 GB disk** is fin
 
 ## Steps: Ubuntu-based providers (DigitalOcean, Linode, Hetzner, Vultr, Lightsail, GCE)
 
-1. Create a VM running **Ubuntu 22.04 LTS** or **Ubuntu 24.04 LTS**
+1. Create a VM running **Ubuntu @@ubuntu@@ LTS**
 2. SSH in as root (or a sudo user)
 3. Follow the **[Self-Hosted on Ubuntu](/installation/ubuntu)** guide from the top
 
-That's it. The guide covers Apache, MariaDB, PHP 8.4, and deploying the release zip — all tested on Ubuntu 22.04/24.04.
+That's it. The guide covers Apache, MariaDB, PHP 8.4, and deploying the release zip — all tested on Ubuntu @@ubuntu@@ LTS.
 
 ---
 
 ## Steps: RHEL-based providers (any provider running Rocky Linux / AlmaLinux)
 
-1. Create a VM running **Rocky Linux 9** or **AlmaLinux 9**
+1. Create a VM running **Rocky Linux @@rocky@@** or **AlmaLinux @@rocky@@**
 2. SSH in
 3. Follow the **[Self-Hosted on Rocky Linux](/installation/rocky-linux)** guide
 

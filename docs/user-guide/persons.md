@@ -221,7 +221,7 @@ You don't enter an age. ChurchCRM calculates it from the birth date. A year by i
 
 Count cards link to families, people, Sunday School (when that menu is on), and groups. **People by Classification** lists each classification with its share and count. The same page also shows **Family Roles**, **Gender Demographics**, **Age Distribution**, and report links for **People Directory** and **Letters & Mailing Labels**.
 
-**Quick Actions** includes **Verify People** and **New Self-Registrations**. When email is available, **Email All** is there too.
+**Quick Actions** includes **Verify People** (for users with **Edit Records**) and **New Self-Registrations**. When email is available, **Email All** is there too.
 
 Administrators open **People Settings** on this dashboard:
 

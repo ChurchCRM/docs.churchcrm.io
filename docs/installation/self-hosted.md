@@ -13,7 +13,7 @@ If your host offers cPanel, the [one-click Softaculous install](/installation/so
 
 ## Before you start
 
-- Confirm your server meets the **[system requirements](/installation/system-requirements)** — PHP 8.4+, MySQL 8.0+ / MariaDB 10.5+, Apache 2.4 with URL rewriting, and about 500 MB of disk to start. nginx is not a tested install path.
+- Confirm your server meets the **[system requirements](/installation/system-requirements)** — PHP 8.4+, MySQL @@mysql@@+ / MariaDB @@mariadb@@+, Apache 2.4 with URL rewriting, and about 500 MB of disk to start. nginx is not a tested install path.
 - Have a domain or subdomain pointed at the server's IP address.
 - Plan for [HTTPS](/installation/ssl-https) — ChurchCRM handles member and giving data and should never run over plain HTTP in production.
 
@@ -21,8 +21,8 @@ If your host offers cPanel, the [one-click Softaculous install](/installation/so
 
 | Your server | Guide |
 |-------------|-------|
-| Ubuntu 22.04 / 24.04 LTS, or Debian | **[Self-Hosted on Ubuntu / Debian](/installation/ubuntu)** |
-| Rocky Linux, AlmaLinux, RHEL | **[Self-Hosted on Rocky Linux](/installation/rocky-linux)** |
+| Ubuntu @@ubuntu@@ LTS, or Debian | **[Self-Hosted on Ubuntu / Debian](/installation/ubuntu)** |
+| Rocky Linux, AlmaLinux, RHEL @@rocky@@ | **[Self-Hosted on Rocky Linux](/installation/rocky-linux)** |
 | DigitalOcean, Linode, Hetzner, Vultr, AWS Lightsail, Google Cloud | **[VPS & Cloud Providers](/installation/vps-cloud)** — how to size and create the VM, then follow the Ubuntu guide |
 | Microsoft Azure | **[Azure Cloud Setup](/installation/azure)** |
 

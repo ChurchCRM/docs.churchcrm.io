@@ -1,11 +1,12 @@
 ---
 title: Self-Hosted on Rocky Linux
 sidebar_position: 4
+description: "Step-by-step installation of ChurchCRM on Rocky Linux with Apache, PHP, and MariaDB."
 ---
 
 # Self-Hosted on Rocky Linux
 
-Step-by-step installation of ChurchCRM on Rocky Linux (tested on 8.x and 9.x). For Ubuntu/Debian, see [Self-Hosted on Ubuntu](/installation/ubuntu).
+Step-by-step installation of ChurchCRM on Rocky Linux (tested on Rocky Linux @@rocky@@). For Ubuntu/Debian, see [Self-Hosted on Ubuntu](/installation/ubuntu).
 
 ---
 
