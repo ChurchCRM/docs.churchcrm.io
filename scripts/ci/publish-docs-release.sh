@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Point the docs site at a published ChurchCRM version and, when MERGE=true,
-# merge the API pin plus every open docs pull request on that milestone.
+# merge the API pin plus every open docs pull request milestoned Current.
+# Milestones: Current (the latest published release; the only one that may merge into main) and one
+# x.y.z milestone per upcoming version. Publishing VERSION moves its open items into Current.
 #
 # Required: GH_TOKEN with contents and pull-request access to the docs repo.
 # VERSION: stable x.y.z release tag.
@@ -19,20 +21,23 @@ if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 fi
 
 ensure_milestone() {
-  local version="$1"
+  local title="$1" description="$2"
   local number
   number=$(gh api --paginate "repos/${DOCS_REPO}/milestones?state=all&per_page=100" \
-    --jq ".[] | select(.title == \"$version\") | .number" | head -n 1)
+    --jq ".[] | select(.title == \"$title\") | .number" | head -n 1)
   if [ -z "$number" ]; then
     number=$(gh api "repos/${DOCS_REPO}/milestones" --method POST \
-      -f title="$version" \
-      -f description="Documentation for ChurchCRM $version." \
-      --jq '.number')
-    echo "Created docs milestone #$number ($version)"
+      -f title="$title" -f description="$description" --jq '.number')
+    echo "Created docs milestone #$number ($title)"
   else
     gh api -X PATCH "repos/${DOCS_REPO}/milestones/$number" -f state=open --silent
-    echo "Docs milestone $version already exists (#$number)"
+    echo "Docs milestone $title already exists (#$number)"
   fi
+}
+
+milestone_number() {
+  gh api --paginate "repos/${DOCS_REPO}/milestones?state=open&per_page=100" \
+    --jq ".[] | select(.title == \"$1\") | .number" | head -n 1
 }
 
 NEXT_VERSION="${NEXT_VERSION:-}"
@@ -42,32 +47,26 @@ if ! [[ "$NEXT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] \
   NEXT_VERSION="${VERSION%.*}.$(( 10#${VERSION##*.} + 1 ))"
 fi
 
-ensure_milestone "$VERSION"
-ensure_milestone "$NEXT_VERSION"
+ensure_milestone "Current" "Docs for the latest published ChurchCRM release. The only milestone that may merge into main."
+if [ "$MERGE" != "true" ]; then
+  ensure_milestone "$VERSION" "Docs for ChurchCRM $VERSION. Merges into release-docs/$VERSION, never main."
+fi
+ensure_milestone "$NEXT_VERSION" "Docs for ChurchCRM $NEXT_VERSION. Merges into release-docs/$NEXT_VERSION, never main."
 
-# Release N closes the docs milestone of the release before it. N's own milestone
-# stays open: its docs pull requests can still merge after the release.
-close_previous_milestone() {
-  local previous number open_items
-  previous=""
-  while read -r title; do
-    [[ "$title" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || continue
-    [ "$title" = "$VERSION" ] && continue
-    # Sorted ascending, so the last title older than VERSION is the release before it.
-    if [ "$(printf '%s\n%s\n' "$title" "$VERSION" | sort -V | head -n 1)" = "$title" ]; then
-      previous="$title"
-    fi
-  done < <(gh api --paginate "repos/${DOCS_REPO}/milestones?state=open&per_page=100" --jq '.[].title' | sort -V)
-  [ -z "$previous" ] && return 0
-  number=$(gh api --paginate "repos/${DOCS_REPO}/milestones?state=open&per_page=100" \
-    --jq ".[] | select(.title == \"$previous\") | .number" | head -n 1)
-  open_items=$(gh api "repos/${DOCS_REPO}/milestones/$number" --jq '.open_issues')
-  if [ "$open_items" != "0" ]; then
-    echo "::warning::Docs milestone $previous has $open_items open item(s) and stays open."
-    return 0
-  fi
-  gh api -X PATCH "repos/${DOCS_REPO}/milestones/$number" -f state=closed --silent
-  echo "Closed docs milestone $previous."
+# Publishing VERSION makes its docs the released docs: the open items on the VERSION milestone move
+# to Current and the VERSION milestone closes. Only runs when the release is published (MERGE=true).
+rotate_version_into_current() {
+  local current from number
+  current=$(milestone_number "Current")
+  from=$(milestone_number "$VERSION")
+  [ -z "$current" ] || [ -z "$from" ] && return 0
+  while read -r number; do
+    [ -z "$number" ] && continue
+    gh api -X PATCH "repos/${DOCS_REPO}/issues/$number" -F milestone="$current" --silent
+    echo "Moved #$number from $VERSION to Current."
+  done < <(gh api --paginate "repos/${DOCS_REPO}/issues?state=open&milestone=${from}&per_page=100" --jq '.[].number')
+  gh api -X PATCH "repos/${DOCS_REPO}/milestones/$from" -f state=closed --silent
+  echo "Closed docs milestone $VERSION."
 }
 
 # The next release's docs start from the main that now holds this release's docs.
@@ -82,6 +81,13 @@ ensure_next_docs_branch() {
   echo "Created $branch from main (${sha:0:12})."
 }
 
+if [ "$MERGE" = "true" ]; then
+  rotate_version_into_current
+  pr_milestone="Current"
+else
+  pr_milestone="$VERSION"
+fi
+
 open_pin_pr() {
   local pinned newer
   pinned=$(gh api "repos/${DOCS_REPO}/contents/crm-release.json?ref=main" --jq '.content' | base64 -d | jq -r '.version')
@@ -93,7 +99,7 @@ open_pin_pr() {
       echo "::error::Refusing to move the docs pin backwards from $pinned to $VERSION." >&2
       exit 1
     fi
-    LATEST="$VERSION" ./scripts/ci/open-pin-pr.sh
+    LATEST="$VERSION" MILESTONE="$pr_milestone" ./scripts/ci/open-pin-pr.sh
   fi
 }
 
@@ -104,7 +110,7 @@ docs_pr=""
 if git ls-remote --exit-code --heads origin "$docs_branch" > /dev/null 2>&1; then
   docs_pr=$(gh pr list --repo "$DOCS_REPO" --base main --head "$docs_branch" --state open --json number --jq '.[0].number // ""')
   if [ -z "$docs_pr" ]; then
-    url=$(gh pr create --repo "$DOCS_REPO" --base main --head "$docs_branch" --milestone "$VERSION" \
+    url=$(gh pr create --repo "$DOCS_REPO" --base main --head "$docs_branch" --milestone "$pr_milestone" \
       --title "docs: ChurchCRM ${VERSION}" \
       --body "Every product docs pull request for ChurchCRM ${VERSION}, merged into \`${docs_branch}\` as it was approved.")
     docs_pr="${url##*/}"
@@ -191,11 +197,10 @@ else
   echo "No open API pin pull request for $VERSION."
 fi
 
-milestone_number=$(gh api --paginate "repos/${DOCS_REPO}/milestones?state=open&per_page=100" \
-  --jq ".[] | select(.title == \"$VERSION\") | .number" | head -n 1)
+current_number=$(milestone_number "Current")
 pr_numbers=""
-if [ -n "$milestone_number" ]; then
-  pr_numbers=$(gh api --paginate "repos/${DOCS_REPO}/issues?state=open&milestone=${milestone_number}&per_page=100" \
+if [ -n "$current_number" ]; then
+  pr_numbers=$(gh api --paginate "repos/${DOCS_REPO}/issues?state=open&milestone=${current_number}&per_page=100" \
     --jq '.[] | select(.pull_request != null and .draft != true) | .number')
 fi
 while read -r number; do
@@ -209,7 +214,6 @@ if [ "$skipped" -ne 0 ]; then
   exit 1
 fi
 
-close_previous_milestone
 ensure_next_docs_branch
 
 gh workflow run "Deploy to GitHub Pages" --repo "$DOCS_REPO" --ref main || echo "Deploy dispatch was not accepted. A token push to main still starts it."
