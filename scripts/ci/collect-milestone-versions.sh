@@ -1,34 +1,23 @@
 #!/usr/bin/env bash
-# Print the docs milestones to ensure, one version per line.
-# REQUESTED_VERSION, when set, is the only version. Otherwise use CRM package.json and the latest stable release.
-# Also appends versions=<space-separated> to GITHUB_OUTPUT when that file is set.
+# Print the docs milestones to ensure, one per line: Current (documents the latest published release;
+# the only milestone that may merge into main) and one x.y.z milestone for each upcoming CRM version
+# (the open CRM x.y.z milestones newer than the latest stable release, for example a patch and a minor).
 set -euo pipefail
 
 : "${GH_TOKEN:?GH_TOKEN is required}"
+CRM_REPO="${CRM_REPO:-ChurchCRM/CRM}"
 
-add() {
-  local version="$1"
-  if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-    echo "::error::Invalid version: $version" >&2
-    exit 1
-  fi
-  case " ${versions} " in
-    *" ${version} "*) ;;
-    *) versions="${versions} ${version}" ;;
-  esac
-}
+latest=$(gh api "repos/$CRM_REPO/releases/latest" --jq '.tag_name')
+milestones="Current"
+while read -r title; do
+  [[ "$title" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || continue
+  [ "$(printf '%s\n%s\n' "$latest" "$title" | sort -V | tail -n 1)" = "$title" ] || continue
+  [ "$title" = "$latest" ] && continue
+  milestones="${milestones} ${title}"
+done < <(gh api --paginate "repos/$CRM_REPO/milestones?state=open&per_page=100" --jq '.[].title' | sort -V)
 
-versions=""
-if [ -n "${REQUESTED_VERSION:-}" ]; then
-  add "$REQUESTED_VERSION"
-else
-  add "$(curl -fsSL https://raw.githubusercontent.com/ChurchCRM/CRM/master/package.json | jq -r '.version')"
-  add "$(gh api repos/ChurchCRM/CRM/releases/latest --jq '.tag_name')"
-fi
-
-versions="${versions# }"
-echo "Milestones to ensure: ${versions}" >&2
-printf '%s\n' $versions
+echo "Milestones to ensure: ${milestones}" >&2
+printf '%s\n' $milestones
 if [ -n "${GITHUB_OUTPUT:-}" ]; then
-  echo "versions=${versions}" >> "$GITHUB_OUTPUT"
+  echo "versions=${milestones}" >> "$GITHUB_OUTPUT"
 fi

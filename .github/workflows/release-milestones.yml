@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Optional milestone to ensure (for example 7.8.0). Blank uses the CRM package.json version and the latest stable release.'
+        description: 'Unused. This run ensures Current and a milestone for each upcoming CRM version exist.'
         required: false
         type: string
 
