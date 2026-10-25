@@ -26,6 +26,25 @@ A Person record represents an individual in your congregation. Person records ca
 
 ---
 
+## Membership Date: what it means
+
+**Membership Date** records the date your church considers a person to have joined. It is optional: leaving it blank does not stop you from saving a person. Your church decides which date to record according to its own membership records and rules.
+
+To set or correct it, open a person's record, choose **Edit**, then find **Membership Date** in the **Church Membership** card. Save the person. When a date is present, the Person View displays **Since** followed by that date. Clearing the field and saving removes the stored date.
+
+### What the date does—and does not do
+
+- **Membership Date and Classification are separate fields.** Selecting a [person classification](/user-guide/classifications) such as Member does not fill in a Membership Date, and entering a date does not change the classification. A person can have either field without the other.
+- **Membership Anniversaries**, under [Reports → People Reports](/user-guide/reports-and-queries#people-report-details), uses the date's month. It can also be filtered by classification; the report is not restricted to people classified as Members.
+- Administrators can [import](/user-guide/data-import) the `MembershipDate` CSV column and can [export](/user-guide/export) person records, optionally including Membership Date and filtering by a date range.
+- The date **does not grant application permissions** or make someone eligible to vote. Membership of a group named *Board* or *Voting Members* also does not automatically grant voting rights or [software user access](/administration/users). The church determines membership and voting eligibility under its own bylaws. A separate structured voting-eligibility feature has been proposed but is **not available in ChurchCRM 7.8.1**.
+
+:::caution Who can change the date?
+In ChurchCRM 7.8.1, the Person Editor allows users with **Edit Records**, or **Edit Self** for their own or same-family record, to open the editor. The Membership Date field has no additional field-level permission check there. It must not be treated as protected proof of voting eligibility or as an authorization control.
+:::
+
+---
+
 ## How do I find a specific person?
 
 Use the search field in the page header. Its placeholder is **Search people, families, groups…**. Results appear as you type. People matches look at first name, middle name, last name, email, work email, and home, cell, and work phone, and only living people are included.
