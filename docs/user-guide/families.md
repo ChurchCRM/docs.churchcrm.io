@@ -24,7 +24,7 @@ Every Person should belong to a family.
 3. Enter the shared **Address**, **City**, **State**, **ZIP**, **Country**. If the family's mail goes somewhere else (a PO Box, for example), expand **Second Address (optional)** and see [Second Address and Mailing Address](#second-address-and-mailing-address).
 4. Enter **Home Phone** and **Family Email**.
 5. The form starts with four family-member rows. **Add Another Family Member** appends another row. There is no limit of 10. Enter a first name for each person you are adding; enter a last name only when it differs from the family name.
-6. Set **Classification** for each person (Member, Guest, etc.).
+6. Set **Classification** for each person (Member, Guest, etc.), and a **Grade** for each child if you track [school grades](/user-guide/school-grades).
 7. Click **Save**.
 
 > **Tip:** Family members share address, phone, and email. Enter them once on the family record — individual persons inherit them unless you override on the person record.
