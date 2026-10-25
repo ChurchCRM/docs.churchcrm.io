@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Comment on open pull requests milestoned LATEST, once, that the CRM release is published.
+# Comment on open pull requests milestoned Current, once, that the CRM release is published.
 set -euo pipefail
 
 : "${GH_TOKEN:?GH_TOKEN is required}"
@@ -9,7 +9,7 @@ set -euo pipefail
 
 marker="<!-- docs-release-ready:${LATEST} -->"
 gh pr list --state open --limit 100 --json number,milestone \
-  --jq ".[] | select(.milestone.title == \"$LATEST\") | .number" | while read -r number; do
+  --jq ".[] | select(.milestone.title == \"Current\") | .number" | while read -r number; do
     [ "$number" = "$PIN_PR" ] && continue
     if gh api "repos/${GITHUB_REPOSITORY}/issues/${number}/comments" --paginate --jq '.[].body' | grep -F "$marker" >/dev/null; then
       echo "Pull request #$number already marked ready for $LATEST."

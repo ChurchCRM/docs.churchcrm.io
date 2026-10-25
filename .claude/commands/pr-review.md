@@ -15,7 +15,7 @@ Read in order:
 - Do not approve. Do not merge.
 - Hard blocks → Request changes. Everything else → Comment.
 - Base branch: product docs for a version that is not published go to `release-docs/<version>`, not `main`. `main` is only for fixes to a published version and for repo maintenance.
-- Milestone and labels: a product PR has the version milestone and no maintenance label. A maintenance PR has no milestone and one of `ci`, `repo-maintenance`, `infrastructure`, `dependencies`.
+- Milestone and labels: a product PR is milestoned Current (fix to a published release) or the upcoming version (unreleased, base `release-docs/<version>`) and has no maintenance label. A maintenance PR has no milestone and one of `ci`, `repo-maintenance`, `infrastructure`, `dependencies`.
 - Check each fact against the CRM code for that version (the release tag, or `master` for a merged change): menu paths, setting labels, defaults, accepted file formats. Say which file you checked.
 - Search the other pages for the same fact. Release docs are written by several PRs at once, so the same format list, path or default often disagrees between pages.
 - A product PR names its CRM docs tracking issue as `Closes ChurchCRM/CRM#N`. After the PR merges into the release branch, a maintainer must manually close the issue.

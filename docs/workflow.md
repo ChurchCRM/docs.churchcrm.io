@@ -14,11 +14,11 @@ Agents follow the same rules in [`.agents/DOCS_GUIDE.md`](https://github.com/Chu
 
 | You are changing | Milestone | Label |
 |---|---|---|
-| How the released or upcoming app behaves | The ChurchCRM version, such as `7.8.0` | none |
-| A fix to docs for a version that is already out | That version, such as `7.7.1` | none |
+| How the upcoming app behaves | The upcoming ChurchCRM version, such as `7.8.3` or `7.9.0` | none |
+| A fix to docs for a version that is already out | **Current** | none |
 | CI, dependencies, or the docs site itself | none | `ci`, `repo-maintenance`, `infrastructure`, or `dependencies` |
 
-Do not use the latest product milestone for site or CI work. That milestone means the pull request documents that release, and the release gate would allow it to merge.
+Do not use Current for site or CI work. Current is the only milestone the release gate lets merge into `main`, and it means the pull request documents the latest published release.
 
 ## Docs for a release that is not published yet
 
@@ -28,7 +28,7 @@ Open the pull request against `release-docs/<version>`, for example `release-doc
 2. When the pull request is approved, merge it into the release branch. Merge each one as it is ready; they do not need to wait for each other or for the release.
 3. Name the ChurchCRM tracking issue in the description, for example `Closes ChurchCRM/CRM#9922`. It is closed when the pull request merges into the release branch. GitHub would otherwise close it only after a merge into `main`.
 
-Nothing reaches the public site from `release-docs/<version>`. Leave the milestone set to the version.
+Nothing reaches the public site from `release-docs/<version>`. Leave the milestone set to the version. When the release is published, its open items move to Current.
 
 ## When a ChurchCRM version ships
 
