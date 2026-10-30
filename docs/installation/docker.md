@@ -52,6 +52,8 @@ networking, or any added capabilities.
 
 Create a directory with these two files.
 
+The Compose example below matches the [production Compose file in the ChurchCRM repository](https://github.com/ChurchCRM/CRM/blob/master/docker/production/compose.yaml).
+
 `compose.yaml`:
 
 ```yaml
