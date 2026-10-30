@@ -90,7 +90,7 @@ Each person's page shows their address: their own, or the one they inherit from 
 
 The family's mailing address is the flagged second address when there is one, and the primary address otherwise. It is used here:
 
-- **Newsletter labels**, **Confirm data labels** and mailed letters such as confirmation letters, tax statements and reminder letters are addressed to it. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
+- **Newsletter labels**, **Confirm data labels** and mailed letters such as confirmation letters, giving statements and reminder letters are addressed to it. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
 - The cart's **Labels** use it for anyone who has no address of their own on their person record. See [Which address is used](./cart.md#which-address-is-used).
 - The **People Directory** report can print the mailing address beneath the primary address; see [Which address is printed](./reports-and-queries.md#which-address-is-printed).
 - The [CSV export](./export.md#second-address-columns) can include the second address and the mailing flag, and the [CSV import](./data-import.md#second-address-columns) can load them.

@@ -16,7 +16,7 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 | **Reports** | Pre-formatted documents ready for printing (directories, labels, letters) |
 | **People Reports** | Filtered lists of [people](/user-guide/persons) you can send to the [Cart](/user-guide/cart), print as labels, or download |
 
-Finance letters and giving reports are under [Deposit Reports](/user-guide/finances#deposit-reports).
+Finance letters and giving reports are under [Deposit Reports](/user-guide/finances#deposit-reports); year-end letters are made on the [Giving Statements](/user-guide/finances#giving-statements) page.
 
 ---
 
@@ -67,7 +67,7 @@ Mailed letters and the labels listed below go to the family's **mailing address*
 
 - **Cart labels**, and **Print Labels** on a People Report: each label uses the person's own address when one has been entered on their record, otherwise the family's mailing address. A label never mixes a person's street with the family's city.
 - **Newsletter labels** and **Confirm data labels** on the **Letters and Mailing Labels** page print the mailing address. Labels are ordered by the ZIP code that is actually printed, for presorting.
-- Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. Confirmation letters and tax statements sent by email use the same address. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
+- Mailed letters print the mailing address in the address block: confirmation letters, giving statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. Confirmation letters and giving statements sent by email use the same address. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
 - **People Directory**: under _Information to Include_, **Primary Address** (on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print a family's flagged mailing address beneath it, under a "Mailing Address:" label, when it differs from the primary address. That option can only be ticked while **Primary Address** is ticked.
 
 **People Directory** and **Letters & Mailing Labels** are on the **Reports** card of **People → Dashboard**. **Reports → People Reports** also links to **People Directory**. **Letters & Mailing Labels** appears there when the login has **Manage Properties and Classifications**, the same permission as the Letters and Mailing Labels page. Envelopes carry no address.
