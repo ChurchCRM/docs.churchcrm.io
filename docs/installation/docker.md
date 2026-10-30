@@ -152,13 +152,23 @@ Then open `http://127.0.0.1:8080/`, which redirects to the setup wizard.
 
 | Wizard field | Value |
 | --- | --- |
-| Database server | `db` |
+| Database server | `db` — the Compose service name. Do not leave the wizard default `localhost`; inside the web container, that connects to a local MySQL socket, not the database container. |
 | Database port | `3306` |
 | Database name, user, password | the values from your `.env` |
 | Root path | leave empty |
 | URL | the address people will actually use, with a trailing slash |
 
+These database settings are for the connection **from the web container** to
+the database container. Use `db` and port `3306`; do not use `localhost`, the
+server's IP address, or a host-published port. This Compose file does not
+publish the database port to the host.
+
 Get the URL right the first time — see [the URL setting](#the-url-setting).
+
+If setup appears to finish but the first login or password change returns a
+database connection error, check that `Include/Config.php` has
+`$sSERVERNAME = 'db';`. A saved value of `localhost` makes PHP look for a
+MySQL socket inside the web container.
 
 The schema installs on the first request after the wizard, creating 59 tables.
 Log in as `admin` / `changeme`; you are forced to change the password
