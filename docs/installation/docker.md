@@ -3,6 +3,8 @@ title: Docker
 description: Run ChurchCRM from the official Docker images, and back it up.
 ---
 
+import crmRelease from '../../crm-release.json';
+
 # Docker
 
 ChurchCRM publishes official Docker images on Docker Hub as
@@ -52,7 +54,7 @@ networking, or any added capabilities.
 
 Create a directory with these two files.
 
-The Compose example below matches the [production Compose file for ChurchCRM 7.8.0](https://github.com/ChurchCRM/CRM/blob/7.8.0/docker/production/compose.yaml).
+The Compose example below matches the <a href={`https://github.com/ChurchCRM/CRM/blob/${crmRelease.version}/docker/production/compose.yaml`}>production Compose file for ChurchCRM {crmRelease.version}</a>.
 
 `compose.yaml`:
 
