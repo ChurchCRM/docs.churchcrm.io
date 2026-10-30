@@ -122,8 +122,8 @@ This works on shared hosting (cPanel or similar). The in-app wizard is not avail
 
 | Release | PHP | Database |
 |---------|-----|----------|
-| Any 6.x release | **8.2 or higher** (checked on every page load) | MySQL 8.0.11+ or MariaDB 10.5+ |
-| 7.0.0 and later, including the latest release | **8.4 or higher** (checked on every page load) | MySQL 8.0.11+ or MariaDB 10.5+ |
+| Any 6.x release | **8.2 or higher** (checked on every page load) | MySQL @@mysql@@+ or MariaDB @@mariadb@@+ |
+| 7.0.0 and later, including the latest release | **8.4 or higher** (checked on every page load) | MySQL @@mysql@@+ or MariaDB @@mariadb@@+ |
 
 - The app checks the PHP version itself and shows a warning if it is too old. It does not check the database version, so confirm it in cPanel (**MySQL Databases**, or phpMyAdmin's home page) before you start.
 - If your database is older than the table says, ask your host to upgrade it before Step 3. Restoring a backup into an older database can fail.

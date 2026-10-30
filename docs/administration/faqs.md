@@ -23,7 +23,7 @@ Change this password immediately after your first login.
 Go through the latest 6.x release first. The current release has no upgrade steps for a 5.x database.
 
 1. Take an in-app backup from the **Admin Dashboard** (**System Info → Backup**). Choose **Full Backup** (or **Database Only** if the full archive times out) and click **Generate & Download Backup**.
-2. Check your database is MySQL 8.0.11+ or MariaDB 10.5+. Set your host to PHP 8.2 or higher and upload the newest 6.x zip from the [releases page](https://github.com/ChurchCRM/CRM/releases) over your files. Keep your `Include/Config.php`.
+2. Check your database is MySQL @@mysql@@+ or MariaDB @@mariadb@@+. Set your host to PHP 8.2 or higher and upload the newest 6.x zip from the [releases page](https://github.com/ChurchCRM/CRM/releases) over your files. Keep your `Include/Config.php`.
 3. Open the site so the database migrates, check it works, and take another backup.
 4. Set PHP to 8.4 or higher and upgrade to the latest release. If your host cannot offer PHP 8.4, stay on the latest 6.x release.
 

@@ -11,6 +11,16 @@ Additionally, Properties can have values which contain information related to th
 
 There is no **Properties** menu.
 
+## Who can do what
+
+| Task | Who |
+|------|-----|
+| Assign, edit the value of, or remove a property on a person or family | Users with **Edit Records** |
+| Assign, edit the value of, or remove a property on a group | Users with **Manage Groups and Roles** |
+| Define properties and property types | Administrators only |
+
+A user who cannot assign a property does not see the **Assign** control on the **Properties** card. See [Users](/administration/users#what-are-the-different-rights-available).
+
 ## How do I know what properties have been assigned?
 
 On the person, family, or group page, the card title is **Properties**. It lists each assigned property and its value when the property has one. There is no heading named **Assigned Properties**.
@@ -33,7 +43,7 @@ On the **Properties** card, use **Remove** on that property and confirm.
 
 ## How do I add a property I can assign to a person?
 
-1. Go to **People → Admin → Person Properties**.
+1. As an administrator, go to **People → Admin → Person Properties**.
 2. Click **Add New**.
 3. Complete the form. Enter a prompt (for example, "Enter the hospital name and room number") if the property should store a value.
 
@@ -41,7 +51,7 @@ Leave the prompt blank when the property should not store a value. The page also
 
 ## How do I add a property I can assign to a family?
 
-1. Go to **People → Admin → Family Properties**.
+1. As an administrator, go to **People → Admin → Family Properties**.
 2. Click **Add New**.
 3. Complete the form the same way as a person property.
 
@@ -49,7 +59,7 @@ Property types for families are **Manage Family Property Types**.
 
 ## How do I add a property I can assign to a group?
 
-1. Go to **Groups → Admin → Group Properties**.
+1. As an administrator, go to **Groups → Admin → Group Properties**.
 2. Click **Add New**.
 3. Complete the form the same way.
 

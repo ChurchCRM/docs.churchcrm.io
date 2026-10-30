@@ -32,7 +32,7 @@ Use the username from step 1. If you chose a password, the client prompts for it
 
 ## 3. Install Apache, MariaDB, and PHP 8.4
 
-Ubuntu 24.04 ships PHP 8.3. ChurchCRM requires PHP 8.4 or newer, so install PHP from the Ondřej Surý PPA:
+Ubuntu @@ubuntu@@ ships PHP 8.3. ChurchCRM requires PHP 8.4 or newer, so install PHP from the Ondřej Surý PPA:
 
 ```sh
 sudo apt update && sudo apt upgrade -y

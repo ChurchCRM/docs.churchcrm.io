@@ -1,11 +1,12 @@
 ---
 title: Self-Hosted on Ubuntu / Debian
 sidebar_position: 5
+description: "Step-by-step installation of ChurchCRM on the current Ubuntu LTS release with Apache, PHP, and MariaDB."
 ---
 
 # Self-Hosted on Ubuntu / Debian
 
-Step-by-step installation of ChurchCRM on Ubuntu 22.04 LTS or 24.04 LTS (and compatible Debian-based systems). For Rocky Linux / RHEL, see [Self-Hosted on Rocky Linux](/installation/rocky-linux).
+Step-by-step installation of ChurchCRM on Ubuntu @@ubuntu@@ LTS (and compatible Debian-based systems). For Rocky Linux / RHEL, see [Self-Hosted on Rocky Linux](/installation/rocky-linux).
 
 ---
 
@@ -31,7 +32,7 @@ sudo ufw allow in "Apache Full"
 
 ## 2. Install PHP 8.4
 
-Ubuntu 22.04's default PHP is 8.1; Ubuntu 24.04 ships 8.3. Use the Ondřej Surý PPA for the current recommended version:
+Ubuntu @@ubuntu@@ ships PHP 8.3. Use the Ondřej Surý PPA for the current recommended version:
 
 ```sh
 sudo apt install -y software-properties-common

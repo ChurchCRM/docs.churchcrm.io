@@ -13,8 +13,8 @@ Do not mix them in one pull request.
 
 | The code | The docs pull request |
 |---|---|
-| Merged and in a published ChurchCRM release | Milestone is that version. It may merge when CI is green. |
-| Merged, but the release is not published yet | Milestone is that unreleased version. Base is `release-docs/<version>`, not `main`. It merges into that branch when approved, and the branch reaches `main` after the release. |
+| Merged and in a published ChurchCRM release | Milestone is Current. It may merge when CI is green. |
+| Merged, but the release is not published yet | Milestone is that upcoming version (for example `7.8.3`). Base is `release-docs/<version>`, not `main`. It merges into that branch when approved, and the branch reaches `main` after the release. |
 | Not merged | Do not document it. |
 
 A `ci`, `repo-maintenance`, `infrastructure`, or `dependencies` label is only for work that does not describe product behavior. Those pull requests have no milestone.

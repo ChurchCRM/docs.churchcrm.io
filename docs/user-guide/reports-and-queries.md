@@ -70,7 +70,7 @@ Mailed letters and the labels listed below go to the family's **mailing address*
 - Mailed letters print the mailing address in the address block: confirmation letters, tax statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. Confirmation letters and tax statements sent by email use the same address. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
 - **People Directory**: under _Information to Include_, **Primary Address** (on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print a family's flagged mailing address beneath it, under a "Mailing Address:" label, when it differs from the primary address. That option can only be ticked while **Primary Address** is ticked.
 
-**People Directory** and **Letters & Mailing Labels** are on the **Reports** card of **People → Dashboard**. Administrators also reach them from **Reports → People Reports**. Envelopes carry no address.
+**People Directory** and **Letters & Mailing Labels** are on the **Reports** card of **People → Dashboard**. **Reports → People Reports** also links to **People Directory**. **Letters & Mailing Labels** appears there when the login has **Manage Properties and Classifications**, the same permission as the Letters and Mailing Labels page. Envelopes carry no address.
 
 People Reports print the same labels without using the Cart. See [Print Labels on People Reports](#print-labels-on-people-reports).
 
@@ -78,13 +78,19 @@ People Reports print the same labels without using the Cart. See [Print Labels o
 
 ## People Reports
 
-Open **Reports → People Reports**. Each report is admin only, the same as this page. Pick a report, set the filters, and click **Run Report**.
+Open **Reports → People Reports**. Every staff login can open this page. A login set to **Edit Self** only cannot. **Missing People** is listed only when you can open **Events**. Pick a report, set the filters, and click **Run Report**.
 
 **Classification** is on every report. It is a multi-select list read from **Admin → Classification Manager**, so custom classifications appear automatically. It also offers **Unassigned** for people with no classification. Leave it empty (placeholder **All classifications**) to include everyone.
 
 **Month** is a dropdown of month names, preselected to next month in the church time zone. The month reports run as soon as they open. A report that needs a Property, Volunteer Opportunity, or Events choice shows a hint until you pick one.
 
-The results header has three actions: **Add All to Cart**, **Print Labels**, and **Download CSV**. **Print Labels** is disabled when the report has no rows.
+The results header has **Add All to Cart** and **Download CSV**. **Print Labels** is there when the login has **Manage Properties and Classifications**, and it is disabled when the report has no rows. **Delete** on a result row needs **Delete Records**.
+
+### People by Grade
+
+**People by Grade** lists everyone from one [school grade](/user-guide/school-grades) through another, sorted by grade and then by name. Choose **From Grade**, and **Through Grade** for a range. Leave **Through Grade** empty for a single grade. The **Classification** filter works as on the other reports. Deceased people are not listed.
+
+**Add All to Cart** followed by **Empty Cart to Group** fills a Sunday School class. See [Filling a class by grade](./sunday-school.md#filling-a-class-by-grade).
 
 ### Print Labels on People Reports
 

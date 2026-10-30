@@ -36,11 +36,12 @@ cat > /tmp/pin-pr.md <<EOF
 - CI and the live site download OpenAPI specs from tag \`${LATEST}\`, not from \`master\`.
 - After this merges, \`v${LATEST}\` and \`release/${LATEST}\` point at the published docs commit.
 
-Merge this before product-doc pull requests milestoned ${LATEST}.
+Merge this before product-doc pull requests milestoned Current.
 EOF
 
 url=$(gh pr create --base main --head "$branch" \
   --title "Publish docs for ChurchCRM ${LATEST}" \
+  --milestone "${MILESTONE:-Current}" \
   --body-file /tmp/pin-pr.md)
 number=${url##*/}
 echo "Opened pin pull request #$number"

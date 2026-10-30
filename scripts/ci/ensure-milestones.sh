@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Create any missing docs-repo milestones named in VERSIONS (space-separated).
+# Create any missing docs-repo milestones named in VERSIONS (space-separated): Current and the upcoming versions.
 set -euo pipefail
 
 : "${GH_TOKEN:?GH_TOKEN is required}"
@@ -16,7 +16,7 @@ for version in $VERSIONS; do
   number=$(gh api "repos/${GITHUB_REPOSITORY}/milestones" \
     --method POST \
     -f title="$version" \
-    -f description="Documentation for ChurchCRM $version. Product docs may merge only after this CRM release is published. The API reference moves to this version when the pin PR merges." \
+    -f description="$(case "$version" in Current) echo 'Docs for the latest published ChurchCRM release. The only milestone that may merge into main.';; *) echo "Docs for ChurchCRM $version. Merges into release-docs/$version, never main.";; esac)" \
     --jq '.number')
   echo "Created milestone $version as #$number"
 done

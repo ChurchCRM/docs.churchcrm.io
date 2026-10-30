@@ -12,13 +12,13 @@ The public site documents **released** ChurchCRM. A merged CRM pull request is n
 
 | Change | Milestone | Label | When it may merge |
 |---|---|---|---|
-| Product behavior: install, admin, user guide, screenshots of the app | The CRM version that will ship it, for example `7.8.0` | none | Into `release-docs/<version>` when approved. That branch reaches `main` as one pull request after the version is a published stable GitHub Release, and the API pin pull request follows it |
-| Correction to docs for software that is already released | That published version, for example `7.7.1` | none | Immediately, because the release already exists |
+| Product behavior: install, admin, user guide, screenshots of the app | The upcoming CRM version that will ship it, for example `7.8.3` or `7.9.0` | none | Into `release-docs/<version>` when approved. That branch reaches `main` as one pull request after the version is a published stable GitHub Release, and the API pin pull request follows it |
+| Correction to docs for software that is already released | **Current** | none | Immediately, because the release already exists |
 | CI, dependencies, agent instructions, site infrastructure, typos that do not describe new product behavior | **none** | `ci`, `repo-maintenance`, `infrastructure`, or `dependencies` | When CI is green |
 
-Do not put infrastructure on the latest product milestone. A version milestone means "this pull request documents that release." The latest published milestone is already released, so the gate would pass and unreleased behavior could reach the site.
+Do not put infrastructure on Current. Current means "this pull request documents the latest published release." The gate lets Current merge into `main`, so unreleased behavior stays on its version milestone.
 
-`release-gate.yml` is the check that blocks a merge. It fails when a pull request has no milestone and none of those labels. It also fails when the milestone is not a published stable `x.y.z` release of `ChurchCRM/CRM`.
+`release-gate.yml` is the check that blocks a merge. It fails when a pull request has no milestone and none of those labels. It also fails on any milestone except **Current**: only Current merges into `main`. The repository keeps Current plus one milestone per upcoming version, so a patch and a minor can be open together. When a release is published, the open items on its version milestone move to Current and that milestone closes.
 
 ### Product docs before the release
 
@@ -41,7 +41,7 @@ Two steps are manual for now. A maintainer does them when the CRM release is pub
 
 The site shows the release it describes in the navbar and the footer. It comes from `crm-release.json`, which the API pin pull request moves. Pages therefore do not say "since" or "new in" a version.
 
-`Sync docs release milestones` creates the docs milestone for the version in CRM `package.json` and for the latest stable release when either is missing. If the milestone you need does not exist yet, run that workflow with the version, or create the `x.y.z` milestone by hand. Do not invent a non-version milestone.
+`Sync docs release milestones` creates Current and a milestone for each upcoming CRM version when any is missing. Do not create other milestone names.
 
 ### API reference, tags, and deploy
 
@@ -53,9 +53,15 @@ When `crm-release.json` changes on `main`, `tag-docs-release.yml` creates annota
 
 Shell that the workflows call lives in `scripts/` and `scripts/ci/`. Run those scripts locally with the same environment variables. Do not put new multi-line shell back into the workflow files.
 
+### Required versions
+
+The supported MySQL, MariaDB, and Ubuntu versions live in `requirements.json`. Write them in pages as tokens (`MySQL @@mysql@@+`, `MariaDB @@mariadb@@+`, `Ubuntu @@ubuntu@@`); never type the number. The build fills the tokens in text, links, and code blocks, and fails on a token that is missing from the file. A token in a page's first paragraph also reaches the meta description and search index, which the build check rejects: give that page a `description:` in its front matter that has no token. To change a supported version, edit `requirements.json` and the CRM repo's version line, nothing else.
+
 ### Voice
 
 The reader is a church administrator or the person who runs the server. Write the way the marketing site does: warm, practical, and plain. Name the menu, the button, and the task. Do not pitch the product, do not mention the GitHub Wiki, and do not label a step "New in 7.8.0" when the page itself is the manual for that version.
+
+Keep pages short and clean. Do not explain what a reader can see on screen (a button named Save saves). Use the words a church office uses (member, family, giving, event), not developer terms. Cut a sentence that restates its heading. A docs change is ready when a church volunteer can finish the task without reading anything extra.
 
 Reviewers use `.agents/skills/pr-review/SKILL.md`. A docs pull request is not ready while it mixes a change that can merge today with one that must wait for a release.
 

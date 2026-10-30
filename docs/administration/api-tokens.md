@@ -94,7 +94,7 @@ Tokens inherit the permissions of the user account that created them. A token cr
 There is currently no way to create a token with reduced permissions relative to your account.
 
 Individual endpoints are gated by role (Finance, Admin, EditRecords, DeleteRecords,
-ManageGroups, AddEvents, MenuOptions). Calling one your account lacks returns `403`, so a
+ManageGroups, AddEvents). Calling one your account lacks returns `403`, so a
 client should treat a `403` as "this feature is unavailable to this user" rather than an
 error. Retrying will not help — tokens are static.
 
