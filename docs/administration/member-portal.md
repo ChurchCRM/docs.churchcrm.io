@@ -1,7 +1,7 @@
 ---
 title: Member Portal
 sidebar_position: 40
-description: Admin → Member Portal — theme, section switches, usage statistics and which calendars members see; what changes elsewhere; what to expect after upgrading.
+description: Admin → Member Portal — theme, section switches, usage statistics, which calendars members see and the member directory; what changes elsewhere; what to expect after upgrading.
 ---
 
 # Member Portal administration
@@ -16,7 +16,7 @@ A **self-service account** — a user whose only permission is *Edit Self* — r
 
 ## Admin → Member Portal
 
-**Admin → Member Portal** is for administrators only. It has four tabs: **Settings**, **Themes**, **Statistics** and **Calendars**. The **Open the Member Portal** button at the top right opens the portal as yourself.
+**Admin → Member Portal** is for administrators only. It has five tabs: **Settings**, **Themes**, **Statistics**, **Calendars** and **Directory**. The **Open the Member Portal** button at the top right opens the portal as yourself.
 
 ### Settings
 
@@ -73,6 +73,20 @@ The tab's own rule is the one to remember: **Members see only the calendars swit
 - On a **new installation**, the **Public Calendar** is shared from the start.
 - The switches also decide what a member can put in the [calendar subscription](../user-guide/member-portal.md#subscribe-in-your-own-calendar-app) they add to their own calendar app.
 - Members can [hide any shared calendar](../user-guide/member-portal.md#show-or-hide-a-calendar) from the legend of their own **Calendar** page. That changes only what their browser shows, not what you share here.
+
+### Directory
+
+The **Directory** tab switches the portal's member directory on and chooses who is listed, who may look, and what it shows. Changes save as you go — there is no Save button on this tab.
+
+- **Directory on or off.** Off by default: with it off, members have no directory page at all. Turning it on is the church's decision to let members look each other up.
+- **Who is listed** and **who may look** are chosen by classification, both Member by default. Only people in a listed classification appear, and only signed-in members in a viewer classification may open the directory.
+- **What it shows** matches the printed directory's **Information to Include**: primary address, mailing address if different, home, personal, work and cell phone, email and work email, and photo. A detail switched off here is never read, so neither the page nor its API can return it.
+- **Birthdays and anniversaries** can show with the year, without the year, or not at all. A member's own **Hide age** setting drops the year from their birthday.
+- **Browse or search only.** Browse lists everyone, A–Z, with a search box. Search only answers nothing until two characters are typed, and then shows at most 20 entries, so the whole list never leaves the server.
+
+Deceased, inactive and unreviewed people, and people in deactivated families, never appear.
+
+The tab's own rule is the one to remember: **the directory has no per-person opt-out.** Anyone in a listed classification appears; a listed person cannot leave themselves out of the directory.
 
 ---
 
