@@ -6,11 +6,6 @@ static/img/administration/member-portal-settings.png
 static/img/administration/member-portal-statistics.png
 static/img/administration/member-portal-user-menu.png
 static/img/administration/user-editor-ministry-permissions.png
-static/img/Features/Custom_Fields/Custom_Fields_Group_Add_Edit_Prop.png
-static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Confirm.png
-static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Form.png
-static/img/Features/Custom_Fields/Custom_Fields_Group_Spec_Toggle.png
-static/img/Features/Custom_Fields/Custom_Fields_Person_Add.png
 static/img/getting-started/church-info-social-media.png
 static/img/user-guide/cart-functions-bar.png
 static/img/user-guide/cart-generate-labels.png
