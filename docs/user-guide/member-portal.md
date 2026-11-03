@@ -140,7 +140,8 @@ Everything you have been asked to do, soonest first. Each card names the date, m
 | **Declined** | You have said you cannot make it. |
 | **Substitute asked** | You have asked someone to cover for you (the badge names them), and your coordinator has not confirmed it yet. |
 | **Someone else is covering** | Your coordinator confirmed the swap: somebody else takes your place. |
-| **No longer needed** | Your coordinator took you off this date, or the date was cancelled. |
+| **No longer needed** | Your coordinator took you off this date. |
+| **Cancelled** | The date was cancelled. Nothing more is needed from you. |
 | **Thank you** | A date you have served. |
 
 ![My schedule](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-portal-schedule.png)
