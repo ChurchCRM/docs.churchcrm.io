@@ -23,13 +23,13 @@ Access to the Fundraiser module is controlled at two levels:
 
 | Level | Setting | Where to configure |
 |-------|---------|--------------------|
-| System-wide | **Enable Fundraiser menu.** (`bEnabledFundraiser`) | **Admin → System Settings → Financial Settings** |
-| Per-user | **Manage Fundraisers** permission (`bManageFundraisers`) | **Admin → Edit Users → Edit** |
+| System-wide | **Fundraiser Module** (`bEnabledFundraiser`) | **Admin → Feature Toggles** |
+| Per-user | **Manage Fundraisers** permission | **Admin → System Users**, edit the user |
 
 **How they interact:**
 
-1. If **Enable Fundraiser menu** is **off**, the Fundraiser menu is hidden for _everyone_ — admins included.
-2. If **Enable Fundraiser menu** is **on**, only the following users see the Fundraiser menu:
+1. If **Fundraiser Module** is **off**, the Fundraiser menu is hidden for _everyone_ — admins included.
+2. If **Fundraiser Module** is **on**, only the following users see the Fundraiser menu:
    - Users with the **Admin** right (they bypass the per-user permission).
    - Users who have the **Manage Fundraisers** right granted on their account.
 

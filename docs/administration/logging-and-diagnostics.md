@@ -41,7 +41,7 @@ Logs are your friend, and consequently, OUR friend too! We really need to see wh
 
 Thankfully, ChurchCRM has a number of logs we can use to help which are in the `logs` directory where you deployed it. For example, if you deployed ChurchCRM at `/var/www/vhosts/churchcrm` then the `logs` directory will be `/var/www/vhosts/churchcrm/logs`. In that directory, ChurchCRM will write three different logs grouped by days:
 
-1. `yyyy-mm-dd-auth.log` - authentication log: tracking user access and failed access attempts etc.
+1. `yyyy-mm-dd-auth.log` - authentication log: staff sign-ins at `/admin/`, failed attempts, locked accounts, and when an administrator starts and stops Login as Person. Member Portal sign-ins are not in this log; they are on **Admin → Member Portal → Audit**.
 2. `yyyy-mm-dd-app.log` - application log: with internal events and basic debugging information (this is the log we usually need to see).
 3. `yyyy-mm-dd-orm.log` - ORM logs: not usually stuff we would ask for, but if we do, we will ask for the "ORM logs".
 

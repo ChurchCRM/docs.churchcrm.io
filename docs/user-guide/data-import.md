@@ -87,7 +87,7 @@ Every other column is optional and can be omitted entirely or left blank.
 | `Email` | Personal email address. It is also how the person signs in to the Member Portal |
 | `WorkEmail` | Work / business email address |
 
-An import that changes the email of someone who has already signed in to the Member Portal follows the same rules as a change made by staff: their sessions end, the old address gets a notice, and the new one can't be used to sign in until it is confirmed. See [The sign-in email](/administration/member-sign-in#the-sign-in-email).
+Every row adds a new person, so an import never changes the email of someone already in ChurchCRM. Give each person their own address: when two people who may sign in to the Member Portal share one, neither can use it to sign in (see **Duplicates** in [Email](./email.md#the-email-page)).
 
 ### Second address columns
 

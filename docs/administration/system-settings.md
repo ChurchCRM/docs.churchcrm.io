@@ -12,8 +12,9 @@ ChurchCRM's settings are spread across several pages. This page is where to look
 - **People Settings** — People → Admin → People Settings
 - **Map Settings** — People → Admin → People Settings → Map Settings
 - **Localization & Formats** — Admin → Localization & Formats (time zone is here)
-- **Email** — Communication → Email → Email Settings
+- **Email** — Communication → Admin → Email Settings
 - **Passwords, lockout, session, and 2FA** — Admin → System Users → Settings → Quick Settings
+- **Member Portal sign-in** — People → Admin → Member Portal → **Sign-in**
 - **System Settings tabs** — Financial Settings, Quick Search, Confession, Scheduled Tasks, Report Settings
 :::
 
@@ -78,7 +79,7 @@ There is no Save button. Each setting saves as soon as you change it and a "Sett
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Self-Registration** | Allow visitors to register their own family. When enabled, a link appears on the login page. | Off |
+| **Self-Registration** | Let visitors register their own family on the Member Portal form at `/portal/register`. While it is on, **Register your family** appears on the member sign-in page, or on the **Welcome** page your ChurchCRM address opens while member sign-in is off. See [Self Registrations](../user-guide/self-registrations.md) | Off |
 | **Notification Recipients** | The people who get an email when a new person or family is added. Search and pick them by name. | None |
 | **Include Details in Notifications** | Add contact and demographic details to that email | Off |
 | **Greeter Message 1 / 2** | Up to 255 characters each, shown near the end of the notification email. Line breaks are kept. | Empty |
@@ -229,14 +230,37 @@ This is not a Security menu.
 | **Minimum password change** | How many characters must differ from the old password. 0 turns this off | 4 |
 | **Disallowed passwords** | Comma-separated list that cannot be used | password, god, jesus, church, christian |
 | **Max failed logins** | Failures before the account locks. An administrator unlocks it. 0 turns this off | 5 |
-| **Session timeout** | Idle time in seconds. 0 turns the timeout off | 3600 |
-| **Lost password link** | Show or hide the link on the sign-in page | On |
+| **Session timeout** | Idle time in seconds for a staff sign-in. 0 turns the timeout off. Member Portal sessions use **Idle time (minutes)** on the Member Portal **Sign-in** tab | 3600 |
+| **Lost password link** | Show or hide **Forgot password?** on the staff sign-in page. It appears only while email sending works. Members have no password | On |
 | **Require 2FA** | Require every user to enroll | Off |
 | **2FA grace period** | Days to enroll after 2FA is required. 0 enforces it immediately | 7 |
 | **2FA application name** | Name shown in the authenticator app | ChurchCRM |
 | **Email when a user is deleted** | Tell the person their account was removed | Off |
 
 Content Security Policy (`bEnforceCSP`) is not on a settings tab. Do not look for a switch for it in the menus.
+
+---
+
+## Member Portal sign-in
+
+**Location:** People → Admin → Member Portal → **Sign-in**. Changes save as you make them. See [Member sign-in](./member-sign-in.md).
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Let members sign in with their email** | Members sign in to the Member Portal with an emailed code or link. It can only be turned on while email sending works | Off |
+| **Family Roles** | Family roles whose members may sign in | The head of household and spouse roles |
+| **Classifications** | Classifications whose members may sign in. Nobody can sign in until at least one is ticked | None |
+| **Minimum age** | Youngest age that may sign in. With no birth year on record, only a head of household or spouse qualifies. 0 means no age limit | 13 |
+| **Link and code lifetime (minutes)** | How long an emailed code and link work | 120 |
+| **Sign-in emails per IP address per hour** | How many sign-in emails one IP address can ask for in an hour. 0 for no limit, for example when everyone reaches ChurchCRM through one address | 20 |
+| **Idle time (minutes)** | Idle minutes that end a Member Portal session | 30 |
+| **Keep me signed in (days)** | How long **This is my own device** keeps a device signed in. 0 removes the choice | 14 |
+| **Passkeys** | Members may add passkeys and sign in with them. Passkeys need the site address in `Config.php` to be a host name served over HTTPS | On |
+| **Office list** | People emailed when someone could not sign in to the Member Portal. Only people with their own email can be added | Nobody |
+| **Allow Login as Person** | Administrators may open a person's Member Portal as that person, from the person's **Actions** menu, while member sign-in is on | Off |
+| **Allow changes during Login as Person** | When off, Login as Person is read-only | Off |
+
+The staff sign-in page is your ChurchCRM address followed by `/admin/`. Members sign in at `/portal/login`, which your ChurchCRM address opens on its own while member sign-in or **Self-Registration** is on.
 
 ---
 

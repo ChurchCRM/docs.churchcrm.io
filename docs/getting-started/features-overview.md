@@ -34,7 +34,7 @@ sidebar_position: 2
 * **[Export & Data](/user-guide/export)** — Export Hub with CSV, ChMeetings format, and database backup — all in one place.
 * **Backup / Restore** — Full database backups with one-click restore.
 * **Localization** — 46 languages, regional grouping, and browser auto-detection.
-* **[Member Portal](/user-guide/member-portal)** — Members sign in with their own email address (a code or link, no password), stay signed in on their own device or use a passkey, and look after their profile, family, calendar and volunteering. Administrators choose who may sign in and what each person can do. See [Member sign-in](/administration/member-sign-in).
+* **[Member Portal](/user-guide/member-portal)** — Members sign in with their own email address (a code or link, no password), can stay signed in on their own device or use a passkey, and look after their profile and family, see the church calendar and their giving, and volunteer. Administrators choose who may sign in and what each person can do. See [Member sign-in](/administration/member-sign-in).
 * **[User Management](/administration/users)** — Staff accounts, role-based access, granular permissions, and 2FA.
 * **[Plugins](/administration/plugins)** — Extend ChurchCRM with community and built-in plugins. Install from approved registries.
 

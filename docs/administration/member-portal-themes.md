@@ -46,7 +46,7 @@ A theme never contains PHP. Templates can only use what the portal exposes, so a
 
 ## Editing is live
 
-Upload a changed file and reload the page. Templates recompile when their file changes, and `theme.css` and `theme.js` are fetched afresh when they change; there is no cache to clear. For heavier work, **Developer mode** on **Admin → Member Portal → Settings** turns the template cache off entirely and prints the name of the template behind each page into its HTML, so you know which file to copy.
+Upload a changed file and reload the page. Templates recompile when their file changes, and `theme.css` and `theme.js` are fetched afresh when they change; there is no cache to clear. For heavier work, **Developer mode**, in the **Theme development** panel on **Admin → Member Portal → Themes**, turns the template cache off entirely and prints the name of the template behind each page into its HTML, so you know which file to copy.
 
 ## Checking and activating
 

@@ -9,7 +9,7 @@ ChurchCRM provides built-in tools to email individuals, families, groups, and ca
 
 ## Prerequisites
 
-To send email from ChurchCRM itself, your system administrator must configure an outgoing mail server and turn on email sending under **Communication → Email → Email Settings**. See [Email Setup](/administration/email-setup) for the steps. Until then, the composer still helps you reach people through your own mail program (see [Fallbacks](#fallbacks-copy-addresses-and-open-in-email-client)).
+To send email from ChurchCRM itself, your system administrator must configure an outgoing mail server and turn on email sending under **Communication → Admin → Email Settings**. See [Email Setup](/administration/email-setup) for the steps. Until then, the composer still helps you reach people through your own mail program (see [Fallbacks](#fallbacks-copy-addresses-and-open-in-email-client)).
 
 You also need the **Email** permission on your user account. Administrators always have it. For other users, an administrator edits the user under **Admin → System Users** and, in the **User Config** table, sets **Permission** to **True** on the `bEmailMailto` row. Ask an administrator if the paper-plane button described below does not appear for you.
 
@@ -32,7 +32,7 @@ A paper-plane button appears next to each email address on:
 
 Click it to open the composer with that one recipient. The email address next to the button is still an ordinary link that opens your own mail program, for anyone who prefers that.
 
-**Email \<name\> Family** on the Family View writes to the whole family. Families have no email address of their own, so the message goes to the head of household's own email, or to the spouse's when the head has none. See [Families → Email](/user-guide/families#email).
+**Email \<name\> Family** on the Family View sends one message for the whole family. Families have no email address of their own, so it goes to the head of household's own email, or to the spouse's when no head of household has one. See [Families → Email](/user-guide/families#email).
 
 On the Person View, the family card (for example **Campbell Family**) also carries the button on every other family member's row, so you can email a relative without opening their record. The person's own row has none, because their address under **Contact & Personal Info** already has one.
 
@@ -77,7 +77,7 @@ After sending, a banner in the composer confirms how many people were emailed. I
 | Reason | Meaning |
 |--------|---------|
 | no email address | The person has no email address of their own. |
-| no head of household or spouse has an email address | A family was emailed, and neither its head of household nor its spouse has their own email. |
+| no head of household or spouse has an email address | A family was emailed, and no head of household or spouse in it has their own email. |
 | marked do not email | The person has the property your administrator chose as **Do Not Email Property** in the email settings. |
 | deceased | The person is marked as deceased. |
 | inactive family | The family record is deactivated. |
@@ -99,7 +99,7 @@ The composer keeps the two older options at the bottom of the window:
 Use these when email sending is not set up, or when you would rather write the message in your own mail program.
 
 :::tip The church's own address
-When you email a list (cart, group, class, everyone) and an administrator has set *Copy Church Email* under **Communication → Email → Email Settings**, the composer shows **Also send to church address (…)**, ticked, so the office keeps a copy. Untick it to leave the office out. This applies to **Copy Addresses** and **Open in Email Client** only. **Send Email** mails the people in the list and nobody else: when the list holds an address with no person record behind it, such as the church's own, the compose form says it is not included.
+When you email a list (cart, group, class, everyone) and an administrator has set *Copy Church Email* under **Communication → Admin → Email Settings**, the composer shows **Also send to church address (…)**, ticked, so the office keeps a copy. Untick it to leave the office out. This applies to **Copy Addresses** and **Open in Email Client** only. **Send Email** mails the people in the list and nobody else: when the list holds an address with no person record behind it, such as the church's own, the compose form says it is not included.
 :::
 
 ### Permissions
@@ -110,29 +110,24 @@ Without the Email permission, the list buttons (**Email All** on the People dash
 
 ---
 
-## Email dashboard
+## The Email page
 
-**Communication → Email** opens the Email dashboard at `/v2/email/dashboard`. SMTP and the switch that turns email on live here, not under **System Settings → Email Settings**.
+**Communication → Email** (`/people/email`) is for users with the **Email** permission. It holds **Email Tools** and, below them, the [email history](#email-history).
 
-Admins use **Email Settings** on that page:
+**Email Tools**:
 
-- **Enable Email**
-- SMTP fields: **SMTP Host**, **SMTP Timeout**, **Encryption**, **Auto TLS**, **SMTP Authentication**, **SMTP Username**, and **SMTP Password**
+- **Duplicates** — personal email addresses that more than one person uses, with the people and families who share each one (`/people/email/duplicate`, for users with **Edit Records**). When two people who may sign in to the Member Portal share an address, neither can use it to sign in, so work through this list before you turn on [member sign-in](/administration/member-sign-in). **Email needs attention** on the People Dashboard can fix shared addresses within a family for you; see [People](/user-guide/persons#email-needs-attention).
+- **People Without Emails** — people with no personal or work email (`/people/email/missing`)
 
-Until email is enabled, the page says **Email is Disabled** and tells you to enable it, then configure SMTP. The status line is **SMTP Configured** or **SMTP Not Configured**.
+### Email Settings
 
-**Email Tools** on the same page:
-
-- **Duplicates** — personal email addresses that more than one person uses (`/v2/email/duplicate`). A shared address can't be used to sign in to the Member Portal by either person, so this is the list to work through before you turn [member sign-in](/administration/member-sign-in) on
-- **People Without Emails** — people with no personal or work email (`/v2/email/missing`)
-
-Password resets and similar system messages use that SMTP setup.
+Administrators set up sending under **Communication → Admin → Email Settings** (`/admin/email`): **Enable Email**, the **SMTP Server** fields (**SMTP Host**, **SMTP Timeout**, **Encryption**, **Auto TLS**) and **SMTP Authentication** (**SMTP Username**, **SMTP Password**). Until email is enabled, the page says **Email is Disabled**. The status reads **SMTP Configured** or **SMTP Not Configured**. Password resets, Member Portal sign-in emails and other system messages use the same setup. See [Email Setup](/administration/email-setup).
 
 ---
 
-## Email history and the Email dashboard
+## Email history
 
-ChurchCRM keeps a record of every email it sends, including messages written in the composer, birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), Member Portal sign-in emails, notifications, volunteer emails, and the SMTP test. For a sign-in email it keeps the subject, date and status, never the code or link. Each person's history is shown on their Person View; see [Email History](/user-guide/persons#email-history).
+ChurchCRM keeps a record of every email it sends, including messages written in the composer, birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), Member Portal sign-in emails (the sign-in code and link, and notices about a changed email or a new passkey), notifications, volunteer emails, and the SMTP test. For a sign-in email it keeps the subject, date and status, never the code or link. Each person's history is shown on their Person View; see [Email History](/user-guide/persons#email-history). A message sent with **Email \<name\> Family** is recorded against the family, so it shows in the history tables below and not on a person's card.
 
 ### Searchable Email History
 
@@ -153,7 +148,7 @@ The **To** column links to the recipient's Person View or Family View, with thei
 - **Queued** or **Sending** means delivery is not yet complete. Check the Email History again after the queue has been processed.
 - If no row matches, clear the filters and search, and check the relevant person or family history. A person excluded by the composer (for example, no usable address, Do Not Email, or a duplicate address) appears in the composer's **Not sent** list and has no sent-mail history entry.
 
-Select a subject to open the recorded message. Composer and volunteer emails can be reopened with their saved content; other system emails retain only metadata and display a notice rather than their body (see [Opening an email](/user-guide/persons#opening-an-email)). Per-person Email History on Person View is unchanged.
+Select a subject to open the recorded message. Composer and volunteer emails can be reopened with their saved content; other system emails retain only metadata and display a notice rather than their body (see [Opening an email](/user-guide/persons#opening-an-email)).
 
 
 ---
@@ -166,7 +161,7 @@ Mailchimp is a plugin, not a system-settings key. There is no **sMailChimpApiKey
 2. In ChurchCRM, go to **Admin → Plugins** and open the **mailchimp** plugin.
 3. Save the API key in that plugin's settings.
 
-The Email dashboard shows **Mailchimp Connected** or **Mailchimp Not Configured**, with **Plugin Settings** when you need to finish the connection.
+**Email Settings** shows **Mailchimp Connected** or **Mailchimp Not Configured**, with **Plugin Settings** when you need to finish the connection.
 
 ---
 

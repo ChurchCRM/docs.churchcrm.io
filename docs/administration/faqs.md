@@ -16,11 +16,21 @@ The installation and setup process creates an admin user that you can use to cre
 - **Username:** `admin`
 - **Password:** `changeme`
 
-Sign in at your site's `/admin/` address; the site's home page opens the member sign-in page, which has a **Staff sign-in** link. Change this password immediately after your first login.
+On a fresh install your site's address opens the staff sign-in page at `/admin/`. Change this password immediately after your first login.
+
+### Where do staff sign in?
+
+At `/admin/` on your site, for example `https://www.yourchurch.org/admin/`, or `/churchcrm/admin/` when ChurchCRM is in a folder. Old `/session/begin` bookmarks open the same form.
+
+What the site's home page opens depends on two settings:
+
+- **Member sign-in on:** the member sign-in page. It has no staff link, so staff go to `/admin/` directly.
+- **Member sign-in off, Self-Registration on:** a welcome page with **Register your family** and a **Church leader sign-in** link to `/admin/`.
+- **Both off**, as on a fresh install: the staff sign-in page.
 
 ### How do members sign in?
 
-With their own email address, at the site's home page. ChurchCRM emails them a code and a link; there is no member password. Member sign-in is off until an administrator turns it on and chooses who may sign in. See [Member sign-in](/administration/member-sign-in).
+With their own email address, once an administrator turns member sign-in on. They open the site's home page, type their email and click **Email me a code**. ChurchCRM emails them a code and a link; there is no member password. On their own device they can stay signed in or add a passkey. See [Member sign-in](/administration/member-sign-in), and send members [Signing in to the Member Portal](/user-guide/member-sign-in).
 
 ### How do I upgrade from version 5.x to the current release?
 
@@ -57,7 +67,7 @@ See the [PHP error reporting constants](https://www.php.net/manual/en/errorfunc.
 
 Explore various methods for debugging the ChurchCRM application, including turning on error reporting and enabling app logs.
 
-Enable the logs in the System Settings, the default value is INFO but you may want to change that. The logs are created in the `/logs` dir. Please note that logs are not cleaned by the system and it is up to the admin to clean files.
+Set the log level on **System Logs → Settings** (on the Admin Dashboard, **View Logs** under **Advanced Operations**). The default is INFO, but you may want to change that. The logs are created in the `/logs` dir. Please note that logs are not cleaned by the system and it is up to the admin to clean files.
 
 ## How do I upload my church logo?
 

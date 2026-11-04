@@ -16,10 +16,10 @@ Always take a database backup before upgrading. If something goes wrong, a backu
 :::info Upgrading to a release with member sign-in
 The upgrade changes how people sign in. Take a backup first: it is the only way back.
 
-- **Self-service logins are removed.** Every user account whose only permission was *Edit Self* is deleted. The person records stay, their calendar subscriptions keep working, and each person's timeline gets a *System Upgrade* note.
-- **Member sign-in is off** until you turn it on on **Admin → Member Portal → Sign-in**. Members then sign in with their own email address, so ChurchCRM must be able to send email ([Email Setup](./email-setup.md)). The Admin Dashboard reminds you how many people used to sign in.
-- **Family emails move to people.** Each family email goes to the head of household or spouse, or a note is left in the family's timeline.
-- **Staff sign in at `/admin/`.** Old `/session/begin` links redirect there.
+- **Self-service logins are removed.** Every user account that had *Edit Self* on and was not an administrator is deleted, whatever other rights it had. The person records stay, and each person's timeline gets the note *Member Portal account removed by the upgrade* from *System Upgrade*. Their calendar subscriptions keep working while member sign-in is off; once it is on, only for people the sign-in rules let in.
+- **Member sign-in is off** until you turn it on at **Admin → Member Portal → Sign-in**. Members then sign in with their own email address, so ChurchCRM must be able to send email ([Email Setup](./email-setup.md)). If the upgrade removed any logins, the Admin Dashboard shows **Member sign-in is off** with how many people used to sign in, until you turn member sign-in on or click **Dismiss**.
+- **Family emails move to people.** Each family email goes to the oldest head of household who has no email of their own, or else the oldest such spouse. Nothing moves when someone already has that address as their own email. When nobody can take it, the family's timeline gets a note, and **Family emails not moved** on **Admin → Member Portal → Members** lists the family. In a family of two or more people, a moved address can't be used to sign in until staff confirm it: **Email needs attention** on the same tab lists them, with **Confirm selected**.
+- **Staff sign in at `/admin/`.** Old `/session/begin` links and bookmarks still open the same sign-in form.
 
 See [Member sign-in → After the upgrade](./member-sign-in.md#after-the-upgrade). If you upgrade from a release without the Member Portal, also read [Member Portal → For administrators upgrading](./member-portal.md#for-administrators-upgrading).
 :::
@@ -30,7 +30,7 @@ See [Member sign-in → After the upgrade](./member-sign-in.md#after-the-upgrade
 
 ### Step 1: Check for a new version
 
-1. Log in as an administrator.
+1. Sign in at `/admin/` as an administrator.
 2. If a new version is available, a **download icon** appears in the top-right navbar.
 3. Click it and select **New Release**, or open the **Admin Dashboard**, then **System Info**, and click **Upgrade**. Upgrade is not in the Admin sidebar. The page title is **System Upgrade**.
 4. Click **Refresh** to fetch the latest release info.
@@ -45,7 +45,7 @@ The wizard downloads the latest release from GitHub and applies it to your insta
 
 ### Step 4: Done
 
-The system logs you out and redirects to the staff sign-in page, `/admin/`. Sign back in — you are on the new version.
+A **Database Upgrade** page asks you to keep it open while the database is updated. When it finishes, ChurchCRM signs you out and opens the staff sign-in page at `/admin/` (after a one-step update it takes you straight back to the dashboard instead). Sign back in — you are on the new version.
 
 ### File Integrity Check
 

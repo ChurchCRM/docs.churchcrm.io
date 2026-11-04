@@ -54,10 +54,13 @@ Each is a separate file, so a theme can replace one without touching the others:
 
 | Partial | Renders |
 |---|---|
-| `partials/header.html.twig` | Church logo and name, and the account menu ("Hello &lt;first name&gt;" → Email History, Change Password, Admin Console for staff, Sign out) |
+| `partials/header.html.twig` | Church logo and name, and the account menu ("Hello &lt;first name&gt;" → Email History; Sign-in and devices while the member holds `portal.devices.manage`; Change Password in a staff session; Admin Console when `member.adminConsoleUrl` is set; Sign out). Signed out, there is no menu: a page that sets `guestPage` offers **Sign in** and/or **Register your family** links instead (see [The signed-out pages](#the-signed-out-pages)) |
 | `partials/nav.html.twig` | The `nav` entries, and the toggle target `#portal-nav` |
 | `partials/footer.html.twig` | Church contact details on the leading edge, `church.socialLinks` as icon links on the trailing edge |
 | `partials/flash.html.twig` | The fixed notice container, holding this request's `flash` messages. **A theme that overrides `layout.html.twig` must keep this include** — without it there is no container, and every message the portal raises goes unseen. |
+| `partials/login-as-person-banner.html.twig` | While an administrator uses Login as Person (`portal.loginAsPerson`): who they are seeing the portal as, whether changes are allowed, and **Stop**, their only way back. Keep the include in an overridden layout; if a page lacks it, the portal inserts the system theme's banner right after `<body>` |
+| `partials/passkey-offer.html.twig` | The one-time "Use a passkey on this device?" card, included above `content` while `portal.passkeyOffer` is true |
+| `login/remember-device.html.twig` | The "This is my own device. Keep me signed in." box on the code and link pages, drawn only while `offerRememberDevice` is true. Never pre-tick it |
 
 ### What the layout already loads
 
@@ -92,7 +95,7 @@ toast in the fixed top-right stack that fades away on its own.
 | `.portal-detail-list` | A `<dl>` of label/value pairs — one column on a phone, two from the tablet breakpoint up |
 | `.portal-card-details` | The same `<dl>` inside a card: one column at every width, because a card is a column and a long email address has nowhere to wrap |
 | `.portal-contact-list` / `.portal-contact-item` | The church office's contact lines on `family/none.html.twig` — an icon and a `mailto:` or `tel:` link |
-| `.portal-form` / `.portal-field` / `.portal-input` | A self-service form, one of its fields, and the control inside it |
+| `.portal-form` / `.portal-field` / `.portal-input` | A portal form, one of its fields, and the control inside it |
 | `.portal-field-error` | The inline message for a field; it is hidden while empty |
 | `.portal-button` / `.portal-button-quiet` | The primary and secondary action buttons |
 | `.portal-avatar` / `.portal-avatar-initials` | A member's photo, and the initials shown when there is none |
@@ -101,12 +104,17 @@ toast in the fixed top-right stack that fades away on its own.
 | `.portal-dialog` | A `<dialog>` in the portal's own chrome |
 | `.portal-breadcrumb` | The single "← back" link above a nested page's title (My Teams) |
 | `.portal-team-card` / `.portal-team-ministry` | One team on **My Teams**, and the ministry line under a team's name |
+| `.portal-signin` / `.portal-signin-welcome` | The column that holds a sign-in page's card, and the welcome heading above it |
+| `.portal-header-guest` / `.portal-header-link` | The signed-out header's **Sign in** / **Register your family** links |
+| `.portal-register` | The family registration page |
+| `.portal-directory-entry` | One family or person on **Directory** |
+| `#login-as-person-banner` | The Login as Person banner |
 | `#portal-toasts` / `.portal-flash` | The fixed notice container, and one notice in it. `position: fixed`, so a notice never moves the page; see [theme authoring guide](./member-portal-theme-guide.md) for its colour tokens |
 
 ### Hooks the page bundles look for
 
-`portal-profile.min.js` and `portal-family.min.js` bind to these ids, so a theme
-that overrides one of those pages must keep them if it wants the page to work:
+The page bundles bind to these ids and attributes, so a theme that overrides one
+of those pages must keep them if it wants the page to work:
 
 | Id | On |
 |---|---|
@@ -116,10 +124,16 @@ that overrides one of those pages must keep them if it wants the page to work:
 | `portal-confirm-form`, `portal-confirm-submit`, `portal-confirm-comment`, `portal-confirm-comment-field` | `family/confirm.html.twig` |
 | `portal-add-member-dialog`, `portal-add-member-form`, `portal-add-member-open`, `portal-add-member-submit`, `portal-add-member-cancel` | `family/index.html.twig` |
 | `portal-team`, `portal-team-tabs`, `nav-item-positions` / `-volunteers` / `-schedules` / `-occurrences` | `teams/team.html.twig` |
+| `portalSignInForm`, `portalSignInEmail`; with passkeys `[data-passkey-sign-in]`, `portalPasskeySignInButton`, `[data-passkey-error]` and the hidden `portalPasskeyForm` | `login/request.html.twig` (`portal-passkeys.min.js`) |
+| `[data-passkey-add]` holding `[data-passkey-create]` and `[data-passkey-error]`, plus a `csrf_field()` | `devices/index.html.twig` and `partials/passkey-offer.html.twig`; the offer also carries `[data-passkey-offer]` and `[data-passkey-dismiss]` |
+| `[data-directory-browse]`, `[data-directory-entry]`, `[data-directory-heading]`, `[data-directory-letter]`, `portal-directory-search`, `portal-directory-no-match` | `directory/index.html.twig` (`portal-directory.min.js`) |
+| `registration-stepper`, `registration-form`, the `step-*` panels, `member-card-template` with its `member-*` classes, `members-container`, the `displayFamily*` ids and `registration-success` | `register/index.html.twig` (`FamilyRegister.js`, which posts to the public registration API) |
 
 A field's inline message is the element with `data-error-for="<field name>"`
 inside the form; a read-only value the bundle refreshes after a save is the
-element with `data-field="<field name>"`.
+element with `data-field="<field name>"`. Any form marked `data-submit-once`
+locks its submit button after the first press and shows the button's
+`data-busy-label`, as the sign-in form does with "Sending…".
 
 ---
 
@@ -135,6 +149,7 @@ filesystem access, no database access and no session.
 | `theme_asset(path)` | A file from the active theme, cache-busted: `theme_asset('images/hero.jpg')`. If the active theme does not carry the file but the system theme does, you get the system theme's copy. |
 | `csrf_field()` | The hidden input every portal form must contain. Safe HTML — do not escape it. |
 | `nonce()` | This request's Content-Security-Policy nonce. Every inline `<script>` needs `nonce="{{ nonce() }}"`. |
+| `portal_can(capability, scope)` | Whether the member holds a portal capability, such as `portal.family.contacts.view`, to show or hide a section or button. `scope` is optional: the record the template has (a family, a team) or its id. Without it, holding the capability anywhere is enough. The routes check again for themselves, so hiding a button is never the only guard. |
 | `gettext(text)` | The translation of `text` |
 | `ngettext(singular, plural, count)` | The translation of `singular`/`plural` for `count` |
 | `email_wrap` (filter) | An email address, escaped, that may wrap after the `@` and before each `.` instead of mid-word: `{{ profile.email\|email_wrap }}`. Safe HTML — do not escape it again. |
@@ -161,8 +176,10 @@ The church's identity, from **Admin → Church Information**.
 
 ### `member`
 
-The signed-in person. Always the session's own person — no template, and no
-portal route, ever addresses somebody else.
+The person the portal is acting for: the signed-in member, or during Login as
+Person the person the administrator is seeing it as. No template, and no portal
+route, ever addresses somebody else. On the signed-out pages `id` is `0` and
+every other field is empty.
 
 | Field | Type | Notes |
 |---|---|---|
@@ -173,8 +190,10 @@ portal route, ever addresses somebody else.
 | `email` | string | |
 | `avatarUrl` | string | `/api/portal/me/photo`, cache-busted; **empty when no photo has been uploaded** — render initials instead |
 | `familyId` | int | `0` when the person has no family |
-| `isTeamLeader` | bool | `true` when this person leads at least one volunteer team. Also `true` on a self-service login — that is the point of it |
-| `isStaff` | bool | `true` for a login that also has the admin shell — the account menu offers it "Admin Console" |
+| `isTeamLeader` | bool | `true` when this person leads at least one volunteer team. Kept for older themes; `portal_can('volunteer.team.manage')` asks the same |
+| `isStaff` | bool | `true` in a staff session: the portal was opened from a staff sign-in |
+| `signedInWithPassword` | bool | `true` in a staff session, which is the only kind with a password; the account menu offers Change Password only then |
+| `adminConsoleUrl` | string | Where the account menu's Admin Console goes: back to the staff side from a staff session, or to the staff sign-in from a member session whose person also has a staff account. Empty otherwise, and during Login as Person |
 
 ### `nav`
 
@@ -210,8 +229,13 @@ Facts about this request and this installation.
 | `themeName` | string | The active theme's folder name |
 | `locale` | string | e.g. `en_US` |
 | `isRTL` | bool | Right-to-left locale |
-| `colorMode` | string | `auto`, `light` or `dark` — the member's own choice |
+| `colorMode` | string | `auto`, `light` or `dark`. Always `auto` (follow the device) for a member; a staff session gets the staff account's choice |
 | `developerMode` | bool | `true` when the template cache is off |
+| `showCalendar` | bool | Whether the calendar is there for this member: at least one calendar is shared |
+| `showVolunteer` | bool | Whether the volunteering pages are there for this member |
+| `allowBirthdayEdit` | bool | Whether members may change birthdays |
+| `passkeyOffer` | bool | Whether this page shows the one-time passkey offer. Reading it spends it, as with `flash` |
+| `loginAsPerson` | object | During Login as Person: `{personName, actorName, allowsChanges, stopUrl}`; `null` otherwise |
 | `hasThemeCss` | bool | Whether a `theme.css` is available to link |
 | `hasThemeJs` | bool | Whether a `theme.js` is available to load |
 | `pluginHead` | HTML | The `<head>` content enabled plugins inject — print it verbatim |
@@ -236,19 +260,30 @@ will stop working on your pages.
 | `volunteer/opportunities.html.twig` | `GET /portal/volunteer/opportunities` | `pageTitle`, `activeTab` |
 | `volunteer/partials/tabs.html.twig` | included by both volunteering pages | `activeTab` |
 | `profile/index.html.twig` | `GET /portal/profile` | `pageTitle`, `profile` |
-| `profile/edit.html.twig` | `GET /portal/profile/edit` | `pageTitle`, `profile` |
-| `profile/password.html.twig` | `GET/POST /portal/profile/password` (every role); also `GET/POST /v2/user/current/changepassword` for a self-service session | `pageTitle`, `formAction`, `minPasswordLength`, `oldPasswordError`, `newPasswordError` |
-| `profile/password-changed.html.twig` | Either of those routes, after a successful change | `pageTitle` |
-| `profile/two-factor.html.twig` | `GET /portal/profile/two-factor` (every role); also `GET /v2/user/current/manage2fa` for a self-service session | `pageTitle` |
-| `family/index.html.twig` | `GET /portal/family` | `pageTitle`, `family`, `members`, `canEdit`, `canConfirm`, `familyRoles`, `defaultNewMemberRoleId` |
-| `family/edit.html.twig` | `GET /portal/family/edit` | `pageTitle`, `family`, `members`, `canEdit`, `countries` |
-| `family/confirm.html.twig` | `GET /portal/family/confirm` | `pageTitle`, `family`, `members`, `canEdit`, `canConfirm` |
+| `profile/edit.html.twig` | `GET /portal/profile/edit` | `pageTitle`, `profile`, `languages` |
+| `profile/password.html.twig` | `GET/POST /portal/profile/password`, in a staff session only | `pageTitle`, `formAction`, `minPasswordLength`, `oldPasswordError`, `newPasswordError` |
+| `profile/password-changed.html.twig` | The same route, after a successful change | `pageTitle` |
+| `profile/two-factor.html.twig` | `GET /portal/profile/two-factor`, in a staff session only | `pageTitle` |
+| `devices/index.html.twig` | `GET /portal/devices` (Sign-in and devices) | `pageTitle`, `devices`, `offerRememberDevice`, `passkeysOn`, `passkeys`, `passkeyAddProblem`, `emailToConfirm` |
+| `family/index.html.twig` | `GET /portal/family` | `pageTitle`, `family`, `members`, `canEdit`, `canConfirm`, `canSeeContacts`, `familyRoles`, `defaultNewMemberRoleId` |
+| `family/edit.html.twig` | `GET /portal/family/edit` | `pageTitle`, `family`, `members`, `canEdit`, `canConfirm`, `canSeeContacts`, `countries` |
+| `family/confirm.html.twig` | `GET /portal/family/confirm` | `pageTitle`, `family`, `members`, `canEdit`, `canConfirm`, `canSeeContacts` |
+| `directory/index.html.twig` | `GET /portal/directory` | `pageTitle`, `groups`, `entryCount`, `browse`, `query`, `truncated`, `searchMinLength`, `searchLimit` |
+| `giving/index.html.twig` | `GET /portal/giving` (My Giving) | `pageTitle`, `year`, `isHousehold`, `years` |
 | `teams/index.html.twig` | `GET /portal/teams` | `pageTitle`, `teams` |
 | `teams/team.html.twig` | `GET /portal/teams/{teamId}` | `pageTitle`, `team` |
-| `teams/occurrence.html.twig` | `GET /portal/teams/{teamId}/occurrences/{occurrenceId}` | `pageTitle`, `team`, `occurrence` |
-| `family/none.html.twig` | All three family URLs, for a member with no family | `pageTitle`, `officeEmail`, `officePhone`, `officePhoneHref` |
+| `teams/occurrence.html.twig` | `GET /portal/teams/{teamId}/occurrences/{occurrenceId}` | `pageTitle`, `team`, `occurrence`, `headcount` |
+| `family/none.html.twig` | All three family URLs, and `GET /portal/giving/statement`, for a member with no family | `pageTitle`, `officeEmail`, `officePhone`, `officePhoneHref` |
 | `email/index.html.twig` | `GET /portal/email-history` | `pageTitle`, `emails`, `page`, `pages`, `total`, `previousUrl`, `nextUrl` |
 | `email/show.html.twig` | `GET /portal/email-history/{id}` | `pageTitle`, `email`, `body`, `hasBody` |
+| `login/request.html.twig` | `GET/POST /portal/login`, while member sign-in is on | `pageTitle`, `email`, `emailError`, `passkeySignIn`, plus the [sign-in page variables](#the-signed-out-pages) |
+| `login/code.html.twig` | `GET/POST /portal/login/code`: the answer to every email request | `pageTitle`, `codeError`, plus the sign-in page variables |
+| `login/confirm.html.twig` | `GET /portal/login/confirm/{token}`: the page an emailed link opens | `pageTitle`, `firstName`, `churchName`, `confirmUrl`, plus the sign-in page variables |
+| `login/link-expired.html.twig` | A link that is unknown, expired, used or replaced | `pageTitle`, `loginUrl` |
+| `login/failed.html.twig` | A code, link or passkey that signed nobody in | `pageTitle`, `loginUrl`, `passkey` |
+| `login/unavailable.html.twig` | Every `/portal/login` page while member sign-in is off and self-registration is on | `pageTitle`, `guestPage`, `selfRegistrationEnabled`, `memberSignInEnabled` |
+| `register/index.html.twig` | `GET /portal/register`, while self-registration is on | `pageTitle`, `guestPage`, `memberSignInEnabled`, `selfRegistrationEnabled`, `familyRoles`, `phoneFormat`, `phoneFormatCell`, `defaults` |
+| `email-change/confirm.html.twig` | `GET/POST /portal/email/confirm/{token}`: the link in an email-change message | `pageTitle`, `state`, `kind`, `email`, `firstName`, `churchName`, `token` |
 | `errors/403.html.twig` | A page this member may not open | `pageTitle` |
 | `errors/404.html.twig` | An unknown portal URL (and 405) | `pageTitle` |
 | `errors/500.html.twig` | An unexpected failure | `pageTitle` |
@@ -258,10 +293,14 @@ will stop working on your pages.
 `pageTitle` is the page's own title; the layout puts the church's name after it.
 
 `formAction` on `profile/password.html.twig` is the URL that page's form posts
-back to. It exists because the same template serves two routes: the portal's own
-page, and the forced first-login change at `/v2/user/current/changepassword`,
-which is pinned to its own URL until it completes. An override must post to
-`formAction`, not to a hard-coded path, or a forced password change will loop.
+back to. An override must post to `formAction`, not to a hard-coded path.
+
+`languages` on `profile/edit.html.twig` is `{selected, churchName, choices}`:
+the member's choice (`''` for the church default), the name of the church's own
+language, and `{locale, name}` for each language ChurchCRM ships. It is `null` in
+a staff session, which uses the staff account's language, so leave the field
+out then. The select is named `language`; the page reloads after a change so
+the new language shows at once.
 
 ### `profile`
 
@@ -271,7 +310,10 @@ The signed-in member's own person record, as `GET /api/portal/me` returns it.
 |---|---|---|
 | `id` | int | The person id |
 | `title`, `firstName`, `middleName`, `lastName`, `suffix` | string | |
-| `email`, `workEmail` | string | |
+| `email`, `workEmail` | string | `email` is the address on record, which is also the sign-in address |
+| `pendingEmail` | string | A new address the member asked for and has not confirmed with the emailed link yet; empty otherwise |
+| `emailLocked` | bool | `true` when only an administrator may change this person's email (they have a staff account or portal permissions); the form shows the field read-only |
+| `language` | string | The member's own portal language, e.g. `de_DE`; empty for the church default |
 | `homePhone`, `cellPhone`, `workPhone` | string | |
 | `birthday` | string | ISO `YYYY-MM-DD`, empty when unknown |
 | `fullName` | string | Formatted per the installation's name format |
@@ -291,7 +333,7 @@ The member's own family. Never another family: the routes take no family id.
 | `id` | int | |
 | `name` | string | The family's surname |
 | `address1`, `address2`, `city`, `state`, `zip`, `country` | string | |
-| `homePhone`, `email` | string | |
+| `homePhone` | string | A family has no email of its own; each person's is on their own record |
 | `weddingDate` | string | ISO `YYYY-MM-DD`, empty when unset |
 
 ### `members`
@@ -304,19 +346,20 @@ orders them.
 | `id` | int | |
 | `fullName` | string | |
 | `role` | string | The family-role name |
-| `email`, `cellPhone` | string | |
+| `email`, `cellPhone` | string | Empty for everyone but the member's own row unless `canSeeContacts` is true |
 | `photoUrl` | string | `/api/portal/family/members/{id}/photo` (or `/api/portal/me/photo` for the member's own row), cache-busted; empty when that member has no photo |
 | `initials` | string | The two-letter stand-in for a missing photo |
 | `isSelf` | bool | `true` for the signed-in member's own row |
-| `isAdult` | bool | `true` for a head or spouse — the roles `sDirRoleHead` and `sDirRoleSpouse` name |
+| `isAdult` | bool | `true` for an adult of the family: a head or spouse (the roles `sDirRoleHead` and `sDirRoleSpouse` name) aged 18 or over, or with no birth year; someone proposed in the portal only once approved |
 | `awaitingReview` | bool | `true` for someone a member proposed with "Add a family member" whom staff have not approved yet (People → Self Registrations) |
 
-### `canEdit`, `canConfirm`, `countries`, `familyRoles`, `familySummary`
+### `canEdit`, `canConfirm`, `canSeeContacts`, `countries`, `familyRoles`, `familySummary`
 
 | Variable | Type | Notes |
 |---|---|---|
-| `canEdit` | bool | Whether this member may change the family's details — true only for an adult of the family |
-| `canConfirm` | bool | Whether the "Confirm your family details" card is offered |
+| `canEdit` | bool | Whether this member may change the family's details and add a family member (`portal.family.edit`): an adult of the family, or someone the church gave it |
+| `canConfirm` | bool | Whether the "Confirm your family details" card is offered (`portal.family.confirm`) |
+| `canSeeContacts` | bool | Whether the other members' email and mobile are filled in (`portal.family.contacts.view`) |
 | `countries` | map | Country code → country name, for the address form's `<select>` |
 | `familyRoles` | list | `{id, name}` for each family role, for the "add a family member" form |
 | `defaultNewMemberRoleId` | int | The role that form starts on — the configured child role, not head of household |
@@ -366,14 +409,22 @@ ordered by ministry then team.
 | `nextOccurrence` | object | `{id, date}` for the soonest scheduled date from today, or `null` |
 | `url` | string | The team's page, root-path aware |
 
-`team` on the two nested pages is `{id, name, description, active, ministryId,
-ministryName}` — `description` is `''` when the team has none.
+`team` on the team page is `{id, name, description, active, ministryId,
+ministryName, classGroupName, sundaySchool}` — `description` is `''` when the
+team has none, `classGroupName` is the Sunday School class the team is linked
+to (`''` when none), and `sundaySchool` says whether the ministry provides
+Sunday School teachers. On the occurrence page `team` is `{id, name, ministryId,
+ministryName}`.
 
 `occurrence` is `{id, scheduleName, status, date, start, end, eventId,
-eventTitle, eventLocation}`. `status` is `'scheduled'` or `'cancelled'`; `start`
-is `YYYY-MM-DD HH:MM` and `end` is `HH:MM`, both `''` for an occurrence with no
-resolved window; `eventId` is `0` when the date is not linked to a calendar
-event, and the two event fields are `''` then.
+eventTitle, eventLocation, offsetNote}`. `status` is `'scheduled'` or
+`'cancelled'`; `start` is `YYYY-MM-DD HH:MM` and `end` is `HH:MM`, both `''` for
+an occurrence with no resolved window; `eventId` is `0` when the date is not
+linked to a calendar event, and the two event fields are `''` then.
+`offsetNote` is the schedule's volunteer times in words, `''` when volunteers
+keep the event's own times. `headcount` is the linked event's read-only
+headcount, `{recorded, total, counts[{name, count}], editPath, roster{checkedIn,
+members}}`, or `null` without an event.
 
 The two theme-failure pages are always rendered from the **system** theme, so a
 broken theme cannot break the page that reports it. A theme may still override
@@ -388,21 +439,21 @@ installation's own format and `start` the raw local start. The system theme prin
 `when` inside `<time datetime="{{ event.start }}" data-format="daytime">` (`day` for
 an all-day event), which the portal's script rewrites in the church's locale
 ("Sunday, October 4 at 9:30 AM"), matching the volunteering cards. It is empty when nothing is
-coming up, and `hasVisibleCalendars` is `false` when the church has shared no
-calendar at all; the two cases read differently to a member, so the system
-theme says "Nothing is on the calendar just now." for the first and "No calendar
-has been shared with members yet." for the second.
+coming up, and the system theme then says "Nothing is on the calendar just
+now." `hasVisibleCalendars` is the same as `portal.showCalendar`.
 
-The card is only rendered when `portal.showCalendar` is on.
+The card is only rendered when `portal.showCalendar` is on, that is while the
+church shares at least one calendar with members.
 
 ### The calendar page
 
 `calendars` is the legend: `{key, name, color, isMine}` for each calendar an
-administrator switched on, in the order Admin → Member Portal → Calendars lists
+administrator switched on, in the order People → Admin → Member Portal → Calendars lists
 them, with `color` a CSS colour ready for a swatch and `key` the
 `calendar:<id>` / `system:<id>` string that every event of that calendar carries.
 `hasCalendars` is `false` when nothing is shared, and the page then says so
-instead of drawing a grid.
+instead of drawing a grid. Members cannot open the page at all then, so this is
+only a safeguard.
 
 The events are **not** in the template. FullCalendar fetches
 `GET /api/portal/calendar/events?from=…&to=…` for the window it is showing, so
@@ -495,7 +546,6 @@ A control a theme **removes** is not an error: every one of those bundles looks
 its controls up by id and does nothing when one is absent. That is how the
 portal's own templates leave out the things a team leader may not do.
 
-Every page the epic promised is in this table now.
 ### Email History
 
 `email/index.html.twig` is a paginated list of what the church has emailed this
@@ -541,9 +591,101 @@ of the message**.
 > (`allow-same-origin`, or a script inside the frame) are the two permissions
 > this page must not grant. It scrolls instead.
 
-Scope: the page shows the rows addressed to this person. Email sent to the
-family's shared address is not included — see
-`src/api/routes/portal/portal-emails.php`.
+Scope: the page shows only the rows addressed to this person.
+
+### The signed-out pages
+
+The sign-in pages, the registration page and the email-confirmation page work
+without a session. They extend `layout.html.twig` with an empty `nav` block,
+and `member.id` is `0` on them, so the header draws no account menu.
+
+Every `login/*` page except `login/unavailable.html.twig` gets these sign-in page variables:
+
+| Variable | Type | Notes |
+|---|---|---|
+| `loginUrl` | string | `/portal/login`, root-path aware. Forms post to it and to `{{ loginUrl }}/code` |
+| `offerRememberDevice` | bool | Whether "This is my own device" is offered: false when the church set **Keep me signed in (days)** to 0 |
+| `memberSignInEnabled` | bool | Whether member sign-in is on |
+
+`login/request.html.twig` also gets `email` and `emailError` (the typed address
+and its message after a refused post), `passkeySignIn` (passkeys are on and this
+site address can use them: draw the passkey button and load
+`asset('/skin/v2/portal-passkeys.min.js')`), `selfRegistrationEnabled`, and
+`guestPage: 'login'`. The page reads the same whatever address was typed; an
+override must not add anything that tells the two apart.
+
+`guestPage` is how the header decides its signed-out links: a page with
+`guestPage` other than `'login'` offers **Sign in** while `memberSignInEnabled`
+is true, and one other than `'register'` offers **Register your family** while
+`selfRegistrationEnabled` is true. `login/unavailable.html.twig` sets
+`guestPage: 'register'`, because it carries its own **Register your family**
+button and a **Church leader sign-in** link to `/admin/`.
+
+`login/code.html.twig` gets `codeError`. `login/confirm.html.twig` gets
+`firstName`, `churchName` and `confirmUrl`, the address its form posts to:
+opening the page must change nothing, so keep the sign-in a form post.
+`login/failed.html.twig` gets `passkey`, true after a passkey that signed
+nobody in. Every form here carries `{{ csrf_field() }}`.
+
+`register/index.html.twig` is container markup for `FamilyRegister.js`:
+`familyRoles` is `[{id, name}]`, `phoneFormat` and `phoneFormatCell` are the
+input masks, and `defaults` is `{city, state, zip, country}` from the church's
+address defaults. Keep the ids listed under [Hooks the page bundles look
+for](#hooks-the-page-bundles-look-for).
+
+`email-change/confirm.html.twig` draws one of three `state`s: `confirm` (a form
+that posts back to `/portal/email/confirm/{{ token }}`), `done` or `invalid`.
+`kind` is `change` when the link went to the new address and `confirm` when it
+went to the address the member last signed in with.
+
+### Sign-in and devices
+
+`devices/index.html.twig`. Every date arrives formatted.
+
+| Variable | Type | Notes |
+|---|---|---|
+| `devices` | list | `{id, label, addedAt, lastUsedAt, isThisDevice}` for each remembered device; `label` is the browser and system, e.g. `Chrome · Windows` |
+| `offerRememberDevice` | bool | As on the sign-in pages |
+| `passkeysOn` | bool | Whether the church allows passkeys; without it, leave the passkey section out |
+| `passkeys` | list | `{id, label, addedAt, lastUsedAt}`; `lastUsedAt` is empty for a passkey never used |
+| `passkeyAddProblem` | string | Why a passkey cannot be added right now, in words for the member (for example, more than 15 minutes after the email sign-in); empty when it can |
+| `emailToConfirm` | string | After a passkey sign-in, an unconfirmed address the member may confirm with **Email me a confirmation link**; empty otherwise |
+
+Each sign-out and removal is a plain form post to
+`/portal/devices/{id}/sign-out`, `/portal/devices/passkeys/{id}/remove`,
+`/portal/devices/sign-out-everywhere` or `/portal/devices/confirm-email`, each
+with `{{ csrf_field() }}`.
+
+### Directory
+
+`directory/index.html.twig` lists what **People → Admin → Member Portal →
+Directory** chooses to share; a detail the church does not show arrives as `''` or an empty
+list.
+
+| Variable | Type | Notes |
+|---|---|---|
+| `groups` | list | `{letter, entries}`, A to Z |
+| `entryCount` | int | How many entries there are in all |
+| `browse` | bool | `false` when the church allows search only: `groups` then holds only the matches for `query`, and nothing before a search |
+| `query` | string | What was searched for (`?q=`) |
+| `truncated` | bool | Search only: more than `searchLimit` matched and only the first ones are listed |
+| `searchMinLength`, `searchLimit` | int | The shortest search answered (2) and the most matches shown (20) |
+
+An entry is `{kind, id, name, searchText, photoUrl, initials, address,
+mailingAddress, homePhone, anniversary, members}`, where `kind` is `family` or
+`person` and `address` and `mailingAddress` are lists of lines. A member is
+`{id, name, photoUrl, initials, birthday, homePhone, cellPhone, workPhone,
+email, workEmail}`.
+
+### My Giving
+
+`giving/index.html.twig`: `isHousehold` is `true` for an adult of the family,
+who gets the year-end statement form; anyone else gets only the line telling
+them to ask the church office. `years` is `{value, label, hasGiving}` for each
+year from the one the family was entered in to the current one, newest first,
+and `year` is the one selected at first: last year, or the family's first year
+when it is newer. The form is a plain `GET` to
+`/portal/giving/statement?year=`, which answers with a PDF.
 
 ---
 
@@ -555,4 +697,4 @@ name keeps working for one release.
 
 The validator's "this version of ChurchCRM does not use a template at this path"
 warning is how a theme finds out that a template it overrode has moved — run
-**Check** on **Admin → Member Portal** after upgrading.
+**Check** on **People → Admin → Member Portal → Themes** after upgrading.

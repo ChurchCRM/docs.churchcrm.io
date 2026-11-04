@@ -82,7 +82,7 @@ People Reports print the same labels without using the Cart. See [Print Labels o
 
 ## People Reports
 
-Open **Reports → People Reports**. Every staff login can open this page. A login set to **Edit Self** only cannot. **Missing People** is listed only when you can open **Events**. Pick a report, set the filters, and click **Run Report**.
+Open **Reports → People Reports**. Every staff account can open this page. **Missing People** is listed only when you can open **Events**. Pick a report, set the filters, and click **Run Report**.
 
 **Classification** is on every report. It is a multi-select list read from **Admin → Classification Manager**, so custom classifications appear automatically. It also offers **Unassigned** for people with no classification. Leave it empty (placeholder **All classifications**) to include everyone.
 

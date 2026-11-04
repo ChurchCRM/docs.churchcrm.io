@@ -22,7 +22,7 @@ Every Person should belong to a family.
 1. Go to **People** → **Add New Family**.
 2. Enter the **Family Name**.
 3. Enter the shared **Address**, **City**, **State**, **ZIP**, **Country**. If the family's mail goes somewhere else (a PO Box, for example), expand **Second Address (optional)** and see [Second Address and Mailing Address](#second-address-and-mailing-address).
-4. Enter **Home Phone**. There is no family email: enter each person's own email on their row or their person record.
+4. Enter **Home Phone**. There is no family email: after saving, add each person's own email on their person record.
 5. The form starts with four family-member rows. **Add Another Family Member** appends another row. There is no limit of 10. Enter a first name for each person you are adding; enter a last name only when it differs from the family name.
 6. Set **Classification** for each person (Member, Guest, etc.), and a **Grade** for each child if you track [school grades](/user-guide/school-grades).
 7. Click **Save**.
@@ -53,14 +53,18 @@ The **Filters** card has **City**, **State**, **Status** (**All**, **Active**, o
 
 Families have no email address of their own. Email belongs to people: each person keeps their own, and that is also how members sign in to the [Member Portal](/user-guide/member-sign-in).
 
-The **Email** card on the family page lists the own email of each head of household and spouse, each with buttons to write from ChurchCRM and to copy the address. When none of them has one, it says *"No head of household or spouse has an email address."*
+The **Email** card on the family page lists the own email of each head of household and spouse, each with buttons to write from ChurchCRM and to copy the address. When none of them has one, it says *"No head of household or spouse can receive family email."*
 
 ![The Email card on a family page: each adult's own email and Email Carter Family](https://cdn.churchcrm.io/screenshots/en/desktop/people-family-email-card.png)
 
-- **Email \<name\> Family** writes to the family. The message goes to the head of household's own email, or to the spouse's when the head has none. When neither has one, nothing is sent and the composer says why.
-- Children and others without their own email are not emailed. Give a person their own address on their record if they should get mail.
+- **Email \<name\> Family** sends one message for the whole family, to the head of household's own email (the oldest, when there are two), or to the spouse's when no head of household has one. Without either, the button is not shown.
+- Nobody else in the family gets that message, even with an email of their own. Use the paper-plane button next to a person's email to write to them.
 - The family editor, the portal's family form and the printed directory have no family email.
-- If your church upgraded from a release that had a family email, the upgrade moved each one to the head of household or spouse, or left a note in the family's timeline when nobody could take it. See [Email belongs to people](/administration/member-sign-in#email-belongs-to-people).
+- If your church upgraded from a release that had a family email, the upgrade gave each one to a head of household or spouse who had no email of their own, unless someone already had that address, and left a note on the family when it could not be moved. See [Email belongs to people](/administration/member-sign-in#email-belongs-to-people).
+
+### Who can sign in
+
+While member sign-in is on, staff with **Edit Records** see a line for each member in the **Email** column of the family page: **Can sign in to the Member Portal**, or **Cannot sign in:** and the reason, for example *"No personal email"*. The reason links to that person's [Portal sign-in](/user-guide/persons#portal-sign-in) card.
 
 ## Second Address and Mailing Address
 
@@ -159,33 +163,19 @@ Family photos are uploaded the same way as person photos: JPEG, PNG, or HEIC/HEI
 
 ## How do I delete a Family?
 
-1. Filter for the desired family, and bring up the Family View.
-2. Select _"Delete this Record"_
+1. Open the family.
+2. Open **Actions** and choose **Delete Family**. It is there only for users who can delete records.
+3. On the confirmation page, choose **Delete Family Record ONLY** or **Delete Family Record AND Family Members**.
 
-> If this link doesn't appear, then either you don't have permissions to delete records, or the Family still has Person records assigned to it. You cannot delete a Family record until all Person records have been unassigned from it.
+A family with donations on record can't be deleted until its donations are moved to another family. Users with finance access can move them from the confirmation page.
 
-3. Confirm the deletion
+## How do I deactivate or reactivate a Family?
 
-## How do I deactivate a Family?
+1. Open the family.
+2. Open **Actions** and choose **Set Inactive** (or **Set Active** for an inactive family). It is there for users with **Edit Records**.
+3. Confirm.
 
-1. Search/Filter for the desired family, and bring up the Family View.
-2. Select _"Deactivate this family"_
-
-> If this link doesn't appear, then either you don't have permissions to Edit records, or the Family is already deactivated.
-
-3. Confirm the deactivation
-4. Once the page refreshes, You will see a banner on top with message "This family is deactivated."
-
-## How do I Activate a Deactivated Family?
-
-1. Search for the desired family, and bring up the Family View.
-2. If the family is deactivated, you will see a banner on top with message "This family is deactivated."
-3. Select _"Activate this family"_
-
-> If this link doesn't appear, then either you don't have permissions to Edit records, or the Family is already Active.
-
-4. Confirm the Activation
-5. Once the page refreshes, the banner on top with message "This family is deactivated" will disappear and the family is active now.
+An inactive family shows *"This Family is Inactive"* at the top of its page. Its members can't sign in to the [Member Portal](/user-guide/member-portal) until the family is active again.
 
 ## How do I assign a Property to a Family?
 
