@@ -80,20 +80,11 @@ See [First Run Configuration](/getting-started/first-run#church-logo) for a scre
 
 ### Letterhead (PDF reports)
 
-Many reports and documents can include a letterhead. By default, ChurchCRM uses this file in the `Images/` directory:
-```
-church_letterhead.jpg
-```
+Many reports and documents can include a letterhead. Without one, letters print the church name and address instead. Set one up from the admin UI — no file transfer is needed:
 
-It may be tempting to simply upload your own artwork and rename it as above, **but this is not "upgrade-safe"**. System upgrades will overwrite your file with the default one again. The **correct method** is:
-1. Ensure your letterhead is 500x80 pixels or an exact multiple of this ratio (eg. 1000x160 is also acceptable).
-2. Your letterhead should be either PNG or JPEG/JPG format. Be aware only PNG supports transparency (*alpha channel*).
-3. Upload your image to `/Images` using FTP/sFTP/SSH (*whatever your hosting provider supports*).
-   eg. using SSH secure copy:
+1. Log in to ChurchCRM with an admin account.
+2. Go to **Reports → Admin → Report Settings**.
+3. On the **Letterhead** card, upload your image. It is stored as `Images/church-letterhead.png`, so it survives upgrades, and you can preview it or remove it from the same card.
+4. Use a PNG, JPG, GIF or WebP image. A wide banner works best, for example 2000x300. Be aware only PNG supports transparency (*alpha channel*).
 
-   ```scp my_fancy_letterhead.jpg user@hostingprovider:ChurchCRM/Images```
-4. Log in to ChurchCRM with an admin account.
-5. Go to **Admin → System Settings → Report Settings**.
-6. Set **bDirLetterHead** to `../Images/<your_file_name>` and click **Save Settings**.
-
-   Replace `<your_file_name>` with the image you uploaded in step 3.
+A letterhead path previously saved in `bDirLetterHead` still works as a fallback when no letterhead has been uploaded here.
