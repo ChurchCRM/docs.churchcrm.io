@@ -153,9 +153,8 @@ These are on **Admin → Member Portal → Sign-in**. Changes save as you make t
 | I want to... | Location | Setting |
 |---|---|---|
 | Leave deceased people out of the printed directory | People → Admin → People Settings → People | Hide Deceased from Directory |
-| Set the letterhead image | Admin → System Settings → Report Settings | Church letterhead (`bDirLetterHead`) |
-| Save a PDF or open it in the browser | Admin → System Settings → Report Settings | PDF output type |
-| Change report margins | Admin → System Settings → Report Settings | Left margin, line thickness |
+| Set the letterhead image | Reports → Admin → Report Settings | Upload, preview, or remove the letterhead image. A path previously saved in `bDirLetterHead` still works as a fallback |
+| Save a PDF or open it in the browser | Reports → Admin → Statement Settings | PDF output type |
 
 ## 🛠️ Logs, upgrades, and telemetry
 
@@ -182,7 +181,9 @@ Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 | **People → Admin → Person Classifications** | Classification names and order, Inactive and In Directory flags |
 | **Admin → System Settings → Financial Settings** | Finance and fundraiser menus, fiscal year, envelopes |
 | **Admin → System Settings → Quick Search** | What search includes, and how many results |
-| **Admin → System Settings → Report Settings** | Letterhead (`bDirLetterHead`), PDF handling, report wording |
+| **Admin → System Settings → Report Settings** | Report wording |
+| **Reports → Admin → Report Settings** | Letterhead image, letter greeting and signature |
+| **Reports → Admin → Statement Settings** | Giving-statement wording, tax ID, PDF handling |
 | **Groups → Dashboard → Group Settings** | Sunday School module |
 | **Calendar → Calendar Settings** | Events menu, external calendar API, embed origins |
 | **Admin → System Logs → Settings** | Log level |
