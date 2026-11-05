@@ -289,10 +289,9 @@ Choose the person custom field that stores the father of confession, and the dat
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Letterhead** | Path to the letterhead image. The setting name is `bDirLetterHead` | `../Images/church_letterhead.jpg` |
-| **PDF output type** | 1 opens a save dialog. 2 opens the PDF in the browser | 1 |
-| **Left margin and line thickness** | Report layout, in hundredths of an inch | 20 and 4 |
 | **Tax, pledge, confirmation, and directory text** | Sentences printed on those reports, plus the signer lines |  |
+
+Letterhead and the letter greeting and signature no longer live here: upload, preview or remove the letterhead, and edit the greeting and signature, on **Reports → Admin → Report Settings**. A letterhead path previously saved in `bDirLetterHead` still works as a fallback when no letterhead has been uploaded there. PDF handling is on the Statement Settings page instead, and the report margin settings were removed.
 
 ---
 
@@ -316,3 +315,4 @@ Choose the person custom field that stores the father of confession, and the dat
 - [Security](./security.md) — Account security
 - [Users](./users.md) — User accounts
 - [Plugins](./plugins/index.md) — Plugins
+
