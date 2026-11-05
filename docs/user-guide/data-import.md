@@ -44,7 +44,7 @@ Every other column is optional and can be omitted entirely or left blank.
 
 | Column | Description |
 |--------|-------------|
-| `FamilyID` | A token you assign to group people into a family. All rows sharing the same `FamilyID` are placed in one Family record. The first row with a given `FamilyID` creates the family and sets its name, address, phone, email, and wedding date from that row's values. Rows with an empty `FamilyID` are created as individuals with no family. |
+| `FamilyID` | A token you assign to group people into a family. All rows sharing the same `FamilyID` are placed in one Family record. The first row with a given `FamilyID` creates the family and sets its name, address, phone and wedding date from that row's values. Families have no email: each row's `Email` goes on that person only. Rows with an empty `FamilyID` are created as individuals with no family. |
 
 ### Personal Information
 
@@ -84,8 +84,10 @@ Every other column is optional and can be omitted entirely or left blank.
 | `HomePhone` | |
 | `WorkPhone` | |
 | `MobilePhone` | Cell / mobile number |
-| `Email` | Personal email address |
+| `Email` | Personal email address. It is also how the person signs in to the Member Portal |
 | `WorkEmail` | Work / business email address |
+
+Every row adds a new person, so an import never changes the email of someone already in ChurchCRM. Give each person their own address: when two people who may sign in to the Member Portal share one, neither can use it to sign in (see **Duplicates** in [Email](./email.md#the-email-page)).
 
 ### Second address columns
 

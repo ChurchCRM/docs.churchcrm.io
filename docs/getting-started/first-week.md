@@ -151,7 +151,8 @@ See [Backup & Restore](/administration/backup-restore).
 - **Custom Fields** — Add fields for confirmation date, t-shirt size, etc. ([Custom Fields](/user-guide/custom-fields))
 - **Data Import** — Import existing members from a CSV ([Data Import](/user-guide/data-import))
 - **Kiosk Devices** — Set up self-service check-in for events ([Kiosk Devices](/user-guide/kiosk-devices))
-- **Users** — Create accounts for staff with appropriate [permissions](/administration/users)
+- **Users** — Create accounts for staff with appropriate [permissions](/administration/users). Staff sign in at `/admin/`
+- **Member sign-in** — Once email works, let members sign in to the Member Portal with their own email address ([Member sign-in](/administration/member-sign-in))
 - **Background Jobs** — Configure cron for reliable scheduled processing ([Background Jobs & Scheduler](/administration/background-jobs))
 
 ---

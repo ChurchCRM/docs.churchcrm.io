@@ -11,7 +11,7 @@ Use this page to find the menu for a setting. System Settings tabs are **Financi
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Enable visitor self-registration | People → Admin → People Settings → New Members & Greeting | Self-Registration. Review sign-ups on [Self Registrations](/user-guide/self-registrations) |
+| Enable visitor self-registration | People → Admin → People Settings → New Members & Greeting | Self-Registration. Families register at `/portal/register`; review sign-ups on [Self Registrations](/user-guide/self-registrations) |
 | Choose who is emailed about new people and families | People → Admin → People Settings → New Members & Greeting | Notification Recipients |
 | Add a greeting to the new-member email | People → Admin → People Settings → New Members & Greeting | Greeter Message 1 / 2 |
 | Hide deceased people from exports | People → Admin → People Settings → People | Hide Deceased from Directory |
@@ -77,11 +77,11 @@ See the [Donation Envelopes guide](/user-guide/donation-envelopes) for activatio
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Turn email sending on or off | Communication → Email → Email Settings | Enable Email |
-| Set the SMTP server | Communication → Email → Email Settings | SMTP Host (include the port) |
-| Set the SMTP username and password | Communication → Email → Email Settings | SMTP Username, SMTP Password |
-| Choose TLS or SSL | Communication → Email → Email Settings | Encryption |
-| Add the church as a recipient when composing mail | Communication → Email → Email Settings | Copy Church Email |
+| Turn email sending on or off | Communication → Admin → Email Settings | Enable Email |
+| Set the SMTP server | Communication → Admin → Email Settings | SMTP Host (include the port) |
+| Set the SMTP username and password | Communication → Admin → Email Settings | SMTP Username, SMTP Password |
+| Choose TLS or SSL | Communication → Admin → Email Settings | Encryption |
+| Add the church as a recipient when composing mail | Communication → Admin → Email Settings | Copy Church Email |
 
 The From address is the email on **Admin → Church Information**. The From name is the church name.
 
@@ -89,17 +89,38 @@ The From address is the email on **Admin → Church Information**. The From name
 
 These are on **Admin → System Users → Settings → Quick Settings**, not a Security menu.
 
-| I want to... | Setting |
-|---|---|
-| Set the minimum password length | Minimum password length |
-| Require a new password to differ from the old one | Minimum password change |
-| Block common passwords | Disallowed passwords |
-| Lock an account after failed sign-ins | Max failed logins |
-| Set how long a session stays open | Session timeout (seconds) |
-| Require two-factor authentication | Require 2FA |
-| Set how long people have to enroll | 2FA grace period |
+| I want to... | Setting | Default |
+|---|---|---|
+| Set the minimum password length | Minimum length a user may set their password to | 8 |
+| Require a new password to differ from the old one | Minimum amount that a new password must differ from the old one (# of characters changed) | 4; 0 turns it off |
+| Block common passwords | A comma-separated list of disallowed (too obvious) passwords | password, god, jesus, church, christian |
+| Lock an account after failed sign-ins | Maximum number of failed logins to allow before a user account is locked | 5; 0 turns it off |
+| Choose how long a locked account stays locked | Lockout period in minutes | 15. The account unlocks by itself after that, or at once with **Reset Failed Logins** on **System Users** |
+| Refuse sign-in from an IP address with too many failures | Maximum number of failed logins from one IP address | 20 failed sign-ins and password reset requests within the lockout period; 0 turns it off |
+| Set how long a staff session stays open | Session timeout length in seconds | 3600; 0 turns it off |
+| Require two-factor authentication | Require all users to enroll in two-factor authentication | Off |
+| Set how long people have to enroll | Number of days users have to enroll in 2FA after it is mandated | 7 |
 
 Content Security Policy (`bEnforceCSP`) is not on a settings tab. There is no switch for it in the UI.
+
+## 🏠 Member Portal sign-in
+
+These are on **Admin → Member Portal → Sign-in**. Changes save as you make them. See [Member sign-in](./member-sign-in.md).
+
+| I want to... | Setting | Default |
+|---|---|---|
+| Let members sign in with their email (it can only be turned on while email works) | Let members sign in with their email | Off |
+| Choose which family roles may sign in | Family Roles | Head of Household, Spouse |
+| Choose which classifications may sign in (guests or not) | Classifications | Nothing ticked |
+| Set the youngest age that may sign in | Minimum age | 13 |
+| Change how long a sign-in code and link last | Link and code lifetime (minutes) | 120 |
+| Limit sign-in emails from one IP address | Sign-in emails per IP address per hour | 20; 0 means no limit |
+| Change when an idle member session ends | Idle time (minutes) | 30 |
+| Change how long *This is my own device. Keep me signed in.* keeps a device signed in, or remove the choice | Keep me signed in (days); 0 removes it | 14 |
+| Allow passkeys | Passkeys | On |
+| Choose who is emailed when someone could not sign in | Office list | Nobody |
+| Let administrators open a person's Member Portal as that person, from the person's **Actions** menu, while member sign-in is on | Allow Login as Person | Off |
+| Allow changes during Login as Person | Allow changes during Login as Person | Off, so Login as Person is read-only |
 
 ## 🔔 Notifications
 
@@ -154,8 +175,9 @@ Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 |----------|----------|
 | **Admin → Church Information** | Church name, address, contact email, logo, and Address Defaults |
 | **Admin → Localization & Formats** | Language, time zone, dates, currency display, phone formats |
-| **Admin → System Users → Settings → Quick Settings** | Password rules, lockout, session timeout, 2FA |
-| **Communication → Email → Email Settings** | SMTP and sending |
+| **Admin → System Users → Settings → Quick Settings** | Password rules, account lockout, the per-IP sign-in limit, session timeout, 2FA |
+| **Admin → Member Portal → Sign-in** | Member sign-in, who may sign in, code and session times, passkeys, office list, Login as Person |
+| **Communication → Admin → Email Settings** | SMTP and sending |
 | **People → Admin → People Settings** | Name and initials style, hidden fields, family roles, self-registration, new-member notifications and greeter messages, new-record defaults, map zoom and geocoding |
 | **People → Admin → Person Classifications** | Classification names and order, Inactive and In Directory flags |
 | **Admin → System Settings → Financial Settings** | Finance and fundraiser menus, fiscal year, envelopes |

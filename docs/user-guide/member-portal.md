@@ -6,7 +6,7 @@ description: The member-facing side of ChurchCRM — where a church member signs
 
 # Member Portal
 
-The **Member Portal** is the part of ChurchCRM written for a church member rather than for the office. When you sign in with a member account you land in the portal, and everything you can do for yourself and your family lives there: your contact details, your household, the church calendar, and — if your church uses it — your volunteering.
+The **Member Portal** is the part of ChurchCRM written for a church member rather than for the office. You sign in with your own email address, and everything you can do for yourself and your family lives there: your contact details, your household, your family's giving statement, the church calendar, and — if your church uses them — the member directory and your volunteering.
 
 This page is written for members. If you administer ChurchCRM, see [Member Portal administration](../administration/member-portal.md) for the settings behind it and [Church themes](../administration/member-portal-themes.md) for making it look like your church.
 
@@ -18,17 +18,19 @@ Your church decides which sections appear. A section your church has not switche
 
 ## Signing in
 
-Sign in at the same address your church always gave you, with the same username and password. A member account — one that can only edit its own details — lands on the portal home page and stays in the portal: any address that belongs to the office side of ChurchCRM sends you back to the portal home.
+Open the address your church gave you for ChurchCRM, type your email address, and sign in with the code or link ChurchCRM emails you. There is no username and no password. On your own phone or computer you can stay signed in and add a passkey. Everything about signing in — the code, the link, staying signed in, passkeys and the **Sign-in and devices** page — is on [Signing in to the Member Portal](./member-sign-in.md).
+
+A member session only ever opens the portal.
 
 ![The Member Portal home page on a laptop](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-home.png)
 
-The navigation across the top is, in order: **Home · Calendar · Volunteering · My Teams · My Family · Profile**. Only the entries your church has switched on and that apply to you are shown; a member who does not lead a volunteer team, for example, has no **My Teams** entry.
+The navigation across the top is, in order: **Home · Calendar · Volunteering · My Teams · Directory · My Giving · My Family · Profile**. Only the entries your church has switched on and that apply to you are shown; a member who does not lead a volunteer team, for example, has no **My Teams** entry, and **My Giving** and **My Family** appear only for someone who belongs to a family. A plugin your church uses may add entries of its own before **My Family**.
 
 On a phone the navigation folds behind the menu button in the header; every page fits a phone screen without sideways scrolling.
 
 ![The Member Portal home page on a phone](https://cdn.churchcrm.io/screenshots/en/mobile/portal-member-home.png)
 
-The **Hello *\<your name\>*** menu in the header holds **Email History** (what the church has emailed you), **Change Password** and **Sign out**. Staff who also have an office login see **Admin Console** there as their way back.
+The **Hello *\<your name\>*** menu in the header holds **Email History** (what the church has emailed you), **Sign-in and devices** (see [Signing in](./member-sign-in.md#sign-in-and-devices)) and **Sign out**. Someone who also has a staff login sees **Admin Console** there: in a staff session it goes straight back to the office side, and after an email sign-in it opens the staff sign-in page. **Change Password** appears only in a staff session; members have no password.
 
 The footer at the bottom of every page shows the church's name and how to reach it — phone, email and a link to the church website — and links to the church's social media, as far as the church office has filled them in.
 
@@ -40,10 +42,12 @@ The home page opens with a welcome card — your first name, your family's name,
 
 | Card | What it shows |
 |------|---------------|
-| **Church calendar** | The next three events from the calendars the church shares with members — each with its day, date and time and the calendar it is on — and **See the whole calendar**. With nothing coming up it says *"Nothing is on the calendar just now."*; if the church has not shared any calendar yet it says so instead. |
+| **Church calendar** | Shown while the church shares at least one calendar with members. The next three events — each with its day, date and time and the calendar it is on — and **See the whole calendar**. With nothing coming up it says *"Nothing is on the calendar just now."* |
 | **My volunteering** | The next thing you are on for, as *date · ministry — team — position*, and how many of your assignments are still **waiting for your answer**. With nothing booked: *"Nothing on your list yet. Have a look at what needs filling."* |
-| **My Family** | Your household's name, how many people are in it, and **Update your details**. A member with no family record sees *"You are not currently associated with a family"* and a link explaining how to correct this. |
-| **Profile** | Your name, your email, mobile and home phone as the church has them, your role in the family, and **Update your details**. Your birthday is shown too when your church lets members edit it. |
+| **My Family** | Your household's name, how many people are in it, and **Update your details**. A member with no family record sees *"You are not currently associated with a family"* and *"Please contact the church office so we may correct our records."* |
+| **Profile** | Your name, your email, mobile and home phone as the church has them, your role in the family, and **Update your details**. Your birthday is shown too when your church lets members edit it. With nothing on file it says *"No contact details on file yet."* |
+
+Right after an email sign-in on which you ticked **This is my own device**, the first page you see also asks once whether to [use a passkey on this device](./member-sign-in.md#passkeys).
 
 ---
 
@@ -54,27 +58,31 @@ The home page opens with a welcome card — your first name, your family's name,
 ![The Profile page](/img/user-guide/member-portal-profile.png)
 
 - **Update your details** opens an edit form. Press **Save changes**; the page confirms with *"Your details have been saved."* Your first and last name cannot be left blank.
-- **Choose a new photo** on the edit form uploads a new picture straight away. A square picture of your face works best.
+- **Choose a photo or take a selfie** on the edit form uploads a new picture straight away. A square picture of your face works best.
 - **Birthday** appears only when your church allows members to change it. Otherwise it is neither shown nor editable here — ask the church office.
-- Your household's address, home phone and email belong to the family, so they are changed under [My Family](#my-family), not here.
+- **Email** is how you sign in, so a new address changes only after you use the link ChurchCRM sends to it; your old address gets a notice. See [Changing your email address](./member-sign-in.md#changing-your-email-address). If the field is locked, ask the church office.
+- **Language** on the edit form chooses the language the Member Portal is shown in. **Church default** uses your church's language. When you save, the page reloads in the new language, and emails ChurchCRM sends you (such as your sign-in code) use it too.
+- Your household's address and home phone belong to the family, so they are changed under [My Family](#my-family), not here. Families have no email of their own: each person keeps theirs on their own profile.
 
-Under **Sign-in and security** you will find **Change your password** and **Two-factor authentication**. Both open inside the portal, so you never leave it to look after your account.
+Staff who opened the portal from their staff login also find **Sign-in and security** here, with **Change your password** and **Two-factor authentication**. They have no Language field: the portal uses the language set on their staff account.
 
 ---
 
 ## My Family
 
-**My Family** shows your household as the church has it: **Where we reach you** (address, city, state, zip, country, home phone, email and wedding date) and **Family Members**, with your own row marked **You**.
+**My Family** shows your household as the church has it: **Where we reach you** (address, city, state, zip, country, home phone and wedding date) and **Family Members**, with your own row marked **You**.
+
+An **adult** of the family — a head of household or spouse aged 18 or over (or with no birth year on record) — also sees each other member's email and mobile phone, and can update the family details, add a family member and confirm the family. Other members see the names, photos and roles, and their own email and mobile. Someone added to the family through the portal counts as an adult only once the church office has approved them. Your church can give one person more, for example a grown son who helps his parents keep the records (see [Portal permissions](../administration/portal-permissions.md)).
 
 ![The My Family page](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-family.png)
 
 ### Update your details
 
-An adult of the household (head or spouse) can press **Update your details** to change the address, home phone, email and wedding date — *"This is where the church sends post and who it calls about your household."* Press **Save changes** to save them. Other family members see *"Only an adult of your family can change these details. Please contact the church office."*
+An adult of the household can press **Update your details** to change the address, home phone and wedding date — *"This is where the church sends post and who it calls about your household."* Press **Save changes** to save them. Other family members see *"Only an adult of your family can change these details. Please contact the church office."*
 
 ### Confirm your family details
 
-Churches periodically ask households to check what is on file. **Confirm your family details** shows the household and asks **"Is this still right?"** with two answers:
+Churches periodically ask households to check what is on file. An adult of the household can use **Confirm your family details**: it shows the household and asks **"Is this still right?"** with two answers:
 
 - **Everything is correct**
 - **Something needs changing** — a box appears asking **"What needs changing?"**
@@ -85,7 +93,26 @@ Churches periodically ask households to check what is on file. **Confirm your fa
 
 ### Add a family member
 
-An adult of the household can also press **Add a family member**. It opens a short form — first name, last name, role and an optional birthday — and sends it to the church office with **Send to the church office**. As the dialog says, *"This goes to the church office for review. Until a member of staff approves it, the new family member shows here as waiting for review."* The new person appears under **Family Members** — and on **Confirm your family details** — with a **Waiting for review** badge. The church office sees the request among the registrations waiting for review and approves it there; from then on the badge is gone.
+An adult of the household can also press **Add a family member**. It opens a short form — first name, last name, role and an optional birthday — and sends it to the church office with **Send to the church office**. As the dialog says, *"This goes to the church office for review. Until a member of staff approves it, the new family member shows here as waiting for review."* The new person appears under **Family Members** — and on **Confirm your family details** — with a **Waiting for review** badge. The church office sees the request on [Self Registrations](./self-registrations.md) and approves it there; from then on the badge is gone.
+
+![The Add a family member dialog on My Family](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-add-family-member.png)
+
+---
+
+## My Giving
+
+**My Giving** gives the adults of a household their year-end contribution statement. Choose the **Year** (a year with no gifts says **No contributions**) and press **Download statement** to get a PDF of the family's gifts for that year.
+
+Other family members see *"Contribution statements are issued to the adults of a household. Please contact the church office if you need one."*
+
+---
+
+## Directory
+
+**Directory** appears only when your church turns on the member directory and lets you see it. It lists the people and families the church chooses, with only the details the church chooses to share, such as address, phones, email, photo, birthday or anniversary.
+
+- Type in **Find someone** to narrow the list, or pick a letter to jump to it.
+- Some churches allow search only: type at least two letters of a name and press **Search**. You see up to 20 matches, never the whole list.
 
 ---
 
@@ -218,7 +245,9 @@ A team leader works on their own team only. Adding people to the ministry's pool
 
 ## Related documentation
 
+- [Signing in to the Member Portal](./member-sign-in.md) — the email code and link, staying signed in, passkeys and your devices
 - [Member Portal administration](../administration/member-portal.md) — the settings, statistics and shared calendars behind the portal
+- [Portal permissions](../administration/portal-permissions.md) — giving one person more than the usual access
 - [Church themes](../administration/member-portal-themes.md) — giving the portal your church's look
 - [Events](./events.md) — the church calendar the portal shows
 - [Volunteers](./volunteers.md) — volunteer management from the office side

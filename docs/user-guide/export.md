@@ -23,7 +23,7 @@ sidebar_position: 22
 
 1. Go to **Admin → Export**.
 2. Click **Open CSV Export**.
-3. Tick the fields you want under **Field Selection**. **Last Name** is always included. There is no marital-status field and no last-login field. **Second Address** is off by default; see [Second address columns](#second-address-columns).
+3. Tick the fields you want under **Field Selection**. **Last Name** is always included. There is no marital-status field and no last-login field. **Email** is each person's own email; families have none, so a person without one exports an empty cell. **Second Address** is off by default; see [Second address columns](#second-address-columns).
 4. Under **Output Method**, pick a **Format**: **CSV Individual Records**, **CSV Combine Families**, or **Add Individuals to Cart**.
 5. Click **Create File**.
 

@@ -30,6 +30,10 @@ Finance letters and giving reports are under [Deposit Reports](/user-guide/finan
 - People who signed up through the public registration form are left out until they are approved under **People → Self Registrations**.
 - For a directory of only the people in the [Cart](/user-guide/cart), click **Directory** in the Cart Functions bar. That form has no classification or group filters: the Cart decides who is printed.
 
+### Email in the directory
+
+Under **Information to Include**, **Personal Email** and **Personal Work/Other Email** print each person's own addresses. There is no family email option: families have no email of their own, and a person without one prints none. See [Families → Email](/user-guide/families#email).
+
 ### Page Layout
 
 ![Directory Reports form: Page Layout, Columns per Page, Paper Size and Font Size](https://cdn.churchcrm.io/screenshots/en/desktop/directory-booklet-options.png)
@@ -78,7 +82,7 @@ People Reports print the same labels without using the Cart. See [Print Labels o
 
 ## People Reports
 
-Open **Reports → People Reports**. Every staff login can open this page. A login set to **Edit Self** only cannot. **Missing People** is listed only when you can open **Events**. Pick a report, set the filters, and click **Run Report**.
+Open **Reports → People Reports**. Every staff account can open this page. **Missing People** is listed only when you can open **Events**. Pick a report, set the filters, and click **Run Report**.
 
 **Classification** is on every report. It is a multi-select list read from **Admin → Classification Manager**, so custom classifications appear automatically. It also offers **Unassigned** for people with no classification. Leave it empty (placeholder **All classifications**) to include everyone.
 

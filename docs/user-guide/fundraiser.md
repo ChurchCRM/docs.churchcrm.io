@@ -23,16 +23,15 @@ Access to the Fundraiser module is controlled at two levels:
 
 | Level | Setting | Where to configure |
 |-------|---------|--------------------|
-| System-wide | **Enable Fundraiser menu.** (`bEnabledFundraiser`) | **Admin → System Settings → Financial Settings** |
-| Per-user | **Manage Fundraisers** permission (`bManageFundraisers`) | **Admin → Edit Users → Edit** |
+| System-wide | **Fundraiser Module** (`bEnabledFundraiser`) | **Admin → Feature Toggles** |
+| Per-user | **Manage Fundraisers** permission | **Admin → System Users**, edit the user |
 
 **How they interact:**
 
-1. If **Enable Fundraiser menu** is **off**, the Fundraiser menu is hidden for _everyone_ — admins included.
-2. If **Enable Fundraiser menu** is **on**, only the following users see the Fundraiser menu:
+1. If **Fundraiser Module** is **off**, the Fundraiser menu is hidden for _everyone_ — admins included.
+2. If **Fundraiser Module** is **on**, only the following users see the Fundraiser menu:
    - Users with the **Admin** right (they bypass the per-user permission).
    - Users who have the **Manage Fundraisers** right granted on their account.
-3. Users in **Edit Self** mode never have fundraiser access, even if the permission is set.
 
 The API routes that power the Fundraiser module are protected by the same check: a user must be an Admin or have the Manage Fundraisers permission. Attempting to access a fundraiser API endpoint without the required role returns a 403 error.
 

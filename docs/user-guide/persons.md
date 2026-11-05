@@ -18,7 +18,7 @@ A Person record represents an individual in your congregation. Person records ca
 3. Choose a **Family** if this person belongs to one. Family is optional. You can also create a new family from the same form.
 4. Enter **Classification** (Member, Guest, and so on) if you use classifications.
 5. For a child, choose a **Grade** if you track [school grades](/user-guide/school-grades).
-6. Add address, phone, and email, or leave them blank to inherit them from the family.
+6. Add address and phone, or leave them blank to inherit them from the family. Enter the person's own **Email**: email is never inherited from the family.
 7. Enter a birth date only when you have the month and the day. A birth year by itself is rejected with **Invalid Birth Date: Missing birth month and day.** Age is calculated from a complete birth date.
 8. Click **Save** or **Save and Add** to add another person.
 
@@ -37,10 +37,10 @@ To set or correct it, open a person's record, choose **Edit**, then find **Membe
 - **Membership Date and Classification are separate fields.** Selecting a [person classification](/user-guide/classifications) such as Member does not fill in a Membership Date, and entering a date does not change the classification. A person can have either field without the other.
 - **Membership Anniversaries**, under [Reports → People Reports](/user-guide/reports-and-queries#people-report-details), uses the date's month. It can also be filtered by classification; the report is not restricted to people classified as Members.
 - Administrators can [import](/user-guide/data-import) the `MembershipDate` CSV column and can [export](/user-guide/export) person records, optionally including Membership Date and filtering by a date range.
-- The date **does not grant application permissions** or make someone eligible to vote. Membership of a group named *Board* or *Voting Members* also does not automatically grant voting rights or [software user access](/administration/users). The church determines membership and voting eligibility under its own bylaws. A separate structured voting-eligibility feature has been proposed but is **not available in ChurchCRM 7.8.1**.
+- The date **does not grant application permissions** or make someone eligible to vote. Membership of a group named *Board* or *Voting Members* also does not automatically grant voting rights or [software user access](/administration/users). The church determines membership and voting eligibility under its own bylaws. ChurchCRM does not record who is eligible to vote.
 
 :::caution Who can change the date?
-In ChurchCRM 7.8.1, the Person Editor allows users with **Edit Records**, or **Edit Self** for their own or same-family record, to open the editor. The Membership Date field has no additional field-level permission check there. It must not be treated as protected proof of voting eligibility or as an authorization control.
+Anyone with **Edit Records** can open the Person Editor. The Membership Date field has no additional field-level permission check there. It must not be treated as protected proof of voting eligibility or as an authorization control.
 :::
 
 ---
@@ -57,7 +57,7 @@ This is a wildcard search. Searching for "ian" can return "Ian" or "Brian" when 
 
 Person records can be made inactive without deleting their history. Use **Set Inactive** on the Person View when someone should no longer appear as an active person. Use **Set Active** to reactivate the record later.
 
-The Person Listing shows active people by default, with options to view inactive people or all people. Making a person inactive does **not** delete the person, their family relationship, giving history, notes, groups, or other records.
+The Person Listing shows active people by default, with options to view inactive people or all people. Making a person inactive does **not** delete the person, their family relationship, giving history, notes, groups, or other records. An inactive person cannot sign in, to the [Member Portal](/user-guide/member-portal) or with a staff account, until they are set active again.
 
 You cannot deactivate the person record associated with your own signed-in account.
 
@@ -94,7 +94,7 @@ The **Emails** chip, which appears once ChurchCRM has emailed the person, shows 
 
 ## Email History
 
-ChurchCRM keeps a record of every email it sends. A person's history holds the emails addressed to them: messages written in the [email composer](/user-guide/email), birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), notifications, and volunteer emails from Volunteer Management v2. Anyone who can open the person can see it.
+ChurchCRM keeps a record of every email it sends. A person's history holds the emails addressed to them: messages written in the [email composer](/user-guide/email), birthday greetings, family verification links, account emails (new account, password reset, lock and unlock, deletion), Member Portal sign-in emails, notifications, and volunteer emails from Volunteer Management v2. Anyone who can open the person can see it.
 
 ### Recent Emails card
 
@@ -103,7 +103,7 @@ The **Recent Emails** card on the Person View lists the five latest emails to th
 | Column | What it shows |
 |--------|---------------|
 | **Date** | When the email was sent |
-| **Type** | What kind of email it was: Message (written in the composer), Birthday greeting, Family verification, Password reset link, New account, Notification, and so on. Volunteer emails show Volunteer assignment, Volunteer reminder, Volunteer declined, Volunteers needed, Volunteer sign-up, Substitute proposed, Substitute decision, or Offer to help. An email of a kind ChurchCRM does not know shows Email |
+| **Type** | What kind of email it was: Message (written in the composer), Birthday greeting, Family verification, Password reset link, New account, Notification, and so on. Volunteer emails show Volunteer assignment, Volunteer reminder, Volunteer declined, Volunteers needed, Volunteer sign-up, Substitute proposed, Substitute decision, or Offer to help. Member Portal sign-in emails show Member Portal sign-in code, Email address changed, Confirm email address, or Passkey added. An email of a kind ChurchCRM does not know shows Email |
 | **Subject** | The subject line; click it to open the email |
 | **Status** | **Sent**, **Failed** (the mail server refused it; hover over the badge for the error), or **Skipped** (email sending was turned off, or no mail server was set up, at the time) |
 | **Sent by** | The user who wrote it, or **Automatic** for emails ChurchCRM sent on its own |
@@ -118,7 +118,7 @@ Click a subject to see the email as it was sent, with the recipient address, dat
 
 ![An email opened from the history, shown as it was sent](/img/user-guide/email-history-modal.png)
 
-ChurchCRM keeps the full content of messages written in the composer and of volunteer emails. For every other email it stores the subject, date, and status only. Opening one shows a note instead of the message: **The content of this email is not stored. ChurchCRM keeps the text of messages written in the email composer and of volunteer emails only.**
+ChurchCRM keeps the full content of messages written in the composer and of volunteer emails. For every other email, sign-in codes and links included, it stores the subject, date, and status only. Opening one shows a note instead of the message: **The content of this email is not stored. ChurchCRM keeps the text of messages written in the email composer and of volunteer emails only.**
 
 ![An account email in the history: the content is not stored](/img/user-guide/email-history-modal-not-stored.png)
 
@@ -129,8 +129,43 @@ Click **Show all** at the bottom of the card to open the person's complete email
 ![The full Email History page for a person](/img/user-guide/email-history-show-all.png)
 
 :::note
-Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. An email sent to the family's own address (for example from the Family View) is recorded against the family, not a person, so it appears on nobody's card. Administrators see the most recent emails to everyone, family addresses included, on the [Email dashboard](/user-guide/email#email-history-and-the-email-dashboard).
+Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. An email sent to a whole family (**Email \<name\> Family** on the Family View) goes to the head of household's own address, or the spouse's, and is recorded against the family, not a person, so it appears on nobody's card. Administrators find it, with everyone else's email, in the **Email Log**; see [Email history](/user-guide/email#email-history).
 :::
+
+---
+
+## Portal sign-in
+
+Staff with **Edit Records** see a **Portal sign-in** card in the left column of the Person View. It says **May sign in** when this person can sign in to the [Member Portal](/user-guide/member-portal), or **Cannot sign in** with the reason in plain words (for example *"Their classification may not sign in"*). It also shows their **Last sign-in** and how many remembered devices and passkeys they have. While member sign-in is off, the card says so.
+
+![The Portal sign-in card on the Person View, as an administrator sees it](https://cdn.churchcrm.io/screenshots/en/desktop/person-portal-sign-in-card.png)
+
+- **Unconfirmed email** is an address that can't be used to sign in yet: one the upgrade moved from the family email of a family with several members, or a new address saved after the person had signed in. Check with the person, in person or by phone, that the address is theirs, then click **Confirm Email Address**. Staff with **Edit Records** can confirm an address moved from the family email; any other needs an administrator, and so does anyone with a staff account or a portal permission given to them. When you can't confirm it, the card says why. See [The sign-in email](/administration/member-sign-in#the-sign-in-email).
+- **Administrators** also see:
+  - each remembered device and passkey, with a button to sign the device out or remove the passkey;
+  - **View Permissions**, the person's portal permissions grouped by where they come from (for example **Given to Everyone**), with a button to remove one that was given;
+  - **Give a permission**, which opens **Give a portal permission**: choose the **Permission**, what it is for when it needs one (a family or a team, for example), a **Last day** and a **Reason**. Only administrators see the reason. See [Portal permissions](/administration/portal-permissions#give-a-permission-to-one-person).
+  - **Disable sign-in**: with a **Reason**, the person can no longer sign in anywhere, to the Member Portal or as staff. Every session ends, and their remembered devices and passkeys are removed. **Enable sign-in** lets them sign in again. You can't disable your own sign-in.
+  - **Sign out everywhere**: ends every session and signs out every remembered device. Passkeys stay.
+
+See [Who may sign in](/administration/member-sign-in#who-may-sign-in) for the rules.
+
+### Changing a person's email
+
+A person's own email is how they sign in to the Member Portal, so the Person Editor guards it:
+
+- For a person who has signed in to the portal, the editor warns: *"This person has signed in to the Member Portal. Changing this email signs them out everywhere, and the new address cannot be used to sign in until it is confirmed."* After you save, the address they signed in with gets a notice with a link that confirms the new one.
+- Only an administrator can change the email of a person who has a staff account or a portal permission given to them. Other staff see the field read-only, with *"Only an administrator can change the email of a person who has a staff account or portal permissions."*
+
+### Login as Person
+
+When an administrator has turned on **Allow Login as Person** (**People → Admin → Member Portal**, **Sign-in** tab), administrators find **Login as** and the person's first name (for example **Login as Pat**) in the person's **Actions** menu. After you confirm, the Member Portal opens as this person sees it. A banner on every portal page says whose portal you are in and whether changes are allowed: it is read-only unless **Allow changes during Login as Person** is also on. Staff pages stay closed until you click **Stop** in the banner, which brings you back to the person's page.
+
+![An administrator in a member's portal with Login as Person: the banner with Stop](https://cdn.churchcrm.io/screenshots/en/desktop/portal-login-as-person.png)
+
+The item is grayed out, with the reason when you point at it, while member sign-in is off and for a person who is deceased, has Disable sign-in on, or has a staff account. It still works for someone who can't sign in themselves, for example an inactive person or someone with no email, so you can see what they would see.
+
+The **Login as Person history** card at the bottom of the left column lists each session: who used it, when it started and ended, and every change made during it. The administrator's own user page lists the sessions they ran. See [Login as Person](/administration/member-sign-in#login-as-person).
 
 ---
 
@@ -193,7 +228,9 @@ Filter the grid with **All Classifications**, a single classification, or **Unas
 
 ## Why is some information on the Person View shown in red text?
 
-Red text indicates information inherited from the associated Family record. People assigned to the same family share common information — such as address, phone number, and email address. This information only needs to be entered once on the Family record; all members of that family will inherit it unless the individual Person record has its own value.
+Red text indicates information inherited from the associated Family record. People assigned to the same family share common information — such as address and phone number. This information only needs to be entered once on the Family record; all members of that family will inherit it unless the individual Person record has its own value.
+
+Email is not shared this way. Families have no email address of their own, and each person keeps their own: a person without one has no email. See [Families](/user-guide/families#email).
 
 For example, the Smith family has four members: John, Mary, Billy, and Sally. None of the four Person records have an address, but the Smith Family record does. When Sally's Person View is displayed, the system shows the family address in red to indicate it is inherited. If Sally moves to a college dorm and her dorm address is added to her Person record, that address will appear in black, indicating it is specific to her.
 
@@ -221,20 +258,29 @@ You don't enter an age. ChurchCRM calculates it from the birth date. A year by i
 
 Count cards link to families, people, Sunday School (when that menu is on), and groups. **People by Classification** lists each classification with its share and count. The same page also shows **Family Roles**, **Gender Demographics**, **Age Distribution**, and report links for **People Directory** and **Letters & Mailing Labels**.
 
-**Quick Actions** includes **Verify People** (for users with **Edit Records**) and **New Self-Registrations**. When email is available, **Email All** is there too.
+**Quick Actions** has **Verify People** for users with **Edit Records**, and **Email All** for users with the **Email** permission. Once your church has chosen who may sign in to the Member Portal, users with **Edit Records** also see **Email needs attention**.
 
-Administrators open **People Settings** on this dashboard:
+Administrators find **People Settings** under **People → Admin → People Settings**, including:
 
-- **Self Registration** — **Allow visitors to self-register as new families.**
-- **Hide Deceased from Directory** — **Hide deceased members from the printed directory and CSV exports.**
+- **Self-Registration** — *Allow visitors to create their own family record via the self-registration page*
+- **Hide Deceased from Directory** — *Hide deceased members from the printed directory and CSV exports.*
+
+### Email needs attention
+
+**Email needs attention** (`/people/sign-in-email`) lists the people the [sign-in rules](/administration/member-sign-in) let in whose email stops them: they have none, they share it with someone else who may sign in, or it is not confirmed yet. Each row says what to do and links to the person.
+
+- **Fix shared emails** shows, for each address shared within one family, who **Keeps it** (the head of household, else the spouse) and who **Loses it**. Tick the rows to apply. Addresses shared across families, or by nobody who is a head of household or spouse, are listed to fix by hand.
+- **Confirm selected** confirms the unconfirmed addresses you ticked. Only confirm an address you know belongs to that person.
+
+Rows that involve someone with a staff account or a portal permission given to them need an administrator.
 
 ## How do I delete a person?
 
 Leaving inactive records in the database is often preferable for historical record-keeping, but if deletion is necessary:
 
 1. Find the person and open their Person View.
-2. Select _"Delete this Record"_.
-   > If this link does not appear, you do not have permission to delete records.
+2. Open **Actions** and choose **Delete Person**.
+   > If it is not there, you do not have permission to delete records.
 3. Confirm the deletion.
 
 ## What are Custom Person Fields?
