@@ -87,7 +87,7 @@ Past and inactive events are grouped into collapsible **month sections** below t
 3. **Add people to the Cart**: Search or browse people, click **Add to Cart**.
 4. **Record attendance**: open the cart and choose **Check In to Event**. The page title is **Add Cart to Event**. Select the event and confirm.
 
-Attendance is saved with the check-in. To find people who missed events, use the **Missing People** report under **Reports → People Reports**.
+Attendance is saved with the check-in. After a group-linked event ends, the event page lists who from those groups did not check in. See [People who did not attend](#people-who-did-not-attend). To look across several events, use the **Missing People** report under **Reports → People Reports**.
 
 ---
 
@@ -147,6 +147,18 @@ To add a visitor to an event:
 5. Open the cart and choose **Check In to Event**.
 6. The page title is **Add Cart to Event**. Select the event and check the person in.
 
+## People who did not attend
+
+Open the event. After its end time has passed, and only when the event has one or more **Linked Groups**, a **Did Not Attend** card appears under the attendance list.
+
+The card lists members of those groups who have no check-in for this event. It uses each group's current membership, not who was in the group on the event date, so someone who joined later can appear as a no-show. Keep that in mind before contacting people from the list. Each row shows the person's name (a link to their record), email, and phone. The phone is the cell number when one is saved, otherwise the home number. A badge next to the title is the number of people on the list. Names are in alphabetical order.
+
+When everyone from the linked groups checked in, the badge is **0** and the card says **Everyone from linked groups checked in!**
+
+**Email All** is on the card when at least one person on the list has an email address and email sending is turned on for the church. With the **Email** permission, **Email All** opens the ChurchCRM composer for those addresses, and a send button appears next to each address. Without that permission, **Email All** opens your own mail program with those addresses in the blind-copy field and the event title as the subject. People with no email address stay on the list; they are left out of the message. See [Email](./email.md).
+
+This list is one event, and only the members of the groups linked to it. **Reports → People Reports → Missing People** is the other place to look: it can cover several events at once, and it is not limited to linked groups. You can narrow that report by classification.
+
 ## Generating Attendance Reports for an Event
 
 You can generate reports based on attendance history for an event. The tracked person types measured are defined in the event type.
@@ -155,6 +167,8 @@ To generate a report:
 
 1. Open **Reports → People Reports → Missing People**.
 2. Choose one or more **Events**, optionally narrow by **Classification**, and click **Run Report**.
+
+That report is not the **Did Not Attend** card on the event page. The card is the follow-up list for one finished event. **Missing People** can include people who are not in a group linked to the event. When you select multiple events, it lists only people who attended none of them. To find everyone who missed any event, run the report separately for each event.
 
 ## Using the Calendar
 
