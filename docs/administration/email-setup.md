@@ -11,12 +11,17 @@ This guide covers configuring email for ChurchCRM so the system can send notific
 
 ChurchCRM uses email for:
 
-- **System notifications** — password resets, new user setup
+- **Member sign-in** — the code and link members sign in to the Member Portal with, and the notices to the office list. **Let members sign in with their email** can't be turned on until **Enable Email** is on and the SMTP server is filled in (see [Member sign-in](/administration/member-sign-in))
+- **System notifications** — password resets, new user setup, and locked or unlocked staff accounts
 - **Parent alerts** — kiosk check-in notifications to parents
 - **Messages from the composer** — users with the Email permission send messages to a person, a family, a group, or the cart from inside ChurchCRM (see [User Guide: Email](/user-guide/email)). Without a mail server the composer falls back to copying addresses or opening the user's own mail program.
 - **Mailchimp** — bulk newsletters (configured separately in Integration settings)
 
 For outbound email (notifications, alerts, composer messages), open **Communication** → **Email** and click **Email Settings**.
+
+:::warning Members sign in by email
+Turning email off, or a mail server that stops accepting messages, doesn't turn member sign-in off: members just stop getting their codes. The **Sign-in** tab on **Admin → Member Portal** shows a warning while email is off. Send a test after every change to these settings.
+:::
 
 ---
 

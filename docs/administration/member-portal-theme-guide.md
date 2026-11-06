@@ -7,11 +7,12 @@ description: The complete reference for writing a Member Portal theme - folder l
 
 The Member Portal (`/portal`) is the member-facing area of ChurchCRM: what a
 congregation member lands in after signing in. A **theme** is how your church
-makes it look like your church.
+makes it look like your church, on every portal page and also on the signed-out
+pages: member sign-in, family registration and the email-confirmation page.
 
 A theme is a folder. You do not build or install it separately. Upload the
-files and turn the theme on under **Admin → Member Portal**. Turning it on
-compiles its templates.
+files and activate the theme on **People → Admin → Member Portal → Themes**.
+Activating it compiles its templates.
 
 > **Themes are provided by your church, not by ChurchCRM.** Unlike community
 > plugins, themes are not reviewed, signed or verified by anyone. A theme's
@@ -115,9 +116,10 @@ That alone recolours and refonts every portal page.
 flow, so a notice never moves the page. The four pairs of tokens above are the
 whole palette; the markup is `.portal-toasts > .portal-flash.portal-flash-<type>`.
 
-**Dark mode.** Members choose light, dark or "follow my device". In dark mode
-the portal carries `data-bs-theme="dark"` on `<html>`, so redefine whichever
-tokens need it:
+**Dark mode.** For a member the portal follows the device's light or dark
+setting. Staff who open the portal from their staff sign-in get the colour mode
+of their staff account. In dark mode the portal carries `data-bs-theme="dark"`
+on `<html>`, so redefine whichever tokens need it:
 
 ```css
 [data-bs-theme="dark"] {
@@ -167,6 +169,11 @@ from the file that replaces it — no infinite loop.
 The blocks every page offers, and every variable a template can read, are
 documented in [template reference](./member-portal-template-reference.md).
 
+The signed-out pages — `login/*.html.twig`, `register/index.html.twig` and
+`email-change/confirm.html.twig` — extend the same layout with an empty `nav`
+block. Their header has no account menu; it offers **Sign in** or **Register
+your family** instead, when those are switched on.
+
 ---
 
 ## Live editing
@@ -180,8 +187,9 @@ time, so a changed file is a different URL and the browser fetches it.
 
 ## Activating a theme
 
-**Admin → Member Portal → Settings** lists every folder under
-`Include/themes/`, the system theme first. Pick yours and save.
+**People → Admin → Member Portal → Themes** lists every folder under
+`Include/themes/`, the system theme first. Open your theme's action menu and
+choose **Activate**.
 
 Activation compiles **every** template in the theme first. If any of them does
 not compile, activation is refused and the page lists the file, the line and the
@@ -198,12 +206,15 @@ A broken theme fails loudly: the portal does not fall back to the system theme, 
 | What happened | An administrator sees | A member sees | Where it is recorded |
 |---|---|---|---|
 | Activation of a theme whose template does not compile | The admin page refuses and lists file, line and message | nothing changes | the application log |
-| The active theme fails while rendering a page | The theme error page: theme, file, line, message | "The Member Portal is temporarily unavailable. The church office has been notified." | the application log (**Admin → System → Logs**) *and* the web server's error log |
+| The active theme fails while rendering a page | The theme error page: theme, file, line, message | "The Member Portal is temporarily unavailable" and "The church office has been notified. Please try again later." | the application log (**Admin → System → Logs**) *and* the web server's error log |
 | The active theme's folder is gone | The same error page, saying the folder was not found | the same page | the same two logs |
 
-So: after uploading a change, load a portal page yourself while signed in as an
-administrator. If something is wrong, you — not your members — will see exactly
-what.
+So: after uploading a change, sign in as an administrator and open the portal
+from **Member Portal** in your user menu. If something is wrong, you — not your
+members — will see exactly what. The signed-out pages (sign-in, registration)
+are not part of your session, so a failure there shows the members' page even
+to you: open them in a private window after a change, and read the detail in
+the log.
 
 ---
 
@@ -232,12 +243,14 @@ once and an unchanged one is never re-downloaded.
 The portal runs under ChurchCRM's CSP, and your theme runs inside it:
 
 - **Fonts and stylesheets** may come from this installation, from
-  `fonts.googleapis.com` and from `fonts.gstatic.com`. Nothing else. Self-hosting
-  a font file in your theme's `fonts/` folder always works.
+  `fonts.googleapis.com` and from `fonts.gstatic.com` (fonts also as `data:`
+  URIs). Nothing else. Self-hosting a font file in your theme's `fonts/` folder
+  always works.
 - **Scripts** must be your theme's own `theme.js`, or inline with the
   request's nonce: `<script nonce="{{ nonce() }}">`. A script from another
   origin is blocked.
-- **Images** may come from this installation or be `data:` URIs.
+- **Images** may come from this installation or be `data:` URIs. Other image
+  hosts are blocked, apart from the map tiles and avatars ChurchCRM itself uses.
 
 ### Writing a safe template
 
@@ -261,25 +274,36 @@ script or over FTP. Nothing in ChurchCRM's release will ever overwrite it.
 
 ## Admin → Member Portal
 
-Everything about the portal that an administrator can change lives on one page:
-**Admin → Member Portal** (`/admin/member-portal`). It is administrators only,
-and it has three tabs.
+The portal's administrator page is **People → Admin → Member Portal**
+(`/admin/member-portal`), for administrators only. Its tabs are **Statistics**,
+**Sign-in**, **Members**, **Permissions**, **Audit**, **Themes**, **Calendars**
+and **Directory**; see [Member Portal administration](./member-portal.md). Two
+of them matter to a theme author.
 
-### Settings
+### Themes
 
-**Portal theme** lists every folder found under `Include/themes/`, with the
-system theme first as *System default*. Each entry carries the result of the
-last validation: *Valid*, *Warnings* or *Errors*.
+A table of every theme folder on the server, the system theme first as
+*System default*: its display name (from `theme.json` when present, otherwise
+the folder name) with an **Active** badge on the one members see, the folder,
+the author and description from `theme.json`, how many templates it overrides,
+and its last validation result: *Valid*, *Warnings* or *Errors*. **Findings**
+opens the row under a theme to list them, file, line and message.
 
-- **Check** runs the validator against the theme you have selected and lists
-  what it found — file, line and message — without changing anything. Use it
-  after uploading a change, before making the theme live.
-- **Activate** makes the selected theme the one members see, on their next
-  request. Activation validates first: a theme with error-level findings is
+Each row's action menu has:
+
+- **Check** runs the validator against that theme and lists what it found,
+  without changing anything. Use it after uploading a change, before making the
+  theme live.
+- **Activate** makes that theme the one members see, on their next request.
+  Activation validates first: a theme with error-level findings is
   **refused**, the findings are listed, and the portal keeps the theme it
   already had. Warnings are shown and allowed.
 
-**Developer mode** is for whoever is writing the theme:
+> **Themes are provided by your church, not by ChurchCRM, and are not verified
+> by the ChurchCRM project.** The page says so too.
+
+**Developer mode**, under **Theme development** below the table, is for whoever
+is writing the theme:
 
 - the Twig compile cache is turned off entirely, so nothing can go stale while
   you edit (normal operation already recompiles a changed file on the next
@@ -295,34 +319,24 @@ last validation: *Valid*, *Warnings* or *Errors*.
 Leave Developer mode **off** in normal use: without the cache, every page
 recompiles its templates on every request.
 
-The remaining switches decide what the portal offers members: whether the church
-calendar is shown, whether the volunteering and team pages are shown, and whether
-members may change birthdays on their own and their family's records.
-
-### Themes
-
-A table of every theme folder on the server: its display name (from
-`theme.json` when present, otherwise the folder name), the folder itself, the
-author and description from `theme.json`, how many templates it overrides, and
-its last validation result — expand a row to read the individual findings.
-Each row can be checked or activated from its action menu.
-
-> **Themes are provided by your church, not by ChurchCRM, and are not verified
-> by the ChurchCRM project.** The page says so too.
+What the portal offers members is set elsewhere: the calendar appears while a
+calendar is switched on under **Calendars**, the volunteering pages and birthday
+editing are under **What members can use** on **Permissions**, and the member
+directory is on **Directory**. A theme reads the result through `nav`,
+`portal_can()` and the `portal` global, never through the settings themselves.
 
 ### Statistics
 
-How much the portal is being used, counting **self-service accounts only** —
-people whose login reaches the portal and nothing else:
+How much the portal is being used, for members and for staff who open the
+portal from their staff sign-in:
 
-| Number | Where it comes from |
+| Number | What it counts |
 |---|---|
-| Active now | `usr_LastPortalActivity` within the last 15 minutes |
-| Last 24 hours / 7 days / 30 days | `usr_LastLogin` |
-| Self-service accounts | every account with Edit Self and no Admin flag |
-| Never signed in | `usr_LoginCount` is zero |
-| Ten most recent sign-ins | newest `usr_LastLogin` first, with the member's name and when they were last seen in the portal |
+| **Active now** | People who used the portal in the last 15 minutes |
+| **Last 24 hours** / **Last 7 days** / **Last 30 days** | People who signed in in that time |
+| **May sign in** | Everyone the sign-in rules let in today who has an email of their own that nobody else uses |
+| **Never signed in** | Of those, everyone who has never signed in |
+| **Ten most recent sign-ins** | Newest first, with **How** they signed in, **Last sign-in** and **Last seen in the portal** |
 
-`usr_LastPortalActivity` is stamped when a member opens a portal page, at most
-once every five minutes, so "active now" is honest without costing a write per
-page view.
+The last activity is recorded at most once a minute per person, so **Active
+now** is honest without costing a write per page view.

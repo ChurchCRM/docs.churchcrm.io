@@ -5,9 +5,9 @@ sidebar_position: 4
 
 # Self Registrations
 
-ChurchCRM 7.8 adds a **Self Registrations** review page so staff can see who signed up on the public form, and who members proposed through the member portal, and approve them before they are treated as reviewed members.
+Visitors can register their own family on a short form in the [Member Portal](./member-portal.md). Members can also propose a new person for their family from the portal. Every one of these arrives in ChurchCRM flagged for review, and staff see and approve them on **People → Self Registrations**.
 
-Open it from **People → Self Registrations**. The menu item is always listed. A count badge appears when registrations are waiting. The page subtitle is **Review new families and individuals who signed up on your public registration form**.
+The menu item is always listed. A count badge appears when registrations are waiting. The page subtitle is **Review new families and individuals who signed up on your public registration form**.
 
 ---
 
@@ -15,17 +15,43 @@ Open it from **People → Self Registrations**. The menu item is always listed. 
 
 Self-registration is off until an administrator enables it.
 
-1. Go to **People → Dashboard**.
-2. Open **People Settings**.
-3. Turn **Self Registration** on and save.
-
-When it is on, a registration link appears on the login page. The public registration API is active only while that setting is on. See [Public API — Self-registration](/api/public#self-registration).
+1. Go to **People → Admin → People Settings**.
+2. Open **New Members & Greeting**.
+3. Turn **Self-Registration** on.
 
 The review page itself stays available when the form is off, so existing sign-ups can still be reviewed.
 
 ---
 
+## Where visitors register
+
+The form is at your ChurchCRM address followed by `/portal/register`. Visitors find it here:
+
+- **While member sign-in is off,** your ChurchCRM address opens a **Welcome** page with a **Register your family** button. The page also has a **Church leader sign-in** link for staff.
+- **While member sign-in is on,** the member sign-in page has **Register your family** in its top bar.
+- The older address `/external/register/` forwards to the form.
+
+You can also link to `/portal/register` from your church website. While **Self-Registration** is off, the form and the public registration API are closed. See [Public API — Self-registration](/api/public#self-registration).
+
+### What the form asks
+
+**Register your family** takes about three minutes, in three steps:
+
+1. **Family Info** — **Family Name**, **Address**, **City** and **Zip Code** (required), **State**, **Country** and an optional **Home Phone**. City, state, zip and country start from your church's address defaults.
+2. **Members** — one card per person, with **First Name** and **Last Name** (required), **Role in Family**, **Gender**, **Email Address**, **Phone Number** with **Phone Type**, **Birthday** and **Hide Age**. **Add Family Member** adds another card.
+3. **Review** — the details as entered. **Previous** goes back to change them, and **Submit Registration** sends them.
+
+After submitting, a **Welcome to the Family!** card replaces the form, with **Register another family** and, while member sign-in is on, **Go to sign in**.
+
+The people chosen under **Notification Recipients** in the same **New Members & Greeting** section get an email about each new family.
+
+A registered person cannot sign in to the Member Portal until staff approve them, and then only if your sign-in rules let them in. See [Member sign-in](/administration/member-sign-in).
+
+---
+
 ## What the dashboard shows
+
+![The Self Registrations page: status banner, the three counters, and pending registrations grouped by month](https://cdn.churchcrm.io/screenshots/en/desktop/people-self-register-dashboard.png)
 
 A status banner at the top says either **Self-registration is enabled** or **Self-registration is disabled**.
 
@@ -39,7 +65,7 @@ Three counters sit under the banner and refresh after each approval:
 | Counter | Meaning |
 |---------|---------|
 | **Pending review** | Families and individuals still flagged for review |
-| **Approved** | Self-registrations that are no longer waiting for review, including people you approved here and registrations already reviewed before this dashboard existed |
+| **Approved** | Self-registrations that are no longer waiting for review, including people you approved here and registrations already reviewed before this page existed |
 | **Total registrations** | Pending plus approved |
 
 Members of a self-registered family are counted with that family, not as extra pending families.
@@ -52,11 +78,13 @@ Members of a self-registered family are counted with that family, not as extra p
 
 Each row shows:
 
-- **Type** — **Family**, **Individual**, or **Family Member** (someone proposed for an existing family, such as from the member portal)
+- **Type** — **Family**, **Individual**, or **Family Member** (someone a member proposed for their family in the portal)
 - **Name** — links to the family or person. A family row also lists its members and address
 - **Contact** — every email and phone on the record. **No contact info** is shown when both are missing
 - **Registered** — the date, plus **Today**, **Yesterday**, or a **days ago** count
 - **Actions** — the usual person or family action menu, including **Approve** when you are allowed to review
+
+![A family member proposed in the portal, waiting on Self Registrations](https://cdn.churchcrm.io/screenshots/en/desktop/people-self-register-portal-member.png)
 
 ---
 
@@ -78,11 +106,12 @@ While a person or family is still waiting:
 
 - The home dashboard shows **self-registrations are waiting for review** and a **Review now** button for users who have **Edit Records**. The alert is hidden when nothing is pending.
 - Person and family lists and views show a **Pending review** badge. A family view can link to **Review self registrations**.
+- In the Member Portal, a proposed family member shows **Waiting for review** on the family's **My Family** page.
 
 People who are still awaiting review are left out of the printed **People Directory**. Approving them is what makes them eligible for that directory. Other reports are unchanged by this rule. See [Reports & Queries](/user-guide/reports-and-queries).
 
 ---
 
-## After an upgrade to 7.8
+## Registrations from before this page
 
-Existing self-registrations are flagged as pending review, unless staff had already edited them before the upgrade. Review those rows on **People → Self Registrations** and approve the ones that should stay in the directory.
+When ChurchCRM is upgraded from a version without this page, existing self-registrations are flagged as pending review, unless staff had already edited them. Review those rows on **People → Self Registrations** and approve the ones that should stay in the directory.

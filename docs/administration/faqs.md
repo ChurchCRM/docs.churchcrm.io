@@ -16,7 +16,21 @@ The installation and setup process creates an admin user that you can use to cre
 - **Username:** `admin`
 - **Password:** `changeme`
 
-Change this password immediately after your first login.
+On a fresh install your site's address opens the staff sign-in page at `/admin/`. Change this password immediately after your first login.
+
+### Where do staff sign in?
+
+At `/admin/` on your site, for example `https://www.yourchurch.org/admin/`, or `/churchcrm/admin/` when ChurchCRM is in a folder. Old `/session/begin` bookmarks open the same form.
+
+What the site's home page opens depends on two settings:
+
+- **Member sign-in on:** the member sign-in page. It has no staff link, so staff go to `/admin/` directly.
+- **Member sign-in off, Self-Registration on:** a welcome page with **Register your family** and a **Church leader sign-in** link to `/admin/`.
+- **Both off**, as on a fresh install: the staff sign-in page.
+
+### How do members sign in?
+
+With their own email address, once an administrator turns member sign-in on. They open the site's home page, type their email and click **Email me a code**. ChurchCRM emails them a code and a link; there is no member password. On their own device they can stay signed in or add a passkey. See [Member sign-in](/administration/member-sign-in), and send members [Signing in to the Member Portal](/user-guide/member-sign-in).
 
 ### How do I upgrade from version 5.x to the current release?
 
@@ -53,7 +67,7 @@ See the [PHP error reporting constants](https://www.php.net/manual/en/errorfunc.
 
 Explore various methods for debugging the ChurchCRM application, including turning on error reporting and enabling app logs.
 
-Enable the logs in the System Settings, the default value is INFO but you may want to change that. The logs are created in the `/logs` dir. Please note that logs are not cleaned by the system and it is up to the admin to clean files.
+Set the log level on **System Logs → Settings** (on the Admin Dashboard, **View Logs** under **Advanced Operations**). The default is INFO, but you may want to change that. The logs are created in the `/logs` dir. Please note that logs are not cleaned by the system and it is up to the admin to clean files.
 
 ## How do I upload my church logo?
 
@@ -80,20 +94,11 @@ See [First Run Configuration](/getting-started/first-run#church-logo) for a scre
 
 ### Letterhead (PDF reports)
 
-Many reports and documents can include a letterhead. By default, ChurchCRM uses this file in the `Images/` directory:
-```
-church_letterhead.jpg
-```
+Many reports and documents can include a letterhead. Without one, letters print the church name and address instead. Set one up from the admin UI — no file transfer is needed:
 
-It may be tempting to simply upload your own artwork and rename it as above, **but this is not "upgrade-safe"**. System upgrades will overwrite your file with the default one again. The **correct method** is:
-1. Ensure your letterhead is 500x80 pixels or an exact multiple of this ratio (eg. 1000x160 is also acceptable).
-2. Your letterhead should be either PNG or JPEG/JPG format. Be aware only PNG supports transparency (*alpha channel*).
-3. Upload your image to `/Images` using FTP/sFTP/SSH (*whatever your hosting provider supports*).
-   eg. using SSH secure copy:
+1. Log in to ChurchCRM with an admin account.
+2. Go to **Reports → Admin → Report Settings**.
+3. On the **Letterhead** card, upload your image. It is stored as `Images/church-letterhead.png`, so it survives upgrades, and you can preview it or remove it from the same card.
+4. Use a PNG, JPG, GIF or WebP image. A wide banner works best, for example 2000x300. Be aware only PNG supports transparency (*alpha channel*).
 
-   ```scp my_fancy_letterhead.jpg user@hostingprovider:ChurchCRM/Images```
-4. Log in to ChurchCRM with an admin account.
-5. Go to **Admin → System Settings → Report Settings**.
-6. Set **bDirLetterHead** to `../Images/<your_file_name>` and click **Save Settings**.
-
-   Replace `<your_file_name>` with the image you uploaded in step 3.
+A letterhead path previously saved in `bDirLetterHead` still works as a fallback when no letterhead has been uploaded here.

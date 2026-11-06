@@ -7,11 +7,19 @@ sidebar_position: 2
 
 ![User permissions in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/settings-user-permissions.png)
 
+A user is a **staff account**: someone who signs in at `/admin/` with a username and password (and a two-factor code once they enroll) to work on the office side of ChurchCRM. **Admin → System Users** lists staff accounts only.
+
+Members don't need a user account. They sign in to the Member Portal with their own email address once you turn [member sign-in](./member-sign-in.md) on. There is no self-service or *Edit Self* account.
+
 ## How do I add new Users?
 
 1. Open **Admin → System Users** and click **Add User** (`/admin/system/users/new`).
 2. A list of people who do not yet have a login appears. Select the person. You can also pre-select a person by appending `?personId=N` to the URL.
-3. Set the user's rights and click **Save**.
+3. Under **Access level**, choose **Administrator**, or **Custom** and switch on the rights below. Click **Save**. A Custom account with every right off is a read-only staff account.
+
+The new user signs in at `/admin/`. The button in the welcome email opens the same sign-in form with their username filled in.
+
+![The staff sign-in page](https://cdn.churchcrm.io/screenshots/en/desktop/staff-sign-in.png)
 
 ## What are the different rights available?
 
@@ -22,9 +30,8 @@ sidebar_position: 2
 - **Manage Donations and [Finances](/user-guide/finances)** — add, edit, and delete donations.
 - **Manage [Fundraisers](/user-guide/fundraiser)** — grants access to the Fundraiser menu (create/edit fundraisers, manage items, buyers, and winners). This permission is only effective when the **Enable Fundraiser menu** setting is turned on in **System Settings → Finance Settings**; if that global toggle is off, the Fundraiser menu is hidden for everyone regardless of this per-user permission. Admins always have access when the feature is enabled.
 - **Manage Ministries** — a global ministry manager for [Volunteer Management (v2)](/user-guide/ministries): every ministry — create, deactivate, delete, and grant coordinators and team leaders. Only effective while the volunteer experience on **Admin → Ministry Settings** is V2 or Both.
-- **Manage My Ministries** — a ministry coordinator's permission: opens the **Ministries** heading, the Ministry Dashboard and the pages of the ministries the person has been made a coordinator of (on the ministry page), including creating those ministries' events without **Add Events**, and grants nothing over any other ministry. Like Manage Ministries, it is only effective while the volunteer experience is V2 or Both, and never on a self-service login. See [Who can do what](/user-guide/ministries/permissions).
+- **Manage My Ministries** — a ministry coordinator's permission: opens the **Ministries** heading, the Ministry Dashboard and the pages of the ministries the person has been made a coordinator of (on the ministry page), including creating those ministries' events without **Manage Events**, and grants nothing over any other ministry. Like Manage Ministries, it is only effective while the volunteer experience is V2 or Both. See [Who can do what](/user-guide/ministries/permissions).
 - **View, Add, and Edit [Notes](/user-guide/notes)** — manage notes on person and family records.
-- **Edit Self** — lets a user maintain only their own person record and their own family members. Useful for members who update their own contact info.
 - **Admin** — grants all of the above. Only an administrator can define [properties](/user-guide/properties), property types and [classifications](/user-guide/classifications).
 
 Every staff user, whatever their permissions, can read people and families, run reports, and print letters and mailing labels.
@@ -36,6 +43,7 @@ Every staff user, whatever their permissions, can read people and families, run 
     - **Edit User** — `/admin/system/users/{personId}/edit`, where you change rights. Mailto links are the per-user **User Config** row **bEmailMailto**. There is no `sMailtoDelimiter`.
     - **Change Password** — you set the password. The user is not forced to change it again unless you use a reset.
     - **Reset Password via Email** — emails a new password. The user must change it at the next login. This action is shown only when email is configured and the person has an email address.
+    - **Reset Failed Logins** — shown when the account has failed sign-ins. It clears the count, unlocks a locked account at once and emails the user *Account Unlocked*.
     - **Disable 2FA** — shown when that user has two-factor authentication turned on.
     - **Delete User** — removes the login. The person record remains.
 
@@ -51,9 +59,9 @@ Give each person the least they need for their job. These are starting points; a
 | Helper who enters donations | **Manage Donations and Finances** | There is no entry-only right. This grants all of finance, so give it to few people and review it each year. |
 | Ministry coordinator | **Manage My Ministries** | Covers only the ministries they coordinate. **Manage Groups and Roles** covers every group, so use it for staff, not for volunteers. |
 | Volunteer coordinator | **Manage Ministries** | Covers every ministry. Works only while the volunteer experience is V2 or Both. |
-| Event helper | **Add Events** | Nothing else. |
+| Event helper | **Manage Events** | Nothing else. The switch is shown while events are enabled. |
 | Board member | No staff rights | Board membership is a group, not a permission. Grant rights for the job the person does, not for the seat. |
-| Member who updates their own details | **Edit Self** only | They sign in to the [Member Portal](/administration/member-portal) and do not see staff pages. |
+| Member who updates their own details | No user account | They sign in to the [Member Portal](/administration/member-portal) with their own email once [member sign-in](./member-sign-in.md) is on. |
 | Read-only staff | No extra rights | They read people and families and run reports. They cannot change anything. |
 | Church administrator or IT volunteer | **Admin** | Only administrators define [properties](/user-guide/properties), property types and [classifications](/user-guide/classifications), and manage users and settings. Keep this to two or three trusted people, and give each their own login. |
 
@@ -75,7 +83,11 @@ ChurchCRM creates the account with a random password and does not show that pass
 - Users must change their password after **Reset Password via Email**.
 - Users are **not** forced to change their password when an administrator uses **Change Password**.
 
-Minimum password length, the failed-login lockout, and whether 2FA is required are under **System Users → Settings → Quick Settings**.
+Minimum password length, the failed-login lockout, and whether 2FA is required are under **System Users → Settings → Quick Settings**. A locked account shows **Locked** in the **Status** column. It unlocks by itself after the lockout period, or at once with **Reset Failed Logins**. See [Security → Sign-in limits](./security.md#sign-in-limits).
+
+## Blocked accounts
+
+A staff account can't sign in while its person is deceased or inactive, or has **Disable sign-in** on (on the **Portal sign-in** card of the person page). The **Status** column on **System Users** shows *Deceased — cannot sign in*, *Inactive — cannot sign in* or *Sign-in disabled*. The family's status and *awaiting review* don't block staff; they apply to member sign-in only. See [Member sign-in](./member-sign-in.md#who-may-sign-in).
 
 ---
 

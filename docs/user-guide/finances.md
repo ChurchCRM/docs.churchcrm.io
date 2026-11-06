@@ -58,7 +58,7 @@ See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 | **Payment** | An actual donation by cash, check, credit card, or bank draft |
 | **Deposit Slip** | A batch of donations printed on a standard bank deposit form |
 | **Reminder Statement** | Letters reminding families of their pledge and payment progress |
-| **Tax Statement** | Year-end letters acknowledging donations for tax purposes |
+| **Giving Statement** | Year-end letters acknowledging donations for tax purposes. See [Giving Statements](#giving-statements) |
 
 ## How do I enter a pledge?
 
@@ -146,10 +146,40 @@ See [Deposits](./deposit-search.md) for full details.
 
 The page groups these links:
 
-- **Tax & Giving Reports** — **Giving Report (Tax Statements)** and **Zero Givers**
+- **Tax & Giving Reports** — **Giving Statements** (see below) and **Zero Givers**
 - **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, and **Pledge Reminders**
 - **Deposit Reports** — **Individual Deposit Report** and **Advanced Deposit Report**
-- **Membership Reports** — **Voting Members**
+- **Membership Reports** — **Voting Members**, which opens only for users with the Finance permission
+
+The **Finance** menu also lists **Financial Reports** and **Giving Statements**, so you can reach either one without going through the dashboard.
+
+## Giving Statements
+
+Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Giving Statements**, or choose **Generate** in the checklist on the **Finance Dashboard**.
+
+### Make the statements
+
+1. Set **Report Start Date** and **Report End Date**. The page opens on your previous fiscal year. See [Fiscal years](#fiscal-years) for how your church's fiscal year is set.
+2. Choose **Apply Report Dates To**: **Payment Date** counts gifts by the day they were given, **Deposit Date** counts them by the day they were deposited.
+3. Narrow the list if you need to. Each picker has **Add All** and **Clear All** buttons:
+   - **Classification**, **Filter by Family** and **Filter by Fund** limit who and what is included.
+   - **Filter by Deposit** uses one deposit. When you choose a deposit, the dates are ignored.
+   - **Minimum Total Amount** leaves out families whose total for the period is below the amount. It compares each family's total, not single gifts.
+4. Choose **Remittance Slip** **Yes** to add a detachable slip addressed to the family below each letter.
+5. Select **Preview**. A window shows how many **Families** and **Payments** are included and the **Total**. If nothing matches it says **No Data Found**, so change the filters and preview again.
+6. In the preview window, choose **Download PDF** (the letters open in a new tab) or **Download CSV** (one row per payment, for a spreadsheet).
+
+The PDF is named `GivingStatements-<year>.pdf`, or `GivingStatement-<year>-<family>.pdf` when the statement is for one family. The letters are written in the language you use ChurchCRM in.
+
+### What the letter says and looks like
+
+- The opening line, thank-you line, closing line and signer come from **Admin → System Settings → Report Settings**.
+- The top of the page uses your church letterhead image when one is set there (**Church Letterhead**). Without one, it shows your church name and address. See [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead) for the image size.
+- Each letter is addressed to the family's [mailing address](./reports-and-queries.md#which-address-is-printed).
+
+### One family
+
+On a [family profile](./families.md), open **Finance** on the toolbar. Under **Giving Statements**, choose **Print** or **Email** for a year. Years that the family has payments are listed. **Email** sends the PDF to the family's email addresses and returns you to the profile.
 
 ## Pledge Dashboard
 
