@@ -234,8 +234,9 @@ This is not a Security menu.
 | **Lost password link** | Show or hide **Forgot password?** on the staff sign-in page. It appears only while email sending works. Members have no password | On |
 | **Require 2FA** | Require every user to enroll | Off |
 | **2FA grace period** | Days to enroll after 2FA is required. 0 enforces it immediately | 7 |
-| **2FA application name** | Name shown in the authenticator app | ChurchCRM |
 | **Email when a user is deleted** | Tell the person their account was removed | Off |
+
+See [Two-Factor Authentication](./secret-keys.md) for enrollment and recovery. Authenticator entries use the church name from **Admin → Church Information**, followed by **(ChurchCRM)**.
 
 Content Security Policy (`bEnforceCSP`) is not on a settings tab. Do not look for a switch for it in the menus.
 

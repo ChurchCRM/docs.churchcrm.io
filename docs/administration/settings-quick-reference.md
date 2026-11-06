@@ -101,6 +101,8 @@ These are on **Admin → System Users → Settings → Quick Settings**, not a S
 | Require two-factor authentication | Require all users to enroll in two-factor authentication | Off |
 | Set how long people have to enroll | Number of days users have to enroll in 2FA after it is mandated | 7 |
 
+See [Two-Factor Authentication](./secret-keys.md) for setup, enrollment deadlines, and account recovery.
+
 Content Security Policy (`bEnforceCSP`) is not on a settings tab. There is no switch for it in the UI.
 
 ## 🏠 Member Portal sign-in
