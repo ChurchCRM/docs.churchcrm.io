@@ -18,7 +18,6 @@ static/img/user-guide/email-history-timeline-filter.png
 static/img/user-guide/email-person-view-family-send-buttons.png
 static/img/user-guide/email-person-view-send-button.png
 static/img/user-guide/email-send-result-not-sent.png
-static/img/user-guide/family-view-mailing-address.png
 static/img/user-guide/member-portal-family-confirm.png
 static/img/user-guide/member-portal-my-teams.png
 static/img/user-guide/member-portal-profile.png
