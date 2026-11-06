@@ -99,7 +99,7 @@ When a second address exists, the family page relabels the address card **Primar
 
 The map, the geocoding badge, **Get Directions** and **Find Neighbors** stay on the primary card. When a family has no second address, the second card is not shown and the first card is simply called **Address**.
 
-![Family view: the Primary Address card and the Mailing Address card](/img/user-guide/family-view-mailing-address.png)
+![Family view: the Primary Address card and the Mailing Address card](https://cdn.churchcrm.io/screenshots/en/desktop/family-view-mailing-address.png)
 
 Each person's page shows their address: their own, or the one they inherit from their family. When the family has a mailing address that differs from the primary address, it is listed beneath it as **Mailing Address**, so it is clear where that person's mail goes.
 
