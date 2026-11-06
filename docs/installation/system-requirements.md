@@ -10,11 +10,7 @@ ChurchCRM needs three things: **PHP 8.4 or 8.5**, **MySQL @@mysql@@ or MariaDB @
 
 Windows, including XAMPP, is not a supported system. You may try it. See [Windows and XAMPP](/installation/windows) for what does not work and why we do not help with it.
 
-If something is missing, setup shows a message, and the same check runs again each time a page loads.
-
-Prerequisites are validated at every page load, so if the hosting environment is changed to an incomplete / unsupported model, a notification will appear.
-
-Validation occurs in the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L184).
+If a PHP requirement is missing, **ChurchCRM System Check** lists the checks as **Passed** or **Failed** before setup or the application can continue. This also applies to an existing site after a hosting change. Follow the [PHP requirements recovery checklist](/administration/troubleshooting#missing-php-requirements) to enable every missing extension, restart PHP and the web server, and reload the original page.
 
 ## Authoritative Requirements Table
 
@@ -48,7 +44,7 @@ For a complete list of tested versions and configurations, see the [GitHub Actio
 
 ### Required PHP Extensions
 
-Setup checks these on every page load via [`getApplicationPrerequisites()`](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L184):
+ChurchCRM checks these PHP requirements before loading configuration or connecting to the database:
 
 - **PHP 8.4+**
 - **PCRE with UTF-8** (`preg_match` with the `/u` flag)
@@ -57,15 +53,18 @@ Setup checks these on every page load via [`getApplicationPrerequisites()`](http
 - **session**
 - **XML**
 - **iconv**
-- **URL rewriting** (Apache `mod_rewrite`, nginx, or LiteSpeed)
 - **GD** (image create, resample, and PNG)
 - **fileinfo**
 - **cURL**
 - **gettext**
 - **ZipArchive** (`php-zip`)
 - **mysqli**
+- **PDO MySQL** (`pdo_mysql`)
+- **bcmath**
+- **filter**
+- **zlib**
 
-Composer also requires these PHP extensions: **bcmath**, **PDO**, **filter**, and **zlib**.
+Setup also checks **URL rewriting** separately; it is not a PHP extension.
 
 exif, soap, sodium, and intl are not required.
 
