@@ -8,6 +8,16 @@ set -euo pipefail
 : "${DOCS_REPO:?DOCS_REPO is required}"
 CRM_REPO="${CRM_REPO:-ChurchCRM/CRM}"
 
+# workflow_dispatch has no pull_request payload. The publish job starts that event
+# on the release branch, so use the open pull request into main for this ref.
+if [ -z "${PR_NUMBER:-}" ] && [ -n "${GITHUB_REF_NAME:-}" ]; then
+  PR_NUMBER=$(gh pr list --repo "$DOCS_REPO" --head "$GITHUB_REF_NAME" --base main --state open \
+    --json number --jq '.[0].number // ""')
+  if [ -n "$PR_NUMBER" ]; then
+    echo "Using open pull request #$PR_NUMBER for ${GITHUB_REF_NAME}."
+  fi
+fi
+
 if [ -z "${PR_NUMBER:-}" ]; then
   echo "No pull request context; nothing to validate."
   exit 0
