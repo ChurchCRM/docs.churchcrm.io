@@ -24,7 +24,7 @@ Other parts can fail too. If a task is not described on a Linux or Docker page, 
 
 ## Missing PHP extensions
 
-If you are trying XAMPP and **ChurchCRM System Check** reports failed PHP requirements, follow the [PHP requirements recovery checklist](/administration/troubleshooting#windows-and-xampp). It explains how to enable the listed extensions in Apache's PHP configuration, restart Apache, and reload the original page. Passing these checks does not make Windows a supported installation.
+If you are trying XAMPP and **ChurchCRM System Check** or setup's **PHP Extensions** list reports failed PHP requirements, follow the [PHP requirements recovery checklist](/administration/troubleshooting#windows-and-xampp). It explains how to enable the listed extensions in Apache's PHP configuration, restart Apache, and reload the original page. Passing these checks does not make Windows a supported installation.
 
 ## What to use instead
 
