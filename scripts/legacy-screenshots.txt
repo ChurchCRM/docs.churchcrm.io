@@ -12,7 +12,6 @@ static/img/user-guide/email-history-modal.png
 static/img/user-guide/email-history-recent-emails-card.png
 static/img/user-guide/email-history-show-all.png
 static/img/user-guide/email-history-timeline-filter.png
-static/img/user-guide/family-view-mailing-address.png
 static/img/user-guide/email-person-view-family-send-buttons.png
 static/img/user-guide/email-person-view-send-button.png
 static/img/user-guide/email-send-result-not-sent.png
