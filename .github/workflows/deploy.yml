@@ -12,12 +12,19 @@ on:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  # A newer push to main replaces a deploy that has not finished. The live site
+  # should match the latest main, and a queued older deploy was hitting the
+  # Pages action timeout while files were still syncing.
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   build:
     name: Build Docusaurus
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -50,6 +57,7 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: build
+    timeout-minutes: 30
     permissions:
       pages: write
       id-token: write
@@ -62,3 +70,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        with:
+          # Default is 10 minutes, which includes time spent queued. The 7.8.3
+          # site was still syncing when that clock ran out.
+          timeout: 1500000

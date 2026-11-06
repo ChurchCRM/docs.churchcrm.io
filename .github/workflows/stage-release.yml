@@ -40,7 +40,9 @@ jobs:
         env:
           VERSION: ${{ github.event.client_payload.version || inputs.version }}
           NEXT_VERSION: ${{ github.event.client_payload.next_version }}
-          MERGE: ${{ github.event.client_payload.merge == false && 'false' || github.event.client_payload.merge || 'true' }}
+          # A missing payload must not count as merge=false. The daily schedule and a
+          # manual run publish. Only an explicit false on crm-released stages without merging.
+          MERGE: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.merge == false && 'false' || 'true' }}
         run: |
           set -euo pipefail
           if [ -z "${VERSION:-}" ]; then

@@ -164,11 +164,16 @@ docs_pr=""
 if git ls-remote --exit-code --heads origin "$docs_branch" > /dev/null 2>&1; then
   docs_pr=$(gh pr list --repo "$DOCS_REPO" --base main --head "$docs_branch" --state open --json number --jq '.[0].number // ""')
   if [ -z "$docs_pr" ]; then
-    url=$(gh pr create --repo "$DOCS_REPO" --base main --head "$docs_branch" --milestone "$pr_milestone" \
-      --title "docs: ChurchCRM ${VERSION}" \
-      --body "Every product docs pull request for ChurchCRM ${VERSION}, merged into \`${docs_branch}\` as it was approved.")
-    docs_pr="${url##*/}"
-    echo "Opened release docs pull request #$docs_pr"
+    ahead=$(git rev-list --count "origin/main..origin/${docs_branch}")
+    if [ "$ahead" = "0" ]; then
+      echo "Branch $docs_branch is already contained in main."
+    else
+      url=$(gh pr create --repo "$DOCS_REPO" --base main --head "$docs_branch" --milestone "$pr_milestone" \
+        --title "docs: ChurchCRM ${VERSION}" \
+        --body "Every product docs pull request for ChurchCRM ${VERSION}, merged into \`${docs_branch}\` as it was approved.")
+      docs_pr="${url##*/}"
+      echo "Opened release docs pull request #$docs_pr"
+    fi
   fi
 fi
 
