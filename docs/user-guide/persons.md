@@ -260,6 +260,14 @@ Count cards link to families, people, Sunday School (when that menu is on), and 
 
 **Quick Actions** has **Verify People** for users with **Edit Records**, and **Email All** for users with the **Email** permission. Once your church has chosen who may sign in to the Member Portal, users with **Edit Records** also see **Email needs attention**.
 
+### Verify People
+
+**Verify People** (users with **Edit Records**) is the printed verification report and the email that asks a family to check what the church has on file.
+
+The email link is **Review Family Information**. It asks the family to open that link and review their family information. On the review page, select **Confirm Family Info** to confirm that everything is correct, or to send corrections to the church office.
+
+That email is not a printed confirmation report. Confirmation letters, the confirmation data sheet, and **Confirm data labels** still use the wording your church set for those reports. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
+
 Administrators find **People Settings** under **People → Admin → People Settings**, including:
 
 - **Self-Registration** — *Allow visitors to create their own family record via the self-registration page*
