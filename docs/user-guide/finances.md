@@ -105,7 +105,9 @@ After each save the **Family** field is focused, so a deposit can be entered fro
 
 ### Check numbers
 
-A check payment requires a check number by default. Turning the requirement off also turns off duplicate check-number detection, so the same check can be entered more than once.
+On a deposit payment the field is **Check #**. It is required by default: the label has a red asterisk, and a check payment will not save until the box is filled in. Turn that off under **Admin → System Settings → Financial Settings**. The control reads **Require a check number when recording check payments on deposit entries.** Note: disabling this also disables duplicate check-number detection — the same physical check may be entered more than once. When it is off, **Check #** has no asterisk and may be left blank.
+
+That note says turning the control off stops duplicate check-number detection. A blank **Check #** is allowed only when the control is off. A number this family has already used is still rejected: "Check number '…' for selected family already exists." With the control on, a check payment that has no number is rejected: "Must specify non-zero check number". A cash payment still cannot have a check number.
 
 ## How do I edit the QuickBooks Deposit Ticket Layout?
 

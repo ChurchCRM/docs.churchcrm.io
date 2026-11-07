@@ -10,6 +10,60 @@
 # NEXT_VERSION: optional upcoming version. Blank, invalid or not newer than VERSION means the next patch.
 set -euo pipefail
 
+# Decide from the pull request rollup plus the newest workflow run for the head SHA.
+# A workflow_dispatch run never appears on statusCheckRollup, so the run is authoritative
+# when one exists. CodeRabbit is ignored. Prints "ok" or one reason per line.
+evaluate_merge_gates() {
+  jq -nr --argjson rollup "$1" --argjson ci "$2" --argjson gate "$3" '
+    def fold: if . == null or . == "" then "" else ascii_downcase end;
+    def run_state($run):
+      ($run.status | fold) as $s
+      | ($run.conclusion | fold) as $c
+      | if $s == "" or $s == "missing" then "missing"
+        elif $s != "completed" then $s
+        elif $c == "success" then "success"
+        else "finished " + (if $c == "" then "unsuccessful" else $c end)
+        end;
+    def rollup_state($name):
+      ([$rollup[]? | select(.name == $name)] | last) as $c
+      | if $c == null then "missing"
+        elif (($c.status // "") | fold) != "completed" then (($c.status // "pending") | fold)
+        elif (($c.conclusion // "") | fold) == "success" then "success"
+        else "finished " + (if (($c.conclusion // "") | fold) == "" then "unsuccessful" else (($c.conclusion // "") | fold) end)
+        end;
+    def prefer($run; $name):
+      run_state($run) as $r
+      | if $r != "missing" then $r else rollup_state($name) end;
+    def blocked:
+      [$rollup[]?
+        | select(.name != "Validate Docusaurus site" and .name != "Released software gate")
+        | select(.name != "CodeRabbit" and .name != "CodeRabbit approval" and .context != "CodeRabbit")
+        | if (.context != null and .name == null) or .__typename == "StatusContext" then
+            if ((.state // "") | fold) == "success" then empty
+            else "\(.context // "check") is \((.state // "pending") | fold)"
+            end
+          elif ((.status // "") | fold) == "completed" and ((.conclusion // "") | fold) == "success" then empty
+          elif ((.status // "") | fold) != "completed" then
+            "\(.name // .context // "check") is \((.status // "pending") | fold)"
+          else
+            "\(.name // .context // "check") finished \((.conclusion // "unsuccessful") | fold)"
+          end];
+    [prefer($ci; "Validate Docusaurus site")] as $ci_state
+    | [prefer($gate; "Released software gate")] as $gate_state
+    | (if $ci_state[0] != "success" then ["Validate Docusaurus site is \($ci_state[0])"] else [] end)
+      + (if $gate_state[0] != "success" then ["Released software gate is \($gate_state[0])"] else [] end)
+      + blocked
+    | if length == 0 then "ok" else .[] end
+  '
+}
+
+if [ "${1:-}" = "--decision-fixture" ]; then
+  result=$(evaluate_merge_gates "$2" "$3" "$4")
+  printf '%s\n' "$result"
+  [ "$result" = "ok" ]
+  exit $?
+fi
+
 : "${GH_TOKEN:?GH_TOKEN is required}"
 : "${VERSION:?VERSION is required}"
 DOCS_REPO="${DOCS_REPO:-ChurchCRM/docs.churchcrm.io}"
@@ -110,11 +164,16 @@ docs_pr=""
 if git ls-remote --exit-code --heads origin "$docs_branch" > /dev/null 2>&1; then
   docs_pr=$(gh pr list --repo "$DOCS_REPO" --base main --head "$docs_branch" --state open --json number --jq '.[0].number // ""')
   if [ -z "$docs_pr" ]; then
-    url=$(gh pr create --repo "$DOCS_REPO" --base main --head "$docs_branch" --milestone "$pr_milestone" \
-      --title "docs: ChurchCRM ${VERSION}" \
-      --body "Every product docs pull request for ChurchCRM ${VERSION}, merged into \`${docs_branch}\` as it was approved.")
-    docs_pr="${url##*/}"
-    echo "Opened release docs pull request #$docs_pr"
+    ahead=$(git rev-list --count "origin/main..origin/${docs_branch}")
+    if [ "$ahead" = "0" ]; then
+      echo "Branch $docs_branch is already contained in main."
+    else
+      url=$(gh pr create --repo "$DOCS_REPO" --base main --head "$docs_branch" --milestone "$pr_milestone" \
+        --title "docs: ChurchCRM ${VERSION}" \
+        --body "Every product docs pull request for ChurchCRM ${VERSION}, merged into \`${docs_branch}\` as it was approved.")
+      docs_pr="${url##*/}"
+      echo "Opened release docs pull request #$docs_pr"
+    fi
   fi
 fi
 
@@ -124,58 +183,91 @@ if [ "$MERGE" != "true" ]; then
   exit 0
 fi
 
+latest_workflow_run() {
+  local workflow="$1" sha="$2"
+  gh run list --repo "$DOCS_REPO" --workflow "$workflow" --commit "$sha" --limit 1 \
+    --json status,conclusion,databaseId,event,headSha \
+    --jq '.[0] // {"status":"missing"}'
+}
+
+# Newest run for this SHA wins. A missing run falls back to the pull request rollup.
+# Return 0 when both required workflows succeeded and no other non-CodeRabbit check is red or pending.
+# Return 1 while a required run is missing, pending, or still failed (a re-run may be in flight).
+# Return 2 when the gate rules reject the pull request. That does not clear by waiting.
 ready_to_merge() {
-  local number="$1"
-  local pending
-  pending=$(gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup --jq \
-    '[.statusCheckRollup[]? | select(.name != "CodeRabbit approval" and .name != "CodeRabbit" and .context != "CodeRabbit")] as $all
-     | ([$all[] | select(.__typename == "CheckRun") | .name]) as $names
-     | if (($names | index("Validate Docusaurus site")) == null
-           or ($names | index("Released software gate")) == null) then 1
-       elif any($all[];
-         if .__typename == "CheckRun" then (.status != "COMPLETED" or .conclusion != "SUCCESS")
-         elif .__typename == "StatusContext" then (.state != "SUCCESS")
-         else true end) then 1
-       else 0 end')
-  if [ "$pending" != "0" ]; then
-    echo "Pull request #$number is not merged. A CI check is missing or not successful."
+  local number="$1" sha rollup ci gate result
+  sha=$(gh pr view "$number" --repo "$DOCS_REPO" --json headRefOid --jq .headRefOid)
+  rollup=$(gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup --jq '.statusCheckRollup // []')
+  ci=$(latest_workflow_run ci.yml "$sha")
+  gate=$(latest_workflow_run release-gate.yml "$sha")
+  result=$(evaluate_merge_gates "$rollup" "$ci" "$gate")
+  if [ "$result" != "ok" ]; then
+    echo "Pull request #$number @ ${sha:0:12} is not ready to merge:"
+    printf '%s\n' "$result" | sed 's/^/  /'
     return 1
+  fi
+  if ! PR_NUMBER="$number" DOCS_REPO="$DOCS_REPO" ./scripts/ci/validate-product-docs-release.sh; then
+    echo "Pull request #$number failed the released-software gate rules."
+    return 2
   fi
 }
 
 merge_pr() {
-  local number="$1"
-  if ! ready_to_merge "$number"; then
+  local number="$1" rc=0
+  ready_to_merge "$number" || rc=$?
+  if [ "$rc" -ne 0 ]; then
     return 1
   fi
   echo "Merging docs pull request #$number"
   gh pr merge "$number" --repo "$DOCS_REPO" --merge
 }
 
-# Pull requests opened with the workflow token start no checks of their own, and
-# the released-software gate may have failed while the version was unpublished.
-# Start what is missing, re-run the gate, then wait for both checks.
+# A failed or missing run is started once, then polled. workflow_dispatch does not
+# attach a check to the pull request, so the wait follows the run for the head SHA.
+ensure_workflow() {
+  local workflow="$1" check="$2" branch="$3" sha="$4"
+  local run id status conclusion
+  run=$(latest_workflow_run "$workflow" "$sha")
+  status=$(jq -r '.status // "missing"' <<<"$run")
+  conclusion=$(jq -r '.conclusion // ""' <<<"$run")
+  id=$(jq -r '.databaseId // ""' <<<"$run")
+  if [ "$status" = "missing" ]; then
+    echo "Starting $workflow for $check on $branch @ ${sha:0:12}; no run exists for that commit."
+    gh workflow run "$workflow" --repo "$DOCS_REPO" --ref "$branch" \
+      || echo "Could not start $workflow for $check."
+  elif [ "$status" = "completed" ] && [ "$conclusion" != "success" ]; then
+    echo "Re-running $check run $id ($conclusion) for ${sha:0:12}."
+    if ! gh run rerun "$id" --repo "$DOCS_REPO"; then
+      echo "Re-run of $id failed. Starting $workflow on $branch instead."
+      gh workflow run "$workflow" --repo "$DOCS_REPO" --ref "$branch" \
+        || echo "Could not start $workflow for $check."
+    fi
+  else
+    echo "$check on ${sha:0:12} is $status${conclusion:+ ($conclusion)}."
+  fi
+}
+
 wait_for_checks() {
-  local number="$1" branch="$2" gate_run
-  gate_run=$(gh run list --repo "$DOCS_REPO" --workflow release-gate.yml --branch "$branch" --limit 1 \
-    --json databaseId,conclusion --jq '.[0] | select(.conclusion == "failure") | .databaseId // empty')
-  if [ -n "$gate_run" ]; then
-    gh run rerun "$gate_run" --repo "$DOCS_REPO" || true
-  fi
-  if ! gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
-    --jq '[.statusCheckRollup[]?.name] | index("Validate Docusaurus site")' | grep -qv null; then
-    gh workflow run ci.yml --repo "$DOCS_REPO" --ref "$branch" || true
-  fi
-  if ! gh pr view "$number" --repo "$DOCS_REPO" --json statusCheckRollup \
-    --jq '[.statusCheckRollup[]?.name] | index("Released software gate")' | grep -qv null; then
-    gh workflow run release-gate.yml --repo "$DOCS_REPO" --ref "$branch" || true
-  fi
-  for _ in $(seq 1 60); do
-    if ready_to_merge "$number" > /dev/null; then
+  local number="$1" branch="$2" sha attempt=0 rc=0
+  sha=$(gh pr view "$number" --repo "$DOCS_REPO" --json headRefOid --jq .headRefOid)
+  echo "Waiting for CI on pull request #$number ($branch @ ${sha:0:12})."
+  ensure_workflow ci.yml "Validate Docusaurus site" "$branch" "$sha"
+  ensure_workflow release-gate.yml "Released software gate" "$branch" "$sha"
+  for attempt in $(seq 1 60); do
+    rc=0
+    ready_to_merge "$number" || rc=$?
+    if [ "$rc" -eq 0 ]; then
       return 0
     fi
+    if [ "$rc" -eq 2 ]; then
+      echo "Not merging pull request #$number. The released-software gate rejected it."
+      return 1
+    fi
+    echo "Still waiting for pull request #$number ($attempt/60)."
     sleep 30
   done
+  echo "Timed out waiting for CI on pull request #$number."
+  return 1
 }
 
 if [ -n "$docs_pr" ]; then

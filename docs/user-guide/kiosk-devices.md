@@ -161,9 +161,10 @@ If the dropdown is empty, create a **future** event with a **group** and refresh
 
 Each person has:
 
-- **Photo** (if set) or **gender icon**.
+- **Photo**, or initials when there is no photo.
 - **Name**; optional birthday cake icon.
 - **Age** (if birth year is set).
+- **Checked in by** — while the person is checked in and an adult was recorded, a small photo (or initials) and that adult’s name sit under the child’s name. Checking the child out removes the line, including when you use **Checkout all students**.
 - **Check-in** (green arrow) when waiting; **Parent Alert** (bell) when checked in.
 
 ### Birthday states
@@ -187,9 +188,7 @@ When the toggle is **on**, tapping to check a child **in** or **out** shows a pr
 - **Check in:** *"Who is bringing in [name]?"*
 - **Check out:** *"Who is picking up [name]?"*
 
-The prompt lists the **adult family members** of that child as selectable buttons — each shows a photo if one is on record, or a person icon otherwise. Tap a name to record who is responsible for that transaction. Tap **Skip** to check in/out without recording a responsible adult. Closing the prompt with the X, pressing Escape, or tapping outside it **cancels** the check-in/out entirely — the child’s attendance status does not change.
-
-The name selected is stored on the attendance record as the authorized adult for that transaction.
+The prompt lists the **adult family members** of that child. Each button shows that person’s photo, or their initials when there is no photo or the photo does not load, and their name under the picture. Tap a person to record who is responsible. That name and photo then appear on the child’s card under **Checked in by** until the child is checked out. Tap **Skip** to check in or out without recording an adult; the card then has no **Checked in by** line. Closing the prompt with the X, pressing Escape, or tapping outside it **cancels** the check-in or check-out — the child’s attendance status does not change.
 
 **Who appears in the picker?**
 

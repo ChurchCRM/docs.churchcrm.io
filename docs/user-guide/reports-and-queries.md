@@ -137,7 +137,7 @@ Every report has the **Classification** filter. The table lists only the additio
 | **Volunteers** | Volunteers for one opportunity | **Volunteer Opportunity** |
 | **Volunteers for Two Opportunities** | People who volunteer for both chosen opportunities | **First** and **Second Volunteer Opportunity** |
 | **Recent Friends** | Friends who signed up in the last N months | **Months** (1–24) |
-| **Missing People** | People who did not attend the chosen events | **Events** (multi-select) |
+| **Missing People** | People who did not attend the chosen events. For one finished event whose groups are linked, the event page has its own [Did Not Attend](./events.md#people-who-did-not-attend) list of those group members | **Events** (multi-select) |
 | **Wedding Anniversaries** | People whose family wedding date falls in the month | **Month** |
 | **Birthdays & Anniversaries** | Birthdays and wedding anniversaries for the month in one list, with a **Type** column | **Month** |
 
