@@ -48,7 +48,7 @@ Use GitHub issues only if you cannot access ChurchCRM directly.
 - You cannot log in (authentication issues)
 - ChurchCRM is not yet installed
 - The server is completely unreachable
-- You are reporting a documentation problem
+- You are reporting a documentation problem — file it in the [documentation repository](https://github.com/ChurchCRM/docs.churchcrm.io/issues/new)
 - You are reporting a development environment issue
 
 ### GitHub Issue Templates
@@ -56,6 +56,7 @@ Use GitHub issues only if you cannot access ChurchCRM directly.
 - [Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) — For software defects
 - [Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) — For new functionality
 - [Question](https://github.com/ChurchCRM/CRM/issues/new?template=question.md) — For support questions
+- [Documentation Problem](https://github.com/ChurchCRM/docs.churchcrm.io/issues/new) — For errors or gaps in these docs; documentation issues live in the docs repository, not the ChurchCRM repository
 
 ---
 
@@ -91,3 +92,4 @@ Use GitHub issues only if you cannot access ChurchCRM directly.
 | Request a feature | [GitHub Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) |
 | Ask a question | [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) |
 | Report a login issue | [GitHub Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) |
+| Report a documentation problem | [Docs repository issue](https://github.com/ChurchCRM/docs.churchcrm.io/issues/new) |
