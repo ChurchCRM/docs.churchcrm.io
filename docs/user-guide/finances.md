@@ -193,9 +193,40 @@ The page groups these links:
 - **Tax & Giving Reports** — **Giving Statements** (see below) and **Zero Givers**
 - **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, and **Pledge Reminders**
 - **Deposit Reports** — **Individual Deposit Report** and **Advanced Deposit Report**
-- **Membership Reports** — **Voting Members**, which opens only for users with the Finance permission
+- **Membership Reports** — **Voting Members** (see [Voting Members](#voting-members)), which opens only for users with the Finance permission
 
 The **Finance** menu also lists **Financial Reports** and **Giving Statements**, so you can reach either one without going through the dashboard.
+
+## Voting Members
+
+**Finance → Reports → Voting Members** prepares a list of candidates for a church vote. The report does not decide who may vote, and it does not save an eligibility record. It applies the criteria you choose, and your church leadership confirms the final list under your own bylaws.
+
+![The Voting Members page, with the classification list and review date](https://cdn.churchcrm.io/screenshots/en/desktop/finance-voting-review.png)
+
+### Prepare the list
+
+1. Select the **Classifications** to include. You must select at least one; the report has no default classification.
+2. Set the **Review Date**. Age, membership time, and giving are all measured against this date.
+3. Add the optional filters your bylaws use:
+   - **Minimum age** on the review date.
+   - **Minimum membership duration** by the review date.
+   - **Family giving**: require a positive family payment in the fiscal years you select, up to the review date.
+4. Run the report. It downloads as a PDF that lists each candidate's name, family, and photo or initials, repeats the criteria you selected, and gives the candidate count.
+
+If nobody matches, or a value is not valid, the form returns with your filters still in place so you can adjust them and run the report again.
+
+### Who is left out
+
+- Deceased or deactivated people are always left out, as are people and families marked pending review, inactive classifications, and inactive families.
+- Someone with an incomplete birth date is left out only when a minimum age is set. Someone with no membership date is left out only when a minimum membership duration is set. The PDF counts the people left out for missing dates.
+- People who do not belong to a family stay on the list when the family giving filter is off, because there is no family payment to check.
+
+### What the report does not decide
+
+- The list uses each person's current classification and status, not a roll from an earlier year.
+- A payment is counted at the family level. It does not prove that an individual person gave.
+- Baptism, communion, electoral-roll applications, residence, attendance, standing, and local exceptions are not checked. Review those separately under your church's rules.
+- Treat the PDF as an internal review document for authorized staff. It is not a list to distribute publicly.
 
 ## Giving Statements
 
