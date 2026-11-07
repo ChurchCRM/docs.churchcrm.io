@@ -11,17 +11,17 @@ Volunteer Management v2 organises volunteering the way a church runs it. A **min
 Members see their own side of it in the **Member Portal** — their schedule, the open dates they can sign up for, and the ministries asking for help. Those pages are described in the Member Portal guide; this section covers the coordinator's and administrator's side.
 
 :::info Arrives in ChurchCRM 7.8.0
-Volunteer Management v2 ships in ChurchCRM 7.8.0. It is **off by default**: an upgraded installation keeps the legacy [Volunteer Opportunities](../volunteers.md) feature until an administrator turns v2 on (see below).
+Volunteer Management v2 ships in ChurchCRM 7.8.0. A new installation starts with v2; an upgraded installation keeps the legacy [Volunteer Opportunities](../volunteers.md) feature until an administrator turns v2 on (see below).
 :::
 
 ## Read this first: turning it on
 
-The Volunteer Management v2 pages and workflows described in this section are not available until an administrator turns them on. Go to **Admin → Ministry Settings** and set **Volunteer experience** to one of:
+On an upgraded installation, the Volunteer Management v2 pages and workflows described in this section are not available until an administrator turns them on (a new installation starts with v2). Go to **Admin → Ministry Settings** and set **Volunteer experience** to one of:
 
 | Choice | What it means |
 |---|---|
-| **V1 — Volunteer Opportunities (legacy)** | The default. Today's feature, unchanged: a list of opportunities under People → Admin, and a Volunteer tab on each person record. |
-| **V2 — Ministries** | The new experience described in this section. The legacy Volunteer Opportunities pages are hidden (nothing is deleted). |
+| **V1 — Volunteer Opportunities (legacy)** | The legacy feature, shown only while your church still uses it: a list of opportunities under People → Admin, and a Volunteer tab on each person record. |
+| **V2 — Ministries** | The new experience described in this section. The legacy Volunteer Opportunities pages are hidden once V1 is no longer in use (nothing is deleted). |
 | **Both (transition)** | Both experiences at once. A person record shows a **Volunteer (Legacy)** tab beside the **Volunteer** tab. Use it while you move from V1 to V2. |
 
 The same page holds the **reminder lead time**, the **scheduling horizon** (how many weeks ahead schedules make their occurrences, 8 by default) and the **default event type for ministry events**. Its **Background jobs and delivery** card shows failed and queued messages, when background jobs last ran, when schedules were last topped up and what that made, and the cron line to install, with a **Run background jobs now** button. See [Volunteer email and reminders](./email-and-reminders.md) and the [Ministry Settings](../../administration/system-settings.md#ministry-settings) reference.
@@ -74,5 +74,5 @@ If you have twenty minutes:
 Everything else — responses, reminders, substitutions, the member's own pages — follows from those six steps.
 
 :::note Legacy feature and migration
-The legacy [Volunteer Opportunities](../volunteers.md) feature keeps working in V1 and Both. Its data is never touched by v2, and there is no automatic migration from opportunities to ministries yet; retiring V1 is tracked separately in ChurchCRM issue #9702.
+The legacy [Volunteer Opportunities](../volunteers.md) feature keeps working in V1 and Both. Its data is never touched by v2. To move opportunities across, use **Admin → People Settings → Convert Volunteer Opportunities**: each opportunity becomes a position on a ministry team, and the people linked to it get qualifications for that position. Retiring V1 is tracked in ChurchCRM issue #9702.
 :::
