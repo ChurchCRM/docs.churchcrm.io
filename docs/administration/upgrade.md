@@ -210,6 +210,15 @@ Spot-check a few family records, confirm giving history, and configure email set
 | In-app wizard says "no new version" | GitHub API rate-limited or server has no outbound HTTPS | Use manual upgrade; check server firewall |
 | Rollback needed | Upgrade failed mid-way | Restore database from backup, restore files from backup — see [Rollback](/administration/rollback) |
 
+### "Database Upgrade Failed" — what the error means
+
+If the database migration fails, ChurchCRM shows a **Database Upgrade Failed** page with the current database version, the current software version, and the error in a red box. The wording of that error tells you which kind of failure it is:
+
+- **A SQL error naming a column or table, such as `Duplicate column name '...'` or `COLUMN already exists`.** The migration tried to add something that is already in your database. Do not edit the upgrade SQL files to work around it. Restore the database and files from the backup you took before upgrading (see [Rollback](/administration/rollback)), then report the failure with the error text and your app log so the migration can be fixed — see [Logging & Diagnostics](/administration/logging-and-diagnostics).
+- **"Upgrade file ... failed or was interrupted."** A previous upgrade attempt stopped part-way through — for example the request timed out, or the **Database Upgrade** page was closed while it was still running. ChurchCRM records each migration script as it runs, and will not re-run a script that stopped part-way through. Check the app log (`logs/yyyy-mm-dd-app.log`) for which script started, restore the database and files from the pre-upgrade backup, and run the upgrade again, keeping the **Database Upgrade** page open until it finishes.
+
+In both cases, do not just reload the page and hope the upgrade completes: a failed or interrupted migration has to be repaired or restored first.
+
 ---
 
 ## Auto-Upgrade on Boot
