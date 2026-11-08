@@ -17,17 +17,14 @@ Creates standardized documentation: manuals, procedures, SOPs, and guides with c
 Identify: purpose, target audience, scope, steps involved, and who is responsible.
 
 **Step 2: Create Document**
-Follow this structure for every doc:
-1. **Purpose** — what this guide accomplishes
-2. **Scope** — who it applies to, what version, what environment
-3. **Prerequisites** — what must be in place before starting
-4. **Procedures** — numbered steps, hierarchical (1 → 1.1 → 1.1.1)
-5. **Exceptions / Cautions** — edge cases, warnings, known issues
-6. **Related Documentation** — links to related pages within the docs site
+Lead with the task and useful outcome, then concise numbered steps using exact UI labels.
+Add prerequisites, version/environment limits, cautions and related links only when
+needed. Use a full SOP structure for procedures that warrant it, not every page.
+Read [DOCS_GUIDE.md](../DOCS_GUIDE.md) for the canonical release and media rules.
 
 **Step 3: Format Standards**
 - Hierarchical numbering for procedures
-- Definitive language — avoid "you may", "you might"; use "you must", "click X"
+- Use direct instructions for required actions; distinguish optional steps and verified limitations.
 - Tables and checklists for multi-step decisions
 - Admonitions (`:::note`, `:::warning`, `:::danger`) for callouts
 - Code blocks with language tags for all commands and file snippets
@@ -39,7 +36,7 @@ Follow this structure for every doc:
 - Admin docs may assume basic Linux/server knowledge
 - Use "ChurchCRM" not "CRM" in prose
 - Link to related pages using relative Docusaurus paths (e.g., `[Backup & Restore](./backup-restore)`)
-- Screenshots go in `static/img/<section>/` and reference as `/img/<section>/filename.png`
+- Product captures are generated in `ChurchCRM/CRM` and published by `ChurchCRM/visuals` at `https://cdn.churchcrm.io`; link the capture URL, never add local screenshots/videos. Follow DOCS_GUIDE for the shrinking legacy allowlist, SVG diagrams and text descriptions of third-party UI.
 
 ### Content that does NOT belong in user-guide or administration pages <!-- learned: 2026-08-20 -->
 
