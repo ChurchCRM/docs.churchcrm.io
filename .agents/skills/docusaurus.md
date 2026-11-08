@@ -35,11 +35,10 @@ Expert in Docusaurus 3.x documentation framework — the modern static site gene
 
 ## ChurchCRM-Specific Overrides
 
-- **Deployment**: GitHub Pages via `.github/workflows/deploy.yml` — push to `main`, live in ~90 seconds. Do not modify the workflow.
 - **Sidebars**: Four fixed sidebars (`gettingStartedSidebar`, `userGuideSidebar`, `adminSidebar`, `apiSidebar`). Always update `sidebars.ts` when adding pages.
-- **Deployment**: Site is live at https://docs.churchcrm.io — push to `main` and the GitHub Action deploys to `gh-pages` branch automatically.
 - **Styling**: Do not edit `src/css/custom.css` unless specifically asked.
-- **Images**: Documentation-specific screenshots go in `static/img/<section>/`. No images in `docs/`. Shared logos, favicons, app icons, manifests, and default social images are owned by `ChurchCRM/ChurchCRM.io` and referenced from `https://churchcrm.io/`; read [`brand-assets`](./brand-assets/SKILL.md) before changing them.
+- **Deployment and release staging**: follow [DOCS_GUIDE.md](../DOCS_GUIDE.md) and the existing workflows; do not duplicate their recipe or promise a fixed deploy time. Workflow maintenance needs a scoped approved change.
+- **Images**: product captures come from CRM through `https://cdn.churchcrm.io`. Never add local screenshots/videos; DOCS_GUIDE owns legacy-media, SVG-diagram and third-party-UI rules. Read [`brand-assets`](./brand-assets/SKILL.md) for published website brand references.
 - **Front matter**: `title` and `sidebar_position` are required on every page.
 - **MDX**: `.md` extension is standard. Use `.mdx` only if you need React components inline.
 - **Versioning**: Not in use. Do not add versioned docs without explicit instruction.
