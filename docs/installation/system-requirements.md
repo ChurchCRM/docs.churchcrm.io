@@ -10,8 +10,11 @@ ChurchCRM needs three things: **PHP 8.4 or 8.5**, **MySQL @@mysql@@ or MariaDB @
 
 Windows, including XAMPP, is not a supported system. You may try it. See [Windows and XAMPP](/installation/windows) for what does not work and why we do not help with it.
 
-If a required PHP extension is missing, ChurchCRM shows a **System Check** checklist of everything that is missing, before setup or sign-in can load. Follow [A PHP requirements checklist appears instead of ChurchCRM](/administration/troubleshooting#a-php-requirements-checklist-appears-instead-of-churchcrm) to enable them. The checklist is also shown if an extension is removed from a site that already runs.
+If something is missing, setup shows a message, and the same check runs again each time a page loads.
 
+Prerequisites are validated at every page load, so if the hosting environment is changed to an incomplete / unsupported model, a notification will appear.
+
+Validation occurs in the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L184).
 
 ## Authoritative Requirements Table
 
@@ -30,7 +33,7 @@ If a required PHP extension is missing, ChurchCRM shows a **System Check** check
 
 **Status:** REQUIRED
 
-ChurchCRM requires **PHP 8.4 or higher** as the absolute minimum. This requirement is enforced by the application.
+ChurchCRM requires **PHP 8.4 or higher** as the absolute minimum. This requirement is enforced in the application and verified at every page load.
 
 **Installation:**
 - **Shared Hosting (cPanel):** Select PHP 8.4 or higher from your hosting control panel
@@ -45,7 +48,7 @@ For a complete list of tested versions and configurations, see the [GitHub Actio
 
 ### Required PHP Extensions
 
-Setup checks these before it starts, and the **System Check** checklist shows them if ChurchCRM cannot start:
+Setup checks these on every page load via [`getApplicationPrerequisites()`](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L184):
 
 - **PHP 8.4+**
 - **PCRE with UTF-8** (`preg_match` with the `/u` flag)
