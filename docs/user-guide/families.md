@@ -173,13 +173,13 @@ A family with donations on record can't be deleted until its donations are moved
 
 1. Open the family.
 2. Open **Actions** and choose **Set Inactive** (or **Set Active** for an inactive family). It is there for users with **Edit Records**.
-3. Confirm.
+3. Confirm in the dialog. Cancelling or pressing Escape changes nothing.
 
 An inactive family shows *"This Family is Inactive"* at the top of its page. Its members can't sign in to the [Member Portal](/user-guide/member-portal) until the family is active again.
 
 ## How do I assign a Property to a Family?
 
-See the [Properties](/user-guide/properties) help topic.
+See the [Properties](/user-guide/properties) help topic. Unassigning a Property from a family asks you to confirm first.
 
 ## How do I add a Note to a Family?
 
