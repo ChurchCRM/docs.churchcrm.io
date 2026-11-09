@@ -43,6 +43,16 @@ Click any group to open the **Group View** page, which has been rebuilt as a mod
 5. A default "Member" role is created — add more roles if needed (Leader, Teacher, etc.).
 6. Click **Save**.
 
+### Contact columns in the member list
+
+The member list on the Group View page shows **Name**, **Role**, **Phone**, **Email**, **Home Phone** and **Address**, so you can build a calling or visit list from one page. Phone numbers are links that call or text on a phone.
+
+**Home Phone** and **Address** come from the person. When the person has none of their own, ChurchCRM shows the family's. A person's own value always wins over the family's. A person with no family and no value of their own shows a dash.
+
+Showing the family's details does not copy them onto the person. Change them in the person or family record.
+
+On a narrow screen the table hides the columns that do not fit. Open the row's expand control at the start of the row to see the hidden fields, such as **Home Phone** and **Address**.
+
 ### Adding People to a Group
 
 1. Search for people or go to **People → Person Listing**.

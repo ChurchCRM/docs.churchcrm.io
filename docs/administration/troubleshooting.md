@@ -67,6 +67,25 @@ See [File System Permissions](/administration/file-system-permissions) for full 
 
 ---
 
+## A PHP requirements checklist appears instead of ChurchCRM
+
+When PHP on your server lacks something ChurchCRM needs, you see a **System Check** checklist with a 503 status instead of the sign-in page or the setup wizard. It lists every requirement at once, so you can fix them in one pass. The page only reads; it changes nothing.
+
+On a site that is already set up, the checklist appears when ChurchCRM fails to start, and when an administrator opens `/setup`. A healthy site never shows it. If every requirement passes and ChurchCRM still fails, the cause is something else: check the logs (Step 1 above).
+
+1. **Read every red item.** Note all of them before changing anything. Typical ones are **gettext**, **GD**, **ZipArchive**, **cURL**, **mbstring**, **mysqli**, **BCMath**, **Filter** and **Zlib**. The checklist is in English when the `gettext` extension is the missing one.
+2. **Enable them in the PHP that the web server uses.** That is not always the PHP your command line uses.
+   - **Ubuntu or Debian:** `sudo apt install php-gettext php-gd php-zip php-curl php-mbstring php-mysql php-bcmath` for the ones that are missing, matching your PHP version.
+   - **Rocky Linux or RHEL:** `sudo dnf install php-gd php-zip php-curl php-mbstring php-mysqlnd php-bcmath` for the ones that are missing.
+   - **cPanel or other shared hosting:** open **Select PHP Version** (or **MultiPHP INI Editor**) and tick the extensions.
+   - **Windows with XAMPP:** open **Config** next to Apache in the XAMPP Control Panel, choose **PHP (php.ini)**, and remove the leading `;` from lines such as `extension=gettext`, `extension=gd` and `extension=zip`. Windows is not a supported system, but the same checklist appears there. See [Windows and XAMPP](/installation/windows).
+3. **Restart the web server** (Apache) so PHP reads the change. On XAMPP, stop and start Apache in the Control Panel.
+4. **Reload the page you first tried to open.** For a new install that is the setup wizard; for a site already in use it is the page you were on. Repeat from step 1 if the checklist still shows a red item.
+
+See [System Requirements](/installation/system-requirements) for the full list.
+
+---
+
 ## Step 2: Still Having Issues?
 
 **Get help from the community on GitHub Discussions:**
