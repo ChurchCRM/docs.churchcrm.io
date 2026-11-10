@@ -208,6 +208,10 @@ Spot-check a few family records, confirm giving history, and configure email set
 | Old UI still showing after upgrade | Browser cached CSS/JS | Hard-refresh: Ctrl+Shift+R / Cmd+Shift+R |
 | Permission errors on file write | Web server user lost write access after file copy | Run `chown -R www-data:www-data churchcrm` (Ubuntu) or `chown -R apache:apache churchcrm` (Rocky Linux) |
 | In-app wizard says "no new version" | GitHub API rate-limited or server has no outbound HTTPS | Use manual upgrade; check server firewall |
+| Database upgrade stops with `Specified key was too long` (error 1071) | Database server older than MySQL @@mysql@@+ or MariaDB @@mariadb@@+ | Move to a supported database; see [Upgrade stops with "Specified key was too long"](#upgrade-stops-with-specified-key-was-too-long) |
+| Upgrade wizard shows an error after it copied the files | The wizard stopped before the database step | Reload the site; the database upgrade runs on the next page load. If it fails, see "Database Upgrade Failed" below |
+| Database upgrade stops with `Specified key was too long` (error 1071) | Database server older than MySQL @@mysql@@+ or MariaDB @@mariadb@@+ | Move to a supported database. See [Upgrade stops with "Specified key was too long"](#upgrade-stops-with-specified-key-was-too-long) |
+| The wizard shows an error after it copied the files | The wizard stopped before the database step | Reload the site. The database upgrade runs on the next page load. If it fails, see "Database Upgrade Failed" below |
 | Rollback needed | Upgrade failed mid-way | Restore database from backup, restore files from backup — see [Rollback](/administration/rollback) |
 
 ### "Database Upgrade Failed" — what the error means
@@ -218,6 +222,31 @@ If the database migration fails, ChurchCRM shows a **Database Upgrade Failed** p
 - **"Upgrade file ... failed or was interrupted."** A previous upgrade attempt stopped part-way through — for example the request timed out, or the **Database Upgrade** page was closed while it was still running. ChurchCRM records each migration script as it runs, and will not re-run a script that stopped part-way through. Check the app log (`logs/yyyy-mm-dd-app.log`) for which script started, restore the database and files from the pre-upgrade backup, and run the upgrade again, keeping the **Database Upgrade** page open until it finishes.
 
 In both cases, do not just reload the page and hope the upgrade completes: a failed or interrupted migration has to be repaired or restored first.
+
+### Upgrade stops with "Specified key was too long"
+
+The database upgrade fails with `SQLSTATE[42000] ... 1071 Specified key was too long; max key length is 767 bytes`, and the site keeps showing **Database Upgrade Failed**. Your database server is older than ChurchCRM supports (MySQL @@mysql@@+ or MariaDB @@mariadb@@+). Servers such as MariaDB 10.0 and MySQL 5.5 or 5.6 limit index size to 767 bytes, and newer releases create indexes that need more.
+
+To recover:
+
+1. Find your database version under **System Info** on the Admin Dashboard, or in phpMyAdmin's home page.
+2. Restore the database backup you took before the upgrade (**Advanced Operations → Restore**, or import the dump in phpMyAdmin). A failed upgrade can leave new tables behind, so do not retry on top of it.
+3. Ask your host to move your database to MySQL @@mysql@@+ or MariaDB @@mariadb@@+. A new database on a newer server also works: import your dump into it, then update the database name, user, and password in `Include/Config.php`.
+4. Run the upgrade again.
+
+If your host cannot offer a supported database, stay on the release you have. Do not edit the upgrade SQL files.
+
+### Upgrade stops with "Specified key was too long"
+
+The database upgrade fails with `SQLSTATE[42000] ... 1071 Specified key was too long; max key length is 767 bytes`. Your database server is older than ChurchCRM supports (MySQL @@mysql@@+ or MariaDB @@mariadb@@+). Old servers such as MariaDB 10.0 or MySQL 5.5 and 5.6 cap index size at 767 bytes, and newer releases create indexes that need more. The site then keeps showing the **Database Upgrade Failed** page.
+
+The check **System Info** on the Admin Dashboard shows your database version. To recover:
+
+1. Restore the database backup you took before the upgrade (**Advanced Operations → Restore**, or import the dump in phpMyAdmin). A failed upgrade can leave some new tables behind, so do not retry on top of it.
+2. Ask your host to move your database to MySQL @@mysql@@+ or MariaDB @@mariadb@@+. On cPanel, check **MySQL Databases** or ask support. A new database on a newer server also works: import your dump into it and update the database name, user, and password in `Include/Config.php`.
+3. Run the upgrade again.
+
+If your host cannot offer a supported database, stay on the release you have. Do not edit the upgrade SQL files.
 
 ---
 
