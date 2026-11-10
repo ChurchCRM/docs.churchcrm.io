@@ -1,1 +1,7 @@
-../../.agents/skills/copywriting
+# Docs copywriting wrapper
+
+Read [DOCS_GUIDE.md](../../.agents/DOCS_GUIDE.md) for audience, released-software
+truth, media ownership and publishing. Use the existing
+[operation manual writer](../../.agents/skills/operation-manual-writer.md) for task
+instructions and [PR review](../../.agents/skills/pr-review/SKILL.md) for validation.
+This tracked wrapper does not depend on an untracked copywriting package.

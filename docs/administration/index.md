@@ -25,7 +25,7 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 
 - [User Management](/administration/users) — Add, edit, and configure staff accounts and permissions
 - [Security](/administration/security) — HTTPS, staff and member sign-in, permissions, and sign-in limits
-- [Two-Factor Authentication](/administration/secret-keys) — Enable and manage 2FA for users
+- [Two-Factor Authentication](./secret-keys.md) — Set up authenticators, recover access, and require 2FA for staff
 
 ## Maintenance & Support
 

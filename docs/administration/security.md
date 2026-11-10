@@ -82,14 +82,8 @@ The person and family photo folders can't be opened directly from the web: a req
 
 ## Two-Factor Authentication (2FA)
 
-Users enroll from the user menu item **Manage Two-Factor Authentication**. An administrator clears 2FA with **Disable 2FA** on **Admin → System Users**.
-
-Supported method: **TOTP** (compatible with Google Authenticator, Authy, 1Password, and any RFC 6238 app). Recovery codes are generated at enrollment — advise users to store them safely.
+Staff can add an authenticator code to their username and password. See [Two-Factor Authentication](./secret-keys.md) for setup, signing in, recovery codes, and replacing a phone.
 
 ### Requiring 2FA
 
-Administrators require 2FA from **Admin → System Users → Settings → Quick Settings** (**Require all users to enroll in two-factor authentication**). The same panel has minimum password length and the failed-login lockout. *Number of days users have to enroll in 2FA after it is mandated* on that panel controls how long a user has to finish enrollment. The default is **7 days**; set the grace period to **0** for immediate enforcement.
-
-During the grace period, users can continue signing in and see a warning reminding them to enroll. The warning becomes more urgent when one day or less remains. Once the grace period expires, the user must complete 2FA enrollment before continuing to use ChurchCRM.
-
-If a user disables their own 2FA while mandatory 2FA is active, a new grace window begins for that user. Disabling the system-wide mandate does not erase the stored grace-start timestamp.
+Administrators set the requirement and enrollment grace period under **Admin → System Users → Settings → Quick Settings**. See [Require 2FA for staff](./secret-keys.md#require-2fa-for-staff) for deadlines and [Help someone who lost access](./secret-keys.md#help-someone-who-lost-access) to reset one person's authenticator.

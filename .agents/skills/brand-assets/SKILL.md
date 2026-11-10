@@ -12,9 +12,10 @@ Keep shared visual identity consistent without duplicating files across reposito
 | Repository | Authority |
 |---|---|
 | `ChurchCRM/marketing` | Approved marketing strategy, brand direction, and asset-governance decisions |
-| `ChurchCRM/ChurchCRM.io` | Canonical published logos, favicons, app icons, web manifest, shared social-preview assets, and reusable product screenshots |
+| `ChurchCRM/ChurchCRM.io` | Canonical published logos, favicons, app icons, web manifest and shared social-preview assets |
 | `ChurchCRM/CRM` | Shipped product behavior and authentic product-generated screenshots |
-| `ChurchCRM/docs.churchcrm.io` | Documentation-specific screenshots and references to canonical shared assets |
+| `ChurchCRM/visuals` | Generated CRM screenshot/video publication at `https://cdn.churchcrm.io` |
+| `ChurchCRM/docs.churchcrm.io` | References to canonical captures and shared brand assets; no new local screenshots/videos |
 
 ## Rules
 
@@ -22,7 +23,7 @@ Keep shared visual identity consistent without duplicating files across reposito
 - Use the approved `CHURCH | CRM` wordmarks. Do not redraw, recolor, or generate a logo.
 - Use the ink/blue wordmark on light surfaces and the paper/blue wordmark on dark surfaces.
 - Reuse current captures from `https://cdn.churchcrm.io/screenshots/<lang>/<device>/<name>.png` (the manifest is `https://cdn.churchcrm.io/manifest.json`) when they show the documented workflow.
-- Keep a documentation-specific screenshot local only when no suitable canonical website image exists and it needs to evolve with the instructions.
+- If a capture is missing, follow DOCS_GUIDE to request it in CRM and stage its CDN link for the release. Never add a local screenshot/video exception. The legacy allowlist only shrinks; diagrams are SVG and third-party UI is described in text.
 - Use authentic CRM screenshots for product UI. Do not generate or mock product screens.
 - Before changing a canonical URL, confirm that the replacement is already deployed on the website and update all consumers in the same coordinated change.
 - Treat missing shared artwork as an asset request for the website/marketing workflow, not permission to invent a replacement in the docs repository.

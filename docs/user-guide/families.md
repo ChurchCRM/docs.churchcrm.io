@@ -49,6 +49,21 @@ Every Person should belong to a family.
 
 The **Filters** card has **City**, **State**, **Status** (**All**, **Active**, or **Inactive**), and **Address Status**. Open a family name to see that family. This list is separate from the family editor. The **Email** column shows the address mail for the family goes to: the head of household's own email, or the spouse's.
 
+## Family verification
+
+**Verify People** (under **Quick Actions** on the People dashboard) emails each family a link to review the details you hold for them. It needs the **Edit Records** permission. Printed confirmation reports are separate: they go out on paper, and the family returns them to the office.
+
+### What the family sees
+
+1. The email has a button, **Review Family Information**.
+2. The button opens a **Family Verification** page with the family's address, phone numbers and each member's details.
+3. If everything is right, the family selects **Confirm Family Info**, leaves **All information is correct** selected, and selects **Submit Verification**.
+4. If something is wrong, the family selects **Confirm Family Info**, then **Please update our records with corrections**. They describe the changes in **Additional Information** and select **Submit Verification**.
+
+The family cannot edit the details on the page. A correction is a request to the church office, so someone on your team makes the change in ChurchCRM.
+
+Families see a **Thank You!** message when the request is received.
+
 ## Email
 
 Families have no email address of their own. Email belongs to people: each person keeps their own, and that is also how members sign in to the [Member Portal](/user-guide/member-sign-in).
@@ -99,7 +114,7 @@ When a second address exists, the family page relabels the address card **Primar
 
 The map, the geocoding badge, **Get Directions** and **Find Neighbors** stay on the primary card. When a family has no second address, the second card is not shown and the first card is simply called **Address**.
 
-![Family view: the Primary Address card and the Mailing Address card](/img/user-guide/family-view-mailing-address.png)
+![Family view: the Primary Address card and the Mailing Address card](https://cdn.churchcrm.io/screenshots/en/desktop/family-view-mailing-address.png)
 
 Each person's page shows their address: their own, or the one they inherit from their family. When the family has a mailing address that differs from the primary address, it is listed beneath it as **Mailing Address**, so it is clear where that person's mail goes.
 

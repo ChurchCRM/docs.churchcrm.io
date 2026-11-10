@@ -107,11 +107,4 @@ There is no Permission Groups screen and no Security & Permissions menu.
 
 ### Two-factor authentication
 
-Enrollment is **Manage Two-Factor Authentication** in the user menu, not a section of Change Settings.
-
-1. Open the user menu and click **Manage Two-Factor Authentication**.
-2. Scan the QR code with an authenticator app (Google Authenticator, Authy, 1Password, etc.).
-3. Enter the generated six-digit code to confirm enrollment.
-4. Save the recovery codes somewhere safe.
-
-Administrators turn the requirement on under **System Users → Settings → Quick Settings**. To clear 2FA for one person, use **Disable 2FA** on **System Users**.
+Open **Manage Two-Factor Authentication** in the user menu to set up or disable your authenticator. See [Two-Factor Authentication](./secret-keys.md) for enrollment, recovery codes, replacing a phone, and administrator controls.
