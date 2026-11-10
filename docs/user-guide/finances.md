@@ -118,6 +118,13 @@ Use **Save and Add Another** for the next pledge. Select the next family and che
 
 Letters use the same full-period commitment and giving as the family summary. In the example above, the letter shows $1,200 pledged, $200 paid and $1,000 remaining. Selecting families with unpaid pledges does not establish that an installment is overdue; review the family's agreed schedule before following up.
 
+## How do I delete a pledge or payment?
+
+1. Open the pledge or payment and click **Delete**.
+2. A dialog asks whether to permanently delete the record. Choose **Yes** to delete it. **No**, **Escape**, or closing the dialog keeps the record.
+
+A short message confirms **Deleted successfully**, or explains why the delete failed. Saving a pledge or payment shows the same kind of message.
+
 ## How do I deposit donations?
 
 When a batch of cash and check donations is received, create a deposit slip in ChurchCRM so the donating families receive credit against their pledges and for tax purposes.
@@ -248,7 +255,7 @@ The PDF is named `GivingStatements-<year>.pdf`, or `GivingStatement-<year>-<fami
 
 ### What the letter says and looks like
 
-- The opening line, thank-you line, closing line and signer come from **Admin → System Settings → Report Settings**.
+- The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**, which also holds the church tax ID (EIN) and **PDF Handling**. These settings are not on System Settings.
 - The top of the page uses your church letterhead image when one is set there (**Church Letterhead**). Without one, it shows your church name and address. See [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead) for the image size.
 - Each letter is addressed to the family's [mailing address](./reports-and-queries.md#which-address-is-printed).
 
@@ -263,6 +270,12 @@ Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Dep
 The year list includes **All Time**. Choose **New Pledge** to enter a commitment, and check **Fiscal Year** in the editor before saving. See [How do I enter a pledge?](#how-do-i-enter-a-pledge) for installment entry, comparisons and reminder letters.
 
 See [Pledge Dashboard](/user-guide/pledge-dashboard) for the tables and status colours.
+
+---
+
+## Where are the giving statement settings?
+
+Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording, the church tax ID and how the PDF is handled. **Report Settings**, for the letterhead and the letter greeting and signature, stays under **Reports** → **Admin**.
 
 ---
 

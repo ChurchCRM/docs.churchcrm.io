@@ -57,6 +57,8 @@ System administrators can view, filter, and manage logs directly from the Church
    - **Delete** individual log files by clicking the trash icon
    - **Delete All Logs** using the red button (if logs are present)
 
+   Each delete asks you to confirm in a dialog on the page. Choose **Yes** to delete. **No**, **Escape**, or closing the dialog leaves the logs untouched. Deleting all logs cannot be undone.
+
 Changes to the log level apply to new log entries.
 
 #### 3.1.2 Accessing Logs Directly From the File System

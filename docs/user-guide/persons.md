@@ -18,7 +18,7 @@ A Person record represents an individual in your congregation. Person records ca
 3. Choose a **Family** if this person belongs to one. Family is optional. You can also create a new family from the same form.
 4. Enter **Classification** (Member, Guest, and so on) if you use classifications.
 5. For a child, choose a **Grade** if you track [school grades](/user-guide/school-grades).
-6. Add address and phone, or leave them blank to inherit them from the family. Enter the person's own **Email**: email is never inherited from the family.
+6. Add address and phone, or leave them blank to inherit them from the family. Enter the person's own **Email**: email is never inherited from the family. Use plain ASCII characters before the `@`; an accented spelling such as `josé@example.org` is refused. See [Which email addresses are accepted](../administration/member-sign-in.md#which-email-addresses-are-accepted).
 7. Enter a birth date only when you have the month and the day. A birth year by itself is rejected with **Invalid Birth Date: Missing birth month and day.** Age is calculated from a complete birth date.
 8. Click **Save** or **Save and Add** to add another person.
 

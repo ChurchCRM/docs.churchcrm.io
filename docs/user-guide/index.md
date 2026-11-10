@@ -24,6 +24,16 @@ New to ChurchCRM? Here's how to get started:
 
 ---
 
+## Make More Room on Wide Pages
+
+On a desktop screen, use the **Collapse sidebar** button (the menu icon in the top header) to hide the left menu. Lists, the map, and reports then use the full width. Click **Expand sidebar** to bring the menu back.
+
+ChurchCRM remembers your choice in this browser, so the sidebar stays as you left it on every page until you change it. If your browser blocks site storage, the button still works but forgets the choice when you reload.
+
+On tablets and phones the button is not shown. Open the menu with the hamburger button as usual.
+
+---
+
 ## People Management
 
 Managing your congregation's member data:
