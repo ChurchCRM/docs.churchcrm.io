@@ -191,6 +191,8 @@ See [Deposits](./deposit-search.md) for full details.
 
 **Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same year.
 
+**Payments by Fund** breaks down the payments for that same year by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the year are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
+
 ## Deposit Reports
 
 **Finance → Deposit Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
@@ -293,3 +295,4 @@ Go to **Finance** → **Admin** → **Statement Settings**. The page sets the st
 - [Envelope Manager](./envelope-manager.md) — family envelope numbers
 - [Fundraiser](./fundraiser.md) — managing fundraisers
 - [Reports & Queries](./reports-and-queries.md) — other financial reports
+
