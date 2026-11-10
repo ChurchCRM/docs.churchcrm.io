@@ -156,7 +156,7 @@ These are on **Admin → Member Portal → Sign-in**. Changes save as you make t
 |---|---|---|
 | Leave deceased people out of the printed directory | People → Admin → People Settings → People | Hide Deceased from Directory |
 | Set the letterhead image | Reports → Admin → Report Settings | Upload, preview, or remove the letterhead image. A path previously saved in `bDirLetterHead` still works as a fallback |
-| Save a PDF or open it in the browser | Reports → Admin → Statement Settings | PDF output type |
+| Save a PDF or open it in the browser | Finance → Admin → Statement Settings | PDF output type |
 
 ## 🛠️ Logs, upgrades, and telemetry
 
@@ -185,7 +185,7 @@ Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 | **Admin → System Settings → Quick Search** | What search includes, and how many results |
 | **Admin → System Settings → Report Settings** | Report wording |
 | **Reports → Admin → Report Settings** | Letterhead image, letter greeting and signature |
-| **Reports → Admin → Statement Settings** | Giving-statement wording, tax ID, PDF handling |
+| **Finance → Admin → Statement Settings** | Giving-statement wording, tax ID, PDF handling |
 | **Groups → Dashboard → Group Settings** | Sunday School module |
 | **Calendar → Calendar Settings** | Events menu, external calendar API, embed origins |
 | **Admin → System Logs → Settings** | Log level |
@@ -199,3 +199,4 @@ Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 - **[Email Setup](./email-setup.md)** — Sending mail
 - **[Localization & Formats](./localization.md)** — Language and formats
 - **[Security](./security.md)** — Account security
+
