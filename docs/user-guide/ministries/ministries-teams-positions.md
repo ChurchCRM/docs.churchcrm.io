@@ -38,7 +38,7 @@ You land on the new ministry's page. Its first team (named after the ministry, f
 | **Calendar** | The events this ministry owns, with **New event** and **New recurring event** — see [Events and the calendar](./events-and-calendar.md). |
 | **Help Wanted** | A switch that puts the ministry on the Member Portal's Open Opportunities page, and the text shown there. |
 
-![The ministry page, Overview tab](/img/user-guide/ministries/ministry-overview.png)
+![The ministry page, Overview tab](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-overview.png)
 
 **Unfilled Positions** adds up how many more people every upcoming occurrence of the ministry still needs to reach each position's **Min** (the *"Needs N more"* numbers), so it is the quickest way to see whether the ministry is short of people. An assignment still waiting for an answer counts as filled, and room above Min is not counted.
 
@@ -46,7 +46,6 @@ You land on the new ministry's page. Its first team (named after the ministry, f
 
 **Edit** in the header opens **Edit ministry**: the **Ministry name**, the **Description** and **Can this ministry provide teachers for Sunday School?**
 
-![Edit ministry](/img/user-guide/ministries/edit-ministry.png)
 
 Turn the switch on for a ministry whose teams teach Sunday School classes: *"Its teams can then be linked to a class, and its schedules and events can use one."* While it is off, the ministry's screens hide everything about classes: the **Sunday School Class** field in the team dialog, the **A class's meetings** choice in the schedule dialog (except on a schedule that already follows a class) and the **Class** field for new events.
 
@@ -72,7 +71,7 @@ The **Team leader** field is where a team leader is granted, by an administrator
 
 A team that teaches a Sunday School class can be linked to it in the team dialog's **Sunday School Class** field. The class's teachers are then managed here, in the ministry, and not on the class page.
 
-![A team linked to a Sunday School class](/img/user-guide/ministries/team-sunday-school-class.png)
+![A team linked to a Sunday School class](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-team-sunday-school-class.png)
 
 - **Everyone qualified for a position of this team becomes a teacher of the class.** Ticking a qualification on the [Volunteers tab](./volunteers-and-qualifications.md) gives the person the class's **Teacher** role; taking away their last qualification in the team removes it. Someone who is already in the class in another role, such as **Student**, cannot be qualified until they are removed from the class.
 - **The class's current teachers are brought in.** When you choose a class that already has teachers, the dialog asks which position to **Qualify its current teachers for**, and says how many there are (*"Teachers to import: 2"*). A team with no position named Teacher can create one here (*"New position: Teacher"*).
@@ -86,7 +85,6 @@ The link and the class's events are separate things. When **Edit team** changes 
 
 A position is a role someone serves in — Espresso, Song Leader, Lead Teacher. The **Positions** tab lists them with **Order**, **Name**, **Description**, **Team**, **Recruiting**, **Self sign-up**, **Status** and an action menu.
 
-![The Positions tab](/img/user-guide/ministries/ministry-positions.png)
 
 **Add position** (and **Edit** in a row's menu) opens a dialog with:
 

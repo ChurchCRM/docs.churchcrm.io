@@ -14,7 +14,7 @@ Every occurrence is tied to a calendar event. A schedule has no dates or times o
 
 On the ministry page, open the **Schedules** tab. Each row shows the schedule's **Name**, **Which events** it follows, its **Team**, how many **Occurrences** it has made, its **Status** (Active or Inactive) and an action menu.
 
-![The Schedules tab](/img/user-guide/ministries/ministry-schedules.png)
+![The Schedules tab](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-schedules.png)
 
 **Which events** says in words where the dates come from, for example *"Sunday School: Class 1-3"*, *"Church Service events titled Worship Hour"* or *"This ministry's events titled Class on Romans"*. When a schedule moves its volunteers' times away from the event's own times, a second line says how, for example *"Volunteers start 45 minutes before the event starts."*
 
@@ -28,7 +28,6 @@ On the ministry page, open the **Schedules** tab. Each row shows the schedule's 
 
 The rest of the dialog, and the **Save** button, appear only once an event or a class is chosen. A schedule must follow at least one event that is still to come.
 
-![Add schedule, with two default volunteers for a position with Max 2](/img/user-guide/ministries/add-schedule.png)
 
 | Where the dates come from | Then choose | The schedule follows |
 |---|---|---|
@@ -84,7 +83,7 @@ Nobody has to come back to make more. Once a day the background jobs **top up** 
 
 **Generate occurrences** in a schedule's action menu makes the occurrences now instead of waiting for the daily top-up, for example right after adding events that an existing schedule follows. It is offered only on an active schedule; reactivate an inactive one first.
 
-![The Generate occurrences dialog](/img/user-guide/ministries/generate-occurrences.png)
+![The Generate occurrences dialog](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-occurrences-generate.png)
 
 The first line says how far the run reaches: *"Occurrences are created for events in the next 8 weeks (through Nov 30)."*, or *"Occurrences are created for events through Nov 1, when this schedule ends."* Below it, each position the schedule needs is listed with how many it needs (for example *"Teacher — 1 to 2 needed"*) and **Fill by default with**. These are the schedule's default volunteers, one list per place up to Max, each with its own **Set as Accepted**, as in [the schedule dialog](#staffing-needs-and-default-volunteers). The lists open on the saved choices, and whatever the dialog shows when you click **Generate** is saved on the schedule. **Leave open** leaves that place without a default. A position nobody is qualified for says *"Nobody is qualified for this position yet, so it stays open."*
 
@@ -108,7 +107,7 @@ The action menu of a row offers:
 
 The **Occurrences** tab of the ministry page lists the dates every schedule produced.
 
-![The Occurrences tab](/img/user-guide/ministries/ministry-occurrences.png)
+![The Occurrences tab](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-occurrences.png)
 
 - **Team**, **Event**, **From** and **To** above the table filter the list as you type or pick. **Event** matches the schedule's name or the event's title. **From** starts on today; leave **To** empty to see the year ahead, or move **From** back to see the past.
 - Columns: a tick box, **When**, **Team**, **Schedule** and **Filled**. **When** is the volunteers' start time, so it includes the schedule's volunteer times. Click the date to open [the staffing view](./staffing-an-occurrence.md); its **Back to Occurrences** button returns here with the same filters.
