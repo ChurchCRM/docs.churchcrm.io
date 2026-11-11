@@ -132,7 +132,7 @@ This works on shared hosting (cPanel or similar). The in-app wizard is not avail
 | Any 6.x release | **8.2 or higher** (checked on every page load) | MySQL @@mysql@@+ or MariaDB @@mariadb@@+ |
 | 7.0.0 and later, including the latest release | **8.4 or higher** (checked on every page load) | MySQL @@mysql@@+ or MariaDB @@mariadb@@+ |
 
-- The app checks the PHP version itself and shows a warning if it is too old. It does not check the database version, so confirm it in cPanel (**MySQL Databases**, or phpMyAdmin's home page) before you start.
+- The app checks the PHP version itself and shows a warning if it is too old. The upgrade wizard also refuses to start on a database older than MySQL 5.7.7 or MariaDB 10.2.2 and changes nothing. It does not warn about a database below MySQL @@mysql@@+ or MariaDB @@mariadb@@+ that is still newer than that, so confirm the version in cPanel (**MySQL Databases**, or phpMyAdmin's home page) before you start.
 - If your database is older than the table says, ask your host to upgrade it before Step 3. Restoring a backup into an older database can fail.
 - In cPanel, open **MultiPHP Manager** and switch the site to the PHP version the next step needs.
 - Also see the [System Requirements](/installation/system-requirements) for the required PHP extensions.
@@ -225,7 +225,7 @@ In both cases, do not just reload the page and hope the upgrade completes: a fai
 
 ### Upgrade stops with "Specified key was too long"
 
-The database upgrade fails with `SQLSTATE[42000] ... 1071 Specified key was too long; max key length is 767 bytes`, and the site keeps showing **Database Upgrade Failed**. Your database server is older than ChurchCRM supports (MySQL @@mysql@@+ or MariaDB @@mariadb@@+). Servers such as MariaDB 10.0 and MySQL 5.5 or 5.6 limit index size to 767 bytes, and newer releases create indexes that need more.
+The database upgrade fails with `SQLSTATE[42000] ... 1071 Specified key was too long; max key length is 767 bytes`, and the site keeps showing **Database Upgrade Failed**. Your database server is too old for ChurchCRM (it supports MySQL @@mysql@@+ or MariaDB @@mariadb@@+). The upgrade wizard stops before it changes anything on a server older than MySQL 5.7.7 or MariaDB 10.2.2, but a manual file upload, or a release before that check, runs the database upgrade anyway. Servers such as MariaDB 10.0 and MySQL 5.5 or 5.6 limit index size to 767 bytes, and newer releases create indexes that need more.
 
 To recover:
 
