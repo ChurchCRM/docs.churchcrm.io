@@ -103,6 +103,8 @@ Once the fundraiser is saved, press **Add Donated Item** from either the edit or
 | **Buyer** | Filled in once a purchase is finalized |
 | **Final Price** | Price paid; applies to all _Sell to everyone_ copies |
 
+To remove a donated item or a paddle number, use its **Delete** button. A dialog asks you to confirm. Choose **Yes** to delete; **No**, **Escape**, or closing the dialog keeps it.
+
 ---
 
 ## Reports — availability by fundraiser type

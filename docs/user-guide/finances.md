@@ -54,7 +54,7 @@ See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 
 | Term | Description |
 |------|-------------|
-| **Pledge** | A promise of support - a planned donation of a specific total amount |
+| **Pledge** | A promise of support for a fund and fiscal year, entered as a total commitment or as recurring installments |
 | **Payment** | An actual donation by cash, check, credit card, or bank draft |
 | **Deposit Slip** | A batch of donations printed on a standard bank deposit form |
 | **Reminder Statement** | Letters reminding families of their pledge and payment progress |
@@ -62,19 +62,68 @@ See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 
 ## How do I enter a pledge?
 
-There are two ways in which pledges can be added:
+A pledge records a family's commitment. Record gifts separately as [payments](#how-do-i-enter-a-payment); saving a pledge does not create a payment or deposit.
 
-### From the Family View
+### Record a recurring commitment
 
-1. When viewing a [family](/user-guide/families), open **Finance** on the toolbar and choose **Add Pledge**.
-2. Enter the pledge.
-3. Click **Save**.
+1. On a [family profile](./families.md), open **Finance → Add Pledge**, or open **Finance → Pledge Dashboard** and choose **New Pledge**.
+2. Check **Family** and **Fiscal Year** in the editor. Choose **Weekly**, **Monthly** or **Quarterly** under **Pledge Schedule**.
+3. Set **Amounts represent** to **Each installment**. Enter the **First installment date** and **Last installment on or before**. Both dates must be within the selected fiscal year. Enter a separate pledge for the next fiscal year.
+4. Under **Fund Allocation**, choose the fund and enter the amount of each installment. Use **Add Fund** to split each installment between funds; the amounts you enter apply to every installment.
+5. Review the preview's installment count and **Total commitment** before saving. Correct any date or amount errors until the preview matches the family's promise.
+6. Click **Save**, then check the saved commitment on **Finance → Pledge Dashboard** with the same fiscal year selected.
+
+Installments repeat from the first date through the last boundary, including dates that fall on that boundary. Monthly dates use the last day of a shorter month when needed. Quarterly installments repeat every three months from the first date. For a church whose fiscal year runs July–June, keep both dates within that July–June period; see [Fiscal years](#fiscal-years).
+
+### Enter a total instead
+
+Choose **Total commitment** under **Amounts represent** when you already know the full amount promised. Enter that full amount in the fund allocation. A Monthly schedule alone does not multiply a total commitment. **Once** and **Other** schedules use total commitments.
+
+:::caution Existing pledges
+Existing pledges keep their recorded totals, including those with a Monthly schedule. Opening and saving one does not multiply its amount. To correct a pledge that was entered as a single installment, explicitly choose **Each installment**, check the installment amount and dates, and review the new full commitment before saving.
+:::
+
+When you reopen a pledge entered as installments, the editor retains its installment amount and period. Check the preview again after changing either.
+
+### Compare the commitment with giving
+
+1. Record received gifts through the normal [payment and deposit workflow](#step-by-step-managing-donations), using the same family, fund and fiscal year as the pledge.
+2. Open **Finance → Pledge Dashboard** and select that fiscal year. The **Family Pledges** table compares each family's full commitment with giving for each fund.
+3. Click a fund name in **Fund Summary** to compare families within that fund on [Fund Contributor Detail](./fund-contributors.md).
+4. For a printable comparison, open **Finance → Deposit Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Create Report**.
+
+For example, with a January–December fiscal year and no other pledges or payments for that family and fund:
+
+| Entry or result | Amount |
+| --- | --- |
+| Monthly installment, January 1 through December 31 | $100 |
+| Preview: 12 installments, full commitment | $1,200 |
+| Giving recorded for the same family, fund and fiscal year | $200 |
+| Remaining in the family summary and reminder letter | $1,000 |
+
+Starting July 1 and ending December 31 instead gives six monthly installments and a $600 commitment.
+
+**Remaining** is the full commitment minus recorded giving for the selected family, fund and fiscal year. It includes future installments. It does not calculate how much is overdue or how much should have been paid by today. The dashboard's status colours also reflect the percentage of the full commitment paid, rather than whether installments are late.
 
 ### Batch Entry
 
-1. Click **Save and Add Another** instead of **Save**. The editor clears for the next pledge. It does not keep a fiscal-year id in the address.
-2. Select the next family and fill in the pledge.
-3. Keep clicking **Save and Add Another** until the batch is done.
+Use **Save and Add Another** for the next pledge. Select the next family and check the fiscal year, amount basis, schedule, dates and fund amounts for each entry; review its preview before saving.
+
+## Pledge reminder letters
+
+1. Open **Finance → Deposit Reports → Pledge Reminders**.
+2. Choose the **Fiscal Year** used for the pledge and giving comparison. Use **Filter by Family** and **Filter by Fund** to match the comparison you reviewed.
+3. For pledge follow-up, keep **Include → Only Payments with Pledges** and **Generate → Only Families with unpaid pledges** selected.
+4. Choose **Create Report** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
+
+Letters use the same full-period commitment and giving as the family summary. In the example above, the letter shows $1,200 pledged, $200 paid and $1,000 remaining. Selecting families with unpaid pledges does not establish that an installment is overdue; review the family's agreed schedule before following up.
+
+## How do I delete a pledge or payment?
+
+1. Open the pledge or payment and click **Delete**.
+2. A dialog asks whether to permanently delete the record. Choose **Yes** to delete it. **No**, **Escape**, or closing the dialog keeps the record.
+
+A short message confirms **Deleted successfully**, or explains why the delete failed. Saving a pledge or payment shows the same kind of message.
 
 ## How do I deposit donations?
 
@@ -142,6 +191,8 @@ See [Deposits](./deposit-search.md) for full details.
 
 **Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same year.
 
+**Payments by Fund** breaks down the payments for that same year by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the year are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
+
 ## Deposit Reports
 
 **Finance → Deposit Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
@@ -206,7 +257,7 @@ The PDF is named `GivingStatements-<year>.pdf`, or `GivingStatement-<year>-<fami
 
 ### What the letter says and looks like
 
-- The opening line, thank-you line, closing line and signer come from **Admin → System Settings → Report Settings**.
+- The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**, which also holds the church tax ID (EIN) and **PDF Handling**. These settings are not on System Settings.
 - The top of the page uses your church letterhead image when one is set there (**Church Letterhead**). Without one, it shows your church name and address. See [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead) for the image size.
 - Each letter is addressed to the family's [mailing address](./reports-and-queries.md#which-address-is-printed).
 
@@ -218,9 +269,15 @@ On a [family profile](./families.md), open **Finance** on the toolbar. Under **G
 
 Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Deposit Reports** opens the same page.
 
-The year list includes **All Time**. **Add New Pledge** goes to `/finance/pledge/new?type=Pledge` and does not put a fiscal-year id on that address.
+The year list includes **All Time**. Choose **New Pledge** to enter a commitment, and check **Fiscal Year** in the editor before saving. See [How do I enter a pledge?](#how-do-i-enter-a-pledge) for installment entry, comparisons and reminder letters.
 
 See [Pledge Dashboard](/user-guide/pledge-dashboard) for the tables and status colours.
+
+---
+
+## Where are the giving statement settings?
+
+Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording, the church tax ID and how the PDF is handled. **Report Settings**, for the letterhead and the letter greeting and signature, stays under **Reports** → **Admin**.
 
 ---
 
@@ -238,3 +295,4 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for the tables and status c
 - [Envelope Manager](./envelope-manager.md) — family envelope numbers
 - [Fundraiser](./fundraiser.md) — managing fundraisers
 - [Reports & Queries](./reports-and-queries.md) — other financial reports
+

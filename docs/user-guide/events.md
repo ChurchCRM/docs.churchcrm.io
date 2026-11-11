@@ -155,7 +155,32 @@ The card lists members of those groups who have no check-in for this event. It u
 
 When everyone from the linked groups checked in, the badge is **0** and the card says **Everyone from linked groups checked in!**
 
-**Email All** is on the card when at least one person on the list has an email address and email sending is turned on for the church. With the **Email** permission, **Email All** opens the ChurchCRM composer for those addresses, and a send button appears next to each address. Without that permission, **Email All** opens your own mail program with those addresses in the blind-copy field and the event title as the subject. People with no email address stay on the list; they are left out of the message. See [Email](./email.md).
+### Email people who missed the event
+
+Your account needs the **Email** permission to use **Email All** or the paper-plane buttons. To send through ChurchCRM, an administrator also needs to enable email sending and configure the mail server under **Communication → Admin → Email Settings**. See [Email Setup](../administration/email-setup.md).
+
+1. Open the finished event and find **Did Not Attend**.
+2. Select **Email All** to open the ChurchCRM composer. The button appears when at least one person on the list has an email address.
+3. Review the recipients, then select **Compose Message**.
+4. Enter a **Subject** and **Message**. Select **Preview** to check the message, then **Back to editing** to return.
+5. Select **Send Email** and review the result, including anyone listed under **Not sent**.
+
+Each recipient receives a separate message, keeping other recipients' addresses private. People without an email address remain on the attendance list but are left out of the composer. Sending also checks for duplicate addresses and people marked not to receive email; see [Who was not emailed](./email.md#who-was-not-emailed). The composer accepts up to 500 recipients per send.
+
+If the church's email setup is not enabled or configured, the composer still opens but offers **Copy Addresses** and **Open in Email Client** instead of sending. The mail-client option is limited to 50 recipients; **Copy Addresses** works for any list size.
+
+To contact one person, select the paper-plane button beside their email address. Selecting the address itself opens your own mail program.
+
+### Contact details and permissions
+
+| Access or setup | What you can see or do |
+|-----------------|------------------------|
+| Access to Events | View the **Did Not Attend** names, email addresses, and phone numbers. The **Email** permission is not required to view these columns. |
+| **Email** permission (including administrators), with church email enabled and configured | Use **Email All** and the paper-plane buttons to compose and send through ChurchCRM. |
+| **Email** permission, with church email disabled or not configured | **Email All** and the paper-plane buttons still open the composer, which offers **Copy Addresses** and **Open in Email Client** instead of sending. |
+| Without the **Email** permission | No **Email All** or paper-plane buttons. Saved email addresses remain ordinary links to your mail program. |
+
+### Other attendance reports
 
 This list is one event, and only the members of the groups linked to it. **Reports → People Reports → Missing People** is the other place to look: it can cover several events at once, and it is not limited to linked groups. You can narrow that report by classification.
 
