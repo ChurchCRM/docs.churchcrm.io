@@ -264,7 +264,9 @@ Count cards link to families, people, Sunday School (when that menu is on), and 
 
 **Verify People** (users with **Edit Records**) is the printed verification report and the email that asks a family to check what the church has on file.
 
-The email link is **Review Family Information**. It asks the family to open that link and review their family information. On the review page, select **Confirm Family Info** to confirm that everything is correct, or to send corrections to the church office.
+The email's **Review Family Information** button signs the family in to the Member Portal and opens the **My Family** page, where they review their details, confirm that everything is correct, or update them. There is no separate verification page and no PDF attached to the email. Only living, active, approved members of an approved, active family receive it.
+
+On the family page, the **Verification** card shows when the family was last verified — by the family in the portal or in person by staff — when it was last invited, and its last portal sign-in. A family that self-registered and is waiting for review can be approved from the banner on its family page; approval sends it the portal invitation.
 
 That email is not a printed confirmation report. Confirmation letters, the confirmation data sheet, and **Confirm data labels** still use the wording your church set for those reports. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
 
