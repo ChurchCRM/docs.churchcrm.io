@@ -295,4 +295,3 @@ Go to **Finance** → **Admin** → **Statement Settings**. The page sets the st
 - [Envelope Manager](./envelope-manager.md) — family envelope numbers
 - [Fundraiser](./fundraiser.md) — managing fundraisers
 - [Reports & Queries](./reports-and-queries.md) — other financial reports
-
