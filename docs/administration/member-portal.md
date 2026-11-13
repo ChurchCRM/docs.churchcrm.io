@@ -39,8 +39,6 @@ How much the portal is being used: *"Member Portal sign-ins and activity, for me
 
 Member sign-in on or off, who may sign in, and how long codes, sessions and devices last. If a value is refused, the field goes back to the saved value and a message says why.
 
-![The Sign-in tab](https://cdn.churchcrm.io/screenshots/en/desktop/admin-member-portal-sign-in.png)
-
 | Setting | What it does | Default |
 |---------|--------------|---------|
 | **Let members sign in with their email** | Members sign in at `/portal/login` with an emailed code or link. It can only be turned on while ChurchCRM can send email; until then the switch is grayed out and the tab says why, with a **Set up email** link. Turning it on or off asks first. | Off |
@@ -105,8 +103,6 @@ The **Theme development** panel below holds **Developer mode** (off): for whoeve
 If the folder of the active theme has been removed from the server, the page opens with a red **The active theme folder is missing** warning: members are seeing an error page until you pick a theme that exists.
 
 ### Calendars
-
-![The Calendars tab](https://cdn.churchcrm.io/screenshots/en/desktop/admin-member-portal-calendars.png)
 
 Which calendars members see. Every calendar on the installation is listed with its **Kind** — *Church calendar*, *Ministry calendar* (a calendar that belongs to a volunteer ministry) or *System calendar* (Birthdays, Anniversaries, Fundraisers, Unpinned Events, and any calendar a plugin adds, such as the Holidays plugin's) — its **Colour**, and a **Show in Member Portal** switch.
 
