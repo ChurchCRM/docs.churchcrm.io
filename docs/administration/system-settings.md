@@ -125,8 +125,6 @@ For the rest of the map, see [Maps & Geocoding](./maps-and-geocoding.md).
 
 The Volunteer Management settings live on their own page, **Admin → Ministry Settings**, not under System Settings.
 
-![Admin → Ministry Settings](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-settings.png)
-
 | Setting | Description |
 |---------|-------------|
 | Volunteer experience | **V1 — Volunteer Opportunities (legacy)** (the default, today's feature), **V2 — Ministries** (the new [Volunteer Management (v2)](/user-guide/ministries)), or **Both (transition)** for running the two side by side. System-wide. Switching shows or hides pages and menu entries and never deletes data. |
