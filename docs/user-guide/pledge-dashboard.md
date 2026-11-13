@@ -75,7 +75,7 @@ The **Family Pledges** table lists every pledge for the selected fiscal year, on
 |--------|-------------|
 | **Family Name** | Linked to the family record |
 | **Fund Name** | Donation fund associated with the pledge |
-| **Pledge Amount** | The full commitment for this family, fund and fiscal year, including all installments of a recurring pledge |
+| **Pledge Amount** | The amount the family committed to give |
 | **Payments** | Total payments made against this pledge |
 | **Remaining** | Pledge amount minus payments, colour-coded by completion percentage |
 
@@ -87,10 +87,6 @@ Status is the percent of the pledge that has been paid:
 - **critical** — under 50%
 
 A row with payments and no pledge amount is treated as complete.
-
-For a recurring pledge, **Remaining** compares the full commitment with payments recorded for the same family, fund and fiscal year. A $100 monthly pledge from January through December totals $1,200; after $200 giving, $1,000 remains. This includes future installments. Neither the remaining balance nor the status colours calculate overdue installments or whether the family is keeping up with its schedule.
-
-Use the same fiscal year, family and fund when checking the **Pledge Family Summary** report or preparing **Pledge Reminders**. See the [entry and follow-up workflow](./finances.md#how-do-i-enter-a-pledge).
 
 ### Sorting and searching
 
@@ -104,7 +100,7 @@ The Family Pledges table also exports **CSV** and **Print**.
 
 ## Adding a new pledge
 
-Click **New Pledge** (top-right). Check **Fiscal Year** in the editor even if a year is selected on the dashboard. Choose whether amounts represent each installment or the total commitment, and review the full commitment before saving. See [Finances](./finances.md#how-do-i-enter-a-pledge) for the steps and guidance on existing pledges.
+Click **Add New Pledge** (top-right). It opens `/finance/pledge/new?type=Pledge` with no fiscal-year id, even if a year is selected on the dashboard. See [Finances](/user-guide/finances#how-do-i-enter-a-pledge) for the editor.
 
 ---
 
