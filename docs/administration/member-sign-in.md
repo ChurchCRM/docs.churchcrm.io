@@ -52,7 +52,7 @@ A person may start a portal session only when all of these hold. They are checke
 
 The **Who may sign in** card's footer counts the people the saved settings let in. The member rule doesn't apply to staff signing in at `/admin/`.
 
-**The email rule.** The address typed must be the person's own **Email** (never the work email), match after trimming and ignoring case, and be confirmed. When two people who would otherwise qualify share an address, neither can sign in with it until you give each their own; both appear under **Email needs attention**.
+**The email rule.** The address typed must be the person's own **Email** (never the work email), be a valid address (see [Which email addresses are accepted](#which-email-addresses-are-accepted)), match after trimming spaces and ignoring upper and lower case, and be confirmed. When two people who would otherwise qualify share an address, neither can sign in with it until you give each their own; both appear under **Email needs attention**.
 
 To check one person, open **Look up anyone** on the **Members** tab: each row says whether they can sign in and, if not, why. On a family's page, staff with Edit Records see *Can sign in to the Member Portal* or *Cannot sign in* with the reason under each member, while member sign-in is on.
 
@@ -101,6 +101,33 @@ Whoever controls a person's email can sign in as that person, so ChurchCRM treat
 **Fix shared emails**, on the **Email needs attention** list, shows a preview first. When everyone sharing an address is in one family, the head of household keeps it (else the spouse, the oldest first) and the others lose it. Addresses shared across families, or with no head of household or spouse among the people sharing them, are listed under **Fix by hand**. Someone who loses an address and has signed in is signed out everywhere, and the address gets a notice.
 
 Staff with Edit Records also reach the list from **People → Dashboard**: **Email needs attention** is under **Quick Actions** once at least one classification may sign in.
+
+### Which email addresses are accepted
+
+ChurchCRM accepts an email address only when everything before the `@` uses plain ASCII characters: letters a to z, digits and the usual symbols. `jose@example.org` is saved. `josé@example.org` is refused with *Enter a valid email address using only ASCII characters before @.* The same rule applies to a person's **Email** and **Work Email**, whether it is typed by staff, imported, sent through the API, entered on the public registration form or at a kiosk, or changed by the member in the portal. Internationalized domain names (`jose@bücher.org`) stay valid when the server's PHP has the `intl` extension.
+
+At sign-in:
+
+- Spaces around the address and upper or lower case are ignored: `JOSE@example.org` and `jose@example.org` are the same address.
+- Accents are not ignored. `jose@example.org` never signs in as a stored `josé@example.org`.
+- An address already on record that is not valid under these rules cannot start an email sign-in.
+
+ChurchCRM does not change addresses already on file. Staff can still save other corrections on a person whose old address is invalid; only an address you edit has to pass the check.
+
+### Fix an address that is not valid
+
+On the **Members** tab, open **Email needs attention** and choose **Invalid email** in the problem filter. Each person listed has an address ChurchCRM no longer accepts, shown as *Their email address is not valid*. Open the person, correct **Email** (and **Work Email** if it is the same problem) to an ASCII spelling the person actually uses, and save. If the person has never signed in, they leave the list, and **May sign in now** and **Look up anyone** agree with it. If they have signed in, the corrected address is unconfirmed: they stay on **Email needs attention** as *Their email is not confirmed yet* and can't sign in until it is confirmed in one of the ways listed under [The sign-in email](#the-sign-in-email).
+
+### Email cleanup report
+
+Administrators can also open a read-only report of every stored address that needs a look. It lists:
+
+- **Invalid addresses:** each personal or work email that fails the rules above, with the person's ID and which field it is in.
+- **Collisions:** groups of personal emails that the database treats as equal because it ignores case and accents, with each person's ID.
+
+A collision is for cleanup only. `jose@example.org` and `josé@example.org` are different mailboxes and are not a shared sign-in identity, so neither person is blocked as sharing an address. Two spellings that differ only by case are the same address, and appear under **Shared email** as before.
+
+The report is the admin-only `GET /admin/api/member-portal/email-audit` call, described in the [Private API reference](/api/private). Open it in a browser while signed in as an administrator, or call it with an API key. Nothing in it is changed or deleted by viewing it.
 
 Every change and confirmation is in the audit, with the old and new address, who made it, and how.
 
