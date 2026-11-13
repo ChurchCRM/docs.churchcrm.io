@@ -191,7 +191,7 @@ The From name is the church name, and the From address is the email on Church In
 | **Use donation envelopes** | Track gifts with numbered envelopes | Off |
 | **Checks per deposit slip** | Check lines on one deposit form | 14 |
 | **Scanned check images** | Attach a scan to a deposit | Off |
-| **Require a check number** (`bRequireCheckNumber`) | On a deposit payment, **Check #** is required while this is on. When it is off, a blank or `0` check number is allowed and is not checked for duplicates; a real number this family already used is still rejected, and a cash payment still cannot have a check number. The same control is also on the **Finance Dashboard** as **Require check number on check payments**. | On |
+| **Require a check number** (`bRequireCheckNumber`) | On a deposit payment, **Check #** is required while this is on. When it is off, a blank or `0` check number is allowed and is not checked for duplicates; a real number this family already used is still rejected, and a cash payment still cannot have a check number. Set it on the **Finance Dashboard** under **Financial Settings**, as **Require check number on check payments**. | On |
 | **Non-deductible payments** | Record gifts that are not tax-deductible | Off |
 | **Currency symbol, position, separators** | Same values as Localization & Formats | $ before the amount |
 

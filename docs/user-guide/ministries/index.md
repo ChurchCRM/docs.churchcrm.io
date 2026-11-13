@@ -16,7 +16,7 @@ Volunteer Management v2 ships in ChurchCRM 7.8.0. A new installation starts with
 
 ## Read this first: turning it on
 
-On an upgraded installation, the Volunteer Management v2 pages and workflows described in this section are not available until an administrator turns them on (a new installation starts with v2). Go to **Admin → Ministry Settings** and set **Volunteer experience** to one of:
+On an upgraded installation, the Volunteer Management v2 pages and workflows described in this section are not available until an administrator turns them on (a new installation starts with v2). Go to **Admin → Feature Toggles** and set **Volunteer experience** to one of:
 
 | Choice | What it means |
 |---|---|
@@ -74,5 +74,5 @@ If you have twenty minutes:
 Everything else — responses, reminders, substitutions, the member's own pages — follows from those six steps.
 
 :::note Legacy feature and migration
-The legacy [Volunteer Opportunities](../volunteers.md) feature keeps working in V1 and Both. Its data is never touched by v2. To move opportunities across, use **Admin → People Settings → Convert Volunteer Opportunities**: each opportunity becomes a position on a ministry team, and the people linked to it get qualifications for that position. Retiring V1 is tracked in ChurchCRM issue #9702.
+The legacy [Volunteer Opportunities](../volunteers.md) feature keeps working in V1 and Both. Its data is never touched by v2. To move opportunities across, open **People → Admin → Volunteer Opportunities** (or the **Admin Dashboard**) and select **Review the conversion** in the retirement notice, then **Convert Volunteer Opportunities**: each opportunity becomes a position on a ministry team, and the people linked to it get qualifications for that position. Retiring V1 is tracked in ChurchCRM issue #9702.
 :::

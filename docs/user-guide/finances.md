@@ -258,7 +258,7 @@ The PDF is named `GivingStatements-<year>.pdf`, or `GivingStatement-<year>-<fami
 ### What the letter says and looks like
 
 - The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**, which also holds the church tax ID (EIN) and **PDF Handling**. These settings are not on System Settings.
-- The top of the page uses your church letterhead image when one is set there (**Church Letterhead**). Without one, it shows your church name and address. See [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead) for the image size.
+- The top of the page uses your church letterhead image when one is uploaded under **Letterhead** on **Reports → Admin → Report Settings**. Without one, it shows your church name and address. See [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead) for the image size.
 - Each letter is addressed to the family's [mailing address](./reports-and-queries.md#which-address-is-printed).
 
 ### One family
