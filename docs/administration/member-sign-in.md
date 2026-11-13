@@ -116,7 +116,7 @@ ChurchCRM does not change addresses already on file. Staff can still save other 
 
 ### Fix an address that is not valid
 
-On the **Members** tab, open **Email needs attention** and choose **Invalid email** in the problem filter. Each person listed has an address ChurchCRM no longer accepts, shown as *Their email address is not valid*. Open the person, correct **Email** (and **Work Email** if it is the same problem) to an ASCII spelling the person actually uses, and save. They leave the list, and **May sign in now** and **Look up anyone** agree with it.
+On the **Members** tab, open **Email needs attention** and choose **Invalid email** in the problem filter. Each person listed has an address ChurchCRM no longer accepts, shown as *Their email address is not valid*. Open the person, correct **Email** (and **Work Email** if it is the same problem) to an ASCII spelling the person actually uses, and save. If the person has never signed in, they leave the list, and **May sign in now** and **Look up anyone** agree with it. If they have signed in, the corrected address is unconfirmed: they stay on **Email needs attention** as *Their email is not confirmed yet* and can't sign in until it is confirmed in one of the ways listed under [The sign-in email](#the-sign-in-email).
 
 ### Email cleanup report
 
