@@ -73,14 +73,9 @@ The **What members can use** panel at the top of the tab holds **Let members edi
 
 Give a permission when the rules don't fit a person, for example a grown son who helps his parents keep in touch with the family, or a coordinator who runs a team without being its named leader. Only administrators can.
 
-1. Open the person's page. In the **Portal sign-in** card, press **View Permissions**, then **Give a permission**.
-2. Choose the **Permission**. Its description shows under it.
-3. If it is held on something, choose the **Family** or **Team** by name.
-4. Set the **Last day**. The permission works through the whole of that day, in the church's time zone, and can be given again after it ends.
-5. Type a **Reason**. Only administrators see it.
-6. Press **Give permission**.
+On the person's **Portal sign-in** card, open **View Permissions → Give a permission**. Choose the permission and, when it applies to a particular family or team, select that family or team by name.
 
-![The Give a portal permission dialog: See family contact details on the Scott family, with a reason](https://cdn.churchcrm.io/screenshots/en/desktop/person-portal-give-permission.png)
+Set the **Last day** and record a **Reason**, then choose **Give permission**. The permission works through the whole of that day in the church's time zone and can be given again after it ends. Only administrators see the reason.
 
 The card lists the person's permissions grouped by source, for example *Given to Everyone*, *Adult of the Carter family*, or each given permission with its reason. A given permission has a button to remove it. A given permission whose last day has passed, whose plugin is not installed, or whose family or team no longer exists moves to **Given, but not in effect**.
 

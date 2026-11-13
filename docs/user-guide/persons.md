@@ -86,8 +86,6 @@ The Person View timeline shows notes, attendance, emails, and system activity, n
 
 Long notes show a short preview. **Read more** opens the full note.
 
-![Timeline filter chips: Notes, Events, Emails, System](/img/user-guide/email-history-timeline-filter.png)
-
 The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside notes and attendance. See [Email History](#email-history) below.
 
 ---
@@ -108,8 +106,6 @@ The **Recent Emails** card on the Person View lists the five latest emails to th
 | **Status** | **Sent**, **Failed** (the mail server refused it; hover over the badge for the error), or **Skipped** (email sending was turned off, or no mail server was set up, at the time) |
 | **Sent by** | The user who wrote it, or **Automatic** for emails ChurchCRM sent on its own |
 
-![Recent Emails card on the Person View](/img/user-guide/email-history-recent-emails-card.png)
-
 The badge next to the title is the total number of emails on record for this person. If nothing has been sent yet, the card says so.
 
 ### Opening an email
@@ -125,8 +121,6 @@ ChurchCRM keeps the full content of messages written in the composer and of volu
 ### Show all
 
 Click **Show all** at the bottom of the card to open the person's complete email history, newest first, 25 per page. **Back to Person** returns to the Person View.
-
-![The full Email History page for a person](/img/user-guide/email-history-show-all.png)
 
 :::note
 Email history is kept indefinitely; nothing is deleted automatically. Families have no card of their own: history is recorded per person, so open the family member you are interested in. An email sent to a whole family (**Email \<name\> Family** on the Family View) goes to the head of household's own address, or the spouse's, and is recorded against the family, not a person, so it appears on nobody's card. Administrators find it, with everyone else's email, in the **Email Log**; see [Email history](/user-guide/email#email-history).
