@@ -57,7 +57,7 @@ The **Contributors** table lists one row per family. It supports sorting, search
 |--------|-------------|
 | **Family Name** | Linked to the family record; click to open the family page |
 | **Envelope** | Giving-envelope number (visible only when donation envelopes are enabled in system settings) |
-| **Pledged Amount** | The amount the family committed to give; shown as a dash (—) for payment-only rows |
+| **Pledged Amount** | The full commitment for this fund and fiscal year, including all recurring installments; shown as a dash (—) for payment-only rows |
 | **Payments** | Total payments received from this family for this fund and fiscal year |
 | **Remaining** | Pledged Amount minus Payments; shown as a dash (—) for payment-only rows; colour-coded by payment status (see below) |
 | **% Paid** | Payments as a percentage of the pledged amount; colour-coded by payment status |
@@ -75,6 +75,10 @@ The **Remaining** and **% Paid** columns are colour-coded to highlight each fami
 | 🔵 **Blue** | 75–99 % paid |
 | 🟡 **Yellow** | 50–74 % paid |
 | 🔴 **Red** | Critical (less than 50 % paid) |
+
+The percentages compare giving with the full commitment. **Remaining** includes future installments; it does not calculate overdue installments, and the colours do not say whether the family is keeping up with its schedule.
+
+For example, $100 monthly from January through December is a $1,200 commitment. With $200 recorded for the same family, fund and fiscal year, $1,000 remains. Use those same filters in the family summary and reminder letters; see [Compare the commitment with giving](./finances.md#compare-the-commitment-with-giving).
 
 ### Sorting and searching
 

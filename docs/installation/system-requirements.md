@@ -10,9 +10,7 @@ ChurchCRM needs three things: **PHP 8.4 or 8.5**, **MySQL @@mysql@@ or MariaDB @
 
 Windows, including XAMPP, is not a supported system. You may try it. See [Windows and XAMPP](/installation/windows) for what does not work and why we do not help with it.
 
-If something is missing on a new installation, setup's **System Check** step lists it. On a site that is already running, the **Admin Dashboard** shows an **Unmet Prerequisites** warning, and its link opens the **Debug** page, which lists each prerequisite.
-
-Validation occurs in the [`getApplicationPrerequisites()` function](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L184).
+If a PHP requirement is missing on a site that already has configuration, **ChurchCRM System Check** lists each requirement as **Passed** or **Failed** and stops the page you opened. A new installation still uses setup's **System Check** step and its **PHP Extensions** list. Follow the [PHP requirements recovery checklist](/administration/troubleshooting#missing-php-requirements): enable every missing extension in the web server's PHP configuration, restart the web server, and reload the original page.
 
 ## Authoritative Requirements Table
 
@@ -31,7 +29,7 @@ Validation occurs in the [`getApplicationPrerequisites()` function](https://gith
 
 **Status:** REQUIRED
 
-ChurchCRM requires **PHP 8.4 or higher** as the absolute minimum. Setup checks it, and the **Admin Dashboard** warns when a running site no longer meets it.
+ChurchCRM requires **PHP 8.4 or higher** as the absolute minimum. Setup checks it, and a configured site checks it again when startup fails or you open setup. A site that is already running does not repeat this check on every page.
 
 **Installation:**
 - **Shared Hosting (cPanel):** Select PHP 8.4 or higher from your hosting control panel
@@ -46,24 +44,27 @@ For a complete list of tested versions and configurations, see the [GitHub Actio
 
 ### Required PHP Extensions
 
-Setup checks these, and the **Admin Dashboard** and **Debug** page report them on a running site, via [`getApplicationPrerequisites()`](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Service/AppIntegrityService.php#L184):
+**ChurchCRM System Check** uses these **Requirement** names. Setup's **PHP Extensions** list uses the same PHP checks:
 
 - **PHP 8.4+**
-- **PCRE with UTF-8** (`preg_match` with the `/u` flag)
-- **mbstring**
-- **Phar**
-- **session**
-- **XML**
-- **iconv**
-- **URL rewriting** (Apache `mod_rewrite`, nginx, or LiteSpeed)
-- **GD** (image create, resample, and PNG)
-- **fileinfo**
+- **PCRE and UTF-8 Support**
+- **Multibyte Encoding**
+- **PHP Phar**
+- **PHP Session**
+- **PHP XML**
+- **PHP iconv**
+- **PHP PDO MySQL**
+- **PHP BCMath**
+- **PHP Filter**
+- **PHP Zlib**
+- **GD Library for image manipulation**
+- **FileInfo Extension for image manipulation**
 - **cURL**
-- **gettext**
-- **ZipArchive** (`php-zip`)
-- **mysqli**
+- **locale gettext**
+- **PHP ZipArchive**
+- **Mysqli Functions**
 
-Composer also requires these PHP extensions: **bcmath**, **PDO**, **filter**, and **zlib**.
+**URL Rewriting (mod_rewrite / nginx / LiteSpeed)** is not on **ChurchCRM System Check**. Setup still checks it with the other prerequisites.
 
 exif, soap, sodium, and intl are not required.
 
