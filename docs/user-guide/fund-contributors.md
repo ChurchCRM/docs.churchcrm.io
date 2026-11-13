@@ -72,8 +72,8 @@ The **Remaining** and **% Paid** columns are colour-coded to highlight each fami
 | Colour | Meaning |
 |--------|---------|
 | 🟢 **Green** | Pledge fully met (100 % paid) or payment-only record |
-| 🔵 **Blue** | On track (75–99 % paid) |
-| 🟡 **Yellow** | Behind (50–74 % paid) |
+| 🔵 **Blue** | 75–99 % paid |
+| 🟡 **Yellow** | 50–74 % paid |
 | 🔴 **Red** | Critical (less than 50 % paid) |
 
 The percentages compare giving with the full commitment. **Remaining** includes future installments; it does not calculate overdue installments, and the colours do not say whether the family is keeping up with its schedule.

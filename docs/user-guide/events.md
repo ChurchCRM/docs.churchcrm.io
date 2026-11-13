@@ -167,7 +167,7 @@ Your account needs the **Email** permission to use **Email All** or the paper-pl
 
 Each recipient receives a separate message, keeping other recipients' addresses private. People without an email address remain on the attendance list but are left out of the composer. Sending also checks for duplicate addresses and people marked not to receive email; see [Who was not emailed](./email.md#who-was-not-emailed). The composer accepts up to 500 recipients per send.
 
-If the church's email setup is not enabled or configured, the composer still opens but offers **Copy Addresses** and **Open in Email Client** instead of sending. The mail-client option is limited to 50 recipients; **Copy Addresses** works for any list size.
+If the church's email setup is not enabled or configured, the composer still opens but offers **Copy Addresses** and **Open in Email Client** instead of sending. The mail-client option is limited to 50 recipients; **Copy Addresses** works for any list size. These fallbacks do not keep addresses private on their own: turn on **BCC Mode** before you choose **Open in Email Client**, and paste copied addresses into your mail program's BCC field. See [Fallbacks](./email.md#fallbacks-copy-addresses-and-open-in-email-client).
 
 To contact one person, select the paper-plane button beside their email address. Selecting the address itself opens your own mail program.
 
