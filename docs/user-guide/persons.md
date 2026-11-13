@@ -264,7 +264,9 @@ Count cards link to families, people, Sunday School (when that menu is on), and 
 
 **Verify People** (users with **Edit Records**) is the printed verification report and the email that asks a family to check what the church has on file.
 
-The email's **Review Family Information** button signs the family in to the Member Portal and opens the **My Family** page, where they review their details, confirm that everything is correct, or update them. There is no separate verification page and no PDF attached to the email. Only living, active, approved members of an approved, active family receive it.
+The email's **Review Family Information** button opens the **My Family** page in the Member Portal, where they review their details, confirm that everything is correct, or update them. The button does not sign anyone in: someone who is not signed in must sign in first. There is no separate verification page and no PDF attached to the email. Only living, active, approved members of an approved, active family receive it, at their personal and work email addresses.
+
+Receiving the email does not mean the person can use the link. Member sign-in must be on, the person must be allowed to sign in, and they sign in with their own personal **Email**, not a work address. See [Member sign-in](../administration/member-sign-in.md).
 
 On the family page, the **Verification** card shows when the family was last verified — by the family in the portal or in person by staff — when it was last invited, and its last portal sign-in. A family that self-registered and is waiting for review can be approved from the banner on its family page; approval sends it the portal invitation.
 

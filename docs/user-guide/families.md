@@ -51,18 +51,18 @@ The **Filters** card has **City**, **State**, **Status** (**All**, **Active**, o
 
 ## Family verification
 
-**Verify People** (under **Quick Actions** on the People dashboard) emails each family a link to review the details you hold for them. It needs the **Edit Records** permission. Printed confirmation reports are separate: they go out on paper, and the family returns them to the office.
+**Verify People** (under **Quick Actions** on the People dashboard) emails a link to review the details you hold. Only living, active, approved members of active, approved families receive it; see [Verify People](./persons.md#verify-people) for who gets it. It needs the **Edit Records** permission. Printed confirmation reports are separate: they go out on paper, and the family returns them to the office.
 
 ### What the family sees
 
-1. The email has a button, **Review Family Information**.
-2. The button opens a **Family Verification** page with the family's address, phone numbers and each member's details.
-3. If everything is right, the family selects **Confirm Family Info**, leaves **All information is correct** selected, and selects **Submit Verification**.
-4. If something is wrong, the family selects **Confirm Family Info**, then **Please update our records with corrections**. They describe the changes in **Additional Information** and select **Submit Verification**.
+1. The email has a button, **Review Family Information**. It opens **My Family** in the [Member Portal](./member-portal.md#my-family). Someone who is not signed in signs in first, with their own personal email.
+2. **My Family** shows **Where we reach you** (the family's address and home phone) and **Family Members**.
+3. If everything is right, an adult of the household selects **Confirm your family details**, chooses **Everything is correct**, and selects **Send your answer**.
+4. If something is wrong, an adult can select **Update your details** to change the address, home phone or wedding date and save the change. For anything else, they select **Confirm your family details**, choose **Something needs changing**, describe it under **What needs changing?**, and select **Send your answer**.
 
-The family cannot edit the details on the page. A correction is a request to the church office, so someone on your team makes the change in ChurchCRM.
+An answer sent with **Send your answer** goes to the church office and does not change the record, so someone on your team makes that change in ChurchCRM. Members who are not adults of the household see the details but cannot change or confirm them.
 
-Families see a **Thank You!** message when the request is received.
+After **Send your answer**, the family sees *"Thank you. The church office has your answer."*
 
 ## Email
 
