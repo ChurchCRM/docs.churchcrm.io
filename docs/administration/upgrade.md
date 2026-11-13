@@ -210,20 +210,43 @@ Spot-check a few family records, confirm giving history, and configure email set
 | In-app wizard says "no new version" | GitHub API rate-limited or server has no outbound HTTPS | Use manual upgrade; check server firewall |
 | Rollback needed | Upgrade failed mid-way | Restore database from backup, restore files from backup — see [Rollback](/administration/rollback) |
 
+### How the database upgrade runs
+
+The **Database Upgrade** page applies one upgrade file per page load and reloads itself until every file is done, so a large upgrade does not run into your host's time limit. ChurchCRM records each file as it finishes. The database version moves up only when every file for that version is finished.
+
+If the page is closed or the connection drops between two files, open ChurchCRM again. Finished files are skipped and the upgrade carries on with the next one.
+
 ### "Database Upgrade Failed" — what the error means
 
 If the database migration fails, ChurchCRM shows a **Database Upgrade Failed** page with the current database version, the current software version, and the error in a red box. The wording of that error tells you which kind of failure it is:
 
-- **A SQL error naming a column or table, such as `Duplicate column name '...'` or `COLUMN already exists`.** The migration tried to add something that is already in your database. Do not edit the upgrade SQL files to work around it. Restore the database and files from the backup you took before upgrading (see [Rollback](/administration/rollback)), then report the failure with the error text and your app log so the migration can be fixed — see [Logging & Diagnostics](/administration/logging-and-diagnostics).
-- **"Upgrade file ... failed or was interrupted."** A previous upgrade attempt stopped part-way through — for example the request timed out, or the **Database Upgrade** page was closed while it was still running. ChurchCRM records each migration script as it runs, and will not re-run a script that stopped part-way through. Check the app log (`logs/yyyy-mm-dd-app.log`) for which script started, restore the database and files from the pre-upgrade backup, and run the upgrade again, keeping the **Database Upgrade** page open until it finishes.
+- **"Upgrade file ... failed or was interrupted."** A file stopped part-way through, for example because the request timed out or the server restarted. Some of its changes may be in your database and some may not, so ChurchCRM stops on that file instead of running it again. The message names the file, and the app log (`logs/yyyy-mm-dd-app.log`) has the error. Restore the database and files from the pre-upgrade backup (see [Rollback](/administration/rollback)), then run the upgrade again and keep the **Database Upgrade** page open until it finishes.
+- **A SQL error naming a column or table, such as `Duplicate column name '...'` or `COLUMN already exists`.** The migration tried to add something that is already in your database, usually left behind by an earlier attempt that stopped part-way. Do not edit the upgrade SQL files to work around it. Restore from your backup as above, then report the failure with the error text and your app log so the migration can be fixed — see [Logging & Diagnostics](/administration/logging-and-diagnostics).
 
-In both cases, do not just reload the page and hope the upgrade completes: a failed or interrupted migration has to be repaired or restored first.
+Reloading the page does not fix either error. A failed or interrupted file has to be repaired or restored first.
+
+### Database stuck at 7.8.0
+
+If **Current DB Version** shows **7.8.0** and the upgrade to 7.8.1 or 7.8.2 failed with a duplicate column or a general "attempted but failed" message, install the latest release. Its 7.8.1 step checks for changes that are already in place and adds only what is missing, so the upgrade finishes without a restore. Back up the database first all the same.
+
+If the latest release then reports **"Upgrade file /mysql/upgrade/7.8.1.sql failed or was interrupted"**, that file can safely run again from the start. Remove its checkpoint (below) and open ChurchCRM.
+
+### Clearing a checkpoint by hand
+
+Restoring a backup is the safe way back. If you have no backup, or someone who knows the ChurchCRM schema has already finished or undone the named file's changes, you can let the upgrader run that file again. Its progress is kept in the `database_upgrade_progress` table, one row per file:
+
+```sql
+DELETE FROM database_upgrade_progress
+WHERE script_path = '/mysql/upgrade/7.8.1.sql';
+```
+
+Use the file name from the error message. Delete only that row: the rows for finished files are what let the upgrade skip them. Open ChurchCRM and the upgrade starts that file again from the beginning. If you are unsure whether a file is safe to run twice, ask on [Discord](https://discord.gg/tuWyFzj3Nj) with the error text and your app log before you delete anything.
 
 ---
 
 ## Auto-Upgrade on Boot
 
-Pending database migrations run **automatically on the next page load** after new files are deployed — whether via the in-app wizard or a manual file copy. You no longer need to visit a separate migration page.
+Pending database migrations start **automatically on the next page load** after new files are deployed, whether via the in-app wizard or a manual file copy. The **Database Upgrade** page then works through them one file at a time (see [How the database upgrade runs](#how-the-database-upgrade-runs)).
 
 A **smart version check** prevents old application code from running against a newer database schema. If the app files are older than the database, ChurchCRM stops and shows a clear warning rather than attempting a potentially destructive migration.
 

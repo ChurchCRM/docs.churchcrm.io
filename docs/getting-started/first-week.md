@@ -16,7 +16,7 @@ This guide walks you through a typical first week as you get your church set up 
 1. Log in as **admin** (change the default password immediately).
 2. Go to **Admin** → **Church Information**. Enter the church name, address, phone, and email, then click **Save Church Information**.
 3. On the same page, set **Address Defaults** (city, state, zip, and country) for new families.
-4. Open **Admin** → **System Settings** → **Report Settings** and fill in the letter and statement text.
+4. Open **Reports** → **Admin** → **Report Settings** to set the letterhead and the letter greeting, closing and signer. The pledge reminder, confirmation and directory text is on the **Report Settings** tab of **Admin** → **System Settings**. Giving-statement wording is on **Finance** → **Admin** → **Statement Settings**.
 
 ### Add Your First Families
 

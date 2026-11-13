@@ -115,5 +115,5 @@ Use your hosting provider's SMTP server — often the same as your incoming mail
 ## Related
 
 - [User Guide: Email](/user-guide/email) — Sending emails to members (user perspective)
-- [Secret Keys](/administration/secret-keys) — 2FA and TOTP configuration
+- [Two-Factor Authentication](./secret-keys.md) — Authenticator setup and recovery codes
 - [Kiosk Devices](/user-guide/kiosk-devices) — Parent alert notifications

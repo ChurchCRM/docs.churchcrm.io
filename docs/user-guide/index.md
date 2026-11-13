@@ -24,6 +24,16 @@ New to ChurchCRM? Here's how to get started:
 
 ---
 
+## Make More Room on Wide Pages
+
+On a desktop screen, use the **Collapse sidebar** button (the menu icon in the top header) to fold the left menu into a narrow rail of icons. Lists, the map, and reports then use the extra width. The rail opens to the full menu while you point at it or move to it with the keyboard. Click **Expand sidebar** to keep the full menu open again.
+
+ChurchCRM saves your choice with your user account, so the sidebar stays as you left it on every page, and on any device you sign in from, until you change it.
+
+On tablets and phones the button is not shown. Open the menu with the hamburger button as usual.
+
+---
+
 ## People Management
 
 Managing your congregation's member data:

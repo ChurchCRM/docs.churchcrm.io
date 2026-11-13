@@ -18,7 +18,7 @@ A Person record represents an individual in your congregation. Person records ca
 3. Choose a **Family** if this person belongs to one. Family is optional. You can also create a new family from the same form.
 4. Enter **Classification** (Member, Guest, and so on) if you use classifications.
 5. For a child, choose a **Grade** if you track [school grades](/user-guide/school-grades).
-6. Add address and phone, or leave them blank to inherit them from the family. Enter the person's own **Email**: email is never inherited from the family.
+6. Add address and phone, or leave them blank to inherit them from the family. Enter the person's own **Email**: email is never inherited from the family. Use plain ASCII characters before the `@`; an accented spelling such as `josé@example.org` is refused. See [Which email addresses are accepted](../administration/member-sign-in.md#which-email-addresses-are-accepted).
 7. Enter a birth date only when you have the month and the day. A birth year by itself is rejected with **Invalid Birth Date: Missing birth month and day.** Age is calculated from a complete birth date.
 8. Click **Save** or **Save and Add** to add another person.
 
@@ -259,6 +259,18 @@ You don't enter an age. ChurchCRM calculates it from the birth date. A year by i
 Count cards link to families, people, Sunday School (when that menu is on), and groups. **People by Classification** lists each classification with its share and count. The same page also shows **Family Roles**, **Gender Demographics**, **Age Distribution**, and report links for **People Directory** and **Letters & Mailing Labels**.
 
 **Quick Actions** has **Verify People** for users with **Edit Records**, and **Email All** for users with the **Email** permission. Once your church has chosen who may sign in to the Member Portal, users with **Edit Records** also see **Email needs attention**.
+
+### Verify People
+
+**Verify People** (users with **Edit Records**) is the printed verification report and the email that asks a family to check what the church has on file.
+
+The email's **Review Family Information** button opens the **My Family** page in the Member Portal, where they review their details, confirm that everything is correct, or update them. The button does not sign anyone in: someone who is not signed in must sign in first. There is no separate verification page and no PDF attached to the email. Only living, active, approved members of an approved, active family receive it, at their personal and work email addresses.
+
+Receiving the email does not mean the person can use the link. Member sign-in must be on, the person must be allowed to sign in, and they sign in with their own personal **Email**, not a work address. See [Member sign-in](../administration/member-sign-in.md).
+
+On the family page, the **Verification** card shows when the family was last verified — by the family in the portal or in person by staff — when it was last invited, and its last portal sign-in. A family that self-registered and is waiting for review can be approved from the banner on its family page; approval sends it the portal invitation.
+
+That email is not a printed confirmation report. Confirmation letters, the confirmation data sheet, and **Confirm data labels** still use the wording your church set for those reports. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
 
 Administrators find **People Settings** under **People → Admin → People Settings**, including:
 

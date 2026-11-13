@@ -49,6 +49,21 @@ Every Person should belong to a family.
 
 The **Filters** card has **City**, **State**, **Status** (**All**, **Active**, or **Inactive**), and **Address Status**. Open a family name to see that family. This list is separate from the family editor. The **Email** column shows the address mail for the family goes to: the head of household's own email, or the spouse's.
 
+## Family verification
+
+**Verify People** (under **Quick Actions** on the People dashboard) emails a link to review the details you hold. Only living, active, approved members of active, approved families receive it; see [Verify People](./persons.md#verify-people) for who gets it. It needs the **Edit Records** permission. Printed confirmation reports are separate: they go out on paper, and the family returns them to the office.
+
+### What the family sees
+
+1. The email has a button, **Review Family Information**. It opens **My Family** in the [Member Portal](./member-portal.md#my-family). Someone who is not signed in signs in first, with their own personal email.
+2. **My Family** shows **Where we reach you** (the family's address and home phone) and **Family Members**.
+3. If everything is right, an adult of the household selects **Confirm your family details**, chooses **Everything is correct**, and selects **Send your answer**.
+4. If something is wrong, an adult can select **Update your details** to change the address, home phone or wedding date and save the change. For anything else, they select **Confirm your family details**, choose **Something needs changing**, describe it under **What needs changing?**, and select **Send your answer**.
+
+An answer sent with **Send your answer** goes to the church office and does not change the record, so someone on your team makes that change in ChurchCRM. Members who are not adults of the household see the details but cannot change or confirm them.
+
+After **Send your answer**, the family sees *"Thank you. The church office has your answer."*
+
 ## Email
 
 Families have no email address of their own. Email belongs to people: each person keeps their own, and that is also how members sign in to the [Member Portal](/user-guide/member-sign-in).
@@ -99,7 +114,7 @@ When a second address exists, the family page relabels the address card **Primar
 
 The map, the geocoding badge, **Get Directions** and **Find Neighbors** stay on the primary card. When a family has no second address, the second card is not shown and the first card is simply called **Address**.
 
-![Family view: the Primary Address card and the Mailing Address card](/img/user-guide/family-view-mailing-address.png)
+![Family view: the Primary Address card and the Mailing Address card](https://cdn.churchcrm.io/screenshots/en/desktop/family-view-mailing-address.png)
 
 Each person's page shows their address: their own, or the one they inherit from their family. When the family has a mailing address that differs from the primary address, it is listed beneath it as **Mailing Address**, so it is clear where that person's mail goes.
 
@@ -173,13 +188,13 @@ A family with donations on record can't be deleted until its donations are moved
 
 1. Open the family.
 2. Open **Actions** and choose **Set Inactive** (or **Set Active** for an inactive family). It is there for users with **Edit Records**.
-3. Confirm.
+3. Confirm in the dialog. Cancelling or pressing Escape changes nothing.
 
 An inactive family shows *"This Family is Inactive"* at the top of its page. Its members can't sign in to the [Member Portal](/user-guide/member-portal) until the family is active again.
 
 ## How do I assign a Property to a Family?
 
-See the [Properties](/user-guide/properties) help topic.
+See the [Properties](/user-guide/properties) help topic. Unassigning a Property from a family asks you to confirm first.
 
 ## How do I add a Note to a Family?
 
