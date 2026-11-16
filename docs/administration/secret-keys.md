@@ -22,6 +22,8 @@ The account added to your authenticator uses the church name followed by **(Chur
 
 If you choose **Generate new code** during setup, scan the replacement QR code before entering a code from your app.
 
+**Can't scan the QR code?** Use the manual setup option on the same screen and type the setup key into your authenticator instead. This is how desktop authenticators such as KeePassXC enroll: create a TOTP entry in the app, paste the setup key, then enter the code the app shows in ChurchCRM.
+
 ## Sign in with 2FA
 
 1. Sign in at `/admin/` with your username and password.
@@ -47,7 +49,7 @@ If you cannot use your authenticator and have no recovery codes left, ask a chur
 If you still have your old authenticator or an unused recovery code:
 
 1. Sign in, then open **Manage Two-Factor Authentication** from the user menu.
-2. Choose **Disable Two-Factor Authentication** and confirm.
+2. Choose **Disable Two-Factor Authentication**. ChurchCRM asks for your password or a current code before it changes your 2FA — enter it to continue.
 3. Choose **Get Started** and enroll your replacement authenticator.
 4. Save the new recovery codes and discard the old ones. The old authenticator entry and recovery codes no longer work after you enroll again.
 
@@ -55,7 +57,7 @@ Newly scanned QR codes use the church name saved at enrollment. Changing the chu
 
 ## Turn off your own 2FA
 
-Open **Manage Two-Factor Authentication**, choose **Disable Two-Factor Authentication**, and confirm. If your church requires 2FA, you must enroll again within the allowed grace period; with a zero-day grace period, you must enroll immediately.
+Open **Manage Two-Factor Authentication** and choose **Disable Two-Factor Authentication**. ChurchCRM asks for your password or a current code before it turns 2FA off. If your church requires 2FA, you must enroll again within the allowed grace period; with a zero-day grace period, you must enroll immediately.
 
 ## Require 2FA for staff
 

@@ -83,6 +83,8 @@ ChurchCRM creates the account with a random password and does not show that pass
 - Users must change their password after **Reset Password via Email**.
 - Users are **not** forced to change their password when an administrator uses **Change Password**.
 
+When a user changes their own password, the form shows a strength meter as they type and advises on weak passwords; a password that meets the minimum length is still accepted — the meter is guidance, not a second rule.
+
 Minimum password length, the failed-login lockout, and whether 2FA is required are under **System Users → Settings → Quick Settings**. A locked account shows **Locked** in the **Status** column. It unlocks by itself after the lockout period, or at once with **Reset Failed Logins**. See [Security → Sign-in limits](./security.md#sign-in-limits).
 
 ## Blocked accounts
