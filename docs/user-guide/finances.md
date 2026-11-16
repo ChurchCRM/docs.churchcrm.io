@@ -151,6 +151,10 @@ See [Deposits](./deposit-search.md) for full details.
 
 **Payments by Fund** breaks down the payments for that same year by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the year are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
 
+## Deposit chart on the main dashboard
+
+Staff with the Finance permission also see a **Deposit Tracking** chart on the main dashboard (the home page, not the Finance Dashboard). The selector next to the chart title switches the period the chart draws: **30 days**, **90 days** (the default), or **12 months**. The chart re-draws as soon as you change it, so you can check a recent dip against the longer trend without leaving the home page.
+
 ## Deposit Reports
 
 **Finance → Deposit Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
