@@ -22,10 +22,6 @@ Each release is tested on Linux with Apache, PHP, and MySQL or MariaDB, and in t
 
 Other parts can fail too. If a task is not described on a Linux or Docker page, it was not checked on Windows.
 
-## Missing PHP extensions
-
-If you are trying XAMPP and **ChurchCRM System Check** or setup's **PHP Extensions** list reports failed PHP requirements, follow the [PHP requirements recovery checklist](/administration/troubleshooting#windows-and-xampp). It explains how to enable the listed extensions in Apache's PHP configuration, restart Apache, and reload the original page. Passing these checks does not make Windows a supported installation.
-
 ## What to use instead
 
 - To look around before you install anything, open the [live demo](https://churchcrm.io/demo.html?utm_source=docs_churchcrm_io&utm_medium=referral&utm_campaign=site_navigation&utm_content=windows_unsupported).

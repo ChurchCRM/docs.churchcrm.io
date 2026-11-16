@@ -70,8 +70,6 @@ Families have no email address of their own. Email belongs to people: each perso
 
 The **Email** card on the family page lists the own email of each head of household and spouse, each with buttons to write from ChurchCRM and to copy the address. When none of them has one, it says *"No head of household or spouse can receive family email."*
 
-![The Email card on a family page: each adult's own email and Email Carter Family](https://cdn.churchcrm.io/screenshots/en/desktop/people-family-email-card.png)
-
 - **Email \<name\> Family** sends one message for the whole family, to the head of household's own email (the oldest, when there are two), or to the spouse's when no head of household has one. Without either, the button is not shown.
 - Nobody else in the family gets that message, even with an email of their own. Use the paper-plane button next to a person's email to write to them.
 - The family editor, the portal's family form and the printed directory have no family email.
@@ -95,13 +93,9 @@ A family can also record an optional **second address** with the same fields (Ad
 
 ### Entering a second address
 
-1. Open the family and click **Edit** in the toolbar above the family members.
-2. Below the address fields, click **Second Address (optional)** to expand the section. It is collapsed on families that have no second address.
-3. Enter the address. The family has a second address once **Address 1** or **City** is filled in.
-4. Tick **This is the mailing address** if mail should go here. The checkbox is greyed out until **Address 1** or **City** has a value, and the record will not save with the box ticked on an empty second address (_"Enter a second address before marking it as the mailing address"_).
-5. Click **Save**.
+In the family editor, expand **Second Address (optional)** and enter the address. Select **This is the mailing address** when mail should go there, then save.
 
-![Family editor: the Second Address section with "This is the mailing address" ticked](https://cdn.churchcrm.io/screenshots/en/desktop/family-mailing-address-editor.png)
+The checkbox becomes available once **Address 1** or **City** has a value. An empty second address cannot be marked as the mailing address.
 
 To remove a second address, clear its fields and save. The mailing checkbox is cleared with it.
 
