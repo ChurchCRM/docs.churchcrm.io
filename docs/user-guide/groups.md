@@ -232,6 +232,10 @@ All People will be added to the Group in that group's Default Role, unless you s
 
 6. Click **Save**.
 
+### How do I change the role of several People at once?
+
+When a whole team changes role together — a new class year, a rotated rota — you do not have to open each member in turn. On the Group View page, select several members at once, choose the new role, and apply it once. Everyone selected gets the new role; anyone you did not select keeps theirs.
+
 ### What is _"Add Group Members to Cart"_?
 
 Adding group members to the cart is an easy way to add a group of individuals to the cart. Right now, the cart can be used to add individuals to a group. However, in future releases, the cart will be able to make group mailing lists and other features.
