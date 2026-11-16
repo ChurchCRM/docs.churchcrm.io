@@ -91,6 +91,10 @@ Attendance is saved with the check-in. After a group-linked event ends, the even
 
 ---
 
+### Add all attendees to the Cart
+
+On an event's page, **Add All to Cart** puts every attendee into the [Cart](/user-guide/cart) in one step — the quick way to email the whole roster, add them to a group, or check them into the follow-up event without adding people one by one.
+
 ## Creating an Event Type
 
 Event types behave like templates which define the parameters for events you will create in the future. Event types allow you to set details such as the recurrence frequency and the default start time an event can have.
