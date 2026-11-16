@@ -24,6 +24,7 @@ The same year shows up in a few places:
 - A family profile's pledges and payments default to the current fiscal year, and you can pick another year or **All Time**.
 - Fundraiser totals labeled **This Fiscal Year** follow that start month.
 - The **Pledge Dashboard** and fund-contributor pages can switch years, including **All Time**.
+- The year you choose on the **Finance Dashboard** carries across **Year-End Giving** and **Giving Statements** — pick it once and the other finance pages open on the same year.
 
 ---
 
@@ -239,7 +240,7 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for the tables and status c
 
 ## Where are the giving statement settings?
 
-Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording, the church tax ID and how the PDF is handled. **Report Settings**, for the letterhead and the letter greeting and signature, stays under **Reports** → **Admin**.
+Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording, the church tax ID and how the PDF is handled. The wording fields save as you change them — there is no separate save step for the wording. **Report Settings**, for the letterhead and the letter greeting and signature, stays under **Reports** → **Admin**.
 
 ---
 
