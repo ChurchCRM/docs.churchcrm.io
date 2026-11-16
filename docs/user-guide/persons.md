@@ -289,6 +289,10 @@ Leaving inactive records in the database is often preferable for historical reco
    > If it is not there, you do not have permission to delete records.
 3. Confirm the deletion.
 
+:::warning Deletion is blocked when the person has recorded history
+ChurchCRM refuses to delete a person whose history would be lost: recorded event attendance, giving or finance records tied to them, substantive notes (pastoral and private notes included), fundraiser participation, or volunteer assignments that were accepted, substituted, or completed. The error names the kind of history that blocks the deletion. Automatic timeline entries, email history, and **Why Came** answers do not block deletion. When deletion is blocked, make the person **inactive** instead — their history stays intact and they can no longer sign in. Deleting a family is blocked the same way when the family has pledges, payments, or substantive notes, or when a member's own history blocks the family deletion.
+:::
+
 ## What are Custom Person Fields?
 
 Custom Person Fields let you add information to person records beyond what ChurchCRM tracks by default. Examples include a mentor relationship, a confirmation date, a T-shirt size, or an emergency contact. See [Custom Fields](/user-guide/custom-fields) for instructions.
