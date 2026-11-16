@@ -82,11 +82,13 @@ Administrators hide deceased people from the printed directory and from CSV expo
 
 ## Timeline
 
-The Person View timeline shows notes, attendance, emails, and system activity, newest first and grouped by year. Filter chips are **Notes**, **Events**, **Emails**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Notes** is on when the page opens. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
+The Person View timeline shows notes, attendance, emails, and system activity, newest first and grouped by year. Filter chips are **Notes**, **Events**, **Emails**, **Account**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Notes** is on when the page opens. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
 
 Long notes show a short preview. **Read more** opens the full note.
 
 The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside notes and attendance. See [Email History](#email-history) below.
+
+The **Account** chip shows login-lifecycle entries for a person with a staff account: account created, updated or deleted, password changed or reset, failed logins reset, API key regenerated, 2FA turned on or off, and sign-in disabled or enabled — each credited to whoever made the change — plus a **Signed in** entry for each staff sign-in. Member Portal sign-ins are not on the timeline; they stay in the sign-in audit.
 
 ---
 
