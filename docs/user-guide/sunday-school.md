@@ -61,6 +61,10 @@ Each Sunday School class has a dedicated dashboard showing:
 - Attendance statistics
 - Quick actions for common tasks
 
+## Printing the class list
+
+The printed class list includes each student's [custom fields](/user-guide/custom-fields) — for example an allergy or T-shirt size your church records as a person custom field — so the sheet a teacher keeps carries the details the office recorded, not just names.
+
 ## Contacting the class
 
 There is no **View Members** action and no **Compose Message** button.
