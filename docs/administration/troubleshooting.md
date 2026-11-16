@@ -5,6 +5,32 @@ sidebar_position: 11
 
 # Troubleshooting
 
+## Missing PHP requirements
+
+A missing PHP extension can stop ChurchCRM before you sign in. Where you read the list depends on whether the site is already configured.
+
+**Already configured.** If `Include/Config.php` exists and startup cannot finish, **ChurchCRM System Check** replaces the page you opened. The same page replaces setup when you open setup on that site and a PHP requirement still fails. The heading is **ChurchCRM System Check**. The message is **Some PHP requirements are missing. ChurchCRM needs these before it can continue.** The table columns are **Requirement** and **Status**. Read every row. **Failed** means that requirement is not met; **Passed** means it is. Several can fail at once, including `locale gettext`, `GD Library for image manipulation`, and `PHP ZipArchive`. Fix every **Failed** row. The page has no form. It tells you to enable the missing PHP extensions in the web server configuration, restart the web server, and reload this page. If a host runs the server for you, ask them to enable the listed extensions.
+
+**Fresh installation.** Before `Include/Config.php` exists, setup still opens. It does not use the **ChurchCRM System Check** page. On step **System Check**, open **PHP Extensions** and note every row marked with an X. The names match the requirements below. **Continue to Configuration** stays unavailable while a required check has an X.
+
+1. Record every failed requirement. Compare the names with the [required PHP extensions](/installation/system-requirements#required-php-extensions). A failed PHP version row needs a supported PHP version, not another extension.
+2. Find the PHP configuration used by the **web server serving your ChurchCRM site**. The command-line PHP shown by `php -v`, `php -m`, or `php --ini` can use a different version and configuration. Use your hosting panel's PHP information or ask your server administrator to identify the site's loaded `php.ini` and any additional extension configuration files.
+3. Install or enable each missing extension for that PHP version. On Linux, follow the PHP package steps in the [Ubuntu](/installation/ubuntu#2-install-php-84) or [Rocky Linux](/installation/rocky-linux#2-install-php-84) guide. On shared hosting, enable the extensions for the domain's selected PHP version in the hosting panel, or send the host the full list of failed checks.
+4. Save the configuration and restart the web server. For Apache, use `sudo systemctl restart apache2` on Ubuntu/Debian or `sudo systemctl restart httpd` on Rocky Linux. If your host uses PHP-FPM, restart the PHP-FPM service serving the site as well. On shared hosting, ask the provider to restart the site's PHP processes if needed.
+5. Reload the original address, including any installation subdirectory. On a configured site, reload the page that showed **ChurchCRM System Check**. On a fresh installation, reload setup. If a row still fails, the extension was not enabled for the web server's PHP version. Check the web server error log for an extension that failed to load.
+
+When every PHP requirement passes, **ChurchCRM System Check** no longer replaces the page. A fresh installation continues in setup. A configured site returns to the page you requested, and you keep the existing `Include/Config.php` and database. Do not reinstall ChurchCRM to fix PHP extensions. This table does not check database credentials, URL rewriting, or file permissions. Setup, or the application after startup succeeds, reports those separately. If the PHP rows already pass and the site still will not open, this page is not the cause.
+
+### Windows and XAMPP
+
+Windows remains an [unsupported installation](/installation/windows). If you are trying XAMPP and either **ChurchCRM System Check** or setup's **PHP Extensions** list shows failed PHP requirements:
+
+1. In the XAMPP Control Panel, use Apache's **Config → PHP (php.ini)** entry to open the configuration for that Apache instance. If you have more than one XAMPP installation, confirm that this is the instance serving ChurchCRM.
+2. For each failed extension, find its existing `extension=` line and remove the leading `;` to enable it. For example, failed gettext, GD, and ZipArchive checks correspond to `extension=gettext`, `extension=gd`, and `extension=zip`. Use the entries supplied with your PHP bundle; not every requirement has a separate extension line.
+3. Save `php.ini`, then **Stop** and **Start** Apache in the XAMPP Control Panel. Reload the original ChurchCRM URL and review every remaining failed row.
+
+If an extension still fails, check Apache's error log for a missing or incompatible extension DLL and confirm that `extension_dir` points to the extension folder for that PHP installation. Enabling gettext satisfies the PHP extension check; it does not establish that Windows provides the operating-system locales needed for translations.
+
 ## 🔍 Step 1: Check Your Logs (Fastest Solution!)
 
 **Most problems can be self-diagnosed by examining logs!** Start here:
@@ -59,7 +85,7 @@ A 500 error immediately after install is almost always a **file permissions** pr
 | **Rocky Linux / RHEL** | `sudo chown -R apache:apache /var/www/html/churchcrm` |
 
 If permissions look correct, check logs (Step 1 above). Other causes:
-- A missing PHP extension — see [System Requirements](/installation/system-requirements)
+- A missing PHP extension — follow the [PHP requirements recovery checklist](#missing-php-requirements)
 - `mod_rewrite` not enabled — see the install guide for your platform
 - PHP below the minimum — the current release requires PHP 8.4 or higher. A 6.x site requires PHP 8.2 or higher. See [System Requirements](/installation/system-requirements)
 

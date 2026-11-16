@@ -28,11 +28,15 @@ A paper-plane button appears next to each email address on:
 - the **Person Listing** (**People → Person Listing**),
 - the **Photo Directory**, where it is the envelope button on each person's card.
 
+![Paper-plane button next to the email address on the Person View](https://cdn.churchcrm.io/screenshots/en/desktop/email-person-view-send-button.png)
+
 Click it to open the composer with that one recipient. The email address next to the button is still an ordinary link that opens your own mail program, for anyone who prefers that.
 
 **Email \<name\> Family** on the Family View sends one message for the whole family. Families have no email address of their own, so it goes to the head of household's own email, or to the spouse's when no head of household has one. See [Families → Email](/user-guide/families#email).
 
 On the Person View, the family card (for example **Campbell Family**) also carries the button on every other family member's row, so you can email a relative without opening their record. The person's own row has none, because their address under **Contact & Personal Info** already has one.
+
+![Paper-plane buttons on the family members' rows of the Person View](https://cdn.churchcrm.io/screenshots/en/desktop/email-person-view-family-send-buttons.png)
 
 ### Sending to a list
 
@@ -51,6 +55,8 @@ The composer opens with the list already loaded. The **recipient count** badge s
 ### Writing the message
 
 Open **Compose Message** and enter a subject and message. The closing starts with "Sincerely," followed by your name and the church name; edit or remove it as needed. **Cancel** discards the draft.
+
+![The composer with a subject, the message, and the pre-filled closing](https://cdn.churchcrm.io/screenshots/en/desktop/email-composer-form.png)
 
 Use **Preview** to check the church header and the message as the first recipient will receive it. The title identifies that recipient and how many others will receive the message. **Back to editing** returns to your draft.
 
@@ -129,6 +135,8 @@ ChurchCRM shows the **Email History** table in two places:
 
 - **Email Log** (`/admin/email/log`) is for administrators. It shows everyone's recorded email and includes **Delete Queue** for unsent items.
 - **Email** (`/people/email`) is available to users with the **Email** permission. A user who is not an administrator sees only email they sent, with **Only the email you sent is shown.** The sender filter is hidden for them. After sending with the composer, **Follow it in the email history** opens this page.
+
+![Email History on the Email page](https://cdn.churchcrm.io/screenshots/en/desktop/email-dashboard-recent-sends.png)
 
 Use the search box to find email by subject, recipient email address, or recipient name. You can filter the table by **status** (queued, sending, sent, failed, skipped), **type**, and (for administrators) **sender**, including automatic mail. Paging and filtering take place on the server. The search and filter settings remain in the URL, so a bookmark or refresh keeps the same view.
 
