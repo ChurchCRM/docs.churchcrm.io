@@ -20,7 +20,7 @@ After you create events on the Calendar tab, the page asks whether to staff them
 
 The **Calendar** tab of the [ministry page](./ministries-teams-positions.md) lists the events this ministry owns from today to a year ahead, the soonest first. Turn on **Show past events** to see the last year's events instead, the newest first.
 
-![The Calendar tab](/img/user-guide/ministries/ministry-calendar.png)
+![The Calendar tab](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-calendar.png)
 
 | Column | What it shows |
 |---|---|
@@ -38,7 +38,6 @@ To end a series or remove events, tick them (the header box selects every row) a
 
 **New event** and **New recurring event** open the same dialog, with a **One-time** / **Recurring** switch at the top.
 
-![New recurring event](/img/user-guide/ministries/new-recurring-event.png)
 
 | Field | Meaning |
 |---|---|
@@ -60,7 +59,7 @@ Click **Create**. The dialog only creates the events; staffing them is the next 
 
 After **Create**, the page asks *"11 Wednesday Bible Study events created. Staff them now?"*, or for a one-time event *"Fall Workday on Oct 17 created. Staff it now?"*
 
-![Staff them now?](/img/user-guide/ministries/staff-them-prompt.png)
+![Staff them now?](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-event-staff-prompt.png)
 
 - **Not now** closes the question and does nothing else. The events stay on the calendar, and you can staff them later.
 - **Staff them** on a **one-time event** opens [Staff an event](#staff-an-event) with the new event already chosen.
@@ -73,7 +72,7 @@ ChurchCRM finds a series by its class or its title, because calendar events do n
 
 Some events happen once and need people only that day: a workday, a funeral meal, a baptism. **Staff an event** staffs one such event without a schedule. It is on the **Occurrences** tab, in a Calendar tab row's action menu (**Staff this event**), and after **Staff them** for a one-time event.
 
-![Staff an event](/img/user-guide/ministries/staff-an-event.png)
+![Staff an event](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-event-staff.png)
 
 1. Type part of the title in **Find an event**, or pick a **Date**, to search the upcoming active events. Each event is listed as *"Oct 17, 8:00 AM — Fall Workday (Church Service)"*, with *"· already staffed by this team"* when the chosen team already has an occurrence on it. Any upcoming event can be staffed, including events that another ministry or the church owns.
 2. Choose the **Team**, and optionally a **Name** (the event's title is used when it is left empty).
