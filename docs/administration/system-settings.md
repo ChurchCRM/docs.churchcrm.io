@@ -54,6 +54,8 @@ The page opens with shortcuts to the People lists and editors (Person Classifica
 There is no Save button. Each setting saves as soon as you change it and a "Settings saved successfully" message confirms it. Text boxes save when you click out of them.
 :::
 
+The same save-on-change behaviour applies to the **Finance**, **Groups**, and **Text** settings panels — there is no Save button there either. Settings that only make sense together still save as a set with a **Save** button: **Email** (SMTP host, authentication, and password are one credential set) and Ministry timing.
+
 ### People
 
 | Setting | Description | Default |
