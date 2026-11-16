@@ -163,11 +163,15 @@ Staff with the Finance permission also see a **Deposit Tracking** chart on the m
 The page groups these links:
 
 - **Tax & Giving Reports** — **Giving Statements** (see below) and **Zero Givers**
-- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, and **Pledge Reminders**
+- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Reminders**, and **Missing Pledges** (see below)
 - **Deposit Reports** — **Individual Deposit Report** and **Advanced Deposit Report**
 - **Membership Reports** — **Voting Members** (see [Voting Members](#voting-members)), which opens only for users with the Finance permission
 
 The **Finance** menu also lists **Financial Reports** and **Giving Statements**, so you can reach either one without going through the dashboard.
+
+### Missing Pledges
+
+**Missing Pledges** (`/finance/reports/missing-pledges`) finds families whose pledge has lapsed — the follow-up list for pledge reminders. Pick two fiscal years: **Pledged for** and **No pledge for** (it opens on last year against this year). A family is listed when it pledged in the first year and has no pledge in the second. Payments do not count as pledges, and deactivated families are left out. The report downloads as a **PDF** (letterhead, family, mailing address, home phone, and the amount pledged, with a total) or a **CSV** (address parts and a plain amount, for mail merges). If no family matches, you return to the form with your years kept and a message, not an empty document.
 
 ## Voting Members
 
