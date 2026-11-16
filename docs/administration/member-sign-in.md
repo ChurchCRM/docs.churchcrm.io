@@ -24,8 +24,6 @@ Member sign-in is **off** on a new installation and after the upgrade that bring
 6. **Switch on Let members sign in with their email** and press **Turn on**. The question shows how many people may sign in. Every setting on this tab saves as soon as you change it; there is no Save button.
 7. **Tell your members.** They open the usual ChurchCRM address, type their email and use the code. [Signing in to the Member Portal](../user-guide/member-sign-in.md) is written for them.
 
-![The Sign-in tab: member sign-in on, family roles and classifications ticked, and the codes, sessions and devices settings](https://cdn.churchcrm.io/screenshots/en/desktop/admin-member-portal-sign-in.png)
-
 Turning member sign-in off asks first, then signs out every member who is signed in. Staff can still open their own portal from the user menu.
 
 :::warning Calendar subscriptions follow the rules

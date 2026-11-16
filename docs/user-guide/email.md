@@ -54,13 +54,13 @@ The composer opens with the list already loaded. The **recipient count** badge s
 
 ### Writing the message
 
-1. Click **Compose Message** at the bottom of the composer. The form opens, and the button changes to **Cancel**, which closes the form and discards what you typed.
-2. Enter a **Subject**.
-3. Write the **Message**. The box starts empty so you can write your own greeting. Two lines down, the closing is already filled in for you: "Sincerely," followed by your name and the church name. Edit or delete it as you like.
-4. Click **Preview** to see the message exactly as the first recipient will receive it, with the church logo and header. The preview's title names that recipient and how many others will get the message. Click **Back to editing** to return.
-5. Click **Send Email**. When the message has gone, the button reads **Sent** and the form is locked, so the same message cannot be sent twice.
+Open **Compose Message** and enter a subject and message. The closing starts with "Sincerely," followed by your name and the church name; edit or remove it as needed. **Cancel** discards the draft.
 
 ![The composer with a subject, the message, and the pre-filled closing](https://cdn.churchcrm.io/screenshots/en/desktop/email-composer-form.png)
+
+Use **Preview** to check the church header and the message as the first recipient will receive it. The title identifies that recipient and how many others will receive the message. **Back to editing** returns to your draft.
+
+**Send Email** sends the message. Once sent, the form is locked to prevent sending the same draft twice.
 
 ![Preview of the message as it will arrive](https://cdn.churchcrm.io/screenshots/en/desktop/email-composer-preview.png)
 
@@ -151,7 +151,6 @@ The **To** column links to the recipient's Person View or Family View, with thei
 - If no row matches, clear the filters and search, and check the relevant person or family history. A person excluded by the composer (for example, no usable address, Do Not Email, or a duplicate address) appears in the composer's **Not sent** list and has no sent-mail history entry.
 
 Select a subject to open the recorded message. Composer and volunteer emails can be reopened with their saved content; other system emails retain only metadata and display a notice rather than their body (see [Opening an email](/user-guide/persons#opening-an-email)).
-
 
 ---
 

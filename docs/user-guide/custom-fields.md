@@ -11,21 +11,11 @@ Custom Fields allow you to expand the functionality of ChurchCRM beyond the base
 
 ### For people and families
 
-1. Click the _"People"_ menu on the left side panel
-2. Then click _"Admin"_
-   - For people click on _"Person Custom Fields"_
-   - For families click on _"Family Custom Fields"_
-   ![The People menu expanded in the left sidebar, and the People Settings page with shortcuts to Person Custom Fields and Family Custom Fields](https://cdn.churchcrm.io/screenshots/en/desktop/admin-people-settings.png)
-3. To add a new field, select the type, a name and the side on which it should appear along with any security options this new field requires.
-4. The name will appear in the shaded box on Person View and the side determines which column it shows up in when viewing the Person View.
+Open **People → Admin → Person Custom Fields** or **Family Custom Fields**. Choose a field type, name, display side and security options. The name labels the field on the record; the side determines its column on Person View.
 
 ### For groups
 
-1. Click on the group you wish to add a custom field to, and ensure Group Specific Properties has been enabled. When prompted, answer
-   Then confirm...
-2. Click on _"Edit Group-Specific Properties Form"_.
-If this link is not visible, this group may not have group-specific properties enabled (_see step 1 above_).
-3. To add a new field, select the type, name, description and click _"Add New Field"_.
+Enable **Group Specific Properties** on the group, then open **Edit Group-Specific Properties Form**. Choose the field's type, name and description, then **Add New Field**. The form link is available only when group-specific properties are enabled.
 
 ## What are the Types?
 

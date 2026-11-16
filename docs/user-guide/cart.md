@@ -51,7 +51,7 @@ To make a new group from the cart, open `/groups/cart/add` and click **Create Gr
 
 ## Generate mailing labels
 
-The **Cart Functions** bar at the top of the Cart page has a **Labels** button, next to **Tags**. It produces mailing labels for everyone in the Cart.
+On **People → Cart**, **Labels** produces mailing labels for everyone in the cart.
 
 ![Cart Functions bar with the Empty, To Group, To Family, Check In, Map, Tags, Labels, Email and Directory buttons](https://cdn.churchcrm.io/screenshots/en/desktop/cart-functions-bar.png)
 

@@ -125,6 +125,13 @@ Letters use the same full-period commitment and giving as the family summary. In
 
 A short message confirms **Deleted successfully**, or explains why the delete failed. Saving a pledge or payment shows the same kind of message.
 
+## How do I delete a pledge or payment?
+
+1. Open the pledge or payment and click **Delete**.
+2. A dialog asks whether to permanently delete the record. Choose **Yes** to delete it. **No**, **Escape**, or closing the dialog keeps the record.
+
+A short message confirms **Deleted successfully**, or explains why the delete failed. Saving a pledge or payment shows the same kind of message.
+
 ## How do I deposit donations?
 
 When a batch of cash and check donations is received, create a deposit slip in ChurchCRM so the donating families receive credit against their pledges and for tax purposes.
