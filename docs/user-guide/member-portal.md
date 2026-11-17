@@ -55,7 +55,7 @@ Right after an email sign-in on which you ticked **This is my own device**, the 
 
 **Profile** shows your photo — or your initials while there is none — your family and your role in it, and **Your details**: first, middle and last name, title, suffix, email, work email, and mobile, home and work phone.
 
-![The Profile page](/img/user-guide/member-portal-profile.png)
+![The Profile page](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-profile.png)
 
 - **Update your details** opens an edit form. Press **Save changes**; the page confirms with *"Your details have been saved."* Your first and last name cannot be left blank.
 - **Choose a photo or take a selfie** on the edit form uploads a new picture straight away. A square picture of your face works best.
@@ -89,7 +89,7 @@ Churches periodically ask households to check what is on file. An adult of the h
 
 **Send your answer** delivers your reply to the church office; nothing on your record changes until someone there acts on it.
 
-![Confirm your family details](/img/user-guide/member-portal-family-confirm.png)
+![Confirm your family details](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-family-confirm.png)
 
 ### Add a family member
 
@@ -197,7 +197,7 @@ With nothing open the page says *"Nothing open right now"* and *"We will email y
 
 **My Teams** appears only for a member who leads a volunteer team. It lists the teams you look after — *"Open one to set up its positions, say who can serve where, and fill the weeks ahead."* — with each team's ministry, its number of positions and its next date (*"Next on Oct 4"*). Dates on the portal's volunteer pages are shown in the language and date format your church has set for ChurchCRM.
 
-![My Teams](/img/user-guide/member-portal-my-teams.png)
+![My Teams](https://cdn.churchcrm.io/screenshots/en/desktop/portal-member-teams.png)
 
 **Open this team** shows the team's ministry, the Sunday School class it is linked to (if any), and four tabs for that team and nothing else:
 
@@ -208,13 +208,11 @@ With nothing open the page says *"Nothing open right now"* and *"We will email y
 | **Schedules** | **Add schedule** — which calendar events the team serves, at what times, and how many people each position needs. See [Add a schedule](#add-a-schedule) below. |
 | **Dates** | Every date your team serves, soonest first, with an icon for how well each is filled; point at it to read it in words, for example *"Needs 2 more"* or *"Covered · 1 more welcome"*. Filter by **Event**, **From** and **To**. Open a date to see each position's staffing in the same words (*"Needs 1 more"*, *"Full · 2 of 2"*), **Assign a volunteer** (whoever served least recently is listed first) and answer any requests to swap. **Staff an event** staffs a single upcoming calendar event; to staff a whole series, add a schedule instead. |
 
-![A team's Positions tab](/img/user-guide/member-portal-team-positions.png)
 
 ### Add a schedule
 
 A schedule follows events that are already on the church calendar. It never makes dates of its own: each date your team serves is a calendar event, and the event's date and time are the schedule's. If the event moves, your team's date moves with it.
 
-![The Add schedule dialog](/img/user-guide/member-portal-team-schedule.png)
 
 1. On the **Schedules** tab, press **Add schedule** and give the schedule a **Name**.
 2. Under **Where the dates come from**, choose one:

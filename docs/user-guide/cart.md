@@ -53,7 +53,11 @@ To make a new group from the cart, open `/groups/cart/add` and click **Create Gr
 
 On **People → Cart**, **Labels** produces mailing labels for everyone in the cart.
 
-Choose your grouping and label layout, then **Generate Labels**. PDF opens in a new tab for printing; CSV downloads for a spreadsheet or mail merge. Your choices are remembered for the next mailing.
+![Cart Functions bar with the Empty, To Group, To Family, Check In, Map, Tags, Labels, Email and Directory buttons](https://cdn.churchcrm.io/screenshots/en/desktop/cart-functions-bar.png)
+
+1. Add the people you want to mail to the Cart (see above).
+2. Open **People → Cart** and click **Labels**. The **Generate Labels** dialog opens.
+3. Choose your options and click **Generate Labels**. The labels open in a new browser tab as a PDF (or download as a CSV file) and the dialog closes. Your choices are remembered for the next time you open it.
 
 ![Generate Labels dialog with grouping, presort, label type, font, start row and column and file type options](https://cdn.churchcrm.io/screenshots/en/desktop/cart-generate-labels.png)
 
