@@ -64,13 +64,12 @@ npm run locale:build
 ```
 
 2. Translate:
-   - Recommended: Upload `locale/terms/messages.po` to POEditor (project-managed translations) and translate there.
-   - Alternative: Edit the `.po` file locally with Poedit or similar.
+   - Translations live in the ChurchCRM repository — POEditor is no longer used.
+   - Edit the `.po` file locally with Poedit or similar, or translate the missing terms in the repository directly.
 
-3. Download & build translated assets:
+3. Build translated assets:
 
 ```bash
-npm run locale:download
 npm run deploy   # or npm run build
 ```
 
@@ -81,4 +80,4 @@ npm run deploy   # or npm run build
    - Browse the UI to confirm translated strings render correctly.
 
 6. Commit & publish:
-   - Commit `locale/terms/messages.po` (and generated frontend JSON if your workflow requires it) and open a PR, or sync via POEditor integration.
+   - Commit `locale/terms/messages.po` (and generated frontend JSON if your workflow requires it) and open a PR in the ChurchCRM repository.

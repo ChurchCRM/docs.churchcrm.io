@@ -10,9 +10,7 @@ Volunteer Management v2 organises volunteering the way a church runs it. A **min
 
 Members see their own side of it in the **Member Portal** — their schedule, the open dates they can sign up for, and the ministries asking for help. Those pages are described in the Member Portal guide; this section covers the coordinator's and administrator's side.
 
-:::info Arrives in ChurchCRM 7.8.0
-Volunteer Management v2 ships in ChurchCRM 7.8.0. A new installation starts with v2; an upgraded installation keeps the legacy [Volunteer Opportunities](../volunteers.md) feature until an administrator turns v2 on (see below).
-:::
+A new installation starts with ministries. An upgraded installation keeps the legacy [Volunteer Opportunities](../volunteers.md) feature until an administrator turns ministries on (see below).
 
 ## Read this first: turning it on
 

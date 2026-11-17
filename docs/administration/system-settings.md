@@ -132,7 +132,7 @@ The Volunteer Management settings live on their own page, **Admin → Ministry S
 | Volunteer experience | **V1 — Volunteer Opportunities (legacy)** (the default, today's feature), **V2 — Ministries** (the new [Volunteer Management (v2)](/user-guide/ministries)), or **Both (transition)** for running the two side by side. System-wide. Switching shows or hides pages and menu entries and never deletes data. |
 | Reminder lead time (hours) | How many hours before an occurrence the volunteer reminder email is sent. Default 48, from 0 to 720; 0 sends no reminders. |
 | Scheduling horizon (weeks) | How far ahead schedules make occurrences for the events they follow, for every schedule in the church. Default 8, from 1 to 52. A daily background job keeps every active schedule filled up to this point. See [Schedules and occurrences](/user-guide/ministries/schedules-and-occurrences#the-scheduling-horizon-and-the-daily-top-up). |
-| Default event type for ministry events | The event type a new event on a ministry's Calendar tab starts with; it can still be changed for each event. **Not set** uses the type named "Other", which ChurchCRM 7.8.0 adds when it does not exist. If there is no active type named "Other", the empty choice reads **None** and the type is chosen for each event. |
+| Default event type for ministry events | The event type a new event on a ministry's Calendar tab starts with; it can still be changed for each event. **Not set** uses the type named "Other", which is added when it does not exist. If there is no active type named "Other", the empty choice reads **None** and the type is chosen for each event. |
 
 The page also explains the three choices. Its **Background jobs and delivery** card shows the failed and queued volunteer messages, when background jobs last ran, when schedules were last topped up and what that made, the cron line to install, and a **Run background jobs now** button that also tops up the schedules. See [Volunteer email and reminders](/user-guide/ministries/email-and-reminders).
 
@@ -305,7 +305,7 @@ Letterhead and the letter greeting and signature no longer live here: upload, pr
 | Events menu, external calendar API, and embed origins | Calendar → **Calendar Settings** |
 | Log level (DEBUG, INFO, WARNING, or ERROR only) | Admin → System Logs → **Settings** |
 | Pre-release upgrades | Admin Dashboard → **Upgrade**, then System Upgrade → **Settings** (**Upgrade Settings**) |
-| Telemetry | The prompt on the Admin Dashboard: **Enable (full)**, **Errors only**, or **No thanks** |
+| Telemetry | The Admin Dashboard asks once: **Share install statistics** or **No thanks**. **Admin → Telemetry** (the Debug page, `#telemetry`) changes it later: **Disabled**, **Install**, **Errors**, or **Full**. Install statistics are the version, country from church settings, database type, and a random installation id. The server's IP address is not sent, and the country is not looked up from the network. Test installations send nothing. |
 
 ---
 
