@@ -24,6 +24,7 @@ The same year shows up in a few places:
 - A family profile's pledges and payments default to the current fiscal year, and you can pick another year or **All Time**.
 - Fundraiser totals labeled **This Fiscal Year** follow that start month.
 - The **Pledge Dashboard** and fund-contributor pages can switch years, including **All Time**.
+- The year you choose on the **Finance Dashboard** carries across **Year-End Giving** and **Giving Statements** — pick it once and the other finance pages open on the same year.
 
 ---
 
@@ -200,6 +201,10 @@ See [Deposits](./deposit-search.md) for full details.
 
 **Payments by Fund** breaks down the payments for that same year by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the year are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
 
+## Deposit chart on the main dashboard
+
+Staff with the Finance permission also see a **Deposit Tracking** chart on the main dashboard (the home page, not the Finance Dashboard). The selector next to the chart title switches the period the chart draws: **30 days**, **90 days** (the default), or **12 months**. The chart re-draws as soon as you change it, so you can check a recent dip against the longer trend without leaving the home page.
+
 ## Deposit Reports
 
 **Finance → Deposit Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
@@ -207,11 +212,15 @@ See [Deposits](./deposit-search.md) for full details.
 The page groups these links:
 
 - **Tax & Giving Reports** — **Giving Statements** (see below) and **Zero Givers**
-- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, and **Pledge Reminders**
+- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Reminders**, and **Missing Pledges** (see below)
 - **Deposit Reports** — **Individual Deposit Report** and **Advanced Deposit Report**
 - **Membership Reports** — **Voting Members** (see [Voting Members](#voting-members)), which opens only for users with the Finance permission
 
 The **Finance** menu also lists **Financial Reports** and **Giving Statements**, so you can reach either one without going through the dashboard.
+
+### Missing Pledges
+
+**Missing Pledges** (`/finance/reports/missing-pledges`) finds families whose pledge has lapsed — the follow-up list for pledge reminders. Pick two fiscal years: **Pledged for** and **No pledge for** (it opens on last year against this year). A family is listed when it pledged in the first year and has no pledge in the second. Payments do not count as pledges, and deactivated families are left out. The report downloads as a **PDF** (letterhead, family, mailing address, home phone, and the amount pledged, with a total) or a **CSV** (address parts and a plain amount, for mail merges). If no family matches, you return to the form with your years kept and a message, not an empty document.
 
 ## Voting Members
 
@@ -284,7 +293,7 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for the tables and status c
 
 ## Where are the giving statement settings?
 
-Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording, the church tax ID and how the PDF is handled. **Report Settings**, for the letterhead and the letter greeting and signature, stays under **Reports** → **Admin**.
+Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording, the church tax ID and how the PDF is handled. The wording fields save as you change them — there is no separate save step for the wording. **Report Settings**, for the letterhead and the letter greeting and signature, stays under **Reports** → **Admin**.
 
 ---
 

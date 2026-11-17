@@ -82,11 +82,13 @@ Administrators hide deceased people from the printed directory and from CSV expo
 
 ## Timeline
 
-The Person View timeline shows notes, attendance, emails, and system activity, newest first and grouped by year. Filter chips are **Notes**, **Events**, **Emails**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Notes** is on when the page opens. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
+The Person View timeline shows notes, attendance, emails, and system activity, newest first and grouped by year. Filter chips are **Notes**, **Events**, **Emails**, **Account**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Notes** is on when the page opens. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
 
 Long notes show a short preview. **Read more** opens the full note.
 
 The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside notes and attendance. See [Email History](#email-history) below.
+
+The **Account** chip shows login-lifecycle entries for a person with a staff account: account created, updated or deleted, password changed or reset, failed logins reset, API key regenerated, 2FA turned on or off, and sign-in disabled or enabled — each credited to whoever made the change — plus a **Signed in** entry for each staff sign-in. Member Portal sign-ins are not on the timeline; they stay in the sign-in audit.
 
 ---
 
@@ -288,6 +290,10 @@ Leaving inactive records in the database is often preferable for historical reco
 2. Open **Actions** and choose **Delete Person**.
    > If it is not there, you do not have permission to delete records.
 3. Confirm the deletion.
+
+:::warning Deletion is blocked when the person has recorded history
+ChurchCRM refuses to delete a person whose history would be lost: recorded event attendance, giving or finance records tied to them, substantive notes (pastoral and private notes included), fundraiser participation, or volunteer assignments that were accepted, substituted, or completed. The error names the kind of history that blocks the deletion. Automatic timeline entries, email history, and **Why Came** answers do not block deletion. When deletion is blocked, make the person **inactive** instead — their history stays intact and they can no longer sign in. Deleting a family is blocked the same way when the family has pledges, payments, or substantive notes, or when a member's own history blocks the family deletion.
+:::
 
 ## What are Custom Person Fields?
 

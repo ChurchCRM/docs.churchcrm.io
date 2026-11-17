@@ -41,11 +41,18 @@ Every staff user, whatever their permissions, can read people and families, run 
 1. Open **Admin → System Users**.
 2. Open the row menu for that person. The actions are:
     - **Edit User** — `/admin/system/users/{personId}/edit`, where you change rights. Mailto links are the per-user **User Config** row **bEmailMailto**. There is no `sMailtoDelimiter`.
+    - **View User** — opens the person's **User Details** page (see below): identity, sign-in status, effective permissions, **Login as Person** history, and the account actions on this list.
+    - **View Person** / **View Family** — open the person's record, or their family record.
     - **Change Password** — you set the password. The user is not forced to change it again unless you use a reset.
     - **Reset Password via Email** — emails a new password. The user must change it at the next login. This action is shown only when email is configured and the person has an email address.
     - **Reset Failed Logins** — shown when the account has failed sign-ins. It clears the count, unlocks a locked account at once and emails the user *Account Unlocked*.
     - **Disable 2FA** — shown when that user has two-factor authentication turned on.
-    - **Delete User** — removes the login. The person record remains.
+    - **Enable sign-in** / **Disable sign-in** — re-allows or stops that person's sign-in from the Users page (the same person sign-in setting used for the Member Portal).
+    - **Delete User** — removes the login only; the person and their notes stay. The confirmation is ticked by default to also disable the person's sign-in, so they cannot keep using the Member Portal. ChurchCRM refuses to delete the last administrator, or the last administrator who can sign in. The person's own settings are deleted with the login and do not return if they get a login again.
+
+## User Details
+
+Clicking a person's name on **System Users** opens their **User Details** page (`/admin/system/users/{personId}`): identity, sign-in status (last successful login, failed attempts, whether a password change is required, 2FA enrolled, and any lockout time left), effective permissions, **Login as Person** history, and the same account actions as the row menu. Opening your own entry takes you to your own **Change Settings** instead — administrators do not get a User Details page for themselves.
 
 ## Which rights should each person get?
 
@@ -83,6 +90,8 @@ ChurchCRM creates the account with a random password and does not show that pass
 - Users must change their password after **Reset Password via Email**.
 - Users are **not** forced to change their password when an administrator uses **Change Password**.
 
+When a user changes their own password, the form shows a strength meter as they type and advises on weak passwords; a password that meets the minimum length is still accepted — the meter is guidance, not a second rule.
+
 Minimum password length, the failed-login lockout, and whether 2FA is required are under **System Users → Settings → Quick Settings**. A locked account shows **Locked** in the **Status** column. It unlocks by itself after the lockout period, or at once with **Reset Failed Logins**. See [Security → Sign-in limits](./security.md#sign-in-limits).
 
 ## Blocked accounts
@@ -93,7 +102,7 @@ A staff account can't sign in while its person is deceased or inactive, or has *
 
 ## Change Settings
 
-Open the user menu (your name, top right) and click **Change Settings**. An administrator can open the same page from the person's name on **System Users**.
+Open the user menu (your name, top right) and click **Change Settings** (`/account`). This is always your own page — there is no ID in the address. An administrator who clicks another person's name on **System Users** gets that person's separate **User Details** page instead (see above).
 
 | Section | What you can do |
 |---------|-----------------|
@@ -101,7 +110,7 @@ Open the user menu (your name, top right) and click **Change Settings**. An admi
 | **Appearance** | Dark mode and the accent color |
 | **Localization** | This user's language and formats |
 | **API Access** | The account's API key. **Regenerate** replaces it. |
-| **Permissions** | What this account can do (read-only on this page). Change them with **Edit User**. |
+| **Permissions** | What this account can do right now (read-only on this page), with the reason for each capability that is denied. Change them with **Edit User**. |
 
 There is no Permission Groups screen and no Security & Permissions menu.
 
