@@ -126,6 +126,18 @@ To create an event:
 2. Select an event type.
 3. Make your entries and choose *Save Changes*.
 
+## Repeating an Event on the Nth Weekday of the Month
+
+The Repeat Events editor can create a series on the same weekday of each month, such as the 2nd Tuesday or the 1st Sunday.
+
+In the **Recurrence Pattern** card, choose **Every month on the** and then pick the week (**1st** to **5th**) and the weekday.
+
+**Things to know:**
+
+- **Fifth weekdays are skipped, not moved.** A month with no 5th of the chosen weekday gets no event. This differs from a monthly **day of the month** pattern, where a day that does not exist (such as the 31st in April) falls on the month's last day.
+- **Event types cannot store this pattern.** The **Recurrence Pattern** on an event type (**Events → Admin → Event Types**) does not offer it as a default. Set it in the Repeat Events editor when you create the series.
+- **Ministries can use it too.** On a ministry's Calendar tab, choose **Monthly, on a weekday** under **Repeats** in the New recurring event dialog. See [Events and the calendar](./ministries/events-and-calendar.md#new-event-and-new-recurring-event).
+
 ## Taking Attendance for an Event
 
 Throughout the course of an event, you can take attendance to track the participation across various people classifications, such as members, regular attenders, visitors, and so on.
