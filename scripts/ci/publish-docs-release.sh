@@ -4,6 +4,11 @@
 # Milestones: Current (the latest published release; the only one that may merge into main) and one
 # x.y.z milestone per upcoming version. Publishing VERSION moves its open items into Current.
 #
+# The next release starts with its API pin already staged: when the publish run
+# creates release-docs/<NEXT>, it also opens the crm-release.json pin pull request
+# for <NEXT>, so the pin waits open for the whole cycle instead of being created
+# at release time.
+#
 # Required: GH_TOKEN with contents and pull-request access to the docs repo.
 # VERSION: stable x.y.z release tag.
 # MERGE: true to merge, false to only open the pin pull request and milestone.
@@ -133,6 +138,19 @@ ensure_next_docs_branch() {
   sha=$(gh api "repos/${DOCS_REPO}/git/ref/heads/main" --jq '.object.sha')
   gh api "repos/${DOCS_REPO}/git/refs" -f ref="refs/heads/${branch}" -f sha="$sha" --silent
   echo "Created $branch from main (${sha:0:12})."
+}
+
+# Stage the next release's API pin at the same moment its docs branch is
+# created. The pin pull request sits open (milestoned to the next version)
+# until that release publishes, when the publish run merges it as usual.
+stage_next_pin() {
+  local pinned
+  pinned=$(gh api "repos/${DOCS_REPO}/contents/crm-release.json?ref=main" --jq '.content' | base64 -d | jq -r '.version')
+  if [ "$pinned" = "$NEXT_VERSION" ]; then
+    echo "Docs pin is already at $NEXT_VERSION."
+    return 0
+  fi
+  LATEST="$NEXT_VERSION" MILESTONE="$NEXT_VERSION" ./scripts/ci/open-pin-pr.sh
 }
 
 if [ "$MERGE" = "true" ]; then
@@ -307,6 +325,7 @@ if [ "$skipped" -ne 0 ]; then
 fi
 
 ensure_next_docs_branch
+stage_next_pin
 
 gh workflow run "Deploy to GitHub Pages" --repo "$DOCS_REPO" --ref main || echo "Deploy dispatch was not accepted. A token push to main still starts it."
 echo "Docs for ChurchCRM $VERSION are merged."
