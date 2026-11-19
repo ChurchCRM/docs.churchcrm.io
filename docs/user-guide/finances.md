@@ -112,10 +112,12 @@ Use **Save and Add Another** for the next pledge. Select the next family and che
 
 ## Pledge reminder letters
 
-1. Open **Finance → Deposit Reports → Pledge Reminders**.
-2. Choose the **Fiscal Year** used for the pledge and giving comparison. Use **Filter by Family** and **Filter by Fund** to match the comparison you reviewed.
-3. For pledge follow-up, keep **Include → Only Payments with Pledges** and **Generate → Only Families with unpaid pledges** selected.
-4. Choose **Create Report** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
+1. Open **Finance → Financial Reports → Pledge Reminders** (`/finance/reports/pledge-reminders`).
+2. Choose the **Fiscal Year** used for the pledge and giving comparison. Narrow the list if you need to with the **Classification**, **Family** and **Fund** pickers — each has **Add All** and **Clear All** buttons.
+3. For pledge follow-up, keep **Include** set to payments with pledges and **Generate** set to families with unpaid pledges.
+4. Choose **Download PDF** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
+
+If no family matches, the Pledge Reminders page returns with your choices kept and a **No Data Found** message naming the fiscal year, so you can widen the filters and try again.
 
 Letters use the same full-period commitment and giving as the family summary. In the example above, the letter shows $1,200 pledged, $200 paid and $1,000 remaining. Selecting families with unpaid pledges does not establish that an installment is overdue; review the family's agreed schedule before following up.
 
