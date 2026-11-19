@@ -86,4 +86,4 @@ Staff can add an authenticator code to their username and password. See [Two-Fac
 
 ### Requiring 2FA
 
-Administrators set the requirement and enrollment grace period under **Admin → System Users → Settings → Quick Settings**. See [Require 2FA for staff](./secret-keys.md#require-2fa-for-staff) for deadlines and [Help someone who lost access](./secret-keys.md#help-someone-who-lost-access) to reset one person's authenticator.
+Administrators set the requirement and enrollment grace period under **Admin → System Users → Settings → Quick Settings**. A requirement can also be set for a single user — for example, finance or admin staff — from that person's row menu on **Admin → System Users**. See [Require 2FA for staff](./secret-keys.md#require-2fa-for-staff) for deadlines and [Help someone who lost access](./secret-keys.md#help-someone-who-lost-access) to reset one person's authenticator.

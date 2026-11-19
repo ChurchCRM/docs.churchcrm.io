@@ -70,6 +70,15 @@ During the grace period, staff can continue working and see an enrollment remind
 
 Shortening the grace period can require people to enroll immediately if their deadline has already passed. Turning the requirement off does not disable anyone's existing 2FA or clear their recorded grace-period start.
 
+### Require 2FA for one person
+
+You can also require 2FA for a single user — for example, finance or admin staff — without mandating it for everyone:
+
+1. Open **Admin → System Users**.
+2. Open the person's row menu and choose **Require 2FA**. The 2FA column shows **Required** for that user.
+
+That person's grace period starts when the requirement is set. They see the same enrollment reminder, and once the grace period ends they are sent to enrollment and can't continue until they have set up 2FA. To lift it, open the row menu again and choose **Remove 2FA requirement**.
+
 ## Help someone who lost access
 
 An administrator can clear 2FA when a staff member has lost both their authenticator and recovery codes:
