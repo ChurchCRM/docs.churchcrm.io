@@ -55,8 +55,8 @@ Deleting a note creates a **System** timeline entry recording who deleted it and
 ## Adding a Note
 
 1. Open the Person or Family record
-2. Click **Add Note** in the page header (or **Add a Note to this Record** in the Timeline card)
-3. Enter your note — the editor supports rich text (bold, lists, links)
+2. Click **Add Note** in the page header (or **Add a Note to this Record** in the Timeline card) — a popup editor opens on the record page
+3. Enter your note — the editor is plain text, with no rich-text formatting
 4. Check **Private** if only you should see this note
 5. Click **Save**
 
@@ -67,7 +67,7 @@ Deleting a note creates a **System** timeline entry recording who deleted it and
 The author can edit the note. An administrator can edit it as well, including a private note written by someone else. Other users cannot.
 
 1. Find the note in the Timeline
-2. Click **Edit** in the note's footer
+2. Click **Edit** in the note's footer — the same popup editor opens with the note loaded
 3. Make your changes and click **Save**
 
 > **Tip:** To make a private note public, edit it and uncheck **Private**.
