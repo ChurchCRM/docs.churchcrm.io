@@ -19,7 +19,7 @@ Finance views use the church's fiscal year, which may not match the calendar yea
 
 The same year shows up in a few places:
 
-- **Finance → Dashboard** scopes **Recent Deposits** with a **Fiscal Year** list that includes **All Time**.
+- **Finance → Dashboard** scopes **Recent Deposits** with its **Time Range**: a number of days, a fiscal year, or **All Time**.
 - The **Deposits** listing has a fiscal-year filter with its other search filters.
 - A family profile's pledges and payments default to the current fiscal year, and you can pick another year or **All Time**.
 - Fundraiser totals labeled **This Fiscal Year** follow that start month.
@@ -197,15 +197,15 @@ See [Deposits](./deposit-search.md) for full details.
 
 **Current Deposit** shows the open deposit you are working in: deposit number, date, type, **Total Amount**, and **Edit Deposit**. If nothing is open, the card is **No Active Deposit** and offers **Create Deposit**.
 
-**Recent Deposits** lists deposits for the **Fiscal Year** you pick (or **All Time**). Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search.
+**Recent Deposits** lists deposits for the **Time Range** you pick at the top of the dashboard (a number of days, a fiscal year, or **All Time**). Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search.
 
-**Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same year.
+**Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same range.
 
-**Payments by Fund** breaks down the payments for that same year by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the year are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
+**Payments by Fund** breaks down the payments for that same range by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the year are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
 
-## Deposit chart on the main dashboard
+## Deposit Tracking chart
 
-Staff with the Finance permission also see a **Deposit Tracking** chart on the main dashboard (the home page, not the Finance Dashboard). The selector next to the chart title switches the period the chart draws: **30 days**, **90 days** (the default), or **12 months**. The chart re-draws as soon as you change it, so you can check a recent dip against the longer trend without leaving the home page.
+The **Deposit Tracking** chart sits on the **Finance Dashboard** itself. It has no period selector of its own: it draws the **Time Range** chosen at the top of the dashboard, the same range that scopes the totals and the fund breakdown, so one change re-draws all of them together.
 
 ## Deposit Reports
 
@@ -313,3 +313,4 @@ Go to **Finance** → **Admin** → **Statement Settings**. The page sets the st
 - [Envelope Manager](./envelope-manager.md) — family envelope numbers
 - [Fundraiser](./fundraiser.md) — managing fundraisers
 - [Reports & Queries](./reports-and-queries.md) — other financial reports
+

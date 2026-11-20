@@ -22,7 +22,7 @@ Finance letters and giving reports are under [Deposit Reports](/user-guide/finan
 
 ## Church Directory Report
 
-**Reports → People Reports → People Directory** opens the **Directory reports** form, which builds a printable PDF directory of your families. The **Reports** card on the People dashboard links to the same form. Choose which families to include (**Exclude Inactive Families**, classifications, group membership), which family roles count as head of household, spouse and child, and which details to print under **Information to Include**. Then pick the page layout, columns, paper size and font size, optionally add a title page and disclaimer, and click **Create Directory**.
+**Reports → People Reports → People Directory** opens the **Directory reports** form, which builds a printable PDF directory of your families. The **People Reports** button on the People dashboard links to the same form. Choose which families to include (**Exclude Inactive Families**, classifications, group membership), which family roles count as head of household, spouse and child, and which details to print under **Information to Include**. Then pick the page layout, columns, paper size and font size, optionally add a title page and disclaimer, and click **Create Directory**.
 
 ### Who is included
 
@@ -74,7 +74,7 @@ Mailed letters and the labels listed below go to the family's **mailing address*
 - Mailed letters print the mailing address in the address block: confirmation letters, giving statements (the letter and the remittance slip), reminder letters, zero-giver letters and fundraiser statements. Confirmation letters and giving statements sent by email use the same address. The confirmation data sheet also lists **Mailing Address** when it differs from the primary address, so families can check what is on record.
 - **People Directory**: under _Information to Include_, **Primary Address** (on by default) prints the physical address. Tick **Mailing Address if Different** (off by default) to print a family's flagged mailing address beneath it, under a "Mailing Address:" label, when it differs from the primary address. That option can only be ticked while **Primary Address** is ticked.
 
-**People Directory** and **Letters & Mailing Labels** are on the **Reports** card of **People → Dashboard**. **Reports → People Reports** also links to **People Directory**. **Letters & Mailing Labels** appears there when the login has **Manage Properties and Classifications**, the same permission as the Letters and Mailing Labels page. Envelopes carry no address.
+**People Directory** and **Letters & Mailing Labels** are on **People Reports**, opened with the **People Reports** button on **People → Dashboard**. **Reports → People Reports** also links to **People Directory**. **Letters & Mailing Labels** appears there when the login has **Manage Properties and Classifications**, the same permission as the Letters and Mailing Labels page. Envelopes carry no address.
 
 People Reports print the same labels without using the Cart. See [Print Labels on People Reports](#print-labels-on-people-reports).
 
@@ -144,3 +144,4 @@ Every report has the **Classification** filter. The table lists only the additio
 Wedding Anniversaries and Birthdays & Anniversaries list **one anniversary row per spouse**. **Print Labels** prints one label per couple. See [Print Labels on People Reports](#print-labels-on-people-reports). Families with no wedding date are not included.
 
 ---
+

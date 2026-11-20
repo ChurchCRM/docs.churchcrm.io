@@ -248,11 +248,11 @@ You don't enter an age. ChurchCRM calculates it from the birth date. A year by i
 
 ## People Dashboard
 
-**People → Dashboard** opens the People Dashboard.
+**People → Dashboard** opens the People Dashboard. Signing in takes you to your main dashboard: the People Dashboard, unless you chose another one with **Set as my main dashboard** on a dashboard page. A tab row at the top of every dashboard switches between the dashboards your role can open — **People**, **Groups**, **Sunday School**, **Events**, **Finance** and **Deposits**. Your main dashboard, the dashboard time ranges and **Rows per page** (how many rows tables and dashboard cards show) are also under **My Account → Appearance**.
 
-Count cards link to families, people, Sunday School (when that menu is on), and groups. **People by Classification** lists each classification with its share and count. The same page also shows **Family Roles**, **Gender Demographics**, **Age Distribution**, and report links for **People Directory** and **Letters & Mailing Labels**.
+Count cards link to families, people, Sunday School (when that menu is on), and groups; further cards count self-registrations and check-ins. One **Time Range** (7 days to 6 months) drives the latest and updated people and families, the latest notes, and the birthdays and anniversaries shown (the past 7 days and the next days in the range). **People by Classification** lists each classification with its share and count. The same page also shows **Family Roles**, **Gender Demographics**, and **Age Distribution**.
 
-**Quick Actions** has **Verify People** for users with **Edit Records**, and **Email All** for users with the **Email** permission. Once your church has chosen who may sign in to the Member Portal, users with **Edit Records** also see **Email needs attention**.
+Buttons at the top of the page include **People Reports**, **Verify People** for users with **Edit Records**, and **Email All** for users with the **Email** permission. Once your church has chosen who may sign in to the Member Portal, users with **Edit Records** also see **Email needs attention**.
 
 ### Verify People
 
