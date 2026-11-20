@@ -126,7 +126,7 @@ If some parts of the UI are translated and others are not, check both systems:
    - Check the console for i18next errors or missing-key fallbacks.
 
 3. Synchronization
-   - Run the localization build and download pipeline locally: `npm run locale:build` → upload `.po` files to POEditor → `npm run locale:download` to fetch both approved translations and missing-term batches.
+   - Run the localization build locally: `npm run locale:build`. Translations live in the ChurchCRM repository (POEditor is no longer used), so check that the translated terms are present in the repository's locale files.
    - If server pages (PHP) remain English while client UI is translated, the server locale is likely missing; install the OS locale and restart the webserver / PHP-FPM.
 
 4. Quick checks
