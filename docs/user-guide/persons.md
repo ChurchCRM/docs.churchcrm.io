@@ -49,7 +49,7 @@ Anyone with **Edit Records** can open the Person Editor. The Membership Date fie
 
 Use the search field in the page header. Its placeholder is **Search people, families, groups…**. Results appear as you type. People matches look at first name, middle name, last name, email, work email, and home, cell, and work phone, and only living people are included.
 
-Clicking a person's name opens their Person View, which lists the information on that person, including properties, groups, and notes.
+Clicking a person's name opens their Person View. The header shows their photo, status, key facts and contact details, with their family in a table underneath. Everything else sits in tabs: **Overview** (custom fields, properties, address and map), **Notes**, **Groups**, **Volunteer**, **Attendance**, **Giving**, **Portal sign-in** and **Timeline**.
 
 This is a wildcard search. Searching for "ian" can return "Ian" or "Brian" when those letters appear in a name, email, or phone that is searched. See [Find people and families](/user-guide/search) for the other result types.
 
@@ -82,11 +82,9 @@ Administrators hide deceased people from the printed directory and from CSV expo
 
 ## Timeline
 
-The Person View timeline shows notes, attendance, emails, and system activity, newest first and grouped by year. Filter chips are **Notes**, **Events**, **Emails**, **Account**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Notes** is on when the page opens. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
+The **Timeline** tab on the Person View shows attendance, emails, account and system activity, newest first and grouped by year. Notes are not on this tab: they have their own **Notes** tab, where long notes show a short preview and **Read more** opens the full note. Filter chips on the Timeline tab are **Events**, **Emails**, **Account**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Show all** turns every chip back on. There is no date-range filter.
 
-Long notes show a short preview. **Read more** opens the full note.
-
-The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside notes and attendance. See [Email History](#email-history) below.
+The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside attendance. See [Email History](#email-history) below.
 
 The **Account** chip shows login-lifecycle entries for a person with a staff account: account created, updated or deleted, password changed or reset, failed logins reset, API key regenerated, 2FA turned on or off, and sign-in disabled or enabled — each credited to whoever made the change — plus a **Signed in** entry for each staff sign-in. Member Portal sign-ins are not on the timeline; they stay in the sign-in audit.
 
@@ -189,7 +187,7 @@ With [Volunteer Management (v2)](./ministries/index.md) switched on, the Person 
 
 ![The Volunteer tab on a person record](/img/user-guide/ministries/person-volunteer-tab.png)
 
-When the volunteer experience is **Both**, the legacy opportunities list appears on its own tab, **Volunteer (Legacy)**, just before the **Volunteer** tab, so it is always obvious which one you are looking at.
+There is only this one **Volunteer** tab on the Person View. The legacy **Volunteer (Legacy)** tab no longer appears there.
 
 ---
 
@@ -329,3 +327,4 @@ See the [Notes](/user-guide/notes) help topic.
 ## How do I track finances for a person?
 
 See the [Finances](/user-guide/finances) help topic.
+
