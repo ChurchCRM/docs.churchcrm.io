@@ -60,12 +60,13 @@ If you'd like to contribute translations or add a new language, follow this shor
 
 ```bash
 npm run locale:build
-# produces: locale/terms/messages.po
+# produces: locale/messages.po
 ```
 
 2. Translate:
    - Translations live in the ChurchCRM repository — POEditor is no longer used.
    - Edit the `.po` file locally with Poedit or similar, or translate the missing terms in the repository directly.
+   - If you fill the missing-term batch files under `locale/terms/missing/`, run `npm run locale:apply` before you build. The command moves the filled terms into the locale files and removes them from the batch files.
 
 3. Build translated assets:
 
@@ -80,4 +81,4 @@ npm run deploy   # or npm run build
    - Browse the UI to confirm translated strings render correctly.
 
 6. Commit & publish:
-   - Commit `locale/terms/messages.po` (and generated frontend JSON if your workflow requires it) and open a PR in the ChurchCRM repository.
+   - Commit the changed `src/locale/i18n/*.json` files (and `locale/messages.po` if `npm run locale:build` changed it) and open a PR in the ChurchCRM repository.

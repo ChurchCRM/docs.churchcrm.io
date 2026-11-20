@@ -54,7 +54,7 @@ The composer opens with the list already loaded. The **recipient count** badge s
 
 ### Writing the message
 
-Open **Compose Message** and enter a subject and message. The closing starts with "Sincerely," followed by your name and the church name; edit or remove it as needed. **Cancel** discards the draft.
+Open **Compose Message** and enter a subject and message. Automatic mail (giving statements, birthday notes, and the other messages ChurchCRM sends itself) uses a subject that does not start with the church name. The From name is already the church. The closing starts with "Sincerely," followed by your name and the church name; edit or remove it as needed. **Cancel** discards the draft.
 
 ![The composer with a subject, the message, and the pre-filled closing](https://cdn.churchcrm.io/screenshots/en/desktop/email-composer-form.png)
 
