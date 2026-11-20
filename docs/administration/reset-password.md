@@ -17,6 +17,8 @@ New passwords are stored with PHP's bcrypt hash. MySQL cannot write that hash. T
 
 Replace `SECRET_PASSWORD` with the password you want, and replace both `1` values with the person id of the account you are resetting. The username must be the one on **System Users**. A new installation's administrator is `admin`, person id `1`.
 
+Do not use a password containing a single quote (`'`) or a backslash (`\`). A quote ends the SQL string early, so the statement fails. A backslash is read as an escape character, so the stored hash no longer matches the password you type and sign-in fails.
+
 ### Option 1. Set a password and sign in with it
 
 ```SQL
@@ -29,6 +31,8 @@ WHERE usr_per_ID = 1
 ```
 
 Sign in with the password you put in place of `SECRET_PASSWORD`. This account is not asked to change it.
+
+This reset changes only the password. The account's API key is not changed — not by the statement, and not by the move to bcrypt at sign-in — so a key that may have leaked stays valid. If that is a concern, sign in and choose **Regenerate** on **My Account → API Access** to issue a new key and invalidate the old one.
 
 ### Option 2. Reset the `admin` user to the installation default
 

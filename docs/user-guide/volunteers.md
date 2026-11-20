@@ -6,7 +6,7 @@ sidebar_position: 13
 # Volunteers
 
 :::info Legacy feature
-This page describes **Volunteer Opportunities (V1)**. [Volunteer Management](./ministries/index.md) is ministries, teams, positions, schedules, assignments, and reminder email. V1 is shown only while your church still uses it. A new installation sees ministries only. Volunteer Opportunities will be retired in early 2027. While they are in use, administrators see that notice on the Admin Dashboard (you can dismiss it until the next upgrade), on the Volunteer Opportunities editor, on a person's Volunteer tab, and on **Admin → Feature Toggles**. Choose **Both** on **Admin → Feature Toggles** (*Volunteer experience*) to run the two side by side. A person record then shows a **Volunteer (Legacy)** tab beside **Volunteer**. Move the records with **Admin → People Settings → Convert Volunteer Opportunities** (see [Moving to Volunteer Management](#moving-to-volunteer-management-v2)). Switching does not delete V1 data. The old opportunities stay until the removal release.
+This page describes **Volunteer Opportunities (V1)**. [Volunteer Management](./ministries/index.md) is ministries, teams, positions, schedules, assignments, and reminder email. V1 is shown only while your church still uses it. A new installation sees ministries only. Volunteer Opportunities will be retired in early 2027. While they are in use, administrators see that notice on the Admin Dashboard (you can dismiss it until the next upgrade), on the Volunteer Opportunities editor, on a person's Volunteer tab, and on **Admin → Feature Toggles**. Choose **Both** on **Admin → Feature Toggles** (*Volunteer experience*) to run the two side by side. A person record then shows a **Volunteer (Legacy)** tab beside **Volunteer**. Move the records from the retirement notice on the **Admin Dashboard** or the **Volunteer Opportunities** editor: choose **Review the conversion** to open **Convert Volunteer Opportunities** (see [Moving to Volunteer Management](#moving-to-volunteer-management-v2)). Switching does not delete V1 data. The old opportunities stay until the removal release.
 :::
 
 The Volunteers feature helps you track member talents and willingness to serve in specific roles. This makes it easy to find the right people when needs arise.
@@ -35,7 +35,7 @@ The Volunteers feature helps you track member talents and willingness to serve i
 
 ## Moving to Volunteer Management (v2)
 
-1. Go to **Admin → People Settings → Convert Volunteer Opportunities**.
+1. Open the retirement notice on the **Admin Dashboard** or the **Volunteer Opportunities** editor and choose **Review the conversion**. The **Convert Volunteer Opportunities** page opens.
 2. The preview shows each opportunity, the ministry and position it becomes, and who comes with it. Each living person linked to an opportunity gets a qualification for that position; people who have died or can no longer be found are listed and skipped.
 3. Click **Convert** to move them across. Converted positions start with self sign-up off. You can run it again later — it converts only what is new since the last run.
 4. The original opportunities are left as they are. Once nothing is left to convert, V1 is hidden.

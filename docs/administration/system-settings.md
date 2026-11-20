@@ -305,7 +305,7 @@ Letterhead and the letter greeting and signature no longer live here: upload, pr
 | Events menu, external calendar API, and embed origins | Calendar → **Calendar Settings** |
 | Log level (DEBUG, INFO, WARNING, or ERROR only) | Admin → System Logs → **Settings** |
 | Pre-release upgrades | Admin Dashboard → **Upgrade**, then System Upgrade → **Settings** (**Upgrade Settings**) |
-| Telemetry | The Admin Dashboard asks once: **Share install statistics** or **No thanks**. **Admin → Telemetry** (the Debug page, `#telemetry`) changes it later: **Disabled**, **Install**, **Errors**, or **Full**. Install statistics are the version, country from church settings, database type, and a random installation id. The server's IP address is not sent, and the country is not looked up from the network. Test installations send nothing. |
+| Telemetry | The Admin Dashboard asks once: **Share install statistics** or **No thanks**. **Admin → Telemetry** (the Debug page, `#telemetry`) changes it later: **Disabled**, **Install**, **Errors**, or **Full**. Install statistics are the version, country from church settings, database type, and a random installation id. The server's IP address is not sent, and the country is not looked up from the network. Test installations send nothing. One exception: if an upgrade fails, ChurchCRM sends an `upgrade_failed` report — the installation id, the versions involved, and the failure reason — even when Telemetry is **Disabled**, so failed upgrades get fixed. |
 
 ---
 
