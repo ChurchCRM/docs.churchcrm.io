@@ -183,11 +183,11 @@ Filters above the table are **Event Type**, **From**, and **To**. **Clear** rese
 
 ## Volunteer tab
 
-With [Volunteer Management (v2)](./ministries/index.md) switched on, the Person View has a **Volunteer** tab in two columns: **Qualified for** (each position, with a link to its ministry) and **Serving next** (each upcoming date with an **Accepted** or **Awaiting reply** badge, linking to the occurrence's staffing view). A person with no qualification and no upcoming date shows *"Not volunteering yet"*. The tab is read-only; qualifications are ticked on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md) and assignments are made on the [staffing view](./ministries/staffing-an-occurrence.md).
+The Person View's **Volunteer** tab, from [Volunteer Management (v2)](./ministries/index.md), has two columns: **Qualified for** (each position, with a link to its ministry) and **Serving next** (each upcoming date with an **Accepted** or **Awaiting reply** badge, linking to the occurrence's staffing view). A person with no qualification and no upcoming date shows *"Not volunteering yet"*. The tab is read-only; qualifications are ticked on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md) and assignments are made on the [staffing view](./ministries/staffing-an-occurrence.md).
 
 ![The Volunteer tab on a person record](/img/user-guide/ministries/person-volunteer-tab.png)
 
-There is only this one **Volunteer** tab on the Person View. The legacy **Volunteer (Legacy)** tab no longer appears there.
+There is only this one **Volunteer** tab on the Person View. The legacy **Volunteer (Legacy)** tab no longer appears there: Volunteer Opportunities (V1) was removed in ChurchCRM 7.8.6, and the upgrade converted its remaining data to v2.
 
 ---
 

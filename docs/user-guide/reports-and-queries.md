@@ -16,13 +16,13 @@ ChurchCRM provides built-in reports and database queries to help you extract and
 | **Reports** | Pre-formatted documents ready for printing (directories, labels, letters) |
 | **People Reports** | Filtered lists of [people](/user-guide/persons) you can send to the [Cart](/user-guide/cart), print as labels, or download |
 
-Finance letters and giving reports are under [Deposit Reports](/user-guide/finances#deposit-reports); year-end letters are made on the [Giving Statements](/user-guide/finances#giving-statements) page.
+Finance letters and giving reports are under [Financial Reports](/user-guide/finances#financial-reports); year-end letters are made on the [Giving Statements](/user-guide/finances#giving-statements) page.
 
 ---
 
 ## Church Directory Report
 
-**Reports → People Reports → People Directory** opens the **Directory reports** form, which builds a printable PDF directory of your families. The **People Reports** button on the People dashboard links to the same form. Choose which families to include (**Exclude Inactive Families**, classifications, group membership), which family roles count as head of household, spouse and child, and which details to print under **Information to Include**. Then pick the page layout, columns, paper size and font size, optionally add a title page and disclaimer, and click **Create Directory**.
+**Reports → People Reports → People Directory** opens the **Directory reports** form, which builds a printable PDF directory of your families. The **People Reports** button on the People dashboard opens the **People Reports** page (see [People Reports](#people-reports) below), which lists **People Directory** among its reports. Choose which families to include (**Exclude Inactive Families**, classifications, group membership), which family roles count as head of household, spouse and child, and which details to print under **Information to Include**. Then pick the page layout, columns, paper size and font size, optionally add a title page and disclaimer, and click **Create Directory**.
 
 ### Who is included
 

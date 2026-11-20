@@ -91,7 +91,7 @@ When you reopen a pledge entered as installments, the editor retains its install
 1. Record received gifts through the normal [payment and deposit workflow](#step-by-step-managing-donations), using the same family, fund and fiscal year as the pledge.
 2. Open **Finance → Pledge Dashboard** and select that fiscal year. The **Family Pledges** table compares each family's full commitment with giving for each fund.
 3. Click a fund name in **Fund Summary** to compare families within that fund on [Fund Contributor Detail](./fund-contributors.md).
-4. For a printable comparison, open **Finance → Deposit Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Create Report**.
+4. For a printable comparison, open **Finance → Financial Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Create Report**.
 
 For example, with a January–December fiscal year and no other pledges or payments for that family and fund:
 
@@ -112,7 +112,7 @@ Use **Save and Add Another** for the next pledge. Select the next family and che
 
 ## Pledge reminder letters
 
-1. Open **Finance → Financial Reports → Pledge Reminders** (`/finance/reports/pledge-reminders`).
+1. Open **Finance → Financial Reports** and choose **Pledge Reminders** under **Pledge Reports** (`/finance/reports/pledge-reminders`).
 2. Choose the **Fiscal Year** used for the pledge and giving comparison. Narrow the list if you need to with the **Classification**, **Family** and **Fund** pickers — each has **Add All** and **Clear All** buttons.
 3. For pledge follow-up, keep **Include** set to payments with pledges and **Generate** set to families with unpaid pledges.
 4. Choose **Download PDF** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
@@ -207,18 +207,18 @@ See [Deposits](./deposit-search.md) for full details.
 
 The **Deposit Tracking** chart sits on the **Finance Dashboard** itself. It has no period selector of its own: it draws the **Time Range** chosen at the top of the dashboard, the same range that scopes the totals and the fund breakdown, so one change re-draws all of them together.
 
-## Deposit Reports
+## Financial Reports
 
-**Finance → Deposit Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
+**Finance → Financial Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
 
 The page groups these links:
 
-- **Tax & Giving Reports** — **Giving Statements** (see below) and **Zero Givers**
-- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Reminders**, and **Missing Pledges** (see below)
-- **Deposit Reports** — **Individual Deposit Report** and **Advanced Deposit Report**
+- **Giving Reports** — **Year-End Giving**, **Giving Statements** (see below) and **Zero Givers**
+- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Comparison**, **Pledge Reminders**, and **Missing Pledges** (see below)
+- **Deposit Reports** — one link, which opens the deposit reports page (`/finance/reports/deposits`)
 - **Membership Reports** — **Voting Members** (see [Voting Members](#voting-members)), which opens only for users with the Finance permission
 
-The **Finance** menu also lists **Financial Reports** and **Giving Statements**, so you can reach either one without going through the dashboard.
+The **Finance** menu lists **Financial Reports** itself, and **Year-End Giving** on its own, so you can reach either one without going through the dashboard.
 
 ### Missing Pledges
 
@@ -226,7 +226,7 @@ The **Finance** menu also lists **Financial Reports** and **Giving Statements**,
 
 ## Voting Members
 
-**Finance → Reports → Voting Members** prepares a list of candidates for a church vote. The report does not decide who may vote, and it does not save an eligibility record. It applies the criteria you choose, and your church leadership confirms the final list under your own bylaws.
+Open **Finance → Financial Reports** and choose **Voting Members** under **Membership Reports** to prepare a list of candidates for a church vote. The report does not decide who may vote, and it does not save an eligibility record. It applies the criteria you choose, and your church leadership confirms the final list under your own bylaws.
 
 ![The Voting Members page, with the classification list and review date](https://cdn.churchcrm.io/screenshots/en/desktop/finance-voting-review.png)
 
@@ -257,7 +257,7 @@ If nobody matches, or a value is not valid, the form returns with your filters s
 
 ## Giving Statements
 
-Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Giving Statements**, or choose **Generate** in the checklist on the **Finance Dashboard**.
+Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Financial Reports** and choose **Giving Statements** under **Giving Reports**, or choose **Generate** in the checklist on the **Finance Dashboard**.
 
 ### Make the statements
 
@@ -285,7 +285,7 @@ On a [family profile](./families.md), open **Finance** on the toolbar. Under **G
 
 ## Pledge Dashboard
 
-Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Deposit Reports** opens the same page.
+Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Financial Reports** opens the same page.
 
 The year list includes **All Time**. Choose **New Pledge** to enter a commitment, and check **Fiscal Year** in the editor before saving. See [How do I enter a pledge?](#how-do-i-enter-a-pledge) for installment entry, comparisons and reminder letters.
 
