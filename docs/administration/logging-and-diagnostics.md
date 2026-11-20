@@ -39,13 +39,33 @@ Logs are your friend, and consequently, OUR friend too! We really need to see wh
 
 ### 3.1 ChurchCRM Logs
 
-Thankfully, ChurchCRM has a number of logs we can use to help which are in the `logs` directory where you deployed it. For example, if you deployed ChurchCRM at `/var/www/vhosts/churchcrm` then the `logs` directory will be `/var/www/vhosts/churchcrm/logs`. In that directory, ChurchCRM will write three different logs grouped by days:
+Thankfully, ChurchCRM has a number of logs we can use to help which are in the `logs` directory where you deployed it. For example, if you deployed ChurchCRM at `/var/www/vhosts/churchcrm` then the `logs` directory will be `/var/www/vhosts/churchcrm/logs`. In that directory, ChurchCRM will write four different logs grouped by days:
 
 1. `yyyy-mm-dd-auth.log` - authentication log: staff sign-ins at `/admin/`, failed attempts, locked accounts, and when an administrator starts and stops Login as Person. Member Portal sign-ins are not in this log; they are on **Admin → Member Portal → Audit**.
 2. `yyyy-mm-dd-app.log` - application log: with internal events and basic debugging information (this is the log we usually need to see).
 3. `yyyy-mm-dd-orm.log` - ORM logs: not usually stuff we would ask for, but if we do, we will ask for the "ORM logs".
+4. `yyyy-mm-dd-php.log` - PHP log: PHP's own errors, captured by ChurchCRM. This log records failures which happen before the application log starts — including the database connection failure behind the "Database Connection Failed" page.
 
-#### 3.1.1 Viewing Logs Via Admin UI
+Which log do we usually need?
+
+* **ChurchCRM won't open, or shows an error page** — the app log, plus the php log.
+* **Sign-in problems** — the auth log.
+* **Slow pages or wrong data** — the app log; the ORM log only when we ask for it by name.
+
+#### 3.1.1 If ChurchCRM Won't Open At All
+
+You do not need ChurchCRM running to get its logs — they are plain files on the server, and when ChurchCRM shows an error page (for example "Database Connection Failed") it has already written the reason into them.
+
+1. Open your hosting control panel's **File Manager** (or connect with FTP, SFTP, or SSH) and go to the folder where ChurchCRM is installed.
+2. Open the `logs` folder inside it and download today's files: `yyyy-mm-dd-app.log` and `yyyy-mm-dd-php.log`.
+3. In the app log, look at the lines written when the error appeared — for a database failure, the line begins `ERROR connecting to database` and gives the server's actual reason. In the php log, look for the PHP error at the same time.
+4. Send us those lines — see [Sharing Logs With Developers](#4-sharing-logs-with-developers) below for how to redact names and addresses first.
+
+**Docker:** the same files are in the `logs` folder of the ChurchCRM directory inside the container; with the site down, running `docker compose logs` in your compose folder also shows the web server and PHP output.
+
+**If the `logs` folder is empty or missing:** ChurchCRM could not write there (usually a permissions problem — see [File System Permissions](/administration/file-system-permissions)), so it wrote the logs to the server's temporary folder instead, named `churchcrm-yyyy-mm-dd-app.log` and `churchcrm-yyyy-mm-dd-php.log`. Your hosting provider can tell you where the PHP temporary folder is; over SSH, `ls /tmp/churchcrm-*` usually finds them.
+
+#### 3.1.2 Viewing Logs Via Admin UI (ChurchCRM is running)
 
 System administrators can view, filter, and manage logs directly from the ChurchCRM admin interface:
 
@@ -61,7 +81,7 @@ System administrators can view, filter, and manage logs directly from the Church
 
 Changes to the log level apply to new log entries.
 
-#### 3.1.2 Accessing Logs Directly From the File System
+#### 3.1.3 Accessing Logs Directly From the File System
 
 You can also access logs directly from the file system if you have SSH access or file manager access to your server. If you deployed ChurchCRM at `/var/www/vhosts/churchcrm`, the logs are stored at `/var/www/vhosts/churchcrm/logs`. You can download them using SFTP, SCP, or a file manager provided by your hosting provider.
 
