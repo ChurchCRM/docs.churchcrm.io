@@ -58,7 +58,7 @@ Deleting a note creates a **System** timeline entry recording who deleted it and
 
 1. Open the Person or Family record
 2. Click **Add Note** in the page header — a popup editor opens on the record page
-3. Enter your note — the editor is plain text, with no rich-text formatting
+3. Enter your note — the popup is a rich-text editor, so you can format the text as you write
 4. Check **Private** if only you should see this note
 5. Click **Save**
 
