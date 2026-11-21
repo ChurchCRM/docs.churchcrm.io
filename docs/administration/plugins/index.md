@@ -97,3 +97,32 @@ reproducible SHA-256, open a pull request against
 `src/plugins/approved-plugins.json` in the CRM repo. A ChurchCRM
 maintainer will run the security-scan checklist against your zip and
 either approve, request changes, or reject.
+
+---
+
+## Submitting a plugin to the registry
+
+A security review comes first. A community plugin is not listed in the
+approved registry until a maintainer has reviewed it — and that applies
+in particular to plugins that work with member data (such as member
+selection or phone numbers) or connect to an external service. The
+review protects the churches whose member data the plugin can reach;
+it is a required step for every submission, and every new version is
+reviewed from scratch.
+
+So that the review can start without a round of follow-up questions,
+include the following in your submission:
+
+1. **A link to the plugin's source repository** — the repository root,
+   not just a release page — including its plugin manifest
+   (`plugin.json`).
+2. **A short note on how the plugin accesses ChurchCRM data** — which
+   APIs or data it uses, and exactly what member data, if any, is sent
+   to any external service.
+3. **How any API credentials are stored** in ChurchCRM, and whether a
+   dry-run or test mode sends any data externally.
+
+With that information in hand, a maintainer runs the security-scan
+checklist (see [Plugin Security & Compliance](/administration/plugins/plugin-security-and-compliance)
+for what is checked) and advises on the remaining registry
+requirements.
