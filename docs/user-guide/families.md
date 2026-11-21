@@ -174,9 +174,9 @@ Family photos are uploaded the same way as person photos: JPEG, PNG, or HEIC/HEI
 
 1. Open the family.
 2. Open **Actions** and choose **Delete Family**. It is there only for users who can delete records.
-3. On the confirmation page, choose **Delete Family Record ONLY** or **Delete Family Record AND Family Members**.
+3. Confirm in the dialog. It names the family and warns that the family record and its notes will be permanently deleted. Tick **Also delete family members** to delete the members with the family; leave it unticked to delete the family record only.
 
-A family with donations on record can't be deleted until its donations are moved to another family. Users with finance access can move them from the confirmation page.
+A family with donations on record can't be deleted until its donations are moved to another family. If a family can't be deleted, a message explains why — in that case, deactivate the family instead. Bear in mind that while a family is inactive, its members can't sign in to the [Member Portal](/user-guide/member-portal) (see the next section).
 
 ## How do I deactivate or reactivate a Family?
 

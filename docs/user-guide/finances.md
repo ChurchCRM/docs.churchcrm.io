@@ -19,7 +19,7 @@ Finance views use the church's fiscal year, which may not match the calendar yea
 
 The same year shows up in a few places:
 
-- **Finance → Dashboard** scopes **Recent Deposits** with a **Fiscal Year** list that includes **All Time**.
+- **Finance → Dashboard** scopes **Recent Deposits** with its **Time Range**: a number of days, a fiscal year, or **All Time**.
 - The **Deposits** listing has a fiscal-year filter with its other search filters.
 - A family profile's pledges and payments default to the current fiscal year, and you can pick another year or **All Time**.
 - Fundraiser totals labeled **This Fiscal Year** follow that start month.
@@ -91,7 +91,7 @@ When you reopen a pledge entered as installments, the editor retains its install
 1. Record received gifts through the normal [payment and deposit workflow](#step-by-step-managing-donations), using the same family, fund and fiscal year as the pledge.
 2. Open **Finance → Pledge Dashboard** and select that fiscal year. The **Family Pledges** table compares each family's full commitment with giving for each fund.
 3. Click a fund name in **Fund Summary** to compare families within that fund on [Fund Contributor Detail](./fund-contributors.md).
-4. For a printable comparison, open **Finance → Deposit Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Create Report**.
+4. For a printable comparison, open **Finance → Financial Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Create Report**.
 
 For example, with a January–December fiscal year and no other pledges or payments for that family and fund:
 
@@ -112,10 +112,12 @@ Use **Save and Add Another** for the next pledge. Select the next family and che
 
 ## Pledge reminder letters
 
-1. Open **Finance → Deposit Reports → Pledge Reminders**.
-2. Choose the **Fiscal Year** used for the pledge and giving comparison. Use **Filter by Family** and **Filter by Fund** to match the comparison you reviewed.
-3. For pledge follow-up, keep **Include → Only Payments with Pledges** and **Generate → Only Families with unpaid pledges** selected.
-4. Choose **Create Report** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
+1. Open **Finance → Financial Reports** and choose **Pledge Reminders** under **Pledge Reports** (`/finance/reports/pledge-reminders`).
+2. Choose the **Fiscal Year** used for the pledge and giving comparison. Narrow the list if you need to with the **Classification**, **Family** and **Fund** pickers — each has **Add All** and **Clear All** buttons.
+3. For pledge follow-up, keep **Include** set to payments with pledges and **Generate** set to families with unpaid pledges.
+4. Choose **Download PDF** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
+
+If no family matches, the Pledge Reminders page returns with your choices kept and a **No Data Found** message naming the fiscal year, so you can widen the filters and try again.
 
 Letters use the same full-period commitment and giving as the family summary. In the example above, the letter shows $1,200 pledged, $200 paid and $1,000 remaining. Selecting families with unpaid pledges does not establish that an installment is overdue; review the family's agreed schedule before following up.
 
@@ -195,28 +197,28 @@ See [Deposits](./deposit-search.md) for full details.
 
 **Current Deposit** shows the open deposit you are working in: deposit number, date, type, **Total Amount**, and **Edit Deposit**. If nothing is open, the card is **No Active Deposit** and offers **Create Deposit**.
 
-**Recent Deposits** lists deposits for the **Fiscal Year** you pick (or **All Time**). Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search.
+**Recent Deposits** lists deposits for the **Time Range** you pick at the top of the dashboard (a number of days, a fiscal year, or **All Time**). Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search.
 
-**Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same year.
+**Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same range.
 
-**Payments by Fund** breaks down the payments for that same year by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the year are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
+**Payments by Fund** breaks down the payments for that same range by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the range are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
 
-## Deposit chart on the main dashboard
+## Deposit Tracking chart
 
-Staff with the Finance permission also see a **Deposit Tracking** chart on the main dashboard (the home page, not the Finance Dashboard). The selector next to the chart title switches the period the chart draws: **30 days**, **90 days** (the default), or **12 months**. The chart re-draws as soon as you change it, so you can check a recent dip against the longer trend without leaving the home page.
+The **Deposit Tracking** chart sits on the **Finance Dashboard** itself. It has no period selector of its own: it draws the **Time Range** chosen at the top of the dashboard, the same range that scopes the totals and the fund breakdown, so one change re-draws all of them together.
 
-## Deposit Reports
+## Financial Reports
 
-**Finance → Deposit Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
+**Finance → Financial Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
 
 The page groups these links:
 
-- **Tax & Giving Reports** — **Giving Statements** (see below) and **Zero Givers**
-- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Reminders**, and **Missing Pledges** (see below)
-- **Deposit Reports** — **Individual Deposit Report** and **Advanced Deposit Report**
+- **Giving Reports** — **Year-End Giving**, **Giving Statements** (see below) and **Zero Givers**
+- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Comparison**, **Pledge Reminders**, and **Missing Pledges** (see below)
+- **Deposit Reports** — one link, which opens the deposit reports page (`/finance/reports/deposits`)
 - **Membership Reports** — **Voting Members** (see [Voting Members](#voting-members)), which opens only for users with the Finance permission
 
-The **Finance** menu also lists **Financial Reports** and **Giving Statements**, so you can reach either one without going through the dashboard.
+The **Finance** menu lists **Financial Reports** itself, and **Year-End Giving** on its own, so you can reach either one without going through the dashboard.
 
 ### Missing Pledges
 
@@ -224,7 +226,7 @@ The **Finance** menu also lists **Financial Reports** and **Giving Statements**,
 
 ## Voting Members
 
-**Finance → Reports → Voting Members** prepares a list of candidates for a church vote. The report does not decide who may vote, and it does not save an eligibility record. It applies the criteria you choose, and your church leadership confirms the final list under your own bylaws.
+Open **Finance → Financial Reports** and choose **Voting Members** under **Membership Reports** to prepare a list of candidates for a church vote. The report does not decide who may vote, and it does not save an eligibility record. It applies the criteria you choose, and your church leadership confirms the final list under your own bylaws.
 
 ![The Voting Members page, with the classification list and review date](https://cdn.churchcrm.io/screenshots/en/desktop/finance-voting-review.png)
 
@@ -255,7 +257,7 @@ If nobody matches, or a value is not valid, the form returns with your filters s
 
 ## Giving Statements
 
-Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Giving Statements**, or choose **Generate** in the checklist on the **Finance Dashboard**.
+Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Financial Reports** and choose **Giving Statements** under **Giving Reports**, or choose **Generate** in the checklist on the **Finance Dashboard**.
 
 ### Make the statements
 
@@ -283,7 +285,7 @@ On a [family profile](./families.md), open **Finance** on the toolbar. Under **G
 
 ## Pledge Dashboard
 
-Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Deposit Reports** opens the same page.
+Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Financial Reports** opens the same page.
 
 The year list includes **All Time**. Choose **New Pledge** to enter a commitment, and check **Fiscal Year** in the editor before saving. See [How do I enter a pledge?](#how-do-i-enter-a-pledge) for installment entry, comparisons and reminder letters.
 
@@ -311,3 +313,4 @@ Go to **Finance** → **Admin** → **Statement Settings**. The page sets the st
 - [Envelope Manager](./envelope-manager.md) — family envelope numbers
 - [Fundraiser](./fundraiser.md) — managing fundraisers
 - [Reports & Queries](./reports-and-queries.md) — other financial reports
+
