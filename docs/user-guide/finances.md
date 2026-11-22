@@ -42,10 +42,10 @@ The same year shows up in a few places:
 1. Go to **Finance** → **View All Deposits**, then click **New Deposit** (top-right of the results card).
 2. Fill in the deposit **Comment**, **Type** (Bank, Credit Card, or Bank Draft), and **Date** in the modal, then click **Add New Deposit**.
 3. The page redirects to the **Deposit Slip Editor** (breadcrumb: Finance → Deposits → Edit Deposit).
-4. Click **Add Payment** to add each donation — the new payment form opens pre-linked to this deposit. Fill in Method, Fund, Amount, and a Family record, then save. Repeat for every payment in the batch.
+4. Click **Add Payment** to add each donation — the new payment form opens pre-linked to this deposit. Fill in Method, Fund, Amount, and a Family record, then save. Repeat for every payment in the batch. The **Method** starts on the one that matches the slip's type — **Check** on a Bank slip, **Credit Card** on a card slip, **Bank Draft** on a draft — because the defaults come from the deposit slip you opened, not from the last slip you worked on.
 5. The payments table lists **Family**, **Check Number**, **Fund**, **Amount**, and **Method**.
 6. Click **Generate Report** to download a PDF bank deposit form.
-7. When the deposit is ready to be finalised, toggle **Closed** and click **Save**.
+7. When the deposit is ready to be finalised, toggle **Closed** and click **Save**. On a **Credit Card** or **Bank Draft** deposit, closing deletes any failed transactions permanently — the editor warns you about this beside the **Closed** switch, before you save.
 
 See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 
@@ -205,7 +205,7 @@ See [Deposits](./deposit-search.md) for full details.
 
 ## Deposit Tracking chart
 
-The **Deposit Tracking** chart sits on the **Finance Dashboard** itself. It has no period selector of its own: it draws the **Time Range** chosen at the top of the dashboard, the same range that scopes the totals and the fund breakdown, so one change re-draws all of them together.
+The **Deposit Tracking** chart sits on the **Finance Dashboard** itself. It has no period selector of its own: it draws the **Time Range** chosen at the top of the dashboard, the same range that scopes the totals and the fund breakdown, so one change re-draws all of them together. The chart draws **one line per donation fund**, so you can watch each fund's deposits grow across the range instead of seeing only the combined total.
 
 ## Financial Reports
 
@@ -275,13 +275,32 @@ The PDF is named `GivingStatements-<year>.pdf`, or `GivingStatement-<year>-<fami
 
 ### What the letter says and looks like
 
-- The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**, which also holds the church tax ID (EIN) and **PDF Handling**. These settings are not on System Settings.
+- The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**. That page also holds the **Charity on receipts** details (below) and **PDF Handling**. These settings are not on System Settings.
 - The top of the page uses your church letterhead image when one is uploaded under **Letterhead** on **Reports → Admin → Report Settings**. Without one, it shows your church name and address. See [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead) for the image size.
 - Each letter is addressed to the family's [mailing address](./reports-and-queries.md#which-address-is-printed).
 
 ### One family
 
 On a [family profile](./families.md), open **Finance** on the toolbar. Under **Giving Statements**, choose **Print** or **Email** for a year. Years that the family has payments are listed. **Email** sends the PDF to the family's email addresses and returns you to the profile.
+
+### Official receipts for Canadian charities
+
+On the **Giving Statements** page, choose **Canadian Official Receipt** to make official donation receipts instead of the usual statement letter. The receipt prints the charity details from the **Charity on receipts** section of **Statement Settings**: the charity's legal name, its registered address, its registration number, and the place receipts are issued. If any of those are still blank, finance pages show a reminder to fill them in — finance keeps working until then.
+
+ChurchCRM does not keep a receipt register or keep copies of issued receipts. Keep the original PDF and your own receipt log with your Canadian records, do not reuse a receipt number for a different receipt, and do not receipt the same gifts twice. There is no cancellation or replacement workflow in ChurchCRM: use your existing CRA-compliant process for corrections and lost-receipt replacements. The signature image is a picture of a signature, not a secure digital signature.
+
+## Charity details for receipts
+
+**Finance → Admin → Statement Settings** holds everything printed about your charity, in one place, in its **Charity on receipts** section:
+
+- **Tax ID on statements** — printed on ordinary giving statements; for example, the EIN in the United States.
+- **Charity Legal Name** — the name the charity is registered under, which can differ from the church name.
+- **Charity Registered Address** — leave blank to use the address on Church Information.
+- **Charity Registration Number** — printed on official receipts; leave blank to use the Tax ID on Church Information.
+- **Receipt Issue Locality** — the place receipts are issued; leave blank to use the city on Church Information.
+- **Receipt Closing** — the closing phrase above the signer, for example *Sincerely*.
+
+The signer's printed name is the **Signer** field in the same page's **Statement Wording** section. The signature **image** is separate: upload it under **Reports → Admin → Report Settings**, where it prints above the signer's name on giving statements and receipts.
 
 ## Pledge Dashboard
 
@@ -295,7 +314,7 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for the tables and status c
 
 ## Where are the giving statement settings?
 
-Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording, the church tax ID and how the PDF is handled. The wording fields save as you change them — there is no separate save step for the wording. **Report Settings**, for the letterhead and the letter greeting and signature, stays under **Reports** → **Admin**.
+Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording (including the **Signer** name), the charity details printed on statements and receipts — the tax ID, legal name, registered address and registration number — and how the PDF is handled. See [Charity details for receipts](#charity-details-for-receipts). The wording fields save as you change them — there is no separate save step for the wording. **Report Settings**, for the letterhead, the letter greeting and signature text, and the signature image, stays under **Reports** → **Admin**.
 
 ---
 
