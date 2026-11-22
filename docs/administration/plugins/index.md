@@ -73,9 +73,11 @@ we recommend running every quarter.
 
 ## For plugin developers
 
-If you want to **build** a community plugin, start in the ChurchCRM
-repository's skill files rather than here — they have the canonical
-technical details:
+If you want to **build** a community plugin, start with
+[Creating Community Plugins](/administration/plugins/creating-community-plugins)
+— the full guide to plugin structure, the manifest, the main plugin
+class, routes, views, hooks, and publishing. For the canonical
+technical details, see the ChurchCRM repository's skill files:
 
 - [`plugin-create.md`](https://github.com/ChurchCRM/CRM/blob/main/.agents/skills/churchcrm/plugin-create.md)
   — the community plugin quickstart: scaffold, code, run the security
