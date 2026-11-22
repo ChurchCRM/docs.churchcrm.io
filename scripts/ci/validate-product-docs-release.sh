@@ -2,7 +2,9 @@
 # Release gate for product-doc pull requests, decided by target branch:
 # - main: only pull requests milestoned Current may merge in. Every other milestone
 #   (an upcoming version such as 7.8.4, or none) is blocked: that work merges into
-#   release-docs/<version>.
+#   release-docs/<version>. One exception: the release branch's own pull request
+#   (head release-docs/<version>, milestoned <version>) is the sanctioned review
+#   surface for an upcoming release and passes; merging it stays a release step.
 # - release-docs/<version>: only pull requests milestoned <version> may merge in.
 # - any other base branch: the gate does not apply.
 # Maintenance pull requests labeled infrastructure, dependencies, ci, or repo-maintenance skip the check.
@@ -34,10 +36,12 @@ if [ -z "${BASE_REF:-}" ]; then
   BASE_REF=$(gh api "repos/$DOCS_REPO/pulls/$PR_NUMBER" --jq '.base.ref // ""')
 fi
 
+head_ref=$(gh api "repos/$DOCS_REPO/pulls/$PR_NUMBER" --jq '.head.ref // ""')
 milestone=$(gh api "repos/$DOCS_REPO/issues/$PR_NUMBER" --jq '.milestone.title // ""')
 labels=$(gh api "repos/$DOCS_REPO/issues/$PR_NUMBER" --jq '[.labels[].name] | join(",")')
 
 echo "Base: ${BASE_REF:-<unknown>}"
+echo "Head: ${head_ref:-<unknown>}"
 echo "Milestone: ${milestone:-<none>}"
 echo "Labels: ${labels:-<none>}"
 
@@ -52,6 +56,15 @@ case "${BASE_REF:-}" in
       echo "Milestone is Current. Product docs may merge into main."
       exit 0
     fi
+    case "${head_ref:-}" in
+      release-docs/*)
+        version="${head_ref#release-docs/}"
+        if [ "$milestone" = "$version" ]; then
+          echo "Release-branch pull request for $version with a matching milestone. It may be reviewed against main; merging it is a release step."
+          exit 0
+        fi
+        ;;
+    esac
     echo "::error::Only pull requests milestoned Current may merge into main (this one: ${milestone:-none})."
     echo "Docs for an unreleased version merge into release-docs/<version> and reach main when the release is published."
     echo "If this is repository-only maintenance, apply one of: infrastructure, dependencies, ci, repo-maintenance."
