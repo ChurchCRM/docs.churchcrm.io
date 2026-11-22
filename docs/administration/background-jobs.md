@@ -5,7 +5,7 @@ sidebar_position: 11
 
 # Background Jobs & Scheduler
 
-ChurchCRM 7.7 includes a background-job scheduler for work that should run regularly without requiring an administrator to start it manually. Current jobs include birthday email processing and plugin `CRON_RUN` handlers.
+ChurchCRM runs a background-job scheduler for work that should happen on a schedule without an administrator starting it. Current jobs include birthday email and plugin `CRON_RUN` handlers.
 
 ## Recommended setup: cron
 
