@@ -3,6 +3,16 @@ title: First Run Configuration
 sidebar_position: 1
 ---
 
+## The Setup Wizard
+
+A fresh ChurchCRM opens the setup wizard: one page, **Install ChurchCRM**, with everything on it. Have the database details from your web host ready — it takes about two minutes.
+
+The page checks your server as it opens: the software ChurchCRM needs, permission to save settings and photos, and that the ChurchCRM files match the release. It shows the web address ChurchCRM will open at; change it only if people will use a different address than the page you are on.
+
+Under **Connect your database**, create a MySQL or MariaDB database in your hosting control panel first (in cPanel: **MySQL Databases**), then copy its details into the form. ChurchCRM supports MySQL 8.4+ and MariaDB 10.11+.
+
+When you click **Install**, ChurchCRM tests the database connection before it saves anything. If something is wrong — a detail that does not connect, a file it cannot write, a field that is missing — the page says in plain language what is wrong and what to do about it, one sentence for each thing to fix. Nothing is installed until the test passes, so you can correct the details and click **Install** again.
+
 ## First-Run Setup Flow
 
 After the setup wizard completes and you log in for the first time, ChurchCRM walks you through two mandatory steps before you can access the application.
