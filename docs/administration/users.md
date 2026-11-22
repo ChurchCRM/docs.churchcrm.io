@@ -29,8 +29,8 @@ The new user signs in at `/admin/`. The button in the welcome email opens the sa
 - **Manage [Groups](/user-guide/groups) and Roles** — add, edit, and delete groups and their roles, and assign [properties](/user-guide/properties) to groups.
 - **Manage Donations and [Finances](/user-guide/finances)** — add, edit, and delete donations.
 - **Manage [Fundraisers](/user-guide/fundraiser)** — grants access to the Fundraiser menu (create/edit fundraisers, manage items, buyers, and winners). This permission is only effective when the **Enable Fundraiser menu** setting is turned on in **System Settings → Finance Settings**; if that global toggle is off, the Fundraiser menu is hidden for everyone regardless of this per-user permission. Admins always have access when the feature is enabled.
-- **Manage Ministries** — a global ministry manager for [Volunteer Management (v2)](/user-guide/ministries): every ministry — create, deactivate, delete, and grant coordinators and team leaders. Only effective while the volunteer experience on **Admin → Ministry Settings** is V2 or Both.
-- **Manage My Ministries** — a ministry coordinator's permission: opens the **Ministries** heading, the Ministry Dashboard and the pages of the ministries the person has been made a coordinator of (on the ministry page), including creating those ministries' events without **Manage Events**, and grants nothing over any other ministry. Like Manage Ministries, it is only effective while the volunteer experience is V2 or Both. See [Who can do what](/user-guide/ministries/permissions).
+- **Manage Ministries** — a global ministry manager for [Volunteer Management (v2)](/user-guide/ministries): every ministry — create, deactivate, delete, and grant coordinators and team leaders.
+- **Manage My Ministries** — a ministry coordinator's permission: opens the **Ministries** heading, the Ministry Dashboard and the pages of the ministries the person has been made a coordinator of (on the ministry page), including creating those ministries' events without **Manage Events**, and grants nothing over any other ministry. See [Who can do what](/user-guide/ministries/permissions).
 - **View, Add, and Edit [Notes](/user-guide/notes)** — manage notes on person and family records.
 - **Admin** — grants all of the above. Only an administrator can define [properties](/user-guide/properties), property types and [classifications](/user-guide/classifications).
 
@@ -65,7 +65,7 @@ Give each person the least they need for their job. These are starting points; a
 | Treasurer | **Manage Donations and Finances** | Giving stays apart from pastoral and membership records. |
 | Helper who enters donations | **Manage Donations and Finances** | There is no entry-only right. This grants all of finance, so give it to few people and review it each year. |
 | Ministry coordinator | **Manage My Ministries** | Covers only the ministries they coordinate. **Manage Groups and Roles** covers every group, so use it for staff, not for volunteers. |
-| Volunteer coordinator | **Manage Ministries** | Covers every ministry. Works only while the volunteer experience is V2 or Both. |
+| Volunteer coordinator | **Manage Ministries** | Covers every ministry. |
 | Event helper | **Manage Events** | Nothing else. The switch is shown while events are enabled. |
 | Board member | No staff rights | Board membership is a group, not a permission. Grant rights for the job the person does, not for the seat. |
 | Member who updates their own details | No user account | They sign in to the [Member Portal](/administration/member-portal) with their own email once [member sign-in](./member-sign-in.md) is on. |
