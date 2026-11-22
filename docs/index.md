@@ -56,6 +56,21 @@ For ongoing system management and maintenance.
 
 ---
 
+## I'm a developer
+
+For API consumers, plugin authors, and contributors building on ChurchCRM.
+
+- [Public API](/api/public) — Endpoints that need no authentication: self-registration, public calendar, reference data
+- [Private API](/api/private) — Authenticated endpoints for people, families, groups, finance, and administration
+- [API Tokens](/administration/api-tokens) — How API keys work and how requests authenticate
+- [Creating Community Plugins](https://github.com/ChurchCRM/CRM/wiki/Creating-Community-Plugins) — The plugin-building guide: structure, manifest, hooks, routes, and views
+- [Plugins](/administration/plugins) — Installing plugins, and submitting yours to the community registry
+- [Development Setup](https://github.com/ChurchCRM/CRM/wiki/Development) — Codespaces, dev containers, and the local development workflow
+- [Contributing](/contributing) — How to contribute code, documentation, and reviews
+- [Developer Wiki](https://github.com/ChurchCRM/CRM/wiki) — Architecture, testing, and contributor guides
+
+---
+
 ## Quick Reference
 
 | I need to… | Go to |

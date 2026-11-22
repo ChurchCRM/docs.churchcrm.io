@@ -30,8 +30,8 @@ const sidebars: SidebarsConfig = {
         'installation/azure',
         'installation/vps-cloud',
         'installation/docker',
-        'installation/ssl-https',
         'installation/windows',
+        'installation/ssl-https',
       ],
     },
     {
@@ -158,6 +158,31 @@ const sidebars: SidebarsConfig = {
         ...privateApiSidebar,
       ],
     },
+    {
+      type: 'category',
+      label: '🛠️ Developers',
+      collapsed: false,
+      items: [
+        'contributing',
+        'administration/docker',
+        'workflow',
+        {
+          type: 'link',
+          label: 'API Tokens & Authentication',
+          href: '/administration/api-tokens',
+        },
+        {
+          type: 'link',
+          label: 'Building & Submitting Plugins',
+          href: '/administration/plugins',
+        },
+        {
+          type: 'link',
+          label: 'Developer Wiki (GitHub)',
+          href: 'https://github.com/ChurchCRM/CRM/wiki',
+        },
+      ],
+    },
   ],
 
   adminSidebar: [
@@ -184,6 +209,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: '⚙️ Configuration',
       items: [
+        'administration/settings-quick-reference',
         'administration/system-settings',
         'administration/maps-and-geocoding',
         'administration/server-locale',
@@ -207,6 +233,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'administration/upgrade',
         'administration/backup-restore',
+        'administration/background-jobs',
         'administration/demo-data',
         'administration/rollback',
         'administration/file-system-permissions',
@@ -221,7 +248,6 @@ const sidebars: SidebarsConfig = {
         'administration/logging-and-diagnostics',
         'administration/bug-reporting-and-diagnostics',
         'administration/reporting-issues',
-        'workflow',
       ],
     },
     {
