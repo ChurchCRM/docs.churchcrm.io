@@ -5,20 +5,20 @@ sidebar_position: 8
 
 # Notes
 
-Notes are memos attached to [Person](/user-guide/persons) or [Family](/user-guide/families) records. Use them to record pastoral visits, prayer requests, important conversations, or any other relevant information. On a Person record, notes have their own **Notes** tab, sorted newest-first; the tab shows a count badge when the person has notes. On a Family record, notes appear in the **Timeline** card alongside calendar events and system activity. A Person record also has a **Timeline** tab, but it shows activity only — notes are not on it.
+Notes are memos attached to [Person](/user-guide/persons) or [Family](/user-guide/families) records. Use them to record pastoral visits, prayer requests, important conversations, or any other relevant information. On a Person record, notes have their own **Notes** tab, sorted newest-first; the tab shows a count badge when the person has notes. On a Family record, notes have their own **Notes** tab too. Both records also have a **Timeline** tab, but it shows activity only — notes are not on it.
 
 ---
 
 ## Where notes appear
 
-On a Person record, open the **Notes** tab to read, add and edit notes. On a Family record, notes sit in the **Timeline** card, which shows all of the family's activity in one place. Use its filter chips to focus on what matters:
+On a Person record, open the **Notes** tab to read, add and edit notes. On a Family record, open the **Notes** tab to read, add and edit notes. The **Timeline** tab on either record gathers the record's activity in one place. Use its filter chips to focus on what matters:
 
 | Filter | Shows |
 |--------|-------|
 | **Notes** | Notes written by staff |
 | **Events** | Calendar events this person/family attended |
-| **Email** | Emails ChurchCRM sent to this person or family |
-| **Account** | Member Portal account activity |
+| **Emails** | Emails ChurchCRM sent to this person or family — this chip appears only when the record has email entries |
+| **Account** | Member Portal account activity — this chip appears only when the record has account activity |
 | **System** | Automatic entries: record creation, edits, photo uploads, group changes, deleted-note audit entries |
 
 Long notes show a short preview (about three lines). When a note is clipped, **Read more** appears under it — click it to view the full note in a popup without leaving the page.
@@ -68,7 +68,7 @@ Deleting a note creates a **System** timeline entry recording who deleted it and
 
 The author can edit the note. An administrator can edit it as well, including a private note written by someone else. Other users cannot.
 
-1. Find the note on the **Notes** tab (Person record) or in the **Timeline** card (Family record)
+1. Find the note on the **Notes** tab (Person or Family record)
 2. Click **Edit** in the note's footer — the same popup editor opens with the note loaded
 3. Make your changes and click **Save**
 
@@ -78,7 +78,7 @@ The author can edit the note. An administrator can edit it as well, including a 
 
 ## Deleting a Note
 
-1. Find the note on the **Notes** tab (Person record) or in the **Timeline** card (Family record)
+1. Find the note on the **Notes** tab (Person or Family record)
 2. Click **Delete** in the note's footer
 3. Confirm in the dialog
 
