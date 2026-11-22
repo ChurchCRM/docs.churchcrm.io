@@ -335,7 +335,9 @@ public function getConfigurationError(): ?string
 
 public function getSettingsSchema(): array
 {
-    // Define settings for the admin UI
+    // The admin UI renders the "settings" array from plugin.json (see
+    // "Plugin Manifest (plugin.json)" above). This PHP schema is the copy
+    // isConfigured() checks for required values — keep the two in sync.
     return [
         [
             'key' => 'apiKey',
@@ -373,6 +375,14 @@ public function getFooterContent(): string
 {
     // Return HTML/JS to inject before </body>
     return '<script src="' . $this->getAssetUrl('js/plugin.js') . '"></script>';
+}
+
+private function getAssetUrl(string $path): string
+{
+    // AbstractPlugin provides no asset helper, so build the URL from the
+    // plugin's web-served assets/ directory.
+    return \ChurchCRM\dto\SystemURLs::getRootPath()
+        . '/plugins/community/my-awesome-plugin/assets/' . $path;
 }
 
 public function getClientConfig(): array
@@ -598,15 +608,20 @@ $(document).ready(function() {
         tbody.empty();
         
         items.forEach(function(item) {
-            tbody.append(
-                '<tr>' +
-                '<td>' + item.name + '</td>' +
-                '<td><span class="badge badge-' + (item.active ? 'success' : 'secondary') + '">' + 
-                    (item.active ? i18next.t('Active') : i18next.t('Inactive')) + '</span></td>' +
-                '<td><button class="btn btn-sm btn-danger delete-btn" data-id="' + item.id + '">' +
-                    '<i class="fa-solid fa-trash"></i></button></td>' +
-                '</tr>'
-            );
+            // Build the cells with .text()/.attr() so stored values such as
+            // item.name are shown as text, not parsed as HTML markup.
+            var row = $('<tr>');
+            row.append($('<td>').text(item.name));
+            var badge = $('<span>')
+                .addClass('badge badge-' + (item.active ? 'success' : 'secondary'))
+                .text(item.active ? i18next.t('Active') : i18next.t('Inactive'));
+            row.append($('<td>').append(badge));
+            var deleteBtn = $('<button>')
+                .addClass('btn btn-sm btn-danger delete-btn')
+                .attr('data-id', item.id)
+                .append('<i class="fa-solid fa-trash"></i>');
+            row.append($('<td>').append(deleteBtn));
+            tbody.append(row);
         });
         
         $('#totalItems').text(items.length);
@@ -736,7 +751,7 @@ Here are example handlers for the implemented hooks:
 /**
  * Called when a person record is created
  */
-public function onPersonCreated(\ChurchCRM\Person $person): void
+public function onPersonCreated(\ChurchCRM\model\ChurchCRM\Person $person): void
 {
     // $person is the Person ORM object with full data
     $logger = \ChurchCRM\Utils\LoggerUtils::getAppLogger();
@@ -751,11 +766,11 @@ public function onPersonCreated(\ChurchCRM\Person $person): void
 /**
  * Called when a person record is updated (after initial creation)
  */
-public function onPersonUpdated(\ChurchCRM\Person $person, array $oldData): void
+public function onPersonUpdated(\ChurchCRM\model\ChurchCRM\Person $person, array $oldData): void
 {
     // $oldData contains the previous column values as an associative array
     // Use the oldData to detect what changed
-    if ($oldData['email_1'] !== $person->getEmail1()) {
+    if ($oldData['Email'] !== $person->getEmail()) {
         $this->updateEmailInExternalService($person);
     }
 }
@@ -763,7 +778,7 @@ public function onPersonUpdated(\ChurchCRM\Person $person, array $oldData): void
 /**
  * Called when a family record is created
  */
-public function onFamilyCreated(\ChurchCRM\Family $family): void
+public function onFamilyCreated(\ChurchCRM\model\ChurchCRM\Family $family): void
 {
     $this->registerFamilyWithService($family);
 }
@@ -771,9 +786,9 @@ public function onFamilyCreated(\ChurchCRM\Family $family): void
 /**
  * Called when a family record is updated (after initial creation)
  */
-public function onFamilyUpdated(\ChurchCRM\Family $family, array $oldData): void
+public function onFamilyUpdated(\ChurchCRM\model\ChurchCRM\Family $family, array $oldData): void
 {
-    if ($oldData['name'] !== $family->getName()) {
+    if ($oldData['Name'] !== $family->getName()) {
         $this->updateFamilyNameInService($family);
     }
 }
@@ -807,7 +822,7 @@ public function onMenuBuilding(array $menuItems): array
 
 ### Available Hooks
 
-Hooks fire at specific events in ChurchCRM. Register them in your `boot()` method using `HookManager::addAction()` for actions or `HookManager::applyFilters()` for filters.
+Hooks fire at specific events in ChurchCRM. Register them in your `boot()` method using `HookManager::addAction()` for actions or `HookManager::addFilter()` for filters.
 
 #### Implemented Hooks (currently active)
 
@@ -817,6 +832,8 @@ Hooks fire at specific events in ChurchCRM. Register them in your `boot()` metho
 | `PERSON_UPDATED` | `Person $person, array $oldData` | Fires after a person is updated (excludes creation) |
 | `FAMILY_CREATED` | `Family $family` | Fires after a family record is created via ORM |
 | `FAMILY_UPDATED` | `Family $family, array $oldData` | Fires after a family is updated (excludes creation) |
+| `PERSON_DELETED` | `int $personId, array $personData` | Fires after a person record is deleted; $personData is a snapshot of the deleted row |
+| `FAMILY_DELETED` | `int $familyId, array $familyData` | Fires after a family record is deleted; $familyData is a snapshot of the deleted row |
 | `MENU_BUILDING` | `array $menuItems` (filter) | Allows plugins to register menu items dynamically |
 | `SYSTEM_CALENDARS_REGISTER` | `SystemCalendar[] $calendars` (filter) | Allows plugins to contribute custom calendars |
 | `CRON_RUN` | (none) | Fires during background timer jobs |
@@ -825,8 +842,6 @@ Hooks fire at specific events in ChurchCRM. Register them in your `boot()` metho
 
 These hooks are available in `Hooks.php` but do not yet fire in the codebase. You may register listeners, but they won't be triggered until they're implemented:
 
-- `PERSON_DELETED` — planned for deletion tracking
-- `FAMILY_DELETED` — planned for deletion tracking
 - `EVENT_CREATED` — planned for event monitoring
 - `EVENT_CHECKIN` — planned for check-in tracking
 - `EVENT_CHECKOUT` — planned for check-out tracking
@@ -1013,8 +1028,8 @@ Browse the source at: `src/plugins/core/`
 
 ## Getting Help
 
-- **Documentation**: [ChurchCRM Wiki](https://github.com/ChurchCRM/CRM/wiki)
-- **Issues**: [GitHub Issues](https://github.com/ChurchCRM/CRM/issues)
+- **Questions & help**: [Ask on Discord](https://discord.gg/tuWyFzj3Nj)
+- **Issues**: [Open a GitHub issue](https://github.com/ChurchCRM/CRM/issues/new/choose)
 
 ---
 
