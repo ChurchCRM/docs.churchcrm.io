@@ -108,7 +108,7 @@ While a person or family is still waiting:
 - Person and family lists and views show a **Pending review** badge. A family view can link to **Review self registrations**.
 - In the Member Portal, a proposed family member shows **Waiting for review** on the family's **My Family** page.
 
-People who are still awaiting review are left out of the printed **People Directory**. Approving them is what makes them eligible for that directory. Other reports are unchanged by this rule. See [Reports & Queries](/user-guide/reports-and-queries).
+People who are still awaiting review are left out of the printed **People Directory**, out of emails addressed to the people in the [Cart](./cart.md), and out of [mailing labels](./reports-and-queries.md#mailing-labels). Approving them is what makes them eligible for all three. Other reports are unchanged by this rule. See [Reports & Queries](/user-guide/reports-and-queries).
 
 ---
 
