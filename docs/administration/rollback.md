@@ -28,7 +28,7 @@ This document assumes you are familiar with your own hosting platform and have a
 * MySQL management tools (PHPMyAdmin, and/or command line tools)
   * Suggested tutorials and information:
     * [MySQL Tutorial (Official)](https://dev.mysql.com/doc/refman/8.0/en/tutorial.html)
-    * [Another good MySQL Tutorial](http://www.mysqltutorial.org/basic-mysql-tutorial.aspx)
+    * [Another good MySQL Tutorial](https://www.mysqltutorial.org/mysql-basics/)
     * [phpMyAdmin Official Wiki](https://github.com/phpmyadmin/phpmyadmin/wiki)
 * File system management (navigate, copy, move, files and unpack compressed files etc)
   * Suggested tutorials and information:

@@ -206,10 +206,10 @@ The loader intentionally rejects nested structures — only flat
 
 **Where is the code that loads these files?**
 
-- [`src/ChurchCRM/Plugin/PluginLocalization.php`](https://github.com/ChurchCRM/CRM/blob/main/src/ChurchCRM/Plugin/PluginLocalization.php)
+- [`src/ChurchCRM/Plugin/PluginLocalization.php`](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Plugin/PluginLocalization.php)
   — the loader itself.
-- [`src/ChurchCRM/Plugin/PluginManager.php`](https://github.com/ChurchCRM/CRM/blob/main/src/ChurchCRM/Plugin/PluginManager.php)
+- [`src/ChurchCRM/Plugin/PluginManager.php`](https://github.com/ChurchCRM/CRM/blob/master/src/ChurchCRM/Plugin/PluginManager.php)
   — calls `bindPhpDomains()` in `loadActivePlugins()` and embeds JS
   resources in `getPluginsClientConfig()`.
-- [`.agents/skills/churchcrm/plugin-development.md → Plugin Localization`](https://github.com/ChurchCRM/CRM/blob/main/.agents/skills/churchcrm/plugin-development.md#plugin-localization-independent-of-poeditor)
+- [`.agents/skills/churchcrm/plugin-development.md → Plugin Localization`](https://github.com/ChurchCRM/CRM/blob/master/.agents/skills/churchcrm/plugin-development.md#plugin-localization)
   — the canonical developer skill.
