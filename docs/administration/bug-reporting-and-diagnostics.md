@@ -31,6 +31,25 @@ Thank you for helping improve ChurchCRM! This guide will help you report bugs ef
 - Features not behaving as documented
 - Reproducible bugs
 
+### Quick Reference
+
+| Goal | Best Option |
+|------|-------------|
+| Report a bug | [In-app Support → Report Issue](#in-app-bug-reporting-recommended) |
+| Request a feature | [GitHub Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) |
+| Ask a question | [Discord](https://discord.gg/tuWyFzj3Nj) |
+| Report a login issue | [GitHub Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) |
+| Report a documentation problem | [Docs repository issue](https://github.com/ChurchCRM/docs.churchcrm.io/issues/new) |
+
+---
+
+## Before You Report
+
+1. **Search existing issues** — your problem may already be reported.
+2. **Check the documentation** — the answer may already be available.
+3. **Try a different browser** — to rule out browser-specific issues.
+4. **Clear your browser cache** — stale cached files can cause unexpected behavior.
+
 ---
 
 ## In-App Bug Reporting (Recommended)
@@ -49,6 +68,29 @@ Thank you for helping improve ChurchCRM! This guide will help you report bugs ef
 - ✅ Includes your system logs
 - ✅ Includes your configuration (sanitized for privacy)
 - ✅ No need to manually collect diagnostic info
+
+**What gets captured automatically:**
+
+- ChurchCRM version (exact version and build)
+- Server environment (PHP version, database type, server OS)
+- Browser information (user agent, screen size)
+- User context (role, permissions, current page)
+- System configuration (relevant settings and enabled modules)
+- Recent error logs related to your session
+
+This information is essential for diagnosis and significantly speeds up issue resolution.
+
+---
+
+## When to Use GitHub Instead
+
+Use GitHub issues only if you cannot access ChurchCRM directly:
+
+- You cannot log in (authentication issues)
+- ChurchCRM is not yet installed
+- The server is completely unreachable
+- You are reporting a documentation problem — file it in the [documentation repository](https://github.com/ChurchCRM/docs.churchcrm.io/issues/new)
+- You are reporting a development environment issue
 
 ---
 
@@ -142,6 +184,13 @@ The log level choices are only **DEBUG**, **INFO**, **WARNING**, and **ERROR**. 
 ## GitHub Bug Report Template
 
 **Use this format when reporting on GitHub:**
+
+Start from a template:
+
+- [Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) — For software defects
+- [Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) — For new functionality
+- [Question](https://github.com/ChurchCRM/CRM/issues/new?template=question.md) — For support questions
+- [Documentation Problem](https://github.com/ChurchCRM/docs.churchcrm.io/issues/new) — For errors or gaps in these docs; documentation issues live in the docs repository, not the ChurchCRM repository
 
 ### Title
 ```

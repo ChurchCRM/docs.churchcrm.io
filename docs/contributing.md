@@ -5,6 +5,8 @@ sidebar_label: Contributing
 
 Thank you for considering contributing to ChurchCRM. This project exists to serve churches: every contribution should help a church operate more effectively and freely share improvements with the community.
 
+This page is the contributor on-ramp: the ways to contribute and how to take your first steps. For the full code workflow — development setup, branching, and pull requests for the ChurchCRM codebase itself — see the [Contributing guide on the wiki](https://github.com/ChurchCRM/CRM/wiki/Contributing).
+
 The project welcomes and depends on contributions from developers and users in the open source community. Contributions can be made in several ways, including:
 
 - Code patches via pull requests
