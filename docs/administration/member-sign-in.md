@@ -189,17 +189,26 @@ Staff sign in at `/admin/` with their login name, password and two-factor code, 
 
 ![The staff sign-in page at /admin/](https://cdn.churchcrm.io/screenshots/en/desktop/staff-sign-in.png)
 
+**The sign-in chooser** at `/session/` is the page a signed-out visitor meets. It shows your church's name under a **Sign in** heading, with one button for each way in your install offers:
+
+| Button | Goes to | Shows when |
+|---|---|---|
+| **Congregation login** | The member sign-in page, `/portal/login` | Member sign-in is on |
+| **Register your family to our church** | [Self-registration](../user-guide/self-registrations.md), `/portal/register` | Self-registration is on |
+| **Staff login** | The staff sign-in page | Always |
+
+**Staff login** is always offered, so the chooser appears whenever there is a real choice to make. Signing out lands on the chooser too, and each sign-in form carries a **Choose a different way to sign in** link back to it while member sign-in or self-registration is on.
+
 **The web root** (your plain ChurchCRM address) sends each visitor to the right place:
 
 | Who opens it | Where they go |
 |---|---|
 | Signed in as staff | The staff dashboard |
 | Signed in to the portal as a member | The Member Portal |
-| Signed out, member sign-in on | The member sign-in page, `/portal/login`. It has no staff link: staff go to `/admin/` themselves |
-| Signed out, member sign-in off, [self-registration](../user-guide/self-registrations.md) on | `/portal/login`, which then shows a **Welcome** page: a **Register your family** button, *"Member sign-in isn't available yet. Please contact the church office."*, and a **Church leader sign-in** link to `/admin/` |
-| Signed out, both off | The staff sign-in at `/admin/` |
+| Signed out, member sign-in or self-registration on | The sign-in chooser at `/session/` |
+| Signed out, both off | The staff sign-in at `/admin/` — the only door left, so there is no chooser to show |
 
-Self-registration is the **Self-Registration** setting on **People → Admin → People Settings → New Members & Greeting**. The signed-out portal pages link to each other in the top bar: **Sign in** while member sign-in is on, **Register your family** while self-registration is on.
+Self-registration is the **Self-Registration** setting on **People → Admin → People Settings → New Members & Greeting**.
 
 - **A signed-out staff page** goes to `/admin/` and returns to that page after sign-in.
 - **Signed in at `/admin/`**, an administrator gets the Admin Dashboard and other staff go to the staff dashboard. Every other `/admin/…` page stays administrator-only.
