@@ -42,6 +42,6 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 
 ## Development & Advanced
 
-- [Reporting Issues](/administration/reporting-issues) — How to report bugs and request support
-- [Docker Development Environment](/administration/docker) — Development containers, npm scripts, and troubleshooting
+- [Bug Reporting & Diagnostics](/administration/bug-reporting-and-diagnostics) — How to report bugs and request support
+- [Docker Development Environment](/developers/docker) — Development containers, npm scripts, and troubleshooting
 

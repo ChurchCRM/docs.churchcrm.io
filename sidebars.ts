@@ -124,8 +124,14 @@ const sidebars: SidebarsConfig = {
       items: [
         'user-guide/email',
         'user-guide/text-messages',
-        'user-guide/reports-and-queries',
         'user-guide/geographic',
+      ],
+    },
+    {
+      type: 'category',
+      label: '📊 Data & Reports',
+      items: [
+        'user-guide/reports-and-queries',
         'user-guide/data-import',
         'user-guide/export',
       ],
@@ -165,7 +171,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'contributing',
-        'administration/docker',
+        'developers/docker',
         'workflow',
         'administration/plugins/creating-community-plugins',
         {
@@ -249,7 +255,6 @@ const sidebars: SidebarsConfig = {
         'administration/faqs',
         'administration/logging-and-diagnostics',
         'administration/bug-reporting-and-diagnostics',
-        'administration/reporting-issues',
       ],
     },
     {
