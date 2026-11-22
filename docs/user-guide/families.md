@@ -43,6 +43,12 @@ Every Person should belong to a family.
 1. Use the header search field (**Search people, families, groups…**) and open the family from the results.
 2. Or go to **People → Family Listing**.
 
+## Family View
+
+Opening a family shows its page, laid out like a person's page. The header shows the family's name and photo, with its members in tables underneath — **Key People**, **Children** and **Other Members**. The address cards, the **Email** card, properties, custom fields and the **Verification** card sit above the tabs.
+
+Everything else sits in tabs: **Notes** (the family's notes, on their own tab as on a person), **Giving History** (the family's pledges and payments, with the fiscal-year filter described below) and **Timeline**.
+
 ## Family Listing
 
 **People → Family Listing** is the list of families. The page title is **Family Listing**.
