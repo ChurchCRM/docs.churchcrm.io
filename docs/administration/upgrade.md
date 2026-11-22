@@ -257,3 +257,11 @@ A **smart version check** prevents old application code from running against a n
 - Review **Admin → Get Started** for any new configuration options added in this version
 - Check the [changelog](https://github.com/ChurchCRM/CRM/releases) for feature notes
 - The docs site version of this page reflects the current release — if something looks different, check the [features overview](/getting-started/features-overview)
+
+---
+
+## Volunteer Opportunities are removed in early 2027
+
+Volunteer Opportunities (V1) are retired in early 2027. The first release after about 2027-01-10 converts any opportunities that are still there to Ministries, then removes the V1 feature: its screens, its API, the two V1 People Reports and its data tables.
+
+Convert your opportunities before you upgrade to that release, so you choose which ministry each one joins: **Admin → People Settings → Convert Volunteer Opportunities**. See [Moving to Volunteer Management (v2)](../user-guide/volunteers.md#moving-to-volunteer-management-v2).
