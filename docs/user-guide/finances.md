@@ -19,7 +19,7 @@ Finance views use the church's fiscal year, which may not match the calendar yea
 
 The same year shows up in a few places:
 
-- **Finance → Dashboard** scopes **Recent Deposits** with its **Time Range**: a number of days, a fiscal year, or **All Time**.
+- The **Finance → Dashboard** **Time Range** (a number of days, a fiscal year, or **All Time**) scopes the dashboard's totals, fund breakdown and chart. It does not scope **Recent Deposits**, which always shows the five most recent deposits — for an earlier period, use the deposits search (**Finance → View All Deposits**).
 - The **Deposits** listing has a fiscal-year filter with its other search filters.
 - A family profile's pledges and payments default to the current fiscal year, and you can pick another year or **All Time**.
 - Fundraiser totals labeled **This Fiscal Year** follow that start month.
@@ -91,7 +91,7 @@ When you reopen a pledge entered as installments, the editor retains its install
 1. Record received gifts through the normal [payment and deposit workflow](#step-by-step-managing-donations), using the same family, fund and fiscal year as the pledge.
 2. Open **Finance → Pledge Dashboard** and select that fiscal year. The **Family Pledges** table compares each family's full commitment with giving for each fund.
 3. Click a fund name in **Fund Summary** to compare families within that fund on [Fund Contributor Detail](./fund-contributors.md).
-4. For a printable comparison, open **Finance → Financial Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Create Report**.
+4. For a printable comparison, open **Finance → Financial Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Download PDF**.
 
 For example, with a January–December fiscal year and no other pledges or payments for that family and fund:
 
@@ -113,7 +113,7 @@ Use **Save and Add Another** for the next pledge. Select the next family and che
 ## Pledge reminder letters
 
 1. Open **Finance → Financial Reports** and choose **Pledge Reminders** under **Pledge Reports** (`/finance/reports/pledge-reminders`).
-2. Choose the **Fiscal Year** used for the pledge and giving comparison. Narrow the list if you need to with the **Classification**, **Family** and **Fund** pickers — each has **Add All** and **Clear All** buttons.
+2. Choose the **Fiscal Year** used for the pledge and giving comparison. Narrow the list if you need to with the **Classification**, **Filter by Family** and **Filter by Fund** pickers — each has its own **Add All** and **Clear All** buttons, named for the picker (**Add All Families**, **Clear All Families**, and so on).
 3. For pledge follow-up, keep **Include** set to payments with pledges and **Generate** set to families with unpaid pledges.
 4. Choose **Download PDF** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
 
@@ -197,9 +197,9 @@ See [Deposits](./deposit-search.md) for full details.
 
 **Current Deposit** shows the open deposit you are working in: deposit number, date, type, **Total Amount**, and **Edit Deposit**. If nothing is open, the card is **No Active Deposit** and offers **Create Deposit**.
 
-**Recent Deposits** lists deposits for the **Time Range** you pick at the top of the dashboard (a number of days, a fiscal year, or **All Time**). Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search.
+**Recent Deposits** lists the five most recent deposits, whatever **Time Range** is picked at the top of the dashboard — the range does not filter this list. Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search, where you can look up earlier periods.
 
-**Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same range.
+**Donation Funds** lists the church's active donation funds. The **Year-End Giving** card is the way into year-end statements from the dashboard — see [Giving Statements](#giving-statements).
 
 **Payments by Fund** breaks down the payments for that same range by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the range are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
 
@@ -209,7 +209,7 @@ The **Deposit Tracking** chart sits on the **Finance Dashboard** itself. It has 
 
 ## Financial Reports
 
-**Finance → Financial Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
+**Finance → Financial Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item, and no **Pledges** button on the finance dashboard. The pledge dashboard is at **Finance → Pledge Dashboard**.
 
 The page groups these links:
 
@@ -257,7 +257,7 @@ If nobody matches, or a value is not valid, the form returns with your filters s
 
 ## Giving Statements
 
-Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Financial Reports** and choose **Giving Statements** under **Giving Reports**, or choose **Generate** in the checklist on the **Finance Dashboard**.
+Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Financial Reports** and choose **Giving Statements** under **Giving Reports**, or use the **Year-End Giving** card on the **Finance Dashboard** and choose **Prepare Giving Statements**, which opens the same year-end page.
 
 ### Make the statements
 
