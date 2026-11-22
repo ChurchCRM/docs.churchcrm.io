@@ -57,6 +57,8 @@ This is a wildcard search. Searching for "ian" can return "Ian" or "Brian" when 
 
 Person records can be made inactive without deleting their history. Use **Set Inactive** on the Person View when someone should no longer appear as an active person. Use **Set Active** to reactivate the record later.
 
+On **People → Person Listing**, each column filter has an **Exclude** switch beside its label. Turn it on to hide the people who match the values you picked, instead of showing only them — for example, pick a classification and turn on **Exclude** to list everyone except that classification. Turn the switch off, or clear the filter, to go back to showing only the matches.
+
 The Person Listing shows active people by default, with options to view inactive people or all people. Making a person inactive does **not** delete the person, their family relationship, giving history, notes, groups, or other records. An inactive person cannot sign in, to the [Member Portal](/user-guide/member-portal) or with a staff account, until they are set active again.
 
 You cannot deactivate the person record associated with your own signed-in account.
@@ -262,7 +264,7 @@ The email's **Review Family Information** button opens the **My Family** page in
 
 Receiving the email does not mean the person can use the link. Member sign-in must be on, the person must be allowed to sign in, and they sign in with their own personal **Email**, not a work address. See [Member sign-in](../administration/member-sign-in.md).
 
-On the family page, the **Verification** card shows when the family was last verified — by the family in the portal or in person by staff — when it was last invited, and its last portal sign-in. A family that self-registered and is waiting for review can be approved from the banner on its family page; approval sends it the portal invitation.
+On the family page, the **Verification** card shows when the family was last verified — by the family in the portal or in person by staff — when it was last invited, and its last portal sign-in. The invitation email goes only to family members who can sign in to the Member Portal; the card lists any member who cannot sign in, so you know the email did not reach them and they may need another way to hear about it. A family that self-registered and is waiting for review can be approved from the banner on its family page; approval sends it the portal invitation.
 
 That email is not a printed confirmation report. Confirmation letters, the confirmation data sheet, and **Confirm data labels** still use the wording your church set for those reports. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
 
