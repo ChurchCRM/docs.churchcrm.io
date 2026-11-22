@@ -1,6 +1,6 @@
 ---
 title: Member Portal Pages in a Plugin
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Member Portal pages in a plugin

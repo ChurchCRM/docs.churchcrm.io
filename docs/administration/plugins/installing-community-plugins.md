@@ -1,6 +1,6 @@
 ---
 title: Installing Community Plugins
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Installing Community Plugins

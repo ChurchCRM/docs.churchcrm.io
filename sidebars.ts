@@ -166,6 +166,7 @@ const sidebars: SidebarsConfig = {
         'contributing',
         'administration/docker',
         'workflow',
+        'administration/plugins/creating-community-plugins',
         {
           type: 'link',
           label: 'API Tokens & Authentication',
@@ -255,6 +256,7 @@ const sidebars: SidebarsConfig = {
       label: '🔌 Plugins',
       items: [
         'administration/plugins/index',
+        'administration/plugins/creating-community-plugins',
         'administration/plugins/installing-community-plugins',
         'administration/plugins/plugin-security-and-compliance',
         'administration/plugins/plugin-localization',

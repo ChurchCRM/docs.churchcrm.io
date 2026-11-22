@@ -1,6 +1,6 @@
 ---
 title: Plugin Localization
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Plugin Localization
