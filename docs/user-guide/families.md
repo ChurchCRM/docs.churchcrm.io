@@ -43,6 +43,12 @@ Every Person should belong to a family.
 1. Use the header search field (**Search people, families, groups…**) and open the family from the results.
 2. Or go to **People → Family Listing**.
 
+## Family View
+
+Opening a family shows its page, laid out like a person's page. The header shows the family's name and photo, with its members in tables underneath — **Key People**, **Children** and **Other Members**. The address cards, the **Email** card, properties, custom fields and the **Verification** card sit above the tabs.
+
+Everything else sits in tabs: **Notes** (the family's notes, on their own tab as on a person), **Giving History** (the family's pledges and payments, with the fiscal-year filter described below) and **Timeline**.
+
 ## Family Listing
 
 **People → Family Listing** is the list of families. The page title is **Family Listing**.
@@ -174,9 +180,9 @@ Family photos are uploaded the same way as person photos: JPEG, PNG, or HEIC/HEI
 
 1. Open the family.
 2. Open **Actions** and choose **Delete Family**. It is there only for users who can delete records.
-3. On the confirmation page, choose **Delete Family Record ONLY** or **Delete Family Record AND Family Members**.
+3. Confirm in the dialog. It names the family and warns that the family record will be permanently deleted. Only the automatic *created* and *edited* entries among its notes are deleted with it — substantive notes block deletion instead, as the next paragraph explains. Tick **Also delete family members** to delete the members with the family; leave it unticked to delete the family record only.
 
-A family with donations on record can't be deleted until its donations are moved to another family. Users with finance access can move them from the confirmation page.
+A family with donations on record can't be deleted until its donations are moved to another family, and a family with substantive notes (pastoral or private notes, for example) can't be deleted at all — ChurchCRM refuses, so the notes are preserved. The automatic *created* and *edited* entries don't count. If a family can't be deleted, a message explains why — in that case, deactivate the family instead. Bear in mind that while a family is inactive, its members can't sign in to the [Member Portal](/user-guide/member-portal) (see the next section).
 
 ## How do I deactivate or reactivate a Family?
 

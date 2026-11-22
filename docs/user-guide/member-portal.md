@@ -44,7 +44,7 @@ The home page opens with a welcome card — your first name, your family's name,
 |------|---------------|
 | **Church calendar** | Shown while the church shares at least one calendar with members. The next three events — each with its day, date and time and the calendar it is on — and **See the whole calendar**. With nothing coming up it says *"Nothing is on the calendar just now."* |
 | **My volunteering** | The next thing you are on for, as *date · ministry — team — position*, and how many of your assignments are still **waiting for your answer**. With nothing booked: *"Nothing on your list yet. Have a look at what needs filling."* |
-| **My Family** | Your household's name, how many people are in it, and **Update your details**. A member with no family record sees *"You are not currently associated with a family"* and *"Please contact the church office so we may correct our records."* |
+| **My Family** | Your household's name, how many people are in it, and **Update your details**. This card is shown only to a member who belongs to a family: a member with no family has no **My Family** card on the home page. (The **My Family** page itself tells a member with no family *"You are not currently associated with a family"* and *"Please contact the church office so we may correct our records."*) |
 | **Profile** | Your name, your email, mobile and home phone as the church has them, your role in the family, and **Update your details**. Your birthday is shown too when your church lets members edit it. With nothing on file it says *"No contact details on file yet."* |
 
 Right after an email sign-in on which you ticked **This is my own device**, the first page you see also asks once whether to [use a passkey on this device](./member-sign-in.md#passkeys).
@@ -64,7 +64,7 @@ Right after an email sign-in on which you ticked **This is my own device**, the 
 - **Language** on the edit form chooses the language the Member Portal is shown in. **Church default** uses your church's language. When you save, the page reloads in the new language, and emails ChurchCRM sends you (such as your sign-in code) use it too.
 - Your household's address and home phone belong to the family, so they are changed under [My Family](#my-family), not here. Families have no email of their own: each person keeps theirs on their own profile.
 
-Staff who opened the portal from their staff login also find **Sign-in and security** here, with **Change your password** and **Two-factor authentication**. They have no Language field: the portal uses the language set on their staff account.
+Staff who opened the portal from their staff login also find **Sign-in and security** here, with **Change your password** and **Two-factor authentication**. They have no Language field: the portal uses the language set on their staff account. On the portal's change-password page, a **Password strength** meter appears as you type, measured against the minimum password length your church has set.
 
 ---
 

@@ -5,6 +5,10 @@ sidebar_position: 6
 
 # Reset Password
 
+## Password strength meter
+
+When a new password is typed on a ChurchCRM page — the page the password-reset email link opens, the page you are sent to when a password change is required, and **My Account → Change Password** — a **Password strength** meter appears under the field as you type. It rates the password you are typing and measures it against the minimum password length your church has set, so a password that is too short is flagged before you save.
+
 ## MySQL Client direct DB intervention
 
 This section uses SQL statements that need to be executed in a tool such as phpMyAdmin in the same database configured for ChurchCRM. Alternatively, if you have command line access to your database, log into the ChurchCRM database using the `mysql` command line tool, e.g.:

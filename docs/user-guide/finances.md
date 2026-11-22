@@ -19,7 +19,7 @@ Finance views use the church's fiscal year, which may not match the calendar yea
 
 The same year shows up in a few places:
 
-- **Finance → Dashboard** scopes **Recent Deposits** with a **Fiscal Year** list that includes **All Time**.
+- The **Finance → Dashboard** **Time Range** (a number of days, a fiscal year, or **All Time**) scopes the dashboard's totals, fund breakdown and chart. It does not scope **Recent Deposits**, which always shows the five most recent deposits — for an earlier period, use the deposits search (**Finance → View All Deposits**).
 - The **Deposits** listing has a fiscal-year filter with its other search filters.
 - A family profile's pledges and payments default to the current fiscal year, and you can pick another year or **All Time**.
 - Fundraiser totals labeled **This Fiscal Year** follow that start month.
@@ -42,10 +42,10 @@ The same year shows up in a few places:
 1. Go to **Finance** → **View All Deposits**, then click **New Deposit** (top-right of the results card).
 2. Fill in the deposit **Comment**, **Type** (Bank, Credit Card, or Bank Draft), and **Date** in the modal, then click **Add New Deposit**.
 3. The page redirects to the **Deposit Slip Editor** (breadcrumb: Finance → Deposits → Edit Deposit).
-4. Click **Add Payment** to add each donation — the new payment form opens pre-linked to this deposit. Fill in Method, Fund, Amount, and a Family record, then save. Repeat for every payment in the batch.
+4. Click **Add Payment** to add each donation — the new payment form opens pre-linked to this deposit. Fill in Method, Fund, Amount, and a Family record, then save. Repeat for every payment in the batch. The **Method** starts on the one that matches the slip's type — **Check** on a Bank slip, **Credit Card** on a card slip, **Bank Draft** on a draft — because the defaults come from the deposit slip you opened, not from the last slip you worked on.
 5. The payments table lists **Family**, **Check Number**, **Fund**, **Amount**, and **Method**.
 6. Click **Generate Report** to download a PDF bank deposit form.
-7. When the deposit is ready to be finalised, toggle **Closed** and click **Save**.
+7. When the deposit is ready to be finalised, toggle **Closed** and click **Save**. On a **Credit Card** or **Bank Draft** deposit, closing deletes any failed transactions permanently — the editor warns you about this beside the **Closed** switch, before you save.
 
 See [Key Concepts](#key-concepts) below for pledge, payment, and deposit terms.
 
@@ -91,7 +91,7 @@ When you reopen a pledge entered as installments, the editor retains its install
 1. Record received gifts through the normal [payment and deposit workflow](#step-by-step-managing-donations), using the same family, fund and fiscal year as the pledge.
 2. Open **Finance → Pledge Dashboard** and select that fiscal year. The **Family Pledges** table compares each family's full commitment with giving for each fund.
 3. Click a fund name in **Fund Summary** to compare families within that fund on [Fund Contributor Detail](./fund-contributors.md).
-4. For a printable comparison, open **Finance → Deposit Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Create Report**.
+4. For a printable comparison, open **Finance → Financial Reports → Pledge Family Summary**. Set the same **Fiscal Year**, **Filter by Family** and **Filter by Fund**, then choose **Download PDF**.
 
 For example, with a January–December fiscal year and no other pledges or payments for that family and fund:
 
@@ -112,10 +112,12 @@ Use **Save and Add Another** for the next pledge. Select the next family and che
 
 ## Pledge reminder letters
 
-1. Open **Finance → Deposit Reports → Pledge Reminders**.
-2. Choose the **Fiscal Year** used for the pledge and giving comparison. Use **Filter by Family** and **Filter by Fund** to match the comparison you reviewed.
-3. For pledge follow-up, keep **Include → Only Payments with Pledges** and **Generate → Only Families with unpaid pledges** selected.
-4. Choose **Create Report** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
+1. Open **Finance → Financial Reports** and choose **Pledge Reminders** under **Pledge Reports** (`/finance/reports/pledge-reminders`).
+2. Choose the **Fiscal Year** used for the pledge and giving comparison. Narrow the list if you need to with the **Classification**, **Filter by Family** and **Filter by Fund** pickers — each has its own **Add All** and **Clear All** buttons, named for the picker (**Add All Families**, **Clear All Families**, and so on).
+3. For pledge follow-up, keep **Include** set to payments with pledges and **Generate** set to families with unpaid pledges.
+4. Choose **Download PDF** to download the PDF letters. Review the family, funds, pledged amounts, giving and remaining balances before printing or mailing them.
+
+If no family matches, the Pledge Reminders page returns with your choices kept and a **No Data Found** message naming the fiscal year, so you can widen the filters and try again.
 
 Letters use the same full-period commitment and giving as the family summary. In the example above, the letter shows $1,200 pledged, $200 paid and $1,000 remaining. Selecting families with unpaid pledges does not establish that an installment is overdue; review the family's agreed schedule before following up.
 
@@ -195,28 +197,28 @@ See [Deposits](./deposit-search.md) for full details.
 
 **Current Deposit** shows the open deposit you are working in: deposit number, date, type, **Total Amount**, and **Edit Deposit**. If nothing is open, the card is **No Active Deposit** and offers **Create Deposit**.
 
-**Recent Deposits** lists deposits for the **Fiscal Year** you pick (or **All Time**). Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search.
+**Recent Deposits** lists the five most recent deposits, whatever **Time Range** is picked at the top of the dashboard — the range does not filter this list. Columns are ID, Date, Type, Comment, Total, and Status (**Open** or **Closed**). **View All** opens the deposits search, where you can look up earlier periods.
 
-**Deposit Statistics** shows **Total Deposits**, **Open Deposits**, and **Closed Deposits** for that same year.
+**Donation Funds** lists the church's active donation funds. The **Year-End Giving** card is the way into year-end statements from the dashboard — see [Giving Statements](#giving-statements).
 
-**Payments by Fund** breaks down the payments for that same year by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the year are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
+**Payments by Fund** breaks down the payments for that same range by donation fund: one row per fund with its total, a bar chart of the same totals, and a grand total at the foot of the table. Funds with no payments in the range are left out, and inactive funds still appear when they took payments. Pledges are not counted — only payments. When nothing was paid in the period, the table says **No payments found for this period.** and no chart is shown.
 
-## Deposit chart on the main dashboard
+## Deposit Tracking chart
 
-Staff with the Finance permission also see a **Deposit Tracking** chart on the main dashboard (the home page, not the Finance Dashboard). The selector next to the chart title switches the period the chart draws: **30 days**, **90 days** (the default), or **12 months**. The chart re-draws as soon as you change it, so you can check a recent dip against the longer trend without leaving the home page.
+The **Deposit Tracking** chart sits on the **Finance Dashboard** itself. It has no period selector of its own: it draws the **Time Range** chosen at the top of the dashboard, the same range that scopes the totals and the fund breakdown, so one change re-draws all of them together. The chart draws **one line per donation fund**, so you can watch each fund's deposits grow across the range instead of seeing only the combined total.
 
-## Deposit Reports
+## Financial Reports
 
-**Finance → Deposit Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item. The **Pledges** button on the finance dashboard is only a shortcut to the pledge dashboard.
+**Finance → Financial Reports** (`/finance/reports`) is the report list. There is no **Finance → Pledges** menu item, and no **Pledges** button on the finance dashboard. The pledge dashboard is at **Finance → Pledge Dashboard**.
 
 The page groups these links:
 
-- **Tax & Giving Reports** — **Giving Statements** (see below) and **Zero Givers**
-- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Reminders**, and **Missing Pledges** (see below)
-- **Deposit Reports** — **Individual Deposit Report** and **Advanced Deposit Report**
+- **Giving Reports** — **Year-End Giving**, **Giving Statements** (see below) and **Zero Givers**
+- **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Comparison**, **Pledge Reminders**, and **Missing Pledges** (see below)
+- **Deposit Reports** — one link, which opens the deposit reports page (`/finance/reports/deposits`)
 - **Membership Reports** — **Voting Members** (see [Voting Members](#voting-members)), which opens only for users with the Finance permission
 
-The **Finance** menu also lists **Financial Reports** and **Giving Statements**, so you can reach either one without going through the dashboard.
+The **Finance** menu lists **Financial Reports** itself, and **Year-End Giving** on its own, so you can reach either one without going through the dashboard.
 
 ### Missing Pledges
 
@@ -224,7 +226,7 @@ The **Finance** menu also lists **Financial Reports** and **Giving Statements**,
 
 ## Voting Members
 
-**Finance → Reports → Voting Members** prepares a list of candidates for a church vote. The report does not decide who may vote, and it does not save an eligibility record. It applies the criteria you choose, and your church leadership confirms the final list under your own bylaws.
+Open **Finance → Financial Reports** and choose **Voting Members** under **Membership Reports** to prepare a list of candidates for a church vote. The report does not decide who may vote, and it does not save an eligibility record. It applies the criteria you choose, and your church leadership confirms the final list under your own bylaws.
 
 ![The Voting Members page, with the classification list and review date](https://cdn.churchcrm.io/screenshots/en/desktop/finance-voting-review.png)
 
@@ -255,7 +257,7 @@ If nobody matches, or a value is not valid, the form returns with your filters s
 
 ## Giving Statements
 
-Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Giving Statements**, or choose **Generate** in the checklist on the **Finance Dashboard**.
+Giving statements are the year-end letters that thank each family and list what they gave, for their tax records. Open **Finance → Financial Reports** and choose **Giving Statements** under **Giving Reports**, or use the **Year-End Giving** card on the **Finance Dashboard** and choose **Prepare Giving Statements**, which opens the same year-end page.
 
 ### Make the statements
 
@@ -273,7 +275,7 @@ The PDF is named `GivingStatements-<year>.pdf`, or `GivingStatement-<year>-<fami
 
 ### What the letter says and looks like
 
-- The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**, which also holds the church tax ID (EIN) and **PDF Handling**. These settings are not on System Settings.
+- The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**. That page also holds the **Charity on receipts** details (below) and **PDF Handling**. These settings are not on System Settings.
 - The top of the page uses your church letterhead image when one is uploaded under **Letterhead** on **Reports → Admin → Report Settings**. Without one, it shows your church name and address. See [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead) for the image size.
 - Each letter is addressed to the family's [mailing address](./reports-and-queries.md#which-address-is-printed).
 
@@ -281,9 +283,28 @@ The PDF is named `GivingStatements-<year>.pdf`, or `GivingStatement-<year>-<fami
 
 On a [family profile](./families.md), open **Finance** on the toolbar. Under **Giving Statements**, choose **Print** or **Email** for a year. Years that the family has payments are listed. **Email** sends the PDF to the family's email addresses and returns you to the profile.
 
+### Official receipts for Canadian charities
+
+On the **Giving Statements** page, choose **Canadian Official Receipt** to make official donation receipts instead of the usual statement letter. The receipt prints the charity details from the **Charity on receipts** section of **Statement Settings**: the charity's legal name, its registered address, its registration number, and the place receipts are issued. If any of those are still blank, finance pages show a reminder to fill them in — finance keeps working until then.
+
+ChurchCRM does not keep a receipt register or keep copies of issued receipts. Keep the original PDF and your own receipt log with your Canadian records, do not reuse a receipt number for a different receipt, and do not receipt the same gifts twice. There is no cancellation or replacement workflow in ChurchCRM: use your existing CRA-compliant process for corrections and lost-receipt replacements. The signature image is a picture of a signature, not a secure digital signature.
+
+## Charity details for receipts
+
+**Finance → Admin → Statement Settings** holds everything printed about your charity, in one place, in its **Charity on receipts** section:
+
+- **Tax ID on statements** — printed on ordinary giving statements; for example, the EIN in the United States.
+- **Charity Legal Name** — the name the charity is registered under, which can differ from the church name.
+- **Charity Registered Address** — leave blank to use the address on Church Information.
+- **Charity Registration Number** — printed on official receipts; leave blank to use the Tax ID on Church Information.
+- **Receipt Issue Locality** — the place receipts are issued; leave blank to use the city on Church Information.
+- **Receipt Closing** — the closing phrase above the signer, for example *Sincerely*.
+
+The signer's printed name is the **Signer** field in the same page's **Statement Wording** section. The signature **image** is separate: upload it under **Reports → Admin → Report Settings**, where it prints above the signer's name on giving statements and receipts.
+
 ## Pledge Dashboard
 
-Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Deposit Reports** opens the same page.
+Open pledges at **Finance → Pledge Dashboard**. **Pledge Summary** under **Financial Reports** opens the same page.
 
 The year list includes **All Time**. Choose **New Pledge** to enter a commitment, and check **Fiscal Year** in the editor before saving. See [How do I enter a pledge?](#how-do-i-enter-a-pledge) for installment entry, comparisons and reminder letters.
 
@@ -293,7 +314,7 @@ See [Pledge Dashboard](/user-guide/pledge-dashboard) for the tables and status c
 
 ## Where are the giving statement settings?
 
-Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording, the church tax ID and how the PDF is handled. The wording fields save as you change them — there is no separate save step for the wording. **Report Settings**, for the letterhead and the letter greeting and signature, stays under **Reports** → **Admin**.
+Go to **Finance** → **Admin** → **Statement Settings**. The page sets the statement wording (including the **Signer** name), the charity details printed on statements and receipts — the tax ID, legal name, registered address and registration number — and how the PDF is handled. See [Charity details for receipts](#charity-details-for-receipts). The wording fields save as you change them — there is no separate save step for the wording. **Report Settings**, for the letterhead, the letter greeting and signature text, and the signature image, stays under **Reports** → **Admin**.
 
 ---
 
@@ -311,3 +332,4 @@ Go to **Finance** → **Admin** → **Statement Settings**. The page sets the st
 - [Envelope Manager](./envelope-manager.md) — family envelope numbers
 - [Fundraiser](./fundraiser.md) — managing fundraisers
 - [Reports & Queries](./reports-and-queries.md) — other financial reports
+

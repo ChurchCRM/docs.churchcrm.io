@@ -49,13 +49,15 @@ Anyone with **Edit Records** can open the Person Editor. The Membership Date fie
 
 Use the search field in the page header. Its placeholder is **Search people, families, groups…**. Results appear as you type. People matches look at first name, middle name, last name, email, work email, and home, cell, and work phone, and only living people are included.
 
-Clicking a person's name opens their Person View, which lists the information on that person, including properties, groups, and notes.
+Clicking a person's name opens their Person View. The header shows their photo, status, key facts and contact details, with their family in a table underneath. Everything else sits in tabs: **Overview** (custom fields, properties, address and map), **Notes**, **Groups**, **Volunteer**, **Attendance**, **Giving**, **Portal sign-in** and **Timeline**.
 
 This is a wildcard search. Searching for "ian" can return "Ian" or "Brian" when those letters appear in a name, email, or phone that is searched. See [Find people and families](/user-guide/search) for the other result types.
 
 ## Active and inactive people
 
 Person records can be made inactive without deleting their history. Use **Set Inactive** on the Person View when someone should no longer appear as an active person. Use **Set Active** to reactivate the record later.
+
+On **People → Person Listing**, each column filter has an **Exclude** switch beside its label. Turn it on to hide the people who match the values you picked, instead of showing only them — for example, pick a classification and turn on **Exclude** to list everyone except that classification. Turn the switch off, or clear the filter, to go back to showing only the matches.
 
 The Person Listing shows active people by default, with options to view inactive people or all people. Making a person inactive does **not** delete the person, their family relationship, giving history, notes, groups, or other records. An inactive person cannot sign in, to the [Member Portal](/user-guide/member-portal) or with a staff account, until they are set active again.
 
@@ -82,11 +84,9 @@ Administrators hide deceased people from the printed directory and from CSV expo
 
 ## Timeline
 
-The Person View timeline shows notes, attendance, emails, and system activity, newest first and grouped by year. Filter chips are **Notes**, **Events**, **Emails**, **Account**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Notes** is on when the page opens. **Show all** turns every chip back on. There is no date-range filter and no **Type** list of "Notes only" or "Attendance only."
+The **Timeline** tab on the Person View shows attendance, emails, account and system activity, newest first and grouped by year. Notes are not on this tab: they have their own **Notes** tab, where long notes show a short preview and **Read more** opens the full note. Filter chips on the Timeline tab are **Events**, **Emails**, **Account**, and **System**. Each chip shows how many entries it holds, and several can be on at once. **Show all** turns every chip back on. There is no date-range filter.
 
-Long notes show a short preview. **Read more** opens the full note.
-
-The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside notes and attendance. See [Email History](#email-history) below.
+The **Emails** chip, which appears once ChurchCRM has emailed the person, shows those emails in the timeline alongside attendance. See [Email History](#email-history) below.
 
 The **Account** chip shows login-lifecycle entries for a person with a staff account: account created, updated or deleted, password changed or reset, failed logins reset, API key regenerated, 2FA turned on or off, and sign-in disabled or enabled — each credited to whoever made the change — plus a **Signed in** entry for each staff sign-in. Member Portal sign-ins are not on the timeline; they stay in the sign-in audit.
 
@@ -185,11 +185,11 @@ Filters above the table are **Event Type**, **From**, and **To**. **Clear** rese
 
 ## Volunteer tab
 
-With [Volunteer Management (v2)](./ministries/index.md) switched on, the Person View has a **Volunteer** tab in two columns: **Qualified for** (each position, with a link to its ministry) and **Serving next** (each upcoming date with an **Accepted** or **Awaiting reply** badge, linking to the occurrence's staffing view). A person with no qualification and no upcoming date shows *"Not volunteering yet"*. The tab is read-only; qualifications are ticked on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md) and assignments are made on the [staffing view](./ministries/staffing-an-occurrence.md).
+The Person View's **Volunteer** tab, from [Volunteer Management (v2)](./ministries/index.md), has two columns: **Qualified for** (each position, with a link to its ministry) and **Serving next** (each upcoming date with an **Accepted** or **Awaiting reply** badge, linking to the occurrence's staffing view). A person with no qualification and no upcoming date shows *"Not volunteering yet"*. The tab is read-only; qualifications are ticked on the ministry's [Volunteers tab](./ministries/volunteers-and-qualifications.md) and assignments are made on the [staffing view](./ministries/staffing-an-occurrence.md).
 
 ![The Volunteer tab on a person record](/img/user-guide/ministries/person-volunteer-tab.png)
 
-When the volunteer experience is **Both**, the legacy opportunities list appears on its own tab, **Volunteer (Legacy)**, just before the **Volunteer** tab, so it is always obvious which one you are looking at.
+There is only this one **Volunteer** tab on the Person View. The legacy **Volunteer (Legacy)** tab no longer appears there: Volunteer Opportunities (V1) was removed in ChurchCRM 7.8.6, and the upgrade converted its remaining data to v2.
 
 ---
 
@@ -250,11 +250,11 @@ You don't enter an age. ChurchCRM calculates it from the birth date. A year by i
 
 ## People Dashboard
 
-**People → Dashboard** opens the People Dashboard.
+**People → Dashboard** opens the People Dashboard. Signing in takes you to your main dashboard: the People Dashboard, unless you chose another one with **Set as my main dashboard** on a dashboard page. A tab row at the top of every dashboard switches between the dashboards your role can open — **People**, **Groups**, **Sunday School**, **Events**, **Finance** and **Deposits**. Your main dashboard, the dashboard time ranges and **Rows per page** (how many rows tables and dashboard cards show) are also under **My Account → Appearance**.
 
-Count cards link to families, people, Sunday School (when that menu is on), and groups. **People by Classification** lists each classification with its share and count. The same page also shows **Family Roles**, **Gender Demographics**, **Age Distribution**, and report links for **People Directory** and **Letters & Mailing Labels**.
+Count cards link to families, people, Sunday School (when that menu is on), and groups; further cards count self-registrations and check-ins. One **Time Range** (7 days to 6 months) drives the latest and updated people and families, the latest notes, and the birthdays and anniversaries shown (the past 7 days and the next days in the range). **People by Classification** lists each classification with its share and count. The same page also shows **Family Roles**, **Gender Demographics**, and **Age Distribution**.
 
-**Quick Actions** has **Verify People** for users with **Edit Records**, and **Email All** for users with the **Email** permission. Once your church has chosen who may sign in to the Member Portal, users with **Edit Records** also see **Email needs attention**.
+Buttons at the top of the page include **People Reports**, **Verify People** for users with **Edit Records**, and **Email All** for users with the **Email** permission. Once your church has chosen who may sign in to the Member Portal, users with **Edit Records** also see **Email needs attention**.
 
 ### Verify People
 
@@ -264,7 +264,7 @@ The email's **Review Family Information** button opens the **My Family** page in
 
 Receiving the email does not mean the person can use the link. Member sign-in must be on, the person must be allowed to sign in, and they sign in with their own personal **Email**, not a work address. See [Member sign-in](../administration/member-sign-in.md).
 
-On the family page, the **Verification** card shows when the family was last verified — by the family in the portal or in person by staff — when it was last invited, and its last portal sign-in. A family that self-registered and is waiting for review can be approved from the banner on its family page; approval sends it the portal invitation.
+On the family page, the **Verification** card shows when the family was last verified — by the family in the portal or in person by staff — when it was last invited, and its last portal sign-in. The invitation email goes only to family members who can sign in to the Member Portal; the card lists any member who cannot sign in, so you know the email did not reach them and they may need another way to hear about it. A family that self-registered and is waiting for review can be approved from the banner on its family page; approval sends it the portal invitation.
 
 That email is not a printed confirmation report. Confirmation letters, the confirmation data sheet, and **Confirm data labels** still use the wording your church set for those reports. See [Which address is printed](./reports-and-queries.md#which-address-is-printed).
 
@@ -329,3 +329,4 @@ See the [Notes](/user-guide/notes) help topic.
 ## How do I track finances for a person?
 
 See the [Finances](/user-guide/finances) help topic.
+
