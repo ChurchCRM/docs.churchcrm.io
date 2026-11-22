@@ -7,6 +7,8 @@ sidebar_position: 15
 
 ChurchCRM provides a complete Docker-based development environment that includes all necessary services and tools for developing and testing ChurchCRM.
 
+> **Running ChurchCRM in production with Docker instead?** This page is the *development* environment, for contributors. Churches running the published images should follow the [Docker installation guide](/installation/docker).
+
 ## Quick Start
 
 ### Prerequisites
