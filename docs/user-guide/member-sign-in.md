@@ -11,14 +11,14 @@ You sign in to the [Member Portal](./member-portal.md) with your own email addre
 This page is written for members. If you look after ChurchCRM for your church, see [Member sign-in](../administration/member-sign-in.md) for the settings behind it.
 
 :::note Your church switches this on
-Your church decides when member sign-in starts and who may use it. Until then, your church's ChurchCRM address opens the staff sign-in page. If the church lets new families register, it opens a **Welcome** page with **Register your family** instead, which says *"Member sign-in isn't available yet. Please contact the church office."*
+Your church decides when member sign-in starts and who may use it. Until then, opening your church's ChurchCRM address shows a **Sign in** page offering the ways in your church does have — **Register your family to our church** if new families may register, and **Staff login** — or takes you straight to the staff sign-in page when that is the only way in.
 :::
 
 ---
 
 ## Sign in with your email
 
-1. Open your church's ChurchCRM address. The member sign-in page, **Welcome**, opens on its own; its address ends in `/portal/login`.
+1. Open your church's ChurchCRM address. A **Sign in** page opens with your church's name and the ways in; press **Congregation login**. The member sign-in page, **Welcome**, opens; its address ends in `/portal/login`.
 2. Type the email address the church has for you under **Email Address** and press **Email me a code**.
 3. The next page, **Check your email**, says *"If this address can be used to sign in, we've emailed you a code. Nothing after a few minutes? Ask the church office."* It reads exactly the same for every address, so nobody can use it to find out who belongs to the church.
 4. Open the email **Your Member Portal sign-in code**. It holds a six-digit code and a **Sign in** button. Use either one:
@@ -103,13 +103,13 @@ If the field is locked with *"To change this email, please contact the church of
 
 ## Signing out and shared computers
 
-**Sign out** in the **Hello *\<your name\>*** menu ends your session and takes you back to the sign-in page. On a shared or public computer, never tick **This is my own device**, never add a passkey, and sign out when you are done.
+**Sign out** in the **Hello *\<your name\>*** menu ends your session and takes you to the **Sign in** page, where you choose how to sign in again. On a shared or public computer, never tick **This is my own device**, never add a passkey, and sign out when you are done.
 
 ---
 
 ## If you also work for the church
 
-Staff sign in on their own page: your church's ChurchCRM address followed by `/admin/`, with their username, their password and, if it is set up, a two-factor code. The member sign-in page has no link to it, so keep a bookmark. (While member sign-in is off, the **Welcome** page has a **Church leader sign-in** link.)
+Staff sign in on their own page: your church's ChurchCRM address followed by `/admin/`, with their username, their password and, if it is set up, a two-factor code. You can also get there from the **Sign in** page that opens when you visit your church's ChurchCRM address while signed out — choose **Staff login** — and the member sign-in page links back to that page with **Choose a different way to sign in**.
 
 - An email code, a link or a passkey only ever opens the Member Portal.
 - In a member session, **Admin Console** in the **Hello** menu opens the staff sign-in page. Signing in there ends your member session in that browser, and signing in with your email ends a staff session.
