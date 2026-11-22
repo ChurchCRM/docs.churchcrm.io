@@ -11,14 +11,14 @@ Thank you for helping improve ChurchCRM! This guide will help you report bugs ef
 
 **Choose your situation:**
 
-1. **Need Help or Have Questions** → Post on [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) (community support)
+1. **Need Help or Have Questions** → Ask in [Discord](https://discord.gg/tuWyFzj3Nj)
 2. **Found a Bug** → Use [Bug Report Template](#github-bug-report-template) on GitHub Issues
 3. **Problem Inside ChurchCRM App** → Use in-app bug reporting (auto-collects diagnostics)
 4. **Cannot Log In / Installation Issue** → See [Collect Diagnostics](#collect-diagnostics)
 
 ### Help vs Bug Reports
 
-**Use [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) for:**
+**Use [Discord](https://discord.gg/tuWyFzj3Nj) for:**
 - How do I...? (feature questions)
 - How do I configure...? (setup questions)
 - Installation/setup help
