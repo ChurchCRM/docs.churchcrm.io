@@ -8,9 +8,9 @@ sidebar_position: 4
 This page is for **plugin developers** who want to ship translated
 strings. It is not for site administrators.
 
-ChurchCRM has a 45-language core translation workflow managed through
-POeditor. **Community plugins do not participate in that workflow.**
-Trying to add your plugin's strings to POeditor would force the
+ChurchCRM has a 49-language core translation workflow managed in the
+ChurchCRM repository. **Community plugins do not participate in that workflow.**
+Trying to add your plugin's strings to the core workflow would force the
 ChurchCRM maintainers to translate your plugin for every language they
 support, which is not a burden we want to place on the volunteer
 translation community.
@@ -187,10 +187,11 @@ i18next.t("myplugin.welcome", { ns: "my-plugin" });
 
 ## FAQ
 
-**Can I use POeditor for my plugin anyway?**
-No — POeditor only covers the core `messages` textdomain and the core
-`locale/i18n/*.json` files. Community plugins live in a different
-textdomain, so strings submitted to POeditor would never be loaded at
+**Can I use the core translation workflow for my plugin anyway?**
+No — the core workflow only covers the core `messages` textdomain and the core
+`locale/i18n/*.json` files, and POEditor is no longer used for core
+translations. Community plugins live in a different
+textdomain, so strings added to the core workflow would never be loaded at
 runtime.
 
 **Do I have to translate into every language ChurchCRM supports?**
