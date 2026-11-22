@@ -80,6 +80,7 @@ Use GitHub issues only if you cannot access ChurchCRM directly.
 - Expected versus actual behavior
 - Screenshots or error messages
 - ChurchCRM version (found in **About** or **System Info**)
+- The relevant log lines — [Logging & Diagnostics](/administration/logging-and-diagnostics) explains how to pull logs whether ChurchCRM is running or won't open at all
 - Browser and device
 
 ---
