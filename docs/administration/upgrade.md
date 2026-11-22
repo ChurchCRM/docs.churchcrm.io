@@ -51,6 +51,12 @@ A **Database Upgrade** page asks you to keep it open while the database is updat
 
 The upgrade page also shows a **File Integrity Check** comparing your installed files against the official release. Use **Force Re-install** to re-download and restore the current version without upgrading (useful if a file was accidentally modified).
 
+### The update notice and the What's New page
+
+The download icon in the top-right navbar appears for **every staff user** when a new version is available, not only for administrators. Staff who are not administrators see **Release Notes**, which opens the notes for the newest release; only administrators see the **New Release** item that starts the upgrade.
+
+Every staff user can also open the **What's New** page (at `/releases`). It is read-only: it shows the version you have installed, how many releases are available since then, and the notes for each one, newest first. When there is nothing newer it says **You're up to date!** It cannot start an upgrade — it ends by asking you to ask your system administrator to upgrade.
+
 ---
 
 ## Option 2 — Manual Upgrade
@@ -214,6 +220,8 @@ Spot-check a few family records, confirm giving history, and configure email set
 
 The **Database Upgrade** page applies one upgrade file per page load and reloads itself until every file is done, so a large upgrade does not run into your host's time limit. ChurchCRM records each file as it finishes. The database version moves up only when every file for that version is finished.
 
+Upgrading to 7.8.6 also converts the tables that hold family and person records so they can store emoji and other four-byte characters in names, addresses and notes. That conversion is one of the upgrade files, and on a large database it can add minutes to the upgrade. Keep the **Database Upgrade** page open and allow extra time for that step; the upgrade carries on with the next file when it finishes.
+
 If the page is closed or the connection drops between two files, open ChurchCRM again. Finished files are skipped and the upgrade carries on with the next one.
 
 ### "Database Upgrade Failed" — what the error means
@@ -260,8 +268,8 @@ A **smart version check** prevents old application code from running against a n
 
 ---
 
-## Volunteer Opportunities are removed in early 2027
+## Volunteer Opportunities were removed in 7.8.6
 
-Volunteer Opportunities (V1) are retired in early 2027. The first release after about 2027-01-10 converts any opportunities that are still there to Ministries, then removes the V1 feature: its screens, its API, the two V1 People Reports and its data tables.
+Volunteer Opportunities (V1) was removed in ChurchCRM 7.8.6: its screens, its API, the two V1 People Reports and its data tables are gone. The 7.8.6 upgrade converted any opportunities that were still there to Ministries, and the people linked to them to qualifications, so no volunteer data is lost.
 
-Convert your opportunities before you upgrade to that release, so you choose which ministry each one joins: **Admin → People Settings → Convert Volunteer Opportunities**. See [Moving to Volunteer Management (v2)](../user-guide/volunteers.md#moving-to-volunteer-management-v2).
+You do not have to convert by hand before you upgrade — the upgrade does it for you. Converting first lets you choose which ministry each opportunity joins: **Admin → People Settings → Convert Volunteer Opportunities**. See [Moving to Volunteer Management (v2)](../user-guide/volunteers.md#moving-to-volunteer-management-v2).
