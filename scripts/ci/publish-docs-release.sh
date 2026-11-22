@@ -231,12 +231,24 @@ ready_to_merge() {
 }
 
 merge_pr() {
-  local number="$1" rc=0
+  local number="$1" rc=0 state branch
   ready_to_merge "$number" || rc=$?
   if [ "$rc" -ne 0 ]; then
     return 1
   fi
   echo "Merging docs pull request #$number"
+  if gh pr merge "$number" --repo "$DOCS_REPO" --merge; then
+    return 0
+  fi
+  # A release branch cut before later Current merges is behind main.
+  state=$(gh pr view "$number" --repo "$DOCS_REPO" --json mergeStateStatus --jq .mergeStateStatus)
+  if [ "$state" != "BEHIND" ]; then
+    return 1
+  fi
+  echo "Pull request #$number is behind main. Updating the branch."
+  gh pr update-branch "$number" --repo "$DOCS_REPO"
+  branch=$(gh pr view "$number" --repo "$DOCS_REPO" --json headRefName --jq .headRefName)
+  wait_for_checks "$number" "$branch" || return 1
   gh pr merge "$number" --repo "$DOCS_REPO" --merge
 }
 

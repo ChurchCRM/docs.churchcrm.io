@@ -62,7 +62,7 @@ Use GitHub issues only if you cannot access ChurchCRM directly.
 
 ## Community Support
 
-- [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) — Ask questions, share ideas, and find community solutions
+- [Discord](https://discord.gg/tuWyFzj3Nj) — Ask a question. If it is a bug or a gap in the software, open an issue on ChurchCRM/CRM after that.
 
 ---
 
@@ -90,6 +90,6 @@ Use GitHub issues only if you cannot access ChurchCRM directly.
 |------|-------------|
 | Report a bug | [In-app Support → Report Issue](#step-by-step-instructions) |
 | Request a feature | [GitHub Feature Request](https://github.com/ChurchCRM/CRM/issues/new?template=feature_request.md) |
-| Ask a question | [GitHub Discussions](https://github.com/ChurchCRM/CRM/discussions) |
+| Ask a question | [Discord](https://discord.gg/tuWyFzj3Nj) |
 | Report a login issue | [GitHub Bug Report](https://github.com/ChurchCRM/CRM/issues/new?template=bug_report.md) |
 | Report a documentation problem | [Docs repository issue](https://github.com/ChurchCRM/docs.churchcrm.io/issues/new) |
