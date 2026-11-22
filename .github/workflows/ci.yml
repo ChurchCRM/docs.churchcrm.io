@@ -47,8 +47,9 @@ jobs:
         run: npm run typecheck
 
       - name: Check screenshots are not stored here
-        env:
-          BASE_REF: ${{ github.base_ref }}
+        # No BASE_REF on purpose: CDN-manifest misses warn instead of failing
+        # the PR (George is the gate, Nov 22, 2026). Stored image files and
+        # missing local images still fail — those are repo hygiene, not timing.
         run: node scripts/check-visuals.mjs
 
       - name: Build site
