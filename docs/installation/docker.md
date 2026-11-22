@@ -10,7 +10,7 @@ import crmRelease from '../../crm-release.json';
 ChurchCRM publishes official Docker images on Docker Hub as
 [`churchcrm/crm`](https://hub.docker.com/r/churchcrm/crm).
 
-> **Setting up a development environment instead?** This page covers running the published images in production. Contributors should see the [Docker Development Environment](/developers/docker).
+> **Setting up a development environment instead?** This page covers running the published images in production. Contributors should see the [Docker Development Environment](../developers/docker.md).
 
 Every command on this page was run against `churchcrm/crm:latest-php8-apache`
 before publication. Where something was reasoned about rather than executed, it
