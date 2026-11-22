@@ -134,7 +134,9 @@ To create an event:
 
 The Repeat Events editor can create a series on the same weekday of each month, such as the 2nd Tuesday or the 1st Sunday.
 
-In the **Recurrence Pattern** card, choose **Every month on the** and then pick the week (**1st** to **5th**) and the weekday.
+To open the editor, go to **Events → Admin → Event Types**, open the menu on the event type's row, and choose **Create Repeat Events**.
+
+In the **Recurrence Pattern** card, choose the second **Every month on the** option, the one with a week (**1st** to **5th**) and a weekday. The first one picks a day of the month.
 
 **Things to know:**
 
