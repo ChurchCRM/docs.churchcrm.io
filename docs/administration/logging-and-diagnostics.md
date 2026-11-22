@@ -7,7 +7,7 @@ sidebar_position: 14
 
 ## 1. Background
 
-For how and where to report a problem — Discord vs GitHub, the in-app reporter, and what a good report includes — see [Bug Reporting & Diagnostics](/administration/bug-reporting-and-diagnostics). We can only offer generic assistance unless you include details specific to *your* setup. There are literally hundreds of different ways to host ChurchCRM from dedicated hardware, virtual machines, shared hosting or containerized setups. How we support you and what we might suggest is heavily dependent on how you have deployed ChurchCRM.
+For how and where to report a problem — Discord vs GitHub, the in-app reporter, and what a good report includes — see [Bug Reporting & Diagnostics](./bug-reporting-and-diagnostics.md). We can only offer generic assistance unless you include details specific to *your* setup. There are literally hundreds of different ways to host ChurchCRM from dedicated hardware, virtual machines, shared hosting or containerized setups. How we support you and what we might suggest is heavily dependent on how you have deployed ChurchCRM.
 
 This page describes what information we need, and how to get it, when you ask for support.
 

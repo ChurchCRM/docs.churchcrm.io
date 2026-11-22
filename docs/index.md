@@ -23,7 +23,7 @@ For administrators setting up ChurchCRM for the first time.
 - [cPanel Shared Hosting](/installation/cpanel-shared-hosting) — Shared hosting setup
 - [Azure](/installation/azure) — Microsoft Azure cloud setup
 - [SSL / HTTPS](/installation/ssl-https) — Secure your installation
-- [Upgrade Guide](/administration/upgrade) — Update to a new version
+- [Upgrade Guide](./administration/upgrade.md) — Update to a new version
 
 ---
 
@@ -46,7 +46,7 @@ For ongoing system management and maintenance.
 
 - [Administration Overview](/administration) — Settings, users, and system configuration
 - [First Run Configuration](/getting-started/first-run) — Initial setup after installation
-- [Upgrade Guide](/administration/upgrade) — Update to a new version
+- [Upgrade Guide](./administration/upgrade.md) — Update to a new version
 - [Backup & Restore](/administration/backup-restore) — Protect your data
 - [Users](/administration/users) — Manage user accounts and permissions
 - [Email Setup](/administration/email-setup) — Configure SMTP for notifications

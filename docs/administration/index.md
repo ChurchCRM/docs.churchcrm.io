@@ -36,12 +36,12 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 - [File System Permissions](/administration/file-system-permissions) — Set correct permissions for your web server
 - [Reset Password](/administration/reset-password) — Recover access when the admin password is lost
 - [Logging & Diagnostics](/administration/logging-and-diagnostics) — Access and interpret application logs
-- [Bug Reporting & Diagnostics](/administration/bug-reporting-and-diagnostics) — Report issues with useful diagnostic information
+- [Bug Reporting & Diagnostics](./bug-reporting-and-diagnostics.md) — Report issues with useful diagnostic information
 - [Troubleshooting](/administration/troubleshooting) — Diagnose and resolve common problems
 - [FAQs](/administration/faqs) — Frequently asked questions
 
 ## Development & Advanced
 
-- [Bug Reporting & Diagnostics](/administration/bug-reporting-and-diagnostics) — How to report bugs and request support
-- [Docker Development Environment](/developers/docker) — Development containers, npm scripts, and troubleshooting
+- [Bug Reporting & Diagnostics](./bug-reporting-and-diagnostics.md) — How to report bugs and request support
+- [Docker Development Environment](../developers/docker.md) — Development containers, npm scripts, and troubleshooting
 

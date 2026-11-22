@@ -42,5 +42,5 @@ Once the application is running:
 
 This is only for people editing ChurchCRM itself, not for installing it at a church.
 
-- **[Docker Development Environment](/developers/docker)** — the containers used to work on the source code
+- **[Docker Development Environment](../developers/docker.md)** — the containers used to work on the source code
 - **[DDEV](https://ddev.com/)** — from a clone of the repository, run `ddev start` then `ddev setup-churchcrm`. The repository `CONTRIBUTING.md` has the rest of that walkthrough.
