@@ -95,10 +95,7 @@ See [File System Permissions](/administration/file-system-permissions) for full 
 
 ## Step 2: Still Having Issues?
 
-**Get help from the community on GitHub Discussions:**
-- **[Troubleshooting Discussions](https://github.com/ChurchCRM/CRM/discussions/categories/troubleshooting)** - Share your issue and get community help
-- **[General Questions](https://github.com/ChurchCRM/CRM/discussions/categories/general-questions)** - General questions about features
-- **[Administrator Questions](https://github.com/ChurchCRM/CRM/discussions/categories/administrator-questions)** - System administration help
+**Ask in [Discord](https://discord.gg/tuWyFzj3Nj).** If the problem is a bug, open an issue on ChurchCRM/CRM and include what you already tried.
 
 If you've identified a bug, check GitHub issues:
 
@@ -173,7 +170,7 @@ If you're running ChurchCRM in Docker or another non-traditional setup, localiza
 If restarting does not resolve the problem:
 1. Confirm system locales are installed and visible in `locale -a`
 2. Restart your webserver (see above)
-3. Still not working? Post on [GitHub Discussions — Troubleshooting](https://github.com/ChurchCRM/CRM/discussions/categories/troubleshooting) with:
+3. Still not working? Ask in [Discord](https://discord.gg/tuWyFzj3Nj) with:
    - Your hosting environment (shared hosting, VPS, Docker, etc.)
    - Output of `locale -a | grep <your_language>`
    - Your webserver type and PHP version (`php -v`)

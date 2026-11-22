@@ -224,7 +224,7 @@ All People will be added to the Group in that group's Default Role, unless you s
 
 2. Click on the desired Group to open its Group View page.
 
-3. Members are listed on the group page. There is no **View Members** step.
+3. Members are listed on the group page. There is no **View Members** step. The list includes **Home Phone** and **Address**. A blank personal home phone or address uses the family's. A personal value is kept when the person has one. On a narrow screen the wider columns fold away first. Open the row's expand control to see **Home Phone** and **Address**. The row actions stay on the row.
 
 4. Find the member and click **Change Role**.
 
