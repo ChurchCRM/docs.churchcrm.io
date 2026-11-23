@@ -28,6 +28,14 @@ The same year shows up in a few places:
 
 ---
 
+## Can I record expenses or outgoing payments?
+
+ChurchCRM's finance features record money coming in — donations, pledges and deposits. There is no built-in expense register or accounts-payable feature, and no existing plugin adds expense or commitment tracking, so outgoing payments such as monthly missionary support cannot be recorded as expenses in ChurchCRM.
+
+A plugin could add expense tracking without modifying ChurchCRM itself, so it would survive ChurchCRM updates — see [Plugins](/administration/plugins) for how plugins extend ChurchCRM and how a plugin is submitted to the community registry.
+
+---
+
 ## Step-by-step: Managing Donations
 
 ### Recording a Donation (Cash/Check)
