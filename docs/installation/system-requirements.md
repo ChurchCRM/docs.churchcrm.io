@@ -6,7 +6,7 @@ description: "What ChurchCRM needs to run: PHP, a supported MySQL or MariaDB dat
 
 # ChurchCRM System Requirements
 
-ChurchCRM needs three things: **PHP 8.4 or 8.5**, **MySQL @@mysql@@ or MariaDB @@mariadb@@** (or newer), and a web server that can rewrite URLs. Apache is the tested server. The [Docker image](/installation/docker) already includes the right PHP.
+ChurchCRM needs three things: **PHP 8.4 or 8.5**, a database, and a web server that can rewrite URLs. **MySQL @@mysql@@ or MariaDB @@mariadb@@** (or newer) is the supported database; ChurchCRM also installs and upgrades on MySQL 8.0 or MariaDB 10.6 and newer with an out-of-support warning — see [Database Server](#database-server). Apache is the tested server. The [Docker image](/installation/docker) already includes the right PHP.
 
 Windows, including XAMPP, is not a supported system. You may try it. See [Windows and XAMPP](/installation/windows) for what does not work and why we do not help with it.
 
@@ -20,8 +20,8 @@ Validation occurs in the [`getApplicationPrerequisites()` function](https://gith
 |-----------|-----------------|-------------|-------|
 | **PHP** | 8.4 | 8.4 or 8.5 | Required for all core functionality |
 | **Web server** | Apache 2.4 with mod_rewrite | Apache 2.4+ | The official [Docker images](/installation/docker) bundle Apache 2.4 + PHP 8.4. nginx is not tested. FrankenPHP exists only as an unsupported example in [`docker/`](https://github.com/ChurchCRM/CRM/tree/master/docker) — no image is published and CI does not build it |
-| **MySQL** | @@mysql@@ | @@mysql@@+ | Or MariaDB @@mariadb@@+. The long-term-support (LTS) release |
-| **MariaDB** | @@mariadb@@ | @@mariadb@@+ | Alternative to MySQL. The long-term-support (LTS) release |
+| **MySQL** | 8.0 | @@mysql@@+ | Or MariaDB 10.6+. @@mysql@@+ is the supported long-term-support (LTS) release; 8.0 and later below it installs and upgrades with an out-of-support banner for admins |
+| **MariaDB** | 10.6 | @@mariadb@@+ | Alternative to MySQL. @@mariadb@@+ is the supported long-term-support (LTS) release; 10.6 and later below it installs and upgrades with an out-of-support banner for admins |
 | **PHP memory_limit** | 256MB | 512MB+ | 1GB+ for larger congregations |
 | **Storage** | 500MB | 1GB+ | Depends on attachments and data size |
 
@@ -86,7 +86,7 @@ An unsupported example that encodes those rules is [`docker/examples/nginx/defau
 
 **MySQL @@mysql@@+ or MariaDB @@mariadb@@+**
 
-ChurchCRM supports **MySQL @@mysql@@ or higher** and **MariaDB @@mariadb@@ or higher**: the long-term-support releases that still receive security fixes. Older versions are end of life and are not tested. These versions give you:
+ChurchCRM supports **MySQL @@mysql@@ or higher** and **MariaDB @@mariadb@@ or higher**: the long-term-support releases that still receive security fixes. ChurchCRM also installs and upgrades on **MySQL 8.0 or higher** and **MariaDB 10.6 or higher**. Those versions are end of life and are not supported: the setup wizard warns that the database is out of support and might be unsafe, and after install every admin page shows that warning as a banner that cannot be dismissed, until the database is upgraded. Anything older than MySQL 8.0 or MariaDB 10.6 is too old — install and upgrade stop. The supported versions give you:
 - Modern schema features and compatibility
 - UTF-8mb4 character set support
 - Improved performance and reliability
