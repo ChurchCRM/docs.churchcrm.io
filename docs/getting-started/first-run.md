@@ -15,15 +15,17 @@ When you click **Install**, ChurchCRM tests the database connection before it sa
 
 ## First-Run Setup Flow
 
-After the setup wizard completes and you log in for the first time, ChurchCRM walks you through two mandatory steps before you can access the application.
+After the setup wizard completes and you log in for the first time, ChurchCRM asks for a new password, then opens the [Setup Dashboard](#the-setup-dashboard).
 
 ### Step 1: Change Your Password
 
 The default admin account uses the temporary password `changeme`. On first login you are immediately redirected to the **Change Password** page. Choose a strong password — you cannot skip this step.
 
-### Step 2: Church Information
+### Step 2: Choose How to Start
 
-After your password is set, you are automatically redirected to **Admin → Church Information**. The system enforces this: until a church name is saved, every page you visit redirects back here. Fill in the required fields and click **Save Church Information** to proceed.
+After your password is set, you land on the **Setup Dashboard**. Until the church has a name, it is the only place you can go: the sidebar lists just the Setup Dashboard and its three choices, and the top bar has a language picker, help, and Sign out. Every other page brings you back here.
+
+Pick the language at the top first if English is not yours. It sets the church's language and yours.
 
 ---
 
@@ -75,16 +77,19 @@ Uploading a logo is optional. You can do it at any time from **Admin → Church 
 
 ---
 
-## Get Your Data Into ChurchCRM
+## The Setup Dashboard
 
-After the church name is saved, ChurchCRM opens **Get Started**. The page title is **Get Your Data Into ChurchCRM** (also under **Admin → Get Started**). Pick one path:
+For the first 30 days after installation, an administrator who signs in lands on the **Setup Dashboard** (**/admin/setup**). Staff who are not administrators land on their usual dashboard. The page offers three choices:
 
-- **Explore with Demo Data** — **Load demo data**
-- **Import from a Spreadsheet** — **Import CSV**
-- **Enter Data Manually** — **Add first family**
-- **Restore a Backup** — **Restore backup**
+- **Explore with Demo Data**: click **Load demo data** to see ChurchCRM working before you commit. ChurchCRM fills in sample families, people, groups, events, volunteer ministries and giving, then opens the People dashboard. See [Importing Demo Data](/administration/demo-data).
+- **Set Up Your Church**: **Start setup** opens [Church Information](#church-information-page). When you save it the first time, you come back to the Setup Dashboard, which now lists the **Next Steps**: adding your data (import a spreadsheet, restore, or enter by hand), email, HTTPS, the admin contact, your team, plugins, and localization. Each step shows a check mark when it is done, or a **Set up** link.
+- **Restore a Backup**: moving from another ChurchCRM server? **Restore** replaces everything on this install with the backup.
 
-The setup checklist is the **Admin Dashboard**, not this page. You can skip Get Started with **Skip — go to Admin Dashboard**.
+The first time you save working email settings during the setup period, ChurchCRM turns on [member sign-in](/administration/member-sign-in), so members can sign in to the Member Portal.
+
+The setup period ends on its own after 30 days. Click **Finish setup** at the top of the page to end it sooner; it does not come back. To change the 30 days, open the **Admin Dashboard** and set **Setup Dashboard Days** in the **Setup Dashboard** panel. **0** turns the Setup Dashboard off.
+
+The **Admin Dashboard** is still under **Admin → Admin Dashboard**. While the setup period lasts, its header has a **Setup Dashboard** button back to this page.
 
 ---
 

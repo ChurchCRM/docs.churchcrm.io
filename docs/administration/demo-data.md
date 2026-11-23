@@ -7,7 +7,7 @@ sidebar_position: 9
 
 Demo data is a set of fictional families, people, groups, and notes you can load so you can click through ChurchCRM before you enter your congregation. Use it on a new installation, or on a copy you are willing to throw away. Do not load it on the database that already holds your real membership.
 
-The names, addresses, phone numbers, and emails in the sample are made up. The import also writes sample church settings, including the church name **Main St. Cathedral** (Kansas City, MO), the church address, phone, and email, the default city and state, and the names used as signers on statements. If you already saved your own church information, open **Admin → Church Information** afterward and put your details back, or [reset the database](#removing-demo-data) and start over.
+The names, addresses, phone numbers, and emails in the sample are made up. The import also writes sample church settings, including the church name **Main St. Cathedral** (Kansas City, MO), the church address, phone, and email, the default city and state, and the names used as signers on statements. If you already saved your own church information, open **Admin → Church Information** afterward and put your details back, or [start fresh](#start-fresh).
 
 ## When the import is safe
 
@@ -18,18 +18,19 @@ ChurchCRM treats an installation as fresh when there is exactly one person (the 
 
 ## Load the sample
 
-1. Log in as an administrator.
-2. Open **Admin → Get Started**. The page title is **Get Your Data Into ChurchCRM**. You can also open **Admin → Admin Dashboard** and, under the quick-start cards, choose **Add Your Data**.
-3. On **Explore with Demo Data**, click **Load demo data**.
-4. In the **Import Demo Data** dialog, choose what else to include. All three boxes start checked. Clear any you do not want:
-   - **Include financial data (donation funds, pledges)** — funds, pledges, payments, and deposits, and turns the Finance feature on. Leave this off unless you are practicing finance.
-   - **Include events and calendars** — sample events and attendance.
-   - **Include Sunday School classes and enrollments** — Sunday School groups and enrollments, and turns Sunday School on. If you clear it, those classes are skipped. Other groups are still imported.
-5. Click **Import Demo Data**. Click **Cancel** to close the dialog without changing the database.
-6. Wait on the screen that says **Importing demo data...** and **Please do not refresh or navigate away**.
-7. When it finishes, a notice says **Demo data imported successfully**.
+1. Sign in as an administrator. On a new installation you land on the **Setup Dashboard**. Otherwise open **Admin → Get Started**.
+2. On **Explore with Demo Data**, click **Load demo data**.
+3. The **Import Demo Data** dialog lists what the sample includes: families, people and groups; events and calendars; Sunday School classes; volunteer ministries; and donation funds, pledges and giving records. Click **Import Demo Data**, or **Cancel** to change nothing.
+4. Wait on the screen that says **Importing demo data...** and **Please do not refresh or navigate away**.
+5. From the Setup Dashboard, ChurchCRM then opens the People dashboard with the sample in place. From **Get Started**, a notice says **Demo data imported successfully**.
 
-Families, people, groups, and notes are always included. Financial records, events, and Sunday School classes are included only when those boxes stay checked.
+The import turns on every module the sample uses: Finance, Fundraiser, Events, Sunday School, and the Member Portal's calendar, volunteering pages and member directory. It turns on member sign-in and **Login as Person**, so you can open any sample member's portal from the person's **Actions** menu without email. It turns off sending email, because a new installation has no mail server yet.
+
+Demo mode also turns on anonymous usage statistics (PostHog) and Google Analytics, so the ChurchCRM team can see how people explore the product. The import dialog says so. Start Fresh turns both off with every other setting.
+
+## Demo mode
+
+While the sample is loaded, every staff page shows a yellow banner: **You're exploring ChurchCRM with demo data.** It stays until you start fresh, so nobody mistakes the sample for your church. The Setup Dashboard shows **You're exploring demo data** with **Keep exploring** and **Start Fresh**.
 
 ## If the import fails
 
@@ -37,16 +38,25 @@ The dialog shows **Import failed** and the confirm button becomes **Force Import
 
 Details are written to the application log. On the Admin Dashboard, under **Advanced Operations**, open **System Logs** and click **View Logs**. See [Logging and Diagnostics](/administration/logging-and-diagnostics).
 
-## Removing demo data
+## Start fresh
 
-The import dialog points you at **Reset Database**. That reset erases the sample and everything else in the database, including system settings and custom fields. It is not a way to delete only the fictional records.
+When you have seen enough, click **Start Fresh** on the banner or on the Setup Dashboard. Administrators see the button during the [setup period](/getting-started/first-run#the-setup-dashboard).
+
+Start fresh is a full [database reset](#reset-the-database): it erases the sample **and every setting**, and returns ChurchCRM to a new installation. Do not use it once you have entered real data.
+
+1. Click **Start Fresh** and confirm.
+2. ChurchCRM shows the default administrator account (`admin` / `changeme`). Click **OK** to go to the sign-in page.
+3. Sign in, choose a new password, and enter your church information, the same as the [first run](/getting-started/first-run).
+4. You land on the Setup Dashboard again, ready to set up your church.
+
+## Reset the database
+
+After the setup period, remove the sample with **Reset Database**. It erases the sample and everything else in the database, including system settings and custom fields. It is not a way to delete only the fictional records.
 
 1. Take a backup if anything in the database must be kept. See [Backup & Restore](/administration/backup-restore).
 2. Open **Admin → Admin Dashboard**.
 3. Under **Advanced Operations**, find **Reset Database** and click **Reset**.
 4. On the reset page, read the **Destructive Operation** warning. Step 1 can download a backup (**Generate & Download Backup**). Step 2 lists what will be deleted: people and families, groups, financial data, events and attendance, uploaded photos and documents, and system settings and custom fields.
 5. Type `RESET` and click **Reset Database**.
-
-After a reset, sign in again, set the church information, and only then load demo data if you still want the sample.
 
 To return to a copy from before the import, restore that backup instead of resetting. See [Backup & Restore](/administration/backup-restore).
