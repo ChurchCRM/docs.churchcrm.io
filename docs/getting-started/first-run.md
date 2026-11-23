@@ -9,9 +9,11 @@ A fresh ChurchCRM opens the setup wizard: one page, **Install ChurchCRM**, with 
 
 The page checks your server as it opens: the software ChurchCRM needs, permission to save settings and photos, and that the ChurchCRM files match the release. It shows the web address ChurchCRM will open at; change it only if people will use a different address than the page you are on.
 
-Under **Connect your database**, create a MySQL or MariaDB database in your hosting control panel first (in cPanel: **MySQL Databases**), then copy its details into the form. ChurchCRM supports MySQL 8.4+ and MariaDB 10.11+.
+Under **Connect your database**, create a MySQL or MariaDB database in your hosting control panel first (in cPanel: **MySQL Databases**), then copy its details into the form. ChurchCRM runs on MySQL 8.0+ and MariaDB 10.6+; MySQL 8.4+ and MariaDB 10.11+ are the supported versions.
 
 When you click **Install**, ChurchCRM tests the database connection before it saves anything. If something is wrong — a detail that does not connect, a file it cannot write, a field that is missing — the page says in plain language what is wrong and what to do about it, one sentence for each thing to fix. Nothing is installed until the test passes, so you can correct the details and click **Install** again.
+
+If your host's database is older than the supported versions (MySQL 8.4 / MariaDB 10.11) but at least MySQL 8.0 / MariaDB 10.6, the wizard shows **Database out of support** instead: tick **I understand this database is out of support** and the install continues. Admins then see that warning as a banner on every page until the database is upgraded. A database older than MySQL 8.0 / MariaDB 10.6 cannot install.
 
 ## First-Run Setup Flow
 
