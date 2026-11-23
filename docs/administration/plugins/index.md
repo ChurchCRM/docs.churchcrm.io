@@ -79,14 +79,14 @@ If you want to **build** a community plugin, start with
 class, routes, views, hooks, and publishing. For the canonical
 technical details, see the ChurchCRM repository's skill files:
 
-- [`plugin-create.md`](https://github.com/ChurchCRM/CRM/blob/main/.agents/skills/churchcrm/plugin-create.md)
+- [`plugin-create.md`](https://github.com/ChurchCRM/CRM/blob/master/.agents/skills/churchcrm/plugin-create.md)
   — the community plugin quickstart: scaffold, code, run the security
   scan against your own tree, build a reproducible zip, and open the
   `approved-plugins.json` pull request.
-- [`plugin-development.md`](https://github.com/ChurchCRM/CRM/blob/main/.agents/skills/churchcrm/plugin-development.md)
+- [`plugin-development.md`](https://github.com/ChurchCRM/CRM/blob/master/.agents/skills/churchcrm/plugin-development.md)
   — the technical reference, including the full allowed/forbidden
   capability contract.
-- [`plugin-security-scan.md`](https://github.com/ChurchCRM/CRM/blob/main/.agents/skills/churchcrm/plugin-security-scan.md)
+- [`plugin-security-scan.md`](https://github.com/ChurchCRM/CRM/blob/master/.agents/skills/churchcrm/plugin-security-scan.md)
   — the review checklist every approved community plugin must pass
   before it enters the registry.
 

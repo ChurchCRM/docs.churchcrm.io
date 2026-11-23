@@ -124,7 +124,7 @@ adding any entry to `approved-plugins.json`. In summary:
    and re-review on every version bump, even patch releases.
 
 The full checklist is in
-[`plugin-security-scan.md`](https://github.com/ChurchCRM/CRM/blob/main/.agents/skills/churchcrm/plugin-security-scan.md).
+[`plugin-security-scan.md`](https://github.com/ChurchCRM/CRM/blob/master/.agents/skills/churchcrm/plugin-security-scan.md).
 
 ---
 
