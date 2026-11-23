@@ -23,9 +23,9 @@ The default admin account uses the temporary password `changeme`. On first login
 
 ### Step 2: Choose How to Start
 
-After your password is set, you land on the **Setup Dashboard**. Until the church has a name, it is the only place you can go: the sidebar lists just the Setup Dashboard and its three choices, and the top bar has a language picker, help, and Sign out. Every other page brings you back here.
+After your password is set, you land on the **Setup Dashboard**. Until the church has a name, it is the only place you can go: there is no sidebar, and the top bar has a language picker, help, and Sign out. Every other page brings you back here.
 
-Pick the language at the top first if English is not yours. It sets the church's language and yours.
+ChurchCRM starts in your browser's language when it has a translation for it. Change it with the picker at the top; it sets the church's language and yours. Light and dark follow your device until you choose one under your account settings.
 
 ---
 
