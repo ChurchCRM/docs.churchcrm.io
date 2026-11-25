@@ -5,7 +5,7 @@ sidebar_position: 9
 
 # Settings Quick Reference — Where to Find Everything
 
-Use this page to find the menu for a setting. System Settings tabs are **Financial Settings**, **Quick Search**, **Confession**, **Scheduled Tasks**, and **Report Settings**. There is no Edit General Settings page, and no Advanced, Finance, Search, Security, or Integration tab.
+Use this page to find the menu for a setting. **Admin → Settings** is the hub: it links to every settings page and holds the system-wide sections — Quick Search, Sign-in & Security, Text Messages, Public Calendar, Scheduled Tasks, and Reporting. There is no Edit General Settings page, and no Advanced, Finance, Search, Security, or Integration tab.
 
 ## 👥 People & Registration
 
@@ -51,14 +51,14 @@ Use this page to find the menu for a setting. System Settings tabs are **Financi
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Enable or disable Finance | Admin → System Settings → Financial Settings | Enable Finance menu |
-| Enable or disable Fundraiser | Admin → System Settings → Financial Settings | Enable Fundraiser menu |
-| Set the fiscal year start month | Admin → System Settings → Financial Settings | Fiscal year start month |
-| Set the currency symbol | Admin → Localization & Formats (also on Financial Settings) | Currency symbol |
+| Enable or disable Finance | Admin → Feature Toggles | Enable Finance menu |
+| Enable or disable Fundraiser | Admin → Feature Toggles | Enable Fundraiser menu |
+| Set the fiscal year start month | Admin → Finance Settings → Deposits & Payments | Fiscal year start month |
+| Set the currency symbol | Admin → Localization & Formats | Currency symbol |
 | Put the symbol before or after the amount | Admin → Localization & Formats | Currency position |
-| Use numbered donation envelopes | Admin → System Settings → Financial Settings | Use donation envelopes |
-| Track scanned check images | Admin → System Settings → Financial Settings | Scanned check images |
-| Allow non-deductible donations | Admin → System Settings → Financial Settings | Non-deductible payments |
+| Use numbered donation envelopes | Admin → Finance Settings → Deposits & Payments | Use donation envelopes |
+| Track scanned check images | Admin → Finance Settings → Deposits & Payments | Scanned check images |
+| Allow non-deductible donations | Admin → Finance Settings → Deposits & Payments | Non-deductible payments |
 
 See the [Donation Envelopes guide](/user-guide/donation-envelopes) for activation and assignment.
 
@@ -131,14 +131,14 @@ These are on **Admin → Member Portal → Sign-in**. Changes save as you make t
 | Choose who is told when a person is added | People → Admin → People Settings → New Members & Greeting | Notification Recipients |
 | Include contact details in that email | People → Admin → People Settings → New Members & Greeting | Include Details in Notifications |
 | Send birthday emails | Admin → Feature Toggles | Birthday emails |
-| Warn when background jobs have not run | Admin → System Settings → Scheduled Tasks | Background jobs warning |
+| Warn when background jobs have not run | Admin → Settings → Scheduled Tasks | Background jobs warning |
 
 ## 🔍 Search
 
 | I want to... | Location | Setting |
 |---|---|---|
-| Show or hide people, families, groups, addresses, deposits, payments, or calendar events | Admin → System Settings → Quick Search | The matching Search switch |
-| Limit how many results appear | Admin → System Settings → Quick Search | Maximum for that kind of record |
+| Show or hide people, families, groups, addresses, deposits, payments, or calendar events | Admin → Settings → Quick Search | The matching Search switch |
+| Limit how many results appear | Admin → Settings → Quick Search | Maximum for that kind of record |
 
 ## 🎨 Menus
 
@@ -164,7 +164,7 @@ These are on **Admin → Member Portal → Sign-in**. Changes save as you make t
 |---|---|---|
 | Change the log level | Admin → System Logs → Settings | DEBUG, INFO, WARNING, or ERROR |
 | Allow a pre-release upgrade | Admin Dashboard → Upgrade, then System Upgrade → Settings | Upgrade Settings |
-| Choose what anonymous diagnostics to share | Admin Dashboard prompt | Enable (full), Errors only, or No thanks |
+| Choose whether page usage is shared | Admin → Telemetry (the Debug page) | **Share which pages are used** — off is Default, on is Full |
 
 Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 
@@ -181,9 +181,8 @@ Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 | **Communication → Admin → Email Settings** | SMTP and sending |
 | **People → Admin → People Settings** | Name and initials style, hidden fields, family roles, self-registration, new-member notifications and greeter messages, new-record defaults, map zoom and geocoding |
 | **People → Admin → Person Classifications** | Classification names and order, Inactive and In Directory flags |
-| **Admin → System Settings → Financial Settings** | Finance and fundraiser menus, fiscal year, envelopes |
-| **Admin → System Settings → Quick Search** | What search includes, and how many results |
-| **Admin → System Settings → Report Settings** | Report wording |
+| **Admin → Finance Settings → Deposits & Payments** | Fiscal year, envelopes, scanned checks, non-deductible payments |
+| **Admin → Settings → Quick Search** | What search includes, and how many results |
 | **Reports → Admin → Report Settings** | Letterhead image, letter greeting and signature |
 | **Finance → Admin → Statement Settings** | Giving-statement wording, tax ID, PDF handling |
 | **Groups → Dashboard → Group Settings** | Sunday School module |
@@ -195,7 +194,7 @@ Open the upgrade page from **Admin → Admin Dashboard → Upgrade**.
 
 ## See Also
 
-- **[System Settings & Configuration](./system-settings.md)** — What each setting does
+- **[Settings & Configuration](./system-settings.md)** — What each setting does
 - **[Email Setup](./email-setup.md)** — Sending mail
 - **[Localization & Formats](./localization.md)** — Language and formats
 - **[Security](./security.md)** — Account security

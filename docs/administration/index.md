@@ -12,7 +12,7 @@ The Administration section covers everything needed to manage a ChurchCRM instal
 ## Configuration & Settings
 
 - [**Settings Quick Reference**](/administration/settings-quick-reference) — Find any setting by task or UI location
-- [**System Settings & Configuration**](/administration/system-settings) — Complete guide to all configurable settings
+- [**Settings & Configuration**](/administration/system-settings) — Complete guide to all configurable settings
 - [Localization & Formats](/administration/localization) — Language, timezone, date/time, number formats
 - [Email Setup](/administration/email-setup) — Configure SMTP and email features
 - [Maps & Geocoding](/administration/maps-and-geocoding) — OpenStreetMap / Nominatim (no API key required)

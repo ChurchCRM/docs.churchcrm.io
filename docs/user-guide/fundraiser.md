@@ -43,7 +43,7 @@ The Fundraiser landing page shows all active fundraisers in an enriched table wi
 
 The Fundraiser menu has two items: **Dashboard** and **Create New Fundraiser**.
 
-**Stat widgets** on the dashboard are **Active Fundraisers**, **Raised This Fiscal Year**, **Items Donated (This Fiscal Year)**, and **Buyers This Fiscal Year**. Those fiscal-year totals follow the start month in **Admin → System Settings → Financial Settings**.
+**Stat widgets** on the dashboard are **Active Fundraisers**, **Raised This Fiscal Year**, **Items Donated (This Fiscal Year)**, and **Buyers This Fiscal Year**. Those fiscal-year totals follow the start month in **Admin → Finance Settings → Deposits & Payments**.
 
 **Filters:** narrow by Type, Status, or date range using the filter bar above the table.
 

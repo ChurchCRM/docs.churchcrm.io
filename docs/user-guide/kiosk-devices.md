@@ -266,8 +266,8 @@ The **Parent Alert** button (bell) sends a message to parents that the teacher h
 | Method | Where | What to set |
 |--------|--------|-------------|
 | **Email** | **Communication → Email** | See [Email Setup](/administration/email-setup). |
-| **SMS** | **Admin → Plugins** | Turn on the Vonage plugin and enter the Vonage API key, secret, and from number. This is not under System Settings → Integration, and the plugin is not named Nexmo. |
-| **OpenLP** | **Admin → System Settings → Integration** | OpenLP URL, username, and password, if you use OpenLP. |
+| **SMS** | **Admin → Plugins** | Turn on the Vonage plugin and enter the Vonage API key, secret, and from number. It is configured under **Admin → Plugins**, and the plugin is not named Nexmo. |
+| **OpenLP** | **Admin → Plugins** | OpenLP URL, username, and password, if you use OpenLP. |
 
 When a teacher taps Parent Alert, all configured channels are used at once.
 
@@ -374,7 +374,7 @@ chrome --kiosk https://your-churchcrm-url/kiosk/
 ### Parent Alert button not visible
 
 - Student must be **checked in** (not just in "Waiting to Check In").
-- At least one of **Email**, **SMS**, or **OpenLP** must be configured under **Admin** → **System Settings** → **Integration**.
+- At least one of **Email**, **SMS**, or **OpenLP** must be configured under **Admin** → **Plugins**.
 
 ### Kiosk not responding to Reload/Identify
 

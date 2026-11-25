@@ -163,7 +163,7 @@ Select a subject to open the recorded message. Composer and volunteer emails can
 
 ## Mailchimp
 
-Mailchimp is a plugin, not a system-settings key. There is no **sMailChimpApiKey** field under System Settings.
+Mailchimp is a plugin, not a system-settings key. There is no **sMailChimpApiKey** field in Settings.
 
 1. Create a [Mailchimp account](https://mailchimp.com) and an [API key](https://mailchimp.com/help/about-api-keys/).
 2. In ChurchCRM, go to **Admin → Plugins** and open the **mailchimp** plugin.

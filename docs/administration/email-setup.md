@@ -42,7 +42,7 @@ Turning email off, or a mail server that stops accepting messages, doesn't turn 
 
 There is no separate SMTP port, sender name, or reply-to field.
 
-**Do Not Email Property** picks the person property that keeps someone off email lists; the composer skips anyone who has it. The other settings in the panel (**SMTP Timeout**, **Auto TLS**, **Default Inbox Preview Text**) can usually stay as they are. **All System Settings** opens the full settings page.
+**Do Not Email Property** picks the person property that keeps someone off email lists; the composer skips anyone who has it. The other settings in the panel (**SMTP Timeout**, **Auto TLS**, **Default Inbox Preview Text**) can usually stay as they are. **Admin → Settings** opens the Settings hub.
 
 :::note What turns on sending from the composer
 The composer's **Compose Message** button (which leads to **Send Email**) and the paper-plane buttons next to email addresses appear only when the SMTP host is set (with a username and password if authentication is on) **and** **Enable Email** is on. Users additionally need the **Email** permission: administrators always have it; for other users, edit the user under **Admin** → **System Users** and set **Permission** to **True** on the `bEmailMailto` row of the **User Config** table. Until both are in place, the composer offers **Copy Addresses** and **Open in Email Client** only.
