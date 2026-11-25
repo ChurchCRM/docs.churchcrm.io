@@ -40,12 +40,13 @@ What those values usually are depends on the hosting:
 | A running site shows **Database Access Failed** | [A running site cannot use its database](#a-running-site-cannot-use-its-database) |
 | A running site shows **Configuration Error** | [Configuration Error](#configuration-error) |
 | "Database out of support" banner after signing in | [Database out of support](#database-out-of-support) |
+| An upgrade or install step fails with a database permission error | [Permissions the database user needs](#permissions-the-database-user-needs) |
 
 ## The database host cannot be reached
 
 The setup wizard says a variation of:
 
-> ChurchCRM cannot reach a database at that host. Check the database host name. On shared hosting the host is often not localhost. In Docker, the host is the database service name in your compose file — db in the official compose file.
+> ChurchCRM cannot reach the database server at that address and port. Check the host name and the port. On shared hosting the host is often not localhost. In Docker, the host is the database service name in your compose file — db in the official compose file.
 
 or, when the host you entered is `localhost`:
 
@@ -137,6 +138,19 @@ After signing in, administrators may see a red banner: "Database out of support 
 - You can dismiss the banner: it collapses to a red warning icon in the top navigation that only administrators see, and clicking the icon shows the warning again. Dismissing is per administrator — it does not hide the warning from other administrators, and it reappears in full if the database version changes.
 - To check your database version: the banner names it; phpMyAdmin shows it on its home page; or run `SELECT VERSION();` in any SQL tool.
 
+## Permissions the database user needs
+
+The database user needs **ALL PRIVILEGES on the ChurchCRM database** — and only on that database. It does not need global (server-wide) rights, and it should not have them.
+
+Why all of them: setup creates the full table set, and every ChurchCRM upgrade changes tables — adding columns, indexes and tables, and occasionally dropping them. A user with only day-to-day rights (SELECT, INSERT, UPDATE, DELETE) can look fine on a running site and then fail an upgrade partway through with an error like "ALTER command denied to user". If your host makes you pick privileges one by one instead of offering ALL PRIVILEGES, the user needs, on the ChurchCRM database: SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, DROP, INDEX, CREATE TEMPORARY TABLES, LOCK TABLES, REFERENCES, CREATE VIEW, SHOW VIEW and TRIGGER.
+
+- **cPanel:** privileges are granted in the same step that assigns the user to the database — **MySQL Databases → Add User To Database** → check **ALL PRIVILEGES**. See [Creating the database and user](#creating-the-database-and-user).
+- **Check what a user actually has:** run `SHOW GRANTS FOR CURRENT_USER();` in phpMyAdmin's SQL tab or the MySQL command line, signed in as that user. The grant must name the ChurchCRM database (or `*.*`, which is broader than needed).
+- **The user's host scope is a permission too.** A grant for `'churchcrm'@'localhost'` does not cover connections arriving from a Docker container or another server — that mismatch is rejected as a bad login, see [the username or password was rejected](#the-username-or-password-was-rejected).
+- **Split hosting:** if the web server and the database are on different machines, some hosts also make you allowlist the web server's address in a **Remote MySQL** panel before any connection is accepted.
+
+File permissions matter at one point: during setup the web server must be able to **write `Include/Config.php`** (see [the configuration file could not be saved](#the-configuration-file-could-not-be-saved)). After setup, protect that file — it contains the database password. It should not be readable by other accounts on the server; the Docker procedure below sets it to `chmod 600`.
+
 ## Creating the database and user
 
 **cPanel (shared hosting)**
@@ -150,6 +164,13 @@ After signing in, administrators may see a red banner: "Database out of support 
 **Docker (official compose file)**
 
 You do not create anything by hand. Put `CHURCHCRM_DB_NAME`, `CHURCHCRM_DB_USER` and `CHURCHCRM_DB_PASSWORD` in the `.env` file next to the compose file; the database container creates the database and user on its first start. In the wizard, the host is `db`. See the [Docker guide](/installation/docker).
+
+**Docker lessons from the official compose setup**
+
+- **Config.php does not survive replacing the web container unless you persist it.** The database lives in its own volume and is safe, but a fresh web container has no `Include/Config.php` and sends you back to `/setup`. Re-running setup reconnects to the existing database without deleting it — or persist the file the way the compose file's comments describe: finish setup once, copy the file out with `docker compose cp web:/var/www/html/Include/Config.php ./config/Config.php`, run `chmod 600 ./config/Config.php` (it contains the database password), then enable the bind-mount line in the compose file and recreate the container.
+- **Do not start the web container read-only before setup is finished.** With `read_only: true` the wizard cannot write Config.php and fails silently — it answers as if it worked and writes nothing. Enable read-only only after setup, with the Config.php bind-mount in place.
+- **The database publishes no port.** In the official compose file the database is reachable only inside the compose network, so you cannot connect to it from the host machine with a desktop MySQL client. Test from inside instead: `docker compose exec db mariadb -u <user> -p <database>`.
+- **The official database is a supported version.** The compose file runs MariaDB 11.4, above the supported floor — the [out-of-support banner](#database-out-of-support) never appears on the official stack. If you see it, the compose file was changed to an older database image.
 
 **VPS / self-hosted (command line)**
 
