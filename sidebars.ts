@@ -22,6 +22,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'installation/index',
         'installation/system-requirements',
+        'installation/database-setup-troubleshooting',
         'installation/softaculous',
         'installation/cpanel-shared-hosting',
         'installation/self-hosted',
