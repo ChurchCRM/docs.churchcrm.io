@@ -9,16 +9,16 @@ ChurchCRM sends several types of notifications — to administrators, to members
 
 ---
 
-## System Notifications (Banners)
+## System Notifications (Notification Center)
 
-ChurchCRM periodically checks for important system announcements (e.g., security advisories, new release notices) and displays them as a **dismissible banner** at the top of every admin page.
+ChurchCRM periodically checks for important system announcements (e.g., security advisories, new release notices) and displays them in the **notification center** in the top bar.
 
-- Banners appear once per session after a new notice is fetched
+- Open the notification center to read a notice; the badge shows how many notices are waiting
 - Each notice can be dismissed per user — it won't reappear for that user after dismissal
 - Version matching supports wildcards (`7.1.*`, `7.*`) so notices apply to a range of versions
 - Notices are fetched from a public feed; no account or API key is required
 
-No configuration is needed. To suppress a notice, click **Dismiss** in the banner.
+No configuration is needed. To suppress a notice, open the notification center and click **Dismiss**.
 
 ---
 

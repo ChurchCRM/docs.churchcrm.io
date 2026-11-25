@@ -30,7 +30,7 @@ Demo mode also turns on anonymous usage statistics (PostHog) and Google Analytic
 
 ## Demo mode
 
-While the sample is loaded, every staff page shows a yellow banner: **You're exploring ChurchCRM with demo data.** It stays until you start fresh, so nobody mistakes the sample for your church. The Setup Dashboard shows **You're exploring demo data** with **Keep exploring** and **Start Fresh**.
+While the sample is loaded, the notification center in the top bar shows a notice: **You're exploring ChurchCRM with demo data.** It stays until you start fresh, so nobody mistakes the sample for your church. The Setup Dashboard shows **You're exploring demo data** with **Keep exploring** and **Start Fresh**.
 
 ## If the import fails
 
@@ -40,7 +40,7 @@ Details are written to the application log. On the Admin Dashboard, under **Adva
 
 ## Start fresh
 
-When you have seen enough, click **Start Fresh** on the banner or on the Setup Dashboard. Administrators see the button during the [setup period](/getting-started/first-run#the-setup-dashboard).
+When you have seen enough, click **Start Fresh** in the notification center or on the Setup Dashboard. Administrators see the button during the [setup period](/getting-started/first-run#the-setup-dashboard).
 
 Start fresh is a full [database reset](#reset-the-database): it erases the sample **and every setting**, and returns ChurchCRM to a new installation. Do not use it once you have entered real data.
 

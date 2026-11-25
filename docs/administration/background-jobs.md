@@ -91,7 +91,7 @@ Do not expose the scheduler as a public web endpoint. Use cron, your hosting pro
 
 ## Related documentation
 
-- [System Settings & Configuration](/administration/system-settings)
+- [Settings & Configuration](/administration/system-settings)
 - [Email Setup](/administration/email-setup)
 - [Troubleshooting](/administration/troubleshooting)
 - [Logging & Diagnostics](/administration/logging-and-diagnostics)

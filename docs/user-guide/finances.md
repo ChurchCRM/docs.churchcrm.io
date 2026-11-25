@@ -15,7 +15,7 @@ ChurchCRM includes comprehensive financial tracking for tithes, pledges, and gif
 
 ## Fiscal years
 
-Finance views use the church's fiscal year, which may not match the calendar year. Set it under **Admin → System Settings → Financial Settings**. The setting is **iFYMonth**: the month that starts your organization's fiscal year.
+Finance views use the church's fiscal year, which may not match the calendar year. Set it under **Admin → Finance Settings → Deposits & Payments**. The setting is **iFYMonth**: the month that starts your organization's fiscal year.
 
 The same year shows up in a few places:
 
@@ -172,7 +172,7 @@ After each save the **Family** field is focused, so a deposit can be entered fro
 
 ### Check numbers
 
-On a deposit payment the field is **Check #**. It is required by default: the label has a red asterisk, and a check payment will not save until the box is filled in. Turn that off with **Require check number on check payments** in the **Financial Settings** panel on the **Finance Dashboard** (the same setting is also listed under **Admin → System Settings → Financial Settings**). When it is off, **Check #** has no asterisk and may be left blank or set to `0` — both mean "no check number", and neither is checked for duplicates, so the same blank or `0` can be saved as often as needed.
+On a deposit payment the field is **Check #**. It is required by default: the label has a red asterisk, and a check payment will not save until the box is filled in. Turn that off with **Require check number on check payments** on the **Deposits & Payments** page of **Admin → Finance Settings**. When it is off, **Check #** has no asterisk and may be left blank or set to `0` — both mean "no check number", and neither is checked for duplicates, so the same blank or `0` can be saved as often as needed.
 
 A real check number is still checked for duplicates: a number this family has already used is rejected: "Check number '…' for selected family already exists." With the control on, a check payment that has no number is rejected: "Must specify non-zero check number". A cash payment still cannot have a check number.
 
@@ -180,10 +180,9 @@ A real check number is still checked for duplicates: a number this family has al
 
 The layout for most QuickBooks deposit tickets should be nearly identical; however, differences in printers and deposit ticket providers may require you to adjust the position of various elements of the report.
 
-1. Go to **Admin → System Settings**.
-2. Open **Report Settings**.
-3. Edit **QuickBooks Deposit Ticket Settings** (`sQBDTSettings`).
-4. Adjust the values for your deposit ticket and printer.
+1. Go to **Admin → Finance Settings**.
+2. Open **QuickBooks Deposit Ticket Settings**.
+3. Adjust the 18 position values (in millimetres) for your deposit ticket and printer, then click **Save**.
 
 ## Finding and managing deposits
 
@@ -283,7 +282,7 @@ The PDF is named `GivingStatements-<year>.pdf`, or `GivingStatement-<year>-<fami
 
 ### What the letter says and looks like
 
-- The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**. That page also holds the **Charity on receipts** details (below) and **PDF Handling**. These settings are not on System Settings.
+- The opening line, closing line, questions line and signer come from **Finance → Admin → Statement Settings**. That page also holds the **Charity on receipts** details (below) and **PDF Handling**. These settings are not on the Finance Settings hub.
 - The top of the page uses your church letterhead image when one is uploaded under **Letterhead** on **Reports → Admin → Report Settings**. Without one, it shows your church name and address. See [How do I set up my logo or letterhead?](/administration/faqs#how-do-i-set-up-my-logo-or-letterhead) for the image size.
 - Each letter is addressed to the family's [mailing address](./reports-and-queries.md#which-address-is-printed).
 

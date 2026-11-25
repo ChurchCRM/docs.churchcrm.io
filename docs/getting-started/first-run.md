@@ -13,7 +13,7 @@ Under **Connect your database**, create a MySQL or MariaDB database in your host
 
 When you click **Install**, ChurchCRM tests the database connection before it saves anything. If something is wrong — a detail that does not connect, a file it cannot write, a field that is missing — the page says in plain language what is wrong and what to do about it, one sentence for each thing to fix. Nothing is installed until the test passes, so you can correct the details and click **Install** again.
 
-If your host's database is older than the supported versions (MySQL 8.4 / MariaDB 10.11) but at least MySQL 8.0 / MariaDB 10.6, the wizard shows **Database out of support** instead: tick **I understand this database is out of support** and the install continues. Admins then see that warning as a banner on every page until the database is upgraded. A database older than MySQL 8.0 / MariaDB 10.6 cannot install.
+If your host's database is older than the supported versions (MySQL 8.4 / MariaDB 10.11) but at least MySQL 8.0 / MariaDB 10.6, the wizard shows **Database out of support**: the database no longer receives security fixes, and the install continues without asking you to acknowledge it. Afterward, admins see the warning in the notification center with a red badge; an admin can dismiss it for their own account, and it clears for everyone when the database is upgraded. A database older than MySQL 8.0 / MariaDB 10.6 cannot install.
 
 ## First-Run Setup Flow
 
@@ -55,7 +55,7 @@ The **Social Media** card has one field each for **X**, **YouTube**, **Facebook*
 
 Each address must start with `https://`, for example `https://facebook.com/yourchurch`. A plain `http://` link or a handle such as `@yourchurch` is not saved. ChurchCRM names the network in the message, for example "X must be a full https:// web address", and nothing on the page is saved until you fix it. What you typed stays on the form.
 
-These links are only on this page, not on **Admin → System Settings**. In **Display Preview**, the icons change when you click **Save Church Information**, not as you type.
+These links are only on this page, not on **Admin → Settings**. In **Display Preview**, the icons change when you click **Save Church Information**, not as you type.
 
 ### Church Logo
 

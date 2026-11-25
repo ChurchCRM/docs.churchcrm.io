@@ -131,12 +131,12 @@ The **Configuration Error** page means `Include/Config.php` itself could not be 
 
 ## Database out of support
 
-After signing in, administrators may see a red banner: "Database out of support — Your database (MySQL 8.0.46) is out of support and might be unsafe."
+After signing in, administrators may see a **Database out of support** notice in the notification center, marked with a red badge: "Your database (MySQL 8.0.46) is out of support and might be unsafe."
 
-- ChurchCRM supports **MySQL @@mysql@@ or later** and **MariaDB @@mariadb@@ or later**. It still runs on MySQL 8.0+ and MariaDB 10.6+ — below the supported versions the database vendor no longer ships security fixes, so the banner is a security warning, not a block. Nothing stops working.
-- Some shared hosts still run MySQL 8.0 on every plan, so the banner cannot be fixed from inside ChurchCRM on those hosts — it clears when the database reaches a supported version (a host upgrade, a plan change, or moving hosts).
-- You can dismiss the banner: it collapses to a red warning icon in the top navigation that only administrators see, and clicking the icon shows the warning again. Dismissing is per administrator — it does not hide the warning from other administrators, and it reappears in full if the database version changes.
-- To check your database version: the banner names it; phpMyAdmin shows it on its home page; or run `SELECT VERSION();` in any SQL tool.
+- ChurchCRM supports **MySQL @@mysql@@ or later** and **MariaDB @@mariadb@@ or later**. It still runs on MySQL 8.0+ and MariaDB 10.6+ — below the supported versions the database vendor no longer ships security fixes, so the notice is a security warning, not a block. Nothing stops working.
+- Some shared hosts still run MySQL 8.0 on every plan, so the notice cannot be fixed from inside ChurchCRM on those hosts — it clears for everyone when the database reaches a supported version (a host upgrade, a plan change, or moving hosts).
+- You can dismiss the notice in the notification center. Dismissing is per administrator — it does not hide the warning from other administrators.
+- To check your database version: the notice names it; phpMyAdmin shows it on its home page; or run `SELECT VERSION();` in any SQL tool.
 
 ## Permissions the database user needs
 

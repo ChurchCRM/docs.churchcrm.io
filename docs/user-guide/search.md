@@ -33,6 +33,6 @@ To find payments within a specific range, format your search as `min-max`:
 
 Administrators can customize search behavior:
 
-1. Go to **Admin → System Settings → Quick Search**.
+1. Go to **Admin → Settings → Quick Search**.
 2. For each result type you can turn that type on or off and set how many results to show.
 3. **Include family custom properties in global search** is off unless you turn it on. When it is off, family custom property values are not part of header search.

@@ -11,9 +11,9 @@ ChurchCRM installations.
 
 ## Turn on envelope numbering
 
-1. An administrator opens **Admin → System Settings → Financial Settings**.
+1. An administrator opens **Admin → Finance Settings → Deposits & Payments**.
 2. Enable **Use donation envelopes** (the `bUseDonationEnvelopes` setting).
-3. Save the system settings.
+3. The setting saves as soon as you change it.
 
 Once enabled, the envelope manager and envelope-related finance fields appear
 where your account has access. The feature is available to users with

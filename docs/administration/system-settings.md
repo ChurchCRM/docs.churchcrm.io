@@ -1,9 +1,9 @@
 ---
-title: System Settings & Configuration
+title: Settings & Configuration
 sidebar_position: 8
 ---
 
-# System Settings & Configuration
+# Settings & Configuration
 
 ChurchCRM's settings are spread across several pages. This page is where to look for each one.
 
@@ -15,10 +15,10 @@ ChurchCRM's settings are spread across several pages. This page is where to look
 - **Email** — Communication → Admin → Email Settings
 - **Passwords, lockout, session, and 2FA** — Admin → System Users → Settings → Quick Settings
 - **Member Portal sign-in** — People → Admin → Member Portal → **Sign-in**
-- **System Settings tabs** — Financial Settings, Quick Search, Confession, Scheduled Tasks, Report Settings
+- **Settings hub** — Admin → Settings links to every settings page and holds the system-wide sections: Quick Search, Sign-in & Security, Text Messages, Public Calendar, Scheduled Tasks, and Reporting
 :::
 
-There is no **Edit General Settings** page, and System Settings has no Advanced, Finance, Search, Security, or Integration tab.
+There is no **Edit General Settings** page. The old **System Settings** page is gone: **Admin → Settings** (`/admin/settings`) is the hub, and each setting lives on one page only.
 
 ---
 
@@ -125,7 +125,7 @@ For the rest of the map, see [Maps & Geocoding](./maps-and-geocoding.md).
 
 ## Ministry Settings
 
-The Volunteer Management settings live on their own page, **Admin → Ministry Settings**, not under System Settings.
+The Volunteer Management settings live on their own page, **Admin → Ministry Settings**, not on the Settings hub.
 
 | Setting | Description |
 |---------|-------------|
@@ -148,8 +148,8 @@ See [Localization & Formats](./localization.md).
 | **Language** | Church-wide language. A person can override it under **Change Settings → Localization** |
 | **Time zone** | Church time zone for events and scheduling |
 | **Date formats** | Long date, short date, date and time, file names, and the date picker |
-| **Currency symbol and position** | Also listed on System Settings → Financial Settings |
-| **Thousands and decimal separators** | Also listed on Financial Settings |
+| **Currency symbol and position** | The symbol used for money, and whether it comes before or after the amount |
+| **Thousands and decimal separators** | The separators used in numbers |
 | **Phone number format** | Home, cell, and extension masks |
 | **Distance** | Miles or kilometers |
 
@@ -159,7 +159,7 @@ See [Localization & Formats](./localization.md).
 
 **Location:** Communication → Email → **Email Settings**
 
-Email is not a System Settings tab. See [Email Setup](./email-setup.md).
+Email settings are on their own page, linked from the Settings hub. See [Email Setup](./email-setup.md).
 
 | Setting | Description |
 |---------|-------------|
@@ -178,29 +178,25 @@ The From name is the church name, and the From address is the email on Church In
 
 ---
 
-## System Settings → Financial Settings
+## Finance Settings
 
-**Location:** Admin → System Settings → **Financial Settings**
+**Location:** Admin → **Finance Settings** — a links-only hub. The settings below are on its **Deposits & Payments** page. Finance and Fundraiser themselves are turned on under **Admin → Feature Toggles**.
 
 | Setting | Description | Default |
 |---------|-------------|---------|
-| **Enable Finance menu** | Show or hide Finance | On |
-| **Enable Fundraiser menu** | Show or hide Fundraiser | On |
 | **Fiscal year start month** | Month the financial year begins | January |
 | **Use donation envelopes** | Track gifts with numbered envelopes | Off |
-| **Checks per deposit slip** | Check lines on one deposit form | 14 |
 | **Scanned check images** | Attach a scan to a deposit | Off |
-| **Require a check number** (`bRequireCheckNumber`) | On a deposit payment, **Check #** is required while this is on. When it is off, a blank or `0` check number is allowed and is not checked for duplicates; a real number this family already used is still rejected, and a cash payment still cannot have a check number. Set it on the **Finance Dashboard** under **Financial Settings**, as **Require check number on check payments**. | On |
+| **Require a check number** (`bRequireCheckNumber`) | On a deposit payment, **Check #** is required while this is on. When it is off, a blank or `0` check number is allowed and is not checked for duplicates; a real number this family already used is still rejected, and a cash payment still cannot have a check number. Set it on this page, as **Require check number on check payments**. | On |
 | **Non-deductible payments** | Record gifts that are not tax-deductible | Off |
-| **Currency symbol, position, separators** | Same values as Localization & Formats | $ before the amount |
 
 See the [Donation Envelopes guide](/user-guide/donation-envelopes) for activation and assignment.
 
 ---
 
-## System Settings → Quick Search
+## Quick Search
 
-**Location:** Admin → System Settings → **Quick Search**
+**Location:** Admin → **Settings** → **Quick Search**
 
 Turn each kind of record on or off, and set how many results of that kind to show.
 
@@ -265,34 +261,23 @@ The staff sign-in page is your ChurchCRM address followed by `/admin/`. Members 
 
 ---
 
-## System Settings → Scheduled Tasks
+## Scheduled Tasks
 
-**Location:** Admin → System Settings → **Scheduled Tasks**
+**Location:** Admin → **Settings** → **Scheduled Tasks**
 
 | Setting | Description | Default |
 |---------|-------------|---------|
 | **Background jobs warning** | Hours without a timer-job run before the Admin Dashboard warns you. 0 hides the warning | 26 |
-| **Minimum interval** | Minutes between timer jobs started by a page view. 0 runs them on every page view. The command-line runner ignores this | 15 |
 
 ---
 
-## System Settings → Confession
+## Report Settings
 
-**Location:** Admin → System Settings → **Confession**
+**Location:** Reports → Admin → **Report Settings**
 
-Choose the person custom field that stores the father of confession, and the date field that stores the last confession.
+This page holds the letterhead and the signature image printed on PDF letters and giving statements, and the folder where the signature image is stored. A letterhead path previously saved in `bDirLetterHead` still works as a fallback when no letterhead has been uploaded here.
 
----
-
-## System Settings → Report Settings
-
-**Location:** Admin → System Settings → **Report Settings**
-
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Tax, pledge, confirmation, and directory text** | Sentences printed on those reports, plus the signer lines |  |
-
-Letterhead and the letter greeting and signature no longer live here: upload, preview or remove the letterhead, and edit the greeting and signature, on **Reports → Admin → Report Settings**. A letterhead path previously saved in `bDirLetterHead` still works as a fallback when no letterhead has been uploaded there. The giving-statement wording, the church tax ID and PDF handling are on **Finance → Admin → Statement Settings**, so they do not appear on System Settings. The report margin settings were removed.
+The wording those documents print lives elsewhere: giving-statement wording, the church tax ID and PDF handling are on **Finance → Admin → Statement Settings**; pledge reminder text is on **Admin → Finance Settings → Pledge Reminders**; and the confirmation-letter and directory text is in **People → Admin → People Settings**. The report margin settings were removed.
 
 ---
 
@@ -304,7 +289,7 @@ Letterhead and the letter greeting and signature no longer live here: upload, pr
 | Events menu, external calendar API, and embed origins | Calendar → **Calendar Settings** |
 | Log level (DEBUG, INFO, WARNING, or ERROR only) | Admin → System Logs → **Settings** |
 | Pre-release upgrades | Admin Dashboard → **Upgrade**, then System Upgrade → **Settings** (**Upgrade Settings**) |
-| Telemetry | The Admin Dashboard asks once: **Share install statistics** or **No thanks**. **Admin → Telemetry** (the Debug page, `#telemetry`) changes it later: **Disabled**, **Install**, **Errors**, or **Full**. Install statistics are the version, country from church settings, database type, and a random installation id. The server's IP address is not sent, and the country is not looked up from the network. Test installations send nothing. One exception: if an upgrade fails, ChurchCRM sends an `upgrade_failed` report — the installation id, the versions involved, and the failure reason — even when Telemetry is **Disabled**, so failed upgrades get fixed. |
+| Telemetry | There are two levels, **Default** and **Full**. **Admin → Telemetry** (the Debug page, `#telemetry`) has one toggle, **Share which pages are used**: off is **Default** and on is **Full**. Default sends error reports, install and upgrade events, and system information (such as the ChurchCRM and PHP versions, database type and version, locale, and a random installation id). Full also sends which pages are used. Church data — names, contact details, member and family records, and financial data — is never sent, and neither is the server's IP address. Test installations send nothing. |
 
 ---
 
