@@ -29,11 +29,11 @@ sidebar_position: 2
 * **[Fundraiser](/user-guide/fundraiser)** — Manage auctions and fundraising events where members buy and sell items.
 * **[Reports & Queries](/user-guide/reports-and-queries)** — Directories, mailing labels, birthday lists, financial statements, and custom queries.
 * **[Volunteers](/user-guide/volunteers)** — Track member availability for specific roles and find volunteers for upcoming needs.
-* **[Volunteer Management (v2)](/user-guide/ministries)** — Ministries with teams and positions, schedules that follow the calendar, assignments, substitutions and reminder email (7.8.0, off by default).
+* **[Volunteer Management (v2)](/user-guide/ministries)** — Ministries with teams and positions, schedules that follow the calendar, assignments, substitutions and reminder email (replaced Volunteer Opportunities, which was removed in 7.8.6).
 * **[Data Import](/user-guide/data-import)** — Import member records from CSV, including Classification and Family Role columns.
 * **[Export & Data](/user-guide/export)** — Export Hub with CSV, ChMeetings format, and database backup — all in one place.
 * **Backup / Restore** — Full database backups with one-click restore.
-* **Localization** — 46 languages, regional grouping, and browser auto-detection.
+* **Localization** — 49 languages, regional grouping, and browser auto-detection.
 * **[Member Portal](/user-guide/member-portal)** — Members sign in with their own email address (a code or link, no password), can stay signed in on their own device or use a passkey, and look after their profile and family, see the church calendar and their giving, and volunteer. Administrators choose who may sign in and what each person can do. See [Member sign-in](/administration/member-sign-in).
 * **[User Management](/administration/users)** — Staff accounts, role-based access, granular permissions, and 2FA.
 * **[Plugins](/administration/plugins)** — Extend ChurchCRM with community and built-in plugins. Install from approved registries.
