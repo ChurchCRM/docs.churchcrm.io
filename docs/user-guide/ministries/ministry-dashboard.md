@@ -27,7 +27,7 @@ In the order that matters (on a wide screen the last two cards sit in a column o
 
 The dashboard shows only the ministries and teams the viewer may manage: an administrator or Manage Ministries user sees the whole church; a coordinator sees their ministries; a team leader sees their team's schedules. Deactivated ministries contribute nothing. See [Who can do what](./permissions.md).
 
-![The dashboard as a ministry coordinator](/img/user-guide/ministries/ministry-dashboard-coordinator.png)
+![The dashboard as a ministry coordinator](https://cdn.churchcrm.io/screenshots/en/desktop/volunteer-ministry-dashboard-coordinator.png)
 
 ## New ministry
 

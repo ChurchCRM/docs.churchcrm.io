@@ -5,7 +5,3 @@
 static/img/administration/member-portal-user-menu.png
 static/img/administration/user-editor-ministry-permissions.png
 static/img/getting-started/church-info-social-media.png
-static/img/user-guide/email-history-modal-not-stored.png
-static/img/user-guide/email-history-modal.png
-static/img/user-guide/ministries/ministry-dashboard-coordinator.png
-static/img/user-guide/ministries/person-volunteer-tab.png
