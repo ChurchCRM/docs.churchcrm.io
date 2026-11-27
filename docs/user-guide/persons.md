@@ -240,6 +240,19 @@ Go to **People** → **Add New Person**, complete the form, then click **Save** 
 
 To add a new family and several people at the same time, use the Family Editor instead.
 
+## How do I convert a person to a family?
+
+A person with no family, such as someone who lives alone or was [imported](/user-guide/data-import) without a `FamilyID`, can be given a family of their own. Their address and home phone move to the family, so you do not retype them.
+
+1. Find the person and open their Person View.
+2. Open **Actions** and choose **Convert to Family**.
+   > If it is not there, the person already belongs to a family, or you are not an administrator.
+3. Click **Convert to Family** to confirm.
+
+The new family opens. It is named after the person's last name and holds their address and home phone, and the person is its only member. Their email, cell phone and work phone stay on the person.
+
+This works on one person at a time. After an import that leaves many people without a family, convert each one from their own page.
+
 ## What is a Classification?
 
 A classification defines a person's role within the church. Common [Classifications](/user-guide/classifications) include Member, Guest, Regular Attender, and Non-Attender.
