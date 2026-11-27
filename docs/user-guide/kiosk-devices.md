@@ -216,6 +216,8 @@ The person-plus button (tooltip **Register walk-in guest**) is one of the floati
 
 Tap the button. The dialog title is **Register Walk-In Guest**. It says **A phone number or email address is required.**
 
+![The Register Walk-In Guest dialog on the kiosk check-in screen, with first and last name, birth date, phone and email fields](https://cdn.churchcrm.io/screenshots/en/desktop/kiosk-guest-form.png)
+
 | Field | Required | Rules |
 |-------|----------|--------|
 | **First Name** | Yes | 2–50 characters |
@@ -233,6 +235,8 @@ If both contact fields are empty, the form shows **A phone number or email addre
 ### How a guest appears
 
 - **Checked In column** — amber border and a **Guest** badge. The row stays after a refresh. Check the guest out and back in the same way as anyone else on the list.
+
+![A walk-in guest in the kiosk Checked In column, with an amber border and a Guest badge](https://cdn.churchcrm.io/screenshots/en/desktop/kiosk-guest-checked-in.png)
 - **People → Self Registrations** — the guest is saved as a pending self-registration and shows a **Pending review** badge until a staff member approves the record. Approving clears that badge. The guest stays checked in.
 - **Person timeline** — **Registered as a walk-in guest at the kiosk during event:** followed by the event title, then **Checked in to event:** followed by the event title.
 - **Event attendance** — the guest is on the event’s checked-in list even though they are not a member of the linked group.
