@@ -86,6 +86,8 @@ Each row shows:
 
 ![A family member proposed in the portal, waiting on Self Registrations](https://cdn.churchcrm.io/screenshots/en/desktop/people-self-register-portal-member.png)
 
+![A guest registered at the kiosk in the Self Registrations pending list, waiting for staff review](https://cdn.churchcrm.io/screenshots/en/desktop/kiosk-guest-review.png)
+
 ---
 
 ## Approve one registration or several
