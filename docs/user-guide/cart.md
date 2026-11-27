@@ -34,6 +34,10 @@ There several ways to do this:
 2. Clicking this link accomplishes the same thing as the process described above.
 3. To add the results of a report: Some reports will allow you to dump the results to the Cart, and some won't -- it depends what the report returns. Since the cart holds People, a report that returned Family records will not allow the results to be placed in the Cart.
 
+Once a group's members are added, the cart holds them together, ready to email or label as one mailing:
+
+![The Cart with a group's people added: everyone listed together, with the Email and Labels actions for the mailing](https://cdn.churchcrm.io/screenshots/en/desktop/communication-mailing-list.png)
+
 ## Run the desired report
 
 On a People Report, click **Add All to Cart** in the results header to add every row to the cart.
