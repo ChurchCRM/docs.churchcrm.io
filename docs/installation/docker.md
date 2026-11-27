@@ -20,7 +20,7 @@ says so.
 
 | Tag | What it is |
 | --- | --- |
-| `latest-php8-apache` | The current release. Apache + PHP 8.4, serves HTTP on port 8080. **Use this.** |
+| `latest-php8-apache` | The current release. Apache + PHP 8.5, serves HTTP on port 8080. **Use this.** |
 | `latest` | The same image as `latest-php8-apache`. |
 | `latest-php8-fpm` | PHP-FPM, FastCGI on port 9000. **Not supported** — see [PHP-FPM](#php-fpm) below. |
 
