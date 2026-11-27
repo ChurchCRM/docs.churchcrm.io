@@ -62,11 +62,13 @@ For a complete list of tested versions and configurations, see the [GitHub Actio
 - **GD Library for image manipulation**
 - **FileInfo Extension for image manipulation**
 - **cURL**
-- **locale gettext**
+- **locale gettext** — recommended, not required (see below)
 - **PHP ZipArchive**
 - **Mysqli Functions**
 
 **URL Rewriting (mod_rewrite / nginx / LiteSpeed)** is not on **ChurchCRM System Check**. Setup still checks it with the other prerequisites.
+
+**locale gettext** is recommended, not required: ChurchCRM still installs and runs without it — setup, the **Admin Dashboard** and the **Debug** page show a warning instead of stopping, and some text will stay in English until the gettext PHP extension is enabled.
 
 exif, soap, sodium, and intl are not required.
 
