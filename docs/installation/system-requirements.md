@@ -19,7 +19,7 @@ Validation occurs in the [`getApplicationPrerequisites()` function](https://gith
 | Component | Minimum Version | Recommended | Notes |
 |-----------|-----------------|-------------|-------|
 | **PHP** | 8.4 | 8.4 or 8.5 | Required for all core functionality |
-| **Web server** | Apache 2.4 with mod_rewrite | Apache 2.4+ | The official [Docker images](/installation/docker) bundle Apache 2.4 + PHP 8.4. nginx is not tested. FrankenPHP exists only as an unsupported example in [`docker/`](https://github.com/ChurchCRM/CRM/tree/master/docker) — no image is published and CI does not build it |
+| **Web server** | Apache 2.4 with mod_rewrite | Apache 2.4+ | The official [Docker images](/installation/docker) bundle Apache 2.4 + PHP 8.5. nginx is not tested. FrankenPHP exists only as an unsupported example in [`docker/`](https://github.com/ChurchCRM/CRM/tree/master/docker) — no image is published and CI does not build it |
 | **MySQL** | 8.0 | @@mysql@@+ | Or MariaDB 10.6+. @@mysql@@+ is the supported long-term-support (LTS) release; 8.0 and later below it installs and upgrades with an out-of-support banner for admins |
 | **MariaDB** | 10.6 | @@mariadb@@+ | Alternative to MySQL. @@mariadb@@+ is the supported long-term-support (LTS) release; 10.6 and later below it installs and upgrades with an out-of-support banner for admins |
 | **PHP memory_limit** | 256MB | 512MB+ | 1GB+ for larger congregations |
