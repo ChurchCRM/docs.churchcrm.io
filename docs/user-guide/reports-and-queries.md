@@ -48,6 +48,8 @@ Under **Information to Include**, **Personal Email** and **Personal Work/Other E
 ### Printing a folded booklet
 
 1. Choose **Folded Booklet**, set **Paper Size** to the paper in your printer, and click **Create Directory**.
+
+![A printed folded-booklet sheet: two half-size directory pages side by side in booklet order, with family photos](https://cdn.churchcrm.io/screenshots/en/desktop/directory-booklet-pdf.png)
 2. Print the PDF on both sides of the paper. In the printer's two-sided (duplex) options choose **flip on short edge** (some drivers call it _short-edge binding_). Most drivers default to _long edge_, which prints the backs upside down.
 3. Fold the stack of sheets in half down the middle and staple on the fold.
 
@@ -119,6 +121,8 @@ The result table for **Wedding Anniversaries** and for anniversary rows on **Bir
 1. Open **Reports → People Reports → Birthdays & Anniversaries**.
 2. Check **Month**. It defaults to next month. Leave **Classification** empty for everyone, or pick the classifications you mail.
 3. Click **Run Report**.
+
+![The Birthdays & Anniversaries report results for one month, with Add All to Cart, Print Labels and Download CSV](https://cdn.churchcrm.io/screenshots/en/desktop/people-reports-birthdays-anniversaries.png)
 4. Click **Print Labels**, set **Start Row** and **Start Column** if the first sheet is already partly used, and click **Generate Labels**.
 
 Birthday cards and anniversary cards for that month come out on the same label sheets.
