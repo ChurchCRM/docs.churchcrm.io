@@ -203,6 +203,8 @@ Upload a photo from the person view, not the Person Editor. Click the photo (the
 
 **People** → **Photo Directory** shows a grid of active people so you can match a face to a name. People in inactive classifications are not listed.
 
+![The Photo Directory: a grid of member photo cards with classifications and Call, text message and Email buttons](https://cdn.churchcrm.io/screenshots/en/desktop/people-photo-gallery.png)
+
 Each card shows the photo, or initials when there is no photo, plus the classification. **Not Classified** means no classification is set. Click the photo or the name to open the person record.
 
 The three buttons under the name are:
