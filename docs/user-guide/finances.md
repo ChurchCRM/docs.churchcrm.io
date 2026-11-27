@@ -80,6 +80,8 @@ A pledge records a family's commitment. Record gifts separately as [payments](#h
 3. Set **Amounts represent** to **Each installment**. Enter the **First installment date** and **Last installment on or before**. Both dates must be within the selected fiscal year. Enter a separate pledge for the next fiscal year.
 4. Under **Fund Allocation**, choose the fund and enter the amount of each installment. Use **Add Fund** to split each installment between funds; the amounts you enter apply to every installment.
 5. Review the preview's installment count and **Total commitment** before saving. Correct any date or amount errors until the preview matches the family's promise.
+
+![The New Pledge editor entering a monthly commitment: amount per installment, first and last installment dates, fund allocation, and the Full commitment preview](https://cdn.churchcrm.io/screenshots/en/desktop/finance-recurring-pledge.png)
 6. Click **Save**, then check the saved commitment on **Finance → Pledge Dashboard** with the same fiscal year selected.
 
 Installments repeat from the first date through the last boundary, including dates that fall on that boundary. Monthly dates use the last day of a shorter month when needed. Quarterly installments repeat every three months from the first date. For a church whose fiscal year runs July–June, keep both dates within that July–June period; see [Fiscal years](#fiscal-years).
@@ -224,6 +226,8 @@ The page groups these links:
 - **Pledge Reports** — **Pledge Summary** (opens `/finance/pledge/dashboard`), **Pledge Family Summary**, **Pledge Comparison**, **Pledge Reminders**, and **Missing Pledges** (see below)
 - **Deposit Reports** — one link, which opens the deposit reports page (`/finance/reports/deposits`)
 - **Membership Reports** — **Voting Members** (see [Voting Members](#voting-members)), which opens only for users with the Finance permission
+
+![The Deposit Reports page: review payments for a period, or prepare one deposit for the bank and print its bank slip](https://cdn.churchcrm.io/screenshots/en/desktop/finance-deposit-reports.png)
 
 The **Finance** menu lists **Financial Reports** itself, and **Year-End Giving** on its own, so you can reach either one without going through the dashboard.
 
