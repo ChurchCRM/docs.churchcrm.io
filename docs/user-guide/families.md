@@ -38,6 +38,8 @@ Every Person should belong to a family.
 3. Complete the individual lines for each person, but only enter the last name if it differs from the last name of the Family record. All people entered in this manner will create a new Person record which will be assigned to the designated Family record.
 4. Press _Save_ when the form is complete.
 
+To make a family for a person who is already in ChurchCRM and has no family, see [How do I convert a person to a family?](/user-guide/persons#how-do-i-convert-a-person-to-a-family)
+
 ## How do I view a family?
 
 1. Use the header search field (**Search people, families, groups…**) and open the family from the results.
