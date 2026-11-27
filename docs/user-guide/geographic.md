@@ -41,4 +41,6 @@ From the **People** area, use **Family Map** to view family locations by classif
 2. Click **Find Neighbors** (header button on the map page).
 3. Select a family, then set **Maximum number of neighbors** and **Maximum distance**, and optionally filter by classification.
 4. Click **Find Neighbors** to see results as map markers and as a results table (distance, direction, family, people).
+
+![Find Neighbors results: the selected family and the nearest families as map markers colored by distance, with the results listed below](https://cdn.churchcrm.io/screenshots/en/desktop/people-map-find-neighbors.png)
 5. Use **Add All to Cart** / **Remove All from Cart** to act on the results.
