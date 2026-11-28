@@ -22,6 +22,8 @@ There are two kinds of plugins:
 
 All plugin management happens at **Admin → Plugins**.
 
+While Content Security Policy enforcement is on (the default), a community plugin that has not declared itself CSP-ready is marked **Not CSP-ready** on this page. The badge means the plugin may break under enforcement; the plugin's author clears it by declaring `"cspCompatible": true` in `plugin.json`. Core plugins always count as CSP-ready. If a plugin does break, an admin can switch enforcement to report-only at **Admin → Feature Toggles** → **Content Security Policy**.
+
 ![Plugin management in ChurchCRM](https://cdn.churchcrm.io/screenshots/en/desktop/admin-plugin-management.png)
 
 :::tip Community Plugin Registry
