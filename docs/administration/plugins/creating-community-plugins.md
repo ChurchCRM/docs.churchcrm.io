@@ -210,6 +210,11 @@ The manifest defines your plugin's metadata and capabilities.
 | `settings` | array | Settings schema for admin UI |
 | `menuItems` | array | Menu items to add to navigation |
 | `hooks` | array | Hooks this plugin listens to |
+| `cspCompatible` | boolean | Set `true` only when every plugin page runs under an enforced Content Security Policy with no violations (see below) |
+
+### Content Security Policy (`cspCompatible`)
+
+ChurchCRM enforces its Content Security Policy by default. While enforcement is on, Plugin Management marks a community plugin that does not declare `"cspCompatible": true` in `plugin.json` as **Not CSP-ready**. Set it only after every plugin page runs with no CSP violations in the browser console: every inline `<script>` carries the CSP nonce, there are no `onclick=`-style attributes or `javascript:` URLs, and third-party scripts ship inside the plugin (no CDN origins are allowed).
 
 ### Settings Schema
 
