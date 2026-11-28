@@ -103,7 +103,7 @@ These are on **Admin → System Users → Settings → Quick Settings**, not a S
 
 See [Two-Factor Authentication](./secret-keys.md) for setup, enrollment deadlines, and account recovery.
 
-Content Security Policy (`bEnforceCSP`) is not on a settings tab. There is no switch for it in the UI.
+Content Security Policy (`bEnforceCSP`) is enforced by default. To switch it to report-only, go to **Admin → Feature Toggles** → **Content Security Policy**.
 
 ## 🏠 Member Portal sign-in
 
