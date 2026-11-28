@@ -7,8 +7,11 @@ import crmRelease from '../../crm-release.json';
 
 # Docker
 
-ChurchCRM publishes official Docker images on Docker Hub as
-[`churchcrm/crm`](https://hub.docker.com/r/churchcrm/crm).
+The official [ChurchCRM Apache image](https://hub.docker.com/r/churchcrm/crm)
+and the production Compose stack are the standard way to install ChurchCRM
+on a VPS or managed container host. ChurchCRM supports the latest stable
+Apache build. Your church or hosting provider maintains the host operating
+system, reverse proxy, and TLS certificates.
 
 > **Setting up a development environment instead?** This page covers running the published images in production. Contributors should see the [Docker Development Environment](../developers/docker.md).
 
@@ -20,7 +23,7 @@ says so.
 
 | Tag | What it is |
 | --- | --- |
-| `latest-php8-apache` | The current release. Apache + PHP 8.4, serves HTTP on port 8080. **Use this.** |
+| `latest-php8-apache` | The current release. Apache, serving HTTP on port 8080. **Use this.** |
 | `latest` | The same image as `latest-php8-apache`. |
 | `latest-php8-fpm` | PHP-FPM, FastCGI on port 9000. **Not supported** — see [PHP-FPM](#php-fpm) below. |
 
