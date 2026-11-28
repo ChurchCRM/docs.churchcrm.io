@@ -238,7 +238,7 @@ This is not a Security menu.
 
 See [Two-Factor Authentication](./secret-keys.md) for enrollment and recovery. Authenticator entries use the church name from **Admin → Church Information**, followed by **(ChurchCRM)**.
 
-Content Security Policy (`bEnforceCSP`) is not on a settings tab. Do not look for a switch for it in the menus.
+Content Security Policy (`bEnforceCSP`) is a switch on **Admin → Feature Toggles**, under **Access Control & Security**. It is on by default: ChurchCRM enforces its Content Security Policy headers. Turn it off only when a plugin breaks under enforcement — off means violations are reported, not blocked. While enforcement is on, **Admin → Plugins** marks community plugins that have not declared themselves CSP-ready as **Not CSP-ready**.
 
 ---
 
